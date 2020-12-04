@@ -63,6 +63,14 @@ data:
     - icon: ':warning:'
       path: library/geometry/point_geometry.cpp
       title: library/geometry/point_geometry.cpp
+  - name: library/geometry/testing
+    pages:
+    - icon: ':warning:'
+      path: library/geometry/testing/convex_hull.h
+      title: library/geometry/testing/convex_hull.h
+    - icon: ':warning:'
+      path: library/geometry/testing/point_geometry.h
+      title: library/geometry/testing/point_geometry.h
   - name: library/graphs
     pages:
     - icon: ':warning:'
