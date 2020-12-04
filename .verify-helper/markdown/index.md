@@ -138,11 +138,6 @@ data:
     - icon: ':warning:'
       path: library\numerical\mod_int2.cpp
       title: library\numerical\mod_int2.cpp
-  verificationCategories:
-  - name: .
-    pages:
-    - icon: ':x:'
-      path: example.test.cpp
-      title: example.test.cpp
+  verificationCategories: []
 layout: toppage
 ---
