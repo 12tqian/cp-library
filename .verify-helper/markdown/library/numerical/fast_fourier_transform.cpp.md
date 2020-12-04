@@ -7,7 +7,7 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"library\\\\numerical\\\\fast_fourier_transform.cpp\"\n#include\
+  bundledCode: "#line 1 \"library/numerical/fast_fourier_transform.cpp\"\n#include\
     \ <bits/stdc++.h>\r\n\r\ntemplate <int MOD, int RT> struct Mint {\r\n    static\
     \ const int mod = MOD;\r\n    static constexpr Mint rt() { return RT; } // primitive\
     \ root for FFT\r\n    int v; \r\n    explicit operator int() const { return v;\
@@ -145,15 +145,15 @@ data:
     \ << '\\n';\r\n}"
   dependsOn: []
   isVerificationFile: false
-  path: library\numerical\fast_fourier_transform.cpp
+  path: library/numerical/fast_fourier_transform.cpp
   requiredBy: []
   timestamp: '2020-11-28 21:02:01-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: library\numerical\fast_fourier_transform.cpp
+documentation_of: library/numerical/fast_fourier_transform.cpp
 layout: document
 redirect_from:
-- /library\library\numerical\fast_fourier_transform.cpp
-- /library\library\numerical\fast_fourier_transform.cpp.html
-title: library\numerical\fast_fourier_transform.cpp
+- /library/library/numerical/fast_fourier_transform.cpp
+- /library/library/numerical/fast_fourier_transform.cpp.html
+title: library/numerical/fast_fourier_transform.cpp
 ---

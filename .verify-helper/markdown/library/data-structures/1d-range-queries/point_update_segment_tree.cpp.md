@@ -7,7 +7,7 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"library\\\\data-structures\\\\1d-range-queries\\\\point_update_segment_tree.cpp\"\
+  bundledCode: "#line 1 \"library/data-structures/1d-range-queries/point_update_segment_tree.cpp\"\
     \n#include<bits/stdc++.h>\r\n\r\ntemplate <class T> struct SegTree {\r\n    const\
     \ T ID = 0;\r\n    T comb(T a, T b) {\r\n        return a + b;\r\n    }\r\n  \
     \  int n;\r\n    std::vector<T> seg;\r\n    void init(int _n) {\r\n        n =\
@@ -34,15 +34,15 @@ data:
     \ comb(ra, rb);\r\n    }\r\n};\r\nint main() {\r\n    return 0;\r\n}\r\n"
   dependsOn: []
   isVerificationFile: false
-  path: library\data-structures\1d-range-queries\point_update_segment_tree.cpp
+  path: library/data-structures/1d-range-queries/point_update_segment_tree.cpp
   requiredBy: []
   timestamp: '2020-11-28 19:53:10-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: library\data-structures\1d-range-queries\point_update_segment_tree.cpp
+documentation_of: library/data-structures/1d-range-queries/point_update_segment_tree.cpp
 layout: document
 redirect_from:
-- /library\library\data-structures\1d-range-queries\point_update_segment_tree.cpp
-- /library\library\data-structures\1d-range-queries\point_update_segment_tree.cpp.html
-title: library\data-structures\1d-range-queries\point_update_segment_tree.cpp
+- /library/library/data-structures/1d-range-queries/point_update_segment_tree.cpp
+- /library/library/data-structures/1d-range-queries/point_update_segment_tree.cpp.html
+title: library/data-structures/1d-range-queries/point_update_segment_tree.cpp
 ---

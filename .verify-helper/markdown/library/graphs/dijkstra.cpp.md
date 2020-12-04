@@ -7,7 +7,7 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"library\\\\graphs\\\\dijkstra.cpp\"\n#include<bits/stdc++.h>\r\
+  bundledCode: "#line 1 \"library/graphs/dijkstra.cpp\"\n#include<bits/stdc++.h>\r\
     \ntemplate <class C, bool directed> struct Dijkstra {\r\n    int SZ; std::vector<C>\
     \ dist;\r\n    std::vector<std::vector<std::pair<int, C>>> adj;\r\n    void init(int\
     \ _SZ) {\r\n        SZ = _SZ;\r\n        adj.clear();\r\n        adj.resize(SZ);\r\
@@ -39,15 +39,15 @@ data:
     \    return 0;\r\n}\r\n"
   dependsOn: []
   isVerificationFile: false
-  path: library\graphs\dijkstra.cpp
+  path: library/graphs/dijkstra.cpp
   requiredBy: []
   timestamp: '2020-11-28 19:55:15-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: library\graphs\dijkstra.cpp
+documentation_of: library/graphs/dijkstra.cpp
 layout: document
 redirect_from:
-- /library\library\graphs\dijkstra.cpp
-- /library\library\graphs\dijkstra.cpp.html
-title: library\graphs\dijkstra.cpp
+- /library/library/graphs/dijkstra.cpp
+- /library/library/graphs/dijkstra.cpp.html
+title: library/graphs/dijkstra.cpp
 ---

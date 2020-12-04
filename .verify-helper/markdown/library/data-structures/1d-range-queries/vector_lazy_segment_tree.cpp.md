@@ -7,7 +7,7 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"library\\\\data-structures\\\\1d-range-queries\\\\vector_lazy_segment_tree.cpp\"\
+  bundledCode: "#line 1 \"library/data-structures/1d-range-queries/vector_lazy_segment_tree.cpp\"\
     \n#include<bits/stdc++.h>\r\ntemplate <class T> struct LazySeg {\r\n    std::vector<T>\
     \ sum, lazy;\r\n    int sz;\r\n    void init(int sz_) {\r\n        sz = 1;\r\n\
     \        while (sz < sz_) sz *= 2;\r\n        sum.assign(2 * sz, 0);\r\n     \
@@ -52,15 +52,15 @@ data:
     int main() {\r\n    return 0;\r\n}\r\n"
   dependsOn: []
   isVerificationFile: false
-  path: library\data-structures\1d-range-queries\vector_lazy_segment_tree.cpp
+  path: library/data-structures/1d-range-queries/vector_lazy_segment_tree.cpp
   requiredBy: []
   timestamp: '2020-12-03 19:13:49-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: library\data-structures\1d-range-queries\vector_lazy_segment_tree.cpp
+documentation_of: library/data-structures/1d-range-queries/vector_lazy_segment_tree.cpp
 layout: document
 redirect_from:
-- /library\library\data-structures\1d-range-queries\vector_lazy_segment_tree.cpp
-- /library\library\data-structures\1d-range-queries\vector_lazy_segment_tree.cpp.html
-title: library\data-structures\1d-range-queries\vector_lazy_segment_tree.cpp
+- /library/library/data-structures/1d-range-queries/vector_lazy_segment_tree.cpp
+- /library/library/data-structures/1d-range-queries/vector_lazy_segment_tree.cpp.html
+title: library/data-structures/1d-range-queries/vector_lazy_segment_tree.cpp
 ---

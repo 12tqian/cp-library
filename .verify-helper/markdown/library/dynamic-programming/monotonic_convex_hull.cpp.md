@@ -7,8 +7,8 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"library\\\\dynamic-programming\\\\monotonic_convex_hull.cpp\"\
-    \n#include<bits/stdc++.h>\r\n// answers min queries currently\r\n// don't forget\
+  bundledCode: "#line 1 \"library/dynamic-programming/monotonic_convex_hull.cpp\"\n\
+    #include<bits/stdc++.h>\r\n// answers min queries currently\r\n// don't forget\
     \ to change ord\r\n\r\nconst long long INF = 1e18;\r\nstruct Line {\r\n    mutable\
     \ long long a, b, lst;\r\n    long long eval(long long x) {\r\n        return\
     \ a * x + b;\r\n    }\r\n    bool operator < (const Line& y) const {\r\n     \
@@ -86,15 +86,15 @@ data:
     \    std::cout << dp[n - 1] << '\\n';\r\n    return 0;\r\n}\r\n"
   dependsOn: []
   isVerificationFile: false
-  path: library\dynamic-programming\monotonic_convex_hull.cpp
+  path: library/dynamic-programming/monotonic_convex_hull.cpp
   requiredBy: []
   timestamp: '2020-11-24 21:09:02-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: library\dynamic-programming\monotonic_convex_hull.cpp
+documentation_of: library/dynamic-programming/monotonic_convex_hull.cpp
 layout: document
 redirect_from:
-- /library\library\dynamic-programming\monotonic_convex_hull.cpp
-- /library\library\dynamic-programming\monotonic_convex_hull.cpp.html
-title: library\dynamic-programming\monotonic_convex_hull.cpp
+- /library/library/dynamic-programming/monotonic_convex_hull.cpp
+- /library/library/dynamic-programming/monotonic_convex_hull.cpp.html
+title: library/dynamic-programming/monotonic_convex_hull.cpp
 ---

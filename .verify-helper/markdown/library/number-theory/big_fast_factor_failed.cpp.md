@@ -7,17 +7,16 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"library\\\\number-theory\\\\big_fast_factor_failed.cpp\"\
-    \n#include<bits/stdc++.h>\r\n\r\ntemplate <int SZ> struct Sieve {\r\n    std::bitset<SZ>\
-    \ pri;\r\n    std::vector<int> pr;\r\n    Sieve() {\r\n        pri.set();\r\n\
-    \        pri[0] = pri[1] = 0;\r\n        for (int i = 4; i < SZ; i += 2) {\r\n\
-    \            pri[i] = 0;\r\n        }\r\n        for (int i = 3; i * i < SZ; i\
-    \ += 2) {\r\n            if (pri[i]) {\r\n                for (int j = i * i;\
-    \ j < SZ; j += 2 * i) {\r\n                    pri[j] = 0;\r\n               \
-    \ }\r\n            }\r\n        }\r\n        for (int i = 0; i < SZ; i++) {\r\n\
-    \            if (pri[i]) {\r\n                pr.push_back(i);\r\n           \
-    \ }\r\n        }\r\n    }\r\n};\r\n\r\nnamespace FactorFast {\r\n\r\nstd::mt19937\
-    \ random_number((uint32_t) std::chrono::steady_clock::now().time_since_epoch().count());\r\
+  bundledCode: "#line 1 \"library/number-theory/big_fast_factor_failed.cpp\"\n#include<bits/stdc++.h>\r\
+    \n\r\ntemplate <int SZ> struct Sieve {\r\n    std::bitset<SZ> pri;\r\n    std::vector<int>\
+    \ pr;\r\n    Sieve() {\r\n        pri.set();\r\n        pri[0] = pri[1] = 0;\r\
+    \n        for (int i = 4; i < SZ; i += 2) {\r\n            pri[i] = 0;\r\n   \
+    \     }\r\n        for (int i = 3; i * i < SZ; i += 2) {\r\n            if (pri[i])\
+    \ {\r\n                for (int j = i * i; j < SZ; j += 2 * i) {\r\n         \
+    \           pri[j] = 0;\r\n                }\r\n            }\r\n        }\r\n\
+    \        for (int i = 0; i < SZ; i++) {\r\n            if (pri[i]) {\r\n     \
+    \           pr.push_back(i);\r\n            }\r\n        }\r\n    }\r\n};\r\n\r\
+    \nnamespace FactorFast {\r\n\r\nstd::mt19937 random_number((uint32_t) std::chrono::steady_clock::now().time_since_epoch().count());\r\
     \nSieve<(1 << 20)> S;\r\n\r\nunsigned long long mod_mul(unsigned long long a,\
     \ unsigned long long b, unsigned long long mod) {\r\n    long long ret = a * b\
     \ - mod * (unsigned long long) ((long double) a * b / mod);\r\n    return ret\
@@ -118,15 +117,15 @@ data:
     \n}\r\n"
   dependsOn: []
   isVerificationFile: false
-  path: library\number-theory\big_fast_factor_failed.cpp
+  path: library/number-theory/big_fast_factor_failed.cpp
   requiredBy: []
   timestamp: '2020-11-28 21:09:23-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: library\number-theory\big_fast_factor_failed.cpp
+documentation_of: library/number-theory/big_fast_factor_failed.cpp
 layout: document
 redirect_from:
-- /library\library\number-theory\big_fast_factor_failed.cpp
-- /library\library\number-theory\big_fast_factor_failed.cpp.html
-title: library\number-theory\big_fast_factor_failed.cpp
+- /library/library/number-theory/big_fast_factor_failed.cpp
+- /library/library/number-theory/big_fast_factor_failed.cpp.html
+title: library/number-theory/big_fast_factor_failed.cpp
 ---

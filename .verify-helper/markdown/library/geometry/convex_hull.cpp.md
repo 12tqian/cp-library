@@ -7,7 +7,7 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"library\\\\geometry\\\\convex_hull.cpp\"\n#include <bits/stdc++.h>\r\
+  bundledCode: "#line 1 \"library/geometry/convex_hull.cpp\"\n#include <bits/stdc++.h>\r\
     \n\r\ntemplate <typename T> struct Point {\r\npublic:\r\n    T x, y;\r\n    Point()\
     \ : x(0), y(0) {}\r\n    Point(T x_, T y_) : x(x_), y(y_) {}\r\n    template <typename\
     \ U> explicit Point(const Point<U>& p) : x(p.x), y(p.y) {}\r\n    Point(const\
@@ -181,15 +181,15 @@ data:
     \ 0;\r\n}"
   dependsOn: []
   isVerificationFile: false
-  path: library\geometry\convex_hull.cpp
+  path: library/geometry/convex_hull.cpp
   requiredBy: []
   timestamp: '2020-12-03 10:39:41-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: library\geometry\convex_hull.cpp
+documentation_of: library/geometry/convex_hull.cpp
 layout: document
 redirect_from:
-- /library\library\geometry\convex_hull.cpp
-- /library\library\geometry\convex_hull.cpp.html
-title: library\geometry\convex_hull.cpp
+- /library/library/geometry/convex_hull.cpp
+- /library/library/geometry/convex_hull.cpp.html
+title: library/geometry/convex_hull.cpp
 ---

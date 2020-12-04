@@ -7,7 +7,7 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"library\\\\data-structures\\\\1d-range-queries\\\\sparse_seg.cpp\"\
+  bundledCode: "#line 1 \"library/data-structures/1d-range-queries/sparse_seg.cpp\"\
     \n#include<bits/stdc++.h>\r\n// bump allocator\r\nstatic char buf[450 << 20];\r\
     \nvoid* operator new(size_t s) {\r\n    static size_t i = sizeof buf;\r\n    assert(s\
     \ < i);\r\n    return (void*) & buf[i -= s];\r\n}\r\nvoid operator delete(void*)\
@@ -72,15 +72,15 @@ data:
     \ seg.query(l, r - 1) << '\\n';\r\n        }\r\n    }\r\n    return 0;\r\n}"
   dependsOn: []
   isVerificationFile: false
-  path: library\data-structures\1d-range-queries\sparse_seg.cpp
+  path: library/data-structures/1d-range-queries/sparse_seg.cpp
   requiredBy: []
   timestamp: '2020-11-28 19:53:19-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: library\data-structures\1d-range-queries\sparse_seg.cpp
+documentation_of: library/data-structures/1d-range-queries/sparse_seg.cpp
 layout: document
 redirect_from:
-- /library\library\data-structures\1d-range-queries\sparse_seg.cpp
-- /library\library\data-structures\1d-range-queries\sparse_seg.cpp.html
-title: library\data-structures\1d-range-queries\sparse_seg.cpp
+- /library/library/data-structures/1d-range-queries/sparse_seg.cpp
+- /library/library/data-structures/1d-range-queries/sparse_seg.cpp.html
+title: library/data-structures/1d-range-queries/sparse_seg.cpp
 ---

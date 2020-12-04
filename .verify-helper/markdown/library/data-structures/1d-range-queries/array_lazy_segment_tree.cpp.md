@@ -7,7 +7,7 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"library\\\\data-structures\\\\1d-range-queries\\\\array_lazy_segment_tree.cpp\"\
+  bundledCode: "#line 1 \"library/data-structures/1d-range-queries/array_lazy_segment_tree.cpp\"\
     \n#include<bits/stdc++.h>\r\n/**\r\nmake sure SZ is a power of 2\r\n*/\r\ntemplate\
     \ <class T, int SZ> struct LazySeg {\r\n    T sum[2 * SZ], lazy[2 * SZ];\r\n \
     \   LazySeg() {\r\n        for (int i = 0; i < 2 * SZ; i++) {\r\n            sum[i]\
@@ -52,15 +52,15 @@ data:
     \n}\r\n"
   dependsOn: []
   isVerificationFile: false
-  path: library\data-structures\1d-range-queries\array_lazy_segment_tree.cpp
+  path: library/data-structures/1d-range-queries/array_lazy_segment_tree.cpp
   requiredBy: []
   timestamp: '2020-11-28 19:52:49-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: library\data-structures\1d-range-queries\array_lazy_segment_tree.cpp
+documentation_of: library/data-structures/1d-range-queries/array_lazy_segment_tree.cpp
 layout: document
 redirect_from:
-- /library\library\data-structures\1d-range-queries\array_lazy_segment_tree.cpp
-- /library\library\data-structures\1d-range-queries\array_lazy_segment_tree.cpp.html
-title: library\data-structures\1d-range-queries\array_lazy_segment_tree.cpp
+- /library/library/data-structures/1d-range-queries/array_lazy_segment_tree.cpp
+- /library/library/data-structures/1d-range-queries/array_lazy_segment_tree.cpp.html
+title: library/data-structures/1d-range-queries/array_lazy_segment_tree.cpp
 ---

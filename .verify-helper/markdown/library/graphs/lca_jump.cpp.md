@@ -7,7 +7,7 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"library\\\\graphs\\\\lca_jump.cpp\"\n#include<bits/stdc++.h>\r\
+  bundledCode: "#line 1 \"library/graphs/lca_jump.cpp\"\n#include<bits/stdc++.h>\r\
     \nstruct LCAJump {\r\n    int n;\r\n    std::vector<std::vector<int>> par;\r\n\
     \    std::vector<std::vector<int>> adj;\r\n    std::vector<int> depth;\r\n   \
     \ void init(int _n) {\r\n        n = _n;\r\n        int d = 1;\r\n        while\
@@ -52,15 +52,15 @@ data:
     }\r\n"
   dependsOn: []
   isVerificationFile: false
-  path: library\graphs\lca_jump.cpp
+  path: library/graphs/lca_jump.cpp
   requiredBy: []
   timestamp: '2020-11-24 21:14:38-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: library\graphs\lca_jump.cpp
+documentation_of: library/graphs/lca_jump.cpp
 layout: document
 redirect_from:
-- /library\library\graphs\lca_jump.cpp
-- /library\library\graphs\lca_jump.cpp.html
-title: library\graphs\lca_jump.cpp
+- /library/library/graphs/lca_jump.cpp
+- /library/library/graphs/lca_jump.cpp.html
+title: library/graphs/lca_jump.cpp
 ---

@@ -7,7 +7,7 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"library\\\\graphs\\\\euler_path.cpp\"\n#include<bits/stdc++.h>\r\
+  bundledCode: "#line 1 \"library/graphs/euler_path.cpp\"\n#include<bits/stdc++.h>\r\
     \n\r\ntemplate <bool directed> struct Euler {\r\n    int n;\r\n    std::vector<std::vector<std::pair<int,\
     \ int>>> adj;\r\n    std::vector<std::vector<std::pair<int, int>>::iterator> its;\r\
     \n    std::vector<bool> used;\r\n    void init(int _n) {\r\n        n = _n;\r\n\
@@ -68,15 +68,15 @@ data:
     \n    }\r\n};\r\n\r\nint main() {\r\n    return 0;\r\n}\r\n"
   dependsOn: []
   isVerificationFile: false
-  path: library\graphs\euler_path.cpp
+  path: library/graphs/euler_path.cpp
   requiredBy: []
   timestamp: '2020-11-28 19:56:10-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: library\graphs\euler_path.cpp
+documentation_of: library/graphs/euler_path.cpp
 layout: document
 redirect_from:
-- /library\library\graphs\euler_path.cpp
-- /library\library\graphs\euler_path.cpp.html
-title: library\graphs\euler_path.cpp
+- /library/library/graphs/euler_path.cpp
+- /library/library/graphs/euler_path.cpp.html
+title: library/graphs/euler_path.cpp
 ---

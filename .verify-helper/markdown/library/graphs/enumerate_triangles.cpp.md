@@ -7,7 +7,7 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"library\\\\graphs\\\\enumerate_triangles.cpp\"\n#include<bits/stdc++.h>\r\
+  bundledCode: "#line 1 \"library/graphs/enumerate_triangles.cpp\"\n#include<bits/stdc++.h>\r\
     \n\r\nconst int MOD = 998244353;\r\nint main() {\r\n    std::ios_base::sync_with_stdio(0);\
     \ std::cin.tie(0);\r\n    int n, m; std::cin >> n >> m;\r\n    std::vector<long\
     \ long> x(n);\r\n    for (int i = 0; i < n; i++) std::cin >> x[i];\r\n    std::vector<std::vector<int>>\
@@ -55,15 +55,15 @@ data:
     n';\r\n    return 0;\r\n}\r\n"
   dependsOn: []
   isVerificationFile: false
-  path: library\graphs\enumerate_triangles.cpp
+  path: library/graphs/enumerate_triangles.cpp
   requiredBy: []
   timestamp: '2020-11-24 21:12:56-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: library\graphs\enumerate_triangles.cpp
+documentation_of: library/graphs/enumerate_triangles.cpp
 layout: document
 redirect_from:
-- /library\library\graphs\enumerate_triangles.cpp
-- /library\library\graphs\enumerate_triangles.cpp.html
-title: library\graphs\enumerate_triangles.cpp
+- /library/library/graphs/enumerate_triangles.cpp
+- /library/library/graphs/enumerate_triangles.cpp.html
+title: library/graphs/enumerate_triangles.cpp
 ---

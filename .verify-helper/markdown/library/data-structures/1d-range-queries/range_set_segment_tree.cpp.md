@@ -7,7 +7,7 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"library\\\\data-structures\\\\1d-range-queries\\\\range_set_segment_tree.cpp\"\
+  bundledCode: "#line 1 \"library/data-structures/1d-range-queries/range_set_segment_tree.cpp\"\
     \n#include<bits/stdc++.h>\r\n\r\ntemplate <class T> struct RangeSetSeg {\r\n \
     \   const T UNUSED = -1;\r\n    std::vector<T> sum, lazy;\r\n    int sz;\r\n \
     \   /// lazy stores what to set to\r\n    void init(int sz_) {\r\n        sz =\
@@ -54,15 +54,15 @@ data:
     \ main(){\r\n    return 0;\r\n}\r\n"
   dependsOn: []
   isVerificationFile: false
-  path: library\data-structures\1d-range-queries\range_set_segment_tree.cpp
+  path: library/data-structures/1d-range-queries/range_set_segment_tree.cpp
   requiredBy: []
   timestamp: '2020-11-28 19:53:14-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: library\data-structures\1d-range-queries\range_set_segment_tree.cpp
+documentation_of: library/data-structures/1d-range-queries/range_set_segment_tree.cpp
 layout: document
 redirect_from:
-- /library\library\data-structures\1d-range-queries\range_set_segment_tree.cpp
-- /library\library\data-structures\1d-range-queries\range_set_segment_tree.cpp.html
-title: library\data-structures\1d-range-queries\range_set_segment_tree.cpp
+- /library/library/data-structures/1d-range-queries/range_set_segment_tree.cpp
+- /library/library/data-structures/1d-range-queries/range_set_segment_tree.cpp.html
+title: library/data-structures/1d-range-queries/range_set_segment_tree.cpp
 ---

@@ -7,7 +7,7 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"library\\\\numerical\\\\mod_int2.cpp\"\n#include <bits/stdc++.h>\r\
+  bundledCode: "#line 1 \"library/numerical/mod_int2.cpp\"\n#include <bits/stdc++.h>\r\
     \n\r\n// 5 is a root of both mods\r\ntemplate <int MOD, int RT> struct Mint {\r\
     \n    static const int mod = MOD;\r\n    static constexpr Mint rt() { return RT;\
     \ } // primitive root for FFT\r\n    int v; \r\n    explicit operator int() const\
@@ -70,15 +70,15 @@ data:
     \ Mint& b) { return a /= b; }\r\n};\r\n\r\nint main() {\r\n    return 0;\r\n}"
   dependsOn: []
   isVerificationFile: false
-  path: library\numerical\mod_int2.cpp
+  path: library/numerical/mod_int2.cpp
   requiredBy: []
   timestamp: '2020-11-28 20:59:18-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: library\numerical\mod_int2.cpp
+documentation_of: library/numerical/mod_int2.cpp
 layout: document
 redirect_from:
-- /library\library\numerical\mod_int2.cpp
-- /library\library\numerical\mod_int2.cpp.html
-title: library\numerical\mod_int2.cpp
+- /library/library/numerical/mod_int2.cpp
+- /library/library/numerical/mod_int2.cpp.html
+title: library/numerical/mod_int2.cpp
 ---

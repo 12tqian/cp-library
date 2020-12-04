@@ -7,7 +7,7 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"library\\\\numerical\\\\karatsuba.cpp\"\n#include <bits/stdc++.h>\r\
+  bundledCode: "#line 1 \"library/numerical/karatsuba.cpp\"\n#include <bits/stdc++.h>\r\
     \n\r\nnamespace Karatsuba {\r\n\r\nint size(int s) {\r\n    return s > 1 ? 32\
     \ - __builtin_clz(s - 1) : 0;\r\n}\r\ntemplate <class T> void karatsuba(T* a,\
     \ T* b, T* c, T* t, int n) {\r\n    int ca = 0, cb = 0;\r\n    for (int i = 0;\
@@ -70,15 +70,15 @@ data:
     \  cout << '\\n';\r\n    }\r\n    return 0;\r\n}"
   dependsOn: []
   isVerificationFile: false
-  path: library\numerical\karatsuba.cpp
+  path: library/numerical/karatsuba.cpp
   requiredBy: []
   timestamp: '2020-11-28 20:26:17-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: library\numerical\karatsuba.cpp
+documentation_of: library/numerical/karatsuba.cpp
 layout: document
 redirect_from:
-- /library\library\numerical\karatsuba.cpp
-- /library\library\numerical\karatsuba.cpp.html
-title: library\numerical\karatsuba.cpp
+- /library/library/numerical/karatsuba.cpp
+- /library/library/numerical/karatsuba.cpp.html
+title: library/numerical/karatsuba.cpp
 ---

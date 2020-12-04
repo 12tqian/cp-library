@@ -7,7 +7,7 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"library\\\\graphs\\\\topological_sort.cpp\"\n#include<bits/stdc++.h>\r\
+  bundledCode: "#line 1 \"library/graphs/topological_sort.cpp\"\n#include<bits/stdc++.h>\r\
     \n\r\n// if size of std::vector is n, then it is a DAG\r\n\r\nstd::vector<int>\
     \ topo_sort(std::vector<std::vector<int>> adj) {\r\n    int n = (int) adj.size();\r\
     \n    std::vector<int> in(n);\r\n    std::vector<int> res;\r\n    std::list<int>\
@@ -32,15 +32,15 @@ data:
     \ {\r\n    return 0;\r\n}\r\n"
   dependsOn: []
   isVerificationFile: false
-  path: library\graphs\topological_sort.cpp
+  path: library/graphs/topological_sort.cpp
   requiredBy: []
   timestamp: '2020-11-24 21:15:50-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: library\graphs\topological_sort.cpp
+documentation_of: library/graphs/topological_sort.cpp
 layout: document
 redirect_from:
-- /library\library\graphs\topological_sort.cpp
-- /library\library\graphs\topological_sort.cpp.html
-title: library\graphs\topological_sort.cpp
+- /library/library/graphs/topological_sort.cpp
+- /library/library/graphs/topological_sort.cpp.html
+title: library/graphs/topological_sort.cpp
 ---

@@ -7,7 +7,7 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"library\\\\graphs\\\\lca_jump_distance.cpp\"\n#include<bits/stdc++.h>\r\
+  bundledCode: "#line 1 \"library/graphs/lca_jump_distance.cpp\"\n#include<bits/stdc++.h>\r\
     \ntemplate<class T> struct LCAJumpDistance {\r\n    int n;\r\n    std::vector<std::vector<int>>\
     \ par;\r\n    std::vector<std::vector<std::pair<int, T>>> adj;\r\n    std::vector<int>\
     \ depth;\r\n    std::vector<T> depth_dist;\r\n    void init(int _n) {\r\n    \
@@ -60,15 +60,15 @@ data:
     };\r\nint main() {\r\n    return 0;\r\n}\r\n"
   dependsOn: []
   isVerificationFile: false
-  path: library\graphs\lca_jump_distance.cpp
+  path: library/graphs/lca_jump_distance.cpp
   requiredBy: []
   timestamp: '2020-11-24 21:15:26-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: library\graphs\lca_jump_distance.cpp
+documentation_of: library/graphs/lca_jump_distance.cpp
 layout: document
 redirect_from:
-- /library\library\graphs\lca_jump_distance.cpp
-- /library\library\graphs\lca_jump_distance.cpp.html
-title: library\graphs\lca_jump_distance.cpp
+- /library/library/graphs/lca_jump_distance.cpp
+- /library/library/graphs/lca_jump_distance.cpp.html
+title: library/graphs/lca_jump_distance.cpp
 ---

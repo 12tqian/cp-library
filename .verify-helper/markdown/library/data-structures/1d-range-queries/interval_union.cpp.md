@@ -7,7 +7,7 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"library\\\\data-structures\\\\1d-range-queries\\\\interval_union.cpp\"\
+  bundledCode: "#line 1 \"library/data-structures/1d-range-queries/interval_union.cpp\"\
     \n#include<bits/stdc++.h>\r\nconst long long INF = 1e18;\r\nstruct IntervalUnion\
     \ {\r\n    std::set<std::pair<long long, long long>> le, ri;\r\n    void reset(){\r\
     \n        le.clear();\r\n        ri.clear();\r\n    }\r\n    std::vector<std::pair<long\
@@ -70,15 +70,15 @@ data:
     \n}\r\n"
   dependsOn: []
   isVerificationFile: false
-  path: library\data-structures\1d-range-queries\interval_union.cpp
+  path: library/data-structures/1d-range-queries/interval_union.cpp
   requiredBy: []
   timestamp: '2020-11-24 21:03:23-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: library\data-structures\1d-range-queries\interval_union.cpp
+documentation_of: library/data-structures/1d-range-queries/interval_union.cpp
 layout: document
 redirect_from:
-- /library\library\data-structures\1d-range-queries\interval_union.cpp
-- /library\library\data-structures\1d-range-queries\interval_union.cpp.html
-title: library\data-structures\1d-range-queries\interval_union.cpp
+- /library/library/data-structures/1d-range-queries/interval_union.cpp
+- /library/library/data-structures/1d-range-queries/interval_union.cpp.html
+title: library/data-structures/1d-range-queries/interval_union.cpp
 ---

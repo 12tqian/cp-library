@@ -7,7 +7,7 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"library\\\\numerical\\\\mod_int.cpp\"\n#include<bits/stdc++.h>\r\
+  bundledCode: "#line 1 \"library/numerical/mod_int.cpp\"\n#include<bits/stdc++.h>\r\
     \nconst int MOD = 1e9 + 7;\r\ntypedef std::decay <decltype(MOD)>::type mod_t;\r\
     \nstruct mi {\r\n    mod_t val;\r\n    explicit operator mod_t() const { return\
     \ val; }\r\n    mi() { val = 0; }\r\n    mi(const long long& v) {\r\n        val\
@@ -64,15 +64,15 @@ data:
     \n};\r\n\r\nint main(){\r\n    return 0;\r\n}\r\n"
   dependsOn: []
   isVerificationFile: false
-  path: library\numerical\mod_int.cpp
+  path: library/numerical/mod_int.cpp
   requiredBy: []
   timestamp: '2020-11-28 19:52:25-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: library\numerical\mod_int.cpp
+documentation_of: library/numerical/mod_int.cpp
 layout: document
 redirect_from:
-- /library\library\numerical\mod_int.cpp
-- /library\library\numerical\mod_int.cpp.html
-title: library\numerical\mod_int.cpp
+- /library/library/numerical/mod_int.cpp
+- /library/library/numerical/mod_int.cpp.html
+title: library/numerical/mod_int.cpp
 ---

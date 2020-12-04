@@ -7,7 +7,7 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"library\\\\number-theory\\\\fast_factor_sieve.cpp\"\n#include<bits/stdc++.h>\r\
+  bundledCode: "#line 1 \"library/number-theory/fast_factor_sieve.cpp\"\n#include<bits/stdc++.h>\r\
     \ntemplate <int SZ> struct Sieve {\r\n    int spf[SZ];\r\n    Sieve() {\r\n  \
     \      spf[1] = 1;\r\n        for (int i = 2; i < SZ; i++) \r\n            spf[i]\
     \ = i;\r\n        for (int i = 4; i < SZ; i += 2) \r\n            spf[i] = 2;\r\
@@ -37,15 +37,15 @@ data:
     \ main() {\r\n    return 0;\r\n}"
   dependsOn: []
   isVerificationFile: false
-  path: library\number-theory\fast_factor_sieve.cpp
+  path: library/number-theory/fast_factor_sieve.cpp
   requiredBy: []
   timestamp: '2020-11-28 19:57:11-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: library\number-theory\fast_factor_sieve.cpp
+documentation_of: library/number-theory/fast_factor_sieve.cpp
 layout: document
 redirect_from:
-- /library\library\number-theory\fast_factor_sieve.cpp
-- /library\library\number-theory\fast_factor_sieve.cpp.html
-title: library\number-theory\fast_factor_sieve.cpp
+- /library/library/number-theory/fast_factor_sieve.cpp
+- /library/library/number-theory/fast_factor_sieve.cpp.html
+title: library/number-theory/fast_factor_sieve.cpp
 ---

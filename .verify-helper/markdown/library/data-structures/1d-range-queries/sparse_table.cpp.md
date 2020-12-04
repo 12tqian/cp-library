@@ -7,7 +7,7 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"library\\\\data-structures\\\\1d-range-queries\\\\sparse_table.cpp\"\
+  bundledCode: "#line 1 \"library/data-structures/1d-range-queries/sparse_table.cpp\"\
     \n#include<bits/stdc++.h>\r\ntemplate <class T> struct SparseTable {\r\n    std::vector<T>\
     \ v;\r\n    std::vector<std::vector<int>> jump;\r\n    int level(int x) {\r\n\
     \        return 31 - __builtin_clz(x);\r\n    }\r\n    int comb(int a, int b)\
@@ -38,15 +38,15 @@ data:
     \ v[index(l, r)];\r\n    }\r\n};\r\nint main() {\r\n    return 0;\r\n}\r\n"
   dependsOn: []
   isVerificationFile: false
-  path: library\data-structures\1d-range-queries\sparse_table.cpp
+  path: library/data-structures/1d-range-queries/sparse_table.cpp
   requiredBy: []
   timestamp: '2020-11-28 19:53:28-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: library\data-structures\1d-range-queries\sparse_table.cpp
+documentation_of: library/data-structures/1d-range-queries/sparse_table.cpp
 layout: document
 redirect_from:
-- /library\library\data-structures\1d-range-queries\sparse_table.cpp
-- /library\library\data-structures\1d-range-queries\sparse_table.cpp.html
-title: library\data-structures\1d-range-queries\sparse_table.cpp
+- /library/library/data-structures/1d-range-queries/sparse_table.cpp
+- /library/library/data-structures/1d-range-queries/sparse_table.cpp.html
+title: library/data-structures/1d-range-queries/sparse_table.cpp
 ---

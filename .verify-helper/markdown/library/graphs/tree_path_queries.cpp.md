@@ -7,7 +7,7 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"library\\\\graphs\\\\tree_path_queries.cpp\"\n#include<bits/stdc++.h>\r\
+  bundledCode: "#line 1 \"library/graphs/tree_path_queries.cpp\"\n#include<bits/stdc++.h>\r\
     \n\r\ntemplate <class T> struct LCAJumpSparse {\r\n    int n;\r\n    std::vector<std::vector<int>>\
     \ par;\r\n    std::vector<std::vector<T>> sparse;\r\n    std::vector<T> vals;\r\
     \n    std::vector<std::vector<int>> adj;\r\n    std::vector<int> depth;\r\n\r\n\
@@ -72,15 +72,15 @@ data:
     int main() {\r\n    LCAJumpSparse<int> L;\r\n    return 0;\r\n}\r\n"
   dependsOn: []
   isVerificationFile: false
-  path: library\graphs\tree_path_queries.cpp
+  path: library/graphs/tree_path_queries.cpp
   requiredBy: []
   timestamp: '2020-11-28 19:56:50-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: library\graphs\tree_path_queries.cpp
+documentation_of: library/graphs/tree_path_queries.cpp
 layout: document
 redirect_from:
-- /library\library\graphs\tree_path_queries.cpp
-- /library\library\graphs\tree_path_queries.cpp.html
-title: library\graphs\tree_path_queries.cpp
+- /library/library/graphs/tree_path_queries.cpp
+- /library/library/graphs/tree_path_queries.cpp.html
+title: library/graphs/tree_path_queries.cpp
 ---

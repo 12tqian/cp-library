@@ -7,7 +7,7 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"library\\\\dynamic-programming\\\\dynamic_convex_hull_trick.cpp\"\
+  bundledCode: "#line 1 \"library/dynamic-programming/dynamic_convex_hull_trick.cpp\"\
     \n#include<bits/stdc++.h>\r\n\r\nconst long long INF = 1e18;\r\nstruct ConvexHullTrick\
     \ {\r\n    // modified for minimums\r\n    struct line {\r\n        long long\
     \ m, b; long double x, val;\r\n        bool is_query;\r\n        line(long long\
@@ -74,15 +74,15 @@ data:
     \ 0;\r\n}\r\n"
   dependsOn: []
   isVerificationFile: false
-  path: library\dynamic-programming\dynamic_convex_hull_trick.cpp
+  path: library/dynamic-programming/dynamic_convex_hull_trick.cpp
   requiredBy: []
   timestamp: '2020-11-24 21:07:18-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: library\dynamic-programming\dynamic_convex_hull_trick.cpp
+documentation_of: library/dynamic-programming/dynamic_convex_hull_trick.cpp
 layout: document
 redirect_from:
-- /library\library\dynamic-programming\dynamic_convex_hull_trick.cpp
-- /library\library\dynamic-programming\dynamic_convex_hull_trick.cpp.html
-title: library\dynamic-programming\dynamic_convex_hull_trick.cpp
+- /library/library/dynamic-programming/dynamic_convex_hull_trick.cpp
+- /library/library/dynamic-programming/dynamic_convex_hull_trick.cpp.html
+title: library/dynamic-programming/dynamic_convex_hull_trick.cpp
 ---

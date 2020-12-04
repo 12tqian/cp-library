@@ -7,7 +7,7 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"library\\\\dynamic-programming\\\\gosper_hack.cpp\"\n#include<bits/stdc++.h>\r\
+  bundledCode: "#line 1 \"library/dynamic-programming/gosper_hack.cpp\"\n#include<bits/stdc++.h>\r\
     \nstd::string binary(unsigned long long n ) { //long long to binary string\r\n\
     \    std::string result;\r\n    do result.push_back('0' + (n & 1));\r\n    while\
     \ (n >>= 1);\r\n    reverse(result.begin(), result.end());\r\n    return result;\r\
@@ -28,15 +28,15 @@ data:
     \  }\r\n    }\r\n    return 0;\r\n}\r\n"
   dependsOn: []
   isVerificationFile: false
-  path: library\dynamic-programming\gosper_hack.cpp
+  path: library/dynamic-programming/gosper_hack.cpp
   requiredBy: []
   timestamp: '2020-11-28 19:54:33-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: library\dynamic-programming\gosper_hack.cpp
+documentation_of: library/dynamic-programming/gosper_hack.cpp
 layout: document
 redirect_from:
-- /library\library\dynamic-programming\gosper_hack.cpp
-- /library\library\dynamic-programming\gosper_hack.cpp.html
-title: library\dynamic-programming\gosper_hack.cpp
+- /library/library/dynamic-programming/gosper_hack.cpp
+- /library/library/dynamic-programming/gosper_hack.cpp.html
+title: library/dynamic-programming/gosper_hack.cpp
 ---

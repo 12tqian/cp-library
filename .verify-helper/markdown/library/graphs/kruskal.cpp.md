@@ -7,7 +7,7 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"library\\\\graphs\\\\kruskal.cpp\"\n#include <bits/stdc++.h>\r\
+  bundledCode: "#line 1 \"library/graphs/kruskal.cpp\"\n#include <bits/stdc++.h>\r\
     \nstruct DSU {\r\n    std::vector<int> e;\r\n    void init(int n) {\r\n      \
     \  e = std::vector<int>(n, -1);\r\n    }\r\n    int get(int x) {\r\n        return\
     \ e[x] < 0 ? x : e[x] = get(e[x]);\r\n    }\r\n    bool same_set(int a, int b)\
@@ -39,15 +39,15 @@ data:
     \ 0;\r\n}\r\n\r\n"
   dependsOn: []
   isVerificationFile: false
-  path: library\graphs\kruskal.cpp
+  path: library/graphs/kruskal.cpp
   requiredBy: []
   timestamp: '2020-11-24 21:14:14-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: library\graphs\kruskal.cpp
+documentation_of: library/graphs/kruskal.cpp
 layout: document
 redirect_from:
-- /library\library\graphs\kruskal.cpp
-- /library\library\graphs\kruskal.cpp.html
-title: library\graphs\kruskal.cpp
+- /library/library/graphs/kruskal.cpp
+- /library/library/graphs/kruskal.cpp.html
+title: library/graphs/kruskal.cpp
 ---

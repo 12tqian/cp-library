@@ -7,7 +7,7 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"library\\\\graphs\\\\heavy_light.cpp\"\n#include<bits/stdc++.h>\r\
+  bundledCode: "#line 1 \"library/graphs/heavy_light.cpp\"\n#include<bits/stdc++.h>\r\
     \n\r\ntemplate <class T> struct LazySeg {\r\n    std::vector<T> sum, lazy;\r\n\
     \    int sz;\r\n    void init(int sz_) {\r\n        sz = 1;\r\n        while (sz\
     \ < sz_) sz *= 2;\r\n        sum.assign(2 * sz, 0);\r\n        lazy.assign(2 *\
@@ -122,15 +122,15 @@ data:
     \ return 0;\r\n}\r\n"
   dependsOn: []
   isVerificationFile: false
-  path: library\graphs\heavy_light.cpp
+  path: library/graphs/heavy_light.cpp
   requiredBy: []
   timestamp: '2020-11-28 19:56:19-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: library\graphs\heavy_light.cpp
+documentation_of: library/graphs/heavy_light.cpp
 layout: document
 redirect_from:
-- /library\library\graphs\heavy_light.cpp
-- /library\library\graphs\heavy_light.cpp.html
-title: library\graphs\heavy_light.cpp
+- /library/library/graphs/heavy_light.cpp
+- /library/library/graphs/heavy_light.cpp.html
+title: library/graphs/heavy_light.cpp
 ---

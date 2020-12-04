@@ -7,8 +7,8 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"library\\\\graphs\\\\centroid_decomposition.cpp\"\n#include\
-    \ <bits/stdc++.h>\r\nstruct CentroidDecomposition {\r\n    int n;\r\n    std::vector<std::vector<int>>\
+  bundledCode: "#line 1 \"library/graphs/centroid_decomposition.cpp\"\n#include <bits/stdc++.h>\r\
+    \nstruct CentroidDecomposition {\r\n    int n;\r\n    std::vector<std::vector<int>>\
     \ adj;\r\n    std::vector<bool> vis;\r\n    std::vector<int> size;\r\n    std::vector<int>\
     \ parent;\r\n    void init(int n_) {\r\n        n = n_;\r\n        adj.assign(n,\
     \ std::vector<int>());\r\n        vis.assign(n, false);\r\n        parent.assign(n,\
@@ -51,15 +51,15 @@ data:
     \       }\r\n    }\r\n};  \r\nint main() {\r\n    return 0;\r\n}"
   dependsOn: []
   isVerificationFile: false
-  path: library\graphs\centroid_decomposition.cpp
+  path: library/graphs/centroid_decomposition.cpp
   requiredBy: []
   timestamp: '2020-12-02 18:35:52-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: library\graphs\centroid_decomposition.cpp
+documentation_of: library/graphs/centroid_decomposition.cpp
 layout: document
 redirect_from:
-- /library\library\graphs\centroid_decomposition.cpp
-- /library\library\graphs\centroid_decomposition.cpp.html
-title: library\graphs\centroid_decomposition.cpp
+- /library/library/graphs/centroid_decomposition.cpp
+- /library/library/graphs/centroid_decomposition.cpp.html
+title: library/graphs/centroid_decomposition.cpp
 ---
