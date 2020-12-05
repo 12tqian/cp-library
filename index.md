@@ -99,6 +99,9 @@ data:
       path: library/graphs/lca_jump_distance.cpp
       title: library/graphs/lca_jump_distance.cpp
     - icon: ':warning:'
+      path: library/graphs/strongly_connected_components.cpp
+      title: library/graphs/strongly_connected_components.cpp
+    - icon: ':warning:'
       path: library/graphs/topological_sort.cpp
       title: library/graphs/topological_sort.cpp
     - icon: ':warning:'
