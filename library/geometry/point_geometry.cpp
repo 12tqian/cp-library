@@ -108,6 +108,18 @@ std::vector<Point<T>> segment_intersect(Point<T> a, Point<T> b, Point<T> c, Poin
         s.insert(d);
     return {s.begin(), s.end()};
 }
+template <class T> Point<T> extension(Point<T> a, Point<T> b, Point<T> c, Point<T> d) {
+    T x = cross(a, b, c);
+    T y = cross(a, b, d);
+    return (d * x - c * y) / (x - y);
+}
+template <class T> std::pair<int, Point<T>> line_intersect(Point<T> a, Point<T> b, Point<T> c, Point<T> d) {
+    // returns -1 if infinitely, 0 if none, 1 if unique 
+    if (cross(b - a, d - c) == 0)
+        return {-(cross(a, c, d) == 0), Point<T>()};
+    else 
+        return {1, extend(a, b, c, d)};
+}
 template <class T> T line_dist(Point<T> p, Point<T> a, Point<T> b) {
     return abs(area(p, a, b)) / abs(a - b); }
 template <class T> T point_segment_dist(Point<T> p, Point<T> a, Point<T> b) {
@@ -124,6 +136,32 @@ template <class T> T segment_segment_dist(Point<T> a, Point<T> b, Point<T> c, Po
     return std::min({point_segment_dist(a, c, d), point_segment_dist(b, c, d), 
         point_segment_dist(c, a, b), point_segment_dist(d, a, b)});
 }
+template <class T> std::pair<Point<T>, T> centroid_area(const std::vector<Point<T>> v) {
+    // pair of centroid and area, positive means CCW, negative means CW
+    Point<T> centroid(0, 0);
+    T area = 0;
+    for (int i = 0; i < (int) v.size(); i++) {
+        int j = (i + 1) % ((int) v.size());
+        T a = cross(v[i], v[j]);
+        centroid += a * (v[i] + v[j]);
+        area += a;
+    }
+    return {centroid / area / (T) 3, area / 2};
+}
+template<class T> int polygon_point(const std::vector<Point<T>>& p, Point<T> z) {
+    // returns -1 if outside, 0 if on, 1 if inside
+    int n = (int) p.size();
+    int ans = 0;
+    for (int i = 0; i < n; i++) {
+        Point<T> x = p[i], y = p[(i + 1) % n];
+        if (x.y > y.y) 
+            std::swap(x, y);
+        if (on_segment(z, x, y))
+            return 0;
+        ans ^= (x.y <= z.y && y.y > z.y && area(z, x, y) > 0);
+    }
+    return ans ? 1 : -1;
+}
 
 } // Geometry2D
 
@@ -132,13 +170,26 @@ int main() {
     using namespace Geometry2D;
     typedef long double ld;
     typedef Point<long double> P;
-    cout << setprecision(2) << fixed;
-    int n; cin >> n;
-    while (n--) {
-        ld x1, y1, x2, y2, x3, y3, x4, y4;
-        cin >> x1 >> y1 >> x2 >> y2 >> x3 >> y3 >> x4 >> y4;
-        ld ans = segment_segment_dist(P(x1, y1), P(x2, y2), P(x3, y3), P(x4, y4));
-        cout << ans << '\n';
+    cout << setprecision(1) << fixed;
+    while (true) {
+        int n; cin >> n;
+        if (n == 0)
+            return 0;
+        vector<Point<int>> v(n);
+        for (int i = 0; i < n; i++) 
+            cin >> v[i].x >> v[i].y;
+        int m; cin >> m;
+        while (m--) {
+            Point<int> p;
+            cin >> p.x >> p.y;
+            int res = polygon_point(v, p);
+            if (res == -1)
+                cout << "out\n";
+            else if (res == 0)
+                cout << "on\n";
+            else 
+                cout << "in\n";
+        }
     }
     return 0;
 }
