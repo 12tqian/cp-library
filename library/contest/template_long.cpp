@@ -174,6 +174,8 @@ struct mi {
     friend std::istream& operator >> (std::istream& in, mi& a) { 
         long long x; std::cin >> x; a = mi(x); return in; }
     friend std::ostream& operator << (std::ostream& os, const mi& a) { return os << a.val; }
+    friend void pr(const mi& a) { pr(a.val); }
+    friend void re(mi& a) { ll x; re(x); a = mi(x); }
     friend bool operator == (const mi& a, const mi& b) { return a.val == b.val; }
     friend bool operator != (const mi& a, const mi& b) { return !(a == b); }    
     friend bool operator < (const mi& a, const mi& b) { return a.val < b.val; }

@@ -23,7 +23,7 @@ template<class T> struct LCAJumpDistance {
         dfs(root);
     }
     void dfs(int src = 0) {
-        for (int i = 1; i < par.size(); i++) {
+        for (int i = 1; i < (int) par.size(); i++) {
             par[i][src] = par[i - 1][par[i - 1][src]];
         }
         for (auto nxt: adj[src]) {
@@ -34,7 +34,7 @@ template<class T> struct LCAJumpDistance {
         }
     }
     int jump(int x, int d) {
-        for (int i = 0; i < par.size(); i++) {
+        for (int i = 0; i < (int) par.size(); i++) {
             if ((d >> i) & 1) {
                 x = par[i][x];
             }
@@ -45,7 +45,7 @@ template<class T> struct LCAJumpDistance {
         if (depth[x] < depth[y]) std::swap(x, y);
         x = jump(x, depth[x] - depth[y]);
         if (x == y) return x;
-        for (int i = par.size() - 1; i >= 0; i--) {
+        for (int i = (int) par.size() - 1; i >= 0; i--) {
             int nx = par[i][x];
             int ny = par[i][y];
             if (nx != ny) x = nx, y = ny;
