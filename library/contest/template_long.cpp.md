@@ -87,15 +87,16 @@ data:
     \ v : v % MOD;\n        if (val < 0) val += MOD; }\n    friend std::istream& operator\
     \ >> (std::istream& in, mi& a) { \n        long long x; std::cin >> x; a = mi(x);\
     \ return in; }\n    friend std::ostream& operator << (std::ostream& os, const\
-    \ mi& a) { return os << a.val; }\n    friend bool operator == (const mi& a, const\
-    \ mi& b) { return a.val == b.val; }\n    friend bool operator != (const mi& a,\
-    \ const mi& b) { return !(a == b); }    \n    friend bool operator < (const mi&\
-    \ a, const mi& b) { return a.val < b.val; }\n    friend bool operator > (const\
-    \ mi& a, const mi& b) { return a.val > b.val; }\n    friend bool operator <= (const\
-    \ mi& a, const mi& b) { return a.val <= b.val; }\n    friend bool operator >=\
-    \ (const mi& a, const mi& b) { return a.val >= b.val; }\n    mi operator - ()\
-    \ const { return mi(-val); }\n    mi& operator += (const mi& m) {\n        if\
-    \ ((val += m.val) >= MOD) val -= MOD;\n        return *this; }\n    mi& operator\
+    \ mi& a) { return os << a.val; }\n    friend void pr(const mi& a) { pr(a.val);\
+    \ }\n    friend void re(mi& a) { ll x; re(x); a = mi(x); }\n    friend bool operator\
+    \ == (const mi& a, const mi& b) { return a.val == b.val; }\n    friend bool operator\
+    \ != (const mi& a, const mi& b) { return !(a == b); }    \n    friend bool operator\
+    \ < (const mi& a, const mi& b) { return a.val < b.val; }\n    friend bool operator\
+    \ > (const mi& a, const mi& b) { return a.val > b.val; }\n    friend bool operator\
+    \ <= (const mi& a, const mi& b) { return a.val <= b.val; }\n    friend bool operator\
+    \ >= (const mi& a, const mi& b) { return a.val >= b.val; }\n    mi operator -\
+    \ () const { return mi(-val); }\n    mi& operator += (const mi& m) {\n       \
+    \ if ((val += m.val) >= MOD) val -= MOD;\n        return *this; }\n    mi& operator\
     \ -= (const mi& m) {\n        if ((val -= m.val) < 0) val += MOD;\n        return\
     \ *this; }\n    mi& operator *= (const mi& m) { val = (long long) val * m.val\
     \ % MOD;\n        return *this; }\n    friend mi pow(mi a, long long p) {\n  \
@@ -187,15 +188,16 @@ data:
     \ v : v % MOD;\n        if (val < 0) val += MOD; }\n    friend std::istream& operator\
     \ >> (std::istream& in, mi& a) { \n        long long x; std::cin >> x; a = mi(x);\
     \ return in; }\n    friend std::ostream& operator << (std::ostream& os, const\
-    \ mi& a) { return os << a.val; }\n    friend bool operator == (const mi& a, const\
-    \ mi& b) { return a.val == b.val; }\n    friend bool operator != (const mi& a,\
-    \ const mi& b) { return !(a == b); }    \n    friend bool operator < (const mi&\
-    \ a, const mi& b) { return a.val < b.val; }\n    friend bool operator > (const\
-    \ mi& a, const mi& b) { return a.val > b.val; }\n    friend bool operator <= (const\
-    \ mi& a, const mi& b) { return a.val <= b.val; }\n    friend bool operator >=\
-    \ (const mi& a, const mi& b) { return a.val >= b.val; }\n    mi operator - ()\
-    \ const { return mi(-val); }\n    mi& operator += (const mi& m) {\n        if\
-    \ ((val += m.val) >= MOD) val -= MOD;\n        return *this; }\n    mi& operator\
+    \ mi& a) { return os << a.val; }\n    friend void pr(const mi& a) { pr(a.val);\
+    \ }\n    friend void re(mi& a) { ll x; re(x); a = mi(x); }\n    friend bool operator\
+    \ == (const mi& a, const mi& b) { return a.val == b.val; }\n    friend bool operator\
+    \ != (const mi& a, const mi& b) { return !(a == b); }    \n    friend bool operator\
+    \ < (const mi& a, const mi& b) { return a.val < b.val; }\n    friend bool operator\
+    \ > (const mi& a, const mi& b) { return a.val > b.val; }\n    friend bool operator\
+    \ <= (const mi& a, const mi& b) { return a.val <= b.val; }\n    friend bool operator\
+    \ >= (const mi& a, const mi& b) { return a.val >= b.val; }\n    mi operator -\
+    \ () const { return mi(-val); }\n    mi& operator += (const mi& m) {\n       \
+    \ if ((val += m.val) >= MOD) val -= MOD;\n        return *this; }\n    mi& operator\
     \ -= (const mi& m) {\n        if ((val -= m.val) < 0) val += MOD;\n        return\
     \ *this; }\n    mi& operator *= (const mi& m) { val = (long long) val * m.val\
     \ % MOD;\n        return *this; }\n    friend mi pow(mi a, long long p) {\n  \
@@ -212,7 +214,7 @@ data:
   isVerificationFile: false
   path: library/contest/template_long.cpp
   requiredBy: []
-  timestamp: '2020-12-04 21:40:44-05:00'
+  timestamp: '2020-12-10 19:54:30-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/contest/template_long.cpp

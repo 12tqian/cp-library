@@ -14,15 +14,15 @@ data:
     \ std::vector<int>(n));\n        adj.resize(n);\n        depth.resize(n);\n  \
     \  }\n    void ae(int x, int y) {\n        adj[x].push_back(y);\n        adj[y].push_back(x);\n\
     \    }\n    void gen(int root = 0) {\n        par[0][root] = root;\n        dfs(root);\n\
-    \    }\n    void dfs(int src = 0) {\n        for (int i = 1; i < par.size(); i++)\
-    \ {\n            par[i][src] = par[i - 1][par[i - 1][src]];\n        }\n     \
-    \   for (int nxt: adj[src]) {\n            if (nxt == par[0][src]) continue;\n\
+    \    }\n    void dfs(int src = 0) {\n        for (int i = 1; i < (int) par.size();\
+    \ i++) {\n            par[i][src] = par[i - 1][par[i - 1][src]];\n        }\n\
+    \        for (int nxt: adj[src]) {\n            if (nxt == par[0][src]) continue;\n\
     \            depth[nxt] = depth[par[0][nxt] = src] + 1;\n            dfs(nxt);\n\
-    \        }\n    }\n    int jump(int x, int d) {\n        for (int i = 0; i < par.size();\
-    \ i++) {\n            if ((d >> i) & 1) {\n                x = par[i][x];\n  \
-    \          }\n        }\n        return x;\n    }\n    int lca(int x, int y) {\n\
-    \        if (depth[x] < depth[y]) std::swap(x, y);\n        x = jump(x, depth[x]\
-    \ - depth[y]);\n        if (x == y) return x;\n        for (int i = par.size()\
+    \        }\n    }\n    int jump(int x, int d) {\n        for (int i = 0; i < (int)\
+    \ par.size(); i++) {\n            if ((d >> i) & 1) {\n                x = par[i][x];\n\
+    \            }\n        }\n        return x;\n    }\n    int lca(int x, int y)\
+    \ {\n        if (depth[x] < depth[y]) std::swap(x, y);\n        x = jump(x, depth[x]\
+    \ - depth[y]);\n        if (x == y) return x;\n        for (int i = (int) par.size()\
     \ - 1; i >= 0; i--) {\n            int nx = par[i][x];\n            int ny = par[i][y];\n\
     \            if (nx != ny) x = nx, y = ny;\n        }\n        return par[0][x];\n\
     \    }\n};\nint main() {\n    return 0;\n}\n"
@@ -33,23 +33,23 @@ data:
     \        depth.resize(n);\n    }\n    void ae(int x, int y) {\n        adj[x].push_back(y);\n\
     \        adj[y].push_back(x);\n    }\n    void gen(int root = 0) {\n        par[0][root]\
     \ = root;\n        dfs(root);\n    }\n    void dfs(int src = 0) {\n        for\
-    \ (int i = 1; i < par.size(); i++) {\n            par[i][src] = par[i - 1][par[i\
-    \ - 1][src]];\n        }\n        for (int nxt: adj[src]) {\n            if (nxt\
-    \ == par[0][src]) continue;\n            depth[nxt] = depth[par[0][nxt] = src]\
-    \ + 1;\n            dfs(nxt);\n        }\n    }\n    int jump(int x, int d) {\n\
-    \        for (int i = 0; i < par.size(); i++) {\n            if ((d >> i) & 1)\
-    \ {\n                x = par[i][x];\n            }\n        }\n        return\
-    \ x;\n    }\n    int lca(int x, int y) {\n        if (depth[x] < depth[y]) std::swap(x,\
-    \ y);\n        x = jump(x, depth[x] - depth[y]);\n        if (x == y) return x;\n\
-    \        for (int i = par.size() - 1; i >= 0; i--) {\n            int nx = par[i][x];\n\
-    \            int ny = par[i][y];\n            if (nx != ny) x = nx, y = ny;\n\
-    \        }\n        return par[0][x];\n    }\n};\nint main() {\n    return 0;\n\
-    }\n"
+    \ (int i = 1; i < (int) par.size(); i++) {\n            par[i][src] = par[i -\
+    \ 1][par[i - 1][src]];\n        }\n        for (int nxt: adj[src]) {\n       \
+    \     if (nxt == par[0][src]) continue;\n            depth[nxt] = depth[par[0][nxt]\
+    \ = src] + 1;\n            dfs(nxt);\n        }\n    }\n    int jump(int x, int\
+    \ d) {\n        for (int i = 0; i < (int) par.size(); i++) {\n            if ((d\
+    \ >> i) & 1) {\n                x = par[i][x];\n            }\n        }\n   \
+    \     return x;\n    }\n    int lca(int x, int y) {\n        if (depth[x] < depth[y])\
+    \ std::swap(x, y);\n        x = jump(x, depth[x] - depth[y]);\n        if (x ==\
+    \ y) return x;\n        for (int i = (int) par.size() - 1; i >= 0; i--) {\n  \
+    \          int nx = par[i][x];\n            int ny = par[i][y];\n            if\
+    \ (nx != ny) x = nx, y = ny;\n        }\n        return par[0][x];\n    }\n};\n\
+    int main() {\n    return 0;\n}\n"
   dependsOn: []
   isVerificationFile: false
   path: library/graphs/lca_jump.cpp
   requiredBy: []
-  timestamp: '2020-12-04 02:43:09-05:00'
+  timestamp: '2020-12-10 19:54:30-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/graphs/lca_jump.cpp
