@@ -115,6 +115,14 @@ data:
     - icon: ':warning:'
       path: library/graphs/tree_path_queries.cpp
       title: library/graphs/tree_path_queries.cpp
+  - name: library/graphs/flows
+    pages:
+    - icon: ':warning:'
+      path: library/graphs/flows/dinic.cpp
+      title: library/graphs/flows/dinic.cpp
+    - icon: ':warning:'
+      path: library/graphs/flows/push_relabel.cpp
+      title: library/graphs/flows/push_relabel.cpp
   - name: library/number-theory
     pages:
     - icon: ':warning:'
