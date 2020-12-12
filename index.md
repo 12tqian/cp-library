@@ -152,8 +152,17 @@ data:
   - name: library/string
     pages:
     - icon: ':warning:'
+      path: library/string/hashing.cpp
+      title: library/string/hashing.cpp
+    - icon: ':warning:'
       path: library/string/manacher.cpp
       title: library/string/manacher.cpp
+    - icon: ':warning:'
+      path: library/string/suffix_array.cpp
+      title: library/string/suffix_array.cpp
+    - icon: ':warning:'
+      path: library/string/suffix_array_linear.cpp
+      title: library/string/suffix_array_linear.cpp
   verificationCategories:
   - name: test
     pages:
