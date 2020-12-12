@@ -10,11 +10,11 @@ template <class T> struct SparseTable {
     }
     void init(const std::vector<T>& _v) {
         v = _v;
-        jump = {std::vector<int>(v.size())};
+        jump = {std::vector<int>((int) v.size())};
         iota(jump[0].begin(), jump[0].end(), 0);
-        for (int j = 1; (1 << j) <= v.size(); j++) {
-            jump.push_back(std::vector<int>(v.size() - (1 << j) + 1));
-            for (int i = 0; i < jump[j].size(); i++) {
+        for (int j = 1; (1 << j) <= (int) v.size(); j++) {
+            jump.push_back(std::vector<int>((int) v.size() - (1 << j) + 1));
+            for (int i = 0; i < (int) jump[j].size(); i++) {
                 jump[j][i] = comb(jump[j - 1][i], jump[j - 1][i + (1 << (j - 1))]);
             }
         }
