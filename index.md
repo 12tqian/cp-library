@@ -149,6 +149,11 @@ data:
     - icon: ':warning:'
       path: library/numerical/mod_int2.cpp
       title: library/numerical/mod_int2.cpp
+  - name: library/string
+    pages:
+    - icon: ':warning:'
+      path: library/string/manacher.cpp
+      title: library/string/manacher.cpp
   verificationCategories:
   - name: test
     pages:
