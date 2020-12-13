@@ -11,7 +11,7 @@ data:
     \nstruct BCC {\n    int n, time, num_comps; \n    std::vector<int> ord, low, id;\
     \ \n    // order encountered, earliest time in subtree, component id\n    std::vector<std::vector<int>>\
     \ adj, comps, tree;\n    // adj, comps storage, bridge block tree\n    std::vector<std::pair<int,\
-    \ int>> bridge;\n    // bridges\n    void init (int n_) {\n        num_comps =\
+    \ int>> bridge;\n    // bridges\n    void init(int n_) {\n        num_comps =\
     \ time = 0;\n        n = n_;\n        ord.assign(n, -1);\n        low.assign(n,\
     \ 0);\n        id.assign(n, -1);\n        adj.assign(n, std::vector<int>());\n\
     \        comps.clear();\n        tree.clear();\n    }\n    void ae(int u, int\
@@ -47,7 +47,7 @@ data:
     \    std::vector<int> ord, low, id; \n    // order encountered, earliest time\
     \ in subtree, component id\n    std::vector<std::vector<int>> adj, comps, tree;\n\
     \    // adj, comps storage, bridge block tree\n    std::vector<std::pair<int,\
-    \ int>> bridge;\n    // bridges\n    void init (int n_) {\n        num_comps =\
+    \ int>> bridge;\n    // bridges\n    void init(int n_) {\n        num_comps =\
     \ time = 0;\n        n = n_;\n        ord.assign(n, -1);\n        low.assign(n,\
     \ 0);\n        id.assign(n, -1);\n        adj.assign(n, std::vector<int>());\n\
     \        comps.clear();\n        tree.clear();\n    }\n    void ae(int u, int\
@@ -83,7 +83,7 @@ data:
   isVerificationFile: false
   path: library/graphs/biconnected_components.cpp
   requiredBy: []
-  timestamp: '2020-12-04 19:48:55-05:00'
+  timestamp: '2020-12-12 23:32:58-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/graphs/biconnected_components.cpp
