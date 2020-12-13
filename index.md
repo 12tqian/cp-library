@@ -30,6 +30,9 @@ data:
       path: library/data-structures/1d-range-queries/range_set_segment_tree.cpp
       title: library/data-structures/1d-range-queries/range_set_segment_tree.cpp
     - icon: ':warning:'
+      path: library/data-structures/1d-range-queries/segment_tree_beats.cpp
+      title: library/data-structures/1d-range-queries/segment_tree_beats.cpp
+    - icon: ':warning:'
       path: library/data-structures/1d-range-queries/sparse_seg.cpp
       title: library/data-structures/1d-range-queries/sparse_seg.cpp
     - icon: ':warning:'
