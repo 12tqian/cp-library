@@ -8,7 +8,7 @@ struct BCC {
     // adj, comps storage, bridge block tree
     std::vector<std::pair<int, int>> bridge;
     // bridges
-    void init (int n_) {
+    void init(int n_) {
         num_comps = time = 0;
         n = n_;
         ord.assign(n, -1);
