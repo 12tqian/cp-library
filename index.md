@@ -74,6 +74,9 @@ data:
   - name: library/graphs
     pages:
     - icon: ':warning:'
+      path: library/graphs/bellman_ford.cpp
+      title: library/graphs/bellman_ford.cpp
+    - icon: ':warning:'
       path: library/graphs/biconnected_components.cpp
       title: library/graphs/biconnected_components.cpp
     - icon: ':warning:'
@@ -121,8 +124,16 @@ data:
       path: library/graphs/flows/dinic.cpp
       title: library/graphs/flows/dinic.cpp
     - icon: ':warning:'
+      path: library/graphs/flows/min_cost_max_flow.cpp
+      title: library/graphs/flows/min_cost_max_flow.cpp
+    - icon: ':warning:'
       path: library/graphs/flows/push_relabel.cpp
       title: library/graphs/flows/push_relabel.cpp
+  - name: library/misc
+    pages:
+    - icon: ':warning:'
+      path: library/misc/fast_hash_map.cpp
+      title: library/misc/fast_hash_map.cpp
   - name: library/number-theory
     pages:
     - icon: ':warning:'
