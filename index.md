@@ -101,6 +101,9 @@ data:
       path: library/graphs/heavy_light.cpp
       title: library/graphs/heavy_light.cpp
     - icon: ':warning:'
+      path: library/graphs/hungarian.cpp
+      title: library/graphs/hungarian.cpp
+    - icon: ':warning:'
       path: library/graphs/kruskal.cpp
       title: library/graphs/kruskal.cpp
     - icon: ':warning:'
