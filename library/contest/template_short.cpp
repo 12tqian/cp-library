@@ -30,7 +30,7 @@ typedef vector<pl> vpl;
 #define sz(x) (int) (x).size()
 #define all(x) begin(x), end(x)
 
-#define f1r(i, a, b) for(int i = (a); i < (b); ++i)
+#define f1r(i, a, b) for (int i = (a); i < (b); ++i)
 #define f0r(i, a) f1r(i, 0, a)
 
 mt19937 rng((uint32_t) chrono::steady_clock::now().time_since_epoch().count());

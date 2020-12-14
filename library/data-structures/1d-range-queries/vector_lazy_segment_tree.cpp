@@ -27,7 +27,7 @@ template <class T> struct LazySeg {
     void upd(int lo, int hi, T inc, int ind = 1, int L = 0, int R = -1) {
         if (R == -1) R += sz;
         push(ind, L, R);
-        if (hi < L || R < lo) return ;
+        if (hi < L || R < lo) return;
         if (lo <= L && R <= hi) {
             lazy[ind] = inc;
             push(ind, L, R);

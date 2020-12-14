@@ -67,7 +67,7 @@ typedef vector<pd> vpd;
 #define lb lower_bound
 #define ub upper_bound
 
-#define f1r(i, a, b) for(int i = (a); i < (b); ++i)
+#define f1r(i, a, b) for (int i = (a); i < (b); ++i)
 #define f0r(i, a) f1r(i, 0, a)
 #define FOR(i, a, b) for (int i = (a); i < (b); ++i)
 #define F0R(i, a) FOR(i,0,a)
@@ -175,7 +175,7 @@ struct mi {
         long long x; std::cin >> x; a = mi(x); return in; }
     friend std::ostream& operator << (std::ostream& os, const mi& a) { return os << a.val; }
     friend void pr(const mi& a) { pr(a.val); }
-    friend void re(mi& a) { ll x; re(x); a = mi(x); }
+    friend void re(mi& a) { long long x; cin >> x; a = mi(x); }
     friend bool operator == (const mi& a, const mi& b) { return a.val == b.val; }
     friend bool operator != (const mi& a, const mi& b) { return !(a == b); }    
     friend bool operator < (const mi& a, const mi& b) { return a.val < b.val; }
