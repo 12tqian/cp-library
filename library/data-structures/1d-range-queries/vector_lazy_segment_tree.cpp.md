@@ -18,7 +18,7 @@ data:
     \ ind] + sum[2 * ind + 1];\n    }\n    void build() {\n        for (int i = sz\
     \ - 1; i >= 1; i--) {\n            pull(i);\n        }\n    }\n    void upd(int\
     \ lo, int hi, T inc, int ind = 1, int L = 0, int R = -1) {\n        if (R == -1)\
-    \ R += sz;\n        push(ind, L, R);\n        if (hi < L || R < lo) return ;\n\
+    \ R += sz;\n        push(ind, L, R);\n        if (hi < L || R < lo) return;\n\
     \        if (lo <= L && R <= hi) {\n            lazy[ind] = inc;\n           \
     \ push(ind, L, R);\n            return;\n        }\n        int M = (L + R) /\
     \ 2;\n        upd(lo, hi, inc, 2 * ind, L, M);\n        upd(lo, hi, inc, 2 * ind\
@@ -38,7 +38,7 @@ data:
     \ ind] + sum[2 * ind + 1];\n    }\n    void build() {\n        for (int i = sz\
     \ - 1; i >= 1; i--) {\n            pull(i);\n        }\n    }\n    void upd(int\
     \ lo, int hi, T inc, int ind = 1, int L = 0, int R = -1) {\n        if (R == -1)\
-    \ R += sz;\n        push(ind, L, R);\n        if (hi < L || R < lo) return ;\n\
+    \ R += sz;\n        push(ind, L, R);\n        if (hi < L || R < lo) return;\n\
     \        if (lo <= L && R <= hi) {\n            lazy[ind] = inc;\n           \
     \ push(ind, L, R);\n            return;\n        }\n        int M = (L + R) /\
     \ 2;\n        upd(lo, hi, inc, 2 * ind, L, M);\n        upd(lo, hi, inc, 2 * ind\
@@ -52,7 +52,7 @@ data:
   isVerificationFile: false
   path: library/data-structures/1d-range-queries/vector_lazy_segment_tree.cpp
   requiredBy: []
-  timestamp: '2020-12-04 02:43:09-05:00'
+  timestamp: '2020-12-14 17:44:59-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/data-structures/1d-range-queries/vector_lazy_segment_tree.cpp

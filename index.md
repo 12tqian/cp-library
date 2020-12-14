@@ -12,9 +12,6 @@ data:
   - name: library/data-structures/1d-range-queries
     pages:
     - icon: ':warning:'
-      path: library/data-structures/1d-range-queries/array_lazy_segment_tree.cpp
-      title: library/data-structures/1d-range-queries/array_lazy_segment_tree.cpp
-    - icon: ':warning:'
       path: library/data-structures/1d-range-queries/binary_indexed_tree.cpp
       title: library/data-structures/1d-range-queries/binary_indexed_tree.cpp
     - icon: ':warning:'
@@ -95,6 +92,9 @@ data:
       path: library/graphs/dsu.cpp
       title: library/graphs/dsu.cpp
     - icon: ':warning:'
+      path: library/graphs/dsu_rollback.cpp
+      title: library/graphs/dsu_rollback.cpp
+    - icon: ':warning:'
       path: library/graphs/enumerate_triangles.cpp
       title: library/graphs/enumerate_triangles.cpp
     - icon: ':warning:'
@@ -155,6 +155,9 @@ data:
       path: library/number-theory/fast_factor_sieve.cpp
       title: library/number-theory/fast_factor_sieve.cpp
     - icon: ':warning:'
+      path: library/number-theory/mod_sqrt.cpp
+      title: library/number-theory/mod_sqrt.cpp
+    - icon: ':warning:'
       path: library/number-theory/sieve.cpp
       title: library/number-theory/sieve.cpp
   - name: library/numerical
@@ -188,6 +191,11 @@ data:
     - icon: ':warning:'
       path: library/string/suffix_array_linear.cpp
       title: library/string/suffix_array_linear.cpp
+  - name: library/unused
+    pages:
+    - icon: ':warning:'
+      path: library/unused/array_lazy_segment_tree.cpp
+      title: library/unused/array_lazy_segment_tree.cpp
   verificationCategories:
   - name: test
     pages:

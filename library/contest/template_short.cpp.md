@@ -17,7 +17,7 @@ data:
     \ mp make_pair\n#define f first\n#define s second\n#define resz resize\n#define\
     \ ins insert\n#define pb push_back\n#define eb emplace_back\n#define lb lower_bound\n\
     #define ub upper_bound\n#define sz(x) (int) (x).size()\n#define all(x) begin(x),\
-    \ end(x)\n\n#define f1r(i, a, b) for(int i = (a); i < (b); ++i)\n#define f0r(i,\
+    \ end(x)\n\n#define f1r(i, a, b) for (int i = (a); i < (b); ++i)\n#define f0r(i,\
     \ a) f1r(i, 0, a)\n\nmt19937 rng((uint32_t) chrono::steady_clock::now().time_since_epoch().count());\n\
     \ntemplate<class T> bool ckmin(T& a, const T& b) { return b < a ? a = b, 1 : 0;\
     \ }\ntemplate<class T> bool ckmax(T& a, const T& b) { return a < b ? a = b, 1\
@@ -31,7 +31,7 @@ data:
     \ mp make_pair\n#define f first\n#define s second\n#define resz resize\n#define\
     \ ins insert\n#define pb push_back\n#define eb emplace_back\n#define lb lower_bound\n\
     #define ub upper_bound\n#define sz(x) (int) (x).size()\n#define all(x) begin(x),\
-    \ end(x)\n\n#define f1r(i, a, b) for(int i = (a); i < (b); ++i)\n#define f0r(i,\
+    \ end(x)\n\n#define f1r(i, a, b) for (int i = (a); i < (b); ++i)\n#define f0r(i,\
     \ a) f1r(i, 0, a)\n\nmt19937 rng((uint32_t) chrono::steady_clock::now().time_since_epoch().count());\n\
     \ntemplate<class T> bool ckmin(T& a, const T& b) { return b < a ? a = b, 1 : 0;\
     \ }\ntemplate<class T> bool ckmax(T& a, const T& b) { return a < b ? a = b, 1\
@@ -40,7 +40,7 @@ data:
   isVerificationFile: false
   path: library/contest/template_short.cpp
   requiredBy: []
-  timestamp: '2020-12-04 21:40:44-05:00'
+  timestamp: '2020-12-14 17:44:59-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/contest/template_short.cpp

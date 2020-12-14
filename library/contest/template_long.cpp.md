@@ -26,7 +26,7 @@ data:
     \ begin(x), end(x)\n#define rall(x) (x).rbegin(), (x).rend()\n#define sor(x) sort(all(x))\n\
     #define rsz resize\n#define resz resize\n#define ins insert\n#define ft front()\n\
     #define bk back()\n#define pf push_front\n#define pb push_back\n#define eb emplace_back\n\
-    #define lb lower_bound\n#define ub upper_bound\n\n#define f1r(i, a, b) for(int\
+    #define lb lower_bound\n#define ub upper_bound\n\n#define f1r(i, a, b) for (int\
     \ i = (a); i < (b); ++i)\n#define f0r(i, a) f1r(i, 0, a)\n#define FOR(i, a, b)\
     \ for (int i = (a); i < (b); ++i)\n#define F0R(i, a) FOR(i,0,a)\n#define ROF(i,\
     \ a, b) for (int i = (b) - 1; i >= (a); --i)\n#define R0F(i, a) ROF(i, 0, a)\n\
@@ -88,27 +88,27 @@ data:
     \ >> (std::istream& in, mi& a) { \n        long long x; std::cin >> x; a = mi(x);\
     \ return in; }\n    friend std::ostream& operator << (std::ostream& os, const\
     \ mi& a) { return os << a.val; }\n    friend void pr(const mi& a) { pr(a.val);\
-    \ }\n    friend void re(mi& a) { ll x; re(x); a = mi(x); }\n    friend bool operator\
-    \ == (const mi& a, const mi& b) { return a.val == b.val; }\n    friend bool operator\
-    \ != (const mi& a, const mi& b) { return !(a == b); }    \n    friend bool operator\
-    \ < (const mi& a, const mi& b) { return a.val < b.val; }\n    friend bool operator\
-    \ > (const mi& a, const mi& b) { return a.val > b.val; }\n    friend bool operator\
-    \ <= (const mi& a, const mi& b) { return a.val <= b.val; }\n    friend bool operator\
-    \ >= (const mi& a, const mi& b) { return a.val >= b.val; }\n    mi operator -\
-    \ () const { return mi(-val); }\n    mi& operator += (const mi& m) {\n       \
-    \ if ((val += m.val) >= MOD) val -= MOD;\n        return *this; }\n    mi& operator\
-    \ -= (const mi& m) {\n        if ((val -= m.val) < 0) val += MOD;\n        return\
-    \ *this; }\n    mi& operator *= (const mi& m) { val = (long long) val * m.val\
-    \ % MOD;\n        return *this; }\n    friend mi pow(mi a, long long p) {\n  \
-    \      mi ans = 1; assert(p >= 0);\n        for (; p; p /= 2, a *= a) if (p &\
-    \ 1) ans *= a;\n        return ans; }\n    friend mi inv(const mi& a) { assert(a\
-    \ != 0); return pow(a, MOD - 2); }\n    mi& operator /= (const mi& m) { return\
-    \ (*this) *= inv(m); }\n    friend mi operator + (mi a, const mi& b) { return\
-    \ a += b; }\n    friend mi operator - (mi a, const mi& b) { return a -= b; }\n\
-    \    friend mi operator * (mi a, const mi& b) { return a *= b; }\n    friend mi\
-    \ operator / (mi a, const mi& b) { return a /= b; }\n};\ntypedef pair<mi, mi>\
-    \ pmi;\ntypedef vector<mi> vmi;\ntypedef vector<pmi> vpmi;\n\nint main() {\n \
-    \   setIO(\"\");\n    return 0;\n}\n"
+    \ }\n    friend void re(mi& a) { long long x; cin >> x; a = mi(x); }\n    friend\
+    \ bool operator == (const mi& a, const mi& b) { return a.val == b.val; }\n   \
+    \ friend bool operator != (const mi& a, const mi& b) { return !(a == b); }   \
+    \ \n    friend bool operator < (const mi& a, const mi& b) { return a.val < b.val;\
+    \ }\n    friend bool operator > (const mi& a, const mi& b) { return a.val > b.val;\
+    \ }\n    friend bool operator <= (const mi& a, const mi& b) { return a.val <=\
+    \ b.val; }\n    friend bool operator >= (const mi& a, const mi& b) { return a.val\
+    \ >= b.val; }\n    mi operator - () const { return mi(-val); }\n    mi& operator\
+    \ += (const mi& m) {\n        if ((val += m.val) >= MOD) val -= MOD;\n       \
+    \ return *this; }\n    mi& operator -= (const mi& m) {\n        if ((val -= m.val)\
+    \ < 0) val += MOD;\n        return *this; }\n    mi& operator *= (const mi& m)\
+    \ { val = (long long) val * m.val % MOD;\n        return *this; }\n    friend\
+    \ mi pow(mi a, long long p) {\n        mi ans = 1; assert(p >= 0);\n        for\
+    \ (; p; p /= 2, a *= a) if (p & 1) ans *= a;\n        return ans; }\n    friend\
+    \ mi inv(const mi& a) { assert(a != 0); return pow(a, MOD - 2); }\n    mi& operator\
+    \ /= (const mi& m) { return (*this) *= inv(m); }\n    friend mi operator + (mi\
+    \ a, const mi& b) { return a += b; }\n    friend mi operator - (mi a, const mi&\
+    \ b) { return a -= b; }\n    friend mi operator * (mi a, const mi& b) { return\
+    \ a *= b; }\n    friend mi operator / (mi a, const mi& b) { return a /= b; }\n\
+    };\ntypedef pair<mi, mi> pmi;\ntypedef vector<mi> vmi;\ntypedef vector<pmi> vpmi;\n\
+    \nint main() {\n    setIO(\"\");\n    return 0;\n}\n"
   code: "#pragma GCC optimize (\"O3\")\n#pragma GCC target (\"sse4\")\n\n#include\
     \ <algorithm>\n#include <array>\n#include <bitset>\n#include <cassert>\n#include\
     \ <chrono>\n#include <cmath>\n#include <complex>\n#include <cstdio>\n#include\
@@ -127,7 +127,7 @@ data:
     \ begin(x), end(x)\n#define rall(x) (x).rbegin(), (x).rend()\n#define sor(x) sort(all(x))\n\
     #define rsz resize\n#define resz resize\n#define ins insert\n#define ft front()\n\
     #define bk back()\n#define pf push_front\n#define pb push_back\n#define eb emplace_back\n\
-    #define lb lower_bound\n#define ub upper_bound\n\n#define f1r(i, a, b) for(int\
+    #define lb lower_bound\n#define ub upper_bound\n\n#define f1r(i, a, b) for (int\
     \ i = (a); i < (b); ++i)\n#define f0r(i, a) f1r(i, 0, a)\n#define FOR(i, a, b)\
     \ for (int i = (a); i < (b); ++i)\n#define F0R(i, a) FOR(i,0,a)\n#define ROF(i,\
     \ a, b) for (int i = (b) - 1; i >= (a); --i)\n#define R0F(i, a) ROF(i, 0, a)\n\
@@ -189,32 +189,32 @@ data:
     \ >> (std::istream& in, mi& a) { \n        long long x; std::cin >> x; a = mi(x);\
     \ return in; }\n    friend std::ostream& operator << (std::ostream& os, const\
     \ mi& a) { return os << a.val; }\n    friend void pr(const mi& a) { pr(a.val);\
-    \ }\n    friend void re(mi& a) { ll x; re(x); a = mi(x); }\n    friend bool operator\
-    \ == (const mi& a, const mi& b) { return a.val == b.val; }\n    friend bool operator\
-    \ != (const mi& a, const mi& b) { return !(a == b); }    \n    friend bool operator\
-    \ < (const mi& a, const mi& b) { return a.val < b.val; }\n    friend bool operator\
-    \ > (const mi& a, const mi& b) { return a.val > b.val; }\n    friend bool operator\
-    \ <= (const mi& a, const mi& b) { return a.val <= b.val; }\n    friend bool operator\
-    \ >= (const mi& a, const mi& b) { return a.val >= b.val; }\n    mi operator -\
-    \ () const { return mi(-val); }\n    mi& operator += (const mi& m) {\n       \
-    \ if ((val += m.val) >= MOD) val -= MOD;\n        return *this; }\n    mi& operator\
-    \ -= (const mi& m) {\n        if ((val -= m.val) < 0) val += MOD;\n        return\
-    \ *this; }\n    mi& operator *= (const mi& m) { val = (long long) val * m.val\
-    \ % MOD;\n        return *this; }\n    friend mi pow(mi a, long long p) {\n  \
-    \      mi ans = 1; assert(p >= 0);\n        for (; p; p /= 2, a *= a) if (p &\
-    \ 1) ans *= a;\n        return ans; }\n    friend mi inv(const mi& a) { assert(a\
-    \ != 0); return pow(a, MOD - 2); }\n    mi& operator /= (const mi& m) { return\
-    \ (*this) *= inv(m); }\n    friend mi operator + (mi a, const mi& b) { return\
-    \ a += b; }\n    friend mi operator - (mi a, const mi& b) { return a -= b; }\n\
-    \    friend mi operator * (mi a, const mi& b) { return a *= b; }\n    friend mi\
-    \ operator / (mi a, const mi& b) { return a /= b; }\n};\ntypedef pair<mi, mi>\
-    \ pmi;\ntypedef vector<mi> vmi;\ntypedef vector<pmi> vpmi;\n\nint main() {\n \
-    \   setIO(\"\");\n    return 0;\n}\n"
+    \ }\n    friend void re(mi& a) { long long x; cin >> x; a = mi(x); }\n    friend\
+    \ bool operator == (const mi& a, const mi& b) { return a.val == b.val; }\n   \
+    \ friend bool operator != (const mi& a, const mi& b) { return !(a == b); }   \
+    \ \n    friend bool operator < (const mi& a, const mi& b) { return a.val < b.val;\
+    \ }\n    friend bool operator > (const mi& a, const mi& b) { return a.val > b.val;\
+    \ }\n    friend bool operator <= (const mi& a, const mi& b) { return a.val <=\
+    \ b.val; }\n    friend bool operator >= (const mi& a, const mi& b) { return a.val\
+    \ >= b.val; }\n    mi operator - () const { return mi(-val); }\n    mi& operator\
+    \ += (const mi& m) {\n        if ((val += m.val) >= MOD) val -= MOD;\n       \
+    \ return *this; }\n    mi& operator -= (const mi& m) {\n        if ((val -= m.val)\
+    \ < 0) val += MOD;\n        return *this; }\n    mi& operator *= (const mi& m)\
+    \ { val = (long long) val * m.val % MOD;\n        return *this; }\n    friend\
+    \ mi pow(mi a, long long p) {\n        mi ans = 1; assert(p >= 0);\n        for\
+    \ (; p; p /= 2, a *= a) if (p & 1) ans *= a;\n        return ans; }\n    friend\
+    \ mi inv(const mi& a) { assert(a != 0); return pow(a, MOD - 2); }\n    mi& operator\
+    \ /= (const mi& m) { return (*this) *= inv(m); }\n    friend mi operator + (mi\
+    \ a, const mi& b) { return a += b; }\n    friend mi operator - (mi a, const mi&\
+    \ b) { return a -= b; }\n    friend mi operator * (mi a, const mi& b) { return\
+    \ a *= b; }\n    friend mi operator / (mi a, const mi& b) { return a /= b; }\n\
+    };\ntypedef pair<mi, mi> pmi;\ntypedef vector<mi> vmi;\ntypedef vector<pmi> vpmi;\n\
+    \nint main() {\n    setIO(\"\");\n    return 0;\n}\n"
   dependsOn: []
   isVerificationFile: false
   path: library/contest/template_long.cpp
   requiredBy: []
-  timestamp: '2020-12-10 19:54:30-05:00'
+  timestamp: '2020-12-14 17:44:59-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/contest/template_long.cpp
