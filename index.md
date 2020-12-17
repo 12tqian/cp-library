@@ -46,6 +46,9 @@ data:
     - icon: ':warning:'
       path: library/data-structures/2d-range-queries/binary_indexed_tree_seg.cpp
       title: library/data-structures/2d-range-queries/binary_indexed_tree_seg.cpp
+    - icon: ':warning:'
+      path: library/data-structures/2d-range-queries/offline_2d_bit.cpp
+      title: library/data-structures/2d-range-queries/offline_2d_bit.cpp
   - name: library/dynamic-programming
     pages:
     - icon: ':warning:'
