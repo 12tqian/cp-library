@@ -7,8 +7,9 @@ template <class T> struct BIT {
         n = n_;
         bit.resize(n);
     }
-    void init(std::vector<int> a) {
+    void init(std::vector<T>& a) {
         n = (int) a.size();
+        a.assign(n, 0);
         for (int i = 0; i < (int) a.size(); i++) {
             add(i, a[i]);
         }
