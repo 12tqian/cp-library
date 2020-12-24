@@ -116,7 +116,7 @@ template <class T> std::vector<T> general_multiply(const std::vector<T>& A, cons
     return res;
 }
 
-}
+} // namespace FFT
 
 int main() {
     using namespace std;

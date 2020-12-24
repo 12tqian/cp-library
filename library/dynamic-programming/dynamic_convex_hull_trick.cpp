@@ -20,11 +20,11 @@ struct ConvexHullTrick {
         }
     };
     std::set<line> hull;
-    bool hull_prev(std::set<line> :: iterator it) { return it != hull.begin(); }
-    bool hull_next(std::set<line> :: iterator it) { return it != hull.end() && next(it) != hull.end(); }
+    bool hull_prev(std::set<line>::iterator it) { return it != hull.begin(); }
+    bool hull_next(std::set<line>::iterator it) { return it != hull.end() && next(it) != hull.end(); }
     bool bad(const line &l1, const line &l2, const line &l3) { return l1.intersect(l3) <= l1.intersect(l2); }
-    bool bad(std::set<line> :: iterator it) { return hull_prev(it) && hull_next(it) && bad(*prev(it), *it, *next(it)); }
-    std::set<line> :: iterator update(std::set<line> :: iterator it) {
+    bool bad(std::set<line>::iterator it) { return hull_prev(it) && hull_next(it) && bad(*prev(it), *it, *next(it)); }
+    std::set<line>::iterator update(std::set<line>::iterator it) {
         if(!hull_prev(it)) return it;
         long double x = it -> intersect(*prev(it));
         line tmp(*it); tmp.x = x;
@@ -34,7 +34,7 @@ struct ConvexHullTrick {
     void add_line(long long m, long long b) {
         m = -m, b = -b;
         line l(m, b);
-        std::set<line> :: iterator it = hull.lower_bound(l);
+        std::set<line>::iterator it = hull.lower_bound(l);
         if(it != hull.end() && l.parallel(*it)) {
             if(it -> b < b) it = hull.erase(it);
             else return;
@@ -50,7 +50,7 @@ struct ConvexHullTrick {
     long long query(long long x) const {
         if(hull.empty()) return INF;
         line q; q.val = x, q.is_query = 1;
-        std::set<line> :: iterator it = --hull.lower_bound(q);
+        std::set<line>::iterator it = --hull.lower_bound(q);
         return -(it -> eval(x));
     }
 };
