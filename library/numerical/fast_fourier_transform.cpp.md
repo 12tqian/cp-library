@@ -65,13 +65,13 @@ data:
     \ r12 = 1 / m2(m1::mod);\n    for (int i = 0; i < n; i++) {\n        int a = c0[i].v;\n\
     \        int b = ((c1[i] - a) * r01).v;\n        int c = (((c2[i] - a) * r02 -\
     \ b) * r12).v;\n        res[i] = (T(c) * m1::mod + b) * m0::mod + a;\n    }\n\
-    \    return res;\n}\n\n}\n\nint main() {\n    using namespace std;\n    using\
-    \ namespace FFT;\n    ios_base::sync_with_stdio(0);\n    int n, m; \n    cin >>\
-    \ n >> m;\n    const int MOD = 1e9 + 7;\n    using num = Mint<MOD, 5>;\n    vector<num>\
-    \ a(n), b(m);\n    for (int i = 0; i < n; i++)\n        cin >> a[i];\n    for\
-    \ (int i = 0; i < m; i++)\n        cin >> b[i];\n    vector<num> c = general_multiply(a,\
-    \ b);\n    for (int i = 0; i < (int) c.size(); i++)\n        cout << c[i] << \"\
-    \ \";\n    cout << '\\n';\n}\n"
+    \    return res;\n}\n\n} // namespace FFT\n\nint main() {\n    using namespace\
+    \ std;\n    using namespace FFT;\n    ios_base::sync_with_stdio(0);\n    int n,\
+    \ m; \n    cin >> n >> m;\n    const int MOD = 1e9 + 7;\n    using num = Mint<MOD,\
+    \ 5>;\n    vector<num> a(n), b(m);\n    for (int i = 0; i < n; i++)\n        cin\
+    \ >> a[i];\n    for (int i = 0; i < m; i++)\n        cin >> b[i];\n    vector<num>\
+    \ c = general_multiply(a, b);\n    for (int i = 0; i < (int) c.size(); i++)\n\
+    \        cout << c[i] << \" \";\n    cout << '\\n';\n}\n"
   code: "#include <bits/stdc++.h>\n\ntemplate <int MOD, int RT> struct Mint {\n  \
     \  static const int mod = MOD;\n    static constexpr Mint rt() { return RT; }\
     \ // primitive root for FFT\n    int v; \n    explicit operator int() const {\
@@ -129,18 +129,18 @@ data:
     \ r12 = 1 / m2(m1::mod);\n    for (int i = 0; i < n; i++) {\n        int a = c0[i].v;\n\
     \        int b = ((c1[i] - a) * r01).v;\n        int c = (((c2[i] - a) * r02 -\
     \ b) * r12).v;\n        res[i] = (T(c) * m1::mod + b) * m0::mod + a;\n    }\n\
-    \    return res;\n}\n\n}\n\nint main() {\n    using namespace std;\n    using\
-    \ namespace FFT;\n    ios_base::sync_with_stdio(0);\n    int n, m; \n    cin >>\
-    \ n >> m;\n    const int MOD = 1e9 + 7;\n    using num = Mint<MOD, 5>;\n    vector<num>\
-    \ a(n), b(m);\n    for (int i = 0; i < n; i++)\n        cin >> a[i];\n    for\
-    \ (int i = 0; i < m; i++)\n        cin >> b[i];\n    vector<num> c = general_multiply(a,\
-    \ b);\n    for (int i = 0; i < (int) c.size(); i++)\n        cout << c[i] << \"\
-    \ \";\n    cout << '\\n';\n}"
+    \    return res;\n}\n\n} // namespace FFT\n\nint main() {\n    using namespace\
+    \ std;\n    using namespace FFT;\n    ios_base::sync_with_stdio(0);\n    int n,\
+    \ m; \n    cin >> n >> m;\n    const int MOD = 1e9 + 7;\n    using num = Mint<MOD,\
+    \ 5>;\n    vector<num> a(n), b(m);\n    for (int i = 0; i < n; i++)\n        cin\
+    \ >> a[i];\n    for (int i = 0; i < m; i++)\n        cin >> b[i];\n    vector<num>\
+    \ c = general_multiply(a, b);\n    for (int i = 0; i < (int) c.size(); i++)\n\
+    \        cout << c[i] << \" \";\n    cout << '\\n';\n}"
   dependsOn: []
   isVerificationFile: false
   path: library/numerical/fast_fourier_transform.cpp
   requiredBy: []
-  timestamp: '2020-12-04 02:43:09-05:00'
+  timestamp: '2020-12-24 10:06:52-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/numerical/fast_fourier_transform.cpp
