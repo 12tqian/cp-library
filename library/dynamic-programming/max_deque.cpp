@@ -1,7 +1,6 @@
 #include<bits/stdc++.h>
-const int MOD = 1e9 + 7;
-struct MaxDeque {
-    std::deque<std::pair<int, int>> mx;
+template <class T> struct MaxDeque {
+    std::deque<std::pair<T, int>> mx;
     std::deque<int> tmp;
 
     int l = 0,r = -1;
@@ -12,11 +11,11 @@ struct MaxDeque {
         tmp.pop_front();
         return t;
     }
-    int query() {
-        if (mx.size() == 0) return -MOD;
+    T get() {
+        if (mx.size() == 0) return std::numeric_limits<T>::min();
         return mx.front().first;
     }
-    void ad(int x) {
+    void ad(T x) {
         while ((mx).size() && mx.back().first <= x) mx.pop_back();
         mx.push_back({x, ++r});
         tmp.push_back(x);
