@@ -25,7 +25,7 @@ data:
     \ os << a.v; }\n    Mint& operator += (const Mint& m) { \n        if ((v += m.v)\
     \ >= MOD) v -= MOD; \n        return *this; }\n    Mint& operator -= (const Mint&\
     \ m) { \n        if ((v -= m.v) < 0) v += MOD; \n        return *this; }\n   \
-    \ Mint& operator *= (const Mint& m) { \n        v = (long long ) v * m.v % MOD;\
+    \ Mint& operator *= (const Mint& m) { \n        v = (long long) v * m.v % MOD;\
     \ return *this; }\n    Mint& operator /= (const Mint& m) { return (*this) *= inv(m);\
     \ }\n    friend Mint pow(Mint a, long long p) {\n        Mint ans = 1; assert(p\
     \ >= 0);\n        for (; p; p /= 2, a *= a) if (p & 1) ans *= a;\n        return\
@@ -90,7 +90,7 @@ data:
     \       if ((v += m.v) >= MOD) v -= MOD; \n        return *this; }\n    Mint&\
     \ operator -= (const Mint& m) { \n        if ((v -= m.v) < 0) v += MOD; \n   \
     \     return *this; }\n    Mint& operator *= (const Mint& m) { \n        v = (long\
-    \ long ) v * m.v % MOD; return *this; }\n    Mint& operator /= (const Mint& m)\
+    \ long) v * m.v % MOD; return *this; }\n    Mint& operator /= (const Mint& m)\
     \ { return (*this) *= inv(m); }\n    friend Mint pow(Mint a, long long p) {\n\
     \        Mint ans = 1; assert(p >= 0);\n        for (; p; p /= 2, a *= a) if (p\
     \ & 1) ans *= a;\n        return ans; \n    }\n    friend Mint inv(const Mint&\
@@ -140,7 +140,7 @@ data:
   isVerificationFile: false
   path: library/numerical/fast_fourier_transform.cpp
   requiredBy: []
-  timestamp: '2020-12-24 10:06:52-05:00'
+  timestamp: '2020-12-30 20:20:32-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/numerical/fast_fourier_transform.cpp
