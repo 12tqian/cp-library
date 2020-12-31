@@ -6,6 +6,7 @@ const int MOD = 1e9 + 7;
 std::mt19937 rng((uint32_t) std::chrono::steady_clock::now().time_since_epoch().count());
 std::uniform_int_distribution<int> BDIST(0.1 * MOD, 0.9 * MOD);
 const std::array<int, 2> base = {BDIST(rng), BDIST(rng)};
+std::vector<std::array<int, 2>> pows = {{1, 1}};
 
 std::array<int, 2> operator + (std::array<int, 2> l, std::array<int, 2> r) {
     for (int i = 0; i < 2; i++)
@@ -28,9 +29,8 @@ std::array<int, 2> make_hash(char c) {
     return {c, c};
 }
 struct HashRange {
-    std::vector<std::array<int, 2>> pows = {{1, 1}};
-    std::string s;
     std::vector<std::array<int, 2>> pre = {{0, 0}};
+    std::string s;
     void add(char c) {
         s += c;
         pre.push_back(base * pre.back() + make_hash(c));
