@@ -18,6 +18,12 @@ data:
       path: library/data-structures/1d-range-queries/interval_union.cpp
       title: library/data-structures/1d-range-queries/interval_union.cpp
     - icon: ':warning:'
+      path: library/data-structures/1d-range-queries/li_chao_tree_offline.cpp
+      title: library/data-structures/1d-range-queries/li_chao_tree_offline.cpp
+    - icon: ':warning:'
+      path: library/data-structures/1d-range-queries/li_chao_tree_online.cpp
+      title: library/data-structures/1d-range-queries/li_chao_tree_online.cpp
+    - icon: ':warning:'
       path: library/data-structures/1d-range-queries/mult_add_seg.cpp
       title: library/data-structures/1d-range-queries/mult_add_seg.cpp
     - icon: ':warning:'
