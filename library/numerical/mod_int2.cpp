@@ -24,7 +24,7 @@ template <int MOD, int RT> struct Mint {
         if ((v -= m.v) < 0) v += MOD; 
         return *this; }
     Mint& operator *= (const Mint& m) { 
-        v = (long long ) v * m.v % MOD; return *this; }
+        v = (long long) v * m.v % MOD; return *this; }
     Mint& operator /= (const Mint& m) { return (*this) *= inv(m); }
     friend Mint pow(Mint a, long long p) {
         Mint ans = 1; assert(p >= 0);
