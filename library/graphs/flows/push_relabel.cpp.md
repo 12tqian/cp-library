@@ -10,7 +10,7 @@ data:
   bundledCode: "#line 1 \"library/graphs/flows/push_relabel.cpp\"\n#include <bits/stdc++.h>\n\
     \n/**\n* Treat this as a black box xD\n* Calculates max flow\n* You can probably\
     \ add stuff to recover it\n* Most cases, Dinic is better since you understand\
-    \ it\n*/\n\ntemplate <class F> struct PushRelabel {\n    struct Edge {int to,\
+    \ it\n*/\n\ntemplate <class F> struct PushRelabel {\n    struct Edge { int to,\
     \ rev; F flow; };\n    const F INF = std::numeric_limits<F>::max();  \n    int\
     \ n, s, t, highest, work;\n    std::vector<std::vector<Edge>> adj;\n    std::vector<std::vector<int>>\
     \ lst, gap;\n    std::vector<int> height, cnt;\n    std::vector<F> excess;\n \
@@ -60,7 +60,7 @@ data:
   code: "#include <bits/stdc++.h>\n\n/**\n* Treat this as a black box xD\n* Calculates\
     \ max flow\n* You can probably add stuff to recover it\n* Most cases, Dinic is\
     \ better since you understand it\n*/\n\ntemplate <class F> struct PushRelabel\
-    \ {\n    struct Edge {int to, rev; F flow; };\n    const F INF = std::numeric_limits<F>::max();\
+    \ {\n    struct Edge { int to, rev; F flow; };\n    const F INF = std::numeric_limits<F>::max();\
     \  \n    int n, s, t, highest, work;\n    std::vector<std::vector<Edge>> adj;\n\
     \    std::vector<std::vector<int>> lst, gap;\n    std::vector<int> height, cnt;\n\
     \    std::vector<F> excess;\n    void init(int n_) {\n        n = n_;\n      \
@@ -110,7 +110,7 @@ data:
   isVerificationFile: false
   path: library/graphs/flows/push_relabel.cpp
   requiredBy: []
-  timestamp: '2020-12-12 17:16:20-05:00'
+  timestamp: '2021-01-03 15:14:07-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/graphs/flows/push_relabel.cpp
