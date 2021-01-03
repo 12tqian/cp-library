@@ -1,6 +1,6 @@
 /**
-Benq's code made without macros and nicer
-Does everything a link cut tree could possibly want to
+* Benq's code made without macros and nicer
+* Does everything a link cut tree could possibly want to
 */
 #pragma GCC optimize ("O3")
 #pragma GCC target ("sse4")
