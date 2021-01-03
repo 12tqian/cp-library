@@ -7,14 +7,14 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"library/graphs/dmoj_dynamic_tree_test.cpp\"\n/**\nBenq's\
-    \ code made without macros and nicer\nDoes everything a link cut tree could possibly\
-    \ want to\n*/\n#pragma GCC optimize (\"O3\")\n#pragma GCC target (\"sse4\")\n\n\
-    #include <bits/stdc++.h>\n\nstruct info {\n    int sz, sum, mn, mx;\n    info\
-    \ (int v) {\n        if (v == INT_MAX) {\n            sz = sum = 0;\n        \
-    \    mn = INT_MAX, mx = INT_MIN;\n        } else {\n            sz = 1; sum =\
-    \ mn = mx = v;\n        }\n    }\n    info() : info(INT_MAX) {}\n    friend info&\
-    \ operator+=(info& a, const info& b) {\n        a.sz += b.sz, a.sum += b.sum;\n\
+  bundledCode: "#line 1 \"library/graphs/dmoj_dynamic_tree_test.cpp\"\n/**\n* Benq's\
+    \ code made without macros and nicer\n* Does everything a link cut tree could\
+    \ possibly want to\n*/\n#pragma GCC optimize (\"O3\")\n#pragma GCC target (\"\
+    sse4\")\n\n#include <bits/stdc++.h>\n\nstruct info {\n    int sz, sum, mn, mx;\n\
+    \    info (int v) {\n        if (v == INT_MAX) {\n            sz = sum = 0;\n\
+    \            mn = INT_MAX, mx = INT_MIN;\n        } else {\n            sz = 1;\
+    \ sum = mn = mx = v;\n        }\n    }\n    info() : info(INT_MAX) {}\n    friend\
+    \ info& operator+=(info& a, const info& b) {\n        a.sz += b.sz, a.sum += b.sum;\n\
     \        a.mn = std::min(a.mn, b.mn);\n        a.mx = std::max(a.mx, b.mx);\n\
     \        return a;\n    }\n};\ntypedef struct snode* sn;\nstruct snode {\n   \
     \ int id, val; // value in node\n    sn p; // parent\n    sn c[5]; // children\n\
@@ -145,12 +145,12 @@ data:
     \ lct[y]) == lct[x]) {\n                continue;\n            }\n           \
     \ cut(get_par(lct[x]), lct[x]);\n            link(lct[x], lct[y]);\n        }\
     \ else exit(5);\n    }\n    return 0;\n}\n"
-  code: "/**\nBenq's code made without macros and nicer\nDoes everything a link cut\
-    \ tree could possibly want to\n*/\n#pragma GCC optimize (\"O3\")\n#pragma GCC\
-    \ target (\"sse4\")\n\n#include <bits/stdc++.h>\n\nstruct info {\n    int sz,\
-    \ sum, mn, mx;\n    info (int v) {\n        if (v == INT_MAX) {\n            sz\
-    \ = sum = 0;\n            mn = INT_MAX, mx = INT_MIN;\n        } else {\n    \
-    \        sz = 1; sum = mn = mx = v;\n        }\n    }\n    info() : info(INT_MAX)\
+  code: "/**\n* Benq's code made without macros and nicer\n* Does everything a link\
+    \ cut tree could possibly want to\n*/\n#pragma GCC optimize (\"O3\")\n#pragma\
+    \ GCC target (\"sse4\")\n\n#include <bits/stdc++.h>\n\nstruct info {\n    int\
+    \ sz, sum, mn, mx;\n    info (int v) {\n        if (v == INT_MAX) {\n        \
+    \    sz = sum = 0;\n            mn = INT_MAX, mx = INT_MIN;\n        } else {\n\
+    \            sz = 1; sum = mn = mx = v;\n        }\n    }\n    info() : info(INT_MAX)\
     \ {}\n    friend info& operator+=(info& a, const info& b) {\n        a.sz += b.sz,\
     \ a.sum += b.sum;\n        a.mn = std::min(a.mn, b.mn);\n        a.mx = std::max(a.mx,\
     \ b.mx);\n        return a;\n    }\n};\ntypedef struct snode* sn;\nstruct snode\
@@ -286,7 +286,7 @@ data:
   isVerificationFile: false
   path: library/graphs/dmoj_dynamic_tree_test.cpp
   requiredBy: []
-  timestamp: '2020-12-04 02:43:09-05:00'
+  timestamp: '2021-01-02 20:38:53-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/graphs/dmoj_dynamic_tree_test.cpp

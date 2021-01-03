@@ -7,7 +7,7 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"library/graphs/hungarian.cpp\"\n#include <bits/stdc++.h>\n\
+  bundledCode: "#line 1 \"library/graphs/flows/hungarian.cpp\"\n#include <bits/stdc++.h>\n\
     /**\n* Another black box algorithm I don't understand\n* But I can use \n* O(N^2M)\
     \ for N jobs and M workers\n* 0-indexed\n* Returns the cost, and the assignment\n\
     * job stores the job each worker gets assigned to\n* In the example below, they\
@@ -75,15 +75,15 @@ data:
     n';\n    return 0;\n}"
   dependsOn: []
   isVerificationFile: false
-  path: library/graphs/hungarian.cpp
+  path: library/graphs/flows/hungarian.cpp
   requiredBy: []
-  timestamp: '2020-12-31 10:45:06-05:00'
+  timestamp: '2021-01-02 20:38:53-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: library/graphs/hungarian.cpp
+documentation_of: library/graphs/flows/hungarian.cpp
 layout: document
 redirect_from:
-- /library/library/graphs/hungarian.cpp
-- /library/library/graphs/hungarian.cpp.html
-title: library/graphs/hungarian.cpp
+- /library/library/graphs/flows/hungarian.cpp
+- /library/library/graphs/flows/hungarian.cpp.html
+title: library/graphs/flows/hungarian.cpp
 ---

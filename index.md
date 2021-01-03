@@ -113,9 +113,6 @@ data:
       path: library/graphs/heavy_light.cpp
       title: library/graphs/heavy_light.cpp
     - icon: ':warning:'
-      path: library/graphs/hungarian.cpp
-      title: library/graphs/hungarian.cpp
-    - icon: ':warning:'
       path: library/graphs/kruskal.cpp
       title: library/graphs/kruskal.cpp
     - icon: ':warning:'
@@ -138,6 +135,9 @@ data:
     - icon: ':warning:'
       path: library/graphs/flows/dinic.cpp
       title: library/graphs/flows/dinic.cpp
+    - icon: ':warning:'
+      path: library/graphs/flows/hungarian.cpp
+      title: library/graphs/flows/hungarian.cpp
     - icon: ':warning:'
       path: library/graphs/flows/min_cost_max_flow.cpp
       title: library/graphs/flows/min_cost_max_flow.cpp
