@@ -8,7 +8,7 @@
 */
 
 template <class F> struct PushRelabel {
-    struct Edge {int to, rev; F flow; };
+    struct Edge { int to, rev; F flow; };
     const F INF = std::numeric_limits<F>::max();  
     int n, s, t, highest, work;
     std::vector<std::vector<Edge>> adj;
