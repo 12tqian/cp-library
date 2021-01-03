@@ -1,5 +1,8 @@
 #include <bits/stdc++.h>
-
+/** 
+ * Example of use: https://ideone.com/J3R7nb
+ * Solves SPOJ DYNACON2
+ */
 struct DSURollBack {
     std::vector<int> e;
     void init(int n) {
