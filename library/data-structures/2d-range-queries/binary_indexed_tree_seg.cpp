@@ -9,7 +9,7 @@ void* operator new(size_t s) {
 void operator delete(void*) {}
 const int SZ = (1 << 18);
 
-// [0, SZ - 1) queries for each axis
+// [0, SZ - 1) for x axis, [0, SZ) for y axis
 template <class T> struct Node {
     T val = 0; 
     Node<T>* c[2];
