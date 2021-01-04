@@ -1,8 +1,12 @@
-#include <bits/stdc++.H>
+#include <bits/stdc++.h>
+
 /**
-* x is in (0, SZ), y != 0, not the not 0 part
-* untested
-*/
+ * x \in [0, sz)
+ * y \in [0, sz)
+ * First do all the updates, then call init
+ * Afterwards, do the updates again, and now you can mix in the queries too
+ */
+
 template<class T> struct Offline2DBIT { 
     bool mode = 0; // mode = 1 -> initialized
     int sz;
@@ -11,10 +15,9 @@ template<class T> struct Offline2DBIT {
     std::vector<T> bit;
     void init(int sz_) {
         sz = sz_;
+        sz++;
         cnt.assign(sz, 0);
         st.assign(sz, 0);
-    }
-    void build() { 
         assert(!mode); mode = 1;
         std::vector<int> lst(sz, 0);
         cnt.assign(sz, 0);
@@ -37,27 +40,29 @@ template<class T> struct Offline2DBIT {
     int rank(int y, int l, int r) {
         return std::upper_bound(val.begin() + l, val.begin() + r, y) - val.begin() - l;
     }
-    void update(int x, int y, T t) {
+    void inner_update(int x, int y, T t) {
         for (y = rank(y, st[x], st[x] + cnt[x]); y <= cnt[x]; y += y & -y)
             bit[st[x] + y - 1] += t;
     }
-    void upd(int x, int y, T t) {
+    void update(int x, int y, T t) {
+        x++, y++;
         if (!mode) todo.push_back({x, y});
         else 
             for (; x < sz; x += x & -x)
-                update(x, y, t);
+                inner_update(x, y, t);
     }
-    int ask(int x, int y) {
+    int inner_query(int x, int y) {
         T res = 0;
         for (y = rank(y, st[x], st[x] + cnt[x]); y; y -= y & -y)
             res += bit[st[x] + y - 1];
         return res;
     }
     T query(int x, int y) {
+        x++, y++;
         assert(mode);
         T res = 0;
         for (; x; x -= x & -x) 
-            res += ask(x, y);
+            res += inner_query(x, y);
         return res;
     }
     T query(int xl, int xr, int yl, int yr) {
