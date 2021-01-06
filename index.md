@@ -101,6 +101,9 @@ data:
       path: library/graphs/dsu.cpp
       title: library/graphs/dsu.cpp
     - icon: ':warning:'
+      path: library/graphs/dsu_adjacent_intervals.cpp
+      title: library/graphs/dsu_adjacent_intervals.cpp
+    - icon: ':warning:'
       path: library/graphs/dsu_rollback.cpp
       title: library/graphs/dsu_rollback.cpp
     - icon: ':warning:'
