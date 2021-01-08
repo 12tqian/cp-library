@@ -44,7 +44,7 @@ template <class T> struct SparseTable {
 struct LCARMQ {
     int n; 
     std::vector<std::vector<int>> adj;
-    std::vector<int> dep, in, par, rev, out;
+    std::vector<int> dep, in, par, rev, out, pos;
     std::vector<std::pair<int, int>> tmp;
     SparseTable<std::pair<int, int>> S;
     std::vector<std::vector<int>> sparse;
@@ -52,7 +52,7 @@ struct LCARMQ {
     void init(int _n) {
         n = _n;
         adj.resize(n);
-        dep = in = out = par = rev = std::vector<int>(n);
+        dep = in = out = par = rev = pos = std::vector<int>(n);
         sparse = {std::vector<int>(n)};
         for (int j = 1; (1 << j) <= n; j++) {
             sparse.push_back(std::vector<int>(n - (1 << j) + 1));
@@ -65,6 +65,7 @@ struct LCARMQ {
     void dfs(int src) {
         in[src] = ti++;
         sparse[0][in[src]] = src;
+        pos[src] = (int) tmp.size();
         tmp.emplace_back(dep[src], src);
         for (auto& nxt : adj[src]) {
             if (nxt == par[src]) continue;
@@ -88,8 +89,8 @@ struct LCARMQ {
         }
     }
     int lca(int u, int v) {
-        u = in[u];
-        v = in[v];
+        u = pos[u];
+        v = pos[v];
         if (u > v) std::swap(u, v);
         return S.query(u, v).second;
     }
@@ -108,7 +109,7 @@ struct LCARMQ {
     }
     std::vector<std::pair<int, int>> compress(std::vector<int> nodes) {
         auto cmp = [&](int a, int b) {
-            return in[a] < in[b];
+            return pos[a] < pos[b];
         };
         sort(nodes.begin(), nodes.end(), cmp);
         for (int i = int(nodes.size()) - 2; i >= 0; i--) {
