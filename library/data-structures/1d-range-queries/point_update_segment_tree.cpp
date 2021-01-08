@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 
-template <class T> struct SegTree {
+template <class T> struct SegmentTree {
     const T ID = 0;
     T comb(T a, T b) {
         return a + b;

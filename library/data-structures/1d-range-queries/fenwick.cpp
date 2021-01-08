@@ -1,11 +1,11 @@
 #include<bits/stdc++.h>
 
-template <class T> struct BIT {
-    std::vector<T> bit;
+template <class T> struct FenwickTree {
+    std::vector<T> fwt;
     int n;
     void init(int n_) {
         n = n_;
-        bit.resize(n);
+        fwt.resize(n);
     }
     void init(std::vector<T>& a) {
         n = (int) a.size();
@@ -16,14 +16,16 @@ template <class T> struct BIT {
     }
     T sum(int r) {
         T ret = 0;
-        for (; r >= 0; r = (r & (r + 1)) - 1) ret += bit[r];
+        for (; r >= 0; r = (r & (r + 1)) - 1) 
+            ret += fwt[r];
         return ret;
     }
     T query(int l, int r) {
         return sum(r) - sum(l - 1);
     }
     void add(int idx, T delta) {
-        for (; idx < n; idx = idx | (idx + 1)) bit[idx] += delta;
+        for (; idx < n; idx = idx | (idx + 1)) 
+            fwt[idx] += delta;
     }
 };
 

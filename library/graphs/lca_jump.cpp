@@ -50,6 +50,20 @@ struct LCAJump {
         return par[0][x];
     }
 };
+
 int main() {
-    return 0;
+    using namespace std;
+    cin.tie(0)->sync_with_stdio(0);
+    int n, q; cin >> n >> q;
+    LCAJump L;
+    L.init(n);
+    for (int i = 1; i < n; i++) {
+        int p; cin >> p;
+        L.ae(i, p);
+    }
+    L.gen(0);
+    while (q--) {
+        int u, v; cin >> u >> v;
+        cout << L.lca(u, v) << '\n';
+    }
 }
