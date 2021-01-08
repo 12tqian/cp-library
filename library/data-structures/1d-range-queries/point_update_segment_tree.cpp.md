@@ -8,8 +8,8 @@ data:
   attributes:
     links: []
   bundledCode: "#line 1 \"library/data-structures/1d-range-queries/point_update_segment_tree.cpp\"\
-    \n#include<bits/stdc++.h>\n\ntemplate <class T> struct SegTree {\n    const T\
-    \ ID = 0;\n    T comb(T a, T b) {\n        return a + b;\n    }\n    int n;\n\
+    \n#include<bits/stdc++.h>\n\ntemplate <class T> struct SegmentTree {\n    const\
+    \ T ID = 0;\n    T comb(T a, T b) {\n        return a + b;\n    }\n    int n;\n\
     \    std::vector<T> seg;\n    void init(int _n) {\n        n = _n;\n        seg.assign(2\
     \ * n, ID);\n    }\n    void pull(int p) {\n        seg[p] = comb(seg[2 * p],\
     \ seg[2 * p + 1]);\n    }\n    void upd(int p, T val) {\n        seg[p += n] =\
@@ -19,7 +19,7 @@ data:
     \ (l += n, r += n + 1; l < r; l /= 2, r /= 2) {\n            if (l & 1) ra = comb(ra,\
     \ seg[l++]);\n            if (r & 1) rb = comb(seg[--r], rb);\n        }\n   \
     \     return comb(ra, rb);\n    }\n};\nint main() {\n    return 0;\n}\n"
-  code: "#include<bits/stdc++.h>\n\ntemplate <class T> struct SegTree {\n    const\
+  code: "#include<bits/stdc++.h>\n\ntemplate <class T> struct SegmentTree {\n    const\
     \ T ID = 0;\n    T comb(T a, T b) {\n        return a + b;\n    }\n    int n;\n\
     \    std::vector<T> seg;\n    void init(int _n) {\n        n = _n;\n        seg.assign(2\
     \ * n, ID);\n    }\n    void pull(int p) {\n        seg[p] = comb(seg[2 * p],\
@@ -34,7 +34,7 @@ data:
   isVerificationFile: false
   path: library/data-structures/1d-range-queries/point_update_segment_tree.cpp
   requiredBy: []
-  timestamp: '2020-12-04 02:43:09-05:00'
+  timestamp: '2021-01-07 19:46:40-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/data-structures/1d-range-queries/point_update_segment_tree.cpp

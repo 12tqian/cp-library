@@ -12,8 +12,8 @@ data:
   - name: library/data-structures/1d-range-queries
     pages:
     - icon: ':warning:'
-      path: library/data-structures/1d-range-queries/binary_indexed_tree.cpp
-      title: library/data-structures/1d-range-queries/binary_indexed_tree.cpp
+      path: library/data-structures/1d-range-queries/fenwick.cpp
+      title: library/data-structures/1d-range-queries/fenwick.cpp
     - icon: ':warning:'
       path: library/data-structures/1d-range-queries/interval_union.cpp
       title: library/data-structures/1d-range-queries/interval_union.cpp
@@ -125,6 +125,9 @@ data:
       path: library/graphs/lca_jump_distance.cpp
       title: library/graphs/lca_jump_distance.cpp
     - icon: ':warning:'
+      path: library/graphs/lca_rmq.cpp
+      title: library/graphs/lca_rmq.cpp
+    - icon: ':warning:'
       path: library/graphs/offline_dynamic_connectivity.cpp
       title: library/graphs/offline_dynamic_connectivity.cpp
     - icon: ':warning:'
@@ -157,6 +160,9 @@ data:
       title: library/misc/fast_hash_map.cpp
   - name: library/number-theory
     pages:
+    - icon: ':warning:'
+      path: library/number-theory/basic_factor.cpp
+      title: library/number-theory/basic_factor.cpp
     - icon: ':warning:'
       path: library/number-theory/basic_number_theory.cpp
       title: library/number-theory/basic_number_theory.cpp
@@ -192,6 +198,9 @@ data:
     - icon: ':warning:'
       path: library/numerical/mod_int2.cpp
       title: library/numerical/mod_int2.cpp
+    - icon: ':warning:'
+      path: library/numerical/xor_basis.cpp
+      title: library/numerical/xor_basis.cpp
   - name: library/string
     pages:
     - icon: ':warning:'

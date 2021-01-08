@@ -25,7 +25,11 @@ data:
     \ - depth[y]);\n        if (x == y) return x;\n        for (int i = (int) par.size()\
     \ - 1; i >= 0; i--) {\n            int nx = par[i][x];\n            int ny = par[i][y];\n\
     \            if (nx != ny) x = nx, y = ny;\n        }\n        return par[0][x];\n\
-    \    }\n};\nint main() {\n    return 0;\n}\n"
+    \    }\n};\n\nint main() {\n    using namespace std;\n    cin.tie(0)->sync_with_stdio(0);\n\
+    \    int n, q; cin >> n >> q;\n    LCAJump L;\n    L.init(n);\n    for (int i\
+    \ = 1; i < n; i++) {\n        int p; cin >> p;\n        L.ae(i, p);\n    }\n \
+    \   L.gen(0);\n    while (q--) {\n        int u, v; cin >> u >> v;\n        cout\
+    \ << L.lca(u, v) << '\\n';\n    }\n}\n"
   code: "#include<bits/stdc++.h>\nstruct LCAJump {\n    int n;\n    std::vector<std::vector<int>>\
     \ par;\n    std::vector<std::vector<int>> adj;\n    std::vector<int> depth;\n\
     \    void init(int _n) {\n        n = _n;\n        int d = 1;\n        while ((1\
@@ -44,12 +48,16 @@ data:
     \ y) return x;\n        for (int i = (int) par.size() - 1; i >= 0; i--) {\n  \
     \          int nx = par[i][x];\n            int ny = par[i][y];\n            if\
     \ (nx != ny) x = nx, y = ny;\n        }\n        return par[0][x];\n    }\n};\n\
-    int main() {\n    return 0;\n}\n"
+    \nint main() {\n    using namespace std;\n    cin.tie(0)->sync_with_stdio(0);\n\
+    \    int n, q; cin >> n >> q;\n    LCAJump L;\n    L.init(n);\n    for (int i\
+    \ = 1; i < n; i++) {\n        int p; cin >> p;\n        L.ae(i, p);\n    }\n \
+    \   L.gen(0);\n    while (q--) {\n        int u, v; cin >> u >> v;\n        cout\
+    \ << L.lca(u, v) << '\\n';\n    }\n}"
   dependsOn: []
   isVerificationFile: false
   path: library/graphs/lca_jump.cpp
   requiredBy: []
-  timestamp: '2020-12-10 19:54:30-05:00'
+  timestamp: '2021-01-07 19:46:40-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/graphs/lca_jump.cpp
