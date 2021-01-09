@@ -8,24 +8,24 @@ data:
   attributes:
     links: []
   bundledCode: "#line 1 \"library/dynamic-programming/min_deque.cpp\"\n#include <bits/stdc++.h>\n\
-    template <class T> struct MinDeque {\n    int lo = 0, hi = -1;\n    std::deque<std::pair<T,\
+    \ntemplate <class T> struct MinDeque {\n    int lo = 0, hi = -1;\n\n    std::deque<std::pair<T,\
     \ int>> d;\n    void ins(T x) { // add to back\n        while ((d).size() && d.back().first\
-    \ >= x) d.pop_back();\n        d.push_back({x, ++hi});\n    }\n    void del()\
+    \ >= x) d.pop_back();\n        d.push_back({x, ++hi});\n    }\n\n    void del()\
     \ { // delete from front\n        if (d.front().second == lo++) d.pop_front();\n\
-    \    }\n    T get() {\n        return (d).size() ? d.front().first : std::numeric_limits<T>::max();\n\
-    \    }\n};\nint main(){\n    return 0;\n}\n"
-  code: "#include <bits/stdc++.h>\ntemplate <class T> struct MinDeque {\n    int lo\
-    \ = 0, hi = -1;\n    std::deque<std::pair<T, int>> d;\n    void ins(T x) { //\
-    \ add to back\n        while ((d).size() && d.back().first >= x) d.pop_back();\n\
-    \        d.push_back({x, ++hi});\n    }\n    void del() { // delete from front\n\
-    \        if (d.front().second == lo++) d.pop_front();\n    }\n    T get() {\n\
+    \    }\n\n    T get() {\n        return (d).size() ? d.front().first : std::numeric_limits<T>::max();\n\
+    \    }\n};\n\nint main() {\n    return 0;\n}\n"
+  code: "#include <bits/stdc++.h>\n\ntemplate <class T> struct MinDeque {\n    int\
+    \ lo = 0, hi = -1;\n\n    std::deque<std::pair<T, int>> d;\n    void ins(T x)\
+    \ { // add to back\n        while ((d).size() && d.back().first >= x) d.pop_back();\n\
+    \        d.push_back({x, ++hi});\n    }\n\n    void del() { // delete from front\n\
+    \        if (d.front().second == lo++) d.pop_front();\n    }\n\n    T get() {\n\
     \        return (d).size() ? d.front().first : std::numeric_limits<T>::max();\n\
-    \    }\n};\nint main(){\n    return 0;\n}\n"
+    \    }\n};\n\nint main() {\n    return 0;\n}\n"
   dependsOn: []
   isVerificationFile: false
   path: library/dynamic-programming/min_deque.cpp
   requiredBy: []
-  timestamp: '2020-12-28 18:17:12-05:00'
+  timestamp: '2021-01-09 11:49:29-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/dynamic-programming/min_deque.cpp

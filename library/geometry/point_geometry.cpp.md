@@ -8,7 +8,7 @@ data:
   attributes:
     links: []
   bundledCode: "#line 1 \"library/geometry/point_geometry.cpp\"\n#include <bits/stdc++.h>\n\
-    template <typename T> struct Point {\npublic:\n    T x, y;\n    Point() : x(0),\
+    \ntemplate <typename T> struct Point {\npublic:\n    T x, y;\n    Point() : x(0),\
     \ y(0) {}\n    Point(T x_, T y_) : x(x_), y(y_) {}\n    template <typename U>\
     \ explicit Point(const Point<U>& p) : x(p.x), y(p.y) {}\n    Point(const std::pair<T,\
     \ T>& p) : x(p.first), y(p.second) {}\n    Point(const std::complex<T>& p) : x(real(p)),\
@@ -71,51 +71,52 @@ data:
     \ - a) / (b - a)) * (b - a); }\ntemplate <class T> Point<T> foot( const Point<T>&\
     \ p, const Point<T>& a, const Point<T>& b) {\n        return (p + reflect(p, a,\
     \ b)) / (T) 2; }\ntemplate <class T> bool on_segment(Point<T> p, Point<T> a, Point<T>\
-    \ b) {\n    return area(a, b, p) == 0 && dot(p - a, p - b) <= 0; }\ntemplate <class\
-    \ T>\nstd::vector<Point<T>> segment_intersect(Point<T> a, Point<T> b, Point<T>\
+    \ b) {\n    return area(a, b, p) == 0 && dot(p - a, p - b) <= 0; }\n\ntemplate\
+    \ <class T>\nstd::vector<Point<T>> segment_intersect(Point<T> a, Point<T> b, Point<T>\
     \ c, Point<T> d) {\n    T x = area(a, b, c), y = area(a, b, d);\n    T X = area(c,\
     \ d, a), Y = area(c, d, b);\n    if (sign(x) * sign(y) < 0 && sign(X) * sign(Y)\
     \ < 0)\n        return {(d * x - c * y) / (x - y)};\n    std::set<Point<T>> s;\n\
     \    if (on_segment(a, c, d))\n        s.insert(a);\n    if (on_segment(b, c,\
     \ d))\n        s.insert(b);\n    if (on_segment(c, a, b))\n        s.insert(c);\n\
     \    if (on_segment(d, a, b))\n        s.insert(d);\n    return {s.begin(), s.end()};\n\
-    }\ntemplate <class T> Point<T> extension(Point<T> a, Point<T> b, Point<T> c, Point<T>\
-    \ d) {\n    T x = cross(a, b, c);\n    T y = cross(a, b, d);\n    return (d *\
-    \ x - c * y) / (x - y);\n}\ntemplate <class T> std::pair<int, Point<T>> line_intersect(Point<T>\
-    \ a, Point<T> b, Point<T> c, Point<T> d) {\n    // returns -1 if infinitely, 0\
-    \ if none, 1 if unique \n    if (cross(b - a, d - c) == 0)\n        return {-(cross(a,\
-    \ c, d) == 0), Point<T>()};\n    else \n        return {1, extend(a, b, c, d)};\n\
-    }\ntemplate <class T> T line_dist(Point<T> p, Point<T> a, Point<T> b) {\n    return\
-    \ abs(area(p, a, b)) / abs(a - b); }\ntemplate <class T> T point_segment_dist(Point<T>\
-    \ p, Point<T> a, Point<T> b) {\n    if (dot(p - a, b - a) <= 0)\n        return\
-    \ abs(p - a);\n    if (dot(p - b, a - b) <= 0)\n        return abs(p - b);\n \
-    \   return line_dist(p, a, b);\n}\ntemplate <class T> T segment_segment_dist(Point<T>\
-    \ a, Point<T> b, Point<T> c, Point<T> d) {\n    std::vector<Point<T>> v = segment_intersect(a,\
-    \ b, c, d);\n    if (!v.empty())\n        return 0;\n    return std::min({point_segment_dist(a,\
+    }\n\ntemplate <class T> Point<T> extension(Point<T> a, Point<T> b, Point<T> c,\
+    \ Point<T> d) {\n    T x = cross(a, b, c);\n    T y = cross(a, b, d);\n    return\
+    \ (d * x - c * y) / (x - y);\n}\n\ntemplate <class T> std::pair<int, Point<T>>\
+    \ line_intersect(Point<T> a, Point<T> b, Point<T> c, Point<T> d) {\n    // returns\
+    \ -1 if infinitely, 0 if none, 1 if unique \n    if (cross(b - a, d - c) == 0)\n\
+    \        return {-(cross(a, c, d) == 0), Point<T>()};\n    else \n        return\
+    \ {1, extend(a, b, c, d)};\n}\n\ntemplate <class T> T line_dist(Point<T> p, Point<T>\
+    \ a, Point<T> b) {\n    return abs(area(p, a, b)) / abs(a - b); }\n\ntemplate\
+    \ <class T> T point_segment_dist(Point<T> p, Point<T> a, Point<T> b) {\n    if\
+    \ (dot(p - a, b - a) <= 0)\n        return abs(p - a);\n    if (dot(p - b, a -\
+    \ b) <= 0)\n        return abs(p - b);\n    return line_dist(p, a, b);\n}\n\n\
+    template <class T> T segment_segment_dist(Point<T> a, Point<T> b, Point<T> c,\
+    \ Point<T> d) {\n    std::vector<Point<T>> v = segment_intersect(a, b, c, d);\n\
+    \    if (!v.empty())\n        return 0;\n    return std::min({point_segment_dist(a,\
     \ c, d), point_segment_dist(b, c, d), \n        point_segment_dist(c, a, b), point_segment_dist(d,\
-    \ a, b)});\n}\ntemplate <class T> std::pair<Point<T>, T> centroid_area(const std::vector<Point<T>>\
-    \ v) {\n    // pair of centroid and area, positive means CCW, negative means CW\n\
-    \    Point<T> centroid(0, 0);\n    T area = 0;\n    for (int i = 0; i < (int)\
-    \ v.size(); i++) {\n        int j = (i + 1) % ((int) v.size());\n        T a =\
-    \ cross(v[i], v[j]);\n        centroid += a * (v[i] + v[j]);\n        area +=\
-    \ a;\n    }\n    return {centroid / area / (T) 3, area / 2};\n}\ntemplate<class\
-    \ T> int polygon_point(const std::vector<Point<T>>& p, Point<T> z) {\n    // returns\
-    \ -1 if outside, 0 if on, 1 if inside\n    int n = (int) p.size();\n    int ans\
-    \ = 0;\n    for (int i = 0; i < n; i++) {\n        Point<T> x = p[i], y = p[(i\
-    \ + 1) % n];\n        if (x.y > y.y) \n            std::swap(x, y);\n        if\
-    \ (on_segment(z, x, y))\n            return 0;\n        ans ^= (x.y <= z.y &&\
-    \ y.y > z.y && area(z, x, y) > 0);\n    }\n    return ans ? 1 : -1;\n}\n\n} //\
-    \ Geometry2D\n\nint main() {\n    using namespace std;\n    using namespace Geometry2D;\n\
-    \    typedef long double ld;\n    typedef Point<long double> P;\n    cout << setprecision(1)\
-    \ << fixed;\n    while (true) {\n        int n; cin >> n;\n        if (n == 0)\n\
-    \            return 0;\n        vector<Point<int>> v(n);\n        for (int i =\
-    \ 0; i < n; i++) \n            cin >> v[i].x >> v[i].y;\n        int m; cin >>\
-    \ m;\n        while (m--) {\n            Point<int> p;\n            cin >> p.x\
-    \ >> p.y;\n            int res = polygon_point(v, p);\n            if (res ==\
-    \ -1)\n                cout << \"out\\n\";\n            else if (res == 0)\n \
-    \               cout << \"on\\n\";\n            else \n                cout <<\
-    \ \"in\\n\";\n        }\n    }\n    return 0;\n}\n"
-  code: "#include <bits/stdc++.h>\ntemplate <typename T> struct Point {\npublic:\n\
+    \ a, b)});\n}\n\ntemplate <class T> std::pair<Point<T>, T> centroid_area(const\
+    \ std::vector<Point<T>> v) {\n    // pair of centroid and area, positive means\
+    \ CCW, negative means CW\n    Point<T> centroid(0, 0);\n    T area = 0;\n    for\
+    \ (int i = 0; i < (int) v.size(); i++) {\n        int j = (i + 1) % ((int) v.size());\n\
+    \        T a = cross(v[i], v[j]);\n        centroid += a * (v[i] + v[j]);\n  \
+    \      area += a;\n    }\n    return {centroid / area / (T) 3, area / 2};\n}\n\
+    \ntemplate<class T> int polygon_point(const std::vector<Point<T>>& p, Point<T>\
+    \ z) {\n    // returns -1 if outside, 0 if on, 1 if inside\n    int n = (int)\
+    \ p.size();\n    int ans = 0;\n    for (int i = 0; i < n; i++) {\n        Point<T>\
+    \ x = p[i], y = p[(i + 1) % n];\n        if (x.y > y.y) \n            std::swap(x,\
+    \ y);\n        if (on_segment(z, x, y))\n            return 0;\n        ans ^=\
+    \ (x.y <= z.y && y.y > z.y && area(z, x, y) > 0);\n    }\n    return ans ? 1 :\
+    \ -1;\n}\n\n} // Geometry2D\n\nint main() {\n    using namespace std;\n    using\
+    \ namespace Geometry2D;\n    typedef long double ld;\n    typedef Point<long double>\
+    \ P;\n    cout << setprecision(1) << fixed;\n    while (true) {\n        int n;\
+    \ cin >> n;\n        if (n == 0)\n            return 0;\n        vector<Point<int>>\
+    \ v(n);\n        for (int i = 0; i < n; i++) \n            cin >> v[i].x >> v[i].y;\n\
+    \        int m; cin >> m;\n        while (m--) {\n            Point<int> p;\n\
+    \            cin >> p.x >> p.y;\n            int res = polygon_point(v, p);\n\
+    \            if (res == -1)\n                cout << \"out\\n\";\n           \
+    \ else if (res == 0)\n                cout << \"on\\n\";\n            else \n\
+    \                cout << \"in\\n\";\n        }\n    }\n    return 0;\n}\n"
+  code: "#include <bits/stdc++.h>\n\ntemplate <typename T> struct Point {\npublic:\n\
     \    T x, y;\n    Point() : x(0), y(0) {}\n    Point(T x_, T y_) : x(x_), y(y_)\
     \ {}\n    template <typename U> explicit Point(const Point<U>& p) : x(p.x), y(p.y)\
     \ {}\n    Point(const std::pair<T, T>& p) : x(p.first), y(p.second) {}\n    Point(const\
@@ -179,55 +180,55 @@ data:
     \ }\ntemplate <class T> Point<T> foot( const Point<T>& p, const Point<T>& a, const\
     \ Point<T>& b) {\n        return (p + reflect(p, a, b)) / (T) 2; }\ntemplate <class\
     \ T> bool on_segment(Point<T> p, Point<T> a, Point<T> b) {\n    return area(a,\
-    \ b, p) == 0 && dot(p - a, p - b) <= 0; }\ntemplate <class T>\nstd::vector<Point<T>>\
+    \ b, p) == 0 && dot(p - a, p - b) <= 0; }\n\ntemplate <class T>\nstd::vector<Point<T>>\
     \ segment_intersect(Point<T> a, Point<T> b, Point<T> c, Point<T> d) {\n    T x\
     \ = area(a, b, c), y = area(a, b, d);\n    T X = area(c, d, a), Y = area(c, d,\
     \ b);\n    if (sign(x) * sign(y) < 0 && sign(X) * sign(Y) < 0)\n        return\
     \ {(d * x - c * y) / (x - y)};\n    std::set<Point<T>> s;\n    if (on_segment(a,\
     \ c, d))\n        s.insert(a);\n    if (on_segment(b, c, d))\n        s.insert(b);\n\
     \    if (on_segment(c, a, b))\n        s.insert(c);\n    if (on_segment(d, a,\
-    \ b))\n        s.insert(d);\n    return {s.begin(), s.end()};\n}\ntemplate <class\
+    \ b))\n        s.insert(d);\n    return {s.begin(), s.end()};\n}\n\ntemplate <class\
     \ T> Point<T> extension(Point<T> a, Point<T> b, Point<T> c, Point<T> d) {\n  \
     \  T x = cross(a, b, c);\n    T y = cross(a, b, d);\n    return (d * x - c * y)\
-    \ / (x - y);\n}\ntemplate <class T> std::pair<int, Point<T>> line_intersect(Point<T>\
+    \ / (x - y);\n}\n\ntemplate <class T> std::pair<int, Point<T>> line_intersect(Point<T>\
     \ a, Point<T> b, Point<T> c, Point<T> d) {\n    // returns -1 if infinitely, 0\
     \ if none, 1 if unique \n    if (cross(b - a, d - c) == 0)\n        return {-(cross(a,\
     \ c, d) == 0), Point<T>()};\n    else \n        return {1, extend(a, b, c, d)};\n\
-    }\ntemplate <class T> T line_dist(Point<T> p, Point<T> a, Point<T> b) {\n    return\
-    \ abs(area(p, a, b)) / abs(a - b); }\ntemplate <class T> T point_segment_dist(Point<T>\
+    }\n\ntemplate <class T> T line_dist(Point<T> p, Point<T> a, Point<T> b) {\n  \
+    \  return abs(area(p, a, b)) / abs(a - b); }\n\ntemplate <class T> T point_segment_dist(Point<T>\
     \ p, Point<T> a, Point<T> b) {\n    if (dot(p - a, b - a) <= 0)\n        return\
     \ abs(p - a);\n    if (dot(p - b, a - b) <= 0)\n        return abs(p - b);\n \
-    \   return line_dist(p, a, b);\n}\ntemplate <class T> T segment_segment_dist(Point<T>\
+    \   return line_dist(p, a, b);\n}\n\ntemplate <class T> T segment_segment_dist(Point<T>\
     \ a, Point<T> b, Point<T> c, Point<T> d) {\n    std::vector<Point<T>> v = segment_intersect(a,\
     \ b, c, d);\n    if (!v.empty())\n        return 0;\n    return std::min({point_segment_dist(a,\
     \ c, d), point_segment_dist(b, c, d), \n        point_segment_dist(c, a, b), point_segment_dist(d,\
-    \ a, b)});\n}\ntemplate <class T> std::pair<Point<T>, T> centroid_area(const std::vector<Point<T>>\
-    \ v) {\n    // pair of centroid and area, positive means CCW, negative means CW\n\
-    \    Point<T> centroid(0, 0);\n    T area = 0;\n    for (int i = 0; i < (int)\
-    \ v.size(); i++) {\n        int j = (i + 1) % ((int) v.size());\n        T a =\
-    \ cross(v[i], v[j]);\n        centroid += a * (v[i] + v[j]);\n        area +=\
-    \ a;\n    }\n    return {centroid / area / (T) 3, area / 2};\n}\ntemplate<class\
-    \ T> int polygon_point(const std::vector<Point<T>>& p, Point<T> z) {\n    // returns\
-    \ -1 if outside, 0 if on, 1 if inside\n    int n = (int) p.size();\n    int ans\
-    \ = 0;\n    for (int i = 0; i < n; i++) {\n        Point<T> x = p[i], y = p[(i\
-    \ + 1) % n];\n        if (x.y > y.y) \n            std::swap(x, y);\n        if\
-    \ (on_segment(z, x, y))\n            return 0;\n        ans ^= (x.y <= z.y &&\
-    \ y.y > z.y && area(z, x, y) > 0);\n    }\n    return ans ? 1 : -1;\n}\n\n} //\
-    \ Geometry2D\n\nint main() {\n    using namespace std;\n    using namespace Geometry2D;\n\
-    \    typedef long double ld;\n    typedef Point<long double> P;\n    cout << setprecision(1)\
-    \ << fixed;\n    while (true) {\n        int n; cin >> n;\n        if (n == 0)\n\
-    \            return 0;\n        vector<Point<int>> v(n);\n        for (int i =\
-    \ 0; i < n; i++) \n            cin >> v[i].x >> v[i].y;\n        int m; cin >>\
-    \ m;\n        while (m--) {\n            Point<int> p;\n            cin >> p.x\
-    \ >> p.y;\n            int res = polygon_point(v, p);\n            if (res ==\
-    \ -1)\n                cout << \"out\\n\";\n            else if (res == 0)\n \
-    \               cout << \"on\\n\";\n            else \n                cout <<\
-    \ \"in\\n\";\n        }\n    }\n    return 0;\n}"
+    \ a, b)});\n}\n\ntemplate <class T> std::pair<Point<T>, T> centroid_area(const\
+    \ std::vector<Point<T>> v) {\n    // pair of centroid and area, positive means\
+    \ CCW, negative means CW\n    Point<T> centroid(0, 0);\n    T area = 0;\n    for\
+    \ (int i = 0; i < (int) v.size(); i++) {\n        int j = (i + 1) % ((int) v.size());\n\
+    \        T a = cross(v[i], v[j]);\n        centroid += a * (v[i] + v[j]);\n  \
+    \      area += a;\n    }\n    return {centroid / area / (T) 3, area / 2};\n}\n\
+    \ntemplate<class T> int polygon_point(const std::vector<Point<T>>& p, Point<T>\
+    \ z) {\n    // returns -1 if outside, 0 if on, 1 if inside\n    int n = (int)\
+    \ p.size();\n    int ans = 0;\n    for (int i = 0; i < n; i++) {\n        Point<T>\
+    \ x = p[i], y = p[(i + 1) % n];\n        if (x.y > y.y) \n            std::swap(x,\
+    \ y);\n        if (on_segment(z, x, y))\n            return 0;\n        ans ^=\
+    \ (x.y <= z.y && y.y > z.y && area(z, x, y) > 0);\n    }\n    return ans ? 1 :\
+    \ -1;\n}\n\n} // Geometry2D\n\nint main() {\n    using namespace std;\n    using\
+    \ namespace Geometry2D;\n    typedef long double ld;\n    typedef Point<long double>\
+    \ P;\n    cout << setprecision(1) << fixed;\n    while (true) {\n        int n;\
+    \ cin >> n;\n        if (n == 0)\n            return 0;\n        vector<Point<int>>\
+    \ v(n);\n        for (int i = 0; i < n; i++) \n            cin >> v[i].x >> v[i].y;\n\
+    \        int m; cin >> m;\n        while (m--) {\n            Point<int> p;\n\
+    \            cin >> p.x >> p.y;\n            int res = polygon_point(v, p);\n\
+    \            if (res == -1)\n                cout << \"out\\n\";\n           \
+    \ else if (res == 0)\n                cout << \"on\\n\";\n            else \n\
+    \                cout << \"in\\n\";\n        }\n    }\n    return 0;\n}"
   dependsOn: []
   isVerificationFile: false
   path: library/geometry/point_geometry.cpp
   requiredBy: []
-  timestamp: '2020-12-04 19:48:55-05:00'
+  timestamp: '2021-01-09 11:49:29-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/geometry/point_geometry.cpp

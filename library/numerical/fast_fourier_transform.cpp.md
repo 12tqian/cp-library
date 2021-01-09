@@ -45,17 +45,17 @@ data:
     \ / 2 + j] = u + v;\n                B[i / 2 + j + n / 2] = u - v;\n         \
     \   }\n    }\n    if (inv) {\n        std::reverse(1 + A.begin(), A.end());\n\
     \        T z = T(1) / T(n);\n        for (auto & t : A) \n            t *= z;\n\
-    \    }\n}\ntemplate <class T> std::vector<T> multiply(std::vector<T> A, std::vector<T>\
+    \    }\n}\n\ntemplate <class T> std::vector<T> multiply(std::vector<T> A, std::vector<T>\
     \ B) {\n    int sa = (int) A.size();\n    int sb = (int) B.size();\n    if (!std::min(sa,\
     \ sb))\n        return {};\n    int s = sa + sb - 1;\n    int n = 1;\n    for\
     \ (; n < s; n *= 2);\n    bool eq = A == B;\n    A.resize(n);\n    fft(A);\n \
     \   if (eq) \n        B = A;\n    else \n        B.resize(n), fft(B);\n    for\
     \ (int i = 0; i < n; i++)\n        A[i] *= B[i];\n    fft(A, 1);\n    A.resize(s);\n\
-    \    return A;\n}\ntemplate <class M, class T> std::vector<M> multiply_mod(std::vector<T>\
+    \    return A;\n}\n\ntemplate <class M, class T> std::vector<M> multiply_mod(std::vector<T>\
     \ x, std::vector<T> y) {\n    auto convert = [](const std::vector<T>& v) {\n \
     \       std::vector<M> w((int) v.size());\n        for (int i =  0; i < (int)\
     \ v.size(); i++)\n            w[i] = (int) v[i];\n        return w;\n    };\n\
-    \    return multiply(convert(x), convert(y));\n}\ntemplate <class T> std::vector<T>\
+    \    return multiply(convert(x), convert(y));\n}\n\ntemplate <class T> std::vector<T>\
     \ general_multiply(const std::vector<T>& A, const std::vector<T>& B) { \n    //\
     \ arbitrary modulus\n    using m0 = Mint<(119 << 23) + 1, 62>; \n    using m1\
     \ = Mint<(5 << 25) + 1, 62>;\n    using m2 = Mint<(7 << 26) + 1, 62>;\n    auto\
@@ -109,17 +109,17 @@ data:
     \ j + b] * m;\n                B[i / 2 + j] = u + v;\n                B[i / 2\
     \ + j + n / 2] = u - v;\n            }\n    }\n    if (inv) {\n        std::reverse(1\
     \ + A.begin(), A.end());\n        T z = T(1) / T(n);\n        for (auto & t :\
-    \ A) \n            t *= z;\n    }\n}\ntemplate <class T> std::vector<T> multiply(std::vector<T>\
+    \ A) \n            t *= z;\n    }\n}\n\ntemplate <class T> std::vector<T> multiply(std::vector<T>\
     \ A, std::vector<T> B) {\n    int sa = (int) A.size();\n    int sb = (int) B.size();\n\
     \    if (!std::min(sa, sb))\n        return {};\n    int s = sa + sb - 1;\n  \
     \  int n = 1;\n    for (; n < s; n *= 2);\n    bool eq = A == B;\n    A.resize(n);\n\
     \    fft(A);\n    if (eq) \n        B = A;\n    else \n        B.resize(n), fft(B);\n\
     \    for (int i = 0; i < n; i++)\n        A[i] *= B[i];\n    fft(A, 1);\n    A.resize(s);\n\
-    \    return A;\n}\ntemplate <class M, class T> std::vector<M> multiply_mod(std::vector<T>\
+    \    return A;\n}\n\ntemplate <class M, class T> std::vector<M> multiply_mod(std::vector<T>\
     \ x, std::vector<T> y) {\n    auto convert = [](const std::vector<T>& v) {\n \
     \       std::vector<M> w((int) v.size());\n        for (int i =  0; i < (int)\
     \ v.size(); i++)\n            w[i] = (int) v[i];\n        return w;\n    };\n\
-    \    return multiply(convert(x), convert(y));\n}\ntemplate <class T> std::vector<T>\
+    \    return multiply(convert(x), convert(y));\n}\n\ntemplate <class T> std::vector<T>\
     \ general_multiply(const std::vector<T>& A, const std::vector<T>& B) { \n    //\
     \ arbitrary modulus\n    using m0 = Mint<(119 << 23) + 1, 62>; \n    using m1\
     \ = Mint<(5 << 25) + 1, 62>;\n    using m2 = Mint<(7 << 26) + 1, 62>;\n    auto\
@@ -140,7 +140,7 @@ data:
   isVerificationFile: false
   path: library/numerical/fast_fourier_transform.cpp
   requiredBy: []
-  timestamp: '2020-12-30 20:20:32-05:00'
+  timestamp: '2021-01-09 11:49:29-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/numerical/fast_fourier_transform.cpp

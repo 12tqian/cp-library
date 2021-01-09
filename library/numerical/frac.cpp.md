@@ -7,7 +7,7 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"library/numerical/frac.cpp\"\n#include<bits/stdc++.h>\n\
+  bundledCode: "#line 1 \"library/numerical/frac.cpp\"\n#include<bits/stdc++.h>\n\n\
     struct Frac {\n    long long n, d;\n    Frac(long long _n, long long _d) {\n \
     \       n = _n, d = _d;\n        long long g = std::__gcd(n, d); n /= g, d /=\
     \ g;\n        if (d < 0) n *= -1, d *= -1;\n    }\n    Frac(long long _n) : Frac(_n,\
@@ -35,8 +35,8 @@ data:
     \ T& r) { return l = l * r; }\n    template <class T> friend Frac& operator /=\
     \ (Frac& l, const T& r) { return l = l / r; }\n    friend std::ostream& operator\
     \ << (std::ostream& os, const Frac& a) { return os << a.n << \"/\" << a.d; }\n\
-    };\nint main() {\n    return 0;\n}\n"
-  code: "#include<bits/stdc++.h>\nstruct Frac {\n    long long n, d;\n    Frac(long\
+    };\n\nint main() {\n    return 0;\n}\n"
+  code: "#include<bits/stdc++.h>\n\nstruct Frac {\n    long long n, d;\n    Frac(long\
     \ long _n, long long _d) {\n        n = _n, d = _d;\n        long long g = std::__gcd(n,\
     \ d); n /= g, d /= g;\n        if (d < 0) n *= -1, d *= -1;\n    }\n    Frac(long\
     \ long _n) : Frac(_n, 1) {}\n    Frac() : Frac(0) {}\n    friend Frac abs(Frac\
@@ -63,12 +63,12 @@ data:
     \ Frac& operator *= (Frac& l, const T& r) { return l = l * r; }\n    template\
     \ <class T> friend Frac& operator /= (Frac& l, const T& r) { return l = l / r;\
     \ }\n    friend std::ostream& operator << (std::ostream& os, const Frac& a) {\
-    \ return os << a.n << \"/\" << a.d; }\n};\nint main() {\n    return 0;\n}\n"
+    \ return os << a.n << \"/\" << a.d; }\n};\n\nint main() {\n    return 0;\n}\n"
   dependsOn: []
   isVerificationFile: false
   path: library/numerical/frac.cpp
   requiredBy: []
-  timestamp: '2020-12-04 02:43:09-05:00'
+  timestamp: '2021-01-09 11:49:29-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/numerical/frac.cpp

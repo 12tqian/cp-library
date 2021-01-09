@@ -74,12 +74,12 @@ data:
     \ >= 0) \n            upper.pop_back();\n        upper.push_back(i);\n       \
     \ while ((int) lower.size() > 1 && \n            area(v[lower[(int) lower.size()\
     \ - 2]], v[lower.back()], v[i]) <= 0) \n            lower.pop_back();\n      \
-    \  lower.push_back(i);\n    }\n    return {upper, lower};\n}\ntemplate <class\
+    \  lower.push_back(i);\n    }\n    return {upper, lower};\n}\n\ntemplate <class\
     \ T> std::vector<int> hull_index(const std::vector<Point<T>>& v) {\n    std::vector<int>\
     \ upper, lower;\n    tie(upper, lower) = upper_lower_hull(v);\n    if ((int) lower.size()\
     \ <= 1) \n        return lower;\n    if (v[lower[0]] == v[lower[1]])\n       \
     \ return {0};\n    lower.insert(lower.end(), 1 + upper.rbegin(), upper.rend()\
-    \ - 1);\n    return lower;\n}\ntemplate <class T> std::vector<Point<T>> convex_hull(const\
+    \ - 1);\n    return lower;\n}\n\ntemplate <class T> std::vector<Point<T>> convex_hull(const\
     \ std::vector<Point<T>>& v) {\n    std::vector<int> w = hull_index(v);\n    std::vector<Point<T>>\
     \ res;\n    for (auto& t : w)\n        res.push_back(v[t]);\n    return res;\n\
     }\n\n} // ConvexHull\n\nint main() {\n    using namespace std;\n    using namespace\
@@ -156,11 +156,11 @@ data:
     \        upper.push_back(i);\n        while ((int) lower.size() > 1 && \n    \
     \        area(v[lower[(int) lower.size() - 2]], v[lower.back()], v[i]) <= 0) \n\
     \            lower.pop_back();\n        lower.push_back(i);\n    }\n    return\
-    \ {upper, lower};\n}\ntemplate <class T> std::vector<int> hull_index(const std::vector<Point<T>>&\
+    \ {upper, lower};\n}\n\ntemplate <class T> std::vector<int> hull_index(const std::vector<Point<T>>&\
     \ v) {\n    std::vector<int> upper, lower;\n    tie(upper, lower) = upper_lower_hull(v);\n\
     \    if ((int) lower.size() <= 1) \n        return lower;\n    if (v[lower[0]]\
     \ == v[lower[1]])\n        return {0};\n    lower.insert(lower.end(), 1 + upper.rbegin(),\
-    \ upper.rend() - 1);\n    return lower;\n}\ntemplate <class T> std::vector<Point<T>>\
+    \ upper.rend() - 1);\n    return lower;\n}\n\ntemplate <class T> std::vector<Point<T>>\
     \ convex_hull(const std::vector<Point<T>>& v) {\n    std::vector<int> w = hull_index(v);\n\
     \    std::vector<Point<T>> res;\n    for (auto& t : w)\n        res.push_back(v[t]);\n\
     \    return res;\n}\n\n} // ConvexHull\n\nint main() {\n    using namespace std;\n\
@@ -174,7 +174,7 @@ data:
   isVerificationFile: false
   path: library/geometry/convex_hull.cpp
   requiredBy: []
-  timestamp: '2020-12-04 02:43:09-05:00'
+  timestamp: '2021-01-09 11:49:29-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/geometry/convex_hull.cpp

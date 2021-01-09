@@ -8,7 +8,7 @@ data:
   attributes:
     links: []
   bundledCode: "#line 1 \"library/graphs/enumerate_triangles.cpp\"\n#include<bits/stdc++.h>\n\
-    \nconst int MOD = 998244353;\nint main() {\n    std::ios_base::sync_with_stdio(0);\
+    \nconst int MOD = 998244353;\n\nint main() {\n    std::ios_base::sync_with_stdio(0);\
     \ std::cin.tie(0);\n    int n, m; std::cin >> n >> m;\n    std::vector<long long>\
     \ x(n);\n    for (int i = 0; i < n; i++) std::cin >> x[i];\n    std::vector<std::vector<int>>\
     \ adj(n);\n    for (int i = 0; i < m; i++) {\n        int u, v; std::cin >> u\
@@ -29,8 +29,8 @@ data:
     \       base %= MOD;\n            exp >>= 1;\n        }\n        return res;\n\
     \    };\n    ans = (mod_pow(3, MOD - 2) * ans) % MOD;\n    std::cout << ans <<\
     \ '\\n';\n    return 0;\n}\n"
-  code: "#include<bits/stdc++.h>\n\nconst int MOD = 998244353;\nint main() {\n   \
-    \ std::ios_base::sync_with_stdio(0); std::cin.tie(0);\n    int n, m; std::cin\
+  code: "#include<bits/stdc++.h>\n\nconst int MOD = 998244353;\n\nint main() {\n \
+    \   std::ios_base::sync_with_stdio(0); std::cin.tie(0);\n    int n, m; std::cin\
     \ >> n >> m;\n    std::vector<long long> x(n);\n    for (int i = 0; i < n; i++)\
     \ std::cin >> x[i];\n    std::vector<std::vector<int>> adj(n);\n    for (int i\
     \ = 0; i < m; i++) {\n        int u, v; std::cin >> u >> v;\n        adj[u].push_back(v);\n\
@@ -54,7 +54,7 @@ data:
   isVerificationFile: false
   path: library/graphs/enumerate_triangles.cpp
   requiredBy: []
-  timestamp: '2020-12-04 02:43:09-05:00'
+  timestamp: '2021-01-09 11:49:29-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/graphs/enumerate_triangles.cpp

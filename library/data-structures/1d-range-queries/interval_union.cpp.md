@@ -8,9 +8,9 @@ data:
   attributes:
     links: []
   bundledCode: "#line 1 \"library/data-structures/1d-range-queries/interval_union.cpp\"\
-    \n#include<bits/stdc++.h>\nconst long long INF = 1e18;\nstruct IntervalUnion {\n\
-    \    std::set<std::pair<long long, long long>> le, ri;\n    void reset() {\n \
-    \       le.clear();\n        ri.clear();\n    }\n    std::vector<std::pair<long\
+    \n#include<bits/stdc++.h>\n\nconst long long INF = 1e18;\n\nstruct IntervalUnion\
+    \ {\n    std::set<std::pair<long long, long long>> le, ri;\n\n    void reset()\
+    \ {\n        le.clear();\n        ri.clear();\n    }\n\n    std::vector<std::pair<long\
     \ long, long long>> insert(std::pair<long long, long long> x) {\n        // inserts\
     \ an interval while returning the intervals it intersected with\n        std::set<std::pair<long\
     \ long, long long>> bad;\n        std::vector<std::pair<long long, long long>>\
@@ -36,10 +36,10 @@ data:
     \ x.second;\n        for (auto b: ret){\n            le.erase(b); ri.erase(std::make_pair(b.second,\
     \ b.first));\n            mn = std::min(mn, b.first); mx = std::max(mx, b.second);\n\
     \        }\n        le.insert(std::make_pair(mn, mx)); ri.insert(std::make_pair(mx,\
-    \ mn));\n        return ret;\n    }\n};\nint main() {\n    return 0;\n}\n"
-  code: "#include<bits/stdc++.h>\nconst long long INF = 1e18;\nstruct IntervalUnion\
-    \ {\n    std::set<std::pair<long long, long long>> le, ri;\n    void reset() {\n\
-    \        le.clear();\n        ri.clear();\n    }\n    std::vector<std::pair<long\
+    \ mn));\n        return ret;\n    }\n};\n\nint main() {\n    return 0;\n}\n"
+  code: "#include<bits/stdc++.h>\n\nconst long long INF = 1e18;\n\nstruct IntervalUnion\
+    \ {\n    std::set<std::pair<long long, long long>> le, ri;\n\n    void reset()\
+    \ {\n        le.clear();\n        ri.clear();\n    }\n\n    std::vector<std::pair<long\
     \ long, long long>> insert(std::pair<long long, long long> x) {\n        // inserts\
     \ an interval while returning the intervals it intersected with\n        std::set<std::pair<long\
     \ long, long long>> bad;\n        std::vector<std::pair<long long, long long>>\
@@ -65,12 +65,12 @@ data:
     \ x.second;\n        for (auto b: ret){\n            le.erase(b); ri.erase(std::make_pair(b.second,\
     \ b.first));\n            mn = std::min(mn, b.first); mx = std::max(mx, b.second);\n\
     \        }\n        le.insert(std::make_pair(mn, mx)); ri.insert(std::make_pair(mx,\
-    \ mn));\n        return ret;\n    }\n};\nint main() {\n    return 0;\n}\n"
+    \ mn));\n        return ret;\n    }\n};\n\nint main() {\n    return 0;\n}\n"
   dependsOn: []
   isVerificationFile: false
   path: library/data-structures/1d-range-queries/interval_union.cpp
   requiredBy: []
-  timestamp: '2020-12-30 23:23:35-05:00'
+  timestamp: '2021-01-09 11:49:29-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/data-structures/1d-range-queries/interval_union.cpp

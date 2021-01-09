@@ -19,9 +19,10 @@ data:
     #define ub upper_bound\n#define sz(x) (int) (x).size()\n#define all(x) begin(x),\
     \ end(x)\n\n#define f1r(i, a, b) for (int i = (a); i < (b); ++i)\n#define f0r(i,\
     \ a) f1r(i, 0, a)\n\nmt19937 rng((uint32_t) chrono::steady_clock::now().time_since_epoch().count());\n\
-    \ntemplate<class T> bool ckmin(T& a, const T& b) { return b < a ? a = b, 1 : 0;\
-    \ }\ntemplate<class T> bool ckmax(T& a, const T& b) { return a < b ? a = b, 1\
-    \ : 0; }\n\nint main() {\n    ios_base::sync_with_stdio(0);\n    return 0;\n}\n"
+    \ntemplate <class T> bool ckmin(T& a, const T& b) { return b < a ? a = b, 1 :\
+    \ 0; }\ntemplate <class T> bool ckmax(T& a, const T& b) { return a < b ? a = b,\
+    \ 1 : 0; }\n\nint main() {\n    ios_base::sync_with_stdio(0);\n    return 0;\n\
+    }\n"
   code: "#include <bits/stdc++.h>\n#include <ext/pb_ds/tree_policy.hpp>\n#include\
     \ <ext/pb_ds/assoc_container.hpp>\n\nusing namespace std;\nusing namespace __gnu_pbds;\n\
     template <class T> using Tree = tree<T, null_type, less<T>, rb_tree_tag,tree_order_statistics_node_update>;\n\
@@ -33,14 +34,15 @@ data:
     #define ub upper_bound\n#define sz(x) (int) (x).size()\n#define all(x) begin(x),\
     \ end(x)\n\n#define f1r(i, a, b) for (int i = (a); i < (b); ++i)\n#define f0r(i,\
     \ a) f1r(i, 0, a)\n\nmt19937 rng((uint32_t) chrono::steady_clock::now().time_since_epoch().count());\n\
-    \ntemplate<class T> bool ckmin(T& a, const T& b) { return b < a ? a = b, 1 : 0;\
-    \ }\ntemplate<class T> bool ckmax(T& a, const T& b) { return a < b ? a = b, 1\
-    \ : 0; }\n\nint main() {\n    ios_base::sync_with_stdio(0);\n    return 0;\n}\n"
+    \ntemplate <class T> bool ckmin(T& a, const T& b) { return b < a ? a = b, 1 :\
+    \ 0; }\ntemplate <class T> bool ckmax(T& a, const T& b) { return a < b ? a = b,\
+    \ 1 : 0; }\n\nint main() {\n    ios_base::sync_with_stdio(0);\n    return 0;\n\
+    }\n"
   dependsOn: []
   isVerificationFile: false
   path: library/contest/template_short.cpp
   requiredBy: []
-  timestamp: '2020-12-14 17:44:59-05:00'
+  timestamp: '2021-01-09 11:49:29-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/contest/template_short.cpp
