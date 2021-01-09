@@ -1,5 +1,7 @@
 #include<bits/stdc++.h>
+
 const int MOD = 1e9 + 7;
+
 typedef std::decay <decltype(MOD)>::type mod_t;
 struct mi {
     mod_t val;

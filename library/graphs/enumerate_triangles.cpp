@@ -1,6 +1,7 @@
 #include<bits/stdc++.h>
 
 const int MOD = 998244353;
+
 int main() {
     std::ios_base::sync_with_stdio(0); std::cin.tie(0);
     int n, m; std::cin >> n >> m;

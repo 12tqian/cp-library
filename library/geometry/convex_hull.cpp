@@ -102,6 +102,7 @@ std::pair<std::vector<int>, std::vector<int>> upper_lower_hull(const std::vector
     }
     return {upper, lower};
 }
+
 template <class T> std::vector<int> hull_index(const std::vector<Point<T>>& v) {
     std::vector<int> upper, lower;
     tie(upper, lower) = upper_lower_hull(v);
@@ -112,6 +113,7 @@ template <class T> std::vector<int> hull_index(const std::vector<Point<T>>& v) {
     lower.insert(lower.end(), 1 + upper.rbegin(), upper.rend() - 1);
     return lower;
 }
+
 template <class T> std::vector<Point<T>> convex_hull(const std::vector<Point<T>>& v) {
     std::vector<int> w = hull_index(v);
     std::vector<Point<T>> res;

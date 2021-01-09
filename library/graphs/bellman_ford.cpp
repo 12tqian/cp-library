@@ -11,16 +11,19 @@ template <class T> struct BellmanFord {
     std::vector<std::vector<int>> adj;
     std::vector<std::pair<std::pair<int, int>, T>> edges;
     std::vector<T> dist;
+
     void init(int n_) {
         n = n_;
         adj.assign(n, std::vector<int>());
         edges.clear();
         dist.assign(n, 0);
     }
+
     void ae(int u, int v, T w) {
         adj[u].push_back(v);
         edges.push_back({{u, v}, w});
     }   
+
     void gen_bad(int x) {
         if (dist[x] == -INF)
             return;
@@ -28,6 +31,7 @@ template <class T> struct BellmanFord {
         for (auto& nxt : adj[x])
             gen_bad(nxt);
     }
+
     void gen(int src) {
         for (int i = 0; i < n; i++) 
             dist[i] = INF;
@@ -40,6 +44,7 @@ template <class T> struct BellmanFord {
             if (dist[e.first.first] < INF && dist[e.first.second] > dist[e.first.first] + e.second)
             gen_bad(e.first.second);
     }
+    
     std::vector<int> negative_cycle(int src = 0) {
         for (int i = 0; i < n; i++)
             dist[src] = INF;

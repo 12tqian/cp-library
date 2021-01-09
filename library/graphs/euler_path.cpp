@@ -5,10 +5,12 @@ template <bool directed> struct Euler {
     std::vector<std::vector<std::pair<int, int>>> adj;
     std::vector<std::vector<std::pair<int, int>>::iterator> its;
     std::vector<bool> used;
+
     void init(int _n) {
         n = _n;
         adj.resize(n);
     }
+
     void ae(int u, int v) {
         int m = (int) used.size();
         used.push_back(false);
@@ -17,6 +19,7 @@ template <bool directed> struct Euler {
             adj[v].emplace_back(u, m);
         }
     }
+
     std::vector<std::pair<int, int>> euler_path() {
         int cnt = 0;
         int src = -1;
@@ -37,6 +40,7 @@ template <bool directed> struct Euler {
         }
         return get_path(src);
     }
+    
     std::vector<std::pair<int, int>> get_path(int src = 0) {
         its.resize(n);
         std::vector<std::pair<int, int>> ans, s{{src, -1}};

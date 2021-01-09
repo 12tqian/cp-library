@@ -5,6 +5,7 @@ struct SCC {
     std::vector<std::vector<int>> adj;
     std::vector<int> disc, id, stk;
     std::vector<std::vector<int>> comps;
+
     void init(int n_) {
         n = n_;
         time = 0;
@@ -14,9 +15,11 @@ struct SCC {
         disc.assign(n, 0);
         comps.clear();
     }
+
     void ae(int u, int v) {
         adj[u].push_back(v);
     }
+
     int dfs(int src) {
         int low = disc[src] = ++time;
         stk.push_back(src);
@@ -30,6 +33,7 @@ struct SCC {
         }
         return low;
     }
+    
     void build() {
         // buils in topological order
         for (int i = 0; i < n; i++) 

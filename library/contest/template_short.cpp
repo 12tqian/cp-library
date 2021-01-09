@@ -35,8 +35,8 @@ typedef vector<pl> vpl;
 
 mt19937 rng((uint32_t) chrono::steady_clock::now().time_since_epoch().count());
 
-template<class T> bool ckmin(T& a, const T& b) { return b < a ? a = b, 1 : 0; }
-template<class T> bool ckmax(T& a, const T& b) { return a < b ? a = b, 1 : 0; }
+template <class T> bool ckmin(T& a, const T& b) { return b < a ? a = b, 1 : 0; }
+template <class T> bool ckmax(T& a, const T& b) { return a < b ? a = b, 1 : 0; }
 
 int main() {
     ios_base::sync_with_stdio(0);

@@ -1,10 +1,12 @@
 #include<bits/stdc++.h>
+
 template<class T> struct LCAJumpDistance {
     int n;
     std::vector<std::vector<int>> par;
     std::vector<std::vector<std::pair<int, T>>> adj;
     std::vector<int> depth;
     std::vector<T> depth_dist;
+
     void init(int _n) {
         n = _n;
         int d = 1;
@@ -14,14 +16,17 @@ template<class T> struct LCAJumpDistance {
         depth.resize(n);
         depth_dist.resize(n);
     }
+
     void ae(int x, int y, T c = 1) {
         adj[x].emplace_back(y, c);
         adj[y].emplace_back(x, c);
     }
+
     void gen(int root = 0) {
         par[0][root] = root;
         dfs(root);
     }
+
     void dfs(int src = 0) {
         for (int i = 1; i < (int) par.size(); i++) {
             par[i][src] = par[i - 1][par[i - 1][src]];
@@ -33,6 +38,7 @@ template<class T> struct LCAJumpDistance {
             dfs(nxt.first);
         }
     }
+
     int jump(int x, int d) {
         for (int i = 0; i < (int) par.size(); i++) {
             if ((d >> i) & 1) {
@@ -41,6 +47,7 @@ template<class T> struct LCAJumpDistance {
         }
         return x;
     }
+
     int lca(int x, int y) {
         if (depth[x] < depth[y]) std::swap(x, y);
         x = jump(x, depth[x] - depth[y]);
@@ -52,11 +59,13 @@ template<class T> struct LCAJumpDistance {
         }
         return par[0][x];
     }
+
     T distance(int x, int y) {
         int l = lca(x, y);
         return depth_dist[x] + depth_dist[y] - 2 * depth_dist[l];
     }
 };
+
 int main() {
     return 0;
 }

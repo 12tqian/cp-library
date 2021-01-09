@@ -1,20 +1,24 @@
 #include <bits/stdc++.h>
+
 struct CentroidDecomposition {
     int n;
     std::vector<std::vector<int>> adj;
     std::vector<bool> vis;
     std::vector<int> size;
     std::vector<int> parent;
+
     void init(int n_) {
         n = n_;
         adj.assign(n, std::vector<int>());
         vis.assign(n, false);
         parent.assign(n, 0);
     }
+
     void ae(int u, int v) {
         adj[u].push_back(v);
         adj[v].push_back(u);
     }
+
     void dfs_size(int src, int par = -1) {
         size[src] = 1;
         for (int nxt : adj[src]) {
@@ -24,6 +28,7 @@ struct CentroidDecomposition {
             size[src] += size[nxt];
         }
     }
+
     int get_centroid(int src) {
         dfs_size(src);
         int num = size[src];
@@ -41,6 +46,7 @@ struct CentroidDecomposition {
         } while (src != -1);
         return par;
     }
+
     void centroid_decomposition(int src, int par = -1) {
         int c = get_centroid(src);
         vis[c] = true;
@@ -52,6 +58,7 @@ struct CentroidDecomposition {
         }
     }
 };  
+
 int main() {
     return 0;
 }

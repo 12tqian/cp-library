@@ -1,20 +1,24 @@
 #include <bits/stdc++.h>
 
 /**
-* Treat this as a black box xD
-* Calculates max flow
-* You can probably add stuff to recover it
-* Most cases, Dinic is better since you understand it
-*/
+ * Treat this as a black box xD
+ * Calculates max flow
+ * You can probably add stuff to recover it
+ * Most cases, Dinic is better since you understand it
+ */
 
 template <class F> struct PushRelabel {
+
     struct Edge { int to, rev; F flow; };
+
     const F INF = std::numeric_limits<F>::max();  
+
     int n, s, t, highest, work;
     std::vector<std::vector<Edge>> adj;
     std::vector<std::vector<int>> lst, gap;
     std::vector<int> height, cnt;
     std::vector<F> excess;
+
     void init(int n_) {
         n = n_;
         adj.clear(); adj.resize(2 * n);
@@ -27,6 +31,7 @@ template <class F> struct PushRelabel {
         s = 0;
         t = n - 1;
     }
+
     void ae(int u, int v, F cap) {
         assert(cap >= 0);
         Edge a{v, (int) adj[v].size(), cap};
@@ -34,6 +39,7 @@ template <class F> struct PushRelabel {
         adj[u].push_back(a);
         adj[v].push_back(b);
     }
+
     void update_height(int v, int nh) {
         work++;
         if (height[v] != n)
@@ -47,6 +53,7 @@ template <class F> struct PushRelabel {
         if (excess[v] > 0)
             lst[nh].push_back(v);
     }
+
     void global_relabel() {
         work = 0;
         for (int i = 0; i < n; i++)
@@ -64,6 +71,7 @@ template <class F> struct PushRelabel {
             highest = height[v];
         }
     }
+
     void push(int v, Edge& e) {
         if (excess[e.to] == 0)
             lst[height[e.to]].push_back(e.to);
@@ -71,6 +79,7 @@ template <class F> struct PushRelabel {
         e.flow -= df, adj[e.to][e.rev].flow += df;
         excess[v] -= df, excess[e.to] += df;
     }
+
     void discharge(int v) {
         int nh = n;
         for (auto& e : adj[v]) 
@@ -92,6 +101,7 @@ template <class F> struct PushRelabel {
             }
         }
     }
+    
     F max_flow(int s_, int t_) {
         s = s_, t = t_;
         if (s == t)

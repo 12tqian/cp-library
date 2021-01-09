@@ -1,6 +1,8 @@
 #include<bits/stdc++.h>
+
 template <int SZ> struct Sieve {
     int spf[SZ];
+    
     Sieve() {
         spf[1] = 1;
         for (int i = 2; i < SZ; i++) 
@@ -13,6 +15,7 @@ template <int SZ> struct Sieve {
                     if (spf[j] == j) 
                         spf[j] = i;
     }
+
     std::vector<std::pair<int, int>> factor(int x) {
         std::vector<std::pair<int, int>> ret;
         while (x != 1) {

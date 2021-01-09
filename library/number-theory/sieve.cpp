@@ -1,7 +1,9 @@
 #include<bits/stdc++.h>
+
 template <int SZ> struct Sieve {
     std::bitset<SZ> pri;
     std::vector<int> pr;
+    
     Sieve() {
         pri.set();
         pri[0] = pri[1] = 0;
@@ -22,6 +24,7 @@ template <int SZ> struct Sieve {
         }
     }
 };
+
 int main() {
     return 0;
 }

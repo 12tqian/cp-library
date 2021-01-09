@@ -5,6 +5,7 @@ namespace Karatsuba {
 int size(int s) {
     return s > 1 ? 32 - __builtin_clz(s - 1) : 0;
 }
+
 template <class T> void karatsuba(T* a, T* b, T* c, T* t, int n) {
     int ca = 0, cb = 0;
     for (int i = 0; i < n; i++)
@@ -32,6 +33,7 @@ template <class T> void karatsuba(T* a, T* b, T* c, T* t, int n) {
             c[i + h] += t[i], t[i] = 0;
     }
 }
+
 template <class T> std::vector<T> convolution(std::vector<T> a, std::vector<T> b) {
     int sa = (int) a.size(), sb = (int) b.size();
     if (!sa || !sb) 

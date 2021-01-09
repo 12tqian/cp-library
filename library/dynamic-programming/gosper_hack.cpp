@@ -1,4 +1,5 @@
 #include<bits/stdc++.h>
+
 std::string binary(unsigned long long n ) { //long long to binary string
     std::string result;
     do result.push_back('0' + (n & 1));
@@ -6,6 +7,7 @@ std::string binary(unsigned long long n ) { //long long to binary string
     reverse(result.begin(), result.end());
     return result;
 }
+
 int main() {
     int n = 4;
     for (int sz = 1; sz <= n; sz++) {

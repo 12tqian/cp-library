@@ -77,9 +77,9 @@ typedef vector<pd> vpd;
 
 mt19937 rng((uint32_t) chrono::steady_clock::now().time_since_epoch().count());
 
-template<class T> bool ckmin(T& a, const T& b) { return b < a ? a = b, 1 : 0; }
-template<class T> bool ckmax(T& a, const T& b) { return a < b ? a = b, 1 : 0; }
-template<class T> using V = vector<T>;
+template <class T> bool ckmin(T& a, const T& b) { return b < a ? a = b, 1 : 0; }
+template <class T> bool ckmax(T& a, const T& b) { return a < b ? a = b, 1 : 0; }
+template <class T> using V = vector<T>;
 
 #ifdef LOCAL
 #define dbg(...) debug(#__VA_ARGS__, __VA_ARGS__);
@@ -87,29 +87,29 @@ template<class T> using V = vector<T>;
 #define dbg(...) 17;
 #endif
 
-template<typename T, typename S> ostream& operator << (ostream &os, const pair<T, S> &p) { return os << "(" << p.first << ", " << p.second << ")"; }
-template<typename C, typename T = decay<decltype(*begin(declval<C>()))>, typename enable_if<!is_same<C, string>::value>::type* = nullptr>
+template <typename T, typename S> ostream& operator << (ostream &os, const pair<T, S> &p) { return os << "(" << p.first << ", " << p.second << ")"; }
+template <typename C, typename T = decay<decltype(*begin(declval<C>()))>, typename enable_if<!is_same<C, string>::value>::type* = nullptr>
 ostream& operator << (ostream &os, const C &c) { bool f = true; os << "{"; for (const auto &x : c) { if (!f) os << ", "; f = false; os << x; } return os << "}"; }
-template<typename T> void debug(string s, T x) { cerr << s << " = " << x << "\n"; }
-template<typename T, typename... Args> void debug(string s, T x, Args... args) { cerr << s.substr(0, s.find(',')) << " = " << x << " | "; debug(s.substr(s.find(',') + 2), args...); }
+template <typename T> void debug(string s, T x) { cerr << s << " = " << x << "\n"; }
+template <typename T, typename... Args> void debug(string s, T x, Args... args) { cerr << s.substr(0, s.find(',')) << " = " << x << " | "; debug(s.substr(s.find(',') + 2), args...); }
 
 constexpr int pct(int x) { return __builtin_popcount(x); }
 constexpr int bits(int x) { return 31 - __builtin_clz(x); } // floor(log2(x))
 
 namespace input {
-    template<class T> void re(complex<T>& x);
-    template<class T1, class T2> void re(pair<T1, T2>& p);
-    template<class T> void re(vector<T>& a);
-    template<class T, int SZ> void re(array<T, SZ>& a);
-    template<class T> void re(T& x) { cin >> x; }
+    template <class T> void re(complex<T>& x);
+    template <class T1, class T2> void re(pair<T1, T2>& p);
+    template <class T> void re(vector<T>& a);
+    template <class T, int SZ> void re(array<T, SZ>& a);
+    template <class T> void re(T& x) { cin >> x; }
     void re(double& x) { string t; re(t); x = stod(t); }
     void re(ld& x) { string t; re(t); x = stold(t); }
-    template<class T, class... Ts> void re(T& t, Ts&... ts) {
+    template <class T, class... Ts> void re(T& t, Ts&... ts) {
         re(t); re(ts...); }
-    template<class T> void re(complex<T>& x) { T a, b; re(a, b); x = cd(a, b); }
-    template<class T1, class T2> void re(pair<T1, T2>& p) { re(p.f, p.s); }
-    template<class T> void re(vector<T>& a) { F0R(i, sz(a)) re(a[i]); }
-    template<class T, int SZ> void re(array<T, SZ>& a) { F0R(i, SZ) re(a[i]); }
+    template <class T> void re(complex<T>& x) { T a, b; re(a, b); x = cd(a, b); }
+    template <class T1, class T2> void re(pair<T1, T2>& p) { re(p.f, p.s); }
+    template <class T> void re(vector<T>& a) { F0R(i, sz(a)) re(a[i]); }
+    template <class T, int SZ> void re(array<T, SZ>& a) { F0R(i, SZ) re(a[i]); }
 }
 
 using namespace input;
@@ -128,22 +128,22 @@ namespace output {
     void pr(const char* x) { cout << x; }
     void pr(const string& x) { cout << x; }
     void pr(bool x) { pr(x ? "true" : "false"); }
-    template<class T> void pr(const complex<T>& x) { cout << x; }
-    template<class T1, class T2> void pr(const pair<T1, T2>& x);
-    template<class T> void pr(const T& x);
-    template<class T, class... Ts> void pr(const T& t, const Ts&... ts) {
+    template <class T> void pr(const complex<T>& x) { cout << x; }
+    template <class T1, class T2> void pr(const pair<T1, T2>& x);
+    template <class T> void pr(const T& x);
+    template <class T, class... Ts> void pr(const T& t, const Ts&... ts) {
         pr(t); pr(ts...); }
-    template<class T1, class T2> void pr(const pair<T1,T2>& x) {
+    template <class T1, class T2> void pr(const pair<T1,T2>& x) {
         pr("{", x.f, ", ", x.s, "}"); }
-    template<class T> void pr(const T& x) {
+    template <class T> void pr(const T& x) {
         pr("{"); // const iterator needed for vector<bool>
         bool fst = 1; for (const auto& a: x) pr(!fst ? ", " : "", a), fst = 0;
         pr("}"); }
     void ps() { pr("\n"); } // print w/ spaces
-    template<class T, class... Ts> void ps(const T& t, const Ts&... ts) {
+    template <class T, class... Ts> void ps(const T& t, const Ts&... ts) {
         pr(t); if (sizeof...(ts)) pr(" "); ps(ts...); }
     void pc() { pr("]\n"); } // debug w/ commas
-    template<class T, class... Ts> void pc(const T& t, const Ts&... ts) {
+    template <class T, class... Ts> void pc(const T& t, const Ts&... ts) {
         pr(t); if (sizeof...(ts)) pr(", "); pc(ts...); }
 }
 

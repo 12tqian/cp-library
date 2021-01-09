@@ -4,6 +4,7 @@ struct LCAJump {
     std::vector<std::vector<int>> par;
     std::vector<std::vector<int>> adj;
     std::vector<int> depth;
+
     void init(int _n) {
         n = _n;
         int d = 1;
@@ -12,14 +13,17 @@ struct LCAJump {
         adj.resize(n);
         depth.resize(n);
     }
+
     void ae(int x, int y) {
         adj[x].push_back(y);
         adj[y].push_back(x);
     }
+
     void gen(int root = 0) {
         par[0][root] = root;
         dfs(root);
     }
+
     void dfs(int src = 0) {
         for (int i = 1; i < (int) par.size(); i++) {
             par[i][src] = par[i - 1][par[i - 1][src]];
@@ -30,6 +34,7 @@ struct LCAJump {
             dfs(nxt);
         }
     }
+
     int jump(int x, int d) {
         for (int i = 0; i < (int) par.size(); i++) {
             if ((d >> i) & 1) {
@@ -38,6 +43,7 @@ struct LCAJump {
         }
         return x;
     }
+    
     int lca(int x, int y) {
         if (depth[x] < depth[y]) std::swap(x, y);
         x = jump(x, depth[x] - depth[y]);

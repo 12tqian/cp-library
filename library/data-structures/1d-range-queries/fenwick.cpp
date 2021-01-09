@@ -3,10 +3,12 @@
 template <class T> struct FenwickTree {
     std::vector<T> fwt;
     int n;
+
     void init(int n_) {
         n = n_;
         fwt.resize(n);
     }
+
     void init(std::vector<T>& a) {
         n = (int) a.size();
         a.assign(n, 0);
@@ -14,15 +16,18 @@ template <class T> struct FenwickTree {
             add(i, a[i]);
         }
     }
+
     T sum(int r) {
         T ret = 0;
         for (; r >= 0; r = (r & (r + 1)) - 1) 
             ret += fwt[r];
         return ret;
     }
+
     T query(int l, int r) {
         return sum(r) - sum(l - 1);
     }
+    
     void add(int idx, T delta) {
         for (; idx < n; idx = idx | (idx + 1)) 
             fwt[idx] += delta;

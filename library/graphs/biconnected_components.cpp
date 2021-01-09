@@ -8,6 +8,7 @@ struct BCC {
     // adj, comps storage, bridge block tree
     std::vector<std::pair<int, int>> bridge;
     // bridges
+    
     void init(int n_) {
         num_comps = time = 0;
         n = n_;
@@ -18,15 +19,18 @@ struct BCC {
         comps.clear();
         tree.clear();
     }
+
     void ae(int u, int v) {
         adj[u].push_back(v);
         adj[v].push_back(u);
     }
+
     bool is_bridge(int u, int v) {
         if (ord[u] > ord[v])
             std::swap(u, v);
         return ord[u] < low[v];
     }
+
     void dfs(int src, int par) {
         ord[src] = low[src] = time++;
         bool bic = false; // accounts for double edges
@@ -45,6 +49,7 @@ struct BCC {
                 bridge.emplace_back(src, nxt);
         }
     }
+
     void fill_component(int src) {
         comps[id[src]].push_back(src);
         for (int nxt : adj[src]) {
@@ -54,6 +59,7 @@ struct BCC {
             fill_component(nxt);
         }
     }
+
     void add_component(int src) {
         if (id[src] != -1)
             return;
@@ -61,6 +67,7 @@ struct BCC {
         comps.emplace_back();
         fill_component(src);
     }
+    
     int build() {
         for (int i = 0; i < n; i++) 
             if (ord[i] == -1)

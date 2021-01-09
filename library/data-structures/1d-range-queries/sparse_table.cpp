@@ -1,13 +1,15 @@
 #include<bits/stdc++.h>
+
 template <class T> struct SparseTable {
     std::vector<T> v;
     std::vector<std::vector<int>> jump;
-    int level(int x) {
-        return 31 - __builtin_clz(x);
-    }
+
+    int level(int x) { return 31 - __builtin_clz(x); }
+
     int comb(int a, int b) {
         return v[a] == v[b] ? std::min(a, b) : (v[a] < v[b] ? a : b);
     }
+
     void init(const std::vector<T>& _v) {
         v = _v;
         jump = {std::vector<int>((int) v.size())};
@@ -19,15 +21,18 @@ template <class T> struct SparseTable {
             }
         }
     }
+
     int index(int l, int r) {
         assert(l <= r);
         int d = level(r - l + 1);
         return comb(jump[d][l], jump[d][r - (1 << d) + 1]);
     }
+
     T query(int l, int r) {
         return v[index(l, r)];
     }
 };
+
 int main() {
     return 0;
 }

@@ -1,16 +1,19 @@
 #include <bits/stdc++.h>
 /**
-* to get back the original edges, assign ID's in ae
-*/
+ * to get back the original edges, assign ID's in ae
+ */
 
 template <class F, class C> struct MCMF {
     struct Edge { int to; F flow, cap; C cost; };
+
     int n;
     std::vector<C> p, dist;
     std::vector<int> pre;
     std::vector<Edge> edges;
     std::vector<std::vector<int>> adj;
+
     const C INF  = std::numeric_limits<C>::max();
+
     void init(int n_) {
         n = n_;
         p.assign(n, 0);
@@ -19,6 +22,7 @@ template <class F, class C> struct MCMF {
         adj.clear(); adj.resize(n);
         edges.clear();
     }
+
     void ae(int u, int v, F cap, C cost) {
         assert(cap >= 0);
         adj[u].push_back((int) edges.size());
@@ -26,6 +30,7 @@ template <class F, class C> struct MCMF {
         adj[v].push_back((int) edges.size());
         edges.push_back({u, 0, 0, -cost});
     }
+
     bool path(int s, int t) {
         for (int i = 0; i < n; i++) 
             dist[i] = INF;
@@ -48,6 +53,7 @@ template <class F, class C> struct MCMF {
         }
         return dist[t] != INF;
     }
+
     std::pair<F, C> calc(int s, int t) {
         assert(s != t);
         for (int unused = 0; unused < n; unused++)
@@ -73,7 +79,6 @@ template <class F, class C> struct MCMF {
         }
         return {total_flow, total_cost};
     }
-
 };
 
 int main() {

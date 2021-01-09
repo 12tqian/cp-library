@@ -1,11 +1,15 @@
 #include<bits/stdc++.h>
+
 const long long INF = 1e18;
+
 struct IntervalUnion {
     std::set<std::pair<long long, long long>> le, ri;
+
     void reset() {
         le.clear();
         ri.clear();
     }
+
     std::vector<std::pair<long long, long long>> insert(std::pair<long long, long long> x) {
         // inserts an interval while returning the intervals it intersected with
         std::set<std::pair<long long, long long>> bad;
@@ -54,6 +58,7 @@ struct IntervalUnion {
         return ret;
     }
 };
+
 int main() {
     return 0;
 }

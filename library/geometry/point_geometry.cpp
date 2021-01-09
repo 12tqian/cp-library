@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+
 template <typename T> struct Point {
 public:
     T x, y;
@@ -91,6 +92,7 @@ template <class T> Point<T> foot( const Point<T>& p, const Point<T>& a, const Po
         return (p + reflect(p, a, b)) / (T) 2; }
 template <class T> bool on_segment(Point<T> p, Point<T> a, Point<T> b) {
     return area(a, b, p) == 0 && dot(p - a, p - b) <= 0; }
+
 template <class T>
 std::vector<Point<T>> segment_intersect(Point<T> a, Point<T> b, Point<T> c, Point<T> d) {
     T x = area(a, b, c), y = area(a, b, d);
@@ -108,11 +110,13 @@ std::vector<Point<T>> segment_intersect(Point<T> a, Point<T> b, Point<T> c, Poin
         s.insert(d);
     return {s.begin(), s.end()};
 }
+
 template <class T> Point<T> extension(Point<T> a, Point<T> b, Point<T> c, Point<T> d) {
     T x = cross(a, b, c);
     T y = cross(a, b, d);
     return (d * x - c * y) / (x - y);
 }
+
 template <class T> std::pair<int, Point<T>> line_intersect(Point<T> a, Point<T> b, Point<T> c, Point<T> d) {
     // returns -1 if infinitely, 0 if none, 1 if unique 
     if (cross(b - a, d - c) == 0)
@@ -120,8 +124,10 @@ template <class T> std::pair<int, Point<T>> line_intersect(Point<T> a, Point<T> 
     else 
         return {1, extend(a, b, c, d)};
 }
+
 template <class T> T line_dist(Point<T> p, Point<T> a, Point<T> b) {
     return abs(area(p, a, b)) / abs(a - b); }
+
 template <class T> T point_segment_dist(Point<T> p, Point<T> a, Point<T> b) {
     if (dot(p - a, b - a) <= 0)
         return abs(p - a);
@@ -129,6 +135,7 @@ template <class T> T point_segment_dist(Point<T> p, Point<T> a, Point<T> b) {
         return abs(p - b);
     return line_dist(p, a, b);
 }
+
 template <class T> T segment_segment_dist(Point<T> a, Point<T> b, Point<T> c, Point<T> d) {
     std::vector<Point<T>> v = segment_intersect(a, b, c, d);
     if (!v.empty())
@@ -136,6 +143,7 @@ template <class T> T segment_segment_dist(Point<T> a, Point<T> b, Point<T> c, Po
     return std::min({point_segment_dist(a, c, d), point_segment_dist(b, c, d), 
         point_segment_dist(c, a, b), point_segment_dist(d, a, b)});
 }
+
 template <class T> std::pair<Point<T>, T> centroid_area(const std::vector<Point<T>> v) {
     // pair of centroid and area, positive means CCW, negative means CW
     Point<T> centroid(0, 0);
@@ -148,6 +156,7 @@ template <class T> std::pair<Point<T>, T> centroid_area(const std::vector<Point<
     }
     return {centroid / area / (T) 3, area / 2};
 }
+
 template<class T> int polygon_point(const std::vector<Point<T>>& p, Point<T> z) {
     // returns -1 if outside, 0 if on, 1 if inside
     int n = (int) p.size();

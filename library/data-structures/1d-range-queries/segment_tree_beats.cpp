@@ -5,7 +5,8 @@ template <class C> struct SegmentTreeBeats {
     const C INF = std::numeric_limits<C>::max();
     std::vector<C> mx_mod, mn_mod, mod, sum;
     std::vector<T> mx, mn;
-    int sz;
+    int sz; 
+
     void init(int sz_) {
         sz = 1; 
         while (sz < sz_) sz *= 2;
@@ -17,6 +18,7 @@ template <class C> struct SegmentTreeBeats {
         mn.resize(2 * sz);
         build();
     }
+
     void build(int ind = 1, int L = 0, int R = -1) {
         if (R == -1) R += sz;
         mx_mod[ind] = INF, mn_mod[ind] = -INF, mod[ind] = 0;
@@ -30,6 +32,7 @@ template <class C> struct SegmentTreeBeats {
         build(2 * ind, L, M); build(2 * ind + 1, M + 1, R);
         pull(ind);
     }
+
     T comb_mn(T a, T b) {
         if (a > b) 
             std::swap(a, b);
@@ -39,6 +42,7 @@ template <class C> struct SegmentTreeBeats {
                 a.second + b.second};
         return {{a.first.first, std::min(a.first.second, b.first.first)}, a.second};
     }
+
     T comb_mx(T a, T b) {
         if (a < b) std::swap(a, b);
         if (a.first.first == b.first.first) 
@@ -48,11 +52,13 @@ template <class C> struct SegmentTreeBeats {
         return {{a.first.first, std::max(a.first.second, b.first.first)}, 
             a.second};
     }
+
     void pull(int ind) {
         sum[ind] = sum[2 * ind] + sum[2 * ind + 1];
         mn[ind] = comb_mn(mn[2 * ind], mn[2 * ind + 1]);
         mx[ind] = comb_mx(mx[2 * ind], mx[2 * ind + 1]);
     }
+
     void push(int ind, int L, int R) {
         auto chk = [](C& a, C b, C c) {
             if (a == b)
@@ -108,6 +114,7 @@ template <class C> struct SegmentTreeBeats {
             mod[ind] = 0;
         }
     }
+
     C qsum(int lo, int hi, int ind = 1, int L = 0, int R = -1) {
         if (R == -1) R += sz;
         push(ind, L, R);
@@ -118,6 +125,7 @@ template <class C> struct SegmentTreeBeats {
         int M = (L + R) / 2;
         return qsum(lo, hi, 2 * ind, L, M) + qsum(lo, hi, 2 * ind + 1, M + 1, R);
     }
+
     C qmax(int lo, int hi, int ind = 1, int L = 0, int R = -1) {
         if (R == -1) R += sz;
         push(ind, L, R);
@@ -128,6 +136,7 @@ template <class C> struct SegmentTreeBeats {
         int M = (L + R) / 2;
         return std::max(qmax(lo, hi, 2 * ind, L, M), qmax(lo, hi, 2 * ind + 1, M + 1, R));
     }
+
     C qmin(int lo, int hi, int ind = 1, int L = 0, int R = -1) {
         if (R == -1) R += sz;
         push(ind, L, R);
@@ -138,6 +147,7 @@ template <class C> struct SegmentTreeBeats {
         int M = (L + R) / 2;
         return std::min(qmin(lo, hi, 2 * ind, L, M), qmin(lo, hi, 2 * ind + 1, M + 1, R));
     }
+    
     void upd(int t, int lo, int hi, C b, int ind = 1, int L = 0, int R = -1) {
         if (R == -1) R += sz;
         push(ind, L, R);

@@ -7,6 +7,7 @@ template <class F> struct Dinic {
     std::vector<std::vector<int>> adj;
     std::vector<int> level;
     std::vector<std::vector<int>::iterator> cur;
+
     void init(int n_) {
         n = n_;
         adj.assign(n, std::vector<int>());
@@ -14,6 +15,7 @@ template <class F> struct Dinic {
         edges.clear();
         level.clear();
     }
+
     void ae(int u, int v, F cap, F rcap = 0) {
         assert(std::min(cap, rcap) >= 0);
         adj[u].push_back((int) edges.size());
@@ -21,6 +23,7 @@ template <class F> struct Dinic {
         adj[v].push_back((int) edges.size());
         edges.push_back({u, 0, rcap});
     }
+
     bool bfs(int s, int t) {
         level = std::vector<int>(n, -1);
         for (int i = 0; i < n; i++)
@@ -39,6 +42,7 @@ template <class F> struct Dinic {
         }
         return level[t] >= 0;
     }
+
     F dfs(int v, int t, F flow) {
         if (v == t)
             return flow;
@@ -55,6 +59,7 @@ template <class F> struct Dinic {
         }
         return 0;
     }
+    
     F max_flow(int s, int t) {
         F tot = 0;
         while (bfs(s, t)) 

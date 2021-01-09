@@ -4,13 +4,15 @@ template <class T> struct RangeSetSeg {
     const T UNUSED = -1;
     std::vector<T> sum, lazy;
     int sz;
-    /// lazy stores what to set to
+
+    // lazy stores what to set to
     void init(int sz_) {
         sz = 1;
         while (sz < sz_) sz *= 2;
         sum.assign(2 * sz, 0);
         lazy.assign(2 * sz, UNUSED);
     }
+
     void push(int ind, int L, int R) {
         if (L != R) {
             if(lazy[ind] != UNUSED){
@@ -19,10 +21,12 @@ template <class T> struct RangeSetSeg {
                 }
             }
         }
-        if(lazy[ind] != UNUSED) sum[ind] = (R - L + 1) * lazy[ind];
+        if (lazy[ind] != UNUSED) sum[ind] = (R - L + 1) * lazy[ind];
         lazy[ind] = UNUSED;
     }
+
     void pull(int ind) { sum[ind] = sum[2 * ind] + sum[2 * ind + 1]; }
+
     void range_set(int lo, int hi, T inc, int ind = 1, int L = 0, int R = -1) {
         if (R == -1) R += sz;
         push(ind, L, R);
@@ -35,6 +39,7 @@ template <class T> struct RangeSetSeg {
         range_set(lo, hi, inc, 2 * ind, L, M); range_set(lo, hi, inc, 2 * ind + 1, M + 1, R);
         pull(ind);
     }
+
     T qsum(int lo, int hi, int ind = 1, int L = 0, int R = -1) {
         if (R == -1) R += sz;
         push(ind, L, R); if (lo > R || L > hi) return 0;
@@ -44,6 +49,6 @@ template <class T> struct RangeSetSeg {
     }
 };
 
-int main(){
+int main() {
     return 0;
 }

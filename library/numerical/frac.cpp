@@ -1,4 +1,5 @@
 #include<bits/stdc++.h>
+
 struct Frac {
     long long n, d;
     Frac(long long _n, long long _d) {
@@ -30,6 +31,7 @@ struct Frac {
     template <class T> friend Frac& operator /= (Frac& l, const T& r) { return l = l / r; }
     friend std::ostream& operator << (std::ostream& os, const Frac& a) { return os << a.n << "/" << a.d; }
 };
+
 int main() {
     return 0;
 }

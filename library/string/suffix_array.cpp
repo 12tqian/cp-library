@@ -10,12 +10,15 @@
 template <class T> struct SparseTable {
     std::vector<T> v;
     std::vector<std::vector<int>> jump;
+
     int level(int x) {
         return 31 - __builtin_clz(x);
     }
+
     int comb(int a, int b) {
         return v[a] == v[b] ? std::min(a, b) : (v[a] < v[b] ? a : b);
     }
+
     void init(const std::vector<T>& _v) {
         v = _v;
         jump = {std::vector<int>((int) v.size())};
@@ -27,11 +30,13 @@ template <class T> struct SparseTable {
             }
         }
     }
+
     int index(int l, int r) {
         assert(l <= r);
         int d = level(r - l + 1);
         return comb(jump[d][l], jump[d][r - (1 << d) + 1]);
     }
+
     T query(int l, int r) {
         return v[index(l, r)];
     }
@@ -42,12 +47,14 @@ struct SuffixArray {
     int n;
     std::vector<int> sa, isa, lcp;
     SparseTable<int> S;
+
     void init(std::string _s) {
         n = (int) (s = _s).size() + 1;
         gen_suffix_array();
         gen_lcp_array();
         gen_finish();
     }
+
     void gen_suffix_array() {
         sa = isa = std::vector<int>(n);
         sa[0] = n - 1;
@@ -73,6 +80,7 @@ struct SuffixArray {
             }
         }
     }
+
     void gen_lcp_array() {
         lcp = std::vector<int>(n - 1);
         int h = 0;
@@ -84,6 +92,7 @@ struct SuffixArray {
             if (h) h--;
         }
     }
+
     void gen_finish() {
         lcp.erase(lcp.begin());
         sa.erase(sa.begin());
@@ -93,6 +102,7 @@ struct SuffixArray {
         isa.pop_back();
         S.init(lcp);
     }
+    
     int get_lcp(int a, int b) {
         if (a == b) {
             return (int) s.size() - a;

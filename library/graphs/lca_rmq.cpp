@@ -14,12 +14,15 @@
 template <class T> struct SparseTable {
     std::vector<T> v;
     std::vector<std::vector<int>> jump;
+
     int level(int x) {
         return 31 - __builtin_clz(x);
     }
+
     int comb(int a, int b) {
         return v[a] == v[b] ? std::min(a, b) : (v[a] < v[b] ? a : b);
     }
+
     void init(const std::vector<T>& _v) {
         v = _v;
         jump = {std::vector<int>((int) v.size())};
@@ -31,11 +34,13 @@ template <class T> struct SparseTable {
             }
         }
     }
+
     int index(int l, int r) {
         assert(l <= r);
         int d = level(r - l + 1);
         return comb(jump[d][l], jump[d][r - (1 << d) + 1]);
     }
+
     T query(int l, int r) {
         return v[index(l, r)];
     }
@@ -49,6 +54,7 @@ struct LCARMQ {
     SparseTable<std::pair<int, int>> S;
     std::vector<std::vector<int>> sparse;
     int ti = 0;
+
     void init(int _n) {
         n = _n;
         adj.resize(n);
@@ -58,10 +64,12 @@ struct LCARMQ {
             sparse.push_back(std::vector<int>(n - (1 << j) + 1));
         }
     }
+
     void ae(int u, int v) {
         adj[u].push_back(v);
         adj[v].push_back(u);
     }
+
     void dfs(int src) {
         in[src] = ti++;
         sparse[0][in[src]] = src;
@@ -75,9 +83,11 @@ struct LCARMQ {
         }
         out[src] = ti;
     }
+
     inline int mini(int u, int v) {
         return (dep[u] < dep[v] || (dep[u] == dep[v] && in[u] > in[v])) ? u : v;
     }
+
     void gen(int root = 0) {
         par[root] = root;
         dfs(root);
@@ -88,18 +98,22 @@ struct LCARMQ {
             }
         }
     }
+
     int lca(int u, int v) {
         u = pos[u];
         v = pos[v];
         if (u > v) std::swap(u, v);
         return S.query(u, v).second;
     }
+
     int dist(int u, int v) {
         return dep[u] + dep[v] - 2 * dep[lca(u, v)];
     }
+
     bool is_ancestor(int anc, int src) {
         return in[anc] <= in[src] && out[anc] >= out[src];
     }
+
     int get_child(int anc, int src) {
         if (!is_ancestor(anc, src)) return -1;
         int l = in[anc] + 1;
@@ -107,6 +121,7 @@ struct LCARMQ {
         int d = 31 - __builtin_clz(r - l + 1);
         return mini(sparse[d][l], sparse[d][r - (1 << d) + 1]);
     }
+    
     std::vector<std::pair<int, int>> compress(std::vector<int> nodes) {
         auto cmp = [&](int a, int b) {
             return pos[a] < pos[b];

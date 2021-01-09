@@ -1,14 +1,16 @@
-/**
-* Benq's code made without macros and nicer
-* Does everything a link cut tree could possibly want to
-*/
 #pragma GCC optimize ("O3")
 #pragma GCC target ("sse4")
+
+/**
+ * Benq's code made without macros and nicer
+ * Does everything a link cut tree could possibly want to
+ */
 
 #include <bits/stdc++.h>
 
 struct info {
     int sz, sum, mn, mx;
+
     info (int v) {
         if (v == INT_MAX) {
             sz = sum = 0;
@@ -17,7 +19,9 @@ struct info {
             sz = 1; sum = mn = mx = v;
         }
     }
+
     info() : info(INT_MAX) {}
+
     friend info& operator+=(info& a, const info& b) {
         a.sz += b.sz, a.sum += b.sum;
         a.mn = std::min(a.mn, b.mn);
@@ -25,7 +29,9 @@ struct info {
         return a;
     }
 };
+
 typedef struct snode* sn;
+
 struct snode {
     int id, val; // value in node
     sn p; // parent
@@ -33,6 +39,7 @@ struct snode {
     bool flip = 0;
     info data[2];
     int next_num[2], lazy[2];
+
     snode(int _id, int v) {
         id = _id; val = v;
         p = NULL;
@@ -43,6 +50,7 @@ struct snode {
         lazy[0] = lazy[1] = 0;
         calc();
     }
+
     //////// splay tree operations
     void prop() {
         if (flip) {
@@ -109,6 +117,7 @@ struct snode {
             lazy[0] = 0;
         }
     }
+
     void calc() {
         for (int i = 0; i < 5; i++) {
             if (c[i]) {
@@ -126,6 +135,7 @@ struct snode {
             }
         }
     }
+
     int dir() {
         if (!p) return -2;
         for (int i = 0; i < 5; i++) {
@@ -135,6 +145,7 @@ struct snode {
         }
         assert(false);
     }
+
     bool is_root() {
         int d = dir();
         return d == -2 || d == 4;
@@ -144,6 +155,7 @@ struct snode {
         if (y) y->p = x;
         if (d >= 0) x->c[d] = y;
     }
+
     void rot() {
         assert(!is_root());
         int x = dir(); sn pa = p;
@@ -152,10 +164,12 @@ struct snode {
         set_link(this, pa, x ^ 1);
         pa->calc(); calc();
     }
+
     bool ok_zero() {
         int d = dir();
         return d == 0 || d == 1;
     }
+
     void splay() {
         while (ok_zero() && p->ok_zero() && p->p->ok_zero()) {
             p->p->prop(), p->prop(), prop();
@@ -190,6 +204,7 @@ struct snode {
         set_link(a, b, 3); a->calc();
         return a;
     }
+
     //////// link cut tree operations
     void access() { // bring this to top of tree, left subtree of this is now path to root
         int it = 0;
@@ -215,10 +230,12 @@ struct snode {
         }
         splay(); assert(!c[1]);
     }
+
     void make_root() {
         access();
         flip ^= 1;
     }
+
     //////// link cut tree queries
     friend sn lca(sn x, sn y) {
         if (x == y) return x;
@@ -226,9 +243,11 @@ struct snode {
         if (!x->p) return NULL;
         x->splay(); return x->p ? x->p : x;
     }
+
     friend bool connected(sn x, sn y) {
         return lca(x,y);
     }
+
     friend sn get_par(sn x) {
         x->access(); x = x->c[0];
         while (true) {
@@ -238,6 +257,7 @@ struct snode {
         }
         return x;
     }
+
     //////// link cut tree modifications
     friend bool link(sn x, sn y) { // make y parent of x
         if (connected(x, y)) exit(2);
@@ -246,12 +266,14 @@ struct snode {
         y->calc();
         return 1;
     }
+
     friend bool cut(sn x, sn y) {
         x->make_root(); y->access();
         if (y->c[0] != x || x->c[0] || x->c[1]) exit(3);
         x->p = y->c[0] = NULL; y->calc();
         return true;
     }
+
     void prop_all() {
         prop();
         for (int i = 0; i < 5; i++) {
@@ -261,6 +283,7 @@ struct snode {
         }
     }
 };
+
 int main() {
     std::ios_base::sync_with_stdio(0); std::cin.tie(0);
     int n, m, root;

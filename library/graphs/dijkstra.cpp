@@ -1,16 +1,20 @@
 #include<bits/stdc++.h>
+
 template <class C, bool directed> struct Dijkstra {
     int SZ; std::vector<C> dist;
     std::vector<std::vector<std::pair<int, C>>> adj;
+
     void init(int _SZ) {
         SZ = _SZ;
         adj.clear();
         adj.resize(SZ);
     }
+
     void ae(int u, int v, C cost) {
         adj[u].emplace_back(v, cost);
         if (!directed) adj[v].emplace_back(u, cost);
     }
+
     void gen(int st) {
         dist = std::vector<C>(SZ, std::numeric_limits<C>::max());
         typedef std::pair<C, int> T;
@@ -30,6 +34,7 @@ template <class C, bool directed> struct Dijkstra {
         }
     }
 };
+
 int main() {
     return 0;
 }
