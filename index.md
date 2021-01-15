@@ -193,6 +193,9 @@ data:
       path: library/numerical/karatsuba.cpp
       title: library/numerical/karatsuba.cpp
     - icon: ':warning:'
+      path: library/numerical/matrix.cpp
+      title: library/numerical/matrix.cpp
+    - icon: ':warning:'
       path: library/numerical/mod_int.cpp
       title: library/numerical/mod_int.cpp
     - icon: ':warning:'
