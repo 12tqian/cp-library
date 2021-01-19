@@ -7,7 +7,7 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"library/number-theory/big_fast_factor_failed.cpp\"\n#include<bits/stdc++.h>\n\
+  bundledCode: "#line 1 \"library/unused/big_fast_factor_failed.cpp\"\n#include<bits/stdc++.h>\n\
     \ntemplate <int SZ> struct Sieve {\n    std::bitset<SZ> pri;\n    std::vector<int>\
     \ pr;\n    Sieve() {\n        pri.set();\n        pri[0] = pri[1] = 0;\n     \
     \   for (int i = 4; i < SZ; i += 2) {\n            pri[i] = 0;\n        }\n  \
@@ -110,15 +110,15 @@ data:
     n';\n    }\n    return 0;\n}\n"
   dependsOn: []
   isVerificationFile: false
-  path: library/number-theory/big_fast_factor_failed.cpp
+  path: library/unused/big_fast_factor_failed.cpp
   requiredBy: []
-  timestamp: '2020-12-04 02:43:09-05:00'
+  timestamp: '2021-01-19 00:06:49-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: library/number-theory/big_fast_factor_failed.cpp
+documentation_of: library/unused/big_fast_factor_failed.cpp
 layout: document
 redirect_from:
-- /library/library/number-theory/big_fast_factor_failed.cpp
-- /library/library/number-theory/big_fast_factor_failed.cpp.html
-title: library/number-theory/big_fast_factor_failed.cpp
+- /library/library/unused/big_fast_factor_failed.cpp
+- /library/library/unused/big_fast_factor_failed.cpp.html
+title: library/unused/big_fast_factor_failed.cpp
 ---

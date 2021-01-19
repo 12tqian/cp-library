@@ -8,7 +8,8 @@ data:
   attributes:
     links: []
   bundledCode: "#line 1 \"library/graphs/lca_jump.cpp\"\n#include<bits/stdc++.h>\n\
-    struct LCAJump {\n    int n;\n    std::vector<std::vector<int>> par;\n    std::vector<std::vector<int>>\
+    \n/**\n * To support forest, call gen for each roots\n */\nstruct LCAJump {\n\
+    \    int n;\n    std::vector<std::vector<int>> par;\n    std::vector<std::vector<int>>\
     \ adj;\n    std::vector<int> depth;\n\n    void init(int _n) {\n        n = _n;\n\
     \        int d = 1;\n        while ((1 << d) < n) d++;\n        par.assign(d,\
     \ std::vector<int>(n));\n        adj.resize(n);\n        depth.resize(n);\n  \
@@ -31,10 +32,11 @@ data:
     \ {\n        int p; cin >> p;\n        L.ae(i, p);\n    }\n    L.gen(0);\n   \
     \ while (q--) {\n        int u, v; cin >> u >> v;\n        cout << L.lca(u, v)\
     \ << '\\n';\n    }\n}\n"
-  code: "#include<bits/stdc++.h>\nstruct LCAJump {\n    int n;\n    std::vector<std::vector<int>>\
-    \ par;\n    std::vector<std::vector<int>> adj;\n    std::vector<int> depth;\n\n\
-    \    void init(int _n) {\n        n = _n;\n        int d = 1;\n        while ((1\
-    \ << d) < n) d++;\n        par.assign(d, std::vector<int>(n));\n        adj.resize(n);\n\
+  code: "#include<bits/stdc++.h>\n\n/**\n * To support forest, call gen for each roots\n\
+    \ */\nstruct LCAJump {\n    int n;\n    std::vector<std::vector<int>> par;\n \
+    \   std::vector<std::vector<int>> adj;\n    std::vector<int> depth;\n\n    void\
+    \ init(int _n) {\n        n = _n;\n        int d = 1;\n        while ((1 << d)\
+    \ < n) d++;\n        par.assign(d, std::vector<int>(n));\n        adj.resize(n);\n\
     \        depth.resize(n);\n    }\n\n    void ae(int x, int y) {\n        adj[x].push_back(y);\n\
     \        adj[y].push_back(x);\n    }\n\n    void gen(int root = 0) {\n       \
     \ par[0][root] = root;\n        dfs(root);\n    }\n\n    void dfs(int src = 0)\
@@ -58,7 +60,7 @@ data:
   isVerificationFile: false
   path: library/graphs/lca_jump.cpp
   requiredBy: []
-  timestamp: '2021-01-09 11:49:29-05:00'
+  timestamp: '2021-01-19 00:06:49-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/graphs/lca_jump.cpp

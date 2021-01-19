@@ -13,13 +13,14 @@ data:
     \ * Returns list of (parent, original index)\n * Parent is the parent of node\
     \ in compressed tree\n * Original index is the node it represents\n * get_child\
     \ also returns the subtree child of node and -1 if it doesn't exist in O(1)\n\
-    \ */\n\ntemplate <class T> struct SparseTable {\n    std::vector<T> v;\n    std::vector<std::vector<int>>\
-    \ jump;\n\n    int level(int x) {\n        return 31 - __builtin_clz(x);\n   \
-    \ }\n\n    int comb(int a, int b) {\n        return v[a] == v[b] ? std::min(a,\
-    \ b) : (v[a] < v[b] ? a : b);\n    }\n\n    void init(const std::vector<T>& _v)\
-    \ {\n        v = _v;\n        jump = {std::vector<int>((int) v.size())};\n   \
-    \     iota(jump[0].begin(), jump[0].end(), 0);\n        for (int j = 1; (1 <<\
-    \ j) <= (int) v.size(); j++) {\n            jump.push_back(std::vector<int>((int)\
+    \ * To support forest, gen on all the roots, initialize tmp and sparse at the\
+    \ end\n */\n\ntemplate <class T> struct SparseTable {\n    std::vector<T> v;\n\
+    \    std::vector<std::vector<int>> jump;\n\n    int level(int x) {\n        return\
+    \ 31 - __builtin_clz(x);\n    }\n\n    int comb(int a, int b) {\n        return\
+    \ v[a] == v[b] ? std::min(a, b) : (v[a] < v[b] ? a : b);\n    }\n\n    void init(const\
+    \ std::vector<T>& _v) {\n        v = _v;\n        jump = {std::vector<int>((int)\
+    \ v.size())};\n        iota(jump[0].begin(), jump[0].end(), 0);\n        for (int\
+    \ j = 1; (1 << j) <= (int) v.size(); j++) {\n            jump.push_back(std::vector<int>((int)\
     \ v.size() - (1 << j) + 1));\n            for (int i = 0; i < (int) jump[j].size();\
     \ i++) {\n                jump[j][i] = comb(jump[j - 1][i], jump[j - 1][i + (1\
     \ << (j - 1))]);\n            }\n        }\n    }\n\n    int index(int l, int\
@@ -73,7 +74,8 @@ data:
     \ edges\n * O(S log S) compression\n * Returns list of (parent, original index)\n\
     \ * Parent is the parent of node in compressed tree\n * Original index is the\
     \ node it represents\n * get_child also returns the subtree child of node and\
-    \ -1 if it doesn't exist in O(1)\n */\n\ntemplate <class T> struct SparseTable\
+    \ -1 if it doesn't exist in O(1)\n * To support forest, gen on all the roots,\
+    \ initialize tmp and sparse at the end\n */\n\ntemplate <class T> struct SparseTable\
     \ {\n    std::vector<T> v;\n    std::vector<std::vector<int>> jump;\n\n    int\
     \ level(int x) {\n        return 31 - __builtin_clz(x);\n    }\n\n    int comb(int\
     \ a, int b) {\n        return v[a] == v[b] ? std::min(a, b) : (v[a] < v[b] ? a\
@@ -133,7 +135,7 @@ data:
   isVerificationFile: false
   path: library/graphs/lca_rmq.cpp
   requiredBy: []
-  timestamp: '2021-01-09 11:49:29-05:00'
+  timestamp: '2021-01-19 00:06:49-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/graphs/lca_rmq.cpp

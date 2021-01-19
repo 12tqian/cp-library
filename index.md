@@ -170,9 +170,6 @@ data:
       path: library/number-theory/big_fast_factor_better.cpp
       title: library/number-theory/big_fast_factor_better.cpp
     - icon: ':warning:'
-      path: library/number-theory/big_fast_factor_failed.cpp
-      title: library/number-theory/big_fast_factor_failed.cpp
-    - icon: ':warning:'
       path: library/number-theory/fast_factor_sieve.cpp
       title: library/number-theory/fast_factor_sieve.cpp
     - icon: ':warning:'
@@ -223,6 +220,9 @@ data:
     - icon: ':warning:'
       path: library/unused/array_lazy_segment_tree.cpp
       title: library/unused/array_lazy_segment_tree.cpp
+    - icon: ':warning:'
+      path: library/unused/big_fast_factor_failed.cpp
+      title: library/unused/big_fast_factor_failed.cpp
   verificationCategories:
   - name: test
     pages:
