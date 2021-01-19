@@ -1,5 +1,9 @@
 #include<bits/stdc++.h>
 
+/**
+ * To support forest, just change 
+ * init to take in a vector of roots, and DFS each of them
+ */
 template <class T> struct LazySeg {
     std::vector<T> sum, lazy;
     int sz;
@@ -76,7 +80,6 @@ template <class T> class HeavyLight {
     template <class B> void process_path(int u, int v, B op) {
         for (; root[u] != root[v]; v = parent[root[v]]) {
             if (depth[root[u]] > depth[root[v]]) std::swap(u, v);
-            
             op(tree_pos[root[v]], tree_pos[v]);
         }
         if (depth[u] > depth[v]) std::swap(u, v);
@@ -86,7 +89,7 @@ template <class T> class HeavyLight {
 public:
     template <class G>
     void init(const G& graph, int r = 0) {
-        int n = graph.size();
+        int n = (int) graph.size();
         heavy.assign(n, -1);
         parent.assign(n, 0);
         depth.assign(n, 0);

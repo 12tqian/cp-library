@@ -9,6 +9,7 @@
  * Parent is the parent of node in compressed tree
  * Original index is the node it represents
  * get_child also returns the subtree child of node and -1 if it doesn't exist in O(1)
+ * To support forest, gen on all the roots, initialize tmp and sparse at the end
  */
 
 template <class T> struct SparseTable {
