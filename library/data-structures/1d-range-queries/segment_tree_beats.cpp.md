@@ -8,25 +8,26 @@ data:
   attributes:
     links: []
   bundledCode: "#line 1 \"library/data-structures/1d-range-queries/segment_tree_beats.cpp\"\
-    \n#include <bits/stdc++.h>\n\ntemplate <class C> struct SegmentTreeBeats {\n \
-    \   using T = std::pair<std::pair<C, C>, int>;\n    const C INF = std::numeric_limits<C>::max();\n\
-    \    std::vector<C> mx_mod, mn_mod, mod, sum;\n    std::vector<T> mx, mn;\n  \
-    \  int sz; \n\n    void init(int sz_) {\n        sz = 1; \n        while (sz <\
-    \ sz_) sz *= 2;\n        mx_mod.resize(2 * sz);\n        mn_mod.resize(2 * sz);\n\
-    \        mod.resize(2 * sz);\n        sum.resize(2 * sz);\n        mx.resize(2\
-    \ * sz);\n        mn.resize(2 * sz);\n        build();\n    }\n\n    void build(int\
-    \ ind = 1, int L = 0, int R = -1) {\n        if (R == -1) R += sz;\n        mx_mod[ind]\
-    \ = INF, mn_mod[ind] = -INF, mod[ind] = 0;\n        if (L == R) {\n          \
-    \  mx[ind] = {{0, -INF}, 1};\n            mn[ind] = {{0, INF}, 1};\n         \
-    \   sum[ind] = 0;\n            return;\n        }\n        int M = (L + R) / 2;\n\
-    \        build(2 * ind, L, M); build(2 * ind + 1, M + 1, R);\n        pull(ind);\n\
-    \    }\n\n    T comb_mn(T a, T b) {\n        if (a > b) \n            std::swap(a,\
-    \ b);\n        if (a.first.first == b.first.first) \n            return  {{a.first.first,\
-    \ \n                std::min(a.first.second, b.first.second)}, \n            \
-    \    a.second + b.second};\n        return {{a.first.first, std::min(a.first.second,\
-    \ b.first.first)}, a.second};\n    }\n\n    T comb_mx(T a, T b) {\n        if\
-    \ (a < b) std::swap(a, b);\n        if (a.first.first == b.first.first) \n   \
-    \         return  {{a.first.first, \n                std::max(a.first.second,\
+    \n#include <bits/stdc++.h>\n\n/**\n * 0 is ckmin, 1 is ckmax, 2 is range add\n\
+    \ */\ntemplate <class C> struct SegmentTreeBeats {\n    using T = std::pair<std::pair<C,\
+    \ C>, int>;\n    const C INF = std::numeric_limits<C>::max();\n    std::vector<C>\
+    \ mx_mod, mn_mod, mod, sum;\n    std::vector<T> mx, mn;\n    int sz; \n\n    void\
+    \ init(int sz_) {\n        sz = 1; \n        while (sz < sz_) sz *= 2;\n     \
+    \   mx_mod.assign(2 * sz, 0);\n        mn_mod.assign(2 * sz, 0);\n        mod.assign(2\
+    \ * sz, 0);\n        sum.assign(2 * sz, 0);\n        mx.assign(2 * sz, {{0, 0},\
+    \ 0});\n        mn.assign(2 * sz, {{0, 0}, 0});\n        build();\n    }\n\n \
+    \   void build(int ind = 1, int L = 0, int R = -1) {\n        if (R == -1) R +=\
+    \ sz;\n        mx_mod[ind] = INF, mn_mod[ind] = -INF, mod[ind] = 0;\n        if\
+    \ (L == R) {\n            mx[ind] = {{0, -INF}, 1};\n            mn[ind] = {{0,\
+    \ INF}, 1};\n            sum[ind] = 0;\n            return;\n        }\n     \
+    \   int M = (L + R) / 2;\n        build(2 * ind, L, M); build(2 * ind + 1, M +\
+    \ 1, R);\n        pull(ind);\n    }\n\n    T comb_mn(T a, T b) {\n        if (a\
+    \ > b) \n            std::swap(a, b);\n        if (a.first.first == b.first.first)\
+    \ \n            return  {{a.first.first, \n                std::min(a.first.second,\
+    \ b.first.second)}, \n                a.second + b.second};\n        return {{a.first.first,\
+    \ std::min(a.first.second, b.first.first)}, a.second};\n    }\n\n    T comb_mx(T\
+    \ a, T b) {\n        if (a < b) std::swap(a, b);\n        if (a.first.first ==\
+    \ b.first.first) \n            return  {{a.first.first, \n                std::max(a.first.second,\
     \ b.first.second)}, \n                a.second + b.second};\n        return {{a.first.first,\
     \ std::max(a.first.second, b.first.first)}, \n            a.second};\n    }\n\n\
     \    void pull(int ind) {\n        sum[ind] = sum[2 * ind] + sum[2 * ind + 1];\n\
@@ -93,30 +94,31 @@ data:
     \ 1, M + 1, R);\n        pull(ind);\n    }\n};\n\nint main() {\n    using namespace\
     \ std;\n    ios_base::sync_with_stdio(0);\n    int n, q; cin >> n >> q;\n    SegmentTreeBeats<long\
     \ long> S;\n    S.init(n);\n    std::vector<long long> a(n);\n    for (int i =\
-    \ 0; i < n; i++)\n        cin >> a[i], S.upd(2, i, i, a[i]);\n    while (q--)\
-    \ {\n        int t, l, r; cin >> t >> l >> r;\n        r--;\n        if (t <=\
-    \ 2) {\n            long long b; cin >> b;\n            S.upd(t, l, r, b);\n \
-    \       } else {\n            cout << S.qsum(l, r) << '\\n';\n        }\n    }\n\
-    }\n"
-  code: "#include <bits/stdc++.h>\n\ntemplate <class C> struct SegmentTreeBeats {\n\
-    \    using T = std::pair<std::pair<C, C>, int>;\n    const C INF = std::numeric_limits<C>::max();\n\
-    \    std::vector<C> mx_mod, mn_mod, mod, sum;\n    std::vector<T> mx, mn;\n  \
-    \  int sz; \n\n    void init(int sz_) {\n        sz = 1; \n        while (sz <\
-    \ sz_) sz *= 2;\n        mx_mod.resize(2 * sz);\n        mn_mod.resize(2 * sz);\n\
-    \        mod.resize(2 * sz);\n        sum.resize(2 * sz);\n        mx.resize(2\
-    \ * sz);\n        mn.resize(2 * sz);\n        build();\n    }\n\n    void build(int\
-    \ ind = 1, int L = 0, int R = -1) {\n        if (R == -1) R += sz;\n        mx_mod[ind]\
-    \ = INF, mn_mod[ind] = -INF, mod[ind] = 0;\n        if (L == R) {\n          \
-    \  mx[ind] = {{0, -INF}, 1};\n            mn[ind] = {{0, INF}, 1};\n         \
-    \   sum[ind] = 0;\n            return;\n        }\n        int M = (L + R) / 2;\n\
-    \        build(2 * ind, L, M); build(2 * ind + 1, M + 1, R);\n        pull(ind);\n\
-    \    }\n\n    T comb_mn(T a, T b) {\n        if (a > b) \n            std::swap(a,\
-    \ b);\n        if (a.first.first == b.first.first) \n            return  {{a.first.first,\
-    \ \n                std::min(a.first.second, b.first.second)}, \n            \
-    \    a.second + b.second};\n        return {{a.first.first, std::min(a.first.second,\
-    \ b.first.first)}, a.second};\n    }\n\n    T comb_mx(T a, T b) {\n        if\
-    \ (a < b) std::swap(a, b);\n        if (a.first.first == b.first.first) \n   \
-    \         return  {{a.first.first, \n                std::max(a.first.second,\
+    \ 0; i < n; i++)\n       \n        cin >> a[i], S.upd(2, i, i, a[i]);\n    while\
+    \ (q--) {\n        int t, l, r; cin >> t >> l >> r;\n        r--;\n        if\
+    \ (t <= 2) {\n            long long b; cin >> b;\n            S.upd(t, l, r, b);\n\
+    \        } else {\n            cout << S.qsum(l, r) << '\\n';\n        }\n   \
+    \ }\n}\n"
+  code: "#include <bits/stdc++.h>\n\n/**\n * 0 is ckmin, 1 is ckmax, 2 is range add\n\
+    \ */\ntemplate <class C> struct SegmentTreeBeats {\n    using T = std::pair<std::pair<C,\
+    \ C>, int>;\n    const C INF = std::numeric_limits<C>::max();\n    std::vector<C>\
+    \ mx_mod, mn_mod, mod, sum;\n    std::vector<T> mx, mn;\n    int sz; \n\n    void\
+    \ init(int sz_) {\n        sz = 1; \n        while (sz < sz_) sz *= 2;\n     \
+    \   mx_mod.assign(2 * sz, 0);\n        mn_mod.assign(2 * sz, 0);\n        mod.assign(2\
+    \ * sz, 0);\n        sum.assign(2 * sz, 0);\n        mx.assign(2 * sz, {{0, 0},\
+    \ 0});\n        mn.assign(2 * sz, {{0, 0}, 0});\n        build();\n    }\n\n \
+    \   void build(int ind = 1, int L = 0, int R = -1) {\n        if (R == -1) R +=\
+    \ sz;\n        mx_mod[ind] = INF, mn_mod[ind] = -INF, mod[ind] = 0;\n        if\
+    \ (L == R) {\n            mx[ind] = {{0, -INF}, 1};\n            mn[ind] = {{0,\
+    \ INF}, 1};\n            sum[ind] = 0;\n            return;\n        }\n     \
+    \   int M = (L + R) / 2;\n        build(2 * ind, L, M); build(2 * ind + 1, M +\
+    \ 1, R);\n        pull(ind);\n    }\n\n    T comb_mn(T a, T b) {\n        if (a\
+    \ > b) \n            std::swap(a, b);\n        if (a.first.first == b.first.first)\
+    \ \n            return  {{a.first.first, \n                std::min(a.first.second,\
+    \ b.first.second)}, \n                a.second + b.second};\n        return {{a.first.first,\
+    \ std::min(a.first.second, b.first.first)}, a.second};\n    }\n\n    T comb_mx(T\
+    \ a, T b) {\n        if (a < b) std::swap(a, b);\n        if (a.first.first ==\
+    \ b.first.first) \n            return  {{a.first.first, \n                std::max(a.first.second,\
     \ b.first.second)}, \n                a.second + b.second};\n        return {{a.first.first,\
     \ std::max(a.first.second, b.first.first)}, \n            a.second};\n    }\n\n\
     \    void pull(int ind) {\n        sum[ind] = sum[2 * ind] + sum[2 * ind + 1];\n\
@@ -183,16 +185,16 @@ data:
     \ 1, M + 1, R);\n        pull(ind);\n    }\n};\n\nint main() {\n    using namespace\
     \ std;\n    ios_base::sync_with_stdio(0);\n    int n, q; cin >> n >> q;\n    SegmentTreeBeats<long\
     \ long> S;\n    S.init(n);\n    std::vector<long long> a(n);\n    for (int i =\
-    \ 0; i < n; i++)\n        cin >> a[i], S.upd(2, i, i, a[i]);\n    while (q--)\
-    \ {\n        int t, l, r; cin >> t >> l >> r;\n        r--;\n        if (t <=\
-    \ 2) {\n            long long b; cin >> b;\n            S.upd(t, l, r, b);\n \
-    \       } else {\n            cout << S.qsum(l, r) << '\\n';\n        }\n    }\n\
-    }"
+    \ 0; i < n; i++)\n       \n        cin >> a[i], S.upd(2, i, i, a[i]);\n    while\
+    \ (q--) {\n        int t, l, r; cin >> t >> l >> r;\n        r--;\n        if\
+    \ (t <= 2) {\n            long long b; cin >> b;\n            S.upd(t, l, r, b);\n\
+    \        } else {\n            cout << S.qsum(l, r) << '\\n';\n        }\n   \
+    \ }\n}"
   dependsOn: []
   isVerificationFile: false
   path: library/data-structures/1d-range-queries/segment_tree_beats.cpp
   requiredBy: []
-  timestamp: '2021-01-09 11:49:29-05:00'
+  timestamp: '2021-01-22 13:03:23-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/data-structures/1d-range-queries/segment_tree_beats.cpp

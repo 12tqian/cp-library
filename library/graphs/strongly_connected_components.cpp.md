@@ -19,7 +19,7 @@ data:
     \   low = std::min(low, disc[nxt] ? : dfs(nxt));\n        if (low == disc[src])\
     \ {\n            for (int nxt = -1; nxt != src;)\n                id[nxt = stk.back()]\
     \ = num_comps, stk.pop_back();\n            num_comps++;\n        }\n        return\
-    \ low;\n    }\n    \n    void build() {\n        // buils in topological order\n\
+    \ low;\n    }\n    \n    void build() {\n        // builds in topological order\n\
     \        for (int i = 0; i < n; i++) \n            if (!disc[i])\n           \
     \     dfs(i);\n        for (auto& x : id) \n            x = num_comps - 1 - x;\n\
     \        comps.resize(num_comps);\n        for (int i = 0; i < n; i++)\n     \
@@ -41,7 +41,7 @@ data:
     \       low = std::min(low, disc[nxt] ? : dfs(nxt));\n        if (low == disc[src])\
     \ {\n            for (int nxt = -1; nxt != src;)\n                id[nxt = stk.back()]\
     \ = num_comps, stk.pop_back();\n            num_comps++;\n        }\n        return\
-    \ low;\n    }\n    \n    void build() {\n        // buils in topological order\n\
+    \ low;\n    }\n    \n    void build() {\n        // builds in topological order\n\
     \        for (int i = 0; i < n; i++) \n            if (!disc[i])\n           \
     \     dfs(i);\n        for (auto& x : id) \n            x = num_comps - 1 - x;\n\
     \        comps.resize(num_comps);\n        for (int i = 0; i < n; i++)\n     \
@@ -56,7 +56,7 @@ data:
   isVerificationFile: false
   path: library/graphs/strongly_connected_components.cpp
   requiredBy: []
-  timestamp: '2021-01-09 11:49:29-05:00'
+  timestamp: '2021-01-22 13:03:23-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/graphs/strongly_connected_components.cpp
