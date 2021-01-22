@@ -1,5 +1,8 @@
 #include <bits/stdc++.h>
 
+/**
+ * 0 is ckmin, 1 is ckmax, 2 is range add
+ */
 template <class C> struct SegmentTreeBeats {
     using T = std::pair<std::pair<C, C>, int>;
     const C INF = std::numeric_limits<C>::max();
@@ -10,12 +13,12 @@ template <class C> struct SegmentTreeBeats {
     void init(int sz_) {
         sz = 1; 
         while (sz < sz_) sz *= 2;
-        mx_mod.resize(2 * sz);
-        mn_mod.resize(2 * sz);
-        mod.resize(2 * sz);
-        sum.resize(2 * sz);
-        mx.resize(2 * sz);
-        mn.resize(2 * sz);
+        mx_mod.assign(2 * sz, 0);
+        mn_mod.assign(2 * sz, 0);
+        mod.assign(2 * sz, 0);
+        sum.assign(2 * sz, 0);
+        mx.assign(2 * sz, {{0, 0}, 0});
+        mn.assign(2 * sz, {{0, 0}, 0});
         build();
     }
 
@@ -193,6 +196,7 @@ int main() {
     S.init(n);
     std::vector<long long> a(n);
     for (int i = 0; i < n; i++)
+       
         cin >> a[i], S.upd(2, i, i, a[i]);
     while (q--) {
         int t, l, r; cin >> t >> l >> r;

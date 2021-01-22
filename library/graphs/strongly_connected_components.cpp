@@ -35,7 +35,7 @@ struct SCC {
     }
     
     void build() {
-        // buils in topological order
+        // builds in topological order
         for (int i = 0; i < n; i++) 
             if (!disc[i])
                 dfs(i);
