@@ -53,8 +53,14 @@ data:
       path: library/data-structures/2d-range-queries/binary_indexed_tree_seg.cpp
       title: library/data-structures/2d-range-queries/binary_indexed_tree_seg.cpp
     - icon: ':warning:'
+      path: library/data-structures/2d-range-queries/general_fenwick.cpp
+      title: library/data-structures/2d-range-queries/general_fenwick.cpp
+    - icon: ':warning:'
       path: library/data-structures/2d-range-queries/offline_2d_bit.cpp
       title: library/data-structures/2d-range-queries/offline_2d_bit.cpp
+    - icon: ':warning:'
+      path: library/data-structures/2d-range-queries/quadtree.cpp
+      title: library/data-structures/2d-range-queries/quadtree.cpp
   - name: library/dynamic-programming
     pages:
     - icon: ':warning:'
