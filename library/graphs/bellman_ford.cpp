@@ -1,9 +1,9 @@
 #include <bits/stdc++.h>
 /**
-* dist is INF if you can't reach and -INF if it is in a negative cycle
-* negative cycle is same thing as gen, it just doesn't do gen_bad
-* also it returns a negative cycle :D
-*/
+ * dist is INF if you can't reach and -INF if it is in a negative cycle
+ * negative cycle is same thing as gen, it just doesn't do gen_bad
+ * also it returns a negative cycle :D
+ */
 
 template <class T> struct BellmanFord {
     const T INF = std::numeric_limits<T>::max();
