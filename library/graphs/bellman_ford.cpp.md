@@ -8,10 +8,10 @@ data:
   attributes:
     links: []
   bundledCode: "#line 1 \"library/graphs/bellman_ford.cpp\"\n#include <bits/stdc++.h>\n\
-    /**\n* dist is INF if you can't reach and -INF if it is in a negative cycle\n\
-    * negative cycle is same thing as gen, it just doesn't do gen_bad\n* also it returns\
-    \ a negative cycle :D\n*/\n\ntemplate <class T> struct BellmanFord {\n    const\
-    \ T INF = std::numeric_limits<T>::max();\n    int n; \n    std::vector<std::vector<int>>\
+    /**\n * dist is INF if you can't reach and -INF if it is in a negative cycle\n\
+    \ * negative cycle is same thing as gen, it just doesn't do gen_bad\n * also it\
+    \ returns a negative cycle :D\n */\n\ntemplate <class T> struct BellmanFord {\n\
+    \    const T INF = std::numeric_limits<T>::max();\n    int n; \n    std::vector<std::vector<int>>\
     \ adj;\n    std::vector<std::pair<std::pair<int, int>, T>> edges;\n    std::vector<T>\
     \ dist;\n\n    void init(int n_) {\n        n = n_;\n        adj.assign(n, std::vector<int>());\n\
     \        edges.clear();\n        dist.assign(n, 0);\n    }\n\n    void ae(int\
@@ -51,10 +51,10 @@ data:
     \            else if (dist == -B.INF)\n                cout << \"-Infinity\\n\"\
     ;\n            else \n                cout << B.dist[x] << '\\n';\n        }\n\
     \    }\n    return 0;\n}\n"
-  code: "#include <bits/stdc++.h>\n/**\n* dist is INF if you can't reach and -INF\
-    \ if it is in a negative cycle\n* negative cycle is same thing as gen, it just\
-    \ doesn't do gen_bad\n* also it returns a negative cycle :D\n*/\n\ntemplate <class\
-    \ T> struct BellmanFord {\n    const T INF = std::numeric_limits<T>::max();\n\
+  code: "#include <bits/stdc++.h>\n/**\n * dist is INF if you can't reach and -INF\
+    \ if it is in a negative cycle\n * negative cycle is same thing as gen, it just\
+    \ doesn't do gen_bad\n * also it returns a negative cycle :D\n */\n\ntemplate\
+    \ <class T> struct BellmanFord {\n    const T INF = std::numeric_limits<T>::max();\n\
     \    int n; \n    std::vector<std::vector<int>> adj;\n    std::vector<std::pair<std::pair<int,\
     \ int>, T>> edges;\n    std::vector<T> dist;\n\n    void init(int n_) {\n    \
     \    n = n_;\n        adj.assign(n, std::vector<int>());\n        edges.clear();\n\
@@ -98,7 +98,7 @@ data:
   isVerificationFile: false
   path: library/graphs/bellman_ford.cpp
   requiredBy: []
-  timestamp: '2021-01-09 11:49:29-05:00'
+  timestamp: '2021-02-02 18:46:24-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/graphs/bellman_ford.cpp
