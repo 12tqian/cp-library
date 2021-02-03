@@ -10,8 +10,8 @@ struct IntervalUnion {
         ri.clear();
     }
 
+    // inserts an interval while returning the intervals it intersected with
     std::vector<std::pair<long long, long long>> insert(std::pair<long long, long long> x) {
-        // inserts an interval while returning the intervals it intersected with
         std::set<std::pair<long long, long long>> bad;
         std::vector<std::pair<long long, long long>> ret;
         std::pair<long long, long long> use1 = std::make_pair(x.first, -INF), use2 = std::make_pair(x.second, INF);
@@ -50,7 +50,7 @@ struct IntervalUnion {
         }
         for (auto b: bad) ret.emplace_back(b);
         long long mn = x.first, mx = x.second;
-        for (auto b: ret){
+        for (auto b: ret) {
             le.erase(b); ri.erase(std::make_pair(b.second, b.first));
             mn = std::min(mn, b.first); mx = std::max(mx, b.second);
         }
