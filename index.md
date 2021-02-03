@@ -205,6 +205,9 @@ data:
       path: library/numerical/mod_int2.cpp
       title: library/numerical/mod_int2.cpp
     - icon: ':warning:'
+      path: library/numerical/mod_operations.cpp
+      title: library/numerical/mod_operations.cpp
+    - icon: ':warning:'
       path: library/numerical/xor_basis.cpp
       title: library/numerical/xor_basis.cpp
   - name: library/string
