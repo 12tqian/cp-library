@@ -176,6 +176,9 @@ data:
       path: library/number-theory/big_fast_factor_better.cpp
       title: library/number-theory/big_fast_factor_better.cpp
     - icon: ':warning:'
+      path: library/number-theory/counting_primes.cpp
+      title: library/number-theory/counting_primes.cpp
+    - icon: ':warning:'
       path: library/number-theory/fast_factor_sieve.cpp
       title: library/number-theory/fast_factor_sieve.cpp
     - icon: ':warning:'
