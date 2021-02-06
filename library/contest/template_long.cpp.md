@@ -30,7 +30,7 @@ data:
     \ i = (a); i < (b); ++i)\n#define f0r(i, a) f1r(i, 0, a)\n#define FOR(i, a, b)\
     \ for (int i = (a); i < (b); ++i)\n#define F0R(i, a) FOR(i,0,a)\n#define ROF(i,\
     \ a, b) for (int i = (b) - 1; i >= (a); --i)\n#define R0F(i, a) ROF(i, 0, a)\n\
-    #define trav(a, x) for (auto& a : x)\n\nmt19937 rng((uint32_t) chrono::steady_clock::now().time_since_epoch().count());\n\
+    #define each(a, x) for (auto& a : x)\n\nmt19937 rng((uint32_t) chrono::steady_clock::now().time_since_epoch().count());\n\
     \ntemplate <class T> bool ckmin(T& a, const T& b) { return b < a ? a = b, 1 :\
     \ 0; }\ntemplate <class T> bool ckmax(T& a, const T& b) { return a < b ? a = b,\
     \ 1 : 0; }\ntemplate <class T> using V = vector<T>;\n\n#ifdef LOCAL\n#define dbg(...)\
@@ -132,7 +132,7 @@ data:
     \ i = (a); i < (b); ++i)\n#define f0r(i, a) f1r(i, 0, a)\n#define FOR(i, a, b)\
     \ for (int i = (a); i < (b); ++i)\n#define F0R(i, a) FOR(i,0,a)\n#define ROF(i,\
     \ a, b) for (int i = (b) - 1; i >= (a); --i)\n#define R0F(i, a) ROF(i, 0, a)\n\
-    #define trav(a, x) for (auto& a : x)\n\nmt19937 rng((uint32_t) chrono::steady_clock::now().time_since_epoch().count());\n\
+    #define each(a, x) for (auto& a : x)\n\nmt19937 rng((uint32_t) chrono::steady_clock::now().time_since_epoch().count());\n\
     \ntemplate <class T> bool ckmin(T& a, const T& b) { return b < a ? a = b, 1 :\
     \ 0; }\ntemplate <class T> bool ckmax(T& a, const T& b) { return a < b ? a = b,\
     \ 1 : 0; }\ntemplate <class T> using V = vector<T>;\n\n#ifdef LOCAL\n#define dbg(...)\
@@ -216,7 +216,7 @@ data:
   isVerificationFile: false
   path: library/contest/template_long.cpp
   requiredBy: []
-  timestamp: '2021-01-09 11:49:29-05:00'
+  timestamp: '2021-02-06 16:23:21-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/contest/template_long.cpp
