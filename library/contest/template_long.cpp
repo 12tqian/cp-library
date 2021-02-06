@@ -73,7 +73,7 @@ typedef vector<pd> vpd;
 #define F0R(i, a) FOR(i,0,a)
 #define ROF(i, a, b) for (int i = (b) - 1; i >= (a); --i)
 #define R0F(i, a) ROF(i, 0, a)
-#define trav(a, x) for (auto& a : x)
+#define each(a, x) for (auto& a : x)
 
 mt19937 rng((uint32_t) chrono::steady_clock::now().time_since_epoch().count());
 
