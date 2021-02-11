@@ -16,8 +16,8 @@ data:
     \ int> pi;\ntypedef pair<ll, ll> pl;\ntypedef vector<pi> vpi;\ntypedef vector<pl>\
     \ vpl;\n\ntemplate <class T> bool ckmin(T& a, const T& b) { return b < a ? a =\
     \ b, 1 : 0; }\ntemplate <class T> bool ckmax(T& a, const T& b) { return a < b\
-    \ ? a = b, 1 : 0; }\n\nint main() {\n    ios_base::sync_with_stdio(0);\n    return\
-    \ 0;\n}\n"
+    \ ? a = b, 1 : 0; }\n\nint main() {\n    cin.tie(0)->sync_with_stdio(0);\n   \
+    \ return 0;\n}\n"
   code: "#include <bits/stdc++.h>\n\nusing namespace std;\n\n#define f1r(i, a, b)\
     \ for (int i = a; i < b; ++i)\n#define f0r(i, a) f1r(i, 0, a)\n#define each(t,\
     \ a) for (auto& t : a)\n\n#define mp make_pair\n#define f first\n#define s second\n\
@@ -27,12 +27,12 @@ data:
     \ pl;\ntypedef vector<pi> vpi;\ntypedef vector<pl> vpl;\n\ntemplate <class T>\
     \ bool ckmin(T& a, const T& b) { return b < a ? a = b, 1 : 0; }\ntemplate <class\
     \ T> bool ckmax(T& a, const T& b) { return a < b ? a = b, 1 : 0; }\n\nint main()\
-    \ {\n    ios_base::sync_with_stdio(0);\n    return 0;\n}\n"
+    \ {\n    cin.tie(0)->sync_with_stdio(0);\n    return 0;\n}\n"
   dependsOn: []
   isVerificationFile: false
   path: library/contest/template_short.cpp
   requiredBy: []
-  timestamp: '2021-02-06 16:23:21-05:00'
+  timestamp: '2021-02-11 15:03:01-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/contest/template_short.cpp
