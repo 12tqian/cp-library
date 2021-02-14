@@ -8,7 +8,7 @@ data:
   attributes:
     links: []
   bundledCode: "#line 1 \"library/data-structures/2d-range-queries/binary_indexed_tree_seg.cpp\"\
-    \n#include<bits/stdc++.h>\n\n// bump allocator\n/\nstatic char buf[450 << 20];\n\
+    \n#include<bits/stdc++.h>\n\n// bump allocator\n\nstatic char buf[450 << 20];\n\
     void* operator new(size_t s) {\n    static size_t i = sizeof buf;\n    assert(s\
     \ < i);\n    return (void*) & buf[i -= s];\n}\nvoid operator delete(void*) {}\n\
     \nconst int SZ = (1 << 18);\n\n// [0, SZ - 1) for x axis, [0, SZ) for y axis\n\
@@ -42,7 +42,7 @@ data:
     \ x2, int y1, int y2) { // query sum of rectangle\n        x1++, x2++;\n     \
     \   return query(x2, y1, y2) - query(x1 - 1, y1, y2); \n    }\n};\n\nint main()\
     \ {\n    return 0;\n}\n"
-  code: "#include<bits/stdc++.h>\n\n// bump allocator\n/\nstatic char buf[450 << 20];\n\
+  code: "#include<bits/stdc++.h>\n\n// bump allocator\n\nstatic char buf[450 << 20];\n\
     void* operator new(size_t s) {\n    static size_t i = sizeof buf;\n    assert(s\
     \ < i);\n    return (void*) & buf[i -= s];\n}\nvoid operator delete(void*) {}\n\
     \nconst int SZ = (1 << 18);\n\n// [0, SZ - 1) for x axis, [0, SZ) for y axis\n\
@@ -80,7 +80,7 @@ data:
   isVerificationFile: false
   path: library/data-structures/2d-range-queries/binary_indexed_tree_seg.cpp
   requiredBy: []
-  timestamp: '2021-01-09 11:49:29-05:00'
+  timestamp: '2021-02-14 18:30:25-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/data-structures/2d-range-queries/binary_indexed_tree_seg.cpp
