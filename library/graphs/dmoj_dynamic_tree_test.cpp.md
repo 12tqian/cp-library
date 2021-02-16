@@ -14,9 +14,9 @@ data:
     \ mn, mx;\n\n    info (int v) {\n        if (v == INT_MAX) {\n            sz =\
     \ sum = 0;\n            mn = INT_MAX, mx = INT_MIN;\n        } else {\n      \
     \      sz = 1; sum = mn = mx = v;\n        }\n    }\n\n    info() : info(INT_MAX)\
-    \ {}\n\n    friend info& operator+=(info& a, const info& b) {\n        a.sz +=\
-    \ b.sz, a.sum += b.sum;\n        a.mn = std::min(a.mn, b.mn);\n        a.mx =\
-    \ std::max(a.mx, b.mx);\n        return a;\n    }\n};\n\ntypedef struct snode*\
+    \ {}\n\n    friend info& operator += (info& a, const info& b) {\n        a.sz\
+    \ += b.sz, a.sum += b.sum;\n        a.mn = std::min(a.mn, b.mn);\n        a.mx\
+    \ = std::max(a.mx, b.mx);\n        return a;\n    }\n};\n\ntypedef struct snode*\
     \ sn;\n\nstruct snode {\n    int id, val; // value in node\n    sn p; // parent\n\
     \    sn c[5]; // children\n    bool flip = 0;\n    info data[2];\n    int next_num[2],\
     \ lazy[2];\n\n    snode(int _id, int v) {\n        id = _id; val = v;\n      \
@@ -96,7 +96,7 @@ data:
     \n    //////// link cut tree queries\n    friend sn lca(sn x, sn y) {\n      \
     \  if (x == y) return x;\n        x->access(); y->access();\n        if (!x->p)\
     \ return NULL;\n        x->splay(); return x->p ? x->p : x;\n    }\n\n    friend\
-    \ bool connected(sn x, sn y) {\n        return lca(x,y);\n    }\n\n    friend\
+    \ bool connected(sn x, sn y) {\n        return lca(x, y);\n    }\n\n    friend\
     \ sn get_par(sn x) {\n        x->access(); x = x->c[0];\n        while (true)\
     \ {\n            x->prop();\n            if (!x->c[1]) return x;\n           \
     \ x = x->c[1];\n        }\n        return x;\n    }\n\n    //////// link cut tree\
@@ -152,7 +152,7 @@ data:
     \ sz, sum, mn, mx;\n\n    info (int v) {\n        if (v == INT_MAX) {\n      \
     \      sz = sum = 0;\n            mn = INT_MAX, mx = INT_MIN;\n        } else\
     \ {\n            sz = 1; sum = mn = mx = v;\n        }\n    }\n\n    info() :\
-    \ info(INT_MAX) {}\n\n    friend info& operator+=(info& a, const info& b) {\n\
+    \ info(INT_MAX) {}\n\n    friend info& operator += (info& a, const info& b) {\n\
     \        a.sz += b.sz, a.sum += b.sum;\n        a.mn = std::min(a.mn, b.mn);\n\
     \        a.mx = std::max(a.mx, b.mx);\n        return a;\n    }\n};\n\ntypedef\
     \ struct snode* sn;\n\nstruct snode {\n    int id, val; // value in node\n   \
@@ -234,7 +234,7 @@ data:
     \n    //////// link cut tree queries\n    friend sn lca(sn x, sn y) {\n      \
     \  if (x == y) return x;\n        x->access(); y->access();\n        if (!x->p)\
     \ return NULL;\n        x->splay(); return x->p ? x->p : x;\n    }\n\n    friend\
-    \ bool connected(sn x, sn y) {\n        return lca(x,y);\n    }\n\n    friend\
+    \ bool connected(sn x, sn y) {\n        return lca(x, y);\n    }\n\n    friend\
     \ sn get_par(sn x) {\n        x->access(); x = x->c[0];\n        while (true)\
     \ {\n            x->prop();\n            if (!x->c[1]) return x;\n           \
     \ x = x->c[1];\n        }\n        return x;\n    }\n\n    //////// link cut tree\
@@ -288,7 +288,7 @@ data:
   isVerificationFile: false
   path: library/graphs/dmoj_dynamic_tree_test.cpp
   requiredBy: []
-  timestamp: '2021-01-09 11:49:29-05:00'
+  timestamp: '2021-02-16 18:01:30-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/graphs/dmoj_dynamic_tree_test.cpp
