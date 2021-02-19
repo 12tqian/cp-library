@@ -25,7 +25,7 @@ data:
     \    int n, q; cin >> n >> q;\n    vector<long long> a(n);\n    for (int i = 0;\
     \ i < n; i++) \n        cin >> a[i];\n    RangeQuery<long long> R; \n    R.init(a);\n\
     \    while (q--) {\n        int l, r; cin >> l >> r;\n        r--;\n        cout\
-    \ << R.query(l, r) << '\\n';\n\n    }\n    return 0;\n}\n"
+    \ << R.query(l, r) << '\\n';\n    }\n    return 0;\n}\n"
   code: "#include <bits/stdc++.h>\n\ntemplate <class T> struct RangeQuery {\n    int\
     \ sz; \n    std::vector<std::vector<T>> st;\n    T id = 0;\n    std::vector<T>\
     \ a;\n\n    T comb(T a, T b) { return a + b; }  \n\n    void fill(int l, int r,\
@@ -43,12 +43,12 @@ data:
     \    int n, q; cin >> n >> q;\n    vector<long long> a(n);\n    for (int i = 0;\
     \ i < n; i++) \n        cin >> a[i];\n    RangeQuery<long long> R; \n    R.init(a);\n\
     \    while (q--) {\n        int l, r; cin >> l >> r;\n        r--;\n        cout\
-    \ << R.query(l, r) << '\\n';\n\n    }\n    return 0;\n}"
+    \ << R.query(l, r) << '\\n';\n    }\n    return 0;\n}"
   dependsOn: []
   isVerificationFile: false
   path: library/data-structures/1d-range-queries/associative_range_query.cpp
   requiredBy: []
-  timestamp: '2021-02-19 14:37:38-05:00'
+  timestamp: '2021-02-19 14:38:16-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/data-structures/1d-range-queries/associative_range_query.cpp
