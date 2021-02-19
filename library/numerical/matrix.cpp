@@ -7,8 +7,8 @@ template <class T> using Matrix = std::vector<std::vector<T>>;
 template <class T> Matrix<T> make_matrix(int r, int c) { return Matrix<T>(r, std::vector<T>(c)); }
 
 template <class T> Matrix<T>& operator += (Matrix<T>& a, const Matrix<T>& b) {
-    for (int i = 0; i < (int) a.size(); i++) {
-        for (int j = 0; j < (int) a[0].size(); j++) {
+    for (int i = 0; i < (int)a.size(); i++) {
+        for (int j = 0; j < (int)a[0].size(); j++) {
             a[i][j] += b[i][j];
         }
     }
@@ -16,8 +16,8 @@ template <class T> Matrix<T>& operator += (Matrix<T>& a, const Matrix<T>& b) {
 }
 
 template <class T> Matrix<T>& operator -= (Matrix<T>& a, const Matrix<T>& b) {
-    for (int i = 0; i < (int) a.size(); i++) {
-        for (int j = 0; j < (int) a[0].size(); j++) {
+    for (int i = 0; i < (int)a.size(); i++) {
+        for (int j = 0; j < (int)a[0].size(); j++) {
             a[i][j] -= b[i][j];
         }
     }
@@ -26,9 +26,9 @@ template <class T> Matrix<T>& operator -= (Matrix<T>& a, const Matrix<T>& b) {
 
 template <class T> Matrix<T> operator * (const Matrix<T>& a, const Matrix<T>& b) {
     assert(a[0].size() == b.size());
-    int x = (int) a.size();
-    int y = (int) a[0].size();
-    int z = (int) b[0].size();
+    int x = (int)a.size();
+    int y = (int)a[0].size();
+    int z = (int)b[0].size();
     Matrix<T> c = make_matrix<T>(x, z);
     for (int i = 0; i < x; i++) {
         for (int j = 0; j < y; j++) {
@@ -45,8 +45,8 @@ template <class T> Matrix<T> operator - (Matrix<T> a, const Matrix<T>& b) { retu
 template <class T> Matrix<T>& operator *= (Matrix<T>& a, const Matrix<T>& b) { return a = a * b; }
 
 template <class T> Matrix<T> pow(Matrix<T> m, long long p) {
-    int n = (int) m.size();
-    assert(n == (int) m[0].size() && p >= 0);
+    int n = (int)m.size();
+    assert(n == (int)m[0].size() && p >= 0);
     Matrix<T> res = make_matrix<T>(n, n);
     for (int i = 0; i < n; i++) 
         res[i][i] = 1;
@@ -79,8 +79,8 @@ template <> int get_row<long double>(Matrix<long double>& m, int r, int i, int n
 
 // returns a pair of determinant, rank, while doing Gaussian elimination to m
 template <class T> std::pair<T, int> gauss(Matrix<T>& m) {
-    int r = (int) m.size();
-    int c = (int) m[0].size();
+    int r = (int)m.size();
+    int c = (int)m[0].size();
     int rank = 0, nxt = 0;
     T prod = 1;
     for (int i = 0; i < r; i++) {
@@ -113,8 +113,8 @@ template <class T> std::pair<T, int> gauss(Matrix<T>& m) {
 }
 
 template <class T> Matrix<T> inv(Matrix<T> m) {
-    int r = (int) m.size();
-    assert(r == (int) m[0].size());
+    int r = (int)m.size();
+    assert(r == (int)m[0].size());
     Matrix<T> x = make_matrix<T>(r, 2 * r);
     for (int i = 0; i < r; i++) {
         x[i][i + r] = 1;

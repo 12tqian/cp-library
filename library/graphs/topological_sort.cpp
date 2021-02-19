@@ -5,7 +5,7 @@
  */
 
 std::vector<int> topo_sort(std::vector<std::vector<int>> adj) {
-    int n = (int) adj.size();
+    int n = (int)adj.size();
     std::vector<int> in(n);
     std::vector<int> res;
     std::list<int> todo;

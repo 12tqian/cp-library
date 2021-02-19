@@ -5,7 +5,7 @@ template <class T> struct MinDeque {
 
     std::deque<std::pair<T, int>> d;
     void ins(T x) { // add to back
-        while ((d).size() && d.back().first >= x) d.pop_back();
+        while ((int)d.size() && d.back().first >= x) d.pop_back();
         d.push_back({x, ++hi});
     }
 
@@ -14,7 +14,7 @@ template <class T> struct MinDeque {
     }
 
     T get() {
-        return (d).size() ? d.front().first : std::numeric_limits<T>::max();
+        return (int)d.size() ? d.front().first : std::numeric_limits<T>::max();
     }
 };
 

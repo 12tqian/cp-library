@@ -34,8 +34,8 @@ template <class F> struct PushRelabel {
 
     void ae(int u, int v, F cap) {
         assert(cap >= 0);
-        Edge a{v, (int) adj[v].size(), cap};
-        Edge b{u, (int) adj[u].size(), 0};
+        Edge a{v, (int)adj[v].size(), cap};
+        Edge b{u, (int)adj[u].size(), 0};
         adj[u].push_back(a);
         adj[v].push_back(b);
     }

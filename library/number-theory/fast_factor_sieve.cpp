@@ -19,7 +19,7 @@ template <int SZ> struct Sieve {
     std::vector<std::pair<int, int>> factor(int x) {
         std::vector<std::pair<int, int>> ret;
         while (x != 1) {
-            if ((int) ret.size() == 0) 
+            if ((int)ret.size() == 0) 
                 ret.emplace_back(spf[x], 1);
             else {
                 if (ret.back().first == spf[x]) 

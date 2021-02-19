@@ -24,7 +24,7 @@ template <class T> T reduce(std::vector<T>& b, T x) {
 template <class T> bool add(std::vector<T>& b, T x) {
     if (!(x = reduce(b, x))) return false;
     int ind = 0;
-    while (ind < int(b.size()) && b[ind] > x) ind++;
+    while (ind < (int)b.size() && b[ind] > x) ind++;
     b.insert(b.begin() + ind, x);
     return true;
 }

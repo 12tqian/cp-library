@@ -61,7 +61,7 @@ template <class T> struct LazySeg {
 
 const bool VALUES_IN_VERTICES = true;
 
-template <class T> class HeavyLight {
+template <class T> struct HeavyLight {
     std::vector<int> parent, heavy, depth, root, tree_pos;
     LazySeg<T> tree;
 
@@ -86,10 +86,9 @@ template <class T> class HeavyLight {
         op(tree_pos[u] + (VALUES_IN_VERTICES ? 0 : 1), tree_pos[v]);
     }
 
-public:
     template <class G>
     void init(const G& graph, int r = 0) {
-        int n = (int) graph.size();
+        int n = (int)graph.size();
         heavy.assign(n, -1);
         parent.assign(n, 0);
         depth.assign(n, 0);

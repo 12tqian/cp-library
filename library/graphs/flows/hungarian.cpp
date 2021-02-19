@@ -12,8 +12,8 @@
 
 template <class C> std::pair<C, std::vector<int>> hungarian(const std::vector<std::vector<C>>& a_) {
     const C INF = std::numeric_limits<C>::max();
-    int n = (int) a_.size();
-    int m = (int) a_[0].size();
+    int n = (int)a_.size();
+    int m = (int)a_[0].size();
     assert(n <= m);
     std::vector<std::vector<C>> a(n + 1, std::vector<C>(m + 1, 0));
     for (int i = 0; i < n; i++)

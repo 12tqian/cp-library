@@ -148,8 +148,8 @@ template <class T> std::pair<Point<T>, T> centroid_area(const std::vector<Point<
     // pair of centroid and area, positive means CCW, negative means CW
     Point<T> centroid(0, 0);
     T area = 0;
-    for (int i = 0; i < (int) v.size(); i++) {
-        int j = (i + 1) % ((int) v.size());
+    for (int i = 0; i < (int)v.size(); i++) {
+        int j = (i + 1) % ((int)v.size());
         T a = cross(v[i], v[j]);
         centroid += a * (v[i] + v[j]);
         area += a;
@@ -159,7 +159,7 @@ template <class T> std::pair<Point<T>, T> centroid_area(const std::vector<Point<
 
 template<class T> int polygon_point(const std::vector<Point<T>>& p, Point<T> z) {
     // returns -1 if outside, 0 if on, 1 if inside
-    int n = (int) p.size();
+    int n = (int)p.size();
     int ans = 0;
     for (int i = 0; i < n; i++) {
         Point<T> x = p[i], y = p[(i + 1) % n];

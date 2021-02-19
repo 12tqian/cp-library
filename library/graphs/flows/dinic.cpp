@@ -18,9 +18,9 @@ template <class F> struct Dinic {
 
     void ae(int u, int v, F cap, F rcap = 0) {
         assert(std::min(cap, rcap) >= 0);
-        adj[u].push_back((int) edges.size());
+        adj[u].push_back((int)edges.size());
         edges.push_back({v, 0, cap});
-        adj[v].push_back((int) edges.size());
+        adj[v].push_back((int)edges.size());
         edges.push_back({u, 0, rcap});
     }
 

@@ -98,7 +98,7 @@ int main() {
     B.build();
     cout << B.num_comps << '\n';
     for (int i = 0; i < B.num_comps; i++) {
-        cout << (int) B.comps[i].size() << " ";
+        cout << (int)B.comps[i].size() << " ";
         for (int v : B.comps[i]) 
             cout << v << " ";
         cout << '\n';

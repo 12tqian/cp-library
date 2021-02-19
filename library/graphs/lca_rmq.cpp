@@ -26,11 +26,11 @@ template <class T> struct SparseTable {
 
     void init(const std::vector<T>& _v) {
         v = _v;
-        jump = {std::vector<int>((int) v.size())};
+        jump = {std::vector<int>((int)v.size())};
         iota(jump[0].begin(), jump[0].end(), 0);
-        for (int j = 1; (1 << j) <= (int) v.size(); j++) {
-            jump.push_back(std::vector<int>((int) v.size() - (1 << j) + 1));
-            for (int i = 0; i < (int) jump[j].size(); i++) {
+        for (int j = 1; (1 << j) <= (int)v.size(); j++) {
+            jump.push_back(std::vector<int>((int)v.size() - (1 << j) + 1));
+            for (int i = 0; i < (int)jump[j].size(); i++) {
                 jump[j][i] = comb(jump[j - 1][i], jump[j - 1][i + (1 << (j - 1))]);
             }
         }
@@ -74,7 +74,7 @@ struct LCARMQ {
     void dfs(int src) {
         in[src] = ti++;
         sparse[0][in[src]] = src;
-        pos[src] = (int) tmp.size();
+        pos[src] = (int)tmp.size();
         tmp.emplace_back(dep[src], src);
         for (auto& nxt : adj[src]) {
             if (nxt == par[src]) continue;
@@ -93,8 +93,8 @@ struct LCARMQ {
         par[root] = root;
         dfs(root);
         S.init(tmp); 
-        for (int j = 1; j < (int) sparse.size(); j++) {
-            for (int i = 0; i < (int) sparse[j].size(); i++) {
+        for (int j = 1; j < (int)sparse.size(); j++) {
+            for (int i = 0; i < (int)sparse[j].size(); i++) {
                 sparse[j][i] = mini(sparse[j - 1][i], sparse[j - 1][i + (1 << (j - 1))]);
             }
         }
@@ -128,16 +128,16 @@ struct LCARMQ {
             return pos[a] < pos[b];
         };
         sort(nodes.begin(), nodes.end(), cmp);
-        for (int i = int(nodes.size()) - 2; i >= 0; i--) {
+        for (int i = (int)nodes.size() - 2; i >= 0; i--) {
             nodes.push_back(lca(nodes[i], nodes[i + 1]));
         }
         sort(nodes.begin(), nodes.end(), cmp);
         nodes.erase(unique(nodes.begin(), nodes.end()), nodes.end());
         std::vector<std::pair<int, int>> ret{{0, nodes[0]}};
-        for (int i = 0; i < int(nodes.size()); i++) {
+        for (int i = 0; i < (int)nodes.size(); i++) {
             rev[nodes[i]] = i;
         }
-        for (int i = 1; i < int(nodes.size()); i++) {
+        for (int i = 1; i < (int)nodes.size(); i++) {
             ret.emplace_back(rev[lca(nodes[i - 1], nodes[i])], nodes[i]);
         }
         return ret;

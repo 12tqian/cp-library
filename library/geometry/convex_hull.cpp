@@ -87,16 +87,16 @@ namespace ConvexHull {
 
 template <class T>
 std::pair<std::vector<int>, std::vector<int>> upper_lower_hull(const std::vector<Point<T>>& v) {
-    std::vector<int> p((int) v.size()), upper, lower;
+    std::vector<int> p((int)v.size()), upper, lower;
     iota(p.begin(), p.end(), 0);
     sort(p.begin(), p.end(), [&v](int a, int b) { return v[a] < v[b]; });
     for (int& i : p) {
-        while ((int) upper.size() > 1 && 
-            area(v[upper[(int) upper.size() - 2]], v[upper.back()], v[i]) >= 0) 
+        while ((int)upper.size() > 1 && 
+            area(v[upper[(int)upper.size() - 2]], v[upper.back()], v[i]) >= 0) 
             upper.pop_back();
         upper.push_back(i);
-        while ((int) lower.size() > 1 && 
-            area(v[lower[(int) lower.size() - 2]], v[lower.back()], v[i]) <= 0) 
+        while ((int)lower.size() > 1 && 
+            area(v[lower[(int)lower.size() - 2]], v[lower.back()], v[i]) <= 0) 
             lower.pop_back();
         lower.push_back(i);
     }
@@ -106,7 +106,7 @@ std::pair<std::vector<int>, std::vector<int>> upper_lower_hull(const std::vector
 template <class T> std::vector<int> hull_index(const std::vector<Point<T>>& v) {
     std::vector<int> upper, lower;
     tie(upper, lower) = upper_lower_hull(v);
-    if ((int) lower.size() <= 1) 
+    if ((int)lower.size() <= 1) 
         return lower;
     if (v[lower[0]] == v[lower[1]])
         return {0};
@@ -136,7 +136,7 @@ int main() {
         for (int i = 0; i < n; i++)
             cin >> v[i].x >> v[i].y;
         auto hull = convex_hull(v);
-        cout << (int) hull.size() << '\n';       
+        cout << (int)hull.size() << '\n';       
         for (auto& p : hull)
             cout << p.x << " " << p.y << '\n';
     }

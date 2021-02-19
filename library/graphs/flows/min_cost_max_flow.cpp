@@ -25,9 +25,9 @@ template <class F, class C> struct MCMF {
 
     void ae(int u, int v, F cap, C cost) {
         assert(cap >= 0);
-        adj[u].push_back((int) edges.size());
+        adj[u].push_back((int)edges.size());
         edges.push_back({v, 0, cap, cost});
-        adj[v].push_back((int) edges.size());
+        adj[v].push_back((int)edges.size());
         edges.push_back({u, 0, 0, -cost});
     }
 
@@ -57,7 +57,7 @@ template <class F, class C> struct MCMF {
     std::pair<F, C> calc(int s, int t) {
         assert(s != t);
         for (int unused = 0; unused < n; unused++)
-            for (int eid = 0; eid < (int) edges.size(); eid++) {
+            for (int eid = 0; eid < (int)edges.size(); eid++) {
                 const Edge& e = edges[eid];
                 if (e.cap)
                     p[e.to] = std::min(p[e.to], p[edges[eid ^ 1].to] + e.cost);

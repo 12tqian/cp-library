@@ -78,7 +78,7 @@ long long f(long long a, long long n, long long& has) {
 std::vector<std::pair<long long, long long>> pollards_rho(long long d) {
     std::vector<std::pair<long long, long long>> res;
     auto& pr = S.pr;
-    for (int i = 0; i < int(pr.size()) && pr[i] * pr[i] <= d; i++) {
+    for (int i = 0; i < (int)pr.size() && pr[i] * pr[i] <= d; i++) {
         if (d % pr[i] == 0) {
             int co = 0;
             while (d % pr[i] == 0) {

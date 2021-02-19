@@ -12,7 +12,7 @@ template <bool directed> struct Euler {
     }
 
     void ae(int u, int v) {
-        int m = (int) used.size();
+        int m = (int)used.size();
         used.push_back(false);
         adj[u].emplace_back(v, m);
         if (!directed) {
@@ -24,7 +24,7 @@ template <bool directed> struct Euler {
         int cnt = 0;
         int src = -1;
         for (int i = 0; i < n; i++) {
-            int sz = (int) adj[i].size();
+            int sz = (int)adj[i].size();
             cnt += sz % 2;
             if (sz == 0) {
                 continue;
@@ -48,7 +48,7 @@ template <bool directed> struct Euler {
             its[i] = adj[i].begin();
         }
         int lst = -1;
-        while ((int) s.size()) {
+        while ((int)s.size()) {
             int x = s.back().first;
             auto& it = its[x];
             auto en = adj[x].end();
@@ -61,7 +61,7 @@ template <bool directed> struct Euler {
                 }
                 ans.push_back(s.back());
                 s.pop_back();
-                if ((int) s.size()) {
+                if ((int)s.size()) {
                     lst = s.back().first;
                 }
             } else {
@@ -69,7 +69,7 @@ template <bool directed> struct Euler {
                 used[it->second] = 1;
             }
         }
-        if ((int) ans.size() != (int) used.size() + 1) {
+        if ((int)ans.size() != (int)used.size() + 1) {
             return {};
         }
         reverse(ans.begin(), ans.end());

@@ -97,7 +97,7 @@ int main() {
             cache[a] = v;
         }
         auto v = cache[a];
-        printf("%d", int(v.size()));
+        printf("%d", (int)v.size());
         for (auto d: v) printf(" %lld", d);
         printf("\n");
     }

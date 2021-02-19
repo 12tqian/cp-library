@@ -43,7 +43,7 @@ template <int MOD, int RT> struct Mint {
 namespace FFT {
 
 template <class T> void fft(std::vector<T>& A, bool inv = 0) {
-    int n = (int) A.size();
+    int n = (int)A.size();
     assert((T::mod - 1) % n == 0);
     std::vector<T> B(n);
     for (int b = n / 2; b; b /= 2, A.swap(B)) {
@@ -66,8 +66,8 @@ template <class T> void fft(std::vector<T>& A, bool inv = 0) {
 }
 
 template <class T> std::vector<T> multiply(std::vector<T> A, std::vector<T> B) {
-    int sa = (int) A.size();
-    int sb = (int) B.size();
+    int sa = (int)A.size();
+    int sb = (int)B.size();
     if (!std::min(sa, sb))
         return {};
     int s = sa + sb - 1;
@@ -89,8 +89,8 @@ template <class T> std::vector<T> multiply(std::vector<T> A, std::vector<T> B) {
 
 template <class M, class T> std::vector<M> multiply_mod(std::vector<T> x, std::vector<T> y) {
     auto convert = [](const std::vector<T>& v) {
-        std::vector<M> w((int) v.size());
-        for (int i =  0; i < (int) v.size(); i++)
+        std::vector<M> w((int)v.size());
+        for (int i =  0; i < (int)v.size(); i++)
             w[i] = (int) v[i];
         return w;
     };
@@ -105,7 +105,7 @@ template <class T> std::vector<T> general_multiply(const std::vector<T>& A, cons
     auto c0 = multiply_mod<m0>(A, B);
     auto c1 = multiply_mod<m1>(A, B);
     auto c2 = multiply_mod<m2>(A, B);
-    int n = (int) c0.size();
+    int n = (int)c0.size();
     std::vector<T> res(n);
     m1 r01 = 1 / m1(m0::mod);
     m2 r02 = 1 / m2(m0::mod);
@@ -135,7 +135,7 @@ int main() {
     for (int i = 0; i < m; i++)
         cin >> b[i];
     vector<num> c = general_multiply(a, b);
-    for (int i = 0; i < (int) c.size(); i++)
+    for (int i = 0; i < (int)c.size(); i++)
         cout << c[i] << " ";
     cout << '\n';
 }

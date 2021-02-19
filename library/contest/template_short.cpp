@@ -11,7 +11,7 @@ using namespace std;
 #define s second
 #define pb push_back
 #define eb emplace_back
-#define sz(x) (int) (x).size()
+#define sz(x) (int)(x).size()
 #define all(x) begin(x), end(x)
 
 typedef long long ll;

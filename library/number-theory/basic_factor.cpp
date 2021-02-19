@@ -27,7 +27,7 @@ template <class T> T phi(T x) {
 }
 
 template <class T> void tour(std::vector<std::pair<T, int>>& v, std::vector<T>& res, int ind, T cur) {
-    if (ind == int(v.size())) res.push_back(cur);
+    if (ind == (int)v.size()) res.push_back(cur);
     else {
         T mul = 1;
         for (int i = 0; i < v[ind].second + 1; i++) {

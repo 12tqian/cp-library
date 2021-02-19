@@ -35,7 +35,7 @@ template <class T> void karatsuba(T* a, T* b, T* c, T* t, int n) {
 }
 
 template <class T> std::vector<T> convolution(std::vector<T> a, std::vector<T> b) {
-    int sa = (int) a.size(), sb = (int) b.size();
+    int sa = (int)a.size(), sb = (int)b.size();
     if (!sa || !sb) 
         return {};
     int n = (1 << size(std::max(sa, sb)));
@@ -66,8 +66,8 @@ int main() {
         for (int i = 0; i < sb + 1; i++)
             cin >> b[i];
         vector<long long> c = convolution<long long>(a, b);
-        cout << (int) c.size() - 1 << '\n';
-        for (int i = 0; i < (int) c.size(); i++)
+        cout << (int)c.size() - 1 << '\n';
+        for (int i = 0; i < (int)c.size(); i++)
             cout << c[i] << " ";
         cout << '\n';
     }

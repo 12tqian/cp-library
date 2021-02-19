@@ -60,7 +60,7 @@ int main() {
     S.build();
     cout << S.num_comps << '\n';
     for (auto& comp : S.comps) {
-        cout << (int) comp.size() << " ";
+        cout << (int)comp.size() << " ";
         for (int& x : comp)
             cout << x << " ";
         cout << '\n';

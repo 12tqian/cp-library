@@ -48,7 +48,7 @@ struct HashRange {
     }
 
     void extend(int len) {
-        while ((int) pows.size() <= len)
+        while ((int)pows.size() <= len)
             pows.push_back(base * pows.back());
     }
     

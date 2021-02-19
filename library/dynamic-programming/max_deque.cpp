@@ -14,12 +14,12 @@ template <class T> struct MaxDeque {
     }
 
     T get() {
-        if (mx.size() == 0) return std::numeric_limits<T>::min();
+        if ((int)mx.size() == 0) return std::numeric_limits<T>::min();
         return mx.front().first;
     }
 
     void ad(T x) {
-        while ((mx).size() && mx.back().first <= x) mx.pop_back();
+        while ((int)mx.size() && mx.back().first <= x) mx.pop_back();
         mx.push_back({x, ++r});
         tmp.push_back(x);
     }
