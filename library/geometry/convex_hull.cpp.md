@@ -67,28 +67,28 @@ data:
     \  if (same_dir(p, s) || same_dir(p, t)) return 0;\n        return angle_less(s,\
     \ p, t) ? 1 : -1;\n    }\n};\n\nnamespace ConvexHull {\n\ntemplate <class T>\n\
     std::pair<std::vector<int>, std::vector<int>> upper_lower_hull(const std::vector<Point<T>>&\
-    \ v) {\n    std::vector<int> p((int) v.size()), upper, lower;\n    iota(p.begin(),\
+    \ v) {\n    std::vector<int> p((int)v.size()), upper, lower;\n    iota(p.begin(),\
     \ p.end(), 0);\n    sort(p.begin(), p.end(), [&v](int a, int b) { return v[a]\
-    \ < v[b]; });\n    for (int& i : p) {\n        while ((int) upper.size() > 1 &&\
-    \ \n            area(v[upper[(int) upper.size() - 2]], v[upper.back()], v[i])\
-    \ >= 0) \n            upper.pop_back();\n        upper.push_back(i);\n       \
-    \ while ((int) lower.size() > 1 && \n            area(v[lower[(int) lower.size()\
-    \ - 2]], v[lower.back()], v[i]) <= 0) \n            lower.pop_back();\n      \
-    \  lower.push_back(i);\n    }\n    return {upper, lower};\n}\n\ntemplate <class\
-    \ T> std::vector<int> hull_index(const std::vector<Point<T>>& v) {\n    std::vector<int>\
-    \ upper, lower;\n    tie(upper, lower) = upper_lower_hull(v);\n    if ((int) lower.size()\
-    \ <= 1) \n        return lower;\n    if (v[lower[0]] == v[lower[1]])\n       \
-    \ return {0};\n    lower.insert(lower.end(), 1 + upper.rbegin(), upper.rend()\
-    \ - 1);\n    return lower;\n}\n\ntemplate <class T> std::vector<Point<T>> convex_hull(const\
-    \ std::vector<Point<T>>& v) {\n    std::vector<int> w = hull_index(v);\n    std::vector<Point<T>>\
-    \ res;\n    for (auto& t : w)\n        res.push_back(v[t]);\n    return res;\n\
-    }\n\n} // ConvexHull\n\nint main() {\n    using namespace std;\n    using namespace\
-    \ ConvexHull;\n    ios_base::sync_with_stdio(0);\n    while (true) {\n       \
-    \ int n; cin >> n;\n        if (n == 0) \n            return 0;\n        vector<Point<int>>\
-    \ v(n);\n        for (int i = 0; i < n; i++)\n            cin >> v[i].x >> v[i].y;\n\
-    \        auto hull = convex_hull(v);\n        cout << (int) hull.size() << '\\\
-    n';       \n        for (auto& p : hull)\n            cout << p.x << \" \" <<\
-    \ p.y << '\\n';\n    }\n    return 0;\n}\n"
+    \ < v[b]; });\n    for (int& i : p) {\n        while ((int)upper.size() > 1 &&\
+    \ \n            area(v[upper[(int)upper.size() - 2]], v[upper.back()], v[i]) >=\
+    \ 0) \n            upper.pop_back();\n        upper.push_back(i);\n        while\
+    \ ((int)lower.size() > 1 && \n            area(v[lower[(int)lower.size() - 2]],\
+    \ v[lower.back()], v[i]) <= 0) \n            lower.pop_back();\n        lower.push_back(i);\n\
+    \    }\n    return {upper, lower};\n}\n\ntemplate <class T> std::vector<int> hull_index(const\
+    \ std::vector<Point<T>>& v) {\n    std::vector<int> upper, lower;\n    tie(upper,\
+    \ lower) = upper_lower_hull(v);\n    if ((int)lower.size() <= 1) \n        return\
+    \ lower;\n    if (v[lower[0]] == v[lower[1]])\n        return {0};\n    lower.insert(lower.end(),\
+    \ 1 + upper.rbegin(), upper.rend() - 1);\n    return lower;\n}\n\ntemplate <class\
+    \ T> std::vector<Point<T>> convex_hull(const std::vector<Point<T>>& v) {\n   \
+    \ std::vector<int> w = hull_index(v);\n    std::vector<Point<T>> res;\n    for\
+    \ (auto& t : w)\n        res.push_back(v[t]);\n    return res;\n}\n\n} // ConvexHull\n\
+    \nint main() {\n    using namespace std;\n    using namespace ConvexHull;\n  \
+    \  ios_base::sync_with_stdio(0);\n    while (true) {\n        int n; cin >> n;\n\
+    \        if (n == 0) \n            return 0;\n        vector<Point<int>> v(n);\n\
+    \        for (int i = 0; i < n; i++)\n            cin >> v[i].x >> v[i].y;\n \
+    \       auto hull = convex_hull(v);\n        cout << (int)hull.size() << '\\n';\
+    \       \n        for (auto& p : hull)\n            cout << p.x << \" \" << p.y\
+    \ << '\\n';\n    }\n    return 0;\n}\n"
   code: "#include <bits/stdc++.h>\n\ntemplate <typename T> struct Point {\npublic:\n\
     \    T x, y;\n    Point() : x(0), y(0) {}\n    Point(T x_, T y_) : x(x_), y(y_)\
     \ {}\n    template <typename U> explicit Point(const Point<U>& p) : x(p.x), y(p.y)\
@@ -148,17 +148,17 @@ data:
     \ const Point& t, const Point& p) {\n        if (same_dir(p, s) || same_dir(p,\
     \ t)) return 0;\n        return angle_less(s, p, t) ? 1 : -1;\n    }\n};\n\nnamespace\
     \ ConvexHull {\n\ntemplate <class T>\nstd::pair<std::vector<int>, std::vector<int>>\
-    \ upper_lower_hull(const std::vector<Point<T>>& v) {\n    std::vector<int> p((int)\
-    \ v.size()), upper, lower;\n    iota(p.begin(), p.end(), 0);\n    sort(p.begin(),\
-    \ p.end(), [&v](int a, int b) { return v[a] < v[b]; });\n    for (int& i : p)\
-    \ {\n        while ((int) upper.size() > 1 && \n            area(v[upper[(int)\
-    \ upper.size() - 2]], v[upper.back()], v[i]) >= 0) \n            upper.pop_back();\n\
-    \        upper.push_back(i);\n        while ((int) lower.size() > 1 && \n    \
-    \        area(v[lower[(int) lower.size() - 2]], v[lower.back()], v[i]) <= 0) \n\
-    \            lower.pop_back();\n        lower.push_back(i);\n    }\n    return\
-    \ {upper, lower};\n}\n\ntemplate <class T> std::vector<int> hull_index(const std::vector<Point<T>>&\
+    \ upper_lower_hull(const std::vector<Point<T>>& v) {\n    std::vector<int> p((int)v.size()),\
+    \ upper, lower;\n    iota(p.begin(), p.end(), 0);\n    sort(p.begin(), p.end(),\
+    \ [&v](int a, int b) { return v[a] < v[b]; });\n    for (int& i : p) {\n     \
+    \   while ((int)upper.size() > 1 && \n            area(v[upper[(int)upper.size()\
+    \ - 2]], v[upper.back()], v[i]) >= 0) \n            upper.pop_back();\n      \
+    \  upper.push_back(i);\n        while ((int)lower.size() > 1 && \n           \
+    \ area(v[lower[(int)lower.size() - 2]], v[lower.back()], v[i]) <= 0) \n      \
+    \      lower.pop_back();\n        lower.push_back(i);\n    }\n    return {upper,\
+    \ lower};\n}\n\ntemplate <class T> std::vector<int> hull_index(const std::vector<Point<T>>&\
     \ v) {\n    std::vector<int> upper, lower;\n    tie(upper, lower) = upper_lower_hull(v);\n\
-    \    if ((int) lower.size() <= 1) \n        return lower;\n    if (v[lower[0]]\
+    \    if ((int)lower.size() <= 1) \n        return lower;\n    if (v[lower[0]]\
     \ == v[lower[1]])\n        return {0};\n    lower.insert(lower.end(), 1 + upper.rbegin(),\
     \ upper.rend() - 1);\n    return lower;\n}\n\ntemplate <class T> std::vector<Point<T>>\
     \ convex_hull(const std::vector<Point<T>>& v) {\n    std::vector<int> w = hull_index(v);\n\
@@ -168,13 +168,13 @@ data:
     \ (true) {\n        int n; cin >> n;\n        if (n == 0) \n            return\
     \ 0;\n        vector<Point<int>> v(n);\n        for (int i = 0; i < n; i++)\n\
     \            cin >> v[i].x >> v[i].y;\n        auto hull = convex_hull(v);\n \
-    \       cout << (int) hull.size() << '\\n';       \n        for (auto& p : hull)\n\
+    \       cout << (int)hull.size() << '\\n';       \n        for (auto& p : hull)\n\
     \            cout << p.x << \" \" << p.y << '\\n';\n    }\n    return 0;\n}"
   dependsOn: []
   isVerificationFile: false
   path: library/geometry/convex_hull.cpp
   requiredBy: []
-  timestamp: '2021-01-09 11:49:29-05:00'
+  timestamp: '2021-02-19 14:37:38-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/geometry/convex_hull.cpp

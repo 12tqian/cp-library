@@ -12,6 +12,9 @@ data:
   - name: library/data-structures/1d-range-queries
     pages:
     - icon: ':warning:'
+      path: library/data-structures/1d-range-queries/associative_range_query.cpp
+      title: library/data-structures/1d-range-queries/associative_range_query.cpp
+    - icon: ':warning:'
       path: library/data-structures/1d-range-queries/fenwick.cpp
       title: library/data-structures/1d-range-queries/fenwick.cpp
     - icon: ':warning:'

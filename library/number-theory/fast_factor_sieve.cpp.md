@@ -15,8 +15,8 @@ data:
     \            for (int j = i * i; j < SZ; j += i) \n                    if (spf[j]\
     \ == j) \n                        spf[j] = i;\n    }\n\n    std::vector<std::pair<int,\
     \ int>> factor(int x) {\n        std::vector<std::pair<int, int>> ret;\n     \
-    \   while (x != 1) {\n            if ((int) ret.size() == 0) \n              \
-    \  ret.emplace_back(spf[x], 1);\n            else {\n                if (ret.back().first\
+    \   while (x != 1) {\n            if ((int)ret.size() == 0) \n               \
+    \ ret.emplace_back(spf[x], 1);\n            else {\n                if (ret.back().first\
     \ == spf[x]) \n                    ret.back().second++;\n                else\
     \ \n                    ret.emplace_back(spf[x], 1);\n            }\n        \
     \    x /= spf[x];\n        }\n        return ret;\n    }\n};\n\nint main() {\n\
@@ -28,7 +28,7 @@ data:
     \ (spf[i] == i) \n                for (int j = i * i; j < SZ; j += i) \n     \
     \               if (spf[j] == j) \n                        spf[j] = i;\n    }\n\
     \n    std::vector<std::pair<int, int>> factor(int x) {\n        std::vector<std::pair<int,\
-    \ int>> ret;\n        while (x != 1) {\n            if ((int) ret.size() == 0)\
+    \ int>> ret;\n        while (x != 1) {\n            if ((int)ret.size() == 0)\
     \ \n                ret.emplace_back(spf[x], 1);\n            else {\n       \
     \         if (ret.back().first == spf[x]) \n                    ret.back().second++;\n\
     \                else \n                    ret.emplace_back(spf[x], 1);\n   \
@@ -38,7 +38,7 @@ data:
   isVerificationFile: false
   path: library/number-theory/fast_factor_sieve.cpp
   requiredBy: []
-  timestamp: '2021-01-09 11:49:29-05:00'
+  timestamp: '2021-02-19 14:37:38-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/number-theory/fast_factor_sieve.cpp

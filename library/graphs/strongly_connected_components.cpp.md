@@ -27,9 +27,9 @@ data:
     \ std;\n    int n, m; cin >> n >> m;\n    SCC S;\n    S.init(n);\n    for (int\
     \ i = 0; i < m; i++) {\n        int u, v;\n        cin >> u >> v;\n        S.ae(u,\
     \ v);\n    }\n    S.build();\n    cout << S.num_comps << '\\n';\n    for (auto&\
-    \ comp : S.comps) {\n        cout << (int) comp.size() << \" \";\n        for\
-    \ (int& x : comp)\n            cout << x << \" \";\n        cout << '\\n';\n \
-    \   }\n    return 0;\n}\n"
+    \ comp : S.comps) {\n        cout << (int)comp.size() << \" \";\n        for (int&\
+    \ x : comp)\n            cout << x << \" \";\n        cout << '\\n';\n    }\n\
+    \    return 0;\n}\n"
   code: "#include <bits/stdc++.h>\n\nstruct SCC {\n    int n, time, num_comps;\n \
     \   std::vector<std::vector<int>> adj;\n    std::vector<int> disc, id, stk;\n\
     \    std::vector<std::vector<int>> comps;\n\n    void init(int n_) {\n       \
@@ -49,14 +49,14 @@ data:
     \ std;\n    int n, m; cin >> n >> m;\n    SCC S;\n    S.init(n);\n    for (int\
     \ i = 0; i < m; i++) {\n        int u, v;\n        cin >> u >> v;\n        S.ae(u,\
     \ v);\n    }\n    S.build();\n    cout << S.num_comps << '\\n';\n    for (auto&\
-    \ comp : S.comps) {\n        cout << (int) comp.size() << \" \";\n        for\
-    \ (int& x : comp)\n            cout << x << \" \";\n        cout << '\\n';\n \
-    \   }\n    return 0;\n}"
+    \ comp : S.comps) {\n        cout << (int)comp.size() << \" \";\n        for (int&\
+    \ x : comp)\n            cout << x << \" \";\n        cout << '\\n';\n    }\n\
+    \    return 0;\n}"
   dependsOn: []
   isVerificationFile: false
   path: library/graphs/strongly_connected_components.cpp
   requiredBy: []
-  timestamp: '2021-01-22 13:03:23-05:00'
+  timestamp: '2021-02-19 14:37:38-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/graphs/strongly_connected_components.cpp

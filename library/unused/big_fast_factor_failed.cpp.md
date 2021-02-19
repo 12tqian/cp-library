@@ -35,7 +35,7 @@ data:
     \ false;\n        }\n    }\n    return true;\n}\n\nlong long f(long long a, long\
     \ long n, long long& has) {\n    return (mod_mul(a, a, n) + has) % n;\n}\n\nstd::vector<std::pair<long\
     \ long, long long>> pollards_rho(long long d) {\n    std::vector<std::pair<long\
-    \ long, long long>> res;\n    auto& pr = S.pr;\n    for (int i = 0; i < int(pr.size())\
+    \ long, long long>> res;\n    auto& pr = S.pr;\n    for (int i = 0; i < (int)pr.size()\
     \ && pr[i] * pr[i] <= d; i++) {\n        if (d % pr[i] == 0) {\n            int\
     \ co = 0;\n            while (d % pr[i] == 0) {\n                d /= pr[i];\n\
     \                co++;\n            }\n            res.emplace_back(pr[i], co);\n\
@@ -85,7 +85,7 @@ data:
     \ false;\n        }\n    }\n    return true;\n}\n\nlong long f(long long a, long\
     \ long n, long long& has) {\n    return (mod_mul(a, a, n) + has) % n;\n}\n\nstd::vector<std::pair<long\
     \ long, long long>> pollards_rho(long long d) {\n    std::vector<std::pair<long\
-    \ long, long long>> res;\n    auto& pr = S.pr;\n    for (int i = 0; i < int(pr.size())\
+    \ long, long long>> res;\n    auto& pr = S.pr;\n    for (int i = 0; i < (int)pr.size()\
     \ && pr[i] * pr[i] <= d; i++) {\n        if (d % pr[i] == 0) {\n            int\
     \ co = 0;\n            while (d % pr[i] == 0) {\n                d /= pr[i];\n\
     \                co++;\n            }\n            res.emplace_back(pr[i], co);\n\
@@ -112,7 +112,7 @@ data:
   isVerificationFile: false
   path: library/unused/big_fast_factor_failed.cpp
   requiredBy: []
-  timestamp: '2021-01-19 00:06:49-05:00'
+  timestamp: '2021-02-19 14:37:38-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/unused/big_fast_factor_failed.cpp

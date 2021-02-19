@@ -16,7 +16,7 @@ data:
     \        }\n    }\n    if (x > 1) pri.push_back({x, 1});\n    return pri;\n}\n\
     \ntemplate <class T> T phi(T x) {\n    for (auto& a : factor(x)) x -= x / a.first;\n\
     \    return x;\n}\n\ntemplate <class T> void tour(std::vector<std::pair<T, int>>&\
-    \ v, std::vector<T>& res, int ind, T cur) {\n    if (ind == int(v.size())) res.push_back(cur);\n\
+    \ v, std::vector<T>& res, int ind, T cur) {\n    if (ind == (int)v.size()) res.push_back(cur);\n\
     \    else {\n        T mul = 1;\n        for (int i = 0; i < v[ind].second + 1;\
     \ i++) {\n            tour(v, res, ind + 1, cur * mul);\n            mul *= v[ind].first;\n\
     \        }\n    }\n}\n\ntemplate <class T> std::vector<T> get_divisor(T x) {\n\
@@ -36,7 +36,7 @@ data:
     \ 1});\n    return pri;\n}\n\ntemplate <class T> T phi(T x) {\n    for (auto&\
     \ a : factor(x)) x -= x / a.first;\n    return x;\n}\n\ntemplate <class T> void\
     \ tour(std::vector<std::pair<T, int>>& v, std::vector<T>& res, int ind, T cur)\
-    \ {\n    if (ind == int(v.size())) res.push_back(cur);\n    else {\n        T\
+    \ {\n    if (ind == (int)v.size()) res.push_back(cur);\n    else {\n        T\
     \ mul = 1;\n        for (int i = 0; i < v[ind].second + 1; i++) {\n          \
     \  tour(v, res, ind + 1, cur * mul);\n            mul *= v[ind].first;\n     \
     \   }\n    }\n}\n\ntemplate <class T> std::vector<T> get_divisor(T x) {\n    auto\
@@ -50,7 +50,7 @@ data:
   isVerificationFile: false
   path: library/number-theory/basic_factor.cpp
   requiredBy: []
-  timestamp: '2021-01-07 19:46:40-05:00'
+  timestamp: '2021-02-19 14:37:38-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/number-theory/basic_factor.cpp

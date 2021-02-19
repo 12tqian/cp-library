@@ -18,24 +18,25 @@ data:
     \ = v;\n    }\n\n    void ae(int x, int y) {\n        adj[x].push_back(y);\n \
     \       adj[y].push_back(x);\n    }\n\n    void gen(int root = 0) {\n        par[0][root]\
     \ = root;\n        sparse[0][root] = vals[root];\n        dfs(root);\n    }\n\n\
-    \    void dfs(int src = 0) {\n        for (int i = 1; i < par.size(); i++) {\n\
-    \            par[i][src] = par[i - 1][par[i - 1][src]];\n            sparse[i][src]\
+    \    void dfs(int src = 0) {\n        for (int i = 1; i < (int)par.size(); i++)\
+    \ {\n            par[i][src] = par[i - 1][par[i - 1][src]];\n            sparse[i][src]\
     \ = comb(sparse[i - 1][src], sparse[i - 1][par[i - 1][src]]);\n        }\n   \
     \     for (int nxt: adj[src]) {\n            if (nxt == par[0][src]) continue;\n\
     \            depth[nxt] = depth[par[0][nxt] = src] + 1;\n            dfs(nxt);\n\
     \        }\n    }\n\n    int jump(int x, int d) {\n        for (int i = 0; i <\
-    \ par.size(); i++) {\n            if ((d >> i) & 1) {\n                x = par[i][x];\n\
-    \            }\n        }\n        return x;\n    }\n\n    int lca(int x, int\
-    \ y) {\n        if (depth[x] < depth[y]) std::swap(x, y);\n        x = jump(x,\
-    \ depth[x] - depth[y]);\n        if (x == y) return x;\n        for (int i = par.size()\
-    \ - 1; i >= 0; i--) {\n            int nx = par[i][x];\n            int ny = par[i][y];\n\
-    \            if (nx != ny) x = nx, y = ny;\n        }\n        return par[0][x];\n\
-    \    }\n\n    T query(int x, int y) {\n        int anc = lca(x, y);\n        int\
-    \ d = 31 - __builtin_clz(depth[x] - depth[anc]);\n        T res1 = comb(sparse[d][x],\
-    \ sparse[d][jump(x, depth[x] - depth[anc] - (1 << d) + 1)]);\n        d = 31 -\
-    \ __builtin_clz(depth[y] - depth[anc]);\n        T res2 = comb(sparse[d][y], sparse[d][jump(y,\
-    \ depth[y] - depth[anc] - (1 << d) + 1)]);\n        return comb(res1, res2);\n\
-    \    }\n};\n\nint main() {\n    LCAJumpSparse<int> L;\n    return 0;\n}\n"
+    \ (int)par.size(); i++) {\n            if ((d >> i) & 1) {\n                x\
+    \ = par[i][x];\n            }\n        }\n        return x;\n    }\n\n    int\
+    \ lca(int x, int y) {\n        if (depth[x] < depth[y]) std::swap(x, y);\n   \
+    \     x = jump(x, depth[x] - depth[y]);\n        if (x == y) return x;\n     \
+    \   for (int i = (int)par.size() - 1; i >= 0; i--) {\n            int nx = par[i][x];\n\
+    \            int ny = par[i][y];\n            if (nx != ny) x = nx, y = ny;\n\
+    \        }\n        return par[0][x];\n    }\n\n    T query(int x, int y) {\n\
+    \        int anc = lca(x, y);\n        int d = 31 - __builtin_clz(depth[x] - depth[anc]);\n\
+    \        T res1 = comb(sparse[d][x], sparse[d][jump(x, depth[x] - depth[anc] -\
+    \ (1 << d) + 1)]);\n        d = 31 - __builtin_clz(depth[y] - depth[anc]);\n \
+    \       T res2 = comb(sparse[d][y], sparse[d][jump(y, depth[y] - depth[anc] -\
+    \ (1 << d) + 1)]);\n        return comb(res1, res2);\n    }\n};\n\nint main()\
+    \ {\n    LCAJumpSparse<int> L;\n    return 0;\n}\n"
   code: "#include<bits/stdc++.h>\n\ntemplate <class T> struct LCAJumpSparse {\n  \
     \  int n;\n    std::vector<std::vector<int>> par;\n    std::vector<std::vector<T>>\
     \ sparse;\n    std::vector<T> vals;\n    std::vector<std::vector<int>> adj;\n\
@@ -47,17 +48,17 @@ data:
     \ ae(int x, int y) {\n        adj[x].push_back(y);\n        adj[y].push_back(x);\n\
     \    }\n\n    void gen(int root = 0) {\n        par[0][root] = root;\n       \
     \ sparse[0][root] = vals[root];\n        dfs(root);\n    }\n\n    void dfs(int\
-    \ src = 0) {\n        for (int i = 1; i < par.size(); i++) {\n            par[i][src]\
-    \ = par[i - 1][par[i - 1][src]];\n            sparse[i][src] = comb(sparse[i -\
-    \ 1][src], sparse[i - 1][par[i - 1][src]]);\n        }\n        for (int nxt:\
+    \ src = 0) {\n        for (int i = 1; i < (int)par.size(); i++) {\n          \
+    \  par[i][src] = par[i - 1][par[i - 1][src]];\n            sparse[i][src] = comb(sparse[i\
+    \ - 1][src], sparse[i - 1][par[i - 1][src]]);\n        }\n        for (int nxt:\
     \ adj[src]) {\n            if (nxt == par[0][src]) continue;\n            depth[nxt]\
     \ = depth[par[0][nxt] = src] + 1;\n            dfs(nxt);\n        }\n    }\n\n\
-    \    int jump(int x, int d) {\n        for (int i = 0; i < par.size(); i++) {\n\
-    \            if ((d >> i) & 1) {\n                x = par[i][x];\n           \
-    \ }\n        }\n        return x;\n    }\n\n    int lca(int x, int y) {\n    \
-    \    if (depth[x] < depth[y]) std::swap(x, y);\n        x = jump(x, depth[x] -\
-    \ depth[y]);\n        if (x == y) return x;\n        for (int i = par.size() -\
-    \ 1; i >= 0; i--) {\n            int nx = par[i][x];\n            int ny = par[i][y];\n\
+    \    int jump(int x, int d) {\n        for (int i = 0; i < (int)par.size(); i++)\
+    \ {\n            if ((d >> i) & 1) {\n                x = par[i][x];\n       \
+    \     }\n        }\n        return x;\n    }\n\n    int lca(int x, int y) {\n\
+    \        if (depth[x] < depth[y]) std::swap(x, y);\n        x = jump(x, depth[x]\
+    \ - depth[y]);\n        if (x == y) return x;\n        for (int i = (int)par.size()\
+    \ - 1; i >= 0; i--) {\n            int nx = par[i][x];\n            int ny = par[i][y];\n\
     \            if (nx != ny) x = nx, y = ny;\n        }\n        return par[0][x];\n\
     \    }\n\n    T query(int x, int y) {\n        int anc = lca(x, y);\n        int\
     \ d = 31 - __builtin_clz(depth[x] - depth[anc]);\n        T res1 = comb(sparse[d][x],\
@@ -69,7 +70,7 @@ data:
   isVerificationFile: false
   path: library/graphs/tree_path_queries.cpp
   requiredBy: []
-  timestamp: '2020-12-04 02:43:09-05:00'
+  timestamp: '2021-02-19 14:37:38-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/graphs/tree_path_queries.cpp

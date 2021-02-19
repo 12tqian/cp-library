@@ -10,18 +10,18 @@ data:
   bundledCode: "#line 1 \"library/number-theory/counting_primes.cpp\"\n#include <bits/stdc++.h>\n\
     \ntemplate <class T> struct FenwickTree {\n    std::vector<T> fwt;\n    int n;\n\
     \n    void init(int n_) {\n        n = n_;\n        fwt.resize(n);\n    }\n\n\
-    \    void init(std::vector<T>& a) {\n        n = (int) a.size();\n        a.assign(n,\
-    \ 0);\n        for (int i = 0; i < (int) a.size(); i++) {\n            add(i,\
-    \ a[i]);\n        }\n    }\n\n    T sum(int r) {\n        T ret = 0;\n       \
-    \ for (; r >= 0; r = (r & (r + 1)) - 1) \n            ret += fwt[r];\n       \
-    \ return ret;\n    }\n\n    T query(int l, int r) {\n        return sum(r) - sum(l\
-    \ - 1);\n    }\n    \n    void add(int idx, T delta) {\n        for (; idx < n;\
-    \ idx = idx | (idx + 1)) \n            fwt[idx] += delta;\n    }\n};\n\nconst\
-    \ int RL = 1010101;\nconst int CL = 10101;\n\nstd::bitset<RL + 1> isp;\nstd::vector<int>\
-    \ ps, cs;\n\nvoid init(int c) {\n    ps.clear(); cs.clear();\n    isp[0] = isp[1]\
-    \ = 1;\n    for (int p = 2; p * p <= RL; p++) \n        if (!isp[p]) \n      \
-    \      for (int q = p * p; q <= RL; q += p) \n                isp[q] = 1;\n  \
-    \  for (int i = 2; i <= RL; i++) {\n        if (!isp[i]) {\n            ps.push_back(i);\n\
+    \    void init(std::vector<T>& a) {\n        n = (int)a.size();\n        a.assign(n,\
+    \ 0);\n        for (int i = 0; i < (int)a.size(); i++) {\n            add(i, a[i]);\n\
+    \        }\n    }\n\n    T sum(int r) {\n        T ret = 0;\n        for (; r\
+    \ >= 0; r = (r & (r + 1)) - 1) \n            ret += fwt[r];\n        return ret;\n\
+    \    }\n\n    T query(int l, int r) {\n        return sum(r) - sum(l - 1);\n \
+    \   }\n    \n    void add(int idx, T delta) {\n        for (; idx < n; idx = idx\
+    \ | (idx + 1)) \n            fwt[idx] += delta;\n    }\n};\n\nconst int RL = 1010101;\n\
+    const int CL = 10101;\n\nstd::bitset<RL + 1> isp;\nstd::vector<int> ps, cs;\n\n\
+    void init(int c) {\n    ps.clear(); cs.clear();\n    isp[0] = isp[1] = 1;\n  \
+    \  for (int p = 2; p * p <= RL; p++) \n        if (!isp[p]) \n            for\
+    \ (int q = p * p; q <= RL; q += p) \n                isp[q] = 1;\n    for (int\
+    \ i = 2; i <= RL; i++) {\n        if (!isp[i]) {\n            ps.push_back(i);\n\
     \            if (i <= c) cs.push_back(i);\n        }\n    }\n}\n\nlong long phi(long\
     \ long x, long long a, long long cnt) {\n    long long res = 0;\n    std::vector<int>\
     \ mu(a + 1, 1), minp(a + 1, a);\n    for (int i = 1; i <= a; i++) {\n        if\
@@ -59,13 +59,13 @@ data:
   code: "#include <bits/stdc++.h>\n\ntemplate <class T> struct FenwickTree {\n   \
     \ std::vector<T> fwt;\n    int n;\n\n    void init(int n_) {\n        n = n_;\n\
     \        fwt.resize(n);\n    }\n\n    void init(std::vector<T>& a) {\n       \
-    \ n = (int) a.size();\n        a.assign(n, 0);\n        for (int i = 0; i < (int)\
-    \ a.size(); i++) {\n            add(i, a[i]);\n        }\n    }\n\n    T sum(int\
-    \ r) {\n        T ret = 0;\n        for (; r >= 0; r = (r & (r + 1)) - 1) \n \
-    \           ret += fwt[r];\n        return ret;\n    }\n\n    T query(int l, int\
-    \ r) {\n        return sum(r) - sum(l - 1);\n    }\n    \n    void add(int idx,\
-    \ T delta) {\n        for (; idx < n; idx = idx | (idx + 1)) \n            fwt[idx]\
-    \ += delta;\n    }\n};\n\nconst int RL = 1010101;\nconst int CL = 10101;\n\nstd::bitset<RL\
+    \ n = (int)a.size();\n        a.assign(n, 0);\n        for (int i = 0; i < (int)a.size();\
+    \ i++) {\n            add(i, a[i]);\n        }\n    }\n\n    T sum(int r) {\n\
+    \        T ret = 0;\n        for (; r >= 0; r = (r & (r + 1)) - 1) \n        \
+    \    ret += fwt[r];\n        return ret;\n    }\n\n    T query(int l, int r) {\n\
+    \        return sum(r) - sum(l - 1);\n    }\n    \n    void add(int idx, T delta)\
+    \ {\n        for (; idx < n; idx = idx | (idx + 1)) \n            fwt[idx] +=\
+    \ delta;\n    }\n};\n\nconst int RL = 1010101;\nconst int CL = 10101;\n\nstd::bitset<RL\
     \ + 1> isp;\nstd::vector<int> ps, cs;\n\nvoid init(int c) {\n    ps.clear(); cs.clear();\n\
     \    isp[0] = isp[1] = 1;\n    for (int p = 2; p * p <= RL; p++) \n        if\
     \ (!isp[p]) \n            for (int q = p * p; q <= RL; q += p) \n            \
@@ -108,7 +108,7 @@ data:
   isVerificationFile: false
   path: library/number-theory/counting_primes.cpp
   requiredBy: []
-  timestamp: '2021-02-03 17:19:59-05:00'
+  timestamp: '2021-02-19 14:37:38-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/number-theory/counting_primes.cpp

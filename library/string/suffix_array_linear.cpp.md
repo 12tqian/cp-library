@@ -9,7 +9,7 @@ data:
     links: []
   bundledCode: "#line 1 \"library/string/suffix_array_linear.cpp\"\n#include <bits/stdc++.h>\n\
     \nstd::vector<int> suffix_array(std::vector<int> s, int upper) {\n    int n =\
-    \ (int) s.size();\n    if (n == 0)\n        return {};\n    std::vector<int> sa(n);\n\
+    \ (int)s.size();\n    if (n == 0)\n        return {};\n    std::vector<int> sa(n);\n\
     \    std::vector<bool> ls(n);\n    for (int i = n - 2; i >= 0; i--) \n       \
     \ ls[i] = s[i] == s[i + 1] ? ls[i + 1] : s[i] < s[i + 1];\n    std::vector<int>\
     \ sum_l(upper), sum_s(upper);\n    for (int i = 0; i < n; i++)\n        (ls[i]\
@@ -38,12 +38,12 @@ data:
     \ rec_upper\n         + 1);\n    for (int i = 0; i < m; i++)\n        sorted_lms[i]\
     \ = lms[rec_sa[i]];\n    induce(sorted_lms);\n    return sa;\n}\n\nint main()\
     \ {\n    using namespace std;\n    ios_base::sync_with_stdio(0);\n    string s;\
-    \ cin >> s;\n    std::vector<int> a((int) s.size());\n    for (int i = 0; i <\
-    \ (int) s.size(); i++)\n        a[i] = s[i] - 'a';\n    std::vector<int> res =\
-    \ suffix_array(a, 26);\n    for (int i = 0; i < (int) s.size(); i++)\n       \
-    \ cout << res[i] << \" \";\n    cout << '\\n';\n    return 0;\n}\n"
+    \ cin >> s;\n    std::vector<int> a((int)s.size());\n    for (int i = 0; i < (int)s.size();\
+    \ i++)\n        a[i] = s[i] - 'a';\n    std::vector<int> res = suffix_array(a,\
+    \ 26);\n    for (int i = 0; i < (int)s.size(); i++)\n        cout << res[i] <<\
+    \ \" \";\n    cout << '\\n';\n    return 0;\n}\n"
   code: "#include <bits/stdc++.h>\n\nstd::vector<int> suffix_array(std::vector<int>\
-    \ s, int upper) {\n    int n = (int) s.size();\n    if (n == 0)\n        return\
+    \ s, int upper) {\n    int n = (int)s.size();\n    if (n == 0)\n        return\
     \ {};\n    std::vector<int> sa(n);\n    std::vector<bool> ls(n);\n    for (int\
     \ i = n - 2; i >= 0; i--) \n        ls[i] = s[i] == s[i + 1] ? ls[i + 1] : s[i]\
     \ < s[i + 1];\n    std::vector<int> sum_l(upper), sum_s(upper);\n    for (int\
@@ -73,15 +73,15 @@ data:
     \    for (int i = 0; i < m; i++)\n        sorted_lms[i] = lms[rec_sa[i]];\n  \
     \  induce(sorted_lms);\n    return sa;\n}\n\nint main() {\n    using namespace\
     \ std;\n    ios_base::sync_with_stdio(0);\n    string s; cin >> s;\n    std::vector<int>\
-    \ a((int) s.size());\n    for (int i = 0; i < (int) s.size(); i++)\n        a[i]\
+    \ a((int)s.size());\n    for (int i = 0; i < (int)s.size(); i++)\n        a[i]\
     \ = s[i] - 'a';\n    std::vector<int> res = suffix_array(a, 26);\n    for (int\
-    \ i = 0; i < (int) s.size(); i++)\n        cout << res[i] << \" \";\n    cout\
-    \ << '\\n';\n    return 0;\n}"
+    \ i = 0; i < (int)s.size(); i++)\n        cout << res[i] << \" \";\n    cout <<\
+    \ '\\n';\n    return 0;\n}"
   dependsOn: []
   isVerificationFile: false
   path: library/string/suffix_array_linear.cpp
   requiredBy: []
-  timestamp: '2020-12-11 23:44:30-05:00'
+  timestamp: '2021-02-19 14:37:38-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/string/suffix_array_linear.cpp

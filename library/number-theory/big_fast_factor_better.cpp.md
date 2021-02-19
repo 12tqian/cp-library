@@ -40,7 +40,7 @@ data:
     \ i = 0; i < q; i++) {\n        long long a;\n        scanf(\"%lld\", &a);\n \
     \       if (!cache.count(a)) {\n            auto v = pollard(a);\n           \
     \ sort(v.begin(), v.end());\n            cache[a] = v;\n        }\n        auto\
-    \ v = cache[a];\n        printf(\"%d\", int(v.size()));\n        for (auto d:\
+    \ v = cache[a];\n        printf(\"%d\", (int)v.size());\n        for (auto d:\
     \ v) printf(\" %lld\", d);\n        printf(\"\\n\");\n    }\n    return 0;\n}\n"
   code: "#include<bits/stdc++.h>\n\nnamespace FactorBig {\n\nlong long gcd(long long\
     \ _a, long long _b) {\n    unsigned long long a = abs(_a), b = abs(_b);\n    if\
@@ -74,14 +74,14 @@ data:
     \ long>> cache;\n    for (int i = 0; i < q; i++) {\n        long long a;\n   \
     \     scanf(\"%lld\", &a);\n        if (!cache.count(a)) {\n            auto v\
     \ = pollard(a);\n            sort(v.begin(), v.end());\n            cache[a] =\
-    \ v;\n        }\n        auto v = cache[a];\n        printf(\"%d\", int(v.size()));\n\
+    \ v;\n        }\n        auto v = cache[a];\n        printf(\"%d\", (int)v.size());\n\
     \        for (auto d: v) printf(\" %lld\", d);\n        printf(\"\\n\");\n   \
     \ }\n    return 0;\n}"
   dependsOn: []
   isVerificationFile: false
   path: library/number-theory/big_fast_factor_better.cpp
   requiredBy: []
-  timestamp: '2020-12-04 02:43:09-05:00'
+  timestamp: '2021-02-19 14:37:38-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/number-theory/big_fast_factor_better.cpp

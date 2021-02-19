@@ -14,7 +14,7 @@ data:
     \ example below, they wanted the worker each job got assigned to, so I inverted\
     \ it\n */\n\ntemplate <class C> std::pair<C, std::vector<int>> hungarian(const\
     \ std::vector<std::vector<C>>& a_) {\n    const C INF = std::numeric_limits<C>::max();\n\
-    \    int n = (int) a_.size();\n    int m = (int) a_[0].size();\n    assert(n <=\
+    \    int n = (int)a_.size();\n    int m = (int)a_[0].size();\n    assert(n <=\
     \ m);\n    std::vector<std::vector<C>> a(n + 1, std::vector<C>(m + 1, 0));\n \
     \   for (int i = 0; i < n; i++)\n        for (int j = 0; j < m; j++)\n       \
     \     a[i + 1][j + 1] = a_[i][j];\n    std::vector<C> u(n + 1), v(m + 1);\n  \
@@ -47,7 +47,7 @@ data:
     \ to\n * In the example below, they wanted the worker each job got assigned to,\
     \ so I inverted it\n */\n\ntemplate <class C> std::pair<C, std::vector<int>> hungarian(const\
     \ std::vector<std::vector<C>>& a_) {\n    const C INF = std::numeric_limits<C>::max();\n\
-    \    int n = (int) a_.size();\n    int m = (int) a_[0].size();\n    assert(n <=\
+    \    int n = (int)a_.size();\n    int m = (int)a_[0].size();\n    assert(n <=\
     \ m);\n    std::vector<std::vector<C>> a(n + 1, std::vector<C>(m + 1, 0));\n \
     \   for (int i = 0; i < n; i++)\n        for (int j = 0; j < m; j++)\n       \
     \     a[i + 1][j + 1] = a_[i][j];\n    std::vector<C> u(n + 1), v(m + 1);\n  \
@@ -78,7 +78,7 @@ data:
   isVerificationFile: false
   path: library/graphs/flows/hungarian.cpp
   requiredBy: []
-  timestamp: '2021-01-09 11:49:29-05:00'
+  timestamp: '2021-02-19 14:37:38-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/graphs/flows/hungarian.cpp

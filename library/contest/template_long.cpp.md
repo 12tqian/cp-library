@@ -22,7 +22,7 @@ data:
     \ pair<db, db> pd;\n\ntypedef vector<int> vi;\ntypedef vector<bool> vb;\ntypedef\
     \ vector<ll> vl;\ntypedef vector<db> vd;\ntypedef vector<str> vs;\ntypedef vector<pi>\
     \ vpi;\ntypedef vector<pl> vpl;\ntypedef vector<pd> vpd;\n\n#define mp make_pair\n\
-    #define f first\n#define s second\n#define sz(x) (int) (x).size()\n#define all(x)\
+    #define f first\n#define s second\n#define sz(x) (int)(x).size()\n#define all(x)\
     \ begin(x), end(x)\n#define rall(x) (x).rbegin(), (x).rend()\n#define sor(x) sort(all(x))\n\
     #define rsz resize\n#define resz resize\n#define ins insert\n#define ft front()\n\
     #define bk back()\n#define pf push_front\n#define pb push_back\n#define eb emplace_back\n\
@@ -124,7 +124,7 @@ data:
     \ pair<db, db> pd;\n\ntypedef vector<int> vi;\ntypedef vector<bool> vb;\ntypedef\
     \ vector<ll> vl;\ntypedef vector<db> vd;\ntypedef vector<str> vs;\ntypedef vector<pi>\
     \ vpi;\ntypedef vector<pl> vpl;\ntypedef vector<pd> vpd;\n\n#define mp make_pair\n\
-    #define f first\n#define s second\n#define sz(x) (int) (x).size()\n#define all(x)\
+    #define f first\n#define s second\n#define sz(x) (int)(x).size()\n#define all(x)\
     \ begin(x), end(x)\n#define rall(x) (x).rbegin(), (x).rend()\n#define sor(x) sort(all(x))\n\
     #define rsz resize\n#define resz resize\n#define ins insert\n#define ft front()\n\
     #define bk back()\n#define pf push_front\n#define pb push_back\n#define eb emplace_back\n\
@@ -216,7 +216,7 @@ data:
   isVerificationFile: false
   path: library/contest/template_long.cpp
   requiredBy: []
-  timestamp: '2021-02-06 16:23:21-05:00'
+  timestamp: '2021-02-19 14:37:38-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/contest/template_long.cpp

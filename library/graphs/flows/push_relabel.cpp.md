@@ -19,8 +19,8 @@ data:
     \        gap.clear(); gap.resize(2 * n);\n        height.assign(2 * n, 0);\n \
     \       cnt.assign(2 * n, 0);\n        excess.assign(2 * n, 0);\n        work\
     \ = highest = 0;\n        s = 0;\n        t = n - 1;\n    }\n\n    void ae(int\
-    \ u, int v, F cap) {\n        assert(cap >= 0);\n        Edge a{v, (int) adj[v].size(),\
-    \ cap};\n        Edge b{u, (int) adj[u].size(), 0};\n        adj[u].push_back(a);\n\
+    \ u, int v, F cap) {\n        assert(cap >= 0);\n        Edge a{v, (int)adj[v].size(),\
+    \ cap};\n        Edge b{u, (int)adj[u].size(), 0};\n        adj[u].push_back(a);\n\
     \        adj[v].push_back(b);\n    }\n\n    void update_height(int v, int nh)\
     \ {\n        work++;\n        if (height[v] != n)\n            cnt[height[v]]--;\n\
     \        height[v] = nh;\n        if (nh == n)\n            return;\n        cnt[nh]++;\n\
@@ -68,8 +68,8 @@ data:
     \        gap.clear(); gap.resize(2 * n);\n        height.assign(2 * n, 0);\n \
     \       cnt.assign(2 * n, 0);\n        excess.assign(2 * n, 0);\n        work\
     \ = highest = 0;\n        s = 0;\n        t = n - 1;\n    }\n\n    void ae(int\
-    \ u, int v, F cap) {\n        assert(cap >= 0);\n        Edge a{v, (int) adj[v].size(),\
-    \ cap};\n        Edge b{u, (int) adj[u].size(), 0};\n        adj[u].push_back(a);\n\
+    \ u, int v, F cap) {\n        assert(cap >= 0);\n        Edge a{v, (int)adj[v].size(),\
+    \ cap};\n        Edge b{u, (int)adj[u].size(), 0};\n        adj[u].push_back(a);\n\
     \        adj[v].push_back(b);\n    }\n\n    void update_height(int v, int nh)\
     \ {\n        work++;\n        if (height[v] != n)\n            cnt[height[v]]--;\n\
     \        height[v] = nh;\n        if (nh == n)\n            return;\n        cnt[nh]++;\n\
@@ -110,7 +110,7 @@ data:
   isVerificationFile: false
   path: library/graphs/flows/push_relabel.cpp
   requiredBy: []
-  timestamp: '2021-01-09 11:49:29-05:00'
+  timestamp: '2021-02-19 14:37:38-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/graphs/flows/push_relabel.cpp

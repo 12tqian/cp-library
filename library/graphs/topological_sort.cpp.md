@@ -10,7 +10,7 @@ data:
   bundledCode: "#line 1 \"library/graphs/topological_sort.cpp\"\n#include<bits/stdc++.h>\n\
     \n/**\n * If size of std::vector is n, then it is a DAG, if it's not n, then there\
     \ is no topological sorting\n */\n\nstd::vector<int> topo_sort(std::vector<std::vector<int>>\
-    \ adj) {\n    int n = (int) adj.size();\n    std::vector<int> in(n);\n    std::vector<int>\
+    \ adj) {\n    int n = (int)adj.size();\n    std::vector<int> in(n);\n    std::vector<int>\
     \ res;\n    std::list<int> todo;\n    for (int i = 0; i < n; i++) {\n        for\
     \ (int j : adj[i]) {\n            ++in[j];\n        }\n    }\n    for (int i =\
     \ 0; i < n; i++) {\n        if (!in[i]) {\n            todo.push_back(i);\n  \
@@ -21,7 +21,7 @@ data:
     \ 0;\n}\n"
   code: "#include<bits/stdc++.h>\n\n/**\n * If size of std::vector is n, then it is\
     \ a DAG, if it's not n, then there is no topological sorting\n */\n\nstd::vector<int>\
-    \ topo_sort(std::vector<std::vector<int>> adj) {\n    int n = (int) adj.size();\n\
+    \ topo_sort(std::vector<std::vector<int>> adj) {\n    int n = (int)adj.size();\n\
     \    std::vector<int> in(n);\n    std::vector<int> res;\n    std::list<int> todo;\n\
     \    for (int i = 0; i < n; i++) {\n        for (int j : adj[i]) {\n         \
     \   ++in[j];\n        }\n    }\n    for (int i = 0; i < n; i++) {\n        if\
@@ -34,7 +34,7 @@ data:
   isVerificationFile: false
   path: library/graphs/topological_sort.cpp
   requiredBy: []
-  timestamp: '2021-01-09 11:49:29-05:00'
+  timestamp: '2021-02-19 14:37:38-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/graphs/topological_sort.cpp

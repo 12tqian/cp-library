@@ -41,8 +41,8 @@ data:
     \ n >> m;\n    BCC B; B.init(n);\n    for (int i = 0; i < m ;i++) {\n        int\
     \ u, v; cin >> u >> v;\n        B.ae(u, v);\n    }\n    B.build();\n    cout <<\
     \ B.num_comps << '\\n';\n    for (int i = 0; i < B.num_comps; i++) {\n       \
-    \ cout << (int) B.comps[i].size() << \" \";\n        for (int v : B.comps[i])\
-    \ \n            cout << v << \" \";\n        cout << '\\n';\n    }\n}\n"
+    \ cout << (int)B.comps[i].size() << \" \";\n        for (int v : B.comps[i]) \n\
+    \            cout << v << \" \";\n        cout << '\\n';\n    }\n}\n"
   code: "#include <bits/stdc++.h>\n\nstruct BCC {\n    int n, time, num_comps; \n\
     \    std::vector<int> ord, low, id; \n    // order encountered, earliest time\
     \ in subtree, component id\n    std::vector<std::vector<int>> adj, comps, tree;\n\
@@ -77,13 +77,13 @@ data:
     \ n >> m;\n    BCC B; B.init(n);\n    for (int i = 0; i < m ;i++) {\n        int\
     \ u, v; cin >> u >> v;\n        B.ae(u, v);\n    }\n    B.build();\n    cout <<\
     \ B.num_comps << '\\n';\n    for (int i = 0; i < B.num_comps; i++) {\n       \
-    \ cout << (int) B.comps[i].size() << \" \";\n        for (int v : B.comps[i])\
-    \ \n            cout << v << \" \";\n        cout << '\\n';\n    }\n}"
+    \ cout << (int)B.comps[i].size() << \" \";\n        for (int v : B.comps[i]) \n\
+    \            cout << v << \" \";\n        cout << '\\n';\n    }\n}"
   dependsOn: []
   isVerificationFile: false
   path: library/graphs/biconnected_components.cpp
   requiredBy: []
-  timestamp: '2021-01-09 11:49:29-05:00'
+  timestamp: '2021-02-19 14:37:38-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/graphs/biconnected_components.cpp

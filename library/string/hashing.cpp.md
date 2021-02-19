@@ -23,7 +23,7 @@ data:
     \ 2>> pre = {{0, 0}};\n    std::string s;\n\n    void add(char c) {\n        s\
     \ += c;\n        pre.push_back(base * pre.back() + make_hash(c));\n    }\n\n \
     \   void add(std::string t) {\n        for (auto& c : t)\n            add(c);\n\
-    \    }\n\n    void extend(int len) {\n        while ((int) pows.size() <= len)\n\
+    \    }\n\n    void extend(int len) {\n        while ((int)pows.size() <= len)\n\
     \            pows.push_back(base * pows.back());\n    }\n    \n    std::array<int,\
     \ 2> hash(int l, int r) {\n        int len = r + 1 - l;\n        extend(len);\n\
     \        return pre[r + 1] - pows[len] * pre[l];\n    }\n};\n\n} // Hashing\n\n\
@@ -48,7 +48,7 @@ data:
     \ s;\n\n    void add(char c) {\n        s += c;\n        pre.push_back(base *\
     \ pre.back() + make_hash(c));\n    }\n\n    void add(std::string t) {\n      \
     \  for (auto& c : t)\n            add(c);\n    }\n\n    void extend(int len) {\n\
-    \        while ((int) pows.size() <= len)\n            pows.push_back(base * pows.back());\n\
+    \        while ((int)pows.size() <= len)\n            pows.push_back(base * pows.back());\n\
     \    }\n    \n    std::array<int, 2> hash(int l, int r) {\n        int len = r\
     \ + 1 - l;\n        extend(len);\n        return pre[r + 1] - pows[len] * pre[l];\n\
     \    }\n};\n\n} // Hashing\n\nint main() {\n    using namespace std;\n    using\
@@ -60,7 +60,7 @@ data:
   isVerificationFile: false
   path: library/string/hashing.cpp
   requiredBy: []
-  timestamp: '2021-01-09 11:49:29-05:00'
+  timestamp: '2021-02-19 14:37:38-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/string/hashing.cpp
