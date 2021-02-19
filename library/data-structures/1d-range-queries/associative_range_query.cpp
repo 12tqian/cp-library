@@ -50,7 +50,6 @@ int main() {
         int l, r; cin >> l >> r;
         r--;
         cout << R.query(l, r) << '\n';
-
     }
     return 0;
 }
