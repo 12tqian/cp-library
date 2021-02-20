@@ -31,10 +31,10 @@ data:
     \ {\n            // Process the queries at time ti\n            // Do stuff with\
     \ D\n            int ti = ind - sz; \n        } else {\n            process(2\
     \ * ind); process(2 * ind + 1);\n        }\n        for (auto& t : seg[ind]) {\n\
-    \            D.rollback();\n        }\n    }\n\n    void init(int max_time) {\n\
-    \        sz = 1;\n        while (sz < max_time) sz *= 2;\n        seg.assign(2\
-    \ * sz, {});\n        D.init(2 * sz);\n    }\n    \n    void solve() {\n     \
-    \   process(1);\n    }\n};\n\nint main() {\n    return 0;\n}\n"
+    \            D.rollback();\n        }\n    }\n\n    void init(int n, int max_time)\
+    \ {\n        sz = 1;\n        while (sz < max_time) sz *= 2;\n        seg.assign(2\
+    \ * sz, {});\n        D.init(n);\n    }\n    \n    void solve() {\n        process(1);\n\
+    \    }\n};\n\nint main() {\n    return 0;\n}\n"
   code: "#include <bits/stdc++.h>\n\n/** \n * Example of use: https://ideone.com/J3R7nb\n\
     \ * Solves SPOJ DYNACON2\n */\n\nstruct DSURollBack {\n    std::vector<int> e;\n\
     \n    void init(int n) {\n        e = std::vector<int>(n, -1);\n    }\n\n    int\
@@ -57,15 +57,15 @@ data:
     \ {\n            // Process the queries at time ti\n            // Do stuff with\
     \ D\n            int ti = ind - sz; \n        } else {\n            process(2\
     \ * ind); process(2 * ind + 1);\n        }\n        for (auto& t : seg[ind]) {\n\
-    \            D.rollback();\n        }\n    }\n\n    void init(int max_time) {\n\
-    \        sz = 1;\n        while (sz < max_time) sz *= 2;\n        seg.assign(2\
-    \ * sz, {});\n        D.init(2 * sz);\n    }\n    \n    void solve() {\n     \
-    \   process(1);\n    }\n};\n\nint main() {\n    return 0;\n}"
+    \            D.rollback();\n        }\n    }\n\n    void init(int n, int max_time)\
+    \ {\n        sz = 1;\n        while (sz < max_time) sz *= 2;\n        seg.assign(2\
+    \ * sz, {});\n        D.init(n);\n    }\n    \n    void solve() {\n        process(1);\n\
+    \    }\n};\n\nint main() {\n    return 0;\n}"
   dependsOn: []
   isVerificationFile: false
   path: library/graphs/offline_dynamic_connectivity.cpp
   requiredBy: []
-  timestamp: '2021-01-09 11:49:29-05:00'
+  timestamp: '2021-02-20 15:38:29-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/graphs/offline_dynamic_connectivity.cpp
