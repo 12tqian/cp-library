@@ -77,11 +77,11 @@ struct OfflineDynamicConnectivity {
         }
     }
 
-    void init(int max_time) {
+    void init(int n, int max_time) {
         sz = 1;
         while (sz < max_time) sz *= 2;
         seg.assign(2 * sz, {});
-        D.init(2 * sz);
+        D.init(n);
     }
     
     void solve() {
