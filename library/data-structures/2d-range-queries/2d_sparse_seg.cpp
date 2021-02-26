@@ -56,6 +56,7 @@ template <class T> struct Node {
         val = (c0 ? c0->val : 0) + (c1 ? c1->val : 0);
     }
 };
+
 template <class T> struct Node2D {
     Node<T> seg; 
     Node2D* c[2];
