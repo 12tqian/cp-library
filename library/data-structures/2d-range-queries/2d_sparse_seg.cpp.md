@@ -31,8 +31,8 @@ data:
     \                if (!c[1]) c[1] = new Node();\n                c[1]->update_2d(ind,\
     \ (c0 ? c0->c[1] : NULL), (c1 ? c1->c[1] : NULL), M + 1, R);\n            }\n\
     \        } \n        val = (c0 ? c0->val : 0) + (c1 ? c1->val : 0);\n    }\n};\n\
-    template <class T> struct Node2D {\n    Node<T> seg; \n    Node2D* c[2];\n\n \
-    \   Node2D() { c[0] = c[1] = NULL; }\n\n    void upd(int x, int y, T v, int L\
+    \ntemplate <class T> struct Node2D {\n    Node<T> seg; \n    Node2D* c[2];\n\n\
+    \    Node2D() { c[0] = c[1] = NULL; }\n\n    void upd(int x, int y, T v, int L\
     \ = 0, int R = SZ - 1) { // add v\n        if (L == x && R == x) { seg.upd(y,\
     \ v); return; }\n        int M = (L + R) / 2;\n        if (x <= M) {\n       \
     \     if (!c[0]) c[0] = new Node2D();\n            c[0]->upd(x, y, v, L, M);\n\
@@ -68,8 +68,8 @@ data:
     \                if (!c[1]) c[1] = new Node();\n                c[1]->update_2d(ind,\
     \ (c0 ? c0->c[1] : NULL), (c1 ? c1->c[1] : NULL), M + 1, R);\n            }\n\
     \        } \n        val = (c0 ? c0->val : 0) + (c1 ? c1->val : 0);\n    }\n};\n\
-    template <class T> struct Node2D {\n    Node<T> seg; \n    Node2D* c[2];\n\n \
-    \   Node2D() { c[0] = c[1] = NULL; }\n\n    void upd(int x, int y, T v, int L\
+    \ntemplate <class T> struct Node2D {\n    Node<T> seg; \n    Node2D* c[2];\n\n\
+    \    Node2D() { c[0] = c[1] = NULL; }\n\n    void upd(int x, int y, T v, int L\
     \ = 0, int R = SZ - 1) { // add v\n        if (L == x && R == x) { seg.upd(y,\
     \ v); return; }\n        int M = (L + R) / 2;\n        if (x <= M) {\n       \
     \     if (!c[0]) c[0] = new Node2D();\n            c[0]->upd(x, y, v, L, M);\n\
@@ -86,7 +86,7 @@ data:
   isVerificationFile: false
   path: library/data-structures/2d-range-queries/2d_sparse_seg.cpp
   requiredBy: []
-  timestamp: '2021-01-09 11:49:29-05:00'
+  timestamp: '2021-02-26 11:07:11-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/data-structures/2d-range-queries/2d_sparse_seg.cpp
