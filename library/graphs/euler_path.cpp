@@ -1,5 +1,10 @@
 #include<bits/stdc++.h>
 
+/**
+ * Finds Euler path in O(N + M) from a starting vertex
+ * To find which vertex to start, use parities
+ */
+
 template <bool directed> struct Euler {
     int n;
     std::vector<std::vector<std::pair<int, int>>> adj;
@@ -18,27 +23,6 @@ template <bool directed> struct Euler {
         if (!directed) {
             adj[v].emplace_back(u, m);
         }
-    }
-
-    std::vector<std::pair<int, int>> euler_path() {
-        int cnt = 0;
-        int src = -1;
-        for (int i = 0; i < n; i++) {
-            int sz = (int)adj[i].size();
-            cnt += sz % 2;
-            if (sz == 0) {
-                continue;
-            }
-            if (src == -1) {
-                src = i;
-            } else if (src % 2 == 0) {
-                src = i;
-            }
-        }
-        if (src == -1) {
-            return {};
-        }
-        return get_path(src);
     }
     
     std::vector<std::pair<int, int>> get_path(int src = 0) {
