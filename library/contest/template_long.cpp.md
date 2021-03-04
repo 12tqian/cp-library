@@ -33,11 +33,13 @@ data:
     #define each(a, x) for (auto& a : x)\n\nmt19937 rng((uint32_t) chrono::steady_clock::now().time_since_epoch().count());\n\
     \ntemplate <class T> bool ckmin(T& a, const T& b) { return b < a ? a = b, 1 :\
     \ 0; }\ntemplate <class T> bool ckmax(T& a, const T& b) { return a < b ? a = b,\
-    \ 1 : 0; }\ntemplate <class T> using V = vector<T>;\n\n#ifdef LOCAL\n#define dbg(...)\
-    \ debug(#__VA_ARGS__, __VA_ARGS__);\n#else\n#define dbg(...) 17;\n#endif\n\ntemplate\
-    \ <typename T, typename S> ostream& operator << (ostream &os, const pair<T, S>\
-    \ &p) { return os << \"(\" << p.first << \", \" << p.second << \")\"; }\ntemplate\
-    \ <typename C, typename T = decay<decltype(*begin(declval<C>()))>, typename enable_if<!is_same<C,\
+    \ 1 : 0; }\n\ntemplate <class T> using V = vector<T>;\ntemplate <class T> using\
+    \ VV = V<V<T>>;\ntemplate <class T> using VVV = V<V<V<T>>>;\ntemplate <class T>\
+    \ using VVVV = V<V<V<V<T>>>>;\n\n#ifdef LOCAL\n#define dbg(...) debug(#__VA_ARGS__,\
+    \ __VA_ARGS__);\n#else\n#define dbg(...) 17;\n#endif\n\ntemplate <typename T,\
+    \ typename S> ostream& operator << (ostream &os, const pair<T, S> &p) { return\
+    \ os << \"(\" << p.first << \", \" << p.second << \")\"; }\ntemplate <typename\
+    \ C, typename T = decay<decltype(*begin(declval<C>()))>, typename enable_if<!is_same<C,\
     \ string>::value>::type* = nullptr>\nostream& operator << (ostream &os, const\
     \ C &c) { bool f = true; os << \"{\"; for (const auto &x : c) { if (!f) os <<\
     \ \", \"; f = false; os << x; } return os << \"}\"; }\ntemplate <typename T> void\
@@ -135,11 +137,13 @@ data:
     #define each(a, x) for (auto& a : x)\n\nmt19937 rng((uint32_t) chrono::steady_clock::now().time_since_epoch().count());\n\
     \ntemplate <class T> bool ckmin(T& a, const T& b) { return b < a ? a = b, 1 :\
     \ 0; }\ntemplate <class T> bool ckmax(T& a, const T& b) { return a < b ? a = b,\
-    \ 1 : 0; }\ntemplate <class T> using V = vector<T>;\n\n#ifdef LOCAL\n#define dbg(...)\
-    \ debug(#__VA_ARGS__, __VA_ARGS__);\n#else\n#define dbg(...) 17;\n#endif\n\ntemplate\
-    \ <typename T, typename S> ostream& operator << (ostream &os, const pair<T, S>\
-    \ &p) { return os << \"(\" << p.first << \", \" << p.second << \")\"; }\ntemplate\
-    \ <typename C, typename T = decay<decltype(*begin(declval<C>()))>, typename enable_if<!is_same<C,\
+    \ 1 : 0; }\n\ntemplate <class T> using V = vector<T>;\ntemplate <class T> using\
+    \ VV = V<V<T>>;\ntemplate <class T> using VVV = V<V<V<T>>>;\ntemplate <class T>\
+    \ using VVVV = V<V<V<V<T>>>>;\n\n#ifdef LOCAL\n#define dbg(...) debug(#__VA_ARGS__,\
+    \ __VA_ARGS__);\n#else\n#define dbg(...) 17;\n#endif\n\ntemplate <typename T,\
+    \ typename S> ostream& operator << (ostream &os, const pair<T, S> &p) { return\
+    \ os << \"(\" << p.first << \", \" << p.second << \")\"; }\ntemplate <typename\
+    \ C, typename T = decay<decltype(*begin(declval<C>()))>, typename enable_if<!is_same<C,\
     \ string>::value>::type* = nullptr>\nostream& operator << (ostream &os, const\
     \ C &c) { bool f = true; os << \"{\"; for (const auto &x : c) { if (!f) os <<\
     \ \", \"; f = false; os << x; } return os << \"}\"; }\ntemplate <typename T> void\
@@ -216,7 +220,7 @@ data:
   isVerificationFile: false
   path: library/contest/template_long.cpp
   requiredBy: []
-  timestamp: '2021-02-19 14:37:38-05:00'
+  timestamp: '2021-03-04 16:44:44-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/contest/template_long.cpp

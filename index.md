@@ -167,6 +167,12 @@ data:
     - icon: ':warning:'
       path: library/misc/fast_hash_map.cpp
       title: library/misc/fast_hash_map.cpp
+    - icon: ':warning:'
+      path: library/misc/fast_input.cpp
+      title: library/misc/fast_input.cpp
+    - icon: ':warning:'
+      path: library/misc/fast_io.cpp
+      title: library/misc/fast_io.cpp
   - name: library/number-theory
     pages:
     - icon: ':warning:'
