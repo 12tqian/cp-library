@@ -9,7 +9,7 @@ data:
     links: []
   bundledCode: "#line 1 \"library/number-theory/basic_number_theory.cpp\"\n#include\
     \ <bits/stdc++.h>\n\nnamespace BasicNumberTheory { \n\n// find solution to a *\
-    \ x + b * y = gcd(a, b)\n// |a * x|, |b * y) <= lcm(a, b)\nstd::pair<long long,\
+    \ x + b * y = gcd(a, b)\n// |a * x|, |b * y| <= lcm(a, b)\nstd::pair<long long,\
     \ long long> euclid(long long a, long long b) {\n    if (!b) \n        return\
     \ {1, 0};\n    std::pair<long long, long long> p = euclid(b, a % b);\n    return\
     \ {p.second, p.first - a / b * p.second};\n}\n\nlong long mod_inverse(long long\
@@ -46,7 +46,7 @@ data:
     \  else \n            cout << ans.first << \" \" << ans.second << '\\n';\n   \
     \ }   \n    return 0;\n}\n"
   code: "#include <bits/stdc++.h>\n\nnamespace BasicNumberTheory { \n\n// find solution\
-    \ to a * x + b * y = gcd(a, b)\n// |a * x|, |b * y) <= lcm(a, b)\nstd::pair<long\
+    \ to a * x + b * y = gcd(a, b)\n// |a * x|, |b * y| <= lcm(a, b)\nstd::pair<long\
     \ long, long long> euclid(long long a, long long b) {\n    if (!b) \n        return\
     \ {1, 0};\n    std::pair<long long, long long> p = euclid(b, a % b);\n    return\
     \ {p.second, p.first - a / b * p.second};\n}\n\nlong long mod_inverse(long long\
@@ -86,7 +86,7 @@ data:
   isVerificationFile: false
   path: library/number-theory/basic_number_theory.cpp
   requiredBy: []
-  timestamp: '2021-01-09 11:49:29-05:00'
+  timestamp: '2021-03-24 15:16:54-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/number-theory/basic_number_theory.cpp
