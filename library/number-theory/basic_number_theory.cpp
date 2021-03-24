@@ -3,7 +3,7 @@
 namespace BasicNumberTheory { 
 
 // find solution to a * x + b * y = gcd(a, b)
-// |a * x|, |b * y) <= lcm(a, b)
+// |a * x|, |b * y| <= lcm(a, b)
 std::pair<long long, long long> euclid(long long a, long long b) {
     if (!b) 
         return {1, 0};
