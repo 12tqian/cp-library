@@ -19,12 +19,12 @@ int main() {
     iota(vert.begin(), vert.end(), 0);
     sort(vert.begin(), vert.end(), [&](int i, int j) { return adj[i].size() < adj[j].size(); });
     int ans = 0;
-    for (int u: vert) {
+    for (int u : vert) {
         done[u] = true;
-        for (int v: adj[u]) good[v] = true;
-        for (int v: adj[u]) {
+        for (int v : adj[u]) good[v] = true;
+        for (int v : adj[u]) {
             if (done[v]) {
-                for (int w: adj[v]) {
+                for (int w : adj[v]) {
                     if (!good[w]) continue;
                     long long add = (x[u] * x[v]) % MOD;
                     add = (add * x[w]) % MOD;
