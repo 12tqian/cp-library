@@ -8,7 +8,7 @@ struct ConvexHullTrick {
         long long m, b; long double x, val;
         bool is_query;
 
-        line(long long _m = 0, long long _b = 0){
+        line(long long _m = 0, long long _b = 0) {
             m = _m, b = _b, val = 0, x = -INF, is_query = false;
         }
 
