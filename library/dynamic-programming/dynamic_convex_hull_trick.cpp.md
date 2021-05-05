@@ -11,7 +11,7 @@ data:
     \n#include<bits/stdc++.h>\n\nconst long long INF = 1e18;\n\nstruct ConvexHullTrick\
     \ {\n    // modified for minimums\n    struct line {\n        long long m, b;\
     \ long double x, val;\n        bool is_query;\n\n        line(long long _m = 0,\
-    \ long long _b = 0){\n            m = _m, b = _b, val = 0, x = -INF, is_query\
+    \ long long _b = 0) {\n            m = _m, b = _b, val = 0, x = -INF, is_query\
     \ = false;\n        }\n\n        long long eval(long long x) const { return m\
     \ * x + b; }\n        bool parallel(const line &l) const { return m == l.m; }\n\
     \        long double intersect(const line &l) const {\n            return parallel(l)\
@@ -41,7 +41,7 @@ data:
   code: "#include<bits/stdc++.h>\n\nconst long long INF = 1e18;\n\nstruct ConvexHullTrick\
     \ {\n    // modified for minimums\n    struct line {\n        long long m, b;\
     \ long double x, val;\n        bool is_query;\n\n        line(long long _m = 0,\
-    \ long long _b = 0){\n            m = _m, b = _b, val = 0, x = -INF, is_query\
+    \ long long _b = 0) {\n            m = _m, b = _b, val = 0, x = -INF, is_query\
     \ = false;\n        }\n\n        long long eval(long long x) const { return m\
     \ * x + b; }\n        bool parallel(const line &l) const { return m == l.m; }\n\
     \        long double intersect(const line &l) const {\n            return parallel(l)\
@@ -72,7 +72,7 @@ data:
   isVerificationFile: false
   path: library/dynamic-programming/dynamic_convex_hull_trick.cpp
   requiredBy: []
-  timestamp: '2021-01-09 11:49:29-05:00'
+  timestamp: '2021-05-04 21:58:12-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/dynamic-programming/dynamic_convex_hull_trick.cpp
