@@ -165,6 +165,9 @@ data:
   - name: library/misc
     pages:
     - icon: ':warning:'
+      path: library/misc/easy_io.cpp
+      title: library/misc/easy_io.cpp
+    - icon: ':warning:'
       path: library/misc/fast_hash_map.cpp
       title: library/misc/fast_hash_map.cpp
     - icon: ':warning:'
