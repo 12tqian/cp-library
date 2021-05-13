@@ -4,6 +4,9 @@ data:
   - name: library/contest
     pages:
     - icon: ':warning:'
+      path: library/contest/template_full.cpp
+      title: library/contest/template_full.cpp
+    - icon: ':warning:'
       path: library/contest/template_long.cpp
       title: library/contest/template_long.cpp
     - icon: ':warning:'
