@@ -205,6 +205,9 @@ data:
   - name: library/numerical
     pages:
     - icon: ':warning:'
+      path: library/numerical/big_integer.cpp
+      title: library/numerical/big_integer.cpp
+    - icon: ':warning:'
       path: library/numerical/fast_fourier_transform.cpp
       title: library/numerical/fast_fourier_transform.cpp
     - icon: ':warning:'
