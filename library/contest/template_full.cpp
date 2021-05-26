@@ -148,11 +148,11 @@ inline namespace Input {
     // rv: resize and read vectors
     void rv(std::size_t) {}
     template <class T, class ...U> void rv(std::size_t N, vector<T>& t, U&... u);
-    template<class...U> void rv(std::size_t, std::size_t N2, U&... u);
+    template <class...U> void rv(std::size_t, std::size_t N2, U&... u);
     template <class T, class ...U> void rv(std::size_t N, vector<T>& t, U&... u) {
         t.resize(N); re(t);
         rv(N, u...); }
-    template<class...U> void rv(std::size_t, std::size_t N2, U&... u) {
+    template <class...U> void rv(std::size_t, std::size_t N2, U&... u) {
         rv(N2, u...); }
 
     // dumb shortcuts to read in ints
@@ -173,7 +173,7 @@ inline namespace ToString {
         string res = "{"; for (int i = 0; i < (int)t.size(); ++i) res += ts(t[i]);
         res += "}"; return res; }
     string ts(vector<bool> v) { return bit_vec(v); }
-    template<std::size_t SZ> string ts(bitset<SZ> b) { return bit_vec(b); } // bit vector
+    template <std::size_t SZ> string ts(bitset<SZ> b) { return bit_vec(b); } // bit vector
     template <class T, class U> string ts(pair<T, U> p); // pairs
     template <class T> typename enable_if<needs_output_v<T>, string>::type ts(T v); // vectors, arrays
     template <class T, class U> string ts(pair<T, U> p) { return "(" + ts(p.first) + ", " + ts(p.second) + ")"; }
@@ -190,9 +190,9 @@ inline namespace ToString {
         return "{" + ts_sep(v, ", ") + "}"; }
 
     // for nested DS
-    template<int, class T> typename enable_if<!needs_output_v<T>, vector<string>>::type 
+    template <int, class T> typename enable_if<!needs_output_v<T>, vector<string>>::type 
       ts_lev(const T& v) { return {ts(v)}; }
-    template<int lev, class T> typename enable_if<needs_output_v<T>, vector<string>>::type 
+    template <int lev, class T> typename enable_if<needs_output_v<T>, vector<string>>::type 
       ts_lev(const T& v) {
         if (lev == 0 || !(int)v.size()) return {ts(v)};
         vector<string> res;
@@ -211,20 +211,20 @@ inline namespace ToString {
 }
 
 inline namespace Output {
-    template<class T> void pr_sep(ostream& os, string, const T& t) { os << ts(t); }
-    template<class T, class... U> void pr_sep(ostream& os, string sep, const T& t, const U&... u) {
+    template <class T> void pr_sep(ostream& os, string, const T& t) { os << ts(t); }
+    template <class T, class... U> void pr_sep(ostream& os, string sep, const T& t, const U&... u) {
         pr_sep(os, sep, t); os << sep; pr_sep(os, sep, u...); }
     // print w/ no spaces
-    template<class ...T> void pr(const T&... t) { pr_sep(cout, "", t...); } 
+    template <class ...T> void pr(const T&... t) { pr_sep(cout, "", t...); } 
     // print w/ spaces, end with newline
     void ps() { cout << "\n"; }
-    template<class ...T> void ps(const T&... t) { pr_sep(cout, " ", t...); ps(); } 
+    template <class ...T> void ps(const T&... t) { pr_sep(cout, " ", t...); ps(); } 
     // debug to cerr
-    template<class ...T> void dbg_out(const T&... t) {
+    template <class ...T> void dbg_out(const T&... t) {
         pr_sep(cerr, " | ", t...); cerr << endl; }
     void loc_info(int line, string names) {
         cerr << "Line(" << line << ") -> [" << names << "]: "; }
-    template<int lev, class T> void dbgl_out(const T& t) {
+    template <int lev, class T> void dbgl_out(const T& t) {
         cerr << "\n\n" << ts_sep(ts_lev<lev>(t), "\n") << "\n" << endl; }
     #ifdef LOCAL
         #define dbg(...) loc_info(__LINE__, #__VA_ARGS__), dbg_out(__VA_ARGS__)
