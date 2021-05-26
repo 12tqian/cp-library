@@ -146,13 +146,13 @@ inline namespace Input {
     template <class T, class ...U> void re(T& t, U&... u) { re(t); re(u...); } // read multiple
 
     // rv: resize and read vectors
-    void rv(size_t) {}
-    template <class T, class ...U> void rv(size_t N, vector<T>& t, U&... u);
-    template<class...U> void rv(size_t, size_t N2, U&... u);
-    template <class T, class ...U> void rv(size_t N, vector<T>& t, U&... u) {
+    void rv(std::size_t) {}
+    template <class T, class ...U> void rv(std::size_t N, vector<T>& t, U&... u);
+    template<class...U> void rv(std::size_t, std::size_t N2, U&... u);
+    template <class T, class ...U> void rv(std::size_t N, vector<T>& t, U&... u) {
         t.resize(N); re(t);
         rv(N, u...); }
-    template<class...U> void rv(size_t, size_t N2, U&... u) {
+    template<class...U> void rv(std::size_t, std::size_t N2, U&... u) {
         rv(N2, u...); }
 
     // dumb shortcuts to read in ints
@@ -173,7 +173,7 @@ inline namespace ToString {
         string res = "{"; for (int i = 0; i < (int)t.size(); ++i) res += ts(t[i]);
         res += "}"; return res; }
     string ts(vector<bool> v) { return bit_vec(v); }
-    template<size_t SZ> string ts(bitset<SZ> b) { return bit_vec(b); } // bit vector
+    template<std::size_t SZ> string ts(bitset<SZ> b) { return bit_vec(b); } // bit vector
     template <class T, class U> string ts(pair<T, U> p); // pairs
     template <class T> typename enable_if<needs_output_v<T>, string>::type ts(T v); // vectors, arrays
     template <class T, class U> string ts(pair<T, U> p) { return "(" + ts(p.first) + ", " + ts(p.second) + ")"; }
