@@ -143,8 +143,11 @@ data:
       path: library/graphs/offline_dynamic_connectivity.cpp
       title: library/graphs/offline_dynamic_connectivity.cpp
     - icon: ':warning:'
-      path: library/graphs/strongly_connected_components.cpp
-      title: library/graphs/strongly_connected_components.cpp
+      path: library/graphs/strongly_connected_components_kosaraju.cpp
+      title: library/graphs/strongly_connected_components_kosaraju.cpp
+    - icon: ':warning:'
+      path: library/graphs/strongly_connected_components_tarjan.cpp
+      title: library/graphs/strongly_connected_components_tarjan.cpp
     - icon: ':warning:'
       path: library/graphs/topological_sort.cpp
       title: library/graphs/topological_sort.cpp

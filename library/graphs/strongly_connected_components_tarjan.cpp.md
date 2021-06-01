@@ -7,8 +7,8 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"library/graphs/strongly_connected_components.cpp\"\n#include\
-    \ <bits/stdc++.h>\n\nstruct SCC {\n    int n, time, num_comps;\n    std::vector<std::vector<int>>\
+  bundledCode: "#line 1 \"library/graphs/strongly_connected_components_tarjan.cpp\"\
+    \n#include <bits/stdc++.h>\n\nstruct SCC {\n    int n, time, num_comps;\n    std::vector<std::vector<int>>\
     \ adj;\n    std::vector<int> disc, id, stk;\n    std::vector<std::vector<int>>\
     \ comps;\n\n    void init(int n_) {\n        n = n_;\n        time = 0;\n    \
     \    num_comps = 0;\n        adj.assign(n, std::vector<int>());\n        id.assign(n,\
@@ -54,15 +54,15 @@ data:
     \    return 0;\n}"
   dependsOn: []
   isVerificationFile: false
-  path: library/graphs/strongly_connected_components.cpp
+  path: library/graphs/strongly_connected_components_tarjan.cpp
   requiredBy: []
-  timestamp: '2021-02-19 14:37:38-05:00'
+  timestamp: '2021-06-01 11:33:08-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: library/graphs/strongly_connected_components.cpp
+documentation_of: library/graphs/strongly_connected_components_tarjan.cpp
 layout: document
 redirect_from:
-- /library/library/graphs/strongly_connected_components.cpp
-- /library/library/graphs/strongly_connected_components.cpp.html
-title: library/graphs/strongly_connected_components.cpp
+- /library/library/graphs/strongly_connected_components_tarjan.cpp
+- /library/library/graphs/strongly_connected_components_tarjan.cpp.html
+title: library/graphs/strongly_connected_components_tarjan.cpp
 ---
