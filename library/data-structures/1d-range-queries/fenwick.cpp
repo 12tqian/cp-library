@@ -6,12 +6,12 @@ template <class T> struct FenwickTree {
 
     void init(int n_) {
         n = n_;
-        fwt.resize(n);
+        fwt.assign(n, 0);
     }
 
     void init(std::vector<T>& a) {
         n = (int)a.size();
-        a.assign(n, 0);
+        fwt.assign(n, 0);
         for (int i = 0; i < (int)a.size(); i++) {
             add(i, a[i]);
         }
