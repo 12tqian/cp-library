@@ -21,6 +21,9 @@ data:
       path: library/data-structures/1d-range-queries/fenwick.cpp
       title: library/data-structures/1d-range-queries/fenwick.cpp
     - icon: ':warning:'
+      path: library/data-structures/1d-range-queries/implicit_lazy_segment_tree.cpp
+      title: library/data-structures/1d-range-queries/implicit_lazy_segment_tree.cpp
+    - icon: ':warning:'
       path: library/data-structures/1d-range-queries/interval_union.cpp
       title: library/data-structures/1d-range-queries/interval_union.cpp
     - icon: ':warning:'
