@@ -8,80 +8,73 @@ data:
   attributes:
     links: []
   bundledCode: "#line 1 \"library/number-theory/big_fast_factor_better.cpp\"\n#include<bits/stdc++.h>\n\
-    \nnamespace FactorBig {\n\nlong long gcd(long long _a, long long _b) {\n    unsigned\
-    \ long long a = abs(_a), b = abs(_b);\n    if (a == 0) return b;\n    if (b ==\
-    \ 0) return a;\n    auto bsf = [](unsigned long long x) -> int {\n        return\
-    \ __builtin_ctzll(x);\n    };\n    int shift = bsf(a | b);\n    a >>= bsf(a);\n\
-    \    do {\n        b >>= bsf(b);\n        if (a > b) \n            std::swap(a,\
-    \ b);\n        b -= a;\n    } while (b);\n    return (a << shift);\n}\n\ntemplate\
-    \ <class T, class U> T pow_mod(T x, U n, T md) {\n    T r = 1 % md;\n    x %=\
-    \ md;\n    while (n) {\n        if (n & 1) r = (r * x) % md;\n        x = (x *\
-    \ x) % md;\n        n >>= 1;\n    }\n    return r;\n}\n\nbool is_prime(long long\
-    \ n) {\n    if (n <= 1) return false;\n    if (n == 2) return true;\n    if (n\
-    \ % 2 == 0) return false;\n    long long d = n - 1;\n    while (d % 2 == 0) d\
-    \ /= 2;\n    for (long long a : {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37})\
-    \ {\n        if (n <= a) break;\n        long long t = d;\n        long long y\
-    \ = pow_mod<__int128_t>(a, t, n);  // over\n        while (t != n - 1 && y !=\
-    \ 1 && y != n - 1) {\n            y = __int128_t(y) * y % n;  // flow\n      \
-    \      t <<= 1;\n        }\n        if (y != n - 1 && t % 2 == 0) {\n        \
-    \    return false;\n        }\n    }\n    return true;\n}\n\nlong long pollard_single(long\
-    \ long n) {\n    auto f = [&](long long x) { return (__int128_t(x) * x + 1) %\
-    \ n; };\n    if (is_prime(n)) return n;\n    if (n % 2 == 0) return 2;\n    long\
-    \ long st = 0;\n    while (true) {\n        st++;\n        long long x = st, y\
-    \ = f(x);\n        while (true) {\n            long long p = gcd((y - x + n),\
-    \ n);\n            if (p == 0 || p == n) break;\n            if (p != 1) return\
-    \ p;\n            x = f(x);\n            y = f(f(y));\n        }\n    }\n}\n\n\
-    std::vector<long long> pollard(long long n) {\n    if (n == 1) return {};\n  \
-    \  long long x = pollard_single(n);\n    if (x == n) return {x};\n    std::vector<long\
-    \ long> le = pollard(x);\n    std::vector<long long> ri = pollard(n / x);\n  \
-    \  le.insert(le.end(), ri.begin(), ri.end());\n    return le;\n}\n\n}\n\nint main()\
-    \ {\n    using namespace std;\n    using namespace FactorBig;\n    int q;\n  \
-    \  scanf(\"%d\", &q);\n    map<long long, vector<long long>> cache;\n    for (int\
-    \ i = 0; i < q; i++) {\n        long long a;\n        scanf(\"%lld\", &a);\n \
-    \       if (!cache.count(a)) {\n            auto v = pollard(a);\n           \
-    \ sort(v.begin(), v.end());\n            cache[a] = v;\n        }\n        auto\
-    \ v = cache[a];\n        printf(\"%d\", (int)v.size());\n        for (auto d:\
-    \ v) printf(\" %lld\", d);\n        printf(\"\\n\");\n    }\n    return 0;\n}\n"
+    \nnamespace FactorBig {\n\nlong long gcd(long long _a, long long _b) {\n\tunsigned\
+    \ long long a = abs(_a), b = abs(_b);\n\tif (a == 0) return b;\n\tif (b == 0)\
+    \ return a;\n\tauto bsf = [](unsigned long long x) -> int {\n\t\treturn __builtin_ctzll(x);\n\
+    \t};\n\tint shift = bsf(a | b);\n\ta >>= bsf(a);\n\tdo {\n\t\tb >>= bsf(b);\n\t\
+    \tif (a > b) \n\t\t\tstd::swap(a, b);\n\t\tb -= a;\n\t} while (b);\n\treturn (a\
+    \ << shift);\n}\n\ntemplate <class T, class U> T pow_mod(T x, U n, T md) {\n\t\
+    T r = 1 % md;\n\tx %= md;\n\twhile (n) {\n\t\tif (n & 1) r = (r * x) % md;\n\t\
+    \tx = (x * x) % md;\n\t\tn >>= 1;\n\t}\n\treturn r;\n}\n\nbool is_prime(long long\
+    \ n) {\n\tif (n <= 1) return false;\n\tif (n == 2) return true;\n\tif (n % 2 ==\
+    \ 0) return false;\n\tlong long d = n - 1;\n\twhile (d % 2 == 0) d /= 2;\n\tfor\
+    \ (long long a : {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37}) {\n\t\tif (n <=\
+    \ a) break;\n\t\tlong long t = d;\n\t\tlong long y = pow_mod<__int128_t>(a, t,\
+    \ n);  // over\n\t\twhile (t != n - 1 && y != 1 && y != n - 1) {\n\t\t\ty = __int128_t(y)\
+    \ * y % n;  // flow\n\t\t\tt <<= 1;\n\t\t}\n\t\tif (y != n - 1 && t % 2 == 0)\
+    \ {\n\t\t\treturn false;\n\t\t}\n\t}\n\treturn true;\n}\n\nlong long pollard_single(long\
+    \ long n) {\n\tauto f = [&](long long x) { return (__int128_t(x) * x + 1) % n;\
+    \ };\n\tif (is_prime(n)) return n;\n\tif (n % 2 == 0) return 2;\n\tlong long st\
+    \ = 0;\n\twhile (true) {\n\t\tst++;\n\t\tlong long x = st, y = f(x);\n\t\twhile\
+    \ (true) {\n\t\t\tlong long p = gcd((y - x + n), n);\n\t\t\tif (p == 0 || p ==\
+    \ n) break;\n\t\t\tif (p != 1) return p;\n\t\t\tx = f(x);\n\t\t\ty = f(f(y));\n\
+    \t\t}\n\t}\n}\n\nstd::vector<long long> pollard(long long n) {\n\tif (n == 1)\
+    \ return {};\n\tlong long x = pollard_single(n);\n\tif (x == n) return {x};\n\t\
+    std::vector<long long> le = pollard(x);\n\tstd::vector<long long> ri = pollard(n\
+    \ / x);\n\tle.insert(le.end(), ri.begin(), ri.end());\n\treturn le;\n}\n\n}\n\n\
+    int main() {\n\tusing namespace std;\n\tusing namespace FactorBig;\n\tint q;\n\
+    \tscanf(\"%d\", &q);\n\tmap<long long, vector<long long>> cache;\n\tfor (int i\
+    \ = 0; i < q; i++) {\n\t\tlong long a;\n\t\tscanf(\"%lld\", &a);\n\t\tif (!cache.count(a))\
+    \ {\n\t\t\tauto v = pollard(a);\n\t\t\tsort(v.begin(), v.end());\n\t\t\tcache[a]\
+    \ = v;\n\t\t}\n\t\tauto v = cache[a];\n\t\tprintf(\"%d\", (int)v.size());\n\t\t\
+    for (auto d: v) printf(\" %lld\", d);\n\t\tprintf(\"\\n\");\n\t}\n\treturn 0;\n\
+    }\n"
   code: "#include<bits/stdc++.h>\n\nnamespace FactorBig {\n\nlong long gcd(long long\
-    \ _a, long long _b) {\n    unsigned long long a = abs(_a), b = abs(_b);\n    if\
-    \ (a == 0) return b;\n    if (b == 0) return a;\n    auto bsf = [](unsigned long\
-    \ long x) -> int {\n        return __builtin_ctzll(x);\n    };\n    int shift\
-    \ = bsf(a | b);\n    a >>= bsf(a);\n    do {\n        b >>= bsf(b);\n        if\
-    \ (a > b) \n            std::swap(a, b);\n        b -= a;\n    } while (b);\n\
-    \    return (a << shift);\n}\n\ntemplate <class T, class U> T pow_mod(T x, U n,\
-    \ T md) {\n    T r = 1 % md;\n    x %= md;\n    while (n) {\n        if (n & 1)\
-    \ r = (r * x) % md;\n        x = (x * x) % md;\n        n >>= 1;\n    }\n    return\
-    \ r;\n}\n\nbool is_prime(long long n) {\n    if (n <= 1) return false;\n    if\
-    \ (n == 2) return true;\n    if (n % 2 == 0) return false;\n    long long d =\
-    \ n - 1;\n    while (d % 2 == 0) d /= 2;\n    for (long long a : {2, 3, 5, 7,\
-    \ 11, 13, 17, 19, 23, 29, 31, 37}) {\n        if (n <= a) break;\n        long\
-    \ long t = d;\n        long long y = pow_mod<__int128_t>(a, t, n);  // over\n\
-    \        while (t != n - 1 && y != 1 && y != n - 1) {\n            y = __int128_t(y)\
-    \ * y % n;  // flow\n            t <<= 1;\n        }\n        if (y != n - 1 &&\
-    \ t % 2 == 0) {\n            return false;\n        }\n    }\n    return true;\n\
-    }\n\nlong long pollard_single(long long n) {\n    auto f = [&](long long x) {\
-    \ return (__int128_t(x) * x + 1) % n; };\n    if (is_prime(n)) return n;\n   \
-    \ if (n % 2 == 0) return 2;\n    long long st = 0;\n    while (true) {\n     \
-    \   st++;\n        long long x = st, y = f(x);\n        while (true) {\n     \
-    \       long long p = gcd((y - x + n), n);\n            if (p == 0 || p == n)\
-    \ break;\n            if (p != 1) return p;\n            x = f(x);\n         \
-    \   y = f(f(y));\n        }\n    }\n}\n\nstd::vector<long long> pollard(long long\
-    \ n) {\n    if (n == 1) return {};\n    long long x = pollard_single(n);\n   \
-    \ if (x == n) return {x};\n    std::vector<long long> le = pollard(x);\n    std::vector<long\
-    \ long> ri = pollard(n / x);\n    le.insert(le.end(), ri.begin(), ri.end());\n\
-    \    return le;\n}\n\n}\n\nint main() {\n    using namespace std;\n    using namespace\
-    \ FactorBig;\n    int q;\n    scanf(\"%d\", &q);\n    map<long long, vector<long\
-    \ long>> cache;\n    for (int i = 0; i < q; i++) {\n        long long a;\n   \
-    \     scanf(\"%lld\", &a);\n        if (!cache.count(a)) {\n            auto v\
-    \ = pollard(a);\n            sort(v.begin(), v.end());\n            cache[a] =\
-    \ v;\n        }\n        auto v = cache[a];\n        printf(\"%d\", (int)v.size());\n\
-    \        for (auto d: v) printf(\" %lld\", d);\n        printf(\"\\n\");\n   \
-    \ }\n    return 0;\n}"
+    \ _a, long long _b) {\n\tunsigned long long a = abs(_a), b = abs(_b);\n\tif (a\
+    \ == 0) return b;\n\tif (b == 0) return a;\n\tauto bsf = [](unsigned long long\
+    \ x) -> int {\n\t\treturn __builtin_ctzll(x);\n\t};\n\tint shift = bsf(a | b);\n\
+    \ta >>= bsf(a);\n\tdo {\n\t\tb >>= bsf(b);\n\t\tif (a > b) \n\t\t\tstd::swap(a,\
+    \ b);\n\t\tb -= a;\n\t} while (b);\n\treturn (a << shift);\n}\n\ntemplate <class\
+    \ T, class U> T pow_mod(T x, U n, T md) {\n\tT r = 1 % md;\n\tx %= md;\n\twhile\
+    \ (n) {\n\t\tif (n & 1) r = (r * x) % md;\n\t\tx = (x * x) % md;\n\t\tn >>= 1;\n\
+    \t}\n\treturn r;\n}\n\nbool is_prime(long long n) {\n\tif (n <= 1) return false;\n\
+    \tif (n == 2) return true;\n\tif (n % 2 == 0) return false;\n\tlong long d = n\
+    \ - 1;\n\twhile (d % 2 == 0) d /= 2;\n\tfor (long long a : {2, 3, 5, 7, 11, 13,\
+    \ 17, 19, 23, 29, 31, 37}) {\n\t\tif (n <= a) break;\n\t\tlong long t = d;\n\t\
+    \tlong long y = pow_mod<__int128_t>(a, t, n);  // over\n\t\twhile (t != n - 1\
+    \ && y != 1 && y != n - 1) {\n\t\t\ty = __int128_t(y) * y % n;  // flow\n\t\t\t\
+    t <<= 1;\n\t\t}\n\t\tif (y != n - 1 && t % 2 == 0) {\n\t\t\treturn false;\n\t\t\
+    }\n\t}\n\treturn true;\n}\n\nlong long pollard_single(long long n) {\n\tauto f\
+    \ = [&](long long x) { return (__int128_t(x) * x + 1) % n; };\n\tif (is_prime(n))\
+    \ return n;\n\tif (n % 2 == 0) return 2;\n\tlong long st = 0;\n\twhile (true)\
+    \ {\n\t\tst++;\n\t\tlong long x = st, y = f(x);\n\t\twhile (true) {\n\t\t\tlong\
+    \ long p = gcd((y - x + n), n);\n\t\t\tif (p == 0 || p == n) break;\n\t\t\tif\
+    \ (p != 1) return p;\n\t\t\tx = f(x);\n\t\t\ty = f(f(y));\n\t\t}\n\t}\n}\n\nstd::vector<long\
+    \ long> pollard(long long n) {\n\tif (n == 1) return {};\n\tlong long x = pollard_single(n);\n\
+    \tif (x == n) return {x};\n\tstd::vector<long long> le = pollard(x);\n\tstd::vector<long\
+    \ long> ri = pollard(n / x);\n\tle.insert(le.end(), ri.begin(), ri.end());\n\t\
+    return le;\n}\n\n}\n\nint main() {\n\tusing namespace std;\n\tusing namespace\
+    \ FactorBig;\n\tint q;\n\tscanf(\"%d\", &q);\n\tmap<long long, vector<long long>>\
+    \ cache;\n\tfor (int i = 0; i < q; i++) {\n\t\tlong long a;\n\t\tscanf(\"%lld\"\
+    , &a);\n\t\tif (!cache.count(a)) {\n\t\t\tauto v = pollard(a);\n\t\t\tsort(v.begin(),\
+    \ v.end());\n\t\t\tcache[a] = v;\n\t\t}\n\t\tauto v = cache[a];\n\t\tprintf(\"\
+    %d\", (int)v.size());\n\t\tfor (auto d: v) printf(\" %lld\", d);\n\t\tprintf(\"\
+    \\n\");\n\t}\n\treturn 0;\n}"
   dependsOn: []
   isVerificationFile: false
   path: library/number-theory/big_fast_factor_better.cpp
   requiredBy: []
-  timestamp: '2021-02-19 14:37:38-05:00'
+  timestamp: '2021-06-09 19:36:06-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/number-theory/big_fast_factor_better.cpp

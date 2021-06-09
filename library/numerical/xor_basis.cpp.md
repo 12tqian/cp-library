@@ -10,29 +10,28 @@ data:
   bundledCode: "#line 1 \"library/numerical/xor_basis.cpp\"\n#include <bits/stdc++.h>\n\
     \n/**\n * full_reduce() does complete Gaussian reduction\n * reduce() just does\
     \ the things that are necessary, should be sufficient\n */\n\nvoid full_reduce(std::vector<int>&\
-    \ b) {\n    int n = (int)b.size();\n    for (int i = n - 1; i >= 0; i--) {\n \
-    \       for (int j = i - 1; j >= 0; j--) {\n            b[j] = std::min(b[j],\
-    \ b[j] ^ b[i]);\n        }\n    }\n}\n\ntemplate <class T> T reduce(std::vector<T>&\
-    \ b, T x) {\n    for (auto& t : b) {\n        x = std::min(x, x ^ t);\n    }\n\
-    \    return x;\n}\n\ntemplate <class T> bool add(std::vector<T>& b, T x) {\n \
-    \   if (!(x = reduce(b, x))) return false;\n    int ind = 0;\n    while (ind <\
-    \ (int)b.size() && b[ind] > x) ind++;\n    b.insert(b.begin() + ind, x);\n   \
-    \ return true;\n}\n\nint main() {\n    return 0;\n}\n"
+    \ b) {\n\tint n = (int)b.size();\n\tfor (int i = n - 1; i >= 0; i--) {\n\t\tfor\
+    \ (int j = i - 1; j >= 0; j--) {\n\t\t\tb[j] = std::min(b[j], b[j] ^ b[i]);\n\t\
+    \t}\n\t}\n}\n\ntemplate <class T> T reduce(std::vector<T>& b, T x) {\n\tfor (auto&\
+    \ t : b) {\n\t\tx = std::min(x, x ^ t);\n\t}\n\treturn x;\n}\n\ntemplate <class\
+    \ T> bool add(std::vector<T>& b, T x) {\n\tif (!(x = reduce(b, x))) return false;\n\
+    \tint ind = 0;\n\twhile (ind < (int)b.size() && b[ind] > x) ind++;\n\tb.insert(b.begin()\
+    \ + ind, x);\n\treturn true;\n}\n\nint main() {\n\treturn 0;\n}\n"
   code: "#include <bits/stdc++.h>\n\n/**\n * full_reduce() does complete Gaussian\
     \ reduction\n * reduce() just does the things that are necessary, should be sufficient\n\
-    \ */\n\nvoid full_reduce(std::vector<int>& b) {\n    int n = (int)b.size();\n\
-    \    for (int i = n - 1; i >= 0; i--) {\n        for (int j = i - 1; j >= 0; j--)\
-    \ {\n            b[j] = std::min(b[j], b[j] ^ b[i]);\n        }\n    }\n}\n\n\
-    template <class T> T reduce(std::vector<T>& b, T x) {\n    for (auto& t : b) {\n\
-    \        x = std::min(x, x ^ t);\n    }\n    return x;\n}\n\ntemplate <class T>\
-    \ bool add(std::vector<T>& b, T x) {\n    if (!(x = reduce(b, x))) return false;\n\
-    \    int ind = 0;\n    while (ind < (int)b.size() && b[ind] > x) ind++;\n    b.insert(b.begin()\
-    \ + ind, x);\n    return true;\n}\n\nint main() {\n    return 0;\n}"
+    \ */\n\nvoid full_reduce(std::vector<int>& b) {\n\tint n = (int)b.size();\n\t\
+    for (int i = n - 1; i >= 0; i--) {\n\t\tfor (int j = i - 1; j >= 0; j--) {\n\t\
+    \t\tb[j] = std::min(b[j], b[j] ^ b[i]);\n\t\t}\n\t}\n}\n\ntemplate <class T> T\
+    \ reduce(std::vector<T>& b, T x) {\n\tfor (auto& t : b) {\n\t\tx = std::min(x,\
+    \ x ^ t);\n\t}\n\treturn x;\n}\n\ntemplate <class T> bool add(std::vector<T>&\
+    \ b, T x) {\n\tif (!(x = reduce(b, x))) return false;\n\tint ind = 0;\n\twhile\
+    \ (ind < (int)b.size() && b[ind] > x) ind++;\n\tb.insert(b.begin() + ind, x);\n\
+    \treturn true;\n}\n\nint main() {\n\treturn 0;\n}"
   dependsOn: []
   isVerificationFile: false
   path: library/numerical/xor_basis.cpp
   requiredBy: []
-  timestamp: '2021-02-19 14:37:38-05:00'
+  timestamp: '2021-06-09 19:36:06-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/numerical/xor_basis.cpp

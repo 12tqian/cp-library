@@ -8,37 +8,35 @@ data:
   attributes:
     links: []
   bundledCode: "#line 1 \"library/graphs/dijkstra.cpp\"\n#include<bits/stdc++.h>\n\
-    \ntemplate <class C, bool directed> struct Dijkstra {\n    int SZ; std::vector<C>\
-    \ dist;\n    std::vector<std::vector<std::pair<int, C>>> adj;\n\n    void init(int\
-    \ _SZ) {\n        SZ = _SZ;\n        adj.clear();\n        adj.resize(SZ);\n \
-    \   }\n\n    void ae(int u, int v, C cost) {\n        adj[u].emplace_back(v, cost);\n\
-    \        if (!directed) adj[v].emplace_back(u, cost);\n    }\n\n    void gen(int\
-    \ st) {\n        dist = std::vector<C>(SZ, std::numeric_limits<C>::max());\n \
-    \       typedef std::pair<C, int> T;\n        std::priority_queue<T, std::vector<T>,\
-    \ std::greater<T>> pq;\n        auto ad = [&](int a, C b) {\n            if (dist[a]\
-    \ <= b) return;\n            pq.push({dist[a] = b, a});\n        };\n        ad(st,\
-    \ 0);\n        while (!pq.empty()) {\n            auto x = pq.top();\n       \
-    \     pq.pop();\n            if (dist[x.second] < x.first) continue;\n       \
-    \     for (auto& y: adj[x.second]) {\n                ad(y.first, x.first + y.second);\n\
-    \            }\n        }\n    }\n};\n\nint main() {\n    return 0;\n}\n"
+    \ntemplate <class C, bool directed> struct Dijkstra {\n\tint SZ; std::vector<C>\
+    \ dist;\n\tstd::vector<std::vector<std::pair<int, C>>> adj;\n\n\tvoid init(int\
+    \ _SZ) {\n\t\tSZ = _SZ;\n\t\tadj.clear();\n\t\tadj.resize(SZ);\n\t}\n\n\tvoid\
+    \ ae(int u, int v, C cost) {\n\t\tadj[u].emplace_back(v, cost);\n\t\tif (!directed)\
+    \ adj[v].emplace_back(u, cost);\n\t}\n\n\tvoid gen(int st) {\n\t\tdist = std::vector<C>(SZ,\
+    \ std::numeric_limits<C>::max());\n\t\ttypedef std::pair<C, int> T;\n\t\tstd::priority_queue<T,\
+    \ std::vector<T>, std::greater<T>> pq;\n\t\tauto ad = [&](int a, C b) {\n\t\t\t\
+    if (dist[a] <= b) return;\n\t\t\tpq.push({dist[a] = b, a});\n\t\t};\n\t\tad(st,\
+    \ 0);\n\t\twhile (!pq.empty()) {\n\t\t\tauto x = pq.top();\n\t\t\tpq.pop();\n\t\
+    \t\tif (dist[x.second] < x.first) continue;\n\t\t\tfor (auto& y: adj[x.second])\
+    \ {\n\t\t\t\tad(y.first, x.first + y.second);\n\t\t\t}\n\t\t}\n\t}\n};\n\nint\
+    \ main() {\n\treturn 0;\n}\n"
   code: "#include<bits/stdc++.h>\n\ntemplate <class C, bool directed> struct Dijkstra\
-    \ {\n    int SZ; std::vector<C> dist;\n    std::vector<std::vector<std::pair<int,\
-    \ C>>> adj;\n\n    void init(int _SZ) {\n        SZ = _SZ;\n        adj.clear();\n\
-    \        adj.resize(SZ);\n    }\n\n    void ae(int u, int v, C cost) {\n     \
-    \   adj[u].emplace_back(v, cost);\n        if (!directed) adj[v].emplace_back(u,\
-    \ cost);\n    }\n\n    void gen(int st) {\n        dist = std::vector<C>(SZ, std::numeric_limits<C>::max());\n\
-    \        typedef std::pair<C, int> T;\n        std::priority_queue<T, std::vector<T>,\
-    \ std::greater<T>> pq;\n        auto ad = [&](int a, C b) {\n            if (dist[a]\
-    \ <= b) return;\n            pq.push({dist[a] = b, a});\n        };\n        ad(st,\
-    \ 0);\n        while (!pq.empty()) {\n            auto x = pq.top();\n       \
-    \     pq.pop();\n            if (dist[x.second] < x.first) continue;\n       \
-    \     for (auto& y: adj[x.second]) {\n                ad(y.first, x.first + y.second);\n\
-    \            }\n        }\n    }\n};\n\nint main() {\n    return 0;\n}\n"
+    \ {\n\tint SZ; std::vector<C> dist;\n\tstd::vector<std::vector<std::pair<int,\
+    \ C>>> adj;\n\n\tvoid init(int _SZ) {\n\t\tSZ = _SZ;\n\t\tadj.clear();\n\t\tadj.resize(SZ);\n\
+    \t}\n\n\tvoid ae(int u, int v, C cost) {\n\t\tadj[u].emplace_back(v, cost);\n\t\
+    \tif (!directed) adj[v].emplace_back(u, cost);\n\t}\n\n\tvoid gen(int st) {\n\t\
+    \tdist = std::vector<C>(SZ, std::numeric_limits<C>::max());\n\t\ttypedef std::pair<C,\
+    \ int> T;\n\t\tstd::priority_queue<T, std::vector<T>, std::greater<T>> pq;\n\t\
+    \tauto ad = [&](int a, C b) {\n\t\t\tif (dist[a] <= b) return;\n\t\t\tpq.push({dist[a]\
+    \ = b, a});\n\t\t};\n\t\tad(st, 0);\n\t\twhile (!pq.empty()) {\n\t\t\tauto x =\
+    \ pq.top();\n\t\t\tpq.pop();\n\t\t\tif (dist[x.second] < x.first) continue;\n\t\
+    \t\tfor (auto& y: adj[x.second]) {\n\t\t\t\tad(y.first, x.first + y.second);\n\
+    \t\t\t}\n\t\t}\n\t}\n};\n\nint main() {\n\treturn 0;\n}\n"
   dependsOn: []
   isVerificationFile: false
   path: library/graphs/dijkstra.cpp
   requiredBy: []
-  timestamp: '2021-01-09 11:49:29-05:00'
+  timestamp: '2021-06-09 19:36:06-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/graphs/dijkstra.cpp

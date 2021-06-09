@@ -14,61 +14,54 @@ data:
     \ in compressed tree\n * Original index is the node it represents\n * get_child\
     \ also returns the subtree child of node and -1 if it doesn't exist in O(1)\n\
     \ * To support forest, gen on all the roots, initialize tmp and sparse at the\
-    \ end\n */\n\ntemplate <class T> struct SparseTable {\n    std::vector<T> v;\n\
-    \    std::vector<std::vector<int>> jump;\n\n    int level(int x) {\n        return\
-    \ 31 - __builtin_clz(x);\n    }\n\n    int comb(int a, int b) {\n        return\
-    \ v[a] == v[b] ? std::min(a, b) : (v[a] < v[b] ? a : b);\n    }\n\n    void init(const\
-    \ std::vector<T>& _v) {\n        v = _v;\n        jump = {std::vector<int>((int)v.size())};\n\
-    \        iota(jump[0].begin(), jump[0].end(), 0);\n        for (int j = 1; (1\
-    \ << j) <= (int)v.size(); j++) {\n            jump.push_back(std::vector<int>((int)v.size()\
-    \ - (1 << j) + 1));\n            for (int i = 0; i < (int)jump[j].size(); i++)\
-    \ {\n                jump[j][i] = comb(jump[j - 1][i], jump[j - 1][i + (1 << (j\
-    \ - 1))]);\n            }\n        }\n    }\n\n    int index(int l, int r) {\n\
-    \        assert(l <= r);\n        int d = level(r - l + 1);\n        return comb(jump[d][l],\
-    \ jump[d][r - (1 << d) + 1]);\n    }\n\n    T query(int l, int r) {\n        return\
-    \ v[index(l, r)];\n    }\n};\n\nstruct LCARMQ {\n    int n; \n    std::vector<std::vector<int>>\
-    \ adj;\n    std::vector<int> dep, in, par, rev, out, pos;\n    std::vector<std::pair<int,\
-    \ int>> tmp;\n    SparseTable<std::pair<int, int>> S;\n    std::vector<std::vector<int>>\
-    \ sparse;\n    int ti = 0;\n\n    void init(int _n) {\n        n = _n;\n     \
-    \   adj.resize(n);\n        dep = in = out = par = rev = pos = std::vector<int>(n);\n\
-    \        sparse = {std::vector<int>(n)};\n        for (int j = 1; (1 << j) <=\
-    \ n; j++) {\n            sparse.push_back(std::vector<int>(n - (1 << j) + 1));\n\
-    \        }\n    }\n\n    void ae(int u, int v) {\n        adj[u].push_back(v);\n\
-    \        adj[v].push_back(u);\n    }\n\n    void dfs(int src) {\n        in[src]\
-    \ = ti++;\n        sparse[0][in[src]] = src;\n        pos[src] = (int)tmp.size();\n\
-    \        tmp.emplace_back(dep[src], src);\n        for (auto& nxt : adj[src])\
-    \ {\n            if (nxt == par[src]) continue;\n            dep[nxt] = dep[par[nxt]\
-    \ = src] + 1;\n            dfs(nxt);\n            tmp.emplace_back(dep[src], src);\n\
-    \        }\n        out[src] = ti;\n    }\n\n    inline int mini(int u, int v)\
-    \ {\n        return (dep[u] < dep[v] || (dep[u] == dep[v] && in[u] > in[v])) ?\
-    \ u : v;\n    }\n\n    void gen(int root = 0) {\n        par[root] = root;\n \
-    \       dfs(root);\n        S.init(tmp); \n        for (int j = 1; j < (int)sparse.size();\
-    \ j++) {\n            for (int i = 0; i < (int)sparse[j].size(); i++) {\n    \
-    \            sparse[j][i] = mini(sparse[j - 1][i], sparse[j - 1][i + (1 << (j\
-    \ - 1))]);\n            }\n        }\n    }\n\n    int lca(int u, int v) {\n \
-    \       u = pos[u];\n        v = pos[v];\n        if (u > v) std::swap(u, v);\n\
-    \        return S.query(u, v).second;\n    }\n\n    int dist(int u, int v) {\n\
-    \        return dep[u] + dep[v] - 2 * dep[lca(u, v)];\n    }\n\n    bool is_ancestor(int\
-    \ anc, int src) {\n        return in[anc] <= in[src] && out[anc] >= out[src];\n\
-    \    }\n\n    int get_child(int anc, int src) {\n        if (!is_ancestor(anc,\
-    \ src)) return -1;\n        int l = in[anc] + 1;\n        int r = in[src];\n \
-    \       int d = 31 - __builtin_clz(r - l + 1);\n        return mini(sparse[d][l],\
-    \ sparse[d][r - (1 << d) + 1]);\n    }\n    \n    std::vector<std::pair<int, int>>\
-    \ compress(std::vector<int> nodes) {\n        auto cmp = [&](int a, int b) {\n\
-    \            return pos[a] < pos[b];\n        };\n        sort(nodes.begin(),\
-    \ nodes.end(), cmp);\n        for (int i = (int)nodes.size() - 2; i >= 0; i--)\
-    \ {\n            nodes.push_back(lca(nodes[i], nodes[i + 1]));\n        }\n  \
-    \      sort(nodes.begin(), nodes.end(), cmp);\n        nodes.erase(unique(nodes.begin(),\
-    \ nodes.end()), nodes.end());\n        std::vector<std::pair<int, int>> ret{{0,\
-    \ nodes[0]}};\n        for (int i = 0; i < (int)nodes.size(); i++) {\n       \
-    \     rev[nodes[i]] = i;\n        }\n        for (int i = 1; i < (int)nodes.size();\
-    \ i++) {\n            ret.emplace_back(rev[lca(nodes[i - 1], nodes[i])], nodes[i]);\n\
-    \        }\n        return ret;\n    }\n};\n\nint main() {\n    using namespace\
-    \ std;\n    cin.tie(0)->sync_with_stdio(0);\n    int n, q; cin >> n >> q;\n  \
-    \  LCARMQ L;\n    L.init(n);\n    for (int i = 1; i < n; i++) {\n        int p;\
-    \ cin >> p;\n        L.ae(i, p);\n    }\n    L.gen(0);\n    while (q--) {\n  \
-    \      int u, v; cin >> u >> v;\n        cout << L.lca(u, v) << '\\n';\n    }\n\
-    }\n"
+    \ end\n */\n\ntemplate <class T> struct SparseTable {\n\tstd::vector<T> v;\n\t\
+    std::vector<std::vector<int>> jump;\n\n\tint level(int x) {\n\t\treturn 31 - __builtin_clz(x);\n\
+    \t}\n\n\tint comb(int a, int b) {\n\t\treturn v[a] == v[b] ? std::min(a, b) :\
+    \ (v[a] < v[b] ? a : b);\n\t}\n\n\tvoid init(const std::vector<T>& _v) {\n\t\t\
+    v = _v;\n\t\tjump = {std::vector<int>((int)v.size())};\n\t\tiota(jump[0].begin(),\
+    \ jump[0].end(), 0);\n\t\tfor (int j = 1; (1 << j) <= (int)v.size(); j++) {\n\t\
+    \t\tjump.push_back(std::vector<int>((int)v.size() - (1 << j) + 1));\n\t\t\tfor\
+    \ (int i = 0; i < (int)jump[j].size(); i++) {\n\t\t\t\tjump[j][i] = comb(jump[j\
+    \ - 1][i], jump[j - 1][i + (1 << (j - 1))]);\n\t\t\t}\n\t\t}\n\t}\n\n\tint index(int\
+    \ l, int r) {\n\t\tassert(l <= r);\n\t\tint d = level(r - l + 1);\n\t\treturn\
+    \ comb(jump[d][l], jump[d][r - (1 << d) + 1]);\n\t}\n\n\tT query(int l, int r)\
+    \ {\n\t\treturn v[index(l, r)];\n\t}\n};\n\nstruct LCARMQ {\n\tint n; \n\tstd::vector<std::vector<int>>\
+    \ adj;\n\tstd::vector<int> dep, in, par, rev, out, pos;\n\tstd::vector<std::pair<int,\
+    \ int>> tmp;\n\tSparseTable<std::pair<int, int>> S;\n\tstd::vector<std::vector<int>>\
+    \ sparse;\n\tint ti = 0;\n\n\tvoid init(int _n) {\n\t\tn = _n;\n\t\tadj.resize(n);\n\
+    \t\tdep = in = out = par = rev = pos = std::vector<int>(n);\n\t\tsparse = {std::vector<int>(n)};\n\
+    \t\tfor (int j = 1; (1 << j) <= n; j++) {\n\t\t\tsparse.push_back(std::vector<int>(n\
+    \ - (1 << j) + 1));\n\t\t}\n\t}\n\n\tvoid ae(int u, int v) {\n\t\tadj[u].push_back(v);\n\
+    \t\tadj[v].push_back(u);\n\t}\n\n\tvoid dfs(int src) {\n\t\tin[src] = ti++;\n\t\
+    \tsparse[0][in[src]] = src;\n\t\tpos[src] = (int)tmp.size();\n\t\ttmp.emplace_back(dep[src],\
+    \ src);\n\t\tfor (auto& nxt : adj[src]) {\n\t\t\tif (nxt == par[src]) continue;\n\
+    \t\t\tdep[nxt] = dep[par[nxt] = src] + 1;\n\t\t\tdfs(nxt);\n\t\t\ttmp.emplace_back(dep[src],\
+    \ src);\n\t\t}\n\t\tout[src] = ti;\n\t}\n\n\tinline int mini(int u, int v) {\n\
+    \t\treturn (dep[u] < dep[v] || (dep[u] == dep[v] && in[u] > in[v])) ? u : v;\n\
+    \t}\n\n\tvoid gen(int root = 0) {\n\t\tpar[root] = root;\n\t\tdfs(root);\n\t\t\
+    S.init(tmp); \n\t\tfor (int j = 1; j < (int)sparse.size(); j++) {\n\t\t\tfor (int\
+    \ i = 0; i < (int)sparse[j].size(); i++) {\n\t\t\t\tsparse[j][i] = mini(sparse[j\
+    \ - 1][i], sparse[j - 1][i + (1 << (j - 1))]);\n\t\t\t}\n\t\t}\n\t}\n\n\tint lca(int\
+    \ u, int v) {\n\t\tu = pos[u];\n\t\tv = pos[v];\n\t\tif (u > v) std::swap(u, v);\n\
+    \t\treturn S.query(u, v).second;\n\t}\n\n\tint dist(int u, int v) {\n\t\treturn\
+    \ dep[u] + dep[v] - 2 * dep[lca(u, v)];\n\t}\n\n\tbool is_ancestor(int anc, int\
+    \ src) {\n\t\treturn in[anc] <= in[src] && out[anc] >= out[src];\n\t}\n\n\tint\
+    \ get_child(int anc, int src) {\n\t\tif (!is_ancestor(anc, src)) return -1;\n\t\
+    \tint l = in[anc] + 1;\n\t\tint r = in[src];\n\t\tint d = 31 - __builtin_clz(r\
+    \ - l + 1);\n\t\treturn mini(sparse[d][l], sparse[d][r - (1 << d) + 1]);\n\t}\n\
+    \t\n\tstd::vector<std::pair<int, int>> compress(std::vector<int> nodes) {\n\t\t\
+    auto cmp = [&](int a, int b) {\n\t\t\treturn pos[a] < pos[b];\n\t\t};\n\t\tsort(nodes.begin(),\
+    \ nodes.end(), cmp);\n\t\tfor (int i = (int)nodes.size() - 2; i >= 0; i--) {\n\
+    \t\t\tnodes.push_back(lca(nodes[i], nodes[i + 1]));\n\t\t}\n\t\tsort(nodes.begin(),\
+    \ nodes.end(), cmp);\n\t\tnodes.erase(unique(nodes.begin(), nodes.end()), nodes.end());\n\
+    \t\tstd::vector<std::pair<int, int>> ret{{0, nodes[0]}};\n\t\tfor (int i = 0;\
+    \ i < (int)nodes.size(); i++) {\n\t\t\trev[nodes[i]] = i;\n\t\t}\n\t\tfor (int\
+    \ i = 1; i < (int)nodes.size(); i++) {\n\t\t\tret.emplace_back(rev[lca(nodes[i\
+    \ - 1], nodes[i])], nodes[i]);\n\t\t}\n\t\treturn ret;\n\t}\n};\n\nint main()\
+    \ {\n\tusing namespace std;\n\tcin.tie(0)->sync_with_stdio(0);\n\tint n, q; cin\
+    \ >> n >> q;\n\tLCARMQ L;\n\tL.init(n);\n\tfor (int i = 1; i < n; i++) {\n\t\t\
+    int p; cin >> p;\n\t\tL.ae(i, p);\n\t}\n\tL.gen(0);\n\twhile (q--) {\n\t\tint\
+    \ u, v; cin >> u >> v;\n\t\tcout << L.lca(u, v) << '\\n';\n\t}\n}\n"
   code: "#include <bits/stdc++.h>\n\n/**\n * O(n log n) preprocessing with O(1) query\n\
     \ * Compress compute sthe minimal subtree containing\n * all node LCAs and comrpesses\
     \ edges\n * O(S log S) compression\n * Returns list of (parent, original index)\n\
@@ -76,66 +69,59 @@ data:
     \ node it represents\n * get_child also returns the subtree child of node and\
     \ -1 if it doesn't exist in O(1)\n * To support forest, gen on all the roots,\
     \ initialize tmp and sparse at the end\n */\n\ntemplate <class T> struct SparseTable\
-    \ {\n    std::vector<T> v;\n    std::vector<std::vector<int>> jump;\n\n    int\
-    \ level(int x) {\n        return 31 - __builtin_clz(x);\n    }\n\n    int comb(int\
-    \ a, int b) {\n        return v[a] == v[b] ? std::min(a, b) : (v[a] < v[b] ? a\
-    \ : b);\n    }\n\n    void init(const std::vector<T>& _v) {\n        v = _v;\n\
-    \        jump = {std::vector<int>((int)v.size())};\n        iota(jump[0].begin(),\
-    \ jump[0].end(), 0);\n        for (int j = 1; (1 << j) <= (int)v.size(); j++)\
-    \ {\n            jump.push_back(std::vector<int>((int)v.size() - (1 << j) + 1));\n\
-    \            for (int i = 0; i < (int)jump[j].size(); i++) {\n               \
-    \ jump[j][i] = comb(jump[j - 1][i], jump[j - 1][i + (1 << (j - 1))]);\n      \
-    \      }\n        }\n    }\n\n    int index(int l, int r) {\n        assert(l\
-    \ <= r);\n        int d = level(r - l + 1);\n        return comb(jump[d][l], jump[d][r\
-    \ - (1 << d) + 1]);\n    }\n\n    T query(int l, int r) {\n        return v[index(l,\
-    \ r)];\n    }\n};\n\nstruct LCARMQ {\n    int n; \n    std::vector<std::vector<int>>\
-    \ adj;\n    std::vector<int> dep, in, par, rev, out, pos;\n    std::vector<std::pair<int,\
-    \ int>> tmp;\n    SparseTable<std::pair<int, int>> S;\n    std::vector<std::vector<int>>\
-    \ sparse;\n    int ti = 0;\n\n    void init(int _n) {\n        n = _n;\n     \
-    \   adj.resize(n);\n        dep = in = out = par = rev = pos = std::vector<int>(n);\n\
-    \        sparse = {std::vector<int>(n)};\n        for (int j = 1; (1 << j) <=\
-    \ n; j++) {\n            sparse.push_back(std::vector<int>(n - (1 << j) + 1));\n\
-    \        }\n    }\n\n    void ae(int u, int v) {\n        adj[u].push_back(v);\n\
-    \        adj[v].push_back(u);\n    }\n\n    void dfs(int src) {\n        in[src]\
-    \ = ti++;\n        sparse[0][in[src]] = src;\n        pos[src] = (int)tmp.size();\n\
-    \        tmp.emplace_back(dep[src], src);\n        for (auto& nxt : adj[src])\
-    \ {\n            if (nxt == par[src]) continue;\n            dep[nxt] = dep[par[nxt]\
-    \ = src] + 1;\n            dfs(nxt);\n            tmp.emplace_back(dep[src], src);\n\
-    \        }\n        out[src] = ti;\n    }\n\n    inline int mini(int u, int v)\
-    \ {\n        return (dep[u] < dep[v] || (dep[u] == dep[v] && in[u] > in[v])) ?\
-    \ u : v;\n    }\n\n    void gen(int root = 0) {\n        par[root] = root;\n \
-    \       dfs(root);\n        S.init(tmp); \n        for (int j = 1; j < (int)sparse.size();\
-    \ j++) {\n            for (int i = 0; i < (int)sparse[j].size(); i++) {\n    \
-    \            sparse[j][i] = mini(sparse[j - 1][i], sparse[j - 1][i + (1 << (j\
-    \ - 1))]);\n            }\n        }\n    }\n\n    int lca(int u, int v) {\n \
-    \       u = pos[u];\n        v = pos[v];\n        if (u > v) std::swap(u, v);\n\
-    \        return S.query(u, v).second;\n    }\n\n    int dist(int u, int v) {\n\
-    \        return dep[u] + dep[v] - 2 * dep[lca(u, v)];\n    }\n\n    bool is_ancestor(int\
-    \ anc, int src) {\n        return in[anc] <= in[src] && out[anc] >= out[src];\n\
-    \    }\n\n    int get_child(int anc, int src) {\n        if (!is_ancestor(anc,\
-    \ src)) return -1;\n        int l = in[anc] + 1;\n        int r = in[src];\n \
-    \       int d = 31 - __builtin_clz(r - l + 1);\n        return mini(sparse[d][l],\
-    \ sparse[d][r - (1 << d) + 1]);\n    }\n    \n    std::vector<std::pair<int, int>>\
-    \ compress(std::vector<int> nodes) {\n        auto cmp = [&](int a, int b) {\n\
-    \            return pos[a] < pos[b];\n        };\n        sort(nodes.begin(),\
-    \ nodes.end(), cmp);\n        for (int i = (int)nodes.size() - 2; i >= 0; i--)\
-    \ {\n            nodes.push_back(lca(nodes[i], nodes[i + 1]));\n        }\n  \
-    \      sort(nodes.begin(), nodes.end(), cmp);\n        nodes.erase(unique(nodes.begin(),\
-    \ nodes.end()), nodes.end());\n        std::vector<std::pair<int, int>> ret{{0,\
-    \ nodes[0]}};\n        for (int i = 0; i < (int)nodes.size(); i++) {\n       \
-    \     rev[nodes[i]] = i;\n        }\n        for (int i = 1; i < (int)nodes.size();\
-    \ i++) {\n            ret.emplace_back(rev[lca(nodes[i - 1], nodes[i])], nodes[i]);\n\
-    \        }\n        return ret;\n    }\n};\n\nint main() {\n    using namespace\
-    \ std;\n    cin.tie(0)->sync_with_stdio(0);\n    int n, q; cin >> n >> q;\n  \
-    \  LCARMQ L;\n    L.init(n);\n    for (int i = 1; i < n; i++) {\n        int p;\
-    \ cin >> p;\n        L.ae(i, p);\n    }\n    L.gen(0);\n    while (q--) {\n  \
-    \      int u, v; cin >> u >> v;\n        cout << L.lca(u, v) << '\\n';\n    }\n\
-    }"
+    \ {\n\tstd::vector<T> v;\n\tstd::vector<std::vector<int>> jump;\n\n\tint level(int\
+    \ x) {\n\t\treturn 31 - __builtin_clz(x);\n\t}\n\n\tint comb(int a, int b) {\n\
+    \t\treturn v[a] == v[b] ? std::min(a, b) : (v[a] < v[b] ? a : b);\n\t}\n\n\tvoid\
+    \ init(const std::vector<T>& _v) {\n\t\tv = _v;\n\t\tjump = {std::vector<int>((int)v.size())};\n\
+    \t\tiota(jump[0].begin(), jump[0].end(), 0);\n\t\tfor (int j = 1; (1 << j) <=\
+    \ (int)v.size(); j++) {\n\t\t\tjump.push_back(std::vector<int>((int)v.size() -\
+    \ (1 << j) + 1));\n\t\t\tfor (int i = 0; i < (int)jump[j].size(); i++) {\n\t\t\
+    \t\tjump[j][i] = comb(jump[j - 1][i], jump[j - 1][i + (1 << (j - 1))]);\n\t\t\t\
+    }\n\t\t}\n\t}\n\n\tint index(int l, int r) {\n\t\tassert(l <= r);\n\t\tint d =\
+    \ level(r - l + 1);\n\t\treturn comb(jump[d][l], jump[d][r - (1 << d) + 1]);\n\
+    \t}\n\n\tT query(int l, int r) {\n\t\treturn v[index(l, r)];\n\t}\n};\n\nstruct\
+    \ LCARMQ {\n\tint n; \n\tstd::vector<std::vector<int>> adj;\n\tstd::vector<int>\
+    \ dep, in, par, rev, out, pos;\n\tstd::vector<std::pair<int, int>> tmp;\n\tSparseTable<std::pair<int,\
+    \ int>> S;\n\tstd::vector<std::vector<int>> sparse;\n\tint ti = 0;\n\n\tvoid init(int\
+    \ _n) {\n\t\tn = _n;\n\t\tadj.resize(n);\n\t\tdep = in = out = par = rev = pos\
+    \ = std::vector<int>(n);\n\t\tsparse = {std::vector<int>(n)};\n\t\tfor (int j\
+    \ = 1; (1 << j) <= n; j++) {\n\t\t\tsparse.push_back(std::vector<int>(n - (1 <<\
+    \ j) + 1));\n\t\t}\n\t}\n\n\tvoid ae(int u, int v) {\n\t\tadj[u].push_back(v);\n\
+    \t\tadj[v].push_back(u);\n\t}\n\n\tvoid dfs(int src) {\n\t\tin[src] = ti++;\n\t\
+    \tsparse[0][in[src]] = src;\n\t\tpos[src] = (int)tmp.size();\n\t\ttmp.emplace_back(dep[src],\
+    \ src);\n\t\tfor (auto& nxt : adj[src]) {\n\t\t\tif (nxt == par[src]) continue;\n\
+    \t\t\tdep[nxt] = dep[par[nxt] = src] + 1;\n\t\t\tdfs(nxt);\n\t\t\ttmp.emplace_back(dep[src],\
+    \ src);\n\t\t}\n\t\tout[src] = ti;\n\t}\n\n\tinline int mini(int u, int v) {\n\
+    \t\treturn (dep[u] < dep[v] || (dep[u] == dep[v] && in[u] > in[v])) ? u : v;\n\
+    \t}\n\n\tvoid gen(int root = 0) {\n\t\tpar[root] = root;\n\t\tdfs(root);\n\t\t\
+    S.init(tmp); \n\t\tfor (int j = 1; j < (int)sparse.size(); j++) {\n\t\t\tfor (int\
+    \ i = 0; i < (int)sparse[j].size(); i++) {\n\t\t\t\tsparse[j][i] = mini(sparse[j\
+    \ - 1][i], sparse[j - 1][i + (1 << (j - 1))]);\n\t\t\t}\n\t\t}\n\t}\n\n\tint lca(int\
+    \ u, int v) {\n\t\tu = pos[u];\n\t\tv = pos[v];\n\t\tif (u > v) std::swap(u, v);\n\
+    \t\treturn S.query(u, v).second;\n\t}\n\n\tint dist(int u, int v) {\n\t\treturn\
+    \ dep[u] + dep[v] - 2 * dep[lca(u, v)];\n\t}\n\n\tbool is_ancestor(int anc, int\
+    \ src) {\n\t\treturn in[anc] <= in[src] && out[anc] >= out[src];\n\t}\n\n\tint\
+    \ get_child(int anc, int src) {\n\t\tif (!is_ancestor(anc, src)) return -1;\n\t\
+    \tint l = in[anc] + 1;\n\t\tint r = in[src];\n\t\tint d = 31 - __builtin_clz(r\
+    \ - l + 1);\n\t\treturn mini(sparse[d][l], sparse[d][r - (1 << d) + 1]);\n\t}\n\
+    \t\n\tstd::vector<std::pair<int, int>> compress(std::vector<int> nodes) {\n\t\t\
+    auto cmp = [&](int a, int b) {\n\t\t\treturn pos[a] < pos[b];\n\t\t};\n\t\tsort(nodes.begin(),\
+    \ nodes.end(), cmp);\n\t\tfor (int i = (int)nodes.size() - 2; i >= 0; i--) {\n\
+    \t\t\tnodes.push_back(lca(nodes[i], nodes[i + 1]));\n\t\t}\n\t\tsort(nodes.begin(),\
+    \ nodes.end(), cmp);\n\t\tnodes.erase(unique(nodes.begin(), nodes.end()), nodes.end());\n\
+    \t\tstd::vector<std::pair<int, int>> ret{{0, nodes[0]}};\n\t\tfor (int i = 0;\
+    \ i < (int)nodes.size(); i++) {\n\t\t\trev[nodes[i]] = i;\n\t\t}\n\t\tfor (int\
+    \ i = 1; i < (int)nodes.size(); i++) {\n\t\t\tret.emplace_back(rev[lca(nodes[i\
+    \ - 1], nodes[i])], nodes[i]);\n\t\t}\n\t\treturn ret;\n\t}\n};\n\nint main()\
+    \ {\n\tusing namespace std;\n\tcin.tie(0)->sync_with_stdio(0);\n\tint n, q; cin\
+    \ >> n >> q;\n\tLCARMQ L;\n\tL.init(n);\n\tfor (int i = 1; i < n; i++) {\n\t\t\
+    int p; cin >> p;\n\t\tL.ae(i, p);\n\t}\n\tL.gen(0);\n\twhile (q--) {\n\t\tint\
+    \ u, v; cin >> u >> v;\n\t\tcout << L.lca(u, v) << '\\n';\n\t}\n}"
   dependsOn: []
   isVerificationFile: false
   path: library/graphs/lca_rmq.cpp
   requiredBy: []
-  timestamp: '2021-02-19 14:37:38-05:00'
+  timestamp: '2021-06-09 19:36:06-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/graphs/lca_rmq.cpp

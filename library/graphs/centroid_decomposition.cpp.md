@@ -8,49 +8,44 @@ data:
   attributes:
     links: []
   bundledCode: "#line 1 \"library/graphs/centroid_decomposition.cpp\"\n#include <bits/stdc++.h>\n\
-    \nstruct CentroidDecomposition {\n    int n;\n    std::vector<std::vector<int>>\
-    \ adj;\n    std::vector<bool> vis;\n    std::vector<int> size;\n    std::vector<int>\
-    \ parent;\n\n    void init(int n_) {\n        n = n_;\n        adj.assign(n, std::vector<int>());\n\
-    \        vis.assign(n, false);\n        parent.assign(n, 0);\n    }\n\n    void\
-    \ ae(int u, int v) {\n        adj[u].push_back(v);\n        adj[v].push_back(u);\n\
-    \    }\n\n    void dfs_size(int src, int par = -1) {\n        size[src] = 1;\n\
-    \        for (int nxt : adj[src]) {\n            if (nxt == par || vis[nxt]) \n\
-    \                continue;\n            dfs_size(nxt, src);\n            size[src]\
-    \ += size[nxt];\n        }\n    }\n\n    int get_centroid(int src) {\n       \
-    \ dfs_size(src);\n        int num = size[src];\n        int par = -1;\n      \
-    \  do {    \n            int go = -1;\n            for (int nxt : adj[src]) {\n\
-    \                if (nxt == par || vis[nxt])\n                    continue;\n\
-    \                if (2 * size[nxt] > num) \n                    go = nxt;\n  \
-    \          }\n            par = src;\n            src = go;\n        } while (src\
-    \ != -1);\n        return par;\n    }\n\n    void centroid_decomposition(int src,\
-    \ int par = -1) {\n        int c = get_centroid(src);\n        vis[c] = true;\n\
-    \        parent[c] = par;\n        for (int nxt : adj[c]) {\n            if (vis[nxt])\
-    \ \n                continue;\n            centroid_decomposition(nxt, c);\n \
-    \       }\n    }\n};  \n\nint main() {\n    return 0;\n}\n"
-  code: "#include <bits/stdc++.h>\n\nstruct CentroidDecomposition {\n    int n;\n\
-    \    std::vector<std::vector<int>> adj;\n    std::vector<bool> vis;\n    std::vector<int>\
-    \ size;\n    std::vector<int> parent;\n\n    void init(int n_) {\n        n =\
-    \ n_;\n        adj.assign(n, std::vector<int>());\n        vis.assign(n, false);\n\
-    \        parent.assign(n, 0);\n    }\n\n    void ae(int u, int v) {\n        adj[u].push_back(v);\n\
-    \        adj[v].push_back(u);\n    }\n\n    void dfs_size(int src, int par = -1)\
-    \ {\n        size[src] = 1;\n        for (int nxt : adj[src]) {\n            if\
-    \ (nxt == par || vis[nxt]) \n                continue;\n            dfs_size(nxt,\
-    \ src);\n            size[src] += size[nxt];\n        }\n    }\n\n    int get_centroid(int\
-    \ src) {\n        dfs_size(src);\n        int num = size[src];\n        int par\
-    \ = -1;\n        do {    \n            int go = -1;\n            for (int nxt\
-    \ : adj[src]) {\n                if (nxt == par || vis[nxt])\n               \
-    \     continue;\n                if (2 * size[nxt] > num) \n                 \
-    \   go = nxt;\n            }\n            par = src;\n            src = go;\n\
-    \        } while (src != -1);\n        return par;\n    }\n\n    void centroid_decomposition(int\
-    \ src, int par = -1) {\n        int c = get_centroid(src);\n        vis[c] = true;\n\
-    \        parent[c] = par;\n        for (int nxt : adj[c]) {\n            if (vis[nxt])\
-    \ \n                continue;\n            centroid_decomposition(nxt, c);\n \
-    \       }\n    }\n};  \n\nint main() {\n    return 0;\n}"
+    \nstruct CentroidDecomposition {\n\tint n;\n\tstd::vector<std::vector<int>> adj;\n\
+    \tstd::vector<bool> vis;\n\tstd::vector<int> size;\n\tstd::vector<int> parent;\n\
+    \n\tvoid init(int n_) {\n\t\tn = n_;\n\t\tadj.assign(n, std::vector<int>());\n\
+    \t\tvis.assign(n, false);\n\t\tparent.assign(n, 0);\n\t}\n\n\tvoid ae(int u, int\
+    \ v) {\n\t\tadj[u].push_back(v);\n\t\tadj[v].push_back(u);\n\t}\n\n\tvoid dfs_size(int\
+    \ src, int par = -1) {\n\t\tsize[src] = 1;\n\t\tfor (int nxt : adj[src]) {\n\t\
+    \t\tif (nxt == par || vis[nxt]) \n\t\t\t\tcontinue;\n\t\t\tdfs_size(nxt, src);\n\
+    \t\t\tsize[src] += size[nxt];\n\t\t}\n\t}\n\n\tint get_centroid(int src) {\n\t\
+    \tdfs_size(src);\n\t\tint num = size[src];\n\t\tint par = -1;\n\t\tdo {    \n\t\
+    \t\tint go = -1;\n\t\t\tfor (int nxt : adj[src]) {\n\t\t\t\tif (nxt == par ||\
+    \ vis[nxt])\n\t\t\t\t\tcontinue;\n\t\t\t\tif (2 * size[nxt] > num) \n\t\t\t\t\t\
+    go = nxt;\n\t\t\t}\n\t\t\tpar = src;\n\t\t\tsrc = go;\n\t\t} while (src != -1);\n\
+    \t\treturn par;\n\t}\n\n\tvoid centroid_decomposition(int src, int par = -1) {\n\
+    \t\tint c = get_centroid(src);\n\t\tvis[c] = true;\n\t\tparent[c] = par;\n\t\t\
+    for (int nxt : adj[c]) {\n\t\t\tif (vis[nxt]) \n\t\t\t\tcontinue;\n\t\t\tcentroid_decomposition(nxt,\
+    \ c);\n\t\t}\n\t}\n};  \n\nint main() {\n\treturn 0;\n}\n"
+  code: "#include <bits/stdc++.h>\n\nstruct CentroidDecomposition {\n\tint n;\n\t\
+    std::vector<std::vector<int>> adj;\n\tstd::vector<bool> vis;\n\tstd::vector<int>\
+    \ size;\n\tstd::vector<int> parent;\n\n\tvoid init(int n_) {\n\t\tn = n_;\n\t\t\
+    adj.assign(n, std::vector<int>());\n\t\tvis.assign(n, false);\n\t\tparent.assign(n,\
+    \ 0);\n\t}\n\n\tvoid ae(int u, int v) {\n\t\tadj[u].push_back(v);\n\t\tadj[v].push_back(u);\n\
+    \t}\n\n\tvoid dfs_size(int src, int par = -1) {\n\t\tsize[src] = 1;\n\t\tfor (int\
+    \ nxt : adj[src]) {\n\t\t\tif (nxt == par || vis[nxt]) \n\t\t\t\tcontinue;\n\t\
+    \t\tdfs_size(nxt, src);\n\t\t\tsize[src] += size[nxt];\n\t\t}\n\t}\n\n\tint get_centroid(int\
+    \ src) {\n\t\tdfs_size(src);\n\t\tint num = size[src];\n\t\tint par = -1;\n\t\t\
+    do {    \n\t\t\tint go = -1;\n\t\t\tfor (int nxt : adj[src]) {\n\t\t\t\tif (nxt\
+    \ == par || vis[nxt])\n\t\t\t\t\tcontinue;\n\t\t\t\tif (2 * size[nxt] > num) \n\
+    \t\t\t\t\tgo = nxt;\n\t\t\t}\n\t\t\tpar = src;\n\t\t\tsrc = go;\n\t\t} while (src\
+    \ != -1);\n\t\treturn par;\n\t}\n\n\tvoid centroid_decomposition(int src, int\
+    \ par = -1) {\n\t\tint c = get_centroid(src);\n\t\tvis[c] = true;\n\t\tparent[c]\
+    \ = par;\n\t\tfor (int nxt : adj[c]) {\n\t\t\tif (vis[nxt]) \n\t\t\t\tcontinue;\n\
+    \t\t\tcentroid_decomposition(nxt, c);\n\t\t}\n\t}\n};  \n\nint main() {\n\treturn\
+    \ 0;\n}"
   dependsOn: []
   isVerificationFile: false
   path: library/graphs/centroid_decomposition.cpp
   requiredBy: []
-  timestamp: '2021-01-09 11:49:29-05:00'
+  timestamp: '2021-06-09 19:36:06-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/graphs/centroid_decomposition.cpp

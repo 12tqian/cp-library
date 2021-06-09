@@ -8,36 +8,33 @@ data:
   attributes:
     links: []
   bundledCode: "#line 1 \"library/graphs/dsu_rollback.cpp\"\n#include <bits/stdc++.h>\n\
-    \nstruct DSURollBack {\n    std::vector<int> e;\n    \n    void init(int n) {\n\
-    \        e = std::vector<int>(n, -1);\n    }\n\n    int get(int x) {\n       \
-    \ return e[x] < 0 ? x : get(e[x]);\n    }\n\n    bool same_set(int a, int b) {\n\
-    \        return get(a) == get(b);\n    }\n\n    int size(int x) {\n        return\
-    \ -e[get(x)];\n    }\n\n    std::vector<std::array<int, 4>> mod;\n    \n    bool\
-    \ unite(int x, int y) {\n        x = get(x), y = get(y);\n        if (x == y)\
-    \ {\n            mod.push_back({-1, -1, -1, -1});\n            return 0;\n   \
-    \     }\n        if (e[x] > e[y]) std::swap(x, y);\n        mod.push_back({x,\
-    \ y, e[x], e[y]});\n        e[x] += e[y], e[y] = x;\n        return true;\n  \
-    \  }\n\n    void rollback() {\n        auto a = mod.back();\n        mod.pop_back();\n\
-    \        if (a[0] != -1) {\n            e[a[0]] = a[2];\n            e[a[1]] =\
-    \ a[3];\n        }\n    }\n};\n\nint main() {\n    return 0;\n}\n"
-  code: "#include <bits/stdc++.h>\n\nstruct DSURollBack {\n    std::vector<int> e;\n\
-    \    \n    void init(int n) {\n        e = std::vector<int>(n, -1);\n    }\n\n\
-    \    int get(int x) {\n        return e[x] < 0 ? x : get(e[x]);\n    }\n\n   \
-    \ bool same_set(int a, int b) {\n        return get(a) == get(b);\n    }\n\n \
-    \   int size(int x) {\n        return -e[get(x)];\n    }\n\n    std::vector<std::array<int,\
-    \ 4>> mod;\n    \n    bool unite(int x, int y) {\n        x = get(x), y = get(y);\n\
-    \        if (x == y) {\n            mod.push_back({-1, -1, -1, -1});\n       \
-    \     return 0;\n        }\n        if (e[x] > e[y]) std::swap(x, y);\n      \
-    \  mod.push_back({x, y, e[x], e[y]});\n        e[x] += e[y], e[y] = x;\n     \
-    \   return true;\n    }\n\n    void rollback() {\n        auto a = mod.back();\n\
-    \        mod.pop_back();\n        if (a[0] != -1) {\n            e[a[0]] = a[2];\n\
-    \            e[a[1]] = a[3];\n        }\n    }\n};\n\nint main() {\n    return\
-    \ 0;\n}"
+    \nstruct DSURollBack {\n\tstd::vector<int> e;\n\t\n\tvoid init(int n) {\n\t\t\
+    e = std::vector<int>(n, -1);\n\t}\n\n\tint get(int x) {\n\t\treturn e[x] < 0 ?\
+    \ x : get(e[x]);\n\t}\n\n\tbool same_set(int a, int b) {\n\t\treturn get(a) ==\
+    \ get(b);\n\t}\n\n\tint size(int x) {\n\t\treturn -e[get(x)];\n\t}\n\n\tstd::vector<std::array<int,\
+    \ 4>> mod;\n\t\n\tbool unite(int x, int y) {\n\t\tx = get(x), y = get(y);\n\t\t\
+    if (x == y) {\n\t\t\tmod.push_back({-1, -1, -1, -1});\n\t\t\treturn 0;\n\t\t}\n\
+    \t\tif (e[x] > e[y]) std::swap(x, y);\n\t\tmod.push_back({x, y, e[x], e[y]});\n\
+    \t\te[x] += e[y], e[y] = x;\n\t\treturn true;\n\t}\n\n\tvoid rollback() {\n\t\t\
+    auto a = mod.back();\n\t\tmod.pop_back();\n\t\tif (a[0] != -1) {\n\t\t\te[a[0]]\
+    \ = a[2];\n\t\t\te[a[1]] = a[3];\n\t\t}\n\t}\n};\n\nint main() {\n\treturn 0;\n\
+    }\n"
+  code: "#include <bits/stdc++.h>\n\nstruct DSURollBack {\n\tstd::vector<int> e;\n\
+    \t\n\tvoid init(int n) {\n\t\te = std::vector<int>(n, -1);\n\t}\n\n\tint get(int\
+    \ x) {\n\t\treturn e[x] < 0 ? x : get(e[x]);\n\t}\n\n\tbool same_set(int a, int\
+    \ b) {\n\t\treturn get(a) == get(b);\n\t}\n\n\tint size(int x) {\n\t\treturn -e[get(x)];\n\
+    \t}\n\n\tstd::vector<std::array<int, 4>> mod;\n\t\n\tbool unite(int x, int y)\
+    \ {\n\t\tx = get(x), y = get(y);\n\t\tif (x == y) {\n\t\t\tmod.push_back({-1,\
+    \ -1, -1, -1});\n\t\t\treturn 0;\n\t\t}\n\t\tif (e[x] > e[y]) std::swap(x, y);\n\
+    \t\tmod.push_back({x, y, e[x], e[y]});\n\t\te[x] += e[y], e[y] = x;\n\t\treturn\
+    \ true;\n\t}\n\n\tvoid rollback() {\n\t\tauto a = mod.back();\n\t\tmod.pop_back();\n\
+    \t\tif (a[0] != -1) {\n\t\t\te[a[0]] = a[2];\n\t\t\te[a[1]] = a[3];\n\t\t}\n\t\
+    }\n};\n\nint main() {\n\treturn 0;\n}"
   dependsOn: []
   isVerificationFile: false
   path: library/graphs/dsu_rollback.cpp
   requiredBy: []
-  timestamp: '2021-01-09 11:49:29-05:00'
+  timestamp: '2021-06-09 19:36:06-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/graphs/dsu_rollback.cpp

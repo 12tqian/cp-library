@@ -9,192 +9,164 @@ data:
     links: []
   bundledCode: "#line 1 \"library/data-structures/1d-range-queries/segment_tree_beats.cpp\"\
     \n#include <bits/stdc++.h>\n\n/**\n * 0 is ckmin, 1 is ckmax, 2 is range add\n\
-    \ */\ntemplate <class C> struct SegmentTreeBeats {\n    using T = std::pair<std::pair<C,\
-    \ C>, int>;\n    const C INF = std::numeric_limits<C>::max();\n    std::vector<C>\
-    \ mx_mod, mn_mod, mod, sum;\n    std::vector<T> mx, mn;\n    int sz; \n\n    void\
-    \ init(int sz_) {\n        sz = 1; \n        while (sz < sz_) sz *= 2;\n     \
-    \   mx_mod.assign(2 * sz, 0);\n        mn_mod.assign(2 * sz, 0);\n        mod.assign(2\
-    \ * sz, 0);\n        sum.assign(2 * sz, 0);\n        mx.assign(2 * sz, {{0, 0},\
-    \ 0});\n        mn.assign(2 * sz, {{0, 0}, 0});\n        build();\n    }\n\n \
-    \   void build(int ind = 1, int L = 0, int R = -1) {\n        if (R == -1) R +=\
-    \ sz;\n        mx_mod[ind] = INF, mn_mod[ind] = -INF, mod[ind] = 0;\n        if\
-    \ (L == R) {\n            mx[ind] = {{0, -INF}, 1};\n            mn[ind] = {{0,\
-    \ INF}, 1};\n            sum[ind] = 0;\n            return;\n        }\n     \
-    \   int M = (L + R) / 2;\n        build(2 * ind, L, M); build(2 * ind + 1, M +\
-    \ 1, R);\n        pull(ind);\n    }\n\n    T comb_mn(T a, T b) {\n        if (a\
-    \ > b) \n            std::swap(a, b);\n        if (a.first.first == b.first.first)\
-    \ \n            return  {{a.first.first, \n                std::min(a.first.second,\
-    \ b.first.second)}, \n                a.second + b.second};\n        return {{a.first.first,\
-    \ std::min(a.first.second, b.first.first)}, a.second};\n    }\n\n    T comb_mx(T\
-    \ a, T b) {\n        if (a < b) std::swap(a, b);\n        if (a.first.first ==\
-    \ b.first.first) \n            return  {{a.first.first, \n                std::max(a.first.second,\
-    \ b.first.second)}, \n                a.second + b.second};\n        return {{a.first.first,\
-    \ std::max(a.first.second, b.first.first)}, \n            a.second};\n    }\n\n\
-    \    void pull(int ind) {\n        sum[ind] = sum[2 * ind] + sum[2 * ind + 1];\n\
-    \        mn[ind] = comb_mn(mn[2 * ind], mn[2 * ind + 1]);\n        mx[ind] = comb_mx(mx[2\
-    \ * ind], mx[2 * ind + 1]);\n    }\n\n    void push(int ind, int L, int R) {\n\
-    \        auto chk = [](C& a, C b, C c) {\n            if (a == b)\n          \
-    \      a = c;\n        };\n        if (mn_mod[ind] != -INF) {\n            if\
-    \ (mn_mod[ind] > mn[ind].first.first) {\n                sum[ind] += (mn_mod[ind]\
-    \ - mn[ind].first.first) * mn[ind].second;\n                chk(mx[ind].first.first,\
-    \ mn[ind].first.first, mn_mod[ind]);\n                chk(mx[ind].first.second,\
-    \ mn[ind].first.first, mn_mod[ind]);\n                mn[ind].first.first = mn_mod[ind];\n\
-    \                if (L != R) {\n                    for (int i = 0; i < 2; i++)\
-    \ {\n                        int pos = 2 * ind + i;\n                        mn_mod[pos]\
-    \ = std::max(mn_mod[pos], mn_mod[ind] - mod[pos]);\n                        mx_mod[pos]\
-    \ = std::max(mx_mod[pos], mn_mod[pos]);\n                    }\n             \
-    \   }\n            }\n            mn_mod[ind] = -INF;\n        }\n        if (mx_mod[ind]\
-    \ != INF) {\n            if (mx_mod[ind] < mx[ind].first.first) {\n          \
-    \      sum[ind] += (mx_mod[ind] - mx[ind].first.first) * mx[ind].second;\n   \
-    \             chk(mn[ind].first.first, mx[ind].first.first, mx_mod[ind]);\n  \
-    \              chk(mn[ind].first.second, mx[ind].first.first, mx_mod[ind]);\n\
-    \                mx[ind].first.first = mx_mod[ind];\n                if (L !=\
-    \ R) {\n                    for (int i = 0; i < 2; i++) {\n                  \
-    \      int pos = 2 * ind + i;\n                        mx_mod[pos] = std::min(mx_mod[pos],\
-    \ mx_mod[ind] - mod[pos]);\n                        mn_mod[pos] = std::min(mn_mod[pos],\
-    \ mx_mod[pos]);\n                    }\n                }\n            }\n   \
-    \         mx_mod[ind] = INF;\n        }\n        if (mod[ind] != 0) {\n      \
-    \      sum[ind] += mod[ind] * (R - L + 1);\n            auto inc = [&](T& a, C\
-    \ b) {\n                if (std::abs(a.first.first) != INF) \n               \
-    \     a.first.first += b;\n                if (std::abs(a.first.second) != INF)\n\
-    \                    a.first.second += b;\n            };\n            inc(mx[ind],\
-    \ mod[ind]); inc(mn[ind], mod[ind]);\n            if (L != R) {\n            \
-    \    for (int i = 0; i < 2; i++) {\n                    int pos = 2 * ind + i;\n\
-    \                    mod[pos] += mod[ind];\n                }\n            }\n\
-    \            mod[ind] = 0;\n        }\n    }\n\n    C qsum(int lo, int hi, int\
-    \ ind = 1, int L = 0, int R = -1) {\n        if (R == -1) R += sz;\n        push(ind,\
-    \ L, R);\n        if (R < lo || hi < L)\n            return 0;\n        if (lo\
-    \ <= L && R <= hi)     \n            return sum[ind];\n        int M = (L + R)\
-    \ / 2;\n        return qsum(lo, hi, 2 * ind, L, M) + qsum(lo, hi, 2 * ind + 1,\
-    \ M + 1, R);\n    }\n\n    C qmax(int lo, int hi, int ind = 1, int L = 0, int\
-    \ R = -1) {\n        if (R == -1) R += sz;\n        push(ind, L, R);\n       \
-    \ if (R < lo || hi < L)\n            return -INF;\n        if (lo <= L && R <=\
-    \ hi)     \n            return mx[ind].first.first;\n        int M = (L + R) /\
-    \ 2;\n        return std::max(qmax(lo, hi, 2 * ind, L, M), qmax(lo, hi, 2 * ind\
-    \ + 1, M + 1, R));\n    }\n\n    C qmin(int lo, int hi, int ind = 1, int L = 0,\
-    \ int R = -1) {\n        if (R == -1) R += sz;\n        push(ind, L, R);\n   \
-    \     if (R < lo || hi < L)\n            return INF;\n        if (lo <= L && R\
-    \ <= hi)     \n            return mn[ind].first.first;\n        int M = (L + R)\
-    \ / 2;\n        return std::min(qmin(lo, hi, 2 * ind, L, M), qmin(lo, hi, 2 *\
-    \ ind + 1, M + 1, R));\n    }\n    \n    void upd(int t, int lo, int hi, C b,\
-    \ int ind = 1, int L = 0, int R = -1) {\n        if (R == -1) R += sz;\n     \
-    \   push(ind, L, R);\n        if (R < lo || hi < L) \n            return;\n  \
-    \      if (t == 0) \n            if (b >= mx[ind].first.first)\n             \
-    \   return;\n        else if (t == 1)\n            if (b <= mn[ind].first.first)\n\
-    \                return;\n        if (lo <= L && R <= hi) {\n            if (t\
-    \ == 0) {\n                if (b  > mx[ind].first.second) {\n                \
-    \    mx_mod[ind] = b;\n                    push(ind, L, R);\n                \
-    \    return;\n                }\n            } else if (t == 1) {\n          \
-    \      if (b < mn[ind].first.second) {\n                    mn_mod[ind] = b;\n\
-    \                    push(ind, L, R);\n                    return;\n         \
-    \       }\n            } else if (t == 2) {\n                mod[ind] = b;\n \
-    \               push(ind, L, R);\n                return;\n            } else\
-    \ assert(false);\n        }\n        assert(L != R);\n        int M = (L + R)\
-    \ / 2;\n        upd(t, lo, hi, b, 2 * ind, L, M); upd(t, lo, hi, b, 2 * ind +\
-    \ 1, M + 1, R);\n        pull(ind);\n    }\n};\n\nint main() {\n    using namespace\
-    \ std;\n    ios_base::sync_with_stdio(0);\n    int n, q; cin >> n >> q;\n    SegmentTreeBeats<long\
-    \ long> S;\n    S.init(n);\n    std::vector<long long> a(n);\n    for (int i =\
-    \ 0; i < n; i++)\n       \n        cin >> a[i], S.upd(2, i, i, a[i]);\n    while\
-    \ (q--) {\n        int t, l, r; cin >> t >> l >> r;\n        r--;\n        if\
-    \ (t <= 2) {\n            long long b; cin >> b;\n            S.upd(t, l, r, b);\n\
-    \        } else {\n            cout << S.qsum(l, r) << '\\n';\n        }\n   \
-    \ }\n}\n"
+    \ */\ntemplate <class C> struct SegmentTreeBeats {\n\tusing T = std::pair<std::pair<C,\
+    \ C>, int>;\n\tconst C INF = std::numeric_limits<C>::max();\n\tstd::vector<C>\
+    \ mx_mod, mn_mod, mod, sum;\n\tstd::vector<T> mx, mn;\n\tint sz; \n\n\tvoid init(int\
+    \ sz_) {\n\t\tsz = 1; \n\t\twhile (sz < sz_) sz *= 2;\n\t\tmx_mod.assign(2 * sz,\
+    \ 0);\n\t\tmn_mod.assign(2 * sz, 0);\n\t\tmod.assign(2 * sz, 0);\n\t\tsum.assign(2\
+    \ * sz, 0);\n\t\tmx.assign(2 * sz, {{0, 0}, 0});\n\t\tmn.assign(2 * sz, {{0, 0},\
+    \ 0});\n\t\tbuild();\n\t}\n\n\tvoid build(int ind = 1, int L = 0, int R = -1)\
+    \ {\n\t\tif (R == -1) R += sz;\n\t\tmx_mod[ind] = INF, mn_mod[ind] = -INF, mod[ind]\
+    \ = 0;\n\t\tif (L == R) {\n\t\t\tmx[ind] = {{0, -INF}, 1};\n\t\t\tmn[ind] = {{0,\
+    \ INF}, 1};\n\t\t\tsum[ind] = 0;\n\t\t\treturn;\n\t\t}\n\t\tint M = (L + R) /\
+    \ 2;\n\t\tbuild(2 * ind, L, M); build(2 * ind + 1, M + 1, R);\n\t\tpull(ind);\n\
+    \t}\n\n\tT comb_mn(T a, T b) {\n\t\tif (a > b) \n\t\t\tstd::swap(a, b);\n\t\t\
+    if (a.first.first == b.first.first) \n\t\t\treturn  {{a.first.first, \n\t\t\t\t\
+    std::min(a.first.second, b.first.second)}, \n\t\t\t\ta.second + b.second};\n\t\
+    \treturn {{a.first.first, std::min(a.first.second, b.first.first)}, a.second};\n\
+    \t}\n\n\tT comb_mx(T a, T b) {\n\t\tif (a < b) std::swap(a, b);\n\t\tif (a.first.first\
+    \ == b.first.first) \n\t\t\treturn  {{a.first.first, \n\t\t\t\tstd::max(a.first.second,\
+    \ b.first.second)}, \n\t\t\t\ta.second + b.second};\n\t\treturn {{a.first.first,\
+    \ std::max(a.first.second, b.first.first)}, \n\t\t\ta.second};\n\t}\n\n\tvoid\
+    \ pull(int ind) {\n\t\tsum[ind] = sum[2 * ind] + sum[2 * ind + 1];\n\t\tmn[ind]\
+    \ = comb_mn(mn[2 * ind], mn[2 * ind + 1]);\n\t\tmx[ind] = comb_mx(mx[2 * ind],\
+    \ mx[2 * ind + 1]);\n\t}\n\n\tvoid push(int ind, int L, int R) {\n\t\tauto chk\
+    \ = [](C& a, C b, C c) {\n\t\t\tif (a == b)\n\t\t\t\ta = c;\n\t\t};\n\t\tif (mn_mod[ind]\
+    \ != -INF) {\n\t\t\tif (mn_mod[ind] > mn[ind].first.first) {\n\t\t\t\tsum[ind]\
+    \ += (mn_mod[ind] - mn[ind].first.first) * mn[ind].second;\n\t\t\t\tchk(mx[ind].first.first,\
+    \ mn[ind].first.first, mn_mod[ind]);\n\t\t\t\tchk(mx[ind].first.second, mn[ind].first.first,\
+    \ mn_mod[ind]);\n\t\t\t\tmn[ind].first.first = mn_mod[ind];\n\t\t\t\tif (L !=\
+    \ R) {\n\t\t\t\t\tfor (int i = 0; i < 2; i++) {\n\t\t\t\t\t\tint pos = 2 * ind\
+    \ + i;\n\t\t\t\t\t\tmn_mod[pos] = std::max(mn_mod[pos], mn_mod[ind] - mod[pos]);\n\
+    \t\t\t\t\t\tmx_mod[pos] = std::max(mx_mod[pos], mn_mod[pos]);\n\t\t\t\t\t}\n\t\
+    \t\t\t}\n\t\t\t}\n\t\t\tmn_mod[ind] = -INF;\n\t\t}\n\t\tif (mx_mod[ind] != INF)\
+    \ {\n\t\t\tif (mx_mod[ind] < mx[ind].first.first) {\n\t\t\t\tsum[ind] += (mx_mod[ind]\
+    \ - mx[ind].first.first) * mx[ind].second;\n\t\t\t\tchk(mn[ind].first.first, mx[ind].first.first,\
+    \ mx_mod[ind]);\n\t\t\t\tchk(mn[ind].first.second, mx[ind].first.first, mx_mod[ind]);\n\
+    \t\t\t\tmx[ind].first.first = mx_mod[ind];\n\t\t\t\tif (L != R) {\n\t\t\t\t\t\
+    for (int i = 0; i < 2; i++) {\n\t\t\t\t\t\tint pos = 2 * ind + i;\n\t\t\t\t\t\t\
+    mx_mod[pos] = std::min(mx_mod[pos], mx_mod[ind] - mod[pos]);\n\t\t\t\t\t\tmn_mod[pos]\
+    \ = std::min(mn_mod[pos], mx_mod[pos]);\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t\
+    \tmx_mod[ind] = INF;\n\t\t}\n\t\tif (mod[ind] != 0) {\n\t\t\tsum[ind] += mod[ind]\
+    \ * (R - L + 1);\n\t\t\tauto inc = [&](T& a, C b) {\n\t\t\t\tif (std::abs(a.first.first)\
+    \ != INF) \n\t\t\t\t\ta.first.first += b;\n\t\t\t\tif (std::abs(a.first.second)\
+    \ != INF)\n\t\t\t\t\ta.first.second += b;\n\t\t\t};\n\t\t\tinc(mx[ind], mod[ind]);\
+    \ inc(mn[ind], mod[ind]);\n\t\t\tif (L != R) {\n\t\t\t\tfor (int i = 0; i < 2;\
+    \ i++) {\n\t\t\t\t\tint pos = 2 * ind + i;\n\t\t\t\t\tmod[pos] += mod[ind];\n\t\
+    \t\t\t}\n\t\t\t}\n\t\t\tmod[ind] = 0;\n\t\t}\n\t}\n\n\tC qsum(int lo, int hi,\
+    \ int ind = 1, int L = 0, int R = -1) {\n\t\tif (R == -1) R += sz;\n\t\tpush(ind,\
+    \ L, R);\n\t\tif (R < lo || hi < L)\n\t\t\treturn 0;\n\t\tif (lo <= L && R <=\
+    \ hi)     \n\t\t\treturn sum[ind];\n\t\tint M = (L + R) / 2;\n\t\treturn qsum(lo,\
+    \ hi, 2 * ind, L, M) + qsum(lo, hi, 2 * ind + 1, M + 1, R);\n\t}\n\n\tC qmax(int\
+    \ lo, int hi, int ind = 1, int L = 0, int R = -1) {\n\t\tif (R == -1) R += sz;\n\
+    \t\tpush(ind, L, R);\n\t\tif (R < lo || hi < L)\n\t\t\treturn -INF;\n\t\tif (lo\
+    \ <= L && R <= hi)     \n\t\t\treturn mx[ind].first.first;\n\t\tint M = (L + R)\
+    \ / 2;\n\t\treturn std::max(qmax(lo, hi, 2 * ind, L, M), qmax(lo, hi, 2 * ind\
+    \ + 1, M + 1, R));\n\t}\n\n\tC qmin(int lo, int hi, int ind = 1, int L = 0, int\
+    \ R = -1) {\n\t\tif (R == -1) R += sz;\n\t\tpush(ind, L, R);\n\t\tif (R < lo ||\
+    \ hi < L)\n\t\t\treturn INF;\n\t\tif (lo <= L && R <= hi)     \n\t\t\treturn mn[ind].first.first;\n\
+    \t\tint M = (L + R) / 2;\n\t\treturn std::min(qmin(lo, hi, 2 * ind, L, M), qmin(lo,\
+    \ hi, 2 * ind + 1, M + 1, R));\n\t}\n\t\n\tvoid upd(int t, int lo, int hi, C b,\
+    \ int ind = 1, int L = 0, int R = -1) {\n\t\tif (R == -1) R += sz;\n\t\tpush(ind,\
+    \ L, R);\n\t\tif (R < lo || hi < L) \n\t\t\treturn;\n\t\tif (t == 0) \n\t\t\t\
+    if (b >= mx[ind].first.first)\n\t\t\t\treturn;\n\t\telse if (t == 1)\n\t\t\tif\
+    \ (b <= mn[ind].first.first)\n\t\t\t\treturn;\n\t\tif (lo <= L && R <= hi) {\n\
+    \t\t\tif (t == 0) {\n\t\t\t\tif (b  > mx[ind].first.second) {\n\t\t\t\t\tmx_mod[ind]\
+    \ = b;\n\t\t\t\t\tpush(ind, L, R);\n\t\t\t\t\treturn;\n\t\t\t\t}\n\t\t\t} else\
+    \ if (t == 1) {\n\t\t\t\tif (b < mn[ind].first.second) {\n\t\t\t\t\tmn_mod[ind]\
+    \ = b;\n\t\t\t\t\tpush(ind, L, R);\n\t\t\t\t\treturn;\n\t\t\t\t}\n\t\t\t} else\
+    \ if (t == 2) {\n\t\t\t\tmod[ind] = b;\n\t\t\t\tpush(ind, L, R);\n\t\t\t\treturn;\n\
+    \t\t\t} else assert(false);\n\t\t}\n\t\tassert(L != R);\n\t\tint M = (L + R) /\
+    \ 2;\n\t\tupd(t, lo, hi, b, 2 * ind, L, M); upd(t, lo, hi, b, 2 * ind + 1, M +\
+    \ 1, R);\n\t\tpull(ind);\n\t}\n};\n\nint main() {\n\tusing namespace std;\n\t\
+    ios_base::sync_with_stdio(0);\n\tint n, q; cin >> n >> q;\n\tSegmentTreeBeats<long\
+    \ long> S;\n\tS.init(n);\n\tstd::vector<long long> a(n);\n\tfor (int i = 0; i\
+    \ < n; i++)\n\t   \n\t\tcin >> a[i], S.upd(2, i, i, a[i]);\n\twhile (q--) {\n\t\
+    \tint t, l, r; cin >> t >> l >> r;\n\t\tr--;\n\t\tif (t <= 2) {\n\t\t\tlong long\
+    \ b; cin >> b;\n\t\t\tS.upd(t, l, r, b);\n\t\t} else {\n\t\t\tcout << S.qsum(l,\
+    \ r) << '\\n';\n\t\t}\n\t}\n}\n"
   code: "#include <bits/stdc++.h>\n\n/**\n * 0 is ckmin, 1 is ckmax, 2 is range add\n\
-    \ */\ntemplate <class C> struct SegmentTreeBeats {\n    using T = std::pair<std::pair<C,\
-    \ C>, int>;\n    const C INF = std::numeric_limits<C>::max();\n    std::vector<C>\
-    \ mx_mod, mn_mod, mod, sum;\n    std::vector<T> mx, mn;\n    int sz; \n\n    void\
-    \ init(int sz_) {\n        sz = 1; \n        while (sz < sz_) sz *= 2;\n     \
-    \   mx_mod.assign(2 * sz, 0);\n        mn_mod.assign(2 * sz, 0);\n        mod.assign(2\
-    \ * sz, 0);\n        sum.assign(2 * sz, 0);\n        mx.assign(2 * sz, {{0, 0},\
-    \ 0});\n        mn.assign(2 * sz, {{0, 0}, 0});\n        build();\n    }\n\n \
-    \   void build(int ind = 1, int L = 0, int R = -1) {\n        if (R == -1) R +=\
-    \ sz;\n        mx_mod[ind] = INF, mn_mod[ind] = -INF, mod[ind] = 0;\n        if\
-    \ (L == R) {\n            mx[ind] = {{0, -INF}, 1};\n            mn[ind] = {{0,\
-    \ INF}, 1};\n            sum[ind] = 0;\n            return;\n        }\n     \
-    \   int M = (L + R) / 2;\n        build(2 * ind, L, M); build(2 * ind + 1, M +\
-    \ 1, R);\n        pull(ind);\n    }\n\n    T comb_mn(T a, T b) {\n        if (a\
-    \ > b) \n            std::swap(a, b);\n        if (a.first.first == b.first.first)\
-    \ \n            return  {{a.first.first, \n                std::min(a.first.second,\
-    \ b.first.second)}, \n                a.second + b.second};\n        return {{a.first.first,\
-    \ std::min(a.first.second, b.first.first)}, a.second};\n    }\n\n    T comb_mx(T\
-    \ a, T b) {\n        if (a < b) std::swap(a, b);\n        if (a.first.first ==\
-    \ b.first.first) \n            return  {{a.first.first, \n                std::max(a.first.second,\
-    \ b.first.second)}, \n                a.second + b.second};\n        return {{a.first.first,\
-    \ std::max(a.first.second, b.first.first)}, \n            a.second};\n    }\n\n\
-    \    void pull(int ind) {\n        sum[ind] = sum[2 * ind] + sum[2 * ind + 1];\n\
-    \        mn[ind] = comb_mn(mn[2 * ind], mn[2 * ind + 1]);\n        mx[ind] = comb_mx(mx[2\
-    \ * ind], mx[2 * ind + 1]);\n    }\n\n    void push(int ind, int L, int R) {\n\
-    \        auto chk = [](C& a, C b, C c) {\n            if (a == b)\n          \
-    \      a = c;\n        };\n        if (mn_mod[ind] != -INF) {\n            if\
-    \ (mn_mod[ind] > mn[ind].first.first) {\n                sum[ind] += (mn_mod[ind]\
-    \ - mn[ind].first.first) * mn[ind].second;\n                chk(mx[ind].first.first,\
-    \ mn[ind].first.first, mn_mod[ind]);\n                chk(mx[ind].first.second,\
-    \ mn[ind].first.first, mn_mod[ind]);\n                mn[ind].first.first = mn_mod[ind];\n\
-    \                if (L != R) {\n                    for (int i = 0; i < 2; i++)\
-    \ {\n                        int pos = 2 * ind + i;\n                        mn_mod[pos]\
-    \ = std::max(mn_mod[pos], mn_mod[ind] - mod[pos]);\n                        mx_mod[pos]\
-    \ = std::max(mx_mod[pos], mn_mod[pos]);\n                    }\n             \
-    \   }\n            }\n            mn_mod[ind] = -INF;\n        }\n        if (mx_mod[ind]\
-    \ != INF) {\n            if (mx_mod[ind] < mx[ind].first.first) {\n          \
-    \      sum[ind] += (mx_mod[ind] - mx[ind].first.first) * mx[ind].second;\n   \
-    \             chk(mn[ind].first.first, mx[ind].first.first, mx_mod[ind]);\n  \
-    \              chk(mn[ind].first.second, mx[ind].first.first, mx_mod[ind]);\n\
-    \                mx[ind].first.first = mx_mod[ind];\n                if (L !=\
-    \ R) {\n                    for (int i = 0; i < 2; i++) {\n                  \
-    \      int pos = 2 * ind + i;\n                        mx_mod[pos] = std::min(mx_mod[pos],\
-    \ mx_mod[ind] - mod[pos]);\n                        mn_mod[pos] = std::min(mn_mod[pos],\
-    \ mx_mod[pos]);\n                    }\n                }\n            }\n   \
-    \         mx_mod[ind] = INF;\n        }\n        if (mod[ind] != 0) {\n      \
-    \      sum[ind] += mod[ind] * (R - L + 1);\n            auto inc = [&](T& a, C\
-    \ b) {\n                if (std::abs(a.first.first) != INF) \n               \
-    \     a.first.first += b;\n                if (std::abs(a.first.second) != INF)\n\
-    \                    a.first.second += b;\n            };\n            inc(mx[ind],\
-    \ mod[ind]); inc(mn[ind], mod[ind]);\n            if (L != R) {\n            \
-    \    for (int i = 0; i < 2; i++) {\n                    int pos = 2 * ind + i;\n\
-    \                    mod[pos] += mod[ind];\n                }\n            }\n\
-    \            mod[ind] = 0;\n        }\n    }\n\n    C qsum(int lo, int hi, int\
-    \ ind = 1, int L = 0, int R = -1) {\n        if (R == -1) R += sz;\n        push(ind,\
-    \ L, R);\n        if (R < lo || hi < L)\n            return 0;\n        if (lo\
-    \ <= L && R <= hi)     \n            return sum[ind];\n        int M = (L + R)\
-    \ / 2;\n        return qsum(lo, hi, 2 * ind, L, M) + qsum(lo, hi, 2 * ind + 1,\
-    \ M + 1, R);\n    }\n\n    C qmax(int lo, int hi, int ind = 1, int L = 0, int\
-    \ R = -1) {\n        if (R == -1) R += sz;\n        push(ind, L, R);\n       \
-    \ if (R < lo || hi < L)\n            return -INF;\n        if (lo <= L && R <=\
-    \ hi)     \n            return mx[ind].first.first;\n        int M = (L + R) /\
-    \ 2;\n        return std::max(qmax(lo, hi, 2 * ind, L, M), qmax(lo, hi, 2 * ind\
-    \ + 1, M + 1, R));\n    }\n\n    C qmin(int lo, int hi, int ind = 1, int L = 0,\
-    \ int R = -1) {\n        if (R == -1) R += sz;\n        push(ind, L, R);\n   \
-    \     if (R < lo || hi < L)\n            return INF;\n        if (lo <= L && R\
-    \ <= hi)     \n            return mn[ind].first.first;\n        int M = (L + R)\
-    \ / 2;\n        return std::min(qmin(lo, hi, 2 * ind, L, M), qmin(lo, hi, 2 *\
-    \ ind + 1, M + 1, R));\n    }\n    \n    void upd(int t, int lo, int hi, C b,\
-    \ int ind = 1, int L = 0, int R = -1) {\n        if (R == -1) R += sz;\n     \
-    \   push(ind, L, R);\n        if (R < lo || hi < L) \n            return;\n  \
-    \      if (t == 0) \n            if (b >= mx[ind].first.first)\n             \
-    \   return;\n        else if (t == 1)\n            if (b <= mn[ind].first.first)\n\
-    \                return;\n        if (lo <= L && R <= hi) {\n            if (t\
-    \ == 0) {\n                if (b  > mx[ind].first.second) {\n                \
-    \    mx_mod[ind] = b;\n                    push(ind, L, R);\n                \
-    \    return;\n                }\n            } else if (t == 1) {\n          \
-    \      if (b < mn[ind].first.second) {\n                    mn_mod[ind] = b;\n\
-    \                    push(ind, L, R);\n                    return;\n         \
-    \       }\n            } else if (t == 2) {\n                mod[ind] = b;\n \
-    \               push(ind, L, R);\n                return;\n            } else\
-    \ assert(false);\n        }\n        assert(L != R);\n        int M = (L + R)\
-    \ / 2;\n        upd(t, lo, hi, b, 2 * ind, L, M); upd(t, lo, hi, b, 2 * ind +\
-    \ 1, M + 1, R);\n        pull(ind);\n    }\n};\n\nint main() {\n    using namespace\
-    \ std;\n    ios_base::sync_with_stdio(0);\n    int n, q; cin >> n >> q;\n    SegmentTreeBeats<long\
-    \ long> S;\n    S.init(n);\n    std::vector<long long> a(n);\n    for (int i =\
-    \ 0; i < n; i++)\n       \n        cin >> a[i], S.upd(2, i, i, a[i]);\n    while\
-    \ (q--) {\n        int t, l, r; cin >> t >> l >> r;\n        r--;\n        if\
-    \ (t <= 2) {\n            long long b; cin >> b;\n            S.upd(t, l, r, b);\n\
-    \        } else {\n            cout << S.qsum(l, r) << '\\n';\n        }\n   \
-    \ }\n}"
+    \ */\ntemplate <class C> struct SegmentTreeBeats {\n\tusing T = std::pair<std::pair<C,\
+    \ C>, int>;\n\tconst C INF = std::numeric_limits<C>::max();\n\tstd::vector<C>\
+    \ mx_mod, mn_mod, mod, sum;\n\tstd::vector<T> mx, mn;\n\tint sz; \n\n\tvoid init(int\
+    \ sz_) {\n\t\tsz = 1; \n\t\twhile (sz < sz_) sz *= 2;\n\t\tmx_mod.assign(2 * sz,\
+    \ 0);\n\t\tmn_mod.assign(2 * sz, 0);\n\t\tmod.assign(2 * sz, 0);\n\t\tsum.assign(2\
+    \ * sz, 0);\n\t\tmx.assign(2 * sz, {{0, 0}, 0});\n\t\tmn.assign(2 * sz, {{0, 0},\
+    \ 0});\n\t\tbuild();\n\t}\n\n\tvoid build(int ind = 1, int L = 0, int R = -1)\
+    \ {\n\t\tif (R == -1) R += sz;\n\t\tmx_mod[ind] = INF, mn_mod[ind] = -INF, mod[ind]\
+    \ = 0;\n\t\tif (L == R) {\n\t\t\tmx[ind] = {{0, -INF}, 1};\n\t\t\tmn[ind] = {{0,\
+    \ INF}, 1};\n\t\t\tsum[ind] = 0;\n\t\t\treturn;\n\t\t}\n\t\tint M = (L + R) /\
+    \ 2;\n\t\tbuild(2 * ind, L, M); build(2 * ind + 1, M + 1, R);\n\t\tpull(ind);\n\
+    \t}\n\n\tT comb_mn(T a, T b) {\n\t\tif (a > b) \n\t\t\tstd::swap(a, b);\n\t\t\
+    if (a.first.first == b.first.first) \n\t\t\treturn  {{a.first.first, \n\t\t\t\t\
+    std::min(a.first.second, b.first.second)}, \n\t\t\t\ta.second + b.second};\n\t\
+    \treturn {{a.first.first, std::min(a.first.second, b.first.first)}, a.second};\n\
+    \t}\n\n\tT comb_mx(T a, T b) {\n\t\tif (a < b) std::swap(a, b);\n\t\tif (a.first.first\
+    \ == b.first.first) \n\t\t\treturn  {{a.first.first, \n\t\t\t\tstd::max(a.first.second,\
+    \ b.first.second)}, \n\t\t\t\ta.second + b.second};\n\t\treturn {{a.first.first,\
+    \ std::max(a.first.second, b.first.first)}, \n\t\t\ta.second};\n\t}\n\n\tvoid\
+    \ pull(int ind) {\n\t\tsum[ind] = sum[2 * ind] + sum[2 * ind + 1];\n\t\tmn[ind]\
+    \ = comb_mn(mn[2 * ind], mn[2 * ind + 1]);\n\t\tmx[ind] = comb_mx(mx[2 * ind],\
+    \ mx[2 * ind + 1]);\n\t}\n\n\tvoid push(int ind, int L, int R) {\n\t\tauto chk\
+    \ = [](C& a, C b, C c) {\n\t\t\tif (a == b)\n\t\t\t\ta = c;\n\t\t};\n\t\tif (mn_mod[ind]\
+    \ != -INF) {\n\t\t\tif (mn_mod[ind] > mn[ind].first.first) {\n\t\t\t\tsum[ind]\
+    \ += (mn_mod[ind] - mn[ind].first.first) * mn[ind].second;\n\t\t\t\tchk(mx[ind].first.first,\
+    \ mn[ind].first.first, mn_mod[ind]);\n\t\t\t\tchk(mx[ind].first.second, mn[ind].first.first,\
+    \ mn_mod[ind]);\n\t\t\t\tmn[ind].first.first = mn_mod[ind];\n\t\t\t\tif (L !=\
+    \ R) {\n\t\t\t\t\tfor (int i = 0; i < 2; i++) {\n\t\t\t\t\t\tint pos = 2 * ind\
+    \ + i;\n\t\t\t\t\t\tmn_mod[pos] = std::max(mn_mod[pos], mn_mod[ind] - mod[pos]);\n\
+    \t\t\t\t\t\tmx_mod[pos] = std::max(mx_mod[pos], mn_mod[pos]);\n\t\t\t\t\t}\n\t\
+    \t\t\t}\n\t\t\t}\n\t\t\tmn_mod[ind] = -INF;\n\t\t}\n\t\tif (mx_mod[ind] != INF)\
+    \ {\n\t\t\tif (mx_mod[ind] < mx[ind].first.first) {\n\t\t\t\tsum[ind] += (mx_mod[ind]\
+    \ - mx[ind].first.first) * mx[ind].second;\n\t\t\t\tchk(mn[ind].first.first, mx[ind].first.first,\
+    \ mx_mod[ind]);\n\t\t\t\tchk(mn[ind].first.second, mx[ind].first.first, mx_mod[ind]);\n\
+    \t\t\t\tmx[ind].first.first = mx_mod[ind];\n\t\t\t\tif (L != R) {\n\t\t\t\t\t\
+    for (int i = 0; i < 2; i++) {\n\t\t\t\t\t\tint pos = 2 * ind + i;\n\t\t\t\t\t\t\
+    mx_mod[pos] = std::min(mx_mod[pos], mx_mod[ind] - mod[pos]);\n\t\t\t\t\t\tmn_mod[pos]\
+    \ = std::min(mn_mod[pos], mx_mod[pos]);\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t\
+    \tmx_mod[ind] = INF;\n\t\t}\n\t\tif (mod[ind] != 0) {\n\t\t\tsum[ind] += mod[ind]\
+    \ * (R - L + 1);\n\t\t\tauto inc = [&](T& a, C b) {\n\t\t\t\tif (std::abs(a.first.first)\
+    \ != INF) \n\t\t\t\t\ta.first.first += b;\n\t\t\t\tif (std::abs(a.first.second)\
+    \ != INF)\n\t\t\t\t\ta.first.second += b;\n\t\t\t};\n\t\t\tinc(mx[ind], mod[ind]);\
+    \ inc(mn[ind], mod[ind]);\n\t\t\tif (L != R) {\n\t\t\t\tfor (int i = 0; i < 2;\
+    \ i++) {\n\t\t\t\t\tint pos = 2 * ind + i;\n\t\t\t\t\tmod[pos] += mod[ind];\n\t\
+    \t\t\t}\n\t\t\t}\n\t\t\tmod[ind] = 0;\n\t\t}\n\t}\n\n\tC qsum(int lo, int hi,\
+    \ int ind = 1, int L = 0, int R = -1) {\n\t\tif (R == -1) R += sz;\n\t\tpush(ind,\
+    \ L, R);\n\t\tif (R < lo || hi < L)\n\t\t\treturn 0;\n\t\tif (lo <= L && R <=\
+    \ hi)     \n\t\t\treturn sum[ind];\n\t\tint M = (L + R) / 2;\n\t\treturn qsum(lo,\
+    \ hi, 2 * ind, L, M) + qsum(lo, hi, 2 * ind + 1, M + 1, R);\n\t}\n\n\tC qmax(int\
+    \ lo, int hi, int ind = 1, int L = 0, int R = -1) {\n\t\tif (R == -1) R += sz;\n\
+    \t\tpush(ind, L, R);\n\t\tif (R < lo || hi < L)\n\t\t\treturn -INF;\n\t\tif (lo\
+    \ <= L && R <= hi)     \n\t\t\treturn mx[ind].first.first;\n\t\tint M = (L + R)\
+    \ / 2;\n\t\treturn std::max(qmax(lo, hi, 2 * ind, L, M), qmax(lo, hi, 2 * ind\
+    \ + 1, M + 1, R));\n\t}\n\n\tC qmin(int lo, int hi, int ind = 1, int L = 0, int\
+    \ R = -1) {\n\t\tif (R == -1) R += sz;\n\t\tpush(ind, L, R);\n\t\tif (R < lo ||\
+    \ hi < L)\n\t\t\treturn INF;\n\t\tif (lo <= L && R <= hi)     \n\t\t\treturn mn[ind].first.first;\n\
+    \t\tint M = (L + R) / 2;\n\t\treturn std::min(qmin(lo, hi, 2 * ind, L, M), qmin(lo,\
+    \ hi, 2 * ind + 1, M + 1, R));\n\t}\n\t\n\tvoid upd(int t, int lo, int hi, C b,\
+    \ int ind = 1, int L = 0, int R = -1) {\n\t\tif (R == -1) R += sz;\n\t\tpush(ind,\
+    \ L, R);\n\t\tif (R < lo || hi < L) \n\t\t\treturn;\n\t\tif (t == 0) \n\t\t\t\
+    if (b >= mx[ind].first.first)\n\t\t\t\treturn;\n\t\telse if (t == 1)\n\t\t\tif\
+    \ (b <= mn[ind].first.first)\n\t\t\t\treturn;\n\t\tif (lo <= L && R <= hi) {\n\
+    \t\t\tif (t == 0) {\n\t\t\t\tif (b  > mx[ind].first.second) {\n\t\t\t\t\tmx_mod[ind]\
+    \ = b;\n\t\t\t\t\tpush(ind, L, R);\n\t\t\t\t\treturn;\n\t\t\t\t}\n\t\t\t} else\
+    \ if (t == 1) {\n\t\t\t\tif (b < mn[ind].first.second) {\n\t\t\t\t\tmn_mod[ind]\
+    \ = b;\n\t\t\t\t\tpush(ind, L, R);\n\t\t\t\t\treturn;\n\t\t\t\t}\n\t\t\t} else\
+    \ if (t == 2) {\n\t\t\t\tmod[ind] = b;\n\t\t\t\tpush(ind, L, R);\n\t\t\t\treturn;\n\
+    \t\t\t} else assert(false);\n\t\t}\n\t\tassert(L != R);\n\t\tint M = (L + R) /\
+    \ 2;\n\t\tupd(t, lo, hi, b, 2 * ind, L, M); upd(t, lo, hi, b, 2 * ind + 1, M +\
+    \ 1, R);\n\t\tpull(ind);\n\t}\n};\n\nint main() {\n\tusing namespace std;\n\t\
+    ios_base::sync_with_stdio(0);\n\tint n, q; cin >> n >> q;\n\tSegmentTreeBeats<long\
+    \ long> S;\n\tS.init(n);\n\tstd::vector<long long> a(n);\n\tfor (int i = 0; i\
+    \ < n; i++)\n\t   \n\t\tcin >> a[i], S.upd(2, i, i, a[i]);\n\twhile (q--) {\n\t\
+    \tint t, l, r; cin >> t >> l >> r;\n\t\tr--;\n\t\tif (t <= 2) {\n\t\t\tlong long\
+    \ b; cin >> b;\n\t\t\tS.upd(t, l, r, b);\n\t\t} else {\n\t\t\tcout << S.qsum(l,\
+    \ r) << '\\n';\n\t\t}\n\t}\n}"
   dependsOn: []
   isVerificationFile: false
   path: library/data-structures/1d-range-queries/segment_tree_beats.cpp
   requiredBy: []
-  timestamp: '2021-01-22 13:03:23-05:00'
+  timestamp: '2021-06-09 19:36:06-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/data-structures/1d-range-queries/segment_tree_beats.cpp

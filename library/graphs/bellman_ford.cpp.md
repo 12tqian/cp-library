@@ -11,94 +11,80 @@ data:
     /**\n * dist is INF if you can't reach and -INF if it is in a negative cycle\n\
     \ * negative cycle is same thing as gen, it just doesn't do gen_bad\n * also it\
     \ returns a negative cycle :D\n */\n\ntemplate <class T> struct BellmanFord {\n\
-    \    const T INF = std::numeric_limits<T>::max();\n    int n; \n    std::vector<std::vector<int>>\
-    \ adj;\n    std::vector<std::pair<std::pair<int, int>, T>> edges;\n    std::vector<T>\
-    \ dist;\n\n    void init(int n_) {\n        n = n_;\n        adj.assign(n, std::vector<int>());\n\
-    \        edges.clear();\n        dist.assign(n, 0);\n    }\n\n    void ae(int\
-    \ u, int v, T w) {\n        adj[u].push_back(v);\n        edges.push_back({{u,\
-    \ v}, w});\n    }   \n\n    void gen_bad(int x) {\n        if (dist[x] == -INF)\n\
-    \            return;\n        dist[x] = -INF;\n        for (auto& nxt : adj[x])\n\
-    \            gen_bad(nxt);\n    }\n\n    void gen(int src) {\n        for (int\
-    \ i = 0; i < n; i++) \n            dist[i] = INF;\n        dist[src] = 0;\n  \
-    \      for (int i = 0; i < n; i++)\n            for (auto& e : edges) \n     \
-    \           if (dist[e.first.first] < INF)\n                    dist[e.first.second]\
-    \ = std::min(dist[e.first.second], dist[e.first.first] + e.second);\n        for\
-    \ (auto& e : edges) \n            if (dist[e.first.first] < INF && dist[e.first.second]\
-    \ > dist[e.first.first] + e.second)\n            gen_bad(e.first.second);\n  \
-    \  }\n    \n    std::vector<int> negative_cycle(int src = 0) {\n        for (int\
-    \ i = 0; i < n; i++)\n            dist[src] = INF;\n        dist[src] = 0;\n \
-    \       std::vector<int> pre(n);\n        for (auto& e : edges) \n           \
-    \ if (e.first.first == e.first.second && e.second < 0) \n                return\
-    \ {e.first.first};\n        for (int i = 0; i < n; i++) \n            for (auto&\
-    \ e : edges) \n                if (dist[e.first.first] < INF)\n              \
-    \      if (dist[e.first.second] > dist[e.first.first] + e.second) {\n        \
-    \                dist[e.first.second] = dist[e.first.first] + e.second;\n    \
-    \                    pre[e.first.second] = e.first.first;\n                  \
-    \  }\n        for (auto& e : edges) \n            if (dist[e.first.first] < INF)\n\
-    \                if (dist[e.first.second] > dist[e.first.first] + e.second) {\n\
-    \                    int x = e.first.second;\n                    for (int i =\
-    \ 0; i < n; i++)\n                        x = pre[x];\n                    std::vector<int>\
-    \ cycle;\n                    for (int v = x; v != x || cycle.empty(); v = pre[v])\n\
-    \                        cycle.push_back(v);\n                    reverse(cycle.begin(),\
-    \ cycle.end());\n                    return cycle;\n                }\n      \
-    \  return {};\n    }\n};\n\nint main() {\n    using namespace std;\n    while\
-    \ (true) {\n        int n, m, q, s; cin >> n >> m >> q >> s;\n        if (n ==\
-    \ 0)\n            exit(0);\n        BellmanFord<long long> B;\n        B.init(n);\n\
-    \        for (int i = 0; i < m; i++) {\n            int u, v, w; cin >> u >> v\
-    \ >> w;\n            B.ae(u, v, w);\n        }\n        B.gen(s);\n        while\
-    \ (q--) {\n            int x; cin >> x;\n            long long dist = B.dist[x];\n\
-    \            if (dist == B.INF) \n                cout << \"Impossible\\n\";\n\
-    \            else if (dist == -B.INF)\n                cout << \"-Infinity\\n\"\
-    ;\n            else \n                cout << B.dist[x] << '\\n';\n        }\n\
-    \    }\n    return 0;\n}\n"
+    \tconst T INF = std::numeric_limits<T>::max();\n\tint n; \n\tstd::vector<std::vector<int>>\
+    \ adj;\n\tstd::vector<std::pair<std::pair<int, int>, T>> edges;\n\tstd::vector<T>\
+    \ dist;\n\n\tvoid init(int n_) {\n\t\tn = n_;\n\t\tadj.assign(n, std::vector<int>());\n\
+    \t\tedges.clear();\n\t\tdist.assign(n, 0);\n\t}\n\n\tvoid ae(int u, int v, T w)\
+    \ {\n\t\tadj[u].push_back(v);\n\t\tedges.push_back({{u, v}, w});\n\t}   \n\n\t\
+    void gen_bad(int x) {\n\t\tif (dist[x] == -INF)\n\t\t\treturn;\n\t\tdist[x] =\
+    \ -INF;\n\t\tfor (auto& nxt : adj[x])\n\t\t\tgen_bad(nxt);\n\t}\n\n\tvoid gen(int\
+    \ src) {\n\t\tfor (int i = 0; i < n; i++) \n\t\t\tdist[i] = INF;\n\t\tdist[src]\
+    \ = 0;\n\t\tfor (int i = 0; i < n; i++)\n\t\t\tfor (auto& e : edges) \n\t\t\t\t\
+    if (dist[e.first.first] < INF)\n\t\t\t\t\tdist[e.first.second] = std::min(dist[e.first.second],\
+    \ dist[e.first.first] + e.second);\n\t\tfor (auto& e : edges) \n\t\t\tif (dist[e.first.first]\
+    \ < INF && dist[e.first.second] > dist[e.first.first] + e.second)\n\t\t\tgen_bad(e.first.second);\n\
+    \t}\n\t\n\tstd::vector<int> negative_cycle(int src = 0) {\n\t\tfor (int i = 0;\
+    \ i < n; i++)\n\t\t\tdist[src] = INF;\n\t\tdist[src] = 0;\n\t\tstd::vector<int>\
+    \ pre(n);\n\t\tfor (auto& e : edges) \n\t\t\tif (e.first.first == e.first.second\
+    \ && e.second < 0) \n\t\t\t\treturn {e.first.first};\n\t\tfor (int i = 0; i <\
+    \ n; i++) \n\t\t\tfor (auto& e : edges) \n\t\t\t\tif (dist[e.first.first] < INF)\n\
+    \t\t\t\t\tif (dist[e.first.second] > dist[e.first.first] + e.second) {\n\t\t\t\
+    \t\t\tdist[e.first.second] = dist[e.first.first] + e.second;\n\t\t\t\t\t\tpre[e.first.second]\
+    \ = e.first.first;\n\t\t\t\t\t}\n\t\tfor (auto& e : edges) \n\t\t\tif (dist[e.first.first]\
+    \ < INF)\n\t\t\t\tif (dist[e.first.second] > dist[e.first.first] + e.second) {\n\
+    \t\t\t\t\tint x = e.first.second;\n\t\t\t\t\tfor (int i = 0; i < n; i++)\n\t\t\
+    \t\t\t\tx = pre[x];\n\t\t\t\t\tstd::vector<int> cycle;\n\t\t\t\t\tfor (int v =\
+    \ x; v != x || cycle.empty(); v = pre[v])\n\t\t\t\t\t\tcycle.push_back(v);\n\t\
+    \t\t\t\treverse(cycle.begin(), cycle.end());\n\t\t\t\t\treturn cycle;\n\t\t\t\t\
+    }\n\t\treturn {};\n\t}\n};\n\nint main() {\n\tusing namespace std;\n\twhile (true)\
+    \ {\n\t\tint n, m, q, s; cin >> n >> m >> q >> s;\n\t\tif (n == 0)\n\t\t\texit(0);\n\
+    \t\tBellmanFord<long long> B;\n\t\tB.init(n);\n\t\tfor (int i = 0; i < m; i++)\
+    \ {\n\t\t\tint u, v, w; cin >> u >> v >> w;\n\t\t\tB.ae(u, v, w);\n\t\t}\n\t\t\
+    B.gen(s);\n\t\twhile (q--) {\n\t\t\tint x; cin >> x;\n\t\t\tlong long dist = B.dist[x];\n\
+    \t\t\tif (dist == B.INF) \n\t\t\t\tcout << \"Impossible\\n\";\n\t\t\telse if (dist\
+    \ == -B.INF)\n\t\t\t\tcout << \"-Infinity\\n\";\n\t\t\telse \n\t\t\t\tcout <<\
+    \ B.dist[x] << '\\n';\n\t\t}\n\t}\n\treturn 0;\n}\n"
   code: "#include <bits/stdc++.h>\n/**\n * dist is INF if you can't reach and -INF\
     \ if it is in a negative cycle\n * negative cycle is same thing as gen, it just\
     \ doesn't do gen_bad\n * also it returns a negative cycle :D\n */\n\ntemplate\
-    \ <class T> struct BellmanFord {\n    const T INF = std::numeric_limits<T>::max();\n\
-    \    int n; \n    std::vector<std::vector<int>> adj;\n    std::vector<std::pair<std::pair<int,\
-    \ int>, T>> edges;\n    std::vector<T> dist;\n\n    void init(int n_) {\n    \
-    \    n = n_;\n        adj.assign(n, std::vector<int>());\n        edges.clear();\n\
-    \        dist.assign(n, 0);\n    }\n\n    void ae(int u, int v, T w) {\n     \
-    \   adj[u].push_back(v);\n        edges.push_back({{u, v}, w});\n    }   \n\n\
-    \    void gen_bad(int x) {\n        if (dist[x] == -INF)\n            return;\n\
-    \        dist[x] = -INF;\n        for (auto& nxt : adj[x])\n            gen_bad(nxt);\n\
-    \    }\n\n    void gen(int src) {\n        for (int i = 0; i < n; i++) \n    \
-    \        dist[i] = INF;\n        dist[src] = 0;\n        for (int i = 0; i < n;\
-    \ i++)\n            for (auto& e : edges) \n                if (dist[e.first.first]\
-    \ < INF)\n                    dist[e.first.second] = std::min(dist[e.first.second],\
-    \ dist[e.first.first] + e.second);\n        for (auto& e : edges) \n         \
-    \   if (dist[e.first.first] < INF && dist[e.first.second] > dist[e.first.first]\
-    \ + e.second)\n            gen_bad(e.first.second);\n    }\n    \n    std::vector<int>\
-    \ negative_cycle(int src = 0) {\n        for (int i = 0; i < n; i++)\n       \
-    \     dist[src] = INF;\n        dist[src] = 0;\n        std::vector<int> pre(n);\n\
-    \        for (auto& e : edges) \n            if (e.first.first == e.first.second\
-    \ && e.second < 0) \n                return {e.first.first};\n        for (int\
-    \ i = 0; i < n; i++) \n            for (auto& e : edges) \n                if\
-    \ (dist[e.first.first] < INF)\n                    if (dist[e.first.second] >\
-    \ dist[e.first.first] + e.second) {\n                        dist[e.first.second]\
-    \ = dist[e.first.first] + e.second;\n                        pre[e.first.second]\
-    \ = e.first.first;\n                    }\n        for (auto& e : edges) \n  \
-    \          if (dist[e.first.first] < INF)\n                if (dist[e.first.second]\
-    \ > dist[e.first.first] + e.second) {\n                    int x = e.first.second;\n\
-    \                    for (int i = 0; i < n; i++)\n                        x =\
-    \ pre[x];\n                    std::vector<int> cycle;\n                    for\
-    \ (int v = x; v != x || cycle.empty(); v = pre[v])\n                        cycle.push_back(v);\n\
-    \                    reverse(cycle.begin(), cycle.end());\n                  \
-    \  return cycle;\n                }\n        return {};\n    }\n};\n\nint main()\
-    \ {\n    using namespace std;\n    while (true) {\n        int n, m, q, s; cin\
-    \ >> n >> m >> q >> s;\n        if (n == 0)\n            exit(0);\n        BellmanFord<long\
-    \ long> B;\n        B.init(n);\n        for (int i = 0; i < m; i++) {\n      \
-    \      int u, v, w; cin >> u >> v >> w;\n            B.ae(u, v, w);\n        }\n\
-    \        B.gen(s);\n        while (q--) {\n            int x; cin >> x;\n    \
-    \        long long dist = B.dist[x];\n            if (dist == B.INF) \n      \
-    \          cout << \"Impossible\\n\";\n            else if (dist == -B.INF)\n\
-    \                cout << \"-Infinity\\n\";\n            else \n              \
-    \  cout << B.dist[x] << '\\n';\n        }\n    }\n    return 0;\n}"
+    \ <class T> struct BellmanFord {\n\tconst T INF = std::numeric_limits<T>::max();\n\
+    \tint n; \n\tstd::vector<std::vector<int>> adj;\n\tstd::vector<std::pair<std::pair<int,\
+    \ int>, T>> edges;\n\tstd::vector<T> dist;\n\n\tvoid init(int n_) {\n\t\tn = n_;\n\
+    \t\tadj.assign(n, std::vector<int>());\n\t\tedges.clear();\n\t\tdist.assign(n,\
+    \ 0);\n\t}\n\n\tvoid ae(int u, int v, T w) {\n\t\tadj[u].push_back(v);\n\t\tedges.push_back({{u,\
+    \ v}, w});\n\t}   \n\n\tvoid gen_bad(int x) {\n\t\tif (dist[x] == -INF)\n\t\t\t\
+    return;\n\t\tdist[x] = -INF;\n\t\tfor (auto& nxt : adj[x])\n\t\t\tgen_bad(nxt);\n\
+    \t}\n\n\tvoid gen(int src) {\n\t\tfor (int i = 0; i < n; i++) \n\t\t\tdist[i]\
+    \ = INF;\n\t\tdist[src] = 0;\n\t\tfor (int i = 0; i < n; i++)\n\t\t\tfor (auto&\
+    \ e : edges) \n\t\t\t\tif (dist[e.first.first] < INF)\n\t\t\t\t\tdist[e.first.second]\
+    \ = std::min(dist[e.first.second], dist[e.first.first] + e.second);\n\t\tfor (auto&\
+    \ e : edges) \n\t\t\tif (dist[e.first.first] < INF && dist[e.first.second] > dist[e.first.first]\
+    \ + e.second)\n\t\t\tgen_bad(e.first.second);\n\t}\n\t\n\tstd::vector<int> negative_cycle(int\
+    \ src = 0) {\n\t\tfor (int i = 0; i < n; i++)\n\t\t\tdist[src] = INF;\n\t\tdist[src]\
+    \ = 0;\n\t\tstd::vector<int> pre(n);\n\t\tfor (auto& e : edges) \n\t\t\tif (e.first.first\
+    \ == e.first.second && e.second < 0) \n\t\t\t\treturn {e.first.first};\n\t\tfor\
+    \ (int i = 0; i < n; i++) \n\t\t\tfor (auto& e : edges) \n\t\t\t\tif (dist[e.first.first]\
+    \ < INF)\n\t\t\t\t\tif (dist[e.first.second] > dist[e.first.first] + e.second)\
+    \ {\n\t\t\t\t\t\tdist[e.first.second] = dist[e.first.first] + e.second;\n\t\t\t\
+    \t\t\tpre[e.first.second] = e.first.first;\n\t\t\t\t\t}\n\t\tfor (auto& e : edges)\
+    \ \n\t\t\tif (dist[e.first.first] < INF)\n\t\t\t\tif (dist[e.first.second] > dist[e.first.first]\
+    \ + e.second) {\n\t\t\t\t\tint x = e.first.second;\n\t\t\t\t\tfor (int i = 0;\
+    \ i < n; i++)\n\t\t\t\t\t\tx = pre[x];\n\t\t\t\t\tstd::vector<int> cycle;\n\t\t\
+    \t\t\tfor (int v = x; v != x || cycle.empty(); v = pre[v])\n\t\t\t\t\t\tcycle.push_back(v);\n\
+    \t\t\t\t\treverse(cycle.begin(), cycle.end());\n\t\t\t\t\treturn cycle;\n\t\t\t\
+    \t}\n\t\treturn {};\n\t}\n};\n\nint main() {\n\tusing namespace std;\n\twhile\
+    \ (true) {\n\t\tint n, m, q, s; cin >> n >> m >> q >> s;\n\t\tif (n == 0)\n\t\t\
+    \texit(0);\n\t\tBellmanFord<long long> B;\n\t\tB.init(n);\n\t\tfor (int i = 0;\
+    \ i < m; i++) {\n\t\t\tint u, v, w; cin >> u >> v >> w;\n\t\t\tB.ae(u, v, w);\n\
+    \t\t}\n\t\tB.gen(s);\n\t\twhile (q--) {\n\t\t\tint x; cin >> x;\n\t\t\tlong long\
+    \ dist = B.dist[x];\n\t\t\tif (dist == B.INF) \n\t\t\t\tcout << \"Impossible\\\
+    n\";\n\t\t\telse if (dist == -B.INF)\n\t\t\t\tcout << \"-Infinity\\n\";\n\t\t\t\
+    else \n\t\t\t\tcout << B.dist[x] << '\\n';\n\t\t}\n\t}\n\treturn 0;\n}"
   dependsOn: []
   isVerificationFile: false
   path: library/graphs/bellman_ford.cpp
   requiredBy: []
-  timestamp: '2021-02-02 18:46:24-05:00'
+  timestamp: '2021-06-09 19:36:06-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/graphs/bellman_ford.cpp

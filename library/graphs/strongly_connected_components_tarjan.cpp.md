@@ -8,55 +8,47 @@ data:
   attributes:
     links: []
   bundledCode: "#line 1 \"library/graphs/strongly_connected_components_tarjan.cpp\"\
-    \n#include <bits/stdc++.h>\n\nstruct SCC {\n    int n, time, num_comps;\n    std::vector<std::vector<int>>\
-    \ adj;\n    std::vector<int> disc, id, stk;\n    std::vector<std::vector<int>>\
-    \ comps;\n\n    void init(int n_) {\n        n = n_;\n        time = 0;\n    \
-    \    num_comps = 0;\n        adj.assign(n, std::vector<int>());\n        id.assign(n,\
-    \ -1);\n        disc.assign(n, 0);\n        comps.clear();\n    }\n\n    void\
-    \ ae(int u, int v) {\n        adj[u].push_back(v);\n    }\n\n    int dfs(int src)\
-    \ {\n        int low = disc[src] = ++time;\n        stk.push_back(src);\n    \
-    \    for (int nxt : adj[src]) \n            if (id[nxt] == -1)\n             \
-    \   low = std::min(low, disc[nxt] ? : dfs(nxt));\n        if (low == disc[src])\
-    \ {\n            for (int nxt = -1; nxt != src;)\n                id[nxt = stk.back()]\
-    \ = num_comps, stk.pop_back();\n            num_comps++;\n        }\n        return\
-    \ low;\n    }\n    \n    void build() {\n        // builds in topological order\n\
-    \        for (int i = 0; i < n; i++) \n            if (!disc[i])\n           \
-    \     dfs(i);\n        for (auto& x : id) \n            x = num_comps - 1 - x;\n\
-    \        comps.resize(num_comps);\n        for (int i = 0; i < n; i++)\n     \
-    \       comps[id[i]].push_back(i);\n    }\n};\n\nint main() {\n    using namespace\
-    \ std;\n    int n, m; cin >> n >> m;\n    SCC S;\n    S.init(n);\n    for (int\
-    \ i = 0; i < m; i++) {\n        int u, v;\n        cin >> u >> v;\n        S.ae(u,\
-    \ v);\n    }\n    S.build();\n    cout << S.num_comps << '\\n';\n    for (auto&\
-    \ comp : S.comps) {\n        cout << (int)comp.size() << \" \";\n        for (int&\
-    \ x : comp)\n            cout << x << \" \";\n        cout << '\\n';\n    }\n\
-    \    return 0;\n}\n"
-  code: "#include <bits/stdc++.h>\n\nstruct SCC {\n    int n, time, num_comps;\n \
-    \   std::vector<std::vector<int>> adj;\n    std::vector<int> disc, id, stk;\n\
-    \    std::vector<std::vector<int>> comps;\n\n    void init(int n_) {\n       \
-    \ n = n_;\n        time = 0;\n        num_comps = 0;\n        adj.assign(n, std::vector<int>());\n\
-    \        id.assign(n, -1);\n        disc.assign(n, 0);\n        comps.clear();\n\
-    \    }\n\n    void ae(int u, int v) {\n        adj[u].push_back(v);\n    }\n\n\
-    \    int dfs(int src) {\n        int low = disc[src] = ++time;\n        stk.push_back(src);\n\
-    \        for (int nxt : adj[src]) \n            if (id[nxt] == -1)\n         \
-    \       low = std::min(low, disc[nxt] ? : dfs(nxt));\n        if (low == disc[src])\
-    \ {\n            for (int nxt = -1; nxt != src;)\n                id[nxt = stk.back()]\
-    \ = num_comps, stk.pop_back();\n            num_comps++;\n        }\n        return\
-    \ low;\n    }\n    \n    void build() {\n        // builds in topological order\n\
-    \        for (int i = 0; i < n; i++) \n            if (!disc[i])\n           \
-    \     dfs(i);\n        for (auto& x : id) \n            x = num_comps - 1 - x;\n\
-    \        comps.resize(num_comps);\n        for (int i = 0; i < n; i++)\n     \
-    \       comps[id[i]].push_back(i);\n    }\n};\n\nint main() {\n    using namespace\
-    \ std;\n    int n, m; cin >> n >> m;\n    SCC S;\n    S.init(n);\n    for (int\
-    \ i = 0; i < m; i++) {\n        int u, v;\n        cin >> u >> v;\n        S.ae(u,\
-    \ v);\n    }\n    S.build();\n    cout << S.num_comps << '\\n';\n    for (auto&\
-    \ comp : S.comps) {\n        cout << (int)comp.size() << \" \";\n        for (int&\
-    \ x : comp)\n            cout << x << \" \";\n        cout << '\\n';\n    }\n\
-    \    return 0;\n}"
+    \n#include <bits/stdc++.h>\n\nstruct SCC {\n\tint n, time, num_comps;\n\tstd::vector<std::vector<int>>\
+    \ adj;\n\tstd::vector<int> disc, id, stk;\n\tstd::vector<std::vector<int>> comps;\n\
+    \n\tvoid init(int n_) {\n\t\tn = n_;\n\t\ttime = 0;\n\t\tnum_comps = 0;\n\t\t\
+    adj.assign(n, std::vector<int>());\n\t\tid.assign(n, -1);\n\t\tdisc.assign(n,\
+    \ 0);\n\t\tcomps.clear();\n\t}\n\n\tvoid ae(int u, int v) {\n\t\tadj[u].push_back(v);\n\
+    \t}\n\n\tint dfs(int src) {\n\t\tint low = disc[src] = ++time;\n\t\tstk.push_back(src);\n\
+    \t\tfor (int nxt : adj[src]) \n\t\t\tif (id[nxt] == -1)\n\t\t\t\tlow = std::min(low,\
+    \ disc[nxt] ? : dfs(nxt));\n\t\tif (low == disc[src]) {\n\t\t\tfor (int nxt =\
+    \ -1; nxt != src;)\n\t\t\t\tid[nxt = stk.back()] = num_comps, stk.pop_back();\n\
+    \t\t\tnum_comps++;\n\t\t}\n\t\treturn low;\n\t}\n\t\n\tvoid build() {\n\t\t//\
+    \ builds in topological order\n\t\tfor (int i = 0; i < n; i++) \n\t\t\tif (!disc[i])\n\
+    \t\t\t\tdfs(i);\n\t\tfor (auto& x : id) \n\t\t\tx = num_comps - 1 - x;\n\t\tcomps.resize(num_comps);\n\
+    \t\tfor (int i = 0; i < n; i++)\n\t\t\tcomps[id[i]].push_back(i);\n\t}\n};\n\n\
+    int main() {\n\tusing namespace std;\n\tint n, m; cin >> n >> m;\n\tSCC S;\n\t\
+    S.init(n);\n\tfor (int i = 0; i < m; i++) {\n\t\tint u, v;\n\t\tcin >> u >> v;\n\
+    \t\tS.ae(u, v);\n\t}\n\tS.build();\n\tcout << S.num_comps << '\\n';\n\tfor (auto&\
+    \ comp : S.comps) {\n\t\tcout << (int)comp.size() << \" \";\n\t\tfor (int& x :\
+    \ comp)\n\t\t\tcout << x << \" \";\n\t\tcout << '\\n';\n\t}\n\treturn 0;\n}\n"
+  code: "#include <bits/stdc++.h>\n\nstruct SCC {\n\tint n, time, num_comps;\n\tstd::vector<std::vector<int>>\
+    \ adj;\n\tstd::vector<int> disc, id, stk;\n\tstd::vector<std::vector<int>> comps;\n\
+    \n\tvoid init(int n_) {\n\t\tn = n_;\n\t\ttime = 0;\n\t\tnum_comps = 0;\n\t\t\
+    adj.assign(n, std::vector<int>());\n\t\tid.assign(n, -1);\n\t\tdisc.assign(n,\
+    \ 0);\n\t\tcomps.clear();\n\t}\n\n\tvoid ae(int u, int v) {\n\t\tadj[u].push_back(v);\n\
+    \t}\n\n\tint dfs(int src) {\n\t\tint low = disc[src] = ++time;\n\t\tstk.push_back(src);\n\
+    \t\tfor (int nxt : adj[src]) \n\t\t\tif (id[nxt] == -1)\n\t\t\t\tlow = std::min(low,\
+    \ disc[nxt] ? : dfs(nxt));\n\t\tif (low == disc[src]) {\n\t\t\tfor (int nxt =\
+    \ -1; nxt != src;)\n\t\t\t\tid[nxt = stk.back()] = num_comps, stk.pop_back();\n\
+    \t\t\tnum_comps++;\n\t\t}\n\t\treturn low;\n\t}\n\t\n\tvoid build() {\n\t\t//\
+    \ builds in topological order\n\t\tfor (int i = 0; i < n; i++) \n\t\t\tif (!disc[i])\n\
+    \t\t\t\tdfs(i);\n\t\tfor (auto& x : id) \n\t\t\tx = num_comps - 1 - x;\n\t\tcomps.resize(num_comps);\n\
+    \t\tfor (int i = 0; i < n; i++)\n\t\t\tcomps[id[i]].push_back(i);\n\t}\n};\n\n\
+    int main() {\n\tusing namespace std;\n\tint n, m; cin >> n >> m;\n\tSCC S;\n\t\
+    S.init(n);\n\tfor (int i = 0; i < m; i++) {\n\t\tint u, v;\n\t\tcin >> u >> v;\n\
+    \t\tS.ae(u, v);\n\t}\n\tS.build();\n\tcout << S.num_comps << '\\n';\n\tfor (auto&\
+    \ comp : S.comps) {\n\t\tcout << (int)comp.size() << \" \";\n\t\tfor (int& x :\
+    \ comp)\n\t\t\tcout << x << \" \";\n\t\tcout << '\\n';\n\t}\n\treturn 0;\n}"
   dependsOn: []
   isVerificationFile: false
   path: library/graphs/strongly_connected_components_tarjan.cpp
   requiredBy: []
-  timestamp: '2021-06-01 11:33:08-04:00'
+  timestamp: '2021-06-09 19:36:06-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/graphs/strongly_connected_components_tarjan.cpp

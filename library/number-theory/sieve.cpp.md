@@ -8,28 +8,25 @@ data:
   attributes:
     links: []
   bundledCode: "#line 1 \"library/number-theory/sieve.cpp\"\n#include<bits/stdc++.h>\n\
-    \ntemplate <int SZ> struct Sieve {\n    std::bitset<SZ> pri;\n    std::vector<int>\
-    \ pr;\n    \n    Sieve() {\n        pri.set();\n        pri[0] = pri[1] = 0;\n\
-    \        for (int i = 4; i < SZ; i += 2) {\n            pri[i] = 0;\n        }\n\
-    \        for (int i = 3; i * i < SZ; i += 2) {\n            if (pri[i]) {\n  \
-    \              for (int j = i * i; j < SZ; j += 2 * i) {\n                   \
-    \ pri[j] = 0;\n                }\n            }\n        }\n        for (int i\
-    \ = 0; i < SZ; i++) {\n            if (pri[i]) {\n                pr.push_back(i);\n\
-    \            }\n        }\n    }\n};\n\nint main() {\n    return 0;\n}\n"
-  code: "#include<bits/stdc++.h>\n\ntemplate <int SZ> struct Sieve {\n    std::bitset<SZ>\
-    \ pri;\n    std::vector<int> pr;\n    \n    Sieve() {\n        pri.set();\n  \
-    \      pri[0] = pri[1] = 0;\n        for (int i = 4; i < SZ; i += 2) {\n     \
-    \       pri[i] = 0;\n        }\n        for (int i = 3; i * i < SZ; i += 2) {\n\
-    \            if (pri[i]) {\n                for (int j = i * i; j < SZ; j += 2\
-    \ * i) {\n                    pri[j] = 0;\n                }\n            }\n\
-    \        }\n        for (int i = 0; i < SZ; i++) {\n            if (pri[i]) {\n\
-    \                pr.push_back(i);\n            }\n        }\n    }\n};\n\nint\
-    \ main() {\n    return 0;\n}\n"
+    \ntemplate <int SZ> struct Sieve {\n\tstd::bitset<SZ> pri;\n\tstd::vector<int>\
+    \ pr;\n\t\n\tSieve() {\n\t\tpri.set();\n\t\tpri[0] = pri[1] = 0;\n\t\tfor (int\
+    \ i = 4; i < SZ; i += 2) {\n\t\t\tpri[i] = 0;\n\t\t}\n\t\tfor (int i = 3; i *\
+    \ i < SZ; i += 2) {\n\t\t\tif (pri[i]) {\n\t\t\t\tfor (int j = i * i; j < SZ;\
+    \ j += 2 * i) {\n\t\t\t\t\tpri[j] = 0;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\tfor (int\
+    \ i = 0; i < SZ; i++) {\n\t\t\tif (pri[i]) {\n\t\t\t\tpr.push_back(i);\n\t\t\t\
+    }\n\t\t}\n\t}\n};\n\nint main() {\n\treturn 0;\n}\n"
+  code: "#include<bits/stdc++.h>\n\ntemplate <int SZ> struct Sieve {\n\tstd::bitset<SZ>\
+    \ pri;\n\tstd::vector<int> pr;\n\t\n\tSieve() {\n\t\tpri.set();\n\t\tpri[0] =\
+    \ pri[1] = 0;\n\t\tfor (int i = 4; i < SZ; i += 2) {\n\t\t\tpri[i] = 0;\n\t\t\
+    }\n\t\tfor (int i = 3; i * i < SZ; i += 2) {\n\t\t\tif (pri[i]) {\n\t\t\t\tfor\
+    \ (int j = i * i; j < SZ; j += 2 * i) {\n\t\t\t\t\tpri[j] = 0;\n\t\t\t\t}\n\t\t\
+    \t}\n\t\t}\n\t\tfor (int i = 0; i < SZ; i++) {\n\t\t\tif (pri[i]) {\n\t\t\t\t\
+    pr.push_back(i);\n\t\t\t}\n\t\t}\n\t}\n};\n\nint main() {\n\treturn 0;\n}\n"
   dependsOn: []
   isVerificationFile: false
   path: library/number-theory/sieve.cpp
   requiredBy: []
-  timestamp: '2021-01-09 11:49:29-05:00'
+  timestamp: '2021-06-09 19:36:06-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/number-theory/sieve.cpp
