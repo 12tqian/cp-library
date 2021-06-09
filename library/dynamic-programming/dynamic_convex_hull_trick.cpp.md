@@ -15,7 +15,7 @@ data:
     \ = false;\n        }\n\n        long long eval(long long x) const { return m\
     \ * x + b; }\n        bool parallel(const line &l) const { return m == l.m; }\n\
     \        long double intersect(const line &l) const {\n            return parallel(l)\
-    \ ? INF : 1.0 * (l.b - b) / (m - l.m);\n        }\n\n        bool operator < (const\
+    \ ? INF : 1.0 * (l.b - b) / (m - l.m);\n        }\n\n        bool operator<(const\
     \ line &l) const {\n            if (l.is_query) return x < l.val;\n          \
     \  else return m < l.m;\n        }\n    };\n\n    std::set<line> hull;\n\n   \
     \ bool hull_prev(std::set<line>::iterator it) { return it != hull.begin(); }\n\
@@ -45,7 +45,7 @@ data:
     \ = false;\n        }\n\n        long long eval(long long x) const { return m\
     \ * x + b; }\n        bool parallel(const line &l) const { return m == l.m; }\n\
     \        long double intersect(const line &l) const {\n            return parallel(l)\
-    \ ? INF : 1.0 * (l.b - b) / (m - l.m);\n        }\n\n        bool operator < (const\
+    \ ? INF : 1.0 * (l.b - b) / (m - l.m);\n        }\n\n        bool operator<(const\
     \ line &l) const {\n            if (l.is_query) return x < l.val;\n          \
     \  else return m < l.m;\n        }\n    };\n\n    std::set<line> hull;\n\n   \
     \ bool hull_prev(std::set<line>::iterator it) { return it != hull.begin(); }\n\
@@ -72,7 +72,7 @@ data:
   isVerificationFile: false
   path: library/dynamic-programming/dynamic_convex_hull_trick.cpp
   requiredBy: []
-  timestamp: '2021-05-04 21:58:12-04:00'
+  timestamp: '2021-06-09 19:10:15-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/dynamic-programming/dynamic_convex_hull_trick.cpp

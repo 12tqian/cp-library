@@ -11,7 +11,7 @@ data:
     #include<bits/stdc++.h>\n\n// answers min queries currently\n// don't forget to\
     \ change ord\n\nconst long long INF = 1e18;\nstruct Line {\n    mutable long long\
     \ a, b, lst;\n\n    long long eval(long long x) {\n        return a * x + b;\n\
-    \    }\n\n    bool operator < (const Line& y) const {\n        return a < y.a;\n\
+    \    }\n\n    bool operator<(const Line& y) const {\n        return a < y.a;\n\
     \    }\n\n    long long floor_div(long long a, long long b) {\n        return\
     \ a / b - ((a ^ b) < 0 && a % b);\n    }\n\n    long long bet(const Line& y) {\n\
     \        assert(a <= y.a);\n        return a == y.a ? (b >= y.b ? INF : -INF)\
@@ -33,7 +33,7 @@ data:
     \ flip negatives for max\n        assert(ord);\n        if (ord == 1) {\n    \
     \        while (front().lst < x) {\n                pop_front();\n           \
     \ }\n            return -front().eval(x);\n        } else {\n            while\
-    \ (size() > 1 && prev(prev(end()))-> lst >= x) {\n                pop_back();\n\
+    \ (size() > 1 && prev(prev(end()))->lst >= x) {\n                pop_back();\n\
     \            }\n            return -back().eval(x);\n        }\n    }\n};\n\n\
     // 189 div 1C\nint main() {\n    std::ios_base::sync_with_stdio(0);\n    std::cin.tie(0);\n\
     \    int n; std::cin >> n;\n    std::vector<long long> a(n), b(n);\n    for (int\
@@ -48,18 +48,18 @@ data:
   code: "#include<bits/stdc++.h>\n\n// answers min queries currently\n// don't forget\
     \ to change ord\n\nconst long long INF = 1e18;\nstruct Line {\n    mutable long\
     \ long a, b, lst;\n\n    long long eval(long long x) {\n        return a * x +\
-    \ b;\n    }\n\n    bool operator < (const Line& y) const {\n        return a <\
-    \ y.a;\n    }\n\n    long long floor_div(long long a, long long b) {\n       \
-    \ return a / b - ((a ^ b) < 0 && a % b);\n    }\n\n    long long bet(const Line&\
-    \ y) {\n        assert(a <= y.a);\n        return a == y.a ? (b >= y.b ? INF :\
-    \ -INF) : floor_div(b - y.b, y.a - a);\n    }\n};\n\nstruct ConvexHullDeque :\
-    \ std::deque<Line> {\n    void add_back(Line L) {\n        while (true) {\n  \
-    \          auto a = back();\n            pop_back();\n            a.lst = a.bet(L);\n\
-    \            if (size() && back().lst >= a.lst) {\n                continue;\n\
-    \            }\n            push_back(a);\n            break;\n        }\n   \
-    \     L.lst = INF;\n        push_back(L);\n    }\n\n    void add_front(Line L)\
-    \ {\n        while (true) {\n            if (!size()) {\n                L.lst\
-    \ = INF;\n                break;\n            }\n            if ((L.lst = L.bet(front()))\
+    \ b;\n    }\n\n    bool operator<(const Line& y) const {\n        return a < y.a;\n\
+    \    }\n\n    long long floor_div(long long a, long long b) {\n        return\
+    \ a / b - ((a ^ b) < 0 && a % b);\n    }\n\n    long long bet(const Line& y) {\n\
+    \        assert(a <= y.a);\n        return a == y.a ? (b >= y.b ? INF : -INF)\
+    \ : floor_div(b - y.b, y.a - a);\n    }\n};\n\nstruct ConvexHullDeque : std::deque<Line>\
+    \ {\n    void add_back(Line L) {\n        while (true) {\n            auto a =\
+    \ back();\n            pop_back();\n            a.lst = a.bet(L);\n          \
+    \  if (size() && back().lst >= a.lst) {\n                continue;\n         \
+    \   }\n            push_back(a);\n            break;\n        }\n        L.lst\
+    \ = INF;\n        push_back(L);\n    }\n\n    void add_front(Line L) {\n     \
+    \   while (true) {\n            if (!size()) {\n                L.lst = INF;\n\
+    \                break;\n            }\n            if ((L.lst = L.bet(front()))\
     \ >= front().lst) {\n                pop_front();\n            } else {\n    \
     \            break;\n            }\n        }\n        push_front(L);\n    }\n\
     \n    void add(long long a, long long b) {\n        // comment this out for max\n\
@@ -70,7 +70,7 @@ data:
     \ flip negatives for max\n        assert(ord);\n        if (ord == 1) {\n    \
     \        while (front().lst < x) {\n                pop_front();\n           \
     \ }\n            return -front().eval(x);\n        } else {\n            while\
-    \ (size() > 1 && prev(prev(end()))-> lst >= x) {\n                pop_back();\n\
+    \ (size() > 1 && prev(prev(end()))->lst >= x) {\n                pop_back();\n\
     \            }\n            return -back().eval(x);\n        }\n    }\n};\n\n\
     // 189 div 1C\nint main() {\n    std::ios_base::sync_with_stdio(0);\n    std::cin.tie(0);\n\
     \    int n; std::cin >> n;\n    std::vector<long long> a(n), b(n);\n    for (int\
@@ -86,7 +86,7 @@ data:
   isVerificationFile: false
   path: library/dynamic-programming/monotonic_convex_hull.cpp
   requiredBy: []
-  timestamp: '2021-01-09 11:49:29-05:00'
+  timestamp: '2021-06-09 19:10:15-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/dynamic-programming/monotonic_convex_hull.cpp
