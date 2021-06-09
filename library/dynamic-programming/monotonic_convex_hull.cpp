@@ -11,7 +11,7 @@ struct Line {
         return a * x + b;
     }
 
-    bool operator < (const Line& y) const {
+    bool operator<(const Line& y) const {
         return a < y.a;
     }
 
@@ -78,7 +78,7 @@ struct ConvexHullDeque : std::deque<Line> {
             }
             return -front().eval(x);
         } else {
-            while (size() > 1 && prev(prev(end()))-> lst >= x) {
+            while (size() > 1 && prev(prev(end()))->lst >= x) {
                 pop_back();
             }
             return -back().eval(x);

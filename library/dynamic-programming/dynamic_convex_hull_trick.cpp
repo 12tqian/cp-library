@@ -18,7 +18,7 @@ struct ConvexHullTrick {
             return parallel(l) ? INF : 1.0 * (l.b - b) / (m - l.m);
         }
 
-        bool operator < (const line &l) const {
+        bool operator<(const line &l) const {
             if (l.is_query) return x < l.val;
             else return m < l.m;
         }

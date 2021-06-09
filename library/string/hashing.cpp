@@ -9,21 +9,21 @@ std::uniform_int_distribution<int> BDIST(0.1 * MOD, 0.9 * MOD);
 const std::array<int, 2> base = {BDIST(rng), BDIST(rng)};
 std::vector<std::array<int, 2>> pows = {{1, 1}};
 
-std::array<int, 2> operator + (std::array<int, 2> l, std::array<int, 2> r) {
+std::array<int, 2> operator+(std::array<int, 2> l, std::array<int, 2> r) {
     for (int i = 0; i < 2; i++)
         if ((l[i] += r[i]) >= MOD)
             l[i] -= MOD;
     return l;
 }
 
-std::array<int, 2> operator - (std::array<int, 2> l, std::array<int, 2> r) {
+std::array<int, 2> operator-(std::array<int, 2> l, std::array<int, 2> r) {
     for (int i = 0; i < 2; i++)
         if ((l[i] -= r[i]) < 0)
             l[i] += MOD;
     return l;
 }
 
-std::array<int, 2> operator * (std::array<int, 2> l, std::array<int, 2> r) {
+std::array<int, 2> operator*(std::array<int, 2> l, std::array<int, 2> r) {
     for (int i = 0; i < 2; i++)
         l[i] = (long long) l[i] * r[i] % MOD;
     return l;

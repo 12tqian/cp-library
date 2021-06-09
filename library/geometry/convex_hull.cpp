@@ -8,15 +8,15 @@ public:
     template <typename U> explicit Point(const Point<U>& p) : x(p.x), y(p.y) {}
     Point(const std::pair<T, T>& p) : x(p.first), y(p.second) {}
     Point(const std::complex<T>& p) : x(real(p)), y(imag(p)) {}
-    explicit operator std::pair<T, T> () const { return std::pair<T, T>(x, y); }
-    explicit operator std::complex<T> () const { return std::complex<T>(x, y); }
+    explicit operator std::pair<T, T>() const { return std::pair<T, T>(x, y); }
+    explicit operator std::complex<T>() const { return std::complex<T>(x, y); }
 
-    friend std::ostream& operator << (std::ostream& o, const Point& p) { 
+    friend std::ostream& operator<<(std::ostream& o, const Point& p) { 
         return o << '(' << p.x << ',' << p.y << ')'; }
-    friend std::istream& operator >> (std::istream& i, Point& p) { return i >> p.x >> p.y; }
-    friend bool operator == (const Point& a, const Point& b) { return a.x == b.x && a.y == b.y; }
-    friend bool operator != (const Point& a, const Point& b) { return !(a == b); }
-    friend bool operator < (const Point& a, const Point& b) { 
+    friend std::istream& operator>>(std::istream& i, Point& p) { return i >> p.x >> p.y; }
+    friend bool operator==(const Point& a, const Point& b) { return a.x == b.x && a.y == b.y; }
+    friend bool operator!=(const Point& a, const Point& b) { return !(a == b); }
+    friend bool operator<(const Point& a, const Point& b) { 
         return (a.x != b.x ? a.x < b.x : a.y < b.y); }
 
     friend T norm(const Point& a) { return a.x * a.x + a.y * a.y; }
@@ -27,23 +27,23 @@ public:
     friend long double arg(const Point& p) { return atan2(p.y, p.x); }
     friend Point dir(long double angle) { return Point(cos(angle), sin(angle)); }
 
-    Point& operator += (const Point& p) { x += p.x, y += p.y; return *this; }
-    Point& operator -= (const Point& p) { x -= p.x, y -= p.y; return *this; }
-    Point& operator *= (const T& t) { x *= t, y *= t; return *this; }
-    Point& operator /= (const T& t) { x /= t, y /= t; return *this; }
-    Point& operator *= (const Point& t) { 
+    Point& operator+=(const Point& p) { x += p.x, y += p.y; return *this; }
+    Point& operator-=(const Point& p) { x -= p.x, y -= p.y; return *this; }
+    Point& operator*=(const T& t) { x *= t, y *= t; return *this; }
+    Point& operator/=(const T& t) { x /= t, y /= t; return *this; }
+    Point& operator*=(const Point& t) { 
         Point res = Point(x, y) * t; x = res.x, y = res.y; return *this; }
-    Point& operator /= (const Point& t) { 
+    Point& operator/=(const Point& t) { 
         Point res = Point(x, y) / t; x = res.x, y = res.y; return *this; }
 
-    friend Point operator + (const Point& a, const Point& b) { return Point(a.x + b.x, a.y + b.y); }
-    friend Point operator - (const Point& a, const Point& b) { return Point(a.x - b.x, a.y - b.y); }
-    friend Point operator * (const Point& a, const T& t) { return Point(a.x * t, a.y * t); }
-    friend Point operator * (const T& t ,const Point& a) { return Point(t * a.x, t * a.y); }
-    friend Point operator / (const Point& a, const T& t) { return Point(a.x / t, a.y / t); }
-    friend Point operator * (const Point& a, const Point& b) { 
+    friend Point operator+(const Point& a, const Point& b) { return Point(a.x + b.x, a.y + b.y); }
+    friend Point operator-(const Point& a, const Point& b) { return Point(a.x - b.x, a.y - b.y); }
+    friend Point operator*(const Point& a, const T& t) { return Point(a.x * t, a.y * t); }
+    friend Point operator*(const T& t ,const Point& a) { return Point(t * a.x, t * a.y); }
+    friend Point operator/(const Point& a, const T& t) { return Point(a.x / t, a.y / t); }
+    friend Point operator*(const Point& a, const Point& b) { 
         return Point(a.x * b.x - a.y * b.y, a.y * b.x + a.x * b.y); }
-    friend Point operator / (const Point& a, const Point& b) { 
+    friend Point operator/(const Point& a, const Point& b) { 
         return Point(a * conj(b) / norm(b)); }
 
     friend T int_norm(const Point& a) { return __gcd(a.x, a.y); }

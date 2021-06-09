@@ -6,7 +6,7 @@ template <class T> using Matrix = std::vector<std::vector<T>>;
 
 template <class T> Matrix<T> make_matrix(int r, int c) { return Matrix<T>(r, std::vector<T>(c)); }
 
-template <class T> Matrix<T>& operator += (Matrix<T>& a, const Matrix<T>& b) {
+template <class T> Matrix<T>& operator+=(Matrix<T>& a, const Matrix<T>& b) {
     for (int i = 0; i < (int)a.size(); i++) {
         for (int j = 0; j < (int)a[0].size(); j++) {
             a[i][j] += b[i][j];
@@ -15,7 +15,7 @@ template <class T> Matrix<T>& operator += (Matrix<T>& a, const Matrix<T>& b) {
     return a;
 }
 
-template <class T> Matrix<T>& operator -= (Matrix<T>& a, const Matrix<T>& b) {
+template <class T> Matrix<T>& operator-=(Matrix<T>& a, const Matrix<T>& b) {
     for (int i = 0; i < (int)a.size(); i++) {
         for (int j = 0; j < (int)a[0].size(); j++) {
             a[i][j] -= b[i][j];
@@ -24,7 +24,7 @@ template <class T> Matrix<T>& operator -= (Matrix<T>& a, const Matrix<T>& b) {
     return a;
 }
 
-template <class T> Matrix<T> operator * (const Matrix<T>& a, const Matrix<T>& b) {
+template <class T> Matrix<T> operator*(const Matrix<T>& a, const Matrix<T>& b) {
     assert(a[0].size() == b.size());
     int x = (int)a.size();
     int y = (int)a[0].size();
@@ -40,9 +40,9 @@ template <class T> Matrix<T> operator * (const Matrix<T>& a, const Matrix<T>& b)
     return c;
 }
 
-template <class T> Matrix<T> operator + (Matrix<T> a, const Matrix<T>& b) { return a += b; }
-template <class T> Matrix<T> operator - (Matrix<T> a, const Matrix<T>& b) { return a -= b; }
-template <class T> Matrix<T>& operator *= (Matrix<T>& a, const Matrix<T>& b) { return a = a * b; }
+template <class T> Matrix<T> operator+(Matrix<T> a, const Matrix<T>& b) { return a += b; }
+template <class T> Matrix<T> operator-(Matrix<T> a, const Matrix<T>& b) { return a -= b; }
+template <class T> Matrix<T>& operator*=(Matrix<T>& a, const Matrix<T>& b) { return a = a * b; }
 
 template <class T> Matrix<T> pow(Matrix<T> m, long long p) {
     int n = (int)m.size();
