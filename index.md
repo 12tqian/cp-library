@@ -235,6 +235,9 @@ data:
       path: library/numerical/mod_operations.cpp
       title: library/numerical/mod_operations.cpp
     - icon: ':warning:'
+      path: library/numerical/polynomial.cpp
+      title: library/numerical/polynomial.cpp
+    - icon: ':warning:'
       path: library/numerical/xor_basis.cpp
       title: library/numerical/xor_basis.cpp
   - name: library/string
