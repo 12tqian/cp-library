@@ -7,9 +7,6 @@ data:
       path: library/contest/template_full.cpp
       title: library/contest/template_full.cpp
     - icon: ':warning:'
-      path: library/contest/template_long.cpp
-      title: library/contest/template_long.cpp
-    - icon: ':warning:'
       path: library/contest/template_short.cpp
       title: library/contest/template_short.cpp
   - name: library/data-structures/1d-range-queries
