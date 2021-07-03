@@ -182,6 +182,9 @@ data:
     - icon: ':warning:'
       path: library/misc/fast_io.cpp
       title: library/misc/fast_io.cpp
+    - icon: ':warning:'
+      path: library/misc/range_vector.cpp
+      title: library/misc/range_vector.cpp
   - name: library/number-theory
     pages:
     - icon: ':warning:'
