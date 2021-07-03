@@ -132,7 +132,7 @@ data:
     \t\t// throws exception when do smth illegal\n\t\t// ex. try to read letter into\
     \ int\n\t\tif (!s.empty()) set_in(s + \".in\"), set_out(s + \".out\"); // for\
     \ old USACO\n\t}\n}\n\nconst int MOD = 1e9 + 7; // 998244353;\nconst ld PI = acos((ld)\
-    \ -1);\n\ntypedef std::decay <decltype(MOD)>::type mod_t;\nstruct mi {\n\tmod_t\
+    \ -1);\n\ntypedef std::decay<decltype(MOD)>::type mod_t;\nstruct mi {\n\tmod_t\
     \ val;\n\texplicit operator mod_t() const { return val; }\n\tmi() { val = 0; }\n\
     \tmi(const long long& v) {\n\t\tval = (-MOD <= v && v <= MOD) ? v : v % MOD;\n\
     \t\tif (val < 0) val += MOD; }\n\tfriend std::istream& operator>>(std::istream&\
@@ -280,7 +280,7 @@ data:
     \t\t// throws exception when do smth illegal\n\t\t// ex. try to read letter into\
     \ int\n\t\tif (!s.empty()) set_in(s + \".in\"), set_out(s + \".out\"); // for\
     \ old USACO\n\t}\n}\n\nconst int MOD = 1e9 + 7; // 998244353;\nconst ld PI = acos((ld)\
-    \ -1);\n\ntypedef std::decay <decltype(MOD)>::type mod_t;\nstruct mi {\n\tmod_t\
+    \ -1);\n\ntypedef std::decay<decltype(MOD)>::type mod_t;\nstruct mi {\n\tmod_t\
     \ val;\n\texplicit operator mod_t() const { return val; }\n\tmi() { val = 0; }\n\
     \tmi(const long long& v) {\n\t\tval = (-MOD <= v && v <= MOD) ? v : v % MOD;\n\
     \t\tif (val < 0) val += MOD; }\n\tfriend std::istream& operator>>(std::istream&\
@@ -310,7 +310,7 @@ data:
   isVerificationFile: false
   path: library/contest/template_full.cpp
   requiredBy: []
-  timestamp: '2021-06-10 21:25:30-04:00'
+  timestamp: '2021-07-03 14:33:08-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/contest/template_full.cpp
