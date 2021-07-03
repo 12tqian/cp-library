@@ -1,6 +1,7 @@
 #include <bits/stdc++.h> 
 
-template <class T> struct range_vector : public std::vector<T> {
+template <class T> class range_vector : public std::vector<T> {
+public:
 	int min_index;
 
 	range_vector() : min_index(0) {}
