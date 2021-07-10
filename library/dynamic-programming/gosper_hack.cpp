@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 
 std::string binary(unsigned long long n ) { //long long to binary string
 	std::string result;

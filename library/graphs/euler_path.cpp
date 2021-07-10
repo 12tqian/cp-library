@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 
 /**
  * Finds Euler path in O(N + M) from a starting vertex

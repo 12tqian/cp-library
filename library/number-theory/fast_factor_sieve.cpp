@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 
 template <int SZ> struct Sieve {
 	int spf[SZ];

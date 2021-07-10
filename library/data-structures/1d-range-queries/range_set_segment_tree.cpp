@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 
 template <class T> struct RangeSetSeg {
 	const T UNUSED = -1;

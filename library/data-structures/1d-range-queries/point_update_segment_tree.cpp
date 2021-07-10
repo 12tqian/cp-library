@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 
 template <class T> struct SegmentTree {
 	const T ID = 0;

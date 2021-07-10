@@ -1,5 +1,5 @@
-#include<bits/stdc++.h>
-#include<bits/extc++.h>
+#include <bits/stdc++.h>
+#include <bits/extc++.h>
 
 struct splitmix64_hash {
 	static uint64_t splitmix64(uint64_t x) {
