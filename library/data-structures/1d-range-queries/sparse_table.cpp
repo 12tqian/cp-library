@@ -1,5 +1,11 @@
 #include<bits/stdc++.h>
 
+/**
+ * This Sparse Table stores indices of things
+ * For destructive combinations like gcd, use associative_range_query.cpp
+ * Use this for min, max, and when you need the indices of things
+ */
+
 template <class T> struct SparseTable {
 	std::vector<T> v;
 	std::vector<std::vector<int>> jump;
