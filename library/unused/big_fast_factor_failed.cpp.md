@@ -7,7 +7,7 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"library/unused/big_fast_factor_failed.cpp\"\n#include<bits/stdc++.h>\n\
+  bundledCode: "#line 1 \"library/unused/big_fast_factor_failed.cpp\"\n#include <bits/stdc++.h>\n\
     \ntemplate <int SZ> struct Sieve {\n\tstd::bitset<SZ> pri;\n\tstd::vector<int>\
     \ pr;\n\tSieve() {\n\t\tpri.set();\n\t\tpri[0] = pri[1] = 0;\n\t\tfor (int i =\
     \ 4; i < SZ; i += 2) {\n\t\t\tpri[i] = 0;\n\t\t}\n\t\tfor (int i = 3; i * i <\
@@ -51,7 +51,7 @@ data:
     cout << tot << \" \";\n\t\tfor (auto x : f) {\n\t\t\tfor (int i = 0; i < x.second;\
     \ i++) \n\t\t\t\tcout << x.first << \" \";\n\t\t}\n\t\tcout << '\\n';\n\t}\n\t\
     return 0;\n}\n"
-  code: "#include<bits/stdc++.h>\n\ntemplate <int SZ> struct Sieve {\n\tstd::bitset<SZ>\
+  code: "#include <bits/stdc++.h>\n\ntemplate <int SZ> struct Sieve {\n\tstd::bitset<SZ>\
     \ pri;\n\tstd::vector<int> pr;\n\tSieve() {\n\t\tpri.set();\n\t\tpri[0] = pri[1]\
     \ = 0;\n\t\tfor (int i = 4; i < SZ; i += 2) {\n\t\t\tpri[i] = 0;\n\t\t}\n\t\t\
     for (int i = 3; i * i < SZ; i += 2) {\n\t\t\tif (pri[i]) {\n\t\t\t\tfor (int j\
@@ -98,7 +98,7 @@ data:
   isVerificationFile: false
   path: library/unused/big_fast_factor_failed.cpp
   requiredBy: []
-  timestamp: '2021-06-09 19:36:06-04:00'
+  timestamp: '2021-07-10 12:34:57-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/unused/big_fast_factor_failed.cpp

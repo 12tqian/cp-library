@@ -8,7 +8,7 @@ data:
   attributes:
     links: []
   bundledCode: "#line 1 \"library/data-structures/1d-range-queries/sparse_table.cpp\"\
-    \n#include<bits/stdc++.h>\n\n/**\n * This Sparse Table stores indices of things\n\
+    \n#include <bits/stdc++.h>\n\n/**\n * This Sparse Table stores indices of things\n\
     \ * For destructive combinations like gcd, use associative_range_query.cpp\n *\
     \ Use this for min, max, and when you need the indices of things\n */\n\ntemplate\
     \ <class T> struct SparseTable {\n\tstd::vector<T> v;\n\tstd::vector<std::vector<int>>\
@@ -23,7 +23,7 @@ data:
     \ level(r - l + 1);\n\t\treturn comb(jump[d][l], jump[d][r - (1 << d) + 1]);\n\
     \t}\n\n\tT query(int l, int r) {\n\t\treturn v[index(l, r)];\n\t}\n};\n\nint main()\
     \ {\n\treturn 0;\n}\n"
-  code: "#include<bits/stdc++.h>\n\n/**\n * This Sparse Table stores indices of things\n\
+  code: "#include <bits/stdc++.h>\n\n/**\n * This Sparse Table stores indices of things\n\
     \ * For destructive combinations like gcd, use associative_range_query.cpp\n *\
     \ Use this for min, max, and when you need the indices of things\n */\n\ntemplate\
     \ <class T> struct SparseTable {\n\tstd::vector<T> v;\n\tstd::vector<std::vector<int>>\
@@ -42,7 +42,7 @@ data:
   isVerificationFile: false
   path: library/data-structures/1d-range-queries/sparse_table.cpp
   requiredBy: []
-  timestamp: '2021-07-10 12:14:31-04:00'
+  timestamp: '2021-07-10 12:34:57-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/data-structures/1d-range-queries/sparse_table.cpp

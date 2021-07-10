@@ -8,7 +8,7 @@ data:
   attributes:
     links: []
   bundledCode: "#line 1 \"library/data-structures/1d-range-queries/range_set_segment_tree.cpp\"\
-    \n#include<bits/stdc++.h>\n\ntemplate <class T> struct RangeSetSeg {\n\tconst\
+    \n#include <bits/stdc++.h>\n\ntemplate <class T> struct RangeSetSeg {\n\tconst\
     \ T UNUSED = -1;\n\tstd::vector<T> sum, lazy;\n\tint sz;\n\n\t// lazy stores what\
     \ to set to\n\tvoid init(int sz_) {\n\t\tsz = 1;\n\t\twhile (sz < sz_) sz *= 2;\n\
     \t\tsum.assign(2 * sz, 0);\n\t\tlazy.assign(2 * sz, UNUSED);\n\t}\n\n\tvoid push(int\
@@ -26,7 +26,7 @@ data:
     \ || L > hi) return 0;\n\t\tif (lo <= L && R <= hi) return sum[ind];\n\t\tint\
     \ M = (L + R) / 2;\n\t\treturn qsum(lo, hi, 2 * ind, L, M) + qsum(lo, hi, 2 *\
     \ ind + 1, M + 1, R);\n\t}\n};\n\nint main() {\n\treturn 0;\n}\n"
-  code: "#include<bits/stdc++.h>\n\ntemplate <class T> struct RangeSetSeg {\n\tconst\
+  code: "#include <bits/stdc++.h>\n\ntemplate <class T> struct RangeSetSeg {\n\tconst\
     \ T UNUSED = -1;\n\tstd::vector<T> sum, lazy;\n\tint sz;\n\n\t// lazy stores what\
     \ to set to\n\tvoid init(int sz_) {\n\t\tsz = 1;\n\t\twhile (sz < sz_) sz *= 2;\n\
     \t\tsum.assign(2 * sz, 0);\n\t\tlazy.assign(2 * sz, UNUSED);\n\t}\n\n\tvoid push(int\
@@ -48,7 +48,7 @@ data:
   isVerificationFile: false
   path: library/data-structures/1d-range-queries/range_set_segment_tree.cpp
   requiredBy: []
-  timestamp: '2021-06-09 19:36:06-04:00'
+  timestamp: '2021-07-10 12:34:57-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/data-structures/1d-range-queries/range_set_segment_tree.cpp

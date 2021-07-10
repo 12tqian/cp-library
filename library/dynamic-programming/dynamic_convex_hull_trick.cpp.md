@@ -8,7 +8,7 @@ data:
   attributes:
     links: []
   bundledCode: "#line 1 \"library/dynamic-programming/dynamic_convex_hull_trick.cpp\"\
-    \n#include<bits/stdc++.h>\n\nconst long long INF = 1e18;\n\nstruct ConvexHullTrick\
+    \n#include <bits/stdc++.h>\n\nconst long long INF = 1e18;\n\nstruct ConvexHullTrick\
     \ {\n\t// modified for minimums\n\tstruct line {\n\t\tlong long m, b; long double\
     \ x, val;\n\t\tbool is_query;\n\n\t\tline(long long _m = 0, long long _b = 0)\
     \ {\n\t\t\tm = _m, b = _b, val = 0, x = -INF, is_query = false;\n\t\t}\n\n\t\t\
@@ -36,7 +36,7 @@ data:
     \ INF;\n\t\tline q; q.val = x, q.is_query = 1;\n\t\tstd::set<line>::iterator it\
     \ = --hull.lower_bound(q);\n\t\treturn -(it->eval(x));\n\t}\n};\n\nint main()\
     \ {\n\treturn 0;\n}\n"
-  code: "#include<bits/stdc++.h>\n\nconst long long INF = 1e18;\n\nstruct ConvexHullTrick\
+  code: "#include <bits/stdc++.h>\n\nconst long long INF = 1e18;\n\nstruct ConvexHullTrick\
     \ {\n\t// modified for minimums\n\tstruct line {\n\t\tlong long m, b; long double\
     \ x, val;\n\t\tbool is_query;\n\n\t\tline(long long _m = 0, long long _b = 0)\
     \ {\n\t\t\tm = _m, b = _b, val = 0, x = -INF, is_query = false;\n\t\t}\n\n\t\t\
@@ -68,7 +68,7 @@ data:
   isVerificationFile: false
   path: library/dynamic-programming/dynamic_convex_hull_trick.cpp
   requiredBy: []
-  timestamp: '2021-06-09 19:36:06-04:00'
+  timestamp: '2021-07-10 12:34:57-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/dynamic-programming/dynamic_convex_hull_trick.cpp

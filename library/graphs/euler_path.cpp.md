@@ -7,7 +7,7 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"library/graphs/euler_path.cpp\"\n#include<bits/stdc++.h>\n\
+  bundledCode: "#line 1 \"library/graphs/euler_path.cpp\"\n#include <bits/stdc++.h>\n\
     \n/**\n * Finds Euler path in O(N + M) from a starting vertex\n * To find which\
     \ vertex to start, use parities\n */\n\ntemplate <bool directed> struct Euler\
     \ {\n\tint n;\n\tstd::vector<std::vector<std::pair<int, int>>> adj;\n\tstd::vector<std::vector<std::pair<int,\
@@ -26,7 +26,7 @@ data:
     \t\t\t\tused[it->second] = 1;\n\t\t\t}\n\t\t}\n\t\tif ((int)ans.size() != (int)used.size()\
     \ + 1) {\n\t\t\treturn {};\n\t\t}\n\t\treverse(ans.begin(), ans.end());\n\t\t\
     return ans;\n\t}\n};\n\nint main() {\n\treturn 0;\n}\n"
-  code: "#include<bits/stdc++.h>\n\n/**\n * Finds Euler path in O(N + M) from a starting\
+  code: "#include <bits/stdc++.h>\n\n/**\n * Finds Euler path in O(N + M) from a starting\
     \ vertex\n * To find which vertex to start, use parities\n */\n\ntemplate <bool\
     \ directed> struct Euler {\n\tint n;\n\tstd::vector<std::vector<std::pair<int,\
     \ int>>> adj;\n\tstd::vector<std::vector<std::pair<int, int>>::iterator> its;\n\
@@ -49,7 +49,7 @@ data:
   isVerificationFile: false
   path: library/graphs/euler_path.cpp
   requiredBy: []
-  timestamp: '2021-06-09 19:36:06-04:00'
+  timestamp: '2021-07-10 12:34:57-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/graphs/euler_path.cpp

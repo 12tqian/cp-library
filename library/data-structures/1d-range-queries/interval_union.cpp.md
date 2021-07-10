@@ -8,7 +8,7 @@ data:
   attributes:
     links: []
   bundledCode: "#line 1 \"library/data-structures/1d-range-queries/interval_union.cpp\"\
-    \n#include<bits/stdc++.h>\n\ntemplate <class T> struct IntervalUnion {\n\tconst\
+    \n#include <bits/stdc++.h>\n\ntemplate <class T> struct IntervalUnion {\n\tconst\
     \ T INF = std::numeric_limits<T>::max();\n\tstd::set<std::pair<T, T>> le, ri;\n\
     \n\tvoid reset() {\n\t\tle.clear();\n\t\tri.clear();\n\t}\n\n\t// inserts an interval\
     \ while returning the intervals it intersected with\n\tstd::vector<std::pair<T,\
@@ -31,7 +31,7 @@ data:
     \ ri.erase({b.second, b.first});\n\t\t\tmn = std::min(mn, b.first); mx = std::max(mx,\
     \ b.second);\n\t\t}\n\t\tle.emplace(mn, mx); ri.emplace(mx, mn);\n\t\treturn ret;\n\
     \t}\n};\n\nint main() {\n\treturn 0;\n}\n"
-  code: "#include<bits/stdc++.h>\n\ntemplate <class T> struct IntervalUnion {\n\t\
+  code: "#include <bits/stdc++.h>\n\ntemplate <class T> struct IntervalUnion {\n\t\
     const T INF = std::numeric_limits<T>::max();\n\tstd::set<std::pair<T, T>> le,\
     \ ri;\n\n\tvoid reset() {\n\t\tle.clear();\n\t\tri.clear();\n\t}\n\n\t// inserts\
     \ an interval while returning the intervals it intersected with\n\tstd::vector<std::pair<T,\
@@ -58,7 +58,7 @@ data:
   isVerificationFile: false
   path: library/data-structures/1d-range-queries/interval_union.cpp
   requiredBy: []
-  timestamp: '2021-06-09 19:36:06-04:00'
+  timestamp: '2021-07-10 12:34:57-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/data-structures/1d-range-queries/interval_union.cpp

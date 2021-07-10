@@ -7,7 +7,7 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"library/graphs/tree_path_queries.cpp\"\n#include<bits/stdc++.h>\n\
+  bundledCode: "#line 1 \"library/graphs/tree_path_queries.cpp\"\n#include <bits/stdc++.h>\n\
     \ntemplate <class T> struct LCAJumpSparse {\n\tint n;\n\tstd::vector<std::vector<int>>\
     \ par;\n\tstd::vector<std::vector<T>> sparse;\n\tstd::vector<T> vals;\n\tstd::vector<std::vector<int>>\
     \ adj;\n\tstd::vector<int> depth;\n\n\tT comb(T a, T b) {\n\t\treturn min(a, b);\n\
@@ -34,7 +34,7 @@ data:
     \ comb(sparse[d][y], sparse[d][jump(y, depth[y] - depth[anc] - (1 << d) + 1)]);\n\
     \t\treturn comb(res1, res2);\n\t}\n};\n\nint main() {\n\tLCAJumpSparse<int> L;\n\
     \treturn 0;\n}\n"
-  code: "#include<bits/stdc++.h>\n\ntemplate <class T> struct LCAJumpSparse {\n\t\
+  code: "#include <bits/stdc++.h>\n\ntemplate <class T> struct LCAJumpSparse {\n\t\
     int n;\n\tstd::vector<std::vector<int>> par;\n\tstd::vector<std::vector<T>> sparse;\n\
     \tstd::vector<T> vals;\n\tstd::vector<std::vector<int>> adj;\n\tstd::vector<int>\
     \ depth;\n\n\tT comb(T a, T b) {\n\t\treturn min(a, b);\n\t}\n\n\tvoid init(int\
@@ -64,7 +64,7 @@ data:
   isVerificationFile: false
   path: library/graphs/tree_path_queries.cpp
   requiredBy: []
-  timestamp: '2021-06-09 19:36:06-04:00'
+  timestamp: '2021-07-10 12:34:57-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/graphs/tree_path_queries.cpp

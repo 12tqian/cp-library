@@ -7,7 +7,7 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"library/graphs/lca_jump_distance.cpp\"\n#include<bits/stdc++.h>\n\
+  bundledCode: "#line 1 \"library/graphs/lca_jump_distance.cpp\"\n#include <bits/stdc++.h>\n\
     \ntemplate<class T> struct LCAJumpDistance {\n\tint n;\n\tstd::vector<std::vector<int>>\
     \ par;\n\tstd::vector<std::vector<std::pair<int, T>>> adj;\n\tstd::vector<int>\
     \ depth;\n\tstd::vector<T> depth_dist;\n\n\tvoid init(int _n) {\n\t\tn = _n;\n\
@@ -29,7 +29,7 @@ data:
     \t}\n\n\tT distance(int x, int y) {\n\t\tint l = lca(x, y);\n\t\treturn depth_dist[x]\
     \ + depth_dist[y] - 2 * depth_dist[l];\n\t}\n};\n\nint main() {\n\treturn 0;\n\
     }\n"
-  code: "#include<bits/stdc++.h>\n\ntemplate<class T> struct LCAJumpDistance {\n\t\
+  code: "#include <bits/stdc++.h>\n\ntemplate<class T> struct LCAJumpDistance {\n\t\
     int n;\n\tstd::vector<std::vector<int>> par;\n\tstd::vector<std::vector<std::pair<int,\
     \ T>>> adj;\n\tstd::vector<int> depth;\n\tstd::vector<T> depth_dist;\n\n\tvoid\
     \ init(int _n) {\n\t\tn = _n;\n\t\tint d = 1;\n\t\twhile ((1 << d) < n) d++;\n\
@@ -54,7 +54,7 @@ data:
   isVerificationFile: false
   path: library/graphs/lca_jump_distance.cpp
   requiredBy: []
-  timestamp: '2021-06-09 19:36:06-04:00'
+  timestamp: '2021-07-10 12:34:57-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/graphs/lca_jump_distance.cpp

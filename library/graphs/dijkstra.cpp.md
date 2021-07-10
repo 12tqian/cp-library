@@ -7,7 +7,7 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"library/graphs/dijkstra.cpp\"\n#include<bits/stdc++.h>\n\
+  bundledCode: "#line 1 \"library/graphs/dijkstra.cpp\"\n#include <bits/stdc++.h>\n\
     \ntemplate <class C, bool directed> struct Dijkstra {\n\tint SZ; std::vector<C>\
     \ dist;\n\tstd::vector<std::vector<std::pair<int, C>>> adj;\n\n\tvoid init(int\
     \ _SZ) {\n\t\tSZ = _SZ;\n\t\tadj.clear();\n\t\tadj.resize(SZ);\n\t}\n\n\tvoid\
@@ -20,7 +20,7 @@ data:
     \t\tif (dist[x.second] < x.first) continue;\n\t\t\tfor (auto& y: adj[x.second])\
     \ {\n\t\t\t\tad(y.first, x.first + y.second);\n\t\t\t}\n\t\t}\n\t}\n};\n\nint\
     \ main() {\n\treturn 0;\n}\n"
-  code: "#include<bits/stdc++.h>\n\ntemplate <class C, bool directed> struct Dijkstra\
+  code: "#include <bits/stdc++.h>\n\ntemplate <class C, bool directed> struct Dijkstra\
     \ {\n\tint SZ; std::vector<C> dist;\n\tstd::vector<std::vector<std::pair<int,\
     \ C>>> adj;\n\n\tvoid init(int _SZ) {\n\t\tSZ = _SZ;\n\t\tadj.clear();\n\t\tadj.resize(SZ);\n\
     \t}\n\n\tvoid ae(int u, int v, C cost) {\n\t\tadj[u].emplace_back(v, cost);\n\t\
@@ -36,7 +36,7 @@ data:
   isVerificationFile: false
   path: library/graphs/dijkstra.cpp
   requiredBy: []
-  timestamp: '2021-06-09 19:36:06-04:00'
+  timestamp: '2021-07-10 12:34:57-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/graphs/dijkstra.cpp

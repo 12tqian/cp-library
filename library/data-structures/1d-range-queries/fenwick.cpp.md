@@ -8,7 +8,7 @@ data:
   attributes:
     links: []
   bundledCode: "#line 1 \"library/data-structures/1d-range-queries/fenwick.cpp\"\n\
-    #include<bits/stdc++.h>\n\ntemplate <class T> struct FenwickTree {\n\tstd::vector<T>\
+    #include <bits/stdc++.h>\n\ntemplate <class T> struct FenwickTree {\n\tstd::vector<T>\
     \ fwt;\n\tint n;\n\n\tvoid init(int n_) {\n\t\tn = n_;\n\t\tfwt.assign(n, 0);\n\
     \t}\n\n\tvoid init(std::vector<T>& a) {\n\t\tn = (int)a.size();\n\t\tfwt.assign(n,\
     \ 0);\n\t\tfor (int i = 0; i < (int)a.size(); i++) {\n\t\t\tadd(i, a[i]);\n\t\t\
@@ -17,7 +17,7 @@ data:
     \ {\n\t\treturn sum(r) - sum(l - 1);\n\t}\n\t\n\tvoid add(int idx, T delta) {\n\
     \t\tfor (; idx < n; idx = idx | (idx + 1)) \n\t\t\tfwt[idx] += delta;\n\t}\n};\n\
     \nint main() {\n\treturn 0;\n}\n"
-  code: "#include<bits/stdc++.h>\n\ntemplate <class T> struct FenwickTree {\n\tstd::vector<T>\
+  code: "#include <bits/stdc++.h>\n\ntemplate <class T> struct FenwickTree {\n\tstd::vector<T>\
     \ fwt;\n\tint n;\n\n\tvoid init(int n_) {\n\t\tn = n_;\n\t\tfwt.assign(n, 0);\n\
     \t}\n\n\tvoid init(std::vector<T>& a) {\n\t\tn = (int)a.size();\n\t\tfwt.assign(n,\
     \ 0);\n\t\tfor (int i = 0; i < (int)a.size(); i++) {\n\t\t\tadd(i, a[i]);\n\t\t\
@@ -30,7 +30,7 @@ data:
   isVerificationFile: false
   path: library/data-structures/1d-range-queries/fenwick.cpp
   requiredBy: []
-  timestamp: '2021-06-09 19:36:06-04:00'
+  timestamp: '2021-07-10 12:34:57-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/data-structures/1d-range-queries/fenwick.cpp

@@ -7,7 +7,7 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"library/unused/array_lazy_segment_tree.cpp\"\n#include<bits/stdc++.h>\n\
+  bundledCode: "#line 1 \"library/unused/array_lazy_segment_tree.cpp\"\n#include <bits/stdc++.h>\n\
     /**\nmake sure SZ is a power of 2\n*/\ntemplate <class T, int SZ> struct LazySeg\
     \ {\n\tT sum[2 * SZ], lazy[2 * SZ];\n\tLazySeg() {\n\t\tfor (int i = 0; i < 2\
     \ * SZ; i++) {\n\t\t\tsum[i] = 0;\n\t\t\tlazy[i] = 0;\n\t\t}\n\t}\n\tvoid push(int\
@@ -25,7 +25,7 @@ data:
     \ <= L && R <= hi) return sum[ind];\n\t\tint M = (L + R) / 2;\n\t\treturn qsum(lo,\
     \ hi, 2 * ind, L, M) + qsum(lo, hi, 2 * ind + 1, M + 1, R);\n\t}\n};\nint main()\
     \ {\n\treturn 0;\n}\n"
-  code: "#include<bits/stdc++.h>\n/**\nmake sure SZ is a power of 2\n*/\ntemplate\
+  code: "#include <bits/stdc++.h>\n/**\nmake sure SZ is a power of 2\n*/\ntemplate\
     \ <class T, int SZ> struct LazySeg {\n\tT sum[2 * SZ], lazy[2 * SZ];\n\tLazySeg()\
     \ {\n\t\tfor (int i = 0; i < 2 * SZ; i++) {\n\t\t\tsum[i] = 0;\n\t\t\tlazy[i]\
     \ = 0;\n\t\t}\n\t}\n\tvoid push(int ind, int L, int R) {\n\t\tsum[ind] += (R -\
@@ -46,7 +46,7 @@ data:
   isVerificationFile: false
   path: library/unused/array_lazy_segment_tree.cpp
   requiredBy: []
-  timestamp: '2021-06-09 19:36:06-04:00'
+  timestamp: '2021-07-10 12:34:57-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/unused/array_lazy_segment_tree.cpp

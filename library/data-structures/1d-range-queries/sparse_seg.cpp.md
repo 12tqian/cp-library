@@ -8,7 +8,7 @@ data:
   attributes:
     links: []
   bundledCode: "#line 1 \"library/data-structures/1d-range-queries/sparse_seg.cpp\"\
-    \n#include<bits/stdc++.h>\n\n// bump allocator\n\nstatic char buf[450 << 20];\n\
+    \n#include <bits/stdc++.h>\n\n// bump allocator\n\nstatic char buf[450 << 20];\n\
     void* operator new(size_t s) {\n\tstatic size_t i = sizeof buf;\n\tassert(s <\
     \ i);\n\treturn (void*) & buf[i -= s];\n}\nvoid operator delete(void*) {}\n\n\
     const int SZ = 1 << 30;\n\ntemplate <class T> struct Node {\n\tT val = 0; \n\t\
@@ -35,7 +35,7 @@ data:
     \tcin >> p >> x;\n\t\t\tseg.upd(p, x);\n\t\t} else {\n\t\t\tint l, r; cin >> l\
     \ >> r;\n\t\t\tcout << seg.query(l, r - 1) << '\\n';\n\t\t}\n\t}\n\treturn 0;\n\
     }\n"
-  code: "#include<bits/stdc++.h>\n\n// bump allocator\n\nstatic char buf[450 << 20];\n\
+  code: "#include <bits/stdc++.h>\n\n// bump allocator\n\nstatic char buf[450 << 20];\n\
     void* operator new(size_t s) {\n\tstatic size_t i = sizeof buf;\n\tassert(s <\
     \ i);\n\treturn (void*) & buf[i -= s];\n}\nvoid operator delete(void*) {}\n\n\
     const int SZ = 1 << 30;\n\ntemplate <class T> struct Node {\n\tT val = 0; \n\t\
@@ -66,7 +66,7 @@ data:
   isVerificationFile: false
   path: library/data-structures/1d-range-queries/sparse_seg.cpp
   requiredBy: []
-  timestamp: '2021-06-09 19:36:06-04:00'
+  timestamp: '2021-07-10 12:34:57-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/data-structures/1d-range-queries/sparse_seg.cpp

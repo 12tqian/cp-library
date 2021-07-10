@@ -7,7 +7,7 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"library/numerical/mod_int.cpp\"\n#include<bits/stdc++.h>\n\
+  bundledCode: "#line 1 \"library/numerical/mod_int.cpp\"\n#include <bits/stdc++.h>\n\
     \nconst int MOD = 1e9 + 7;\n\ntypedef std::decay<decltype(MOD)>::type mod_t; \n\
     struct mi {\n\tmod_t val;\n\texplicit operator mod_t() const { return val; }\n\
     \tmi() { val = 0; }\n\tmi(const long long& v) {\n\t\tval = (-MOD <= v && v <=\
@@ -32,7 +32,7 @@ data:
     friend mi operator-(mi a, const mi& b) { return a -= b; }\n\tfriend mi operator*(mi\
     \ a, const mi& b) { return a *= b; }\n\tfriend mi operator/(mi a, const mi& b)\
     \ { return a /= b; }\n};\n\nint main(){\n\treturn 0;\n}\n"
-  code: "#include<bits/stdc++.h>\n\nconst int MOD = 1e9 + 7;\n\ntypedef std::decay<decltype(MOD)>::type\
+  code: "#include <bits/stdc++.h>\n\nconst int MOD = 1e9 + 7;\n\ntypedef std::decay<decltype(MOD)>::type\
     \ mod_t; \nstruct mi {\n\tmod_t val;\n\texplicit operator mod_t() const { return\
     \ val; }\n\tmi() { val = 0; }\n\tmi(const long long& v) {\n\t\tval = (-MOD <=\
     \ v && v <= MOD) ? v : v % MOD;\n\t\tif (val < 0) val += MOD; }\n\tfriend std::istream&\
@@ -60,7 +60,7 @@ data:
   isVerificationFile: false
   path: library/numerical/mod_int.cpp
   requiredBy: []
-  timestamp: '2021-06-09 19:36:06-04:00'
+  timestamp: '2021-07-10 12:34:57-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/numerical/mod_int.cpp
