@@ -149,7 +149,7 @@ data:
     \ }\n\tmi& operator+=(const mi& m) {\n\t\tif ((val += m.val) >= MOD) val -= MOD;\n\
     \t\treturn *this; }\n\tmi& operator-=(const mi& m) {\n\t\tif ((val -= m.val) <\
     \ 0) val += MOD;\n\t\treturn *this; }\n\tmi& operator*=(const mi& m) { val = (long\
-    \ long) val * m.val % MOD;\n\t\treturn *this; }\n\tfriend mi pow(mi a, long long\
+    \ long)val * m.val % MOD;\n\t\treturn *this; }\n\tfriend mi pow(mi a, long long\
     \ p) {\n\t\tmi ans = 1; assert(p >= 0);\n\t\tfor (; p; p /= 2, a *= a) if (p &\
     \ 1) ans *= a;\n\t\treturn ans; }\n\tfriend mi inv(const mi& a) { assert(a !=\
     \ 0); return pow(a, MOD - 2); }\n\tmi& operator/=(const mi& m) { return (*this)\
@@ -297,7 +297,7 @@ data:
     \ }\n\tmi& operator+=(const mi& m) {\n\t\tif ((val += m.val) >= MOD) val -= MOD;\n\
     \t\treturn *this; }\n\tmi& operator-=(const mi& m) {\n\t\tif ((val -= m.val) <\
     \ 0) val += MOD;\n\t\treturn *this; }\n\tmi& operator*=(const mi& m) { val = (long\
-    \ long) val * m.val % MOD;\n\t\treturn *this; }\n\tfriend mi pow(mi a, long long\
+    \ long)val * m.val % MOD;\n\t\treturn *this; }\n\tfriend mi pow(mi a, long long\
     \ p) {\n\t\tmi ans = 1; assert(p >= 0);\n\t\tfor (; p; p /= 2, a *= a) if (p &\
     \ 1) ans *= a;\n\t\treturn ans; }\n\tfriend mi inv(const mi& a) { assert(a !=\
     \ 0); return pow(a, MOD - 2); }\n\tmi& operator/=(const mi& m) { return (*this)\
@@ -310,7 +310,7 @@ data:
   isVerificationFile: false
   path: library/contest/template_full.cpp
   requiredBy: []
-  timestamp: '2021-07-03 14:33:08-04:00'
+  timestamp: '2021-07-17 17:02:03-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/contest/template_full.cpp

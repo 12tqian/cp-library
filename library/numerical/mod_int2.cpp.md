@@ -24,8 +24,8 @@ data:
     \ << (std::ostream& os, const Mint& a) { return os << a.v; }\n\tMint& operator+=(const\
     \ Mint& m) { \n\t\tif ((v += m.v) >= MOD) v -= MOD; \n\t\treturn *this; }\n\t\
     Mint& operator-=(const Mint& m) { \n\t\tif ((v -= m.v) < 0) v += MOD; \n\t\treturn\
-    \ *this; }\n\tMint& operator*=(const Mint& m) { \n\t\tv = (long long) v * m.v\
-    \ % MOD; return *this; }\n\tMint& operator/=(const Mint& m) { return (*this) *=\
+    \ *this; }\n\tMint& operator*=(const Mint& m) { \n\t\tv = (long long)v * m.v %\
+    \ MOD; return *this; }\n\tMint& operator/=(const Mint& m) { return (*this) *=\
     \ inv(m); }\n\tfriend Mint pow(Mint a, long long p) {\n\t\tMint ans = 1; assert(p\
     \ >= 0);\n\t\tfor (; p; p /= 2, a *= a) if (p & 1) ans *= a;\n\t\treturn ans;\
     \ \n\t}\n\tfriend Mint inv(const Mint& a) { assert(a.v != 0); return pow(a, MOD\
@@ -52,7 +52,7 @@ data:
     \ os << a.v; }\n\tMint& operator+=(const Mint& m) { \n\t\tif ((v += m.v) >= MOD)\
     \ v -= MOD; \n\t\treturn *this; }\n\tMint& operator-=(const Mint& m) { \n\t\t\
     if ((v -= m.v) < 0) v += MOD; \n\t\treturn *this; }\n\tMint& operator*=(const\
-    \ Mint& m) { \n\t\tv = (long long) v * m.v % MOD; return *this; }\n\tMint& operator/=(const\
+    \ Mint& m) { \n\t\tv = (long long)v * m.v % MOD; return *this; }\n\tMint& operator/=(const\
     \ Mint& m) { return (*this) *= inv(m); }\n\tfriend Mint pow(Mint a, long long\
     \ p) {\n\t\tMint ans = 1; assert(p >= 0);\n\t\tfor (; p; p /= 2, a *= a) if (p\
     \ & 1) ans *= a;\n\t\treturn ans; \n\t}\n\tfriend Mint inv(const Mint& a) { assert(a.v\
@@ -67,7 +67,7 @@ data:
   isVerificationFile: false
   path: library/numerical/mod_int2.cpp
   requiredBy: []
-  timestamp: '2021-06-09 19:36:06-04:00'
+  timestamp: '2021-07-17 17:02:03-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/numerical/mod_int2.cpp
