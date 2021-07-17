@@ -276,7 +276,7 @@ struct mi {
 	mi& operator-=(const mi& m) {
 		if ((val -= m.val) < 0) val += MOD;
 		return *this; }
-	mi& operator*=(const mi& m) { val = (long long) val * m.val % MOD;
+	mi& operator*=(const mi& m) { val = (long long)val * m.val % MOD;
 		return *this; }
 	friend mi pow(mi a, long long p) {
 		mi ans = 1; assert(p >= 0);
