@@ -10,8 +10,8 @@ data:
   bundledCode: "#line 1 \"library/data-structures/2d-range-queries/binary_indexed_tree_seg.cpp\"\
     \n#include <bits/stdc++.h>\n\n// bump allocator\n\nstatic char buf[450 << 20];\n\
     void* operator new(size_t s) {\n\tstatic size_t i = sizeof buf;\n\tassert(s <\
-    \ i);\n\treturn (void*) & buf[i -= s];\n}\nvoid operator delete(void*) {}\n\n\
-    const int SZ = (1 << 18);\n\n// [0, SZ - 1) for x axis, [0, SZ) for y axis\ntemplate\
+    \ i);\n\treturn (void*)& buf[i -= s];\n}\nvoid operator delete(void*) {}\n\nconst\
+    \ int SZ = (1 << 18);\n\n// [0, SZ - 1) for x axis, [0, SZ) for y axis\ntemplate\
     \ <class T> struct Node {\n\tT val = 0; \n\tNode<T>* c[2];\n\tNode() { c[0] =\
     \ c[1] = NULL; }\n\n\tvoid upd(int ind, T v, int L = 0, int R = SZ - 1) { // add\
     \ v\n\t\tif (L == ind && R == ind) { val += v; return; }\n\t\tint M = (L + R)\
@@ -40,8 +40,8 @@ data:
     \ 1, y1, y2); \n\t}\n};\n\nint main() {\n\treturn 0;\n}\n"
   code: "#include <bits/stdc++.h>\n\n// bump allocator\n\nstatic char buf[450 << 20];\n\
     void* operator new(size_t s) {\n\tstatic size_t i = sizeof buf;\n\tassert(s <\
-    \ i);\n\treturn (void*) & buf[i -= s];\n}\nvoid operator delete(void*) {}\n\n\
-    const int SZ = (1 << 18);\n\n// [0, SZ - 1) for x axis, [0, SZ) for y axis\ntemplate\
+    \ i);\n\treturn (void*)& buf[i -= s];\n}\nvoid operator delete(void*) {}\n\nconst\
+    \ int SZ = (1 << 18);\n\n// [0, SZ - 1) for x axis, [0, SZ) for y axis\ntemplate\
     \ <class T> struct Node {\n\tT val = 0; \n\tNode<T>* c[2];\n\tNode() { c[0] =\
     \ c[1] = NULL; }\n\n\tvoid upd(int ind, T v, int L = 0, int R = SZ - 1) { // add\
     \ v\n\t\tif (L == ind && R == ind) { val += v; return; }\n\t\tint M = (L + R)\
@@ -72,7 +72,7 @@ data:
   isVerificationFile: false
   path: library/data-structures/2d-range-queries/binary_indexed_tree_seg.cpp
   requiredBy: []
-  timestamp: '2021-07-10 12:34:57-04:00'
+  timestamp: '2021-07-18 15:40:18-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/data-structures/2d-range-queries/binary_indexed_tree_seg.cpp
