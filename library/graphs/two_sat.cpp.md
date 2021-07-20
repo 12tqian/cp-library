@@ -8,79 +8,69 @@ data:
   attributes:
     links: []
   bundledCode: "#line 1 \"library/graphs/two_sat.cpp\"\n#include <bits/stdc++.h>\n\
-    \nstruct SCC {\n    int n, ti;\n    \n    std::vector<std::vector<int>> g;\n \
-    \   \n    std::vector<int> disc, comp, stk, comps;\n\n    void init(int _n) {\n\
-    \        n = _n;\n        ti = 0;\n        g.resize(n);\n        disc.resize(n);\n\
-    \        comp.assign(n, -1);\n    }\n\n    void ae(int u, int v) {\n        g[u].push_back(v);\n\
-    \    }\n\n    int dfs(int u) {\n        int low = disc[u] = ++ti;\n        stk.push_back(u);\n\
-    \        for (int v : g[u]) {\n            if (comp[v] == -1) {\n            \
-    \    low = std::min(low, disc[v] ? : dfs(v));\n            }\n        }\n    \
-    \    if (low == disc[u]) {\n            comps.push_back(u);\n            for (int\
-    \ v  = -1; v != u; ) {\n                comp[v = stk.back()] = u;\n          \
-    \      stk.pop_back();\n            }\n        }\n        return low;\n    }\n\
-    \n    void gen() {\n        for (int i = 0; i < n; ++i) {\n            if (disc[i]\
-    \ == 0) {\n                dfs(i);\n            }\n        }\n        reverse(comps.begin(),\
-    \ comps.end());\n    }\n};\n\nstruct TwoSat {\n    int n = 0;\n    \n    std::vector<std::array<int,\
-    \ 2>> edges;\n\n    void init(int n_) { n = n_; }\n    \n    int add_var() { return\
-    \ n++; }\n    \n    void either(int x, int y) {\n        x = std::max(2 * x, -1\
-    \ - 2 * x);\n        y = std::max(2 * y, -1 - 2 * y);\n        edges.push_back({x,\
-    \ y});\n    }\n\n    void implies(int x, int y) { either(~x, y); }\n    \n   \
-    \ void must(int x) { either(x, x); }\n    \n    void at_most_one(const std::vector<int>&\
-    \ v) {\n        if ((int)v.size() <= 1) {\n            return;\n        }\n  \
-    \      int cur = ~v[0];\n        for (int i = 2; i < (int)v.size(); ++i) {\n \
-    \           int nxt = add_var();\n            either(cur, ~v[i]);\n          \
-    \  either(cur, nxt);\n            either(~v[i], nxt);\n            cur = ~nxt;\n\
-    \        }\n        either(cur, ~v[1]);\n    }\n    \n    std::vector<bool> solve(int\
-    \ n_ = -1) {\n        if (n_ != -1) {\n            n = n_;\n        }\n      \
-    \  SCC S;\n        S.init(2 * n);\n        for (auto [u, v] : edges) {\n     \
-    \       S.ae(u ^ 1, v);\n            S.ae(v ^ 1, u);\n        }\n        S.gen();\n\
-    \        reverse(S.comps.begin(), S.comps.end());\n        for (int i = 0; i <\
-    \ 2 * n; i += 2) {\n            if (S.comp[i] == S.comp[i ^ 1]) {\n          \
-    \      return {};\n            }\n        }\n        std::vector<int> tmp(2 *\
-    \ n);\n        for (int i : S.comps) {\n            if (tmp[i] == 0) {\n     \
-    \           tmp[i] = 1;\n                tmp[S.comp[i ^ 1]] = -1;\n          \
-    \  }\n        }\n        std::vector<bool> ans(n);\n        for (int i = 0; i\
-    \ < n; ++i) {\n            ans[i] = tmp[S.comp[2 * i]] == 1;\n        }\n    \
-    \    return ans;\n    }\n};\n"
-  code: "#include <bits/stdc++.h>\n\nstruct SCC {\n    int n, ti;\n    \n    std::vector<std::vector<int>>\
-    \ g;\n    \n    std::vector<int> disc, comp, stk, comps;\n\n    void init(int\
-    \ _n) {\n        n = _n;\n        ti = 0;\n        g.resize(n);\n        disc.resize(n);\n\
-    \        comp.assign(n, -1);\n    }\n\n    void ae(int u, int v) {\n        g[u].push_back(v);\n\
-    \    }\n\n    int dfs(int u) {\n        int low = disc[u] = ++ti;\n        stk.push_back(u);\n\
-    \        for (int v : g[u]) {\n            if (comp[v] == -1) {\n            \
-    \    low = std::min(low, disc[v] ? : dfs(v));\n            }\n        }\n    \
-    \    if (low == disc[u]) {\n            comps.push_back(u);\n            for (int\
-    \ v  = -1; v != u; ) {\n                comp[v = stk.back()] = u;\n          \
-    \      stk.pop_back();\n            }\n        }\n        return low;\n    }\n\
-    \n    void gen() {\n        for (int i = 0; i < n; ++i) {\n            if (disc[i]\
-    \ == 0) {\n                dfs(i);\n            }\n        }\n        reverse(comps.begin(),\
-    \ comps.end());\n    }\n};\n\nstruct TwoSat {\n    int n = 0;\n    \n    std::vector<std::array<int,\
-    \ 2>> edges;\n\n    void init(int n_) { n = n_; }\n    \n    int add_var() { return\
-    \ n++; }\n    \n    void either(int x, int y) {\n        x = std::max(2 * x, -1\
-    \ - 2 * x);\n        y = std::max(2 * y, -1 - 2 * y);\n        edges.push_back({x,\
-    \ y});\n    }\n\n    void implies(int x, int y) { either(~x, y); }\n    \n   \
-    \ void must(int x) { either(x, x); }\n    \n    void at_most_one(const std::vector<int>&\
-    \ v) {\n        if ((int)v.size() <= 1) {\n            return;\n        }\n  \
-    \      int cur = ~v[0];\n        for (int i = 2; i < (int)v.size(); ++i) {\n \
-    \           int nxt = add_var();\n            either(cur, ~v[i]);\n          \
-    \  either(cur, nxt);\n            either(~v[i], nxt);\n            cur = ~nxt;\n\
-    \        }\n        either(cur, ~v[1]);\n    }\n    \n    std::vector<bool> solve(int\
-    \ n_ = -1) {\n        if (n_ != -1) {\n            n = n_;\n        }\n      \
-    \  SCC S;\n        S.init(2 * n);\n        for (auto [u, v] : edges) {\n     \
-    \       S.ae(u ^ 1, v);\n            S.ae(v ^ 1, u);\n        }\n        S.gen();\n\
-    \        reverse(S.comps.begin(), S.comps.end());\n        for (int i = 0; i <\
-    \ 2 * n; i += 2) {\n            if (S.comp[i] == S.comp[i ^ 1]) {\n          \
-    \      return {};\n            }\n        }\n        std::vector<int> tmp(2 *\
-    \ n);\n        for (int i : S.comps) {\n            if (tmp[i] == 0) {\n     \
-    \           tmp[i] = 1;\n                tmp[S.comp[i ^ 1]] = -1;\n          \
-    \  }\n        }\n        std::vector<bool> ans(n);\n        for (int i = 0; i\
-    \ < n; ++i) {\n            ans[i] = tmp[S.comp[2 * i]] == 1;\n        }\n    \
-    \    return ans;\n    }\n};"
+    \nstruct SCC {\n\tint n, ti;\n\t\n\tstd::vector<std::vector<int>> g;\n\t\n\tstd::vector<int>\
+    \ disc, comp, stk, comps;\n\n\tvoid init(int _n) {\n\t\tn = _n;\n\t\tti = 0;\n\
+    \t\tg.resize(n);\n\t\tdisc.resize(n);\n\t\tcomp.assign(n, -1);\n\t}\n\n\tvoid\
+    \ ae(int u, int v) {\n\t\tg[u].push_back(v);\n\t}\n\n\tint dfs(int u) {\n\t\t\
+    int low = disc[u] = ++ti;\n\t\tstk.push_back(u);\n\t\tfor (int v : g[u]) {\n\t\
+    \t\tif (comp[v] == -1) {\n\t\t\t\tlow = std::min(low, disc[v] ? : dfs(v));\n\t\
+    \t\t}\n\t\t}\n\t\tif (low == disc[u]) {\n\t\t\tcomps.push_back(u);\n\t\t\tfor\
+    \ (int v  = -1; v != u; ) {\n\t\t\t\tcomp[v = stk.back()] = u;\n\t\t\t\tstk.pop_back();\n\
+    \t\t\t}\n\t\t}\n\t\treturn low;\n\t}\n\n\tvoid gen() {\n\t\tfor (int i = 0; i\
+    \ < n; ++i) {\n\t\t\tif (disc[i] == 0) {\n\t\t\t\tdfs(i);\n\t\t\t}\n\t\t}\n\t\t\
+    reverse(comps.begin(), comps.end());\n\t}\n};\n\nstruct TwoSat {\n\tint n = 0;\n\
+    \t\n\tstd::vector<std::array<int, 2>> edges;\n\n\tvoid init(int n_) { n = n_;\
+    \ }\n\t\n\tint add_var() { return n++; }\n\t\n\tvoid either(int x, int y) {\n\t\
+    \tx = std::max(2 * x, -1 - 2 * x);\n\t\ty = std::max(2 * y, -1 - 2 * y);\n\t\t\
+    edges.push_back({x, y});\n\t}\n\n\tvoid implies(int x, int y) { either(~x, y);\
+    \ }\n\t\n\tvoid must(int x) { either(x, x); }\n\t\n\tvoid at_most_one(const std::vector<int>&\
+    \ v) {\n\t\tif ((int)v.size() <= 1) {\n\t\t\treturn;\n\t\t}\n\t\tint cur = ~v[0];\n\
+    \t\tfor (int i = 2; i < (int)v.size(); ++i) {\n\t\t\tint nxt = add_var();\n\t\t\
+    \teither(cur, ~v[i]);\n\t\t\teither(cur, nxt);\n\t\t\teither(~v[i], nxt);\n\t\t\
+    \tcur = ~nxt;\n\t\t}\n\t\teither(cur, ~v[1]);\n\t}\n\t\n\tstd::vector<bool> solve(int\
+    \ n_ = -1) {\n\t\tif (n_ != -1) {\n\t\t\tn = n_;\n\t\t}\n\t\tSCC S;\n\t\tS.init(2\
+    \ * n);\n\t\tfor (auto [u, v] : edges) {\n\t\t\tS.ae(u ^ 1, v);\n\t\t\tS.ae(v\
+    \ ^ 1, u);\n\t\t}\n\t\tS.gen();\n\t\treverse(S.comps.begin(), S.comps.end());\n\
+    \t\tfor (int i = 0; i < 2 * n; i += 2) {\n\t\t\tif (S.comp[i] == S.comp[i ^ 1])\
+    \ {\n\t\t\t\treturn {};\n\t\t\t}\n\t\t}\n\t\tstd::vector<int> tmp(2 * n);\n\t\t\
+    for (int i : S.comps) {\n\t\t\tif (tmp[i] == 0) {\n\t\t\t\ttmp[i] = 1;\n\t\t\t\
+    \ttmp[S.comp[i ^ 1]] = -1;\n\t\t\t}\n\t\t}\n\t\tstd::vector<bool> ans(n);\n\t\t\
+    for (int i = 0; i < n; ++i) {\n\t\t\tans[i] = tmp[S.comp[2 * i]] == 1;\n\t\t}\n\
+    \t\treturn ans;\n\t}\n};\n"
+  code: "#include <bits/stdc++.h>\n\nstruct SCC {\n\tint n, ti;\n\t\n\tstd::vector<std::vector<int>>\
+    \ g;\n\t\n\tstd::vector<int> disc, comp, stk, comps;\n\n\tvoid init(int _n) {\n\
+    \t\tn = _n;\n\t\tti = 0;\n\t\tg.resize(n);\n\t\tdisc.resize(n);\n\t\tcomp.assign(n,\
+    \ -1);\n\t}\n\n\tvoid ae(int u, int v) {\n\t\tg[u].push_back(v);\n\t}\n\n\tint\
+    \ dfs(int u) {\n\t\tint low = disc[u] = ++ti;\n\t\tstk.push_back(u);\n\t\tfor\
+    \ (int v : g[u]) {\n\t\t\tif (comp[v] == -1) {\n\t\t\t\tlow = std::min(low, disc[v]\
+    \ ? : dfs(v));\n\t\t\t}\n\t\t}\n\t\tif (low == disc[u]) {\n\t\t\tcomps.push_back(u);\n\
+    \t\t\tfor (int v  = -1; v != u; ) {\n\t\t\t\tcomp[v = stk.back()] = u;\n\t\t\t\
+    \tstk.pop_back();\n\t\t\t}\n\t\t}\n\t\treturn low;\n\t}\n\n\tvoid gen() {\n\t\t\
+    for (int i = 0; i < n; ++i) {\n\t\t\tif (disc[i] == 0) {\n\t\t\t\tdfs(i);\n\t\t\
+    \t}\n\t\t}\n\t\treverse(comps.begin(), comps.end());\n\t}\n};\n\nstruct TwoSat\
+    \ {\n\tint n = 0;\n\t\n\tstd::vector<std::array<int, 2>> edges;\n\n\tvoid init(int\
+    \ n_) { n = n_; }\n\t\n\tint add_var() { return n++; }\n\t\n\tvoid either(int\
+    \ x, int y) {\n\t\tx = std::max(2 * x, -1 - 2 * x);\n\t\ty = std::max(2 * y, -1\
+    \ - 2 * y);\n\t\tedges.push_back({x, y});\n\t}\n\n\tvoid implies(int x, int y)\
+    \ { either(~x, y); }\n\t\n\tvoid must(int x) { either(x, x); }\n\t\n\tvoid at_most_one(const\
+    \ std::vector<int>& v) {\n\t\tif ((int)v.size() <= 1) {\n\t\t\treturn;\n\t\t}\n\
+    \t\tint cur = ~v[0];\n\t\tfor (int i = 2; i < (int)v.size(); ++i) {\n\t\t\tint\
+    \ nxt = add_var();\n\t\t\teither(cur, ~v[i]);\n\t\t\teither(cur, nxt);\n\t\t\t\
+    either(~v[i], nxt);\n\t\t\tcur = ~nxt;\n\t\t}\n\t\teither(cur, ~v[1]);\n\t}\n\t\
+    \n\tstd::vector<bool> solve(int n_ = -1) {\n\t\tif (n_ != -1) {\n\t\t\tn = n_;\n\
+    \t\t}\n\t\tSCC S;\n\t\tS.init(2 * n);\n\t\tfor (auto [u, v] : edges) {\n\t\t\t\
+    S.ae(u ^ 1, v);\n\t\t\tS.ae(v ^ 1, u);\n\t\t}\n\t\tS.gen();\n\t\treverse(S.comps.begin(),\
+    \ S.comps.end());\n\t\tfor (int i = 0; i < 2 * n; i += 2) {\n\t\t\tif (S.comp[i]\
+    \ == S.comp[i ^ 1]) {\n\t\t\t\treturn {};\n\t\t\t}\n\t\t}\n\t\tstd::vector<int>\
+    \ tmp(2 * n);\n\t\tfor (int i : S.comps) {\n\t\t\tif (tmp[i] == 0) {\n\t\t\t\t\
+    tmp[i] = 1;\n\t\t\t\ttmp[S.comp[i ^ 1]] = -1;\n\t\t\t}\n\t\t}\n\t\tstd::vector<bool>\
+    \ ans(n);\n\t\tfor (int i = 0; i < n; ++i) {\n\t\t\tans[i] = tmp[S.comp[2 * i]]\
+    \ == 1;\n\t\t}\n\t\treturn ans;\n\t}\n};"
   dependsOn: []
   isVerificationFile: false
   path: library/graphs/two_sat.cpp
   requiredBy: []
-  timestamp: '2021-07-20 00:09:44-04:00'
+  timestamp: '2021-07-20 00:10:17-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/graphs/two_sat.cpp
