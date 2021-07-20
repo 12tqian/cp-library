@@ -154,6 +154,9 @@ data:
     - icon: ':warning:'
       path: library/graphs/tree_path_queries.cpp
       title: library/graphs/tree_path_queries.cpp
+    - icon: ':warning:'
+      path: library/graphs/two_sat.cpp
+      title: library/graphs/two_sat.cpp
   - name: library/graphs/flows
     pages:
     - icon: ':warning:'
