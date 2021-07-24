@@ -9,7 +9,7 @@ data:
     links: []
   bundledCode: "#line 1 \"library/numerical/karatsuba.cpp\"\n#include <bits/stdc++.h>\n\
     \nnamespace Karatsuba {\n\nint size(int s) {\n\treturn s > 1 ? 32 - __builtin_clz(s\
-    \ - 1) : 0;\n}\n\ntemplate <class T> void karatsuba(T* a, T* b, T* c, T* t, int\
+    \ - 1) : 0;\n}\n\ntemplate <class T> void karatsuba(T *a, T *b, T *c, T *t, int\
     \ n) {\n\tint ca = 0, cb = 0;\n\tfor (int i = 0; i < n; i++)\n\t\tca += (a[i]\
     \ != 0), cb += (b[i] != 0);\n\tif (std::min(ca, cb) <= 1500 / n) { // not many\
     \ multiplications\n\t\tif (ca > cb) \n\t\t\tstd::swap(ca, cb);\n\t\tfor (int i\
@@ -34,8 +34,8 @@ data:
     \ - 1 << '\\n';\n\t\tfor (int i = 0; i < (int)c.size(); i++)\n\t\t\tcout << c[i]\
     \ << \" \";\n\t\tcout << '\\n';\n\t}\n\treturn 0;\n}\n"
   code: "#include <bits/stdc++.h>\n\nnamespace Karatsuba {\n\nint size(int s) {\n\t\
-    return s > 1 ? 32 - __builtin_clz(s - 1) : 0;\n}\n\ntemplate <class T> void karatsuba(T*\
-    \ a, T* b, T* c, T* t, int n) {\n\tint ca = 0, cb = 0;\n\tfor (int i = 0; i <\
+    return s > 1 ? 32 - __builtin_clz(s - 1) : 0;\n}\n\ntemplate <class T> void karatsuba(T\
+    \ *a, T *b, T *c, T *t, int n) {\n\tint ca = 0, cb = 0;\n\tfor (int i = 0; i <\
     \ n; i++)\n\t\tca += (a[i] != 0), cb += (b[i] != 0);\n\tif (std::min(ca, cb) <=\
     \ 1500 / n) { // not many multiplications\n\t\tif (ca > cb) \n\t\t\tstd::swap(ca,\
     \ cb);\n\t\tfor (int i = 0; i < n; i++) \n\t\t\tif (a[i] != 0)\n\t\t\t\tfor (int\
@@ -63,7 +63,7 @@ data:
   isVerificationFile: false
   path: library/numerical/karatsuba.cpp
   requiredBy: []
-  timestamp: '2021-06-09 19:36:06-04:00'
+  timestamp: '2021-07-24 17:18:12-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/numerical/karatsuba.cpp
