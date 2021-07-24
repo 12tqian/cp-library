@@ -1,4 +1,4 @@
-#define PROBLEM "https://judge.yosupo.jp/problem/associative_array"
+#define PROBLEM "https://judge.yosupo.jp/problem/staticrmq"
 
 #include <bits/stdc++.h>
 #include "../library/data-structures/1d-range-queries/associative-range-query.hpp"
