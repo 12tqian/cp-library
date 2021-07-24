@@ -1,4 +1,4 @@
-#define PROBLEM "https://judge.yosupo.jp/problem/staticrmq"
+#define PROBLEM "https://judge.yosupo.jp/problem/static_range_sum"
 
 #include <bits/stdc++.h>
 #include "../library/data-structures/1d-range-queries/associative-range-query.hpp"
