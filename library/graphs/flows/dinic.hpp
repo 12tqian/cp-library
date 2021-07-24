@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#pragma once
 
 template <class F> struct Dinic {
 	struct Edge { int to; F flow, cap; };

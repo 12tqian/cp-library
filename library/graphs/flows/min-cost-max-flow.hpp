@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#pragma once
 /**
  * to get back the original edges, assign ID's in ae
  */

@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#pragma once
 
 /**
  * full_reduce() does complete Gaussian reduction

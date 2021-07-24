@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#pragma once
 
 /**
  * O(n log n) preprocessing with O(1) query

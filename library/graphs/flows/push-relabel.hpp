@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#pragma once
 
 /**
  * Treat this as a black box xD

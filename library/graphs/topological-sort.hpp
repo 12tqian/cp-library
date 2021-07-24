@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#pragma once
 
 /**
  * If size of std::vector is n, then it is a DAG, if it's not n, then there is no topological sorting

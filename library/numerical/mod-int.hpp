@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#pragma once
 
 const int MOD = 1e9 + 7;
 

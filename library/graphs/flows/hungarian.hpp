@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#pragma once
 
 /**
  * Another black box algorithm I don't understand

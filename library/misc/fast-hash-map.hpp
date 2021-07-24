@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#pragma once
 #include <bits/extc++.h>
 
 struct splitmix64_hash {

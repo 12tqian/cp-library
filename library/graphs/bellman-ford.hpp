@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#pragma once
 /**
  * dist is INF if you can't reach and -INF if it is in a negative cycle
  * negative cycle is same thing as gen, it just doesn't do gen_bad

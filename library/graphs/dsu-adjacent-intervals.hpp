@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#pragma once
 
 /**
  * Call unite to join interval with right endpoint x and left endpoint y

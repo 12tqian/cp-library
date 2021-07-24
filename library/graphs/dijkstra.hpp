@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#pragma once
 
 template <class C, bool directed> struct Dijkstra {
 	int SZ; std::vector<C> dist;

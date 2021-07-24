@@ -6,7 +6,7 @@
  * Does everything a link cut tree could possibly want to
  */
 
-#include <bits/stdc++.h>
+#pragma once
 
 struct info {
 	int sz, sum, mn, mx;

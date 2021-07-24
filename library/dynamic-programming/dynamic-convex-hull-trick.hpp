@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#pragma once
 
 const long long INF = 1e18;
 

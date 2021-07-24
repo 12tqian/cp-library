@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#pragma once
 
 /**
  * Maximizes c^Tx given Ax <= b, x >= 0

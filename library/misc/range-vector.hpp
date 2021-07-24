@@ -1,4 +1,4 @@
-#include <bits/stdc++.h> 
+#pragma once 
 
 template <class T> class range_vector : public std::vector<T> {
 public:

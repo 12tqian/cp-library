@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#pragma once
 
 // Currently set to get the max of things, use negatives for minimum
 

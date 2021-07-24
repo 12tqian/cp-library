@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#pragma once
 
 struct BCC {
 	int n, time, num_comps; 

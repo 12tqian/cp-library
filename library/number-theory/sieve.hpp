@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#pragma once
 
 template <int SZ> struct Sieve {
 	std::bitset<SZ> pri;

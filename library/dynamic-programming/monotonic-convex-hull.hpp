@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#pragma once
 
 // answers min queries currently
 // don't forget to change ord

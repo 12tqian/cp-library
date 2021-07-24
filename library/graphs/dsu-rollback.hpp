@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#pragma once
 
 struct DSURollBack {
 	std::vector<int> e;

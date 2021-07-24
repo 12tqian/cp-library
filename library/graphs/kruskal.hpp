@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#pragma once
 
 struct DSU {
 	std::vector<int> e;

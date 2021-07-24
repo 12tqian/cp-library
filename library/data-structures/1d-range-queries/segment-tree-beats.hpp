@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#pragma once
 
 /**
  * 0 is ckmin, 1 is ckmax, 2 is range add

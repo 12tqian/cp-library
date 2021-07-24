@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#pragma once
 
 template <class T> struct MaxDeque {
 	std::deque<std::pair<T, int>> mx;

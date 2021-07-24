@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#pragma once
 
 // 5 is a root of both mods
 template <int MOD, int RT> struct Mint {

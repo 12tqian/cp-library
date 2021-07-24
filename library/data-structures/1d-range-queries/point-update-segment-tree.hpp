@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#pragma once
 
 template <class T> struct SegmentTree {
 	const T ID = 0;

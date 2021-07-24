@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#pragma once
 
 template <class T> struct SegmentTree {
 	SegmentTree<T> *left, *right;

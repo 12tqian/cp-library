@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#pragma once
 
 struct SCC {
 	int n, ti;

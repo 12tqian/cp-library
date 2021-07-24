@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#pragma once
 
 template <class T> struct IntervalUnion {
 	const T INF = std::numeric_limits<T>::max();

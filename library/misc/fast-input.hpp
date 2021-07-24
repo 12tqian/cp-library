@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#pragma once
 
 inline char gc() { // like getchar()
 	static char buf[1 << 16];

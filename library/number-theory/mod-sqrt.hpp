@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#pragma once
 
 unsigned xrand() {
 	static unsigned x = 314159265, y = 358979323, z = 846264338, w = 327950288;

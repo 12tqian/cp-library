@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#pragma once
 /**
  * Description: Big Integer
  * Source: https://github.com/indy256/codelibrary/

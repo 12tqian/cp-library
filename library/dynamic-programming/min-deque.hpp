@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#pragma once
 
 template <class T> struct MinDeque {
 	int lo = 0, hi = -1;

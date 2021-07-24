@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#pragma once
 
 /** 
  * Example of use: https://ideone.com/J3R7nb

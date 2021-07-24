@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#pragma once
 
 std::vector<int> suffix_array(std::vector<int> s, int upper) {
 	int n = (int)s.size();

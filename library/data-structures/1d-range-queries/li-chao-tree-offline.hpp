@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#pragma once
 
 // Set to minimums, negate for maximums
 

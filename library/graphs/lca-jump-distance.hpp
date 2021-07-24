@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#pragma once
 
 template<class T> struct LCAJumpDistance {
 	int n;
