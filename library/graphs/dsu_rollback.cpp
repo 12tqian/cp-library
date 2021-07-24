@@ -42,7 +42,3 @@ struct DSURollBack {
 		}
 	}
 };
-
-int main() {
-	return 0;
-}

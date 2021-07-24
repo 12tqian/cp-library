@@ -9,7 +9,7 @@ template <class T> struct FenwickTree {
 		fwt.resize(n);
 	}
 
-	void init(std::vector<T>& a) {
+	void init(std::vector<T> &a) {
 		n = (int)a.size();
 		a.assign(n, 0);
 		for (int i = 0; i < (int)a.size(); i++) {

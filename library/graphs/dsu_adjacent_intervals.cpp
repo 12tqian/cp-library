@@ -45,7 +45,3 @@ struct IntervalJoin {
 		return interval[x];
 	}
 };
-
-int main() {
-	return 0;
-}

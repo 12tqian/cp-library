@@ -27,10 +27,10 @@ int neg(int a) { return a == 0 ? 0 : MOD - a; }
 int mod(long long v) { 
 	v = int((-MOD < v && v < MOD) ? v : v % MOD); if (v < 0) v += MOD; return v; }
 	
-int madd(int& a, int b) { return a = add(a, b); }
-int msub(int& a, int b) { return a = sub(a, b); }
-int mmul(int& a, int b) { return a = mul(a, b); }
-int mdivi(int& a, int b) { return a = divi(a, b); }
+int madd(int &a, int b) { return a = add(a, b); }
+int msub(int &a, int b) { return a = sub(a, b); }
+int mmul(int &a, int b) { return a = mul(a, b); }
+int mdivi(int &a, int b) { return a = divi(a, b); }
 
 } // ModOperations
 

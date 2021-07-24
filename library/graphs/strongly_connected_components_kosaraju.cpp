@@ -26,7 +26,7 @@ struct SCC {
 
 	void dfs_order(int u) {
 		vis[u] = true;
-		for (auto& v : g[u]) {
+		for (auto &v : g[u]) {
 			if (vis[v]) 
 				continue;
 			dfs_order(v);
@@ -36,7 +36,7 @@ struct SCC {
 
 	void dfs_color(int u, int c) {
 		id[u] = c;
-		for (int& v : rg[u]) 
+		for (int &v : rg[u]) 
 			if (id[v] == -1) 
 				dfs_color(v, c);
 	}
@@ -45,7 +45,7 @@ struct SCC {
 		std::vector<int> in(n);
 		std::list<int> todo;
 		for (int i = 0; i < n; ++i) 
-			for (auto& j : scc_graph[i])
+			for (auto &j : scc_graph[i])
 				++in[j];
 		for (int i = 0; i < n; ++i)
 			if (!in[i] && id[i] == i)
@@ -54,7 +54,7 @@ struct SCC {
 			int u = todo.front();
 			todo.pop_front();
 			topo_ord.push_back(u);
-			for (auto& v : scc_graph[u]) 
+			for (auto &v : scc_graph[u]) 
 				if (!(--in[v])) 
 					todo.push_back(v);
 		}
@@ -63,7 +63,7 @@ struct SCC {
 	void build_scc_graph() {
 		for (int i = 0; i < n; ++i) {
 			comps[id[i]].push_back(i);
-			for (auto& j : g[i]) {
+			for (auto &j : g[i]) {
 				if (id[i] == id[j]) 
 					continue;
 				scc_graph[id[i]].push_back(id[j]);
@@ -78,7 +78,7 @@ struct SCC {
 				dfs_order(i);
 		}
 		reverse(ord.begin(), ord.end());
-		for (auto& x : ord) 
+		for (auto &x : ord) 
 			if (id[x] == -1) 
 				dfs_color(x, x), roots.push_back(x);
 	}
@@ -98,9 +98,9 @@ int main() {
 	S.gen();
 	S.build_scc_graph();
 	cout << S.roots.size() << '\n';
-	for (auto& c : S.topo_ord) {
+	for (auto &c : S.topo_ord) {
 		cout << S.comps[c].size() << " ";
-		for (auto& x : S.comps[c]) 
+		for (auto &x : S.comps[c]) 
 			cout << x << " ";
 		cout << '\n';
 	}

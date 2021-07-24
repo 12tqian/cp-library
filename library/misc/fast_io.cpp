@@ -75,14 +75,14 @@ public:
 	Scanner(FILE* fp) : fd(fileno(fp)) {}
 
 	void read() {}
-	template <class H, class... T> void read(H& h, T&... t) {
+	template <class H, class... T> void read(H &h, T &...t) {
 		bool f = read_single(h);
 		assert(f);
 		read(t...);
 	}
 
 	int read_unsafe() { return 0; }
-	template <class H, class... T> int read_unsafe(H& h, T&... t) {
+	template <class H, class... T> int read_unsafe(H &h, T &...t) {
 		bool f = read_single(h);
 		if (!f) return 0;
 		return 1 + read_unsafe(t...);
@@ -91,7 +91,7 @@ public:
 private:
 	static constexpr size_t SIZE = 1 << 15;
 
-	bool read_single(std::string& ref) {
+	bool read_single(std::string &ref) {
 		if (!skip_space()) return false;
 		ref = "";
 		while (true) {
@@ -102,7 +102,7 @@ private:
 		}
 		return true;
 	}
-	bool read_single(double& ref) {
+	bool read_single(double &ref) {
 		std::string s;
 		if (!read_single(s)) return false;
 		ref = std::stod(s);
@@ -110,7 +110,7 @@ private:
 	}
 
 	template <class T, Internal::is_signed_int_t<T>* = nullptr>
-	bool read_single(T& sref) {
+	bool read_single(T &sref) {
 		using U = Internal::to_unsigned_t<T>;
 		if (!skip_space(50)) return false;
 		bool neg = false;
@@ -126,7 +126,7 @@ private:
 		return true;
 	}
 	template <class U, Internal::is_unsigned_int_t<U>* = nullptr>
-	bool read_single(U& ref) {
+	bool read_single(U &ref) {
 		if (!skip_space(50)) return false;
 		ref = 0;
 		do {
@@ -181,17 +181,17 @@ struct Printer {
 public:
 	template <bool F = false> void write() {}
 	template <bool F = false, class H, class... T>
-	void write(const H& h, const T&... t) {
+	void write(const H &h, const T &...t) {
 		if (F) write_single(' ');
 		write_single(h);
 		write<true>(t...);
 	}
-	template <class... T> void writeln(const T&... t) {
+	template <class... T> void writeln(const T &...t) {
 		write(t...);
 		write_single('\n');
 	}
 
-	Printer(FILE* _fp) : fd(fileno(_fp)) {}
+	Printer(FILE *_fp) : fd(fileno(_fp)) {}
 	~Printer() { flush(); }
 
 	void flush() {
@@ -207,13 +207,13 @@ private:
 	int fd;
 	char line[SIZE];
 	size_t pos = 0;
-	void write_single(const char& val) {
+	void write_single(const char &val) {
 		if (pos == SIZE) flush();
 		line[pos++] = val;
 	}
 
 	template <class T, Internal::is_signed_int_t<T>* = nullptr>
-	void write_single(const T& val) {
+	void write_single(const T &val) {
 		using U = Internal::to_unsigned_t<T>;
 		if (val == 0) {
 			write_single('0');
@@ -255,7 +255,7 @@ private:
 		size_t len = calc_len(uval);
 		pos += len;
 
-		char* ptr = line + pos;
+		char *ptr = line + pos;
 		while (uval >= 100) {
 			ptr -= 2;
 			memcpy(ptr, small[uval % 100].data(), 2);
@@ -283,14 +283,14 @@ private:
 		pos += len;
 	}
 
-	void write_single(const std::string& s) {
+	void write_single(const std::string &s) {
 		for (char c : s) write_single(c);
 	}
-	void write_single(const char* s) {
+	void write_single(const char *s) {
 		size_t len = strlen(s);
 		for (size_t i = 0; i < len; i++) write_single(s[i]);
 	}
-	template <class T> void write_single(const std::vector<T>& val) {
+	template <class T> void write_single(const std::vector<T> &val) {
 		auto n = val.size();
 		for (size_t i = 0; i < n; i++) {
 			if (i) write_single(' ');

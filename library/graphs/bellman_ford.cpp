@@ -28,7 +28,7 @@ template <class T> struct BellmanFord {
 		if (dist[x] == -INF)
 			return;
 		dist[x] = -INF;
-		for (auto& nxt : adj[x])
+		for (auto &nxt : adj[x])
 			gen_bad(nxt);
 	}
 
@@ -37,10 +37,10 @@ template <class T> struct BellmanFord {
 			dist[i] = INF;
 		dist[src] = 0;
 		for (int i = 0; i < n; i++)
-			for (auto& e : edges) 
+			for (auto &e : edges) 
 				if (dist[e.first.first] < INF)
 					dist[e.first.second] = std::min(dist[e.first.second], dist[e.first.first] + e.second);
-		for (auto& e : edges) 
+		for (auto &e : edges) 
 			if (dist[e.first.first] < INF && dist[e.first.second] > dist[e.first.first] + e.second)
 			gen_bad(e.first.second);
 	}
@@ -50,17 +50,17 @@ template <class T> struct BellmanFord {
 			dist[src] = INF;
 		dist[src] = 0;
 		std::vector<int> pre(n);
-		for (auto& e : edges) 
+		for (auto &e : edges) 
 			if (e.first.first == e.first.second && e.second < 0) 
 				return {e.first.first};
 		for (int i = 0; i < n; i++) 
-			for (auto& e : edges) 
+			for (auto &e : edges) 
 				if (dist[e.first.first] < INF)
 					if (dist[e.first.second] > dist[e.first.first] + e.second) {
 						dist[e.first.second] = dist[e.first.first] + e.second;
 						pre[e.first.second] = e.first.first;
 					}
-		for (auto& e : edges) 
+		for (auto &e : edges) 
 			if (dist[e.first.first] < INF)
 				if (dist[e.first.second] > dist[e.first.first] + e.second) {
 					int x = e.first.second;

@@ -29,7 +29,7 @@
 
 using namespace std;
 using namespace __gnu_pbds;
-template <class T> using Tree = tree<T, null_type, less<T>, rb_tree_tag,tree_order_statistics_node_update>;
+template <class T> using Tree = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
 
 typedef long long ll;
 typedef long double ld;
@@ -70,15 +70,15 @@ typedef vector<pd> vpd;
 #define f1r(i, a, b) for (int i = (a); i < (b); ++i)
 #define f0r(i, a) f1r(i, 0, a)
 #define FOR(i, a, b) for (int i = (a); i < (b); ++i)
-#define F0R(i, a) FOR(i,0,a)
+#define F0R(i, a) FOR(i, 0, a)
 #define ROF(i, a, b) for (int i = (b) - 1; i >= (a); --i)
 #define R0F(i, a) ROF(i, 0, a)
-#define each(a, x) for (auto& a : x)
+#define each(a, x) for (auto &a : x)
 
-mt19937 rng((uint32_t) chrono::steady_clock::now().time_since_epoch().count());
+mt19937 rng((uint32_t)chrono::steady_clock::now().time_since_epoch().count());
 
-template <class T> bool ckmin(T& a, const T& b) { return b < a ? a = b, 1 : 0; }
-template <class T> bool ckmax(T& a, const T& b) { return a < b ? a = b, 1 : 0; }
+template <class T> bool ckmin(T &a, const T &b) { return b < a ? a = b, 1 : 0; }
+template <class T> bool ckmax(T &a, const T &b) { return a < b ? a = b, 1 : 0; }
 
 template <class T> using V = vector<T>;
 template <class T> using VV = V<V<T>>;
@@ -133,31 +133,31 @@ inline namespace Helpers {
 
 inline namespace Input {
 	template <class T> constexpr bool needs_input_v = !is_readable_v<T> && is_iterable_v<T>;
-	template <class T, class ...U> void re(T& t, U&... u);
-	template <class T, class U> void re(pair<T, U>& p); // pairs
+	template <class T, class ...U> void re(T &t, U &...u);
+	template <class T, class U> void re(pair<T, U> &p); // pairs
 
 	// re: read
-	template <class T> typename enable_if<is_readable_v<T>,void>::type re(T& x) { cin >> x; } // default
-	template <class T> void re(complex<T>& c) { T a, b; re(a, b); c = {a, b}; } // complex
-	template <class T> typename enable_if<needs_input_v<T>,void>::type re(T& i); // ex. vectors, arrays
-	template <class T, class U> void re(pair<T, U>& p) { re(p.first, p.second); }
-	template <class T> typename enable_if<needs_input_v<T>,void>::type re(T& i) {
-		for (auto& x : i) re(x); }
-	template <class T, class ...U> void re(T& t, U&... u) { re(t); re(u...); } // read multiple
+	template <class T> typename enable_if<is_readable_v<T>, void>::type re(T &x) { cin >> x; } // default
+	template <class T> void re(complex<T> &c) { T a, b; re(a, b); c = {a, b}; } // complex
+	template <class T> typename enable_if<needs_input_v<T>, void>::type re(T &i); // ex. vectors, arrays
+	template <class T, class U> void re(pair<T, U> &p) { re(p.first, p.second); }
+	template <class T> typename enable_if<needs_input_v<T>, void>::type re(T &i) {
+		for (auto &x : i) re(x); }
+	template <class T, class ...U> void re(T &t, U &...u) { re(t); re(u...); } // read multiple
 
 	// rv: resize and read vectors
 	void rv(std::size_t) {}
-	template <class T, class ...U> void rv(std::size_t N, vector<T>& t, U&... u);
-	template <class...U> void rv(std::size_t, std::size_t N2, U&... u);
-	template <class T, class ...U> void rv(std::size_t N, vector<T>& t, U&... u) {
+	template <class T, class ...U> void rv(std::size_t N, vector<T> &t, U &...u);
+	template <class...U> void rv(std::size_t, std::size_t N2, U &...u);
+	template <class T, class ...U> void rv(std::size_t N, vector<T> &t, U &...u) {
 		t.resize(N); re(t);
 		rv(N, u...); }
-	template <class...U> void rv(std::size_t, std::size_t N2, U&... u) {
+	template <class...U> void rv(std::size_t, std::size_t N2, U &...u) {
 		rv(N2, u...); }
 
 	// dumb shortcuts to read in ints
 	void decrement() {} // subtract one from each
-	template <class T, class ...U> void decrement(T& t, U&... u) { --t; decrement(u...); }
+	template <class T, class ...U> void decrement(T &t, U &...u) { --t; decrement(u...); }
 	#define ints(...) int __VA_ARGS__; re(__VA_ARGS__);
 	#define int1(...) ints(__VA_ARGS__); decrement(__VA_ARGS__);
 }
@@ -180,7 +180,7 @@ inline namespace ToString {
 	template <class T> typename enable_if<is_iterable_v<T>, string>::type ts_sep(T v, string sep) {
 		// convert container to string w/ separator sep
 		bool fst = 1; string res = "";
-		for (const auto& x : v) {
+		for (const auto &x : v) {
 			if (!fst) res += sep;
 			fst = 0; res += ts(x);
 		}
@@ -191,12 +191,12 @@ inline namespace ToString {
 
 	// for nested DS
 	template <int, class T> typename enable_if<!needs_output_v<T>, vector<string>>::type 
-	  ts_lev(const T& v) { return {ts(v)}; }
+	  ts_lev(const T &v) { return {ts(v)}; }
 	template <int lev, class T> typename enable_if<needs_output_v<T>, vector<string>>::type 
-	  ts_lev(const T& v) {
+	  ts_lev(const T &v) {
 		if (lev == 0 || !(int)v.size()) return {ts(v)};
 		vector<string> res;
-		for (const auto& t : v) {
+		for (const auto &t : v) {
 			if ((int)res.size()) res.back() += ",";
 			vector<string> tmp = ts_lev<lev - 1>(t);
 			res.insert(res.end(), tmp.begin(), tmp.end());
@@ -211,20 +211,20 @@ inline namespace ToString {
 }
 
 inline namespace Output {
-	template <class T> void pr_sep(ostream& os, string, const T& t) { os << ts(t); }
-	template <class T, class... U> void pr_sep(ostream& os, string sep, const T& t, const U&... u) {
+	template <class T> void pr_sep(ostream &os, string, const T &t) { os << ts(t); }
+	template <class T, class... U> void pr_sep(ostream &os, string sep, const T &t, const U &...u) {
 		pr_sep(os, sep, t); os << sep; pr_sep(os, sep, u...); }
 	// print w/ no spaces
-	template <class ...T> void pr(const T&... t) { pr_sep(cout, "", t...); } 
+	template <class ...T> void pr(const T &...t) { pr_sep(cout, "", t...); } 
 	// print w/ spaces, end with newline
 	void ps() { cout << "\n"; }
-	template <class ...T> void ps(const T&... t) { pr_sep(cout, " ", t...); ps(); } 
+	template <class ...T> void ps(const T &...t) { pr_sep(cout, " ", t...); ps(); } 
 	// debug to cerr
-	template <class ...T> void dbg_out(const T&... t) {
+	template <class ...T> void dbg_out(const T &...t) {
 		pr_sep(cerr, " | ", t...); cerr << endl; }
 	void loc_info(int line, string names) {
 		cerr << "Line(" << line << ") -> [" << names << "]: "; }
-	template <int lev, class T> void dbgl_out(const T& t) {
+	template <int lev, class T> void dbgl_out(const T &t) {
 		cerr << "\n\n" << ts_sep(ts_lev<lev>(t), "\n") << "\n" << endl; }
 	#ifdef LOCAL
 		#define dbg(...) loc_info(__LINE__, #__VA_ARGS__), dbg_out(__VA_ARGS__)
@@ -250,44 +250,44 @@ inline namespace FileIO {
 const int MOD = 1e9 + 7; // 998244353;
 const ld PI = acos((ld) -1);
 
-typedef std::decay<decltype(MOD)>::type mod_t;
+typedef std::decay<decltype(MOD)>::type mod_t; 
 struct mi {
 	mod_t val;
 	explicit operator mod_t() const { return val; }
 	mi() { val = 0; }
-	mi(const long long& v) {
+	mi(const long long &v) {
 		val = (-MOD <= v && v <= MOD) ? v : v % MOD;
 		if (val < 0) val += MOD; }
-	friend std::istream& operator>>(std::istream& in, mi& a) { 
+	friend std::istream& operator>>(std::istream &in, mi &a) { 
 		long long x; std::cin >> x; a = mi(x); return in; }
-	friend std::ostream& operator<<(std::ostream& os, const mi& a) { return os << a.val; }
-	friend void pr(const mi& a) { pr(a.val); }
-	friend void re(mi& a) { long long x; cin >> x; a = mi(x); }
-	friend bool operator==(const mi& a, const mi& b) { return a.val == b.val; }
-	friend bool operator!=(const mi& a, const mi& b) { return !(a == b); }    
-	friend bool operator<(const mi& a, const mi& b) { return a.val < b.val; }
-	friend bool operator>(const mi& a, const mi& b) { return a.val > b.val; }
-	friend bool operator<=(const mi& a, const mi& b) { return a.val <= b.val; }
-	friend bool operator>=(const mi& a, const mi& b) { return a.val >= b.val; }
+	friend std::ostream& operator<<(std::ostream &os, const mi &a) { return os << a.val; }
+	friend void pr(const mi &a) { pr(a.val); }
+	friend void re(mi &a) { long long x; cin >> x; a = mi(x); }
+	friend bool operator==(const mi &a, const mi &b) { return a.val == b.val; }
+	friend bool operator!=(const mi &a, const mi &b) { return !(a == b); }    
+	friend bool operator<(const mi &a, const mi &b) { return a.val < b.val; }
+	friend bool operator>(const mi &a, const mi &b) { return a.val > b.val; }
+	friend bool operator<=(const mi &a, const mi &b) { return a.val <= b.val; }
+	friend bool operator>=(const mi &a, const mi &b) { return a.val >= b.val; }
 	mi operator-() const { return mi(-val); }
-	mi& operator+=(const mi& m) {
+	mi& operator+=(const mi &m) {
 		if ((val += m.val) >= MOD) val -= MOD;
 		return *this; }
-	mi& operator-=(const mi& m) {
+	mi& operator-=(const mi &m) {
 		if ((val -= m.val) < 0) val += MOD;
 		return *this; }
-	mi& operator*=(const mi& m) { val = (long long)val * m.val % MOD;
+	mi& operator*=(const mi &m) { val = (long long)val * m.val % MOD;
 		return *this; }
 	friend mi pow(mi a, long long p) {
 		mi ans = 1; assert(p >= 0);
 		for (; p; p /= 2, a *= a) if (p & 1) ans *= a;
 		return ans; }
-	friend mi inv(const mi& a) { assert(a != 0); return pow(a, MOD - 2); }
-	mi& operator/=(const mi& m) { return (*this) *= inv(m); }
-	friend mi operator+(mi a, const mi& b) { return a += b; }
-	friend mi operator-(mi a, const mi& b) { return a -= b; }
-	friend mi operator*(mi a, const mi& b) { return a *= b; }
-	friend mi operator/(mi a, const mi& b) { return a /= b; }
+	friend mi inv(const mi &a) { assert(a != 0); return pow(a, MOD - 2); }
+	mi& operator/=(const mi &m) { return (*this) *= inv(m); }
+	friend mi operator+(mi a, const mi &b) { return a += b; }
+	friend mi operator-(mi a, const mi &b) { return a -= b; }
+	friend mi operator*(mi a, const mi &b) { return a *= b; }
+	friend mi operator/(mi a, const mi &b) { return a /= b; }
 };
 
 typedef pair<mi, mi> pmi;

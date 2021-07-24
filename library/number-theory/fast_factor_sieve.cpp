@@ -32,7 +32,3 @@ template <int SZ> struct Sieve {
 		return ret;
 	}
 };
-
-int main() {
-	return 0;
-}

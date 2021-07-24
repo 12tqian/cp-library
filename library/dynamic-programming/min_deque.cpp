@@ -17,7 +17,3 @@ template <class T> struct MinDeque {
 		return (int)d.size() ? d.front().first : std::numeric_limits<T>::max();
 	}
 };
-
-int main() {
-	return 0;
-}

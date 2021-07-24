@@ -24,7 +24,3 @@ template <class T> struct MaxDeque {
 		tmp.push_back(x);
 	}
 };
-
-int main(){
-	return 0;
-}

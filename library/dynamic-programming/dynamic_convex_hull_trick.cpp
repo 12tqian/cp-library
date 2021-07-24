@@ -63,7 +63,3 @@ struct ConvexHullTrick {
 		return -(it->eval(x));
 	}
 };
-
-int main() {
-	return 0;
-}

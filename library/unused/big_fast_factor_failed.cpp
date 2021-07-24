@@ -71,13 +71,13 @@ bool miller_rabin(long long p) {
 	return true;
 }
 
-long long f(long long a, long long n, long long& has) {
+long long f(long long a, long long n, long long &has) {
 	return (mod_mul(a, a, n) + has) % n;
 }
 
 std::vector<std::pair<long long, long long>> pollards_rho(long long d) {
 	std::vector<std::pair<long long, long long>> res;
-	auto& pr = S.pr;
+	auto &pr = S.pr;
 	for (int i = 0; i < (int)pr.size() && pr[i] * pr[i] <= d; i++) {
 		if (d % pr[i] == 0) {
 			int co = 0;
@@ -119,7 +119,6 @@ std::vector<std::pair<long long, long long>> pollards_rho(long long d) {
 }
 
 }
-
 
 int main() {
 	using namespace FactorFast;

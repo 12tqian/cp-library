@@ -16,7 +16,7 @@ std::vector<int> suffix_array(std::vector<int> s, int upper) {
 			sum_l[i] += sum_s[i - 1];
 		sum_s[i] += sum_l[i];
 	}
-	auto induce = [&](const std::vector<int>& lms) {
+	auto induce = [&](const std::vector<int> &lms) {
 		fill(sa.begin(), sa.end(), -1);
 		std::vector<int> buf = sum_s;
 		for (int d : lms) 
@@ -43,7 +43,7 @@ std::vector<int> suffix_array(std::vector<int> s, int upper) {
 			lms_map[i] = m++, lms.push_back(i);
 	induce(lms);
 	std::vector<int> sorted_lms;
-	for (auto& v : sa)
+	for (auto &v : sa)
 		if (lms_map[v] != -1)
 			sorted_lms.push_back(v);
 	std::vector<int> rec_s(m);

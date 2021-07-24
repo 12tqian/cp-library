@@ -65,7 +65,3 @@ template<class T> struct LCAJumpDistance {
 		return depth_dist[x] + depth_dist[y] - 2 * depth_dist[l];
 	}
 };
-
-int main() {
-	return 0;
-}

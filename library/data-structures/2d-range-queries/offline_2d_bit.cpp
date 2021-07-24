@@ -24,7 +24,7 @@ template<class T> struct Offline2DBIT {
 		cnt.assign(sz, 0);
 		sort(todo.begin(), todo.end(), [](const std::pair<int, int>& a, const std::pair<int, int>& b) { 
 			return a.second < b.second; });
-		for (auto& t : todo) 
+		for (auto &t : todo) 
 			for (int x = t.first; x < sz; x += x & -x)
 				if (lst[x] != t.second)
 					lst[x] = t.second, cnt[x]++;
@@ -33,7 +33,7 @@ template<class T> struct Offline2DBIT {
 			lst[i] = 0, st[i] = (sum += cnt[i]);
 		val.resize(sum); bit.resize(sum);
 		reverse(todo.begin(), todo.end());
-		for (auto& t : todo) 
+		for (auto &t : todo) 
 			for (int x = t.first; x < sz; x += x & -x)
 				if (lst[x] != t.second)
 					lst[x] = t.second, val[--st[x]] = t.second;
@@ -76,7 +76,3 @@ template<class T> struct Offline2DBIT {
 		return query(xr, yr) - query(xl - 1, yr) - query(xr, yl - 1) + query(xl - 1, yl - 1);
 	}
 };
-
-int main() {
-	return 0;
-}

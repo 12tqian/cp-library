@@ -62,7 +62,7 @@ struct OfflineDynamicConnectivity {
 	}
 
 	void process(int ind) {
-		for (auto& t : seg[ind]) {
+		for (auto &t : seg[ind]) {
 			D.unite(t.first, t.second);
 		}
 		if (ind >= sz) {
@@ -72,7 +72,7 @@ struct OfflineDynamicConnectivity {
 		} else {
 			process(2 * ind); process(2 * ind + 1);
 		}
-		for (auto& t : seg[ind]) {
+		for (auto &t : seg[ind]) {
 			D.rollback();
 		}
 	}

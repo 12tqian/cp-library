@@ -22,7 +22,7 @@ struct info {
 
 	info() : info(INT_MAX) {}
 
-	friend info& operator += (info& a, const info& b) {
+	friend info& operator += (info &a, const info &b) {
 		a.sz += b.sz, a.sum += b.sum;
 		a.mn = std::min(a.mn, b.mn);
 		a.mx = std::max(a.mx, b.mx);
@@ -30,7 +30,7 @@ struct info {
 	}
 };
 
-typedef struct snode* sn;
+typedef struct snode *sn;
 
 struct snode {
 	int id, val; // value in node

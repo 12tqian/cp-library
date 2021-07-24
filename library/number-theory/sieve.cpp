@@ -24,7 +24,3 @@ template <int SZ> struct Sieve {
 		}
 	}
 };
-
-int main() {
-	return 0;
-}

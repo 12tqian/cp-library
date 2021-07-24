@@ -43,7 +43,7 @@ struct HashRange {
 	}
 
 	void add(std::string t) {
-		for (auto& c : t)
+		for (auto &c : t)
 			add(c);
 	}
 

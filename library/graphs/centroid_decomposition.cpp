@@ -58,7 +58,3 @@ struct CentroidDecomposition {
 		}
 	}
 };  
-
-int main() {
-	return 0;
-}

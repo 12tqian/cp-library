@@ -24,7 +24,7 @@ template <class T> struct SparseTable {
 		return v[a] == v[b] ? std::min(a, b) : (v[a] < v[b] ? a : b);
 	}
 
-	void init(const std::vector<T>& _v) {
+	void init(const std::vector<T> &_v) {
 		v = _v;
 		jump = {std::vector<int>((int)v.size())};
 		iota(jump[0].begin(), jump[0].end(), 0);
@@ -76,7 +76,7 @@ struct LCARMQ {
 		sparse[0][in[src]] = src;
 		pos[src] = (int)tmp.size();
 		tmp.emplace_back(dep[src], src);
-		for (auto& nxt : adj[src]) {
+		for (auto &nxt : adj[src]) {
 			if (nxt == par[src]) continue;
 			dep[nxt] = dep[par[nxt] = src] + 1;
 			dfs(nxt);

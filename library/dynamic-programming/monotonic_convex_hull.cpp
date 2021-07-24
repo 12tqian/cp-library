@@ -11,7 +11,7 @@ struct Line {
 		return a * x + b;
 	}
 
-	bool operator<(const Line& y) const {
+	bool operator<(const Line &y) const {
 		return a < y.a;
 	}
 
@@ -19,7 +19,7 @@ struct Line {
 		return a / b - ((a ^ b) < 0 && a % b);
 	}
 
-	long long bet(const Line& y) {
+	long long bet(const Line &y) {
 		assert(a <= y.a);
 		return a == y.a ? (b >= y.b ? INF : -INF) : floor_div(b - y.b, y.a - a);
 	}

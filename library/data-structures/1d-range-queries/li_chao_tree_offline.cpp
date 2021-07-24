@@ -7,7 +7,7 @@ template <class T> struct LiChaoTree {
 		T slope, intercept;
 		Line(T slope, T intercept) : slope(slope), intercept(intercept) {}
 		inline T get(T x) const { return slope * x + intercept; }
-		inline bool over(const Line& other, const T& x) {
+		inline bool over(const Line &other, const T &x) {
 			return get(x) < other.get(x);
 		}
 	};
@@ -16,7 +16,7 @@ template <class T> struct LiChaoTree {
 	std::vector<Line> seg;
 	int sz;
 
-	LiChaoTree(const std::vector<T>& x) : xset(x) {
+	LiChaoTree(const std::vector<T> &x) : xset(x) {
 		sort(xset.begin(), xset.end());
 		xset.erase(unique(xset.begin(), xset.end()), xset.end());
 		sz = 1;

@@ -17,11 +17,11 @@ template <class T> struct IntervalUnion {
 		auto it1 = le.lower_bound(use1);
 		auto it2 = ri.lower_bound(use2);
 		if (it2 != ri.end()) {
-			T lo = (*it2).second, hi = (*it2).first;
+			T lo = it2->second, hi = it2->first;
 			if (lo <= x.first && x.second <= hi) {
 				ret.emplace_back(lo, hi);
 				T mn = x.first, mx = x.second;
-				for (auto& b : ret) {
+				for (auto &b : ret) {
 					le.erase(b); ri.erase({b.second, b.first});
 					mn = std::min(mn, b.first); mx = std::max(mx, b.second);
 				}
@@ -40,16 +40,16 @@ template <class T> struct IntervalUnion {
 		if (it2 != ri.begin()) {
 			it2 = prev(it2);
 			while (true) {
-				auto val = (*it2);
+				auto val = *it2;
 				if (val.first >= x.first) bad.emplace(val.second, val.first);
 				else break;
 				if (it2 == ri.begin()) break;
 				it2 = prev(it2);
 			}
 		}
-		for (auto& b : bad) ret.emplace_back(b);
+		for (auto &b : bad) ret.emplace_back(b);
 		T mn = x.first, mx = x.second;
-		for (auto& b : ret) {
+		for (auto &b : ret) {
 			le.erase(b); ri.erase({b.second, b.first});
 			mn = std::min(mn, b.first); mx = std::max(mx, b.second);
 		}

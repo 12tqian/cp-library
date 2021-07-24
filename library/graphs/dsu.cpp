@@ -28,6 +28,3 @@ struct DSU {
 	}
 };
 
-int main() {
-	return 0;
-}

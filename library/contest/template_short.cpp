@@ -2,9 +2,9 @@
 
 using namespace std;
 
-#define f1r(i, a, b) for (int i = a; i < b; ++i)
+#define f1r(i, a, b) for (int i = (a); i < (b); ++i)
 #define f0r(i, a) f1r(i, 0, a)
-#define each(t, a) for (auto& t : a)
+#define each(t, a) for (auto &t : a)
 
 #define mp make_pair
 #define f first
@@ -22,10 +22,11 @@ typedef pair<ll, ll> pl;
 typedef vector<pi> vpi;
 typedef vector<pl> vpl;
 
-template <class T> bool ckmin(T& a, const T& b) { return b < a ? a = b, 1 : 0; }
-template <class T> bool ckmax(T& a, const T& b) { return a < b ? a = b, 1 : 0; }
+template <class T> bool ckmin(T &a, const T &b) { return b < a ? a = b, 1 : 0; }
+template <class T> bool ckmax(T &a, const T &b) { return a < b ? a = b, 1 : 0; }
 
 int main() {
-	cin.tie(0)->sync_with_stdio(0);
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
 	return 0;
 }
