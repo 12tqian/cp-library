@@ -13,7 +13,7 @@ data:
     \ _m) { k = _k, m = _m; }\n\tLine() : Line(0, std::numeric_limits<long long>::min())\
     \ { }\n\n\tlong long get(long long x) { return k * x + m; }\n\n\tbool majorize(Line\
     \ X, long long L, long long R) { \n\t\treturn get(L) >= X.get(L) && get(R) >=\
-    \ X.get(R); \n\t}\n};\n\nstruct Node {\n\tNode* c[2]; Line S;\n\n\tNode() { c[0]\
+    \ X.get(R); \n\t}\n};\n\nstruct Node {\n\tNode *c[2]; Line S;\n\n\tNode() { c[0]\
     \ = c[1] = NULL; S = Line(); }\n\t~Node() { for (int i = 0; i < 2; i++) delete\
     \ c[i]; }\n\n\tvoid mc(int i) { if (!c[i]) c[i] = new Node(); }\n\tlong long mid(long\
     \ long x) { return x & 1 ? (x - 1) / 2 : x / 2; }\n\n\tlong long query(long long\
@@ -44,7 +44,7 @@ data:
     \ _k, long long _m) { k = _k, m = _m; }\n\tLine() : Line(0, std::numeric_limits<long\
     \ long>::min()) { }\n\n\tlong long get(long long x) { return k * x + m; }\n\n\t\
     bool majorize(Line X, long long L, long long R) { \n\t\treturn get(L) >= X.get(L)\
-    \ && get(R) >= X.get(R); \n\t}\n};\n\nstruct Node {\n\tNode* c[2]; Line S;\n\n\
+    \ && get(R) >= X.get(R); \n\t}\n};\n\nstruct Node {\n\tNode *c[2]; Line S;\n\n\
     \tNode() { c[0] = c[1] = NULL; S = Line(); }\n\t~Node() { for (int i = 0; i <\
     \ 2; i++) delete c[i]; }\n\n\tvoid mc(int i) { if (!c[i]) c[i] = new Node(); }\n\
     \tlong long mid(long long x) { return x & 1 ? (x - 1) / 2 : x / 2; }\n\n\tlong\
@@ -74,7 +74,7 @@ data:
   isVerificationFile: false
   path: library/data-structures/1d-range-queries/li_chao_tree_online.cpp
   requiredBy: []
-  timestamp: '2021-06-09 19:36:06-04:00'
+  timestamp: '2021-07-24 17:17:14-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/data-structures/1d-range-queries/li_chao_tree_online.cpp

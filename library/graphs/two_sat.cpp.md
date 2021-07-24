@@ -23,8 +23,8 @@ data:
     \ }\n\t\n\tint add_var() { return n++; }\n\t\n\tvoid either(int x, int y) {\n\t\
     \tx = std::max(2 * x, -1 - 2 * x);\n\t\ty = std::max(2 * y, -1 - 2 * y);\n\t\t\
     edges.push_back({x, y});\n\t}\n\n\tvoid implies(int x, int y) { either(~x, y);\
-    \ }\n\t\n\tvoid must(int x) { either(x, x); }\n\t\n\tvoid at_most_one(const std::vector<int>&\
-    \ v) {\n\t\tif ((int)v.size() <= 1) {\n\t\t\treturn;\n\t\t}\n\t\tint cur = ~v[0];\n\
+    \ }\n\t\n\tvoid must(int x) { either(x, x); }\n\t\n\tvoid at_most_one(const std::vector<int>\
+    \ &v) {\n\t\tif ((int)v.size() <= 1) {\n\t\t\treturn;\n\t\t}\n\t\tint cur = ~v[0];\n\
     \t\tfor (int i = 2; i < (int)v.size(); ++i) {\n\t\t\tint nxt = add_var();\n\t\t\
     \teither(cur, ~v[i]);\n\t\t\teither(cur, nxt);\n\t\t\teither(~v[i], nxt);\n\t\t\
     \tcur = ~nxt;\n\t\t}\n\t\teither(cur, ~v[1]);\n\t}\n\t\n\tstd::vector<bool> solve(int\
@@ -53,7 +53,7 @@ data:
     \ x, int y) {\n\t\tx = std::max(2 * x, -1 - 2 * x);\n\t\ty = std::max(2 * y, -1\
     \ - 2 * y);\n\t\tedges.push_back({x, y});\n\t}\n\n\tvoid implies(int x, int y)\
     \ { either(~x, y); }\n\t\n\tvoid must(int x) { either(x, x); }\n\t\n\tvoid at_most_one(const\
-    \ std::vector<int>& v) {\n\t\tif ((int)v.size() <= 1) {\n\t\t\treturn;\n\t\t}\n\
+    \ std::vector<int> &v) {\n\t\tif ((int)v.size() <= 1) {\n\t\t\treturn;\n\t\t}\n\
     \t\tint cur = ~v[0];\n\t\tfor (int i = 2; i < (int)v.size(); ++i) {\n\t\t\tint\
     \ nxt = add_var();\n\t\t\teither(cur, ~v[i]);\n\t\t\teither(cur, nxt);\n\t\t\t\
     either(~v[i], nxt);\n\t\t\tcur = ~nxt;\n\t\t}\n\t\teither(cur, ~v[1]);\n\t}\n\t\
@@ -70,7 +70,7 @@ data:
   isVerificationFile: false
   path: library/graphs/two_sat.cpp
   requiredBy: []
-  timestamp: '2021-07-20 00:10:17-04:00'
+  timestamp: '2021-07-24 17:17:14-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/graphs/two_sat.cpp

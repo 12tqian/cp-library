@@ -13,10 +13,10 @@ data:
     \ want to\n */\n\n#include <bits/stdc++.h>\n\nstruct info {\n\tint sz, sum, mn,\
     \ mx;\n\n\tinfo (int v) {\n\t\tif (v == INT_MAX) {\n\t\t\tsz = sum = 0;\n\t\t\t\
     mn = INT_MAX, mx = INT_MIN;\n\t\t} else {\n\t\t\tsz = 1; sum = mn = mx = v;\n\t\
-    \t}\n\t}\n\n\tinfo() : info(INT_MAX) {}\n\n\tfriend info& operator += (info& a,\
-    \ const info& b) {\n\t\ta.sz += b.sz, a.sum += b.sum;\n\t\ta.mn = std::min(a.mn,\
+    \t}\n\t}\n\n\tinfo() : info(INT_MAX) {}\n\n\tfriend info& operator += (info &a,\
+    \ const info &b) {\n\t\ta.sz += b.sz, a.sum += b.sum;\n\t\ta.mn = std::min(a.mn,\
     \ b.mn);\n\t\ta.mx = std::max(a.mx, b.mx);\n\t\treturn a;\n\t}\n};\n\ntypedef\
-    \ struct snode* sn;\n\nstruct snode {\n\tint id, val; // value in node\n\tsn p;\
+    \ struct snode *sn;\n\nstruct snode {\n\tint id, val; // value in node\n\tsn p;\
     \ // parent\n\tsn c[5]; // children\n\tbool flip = 0;\n\tinfo data[2];\n\tint\
     \ next_num[2], lazy[2];\n\n\tsnode(int _id, int v) {\n\t\tid = _id; val = v;\n\
     \t\tp = NULL;\n\t\tfor (int i = 0; i < 5; i++) {\n\t\t\tc[i] = NULL;\n\t\t}\n\t\
@@ -130,9 +130,9 @@ data:
     \ sum, mn, mx;\n\n\tinfo (int v) {\n\t\tif (v == INT_MAX) {\n\t\t\tsz = sum =\
     \ 0;\n\t\t\tmn = INT_MAX, mx = INT_MIN;\n\t\t} else {\n\t\t\tsz = 1; sum = mn\
     \ = mx = v;\n\t\t}\n\t}\n\n\tinfo() : info(INT_MAX) {}\n\n\tfriend info& operator\
-    \ += (info& a, const info& b) {\n\t\ta.sz += b.sz, a.sum += b.sum;\n\t\ta.mn =\
+    \ += (info &a, const info &b) {\n\t\ta.sz += b.sz, a.sum += b.sum;\n\t\ta.mn =\
     \ std::min(a.mn, b.mn);\n\t\ta.mx = std::max(a.mx, b.mx);\n\t\treturn a;\n\t}\n\
-    };\n\ntypedef struct snode* sn;\n\nstruct snode {\n\tint id, val; // value in\
+    };\n\ntypedef struct snode *sn;\n\nstruct snode {\n\tint id, val; // value in\
     \ node\n\tsn p; // parent\n\tsn c[5]; // children\n\tbool flip = 0;\n\tinfo data[2];\n\
     \tint next_num[2], lazy[2];\n\n\tsnode(int _id, int v) {\n\t\tid = _id; val =\
     \ v;\n\t\tp = NULL;\n\t\tfor (int i = 0; i < 5; i++) {\n\t\t\tc[i] = NULL;\n\t\
@@ -244,7 +244,7 @@ data:
   isVerificationFile: false
   path: library/graphs/dmoj_dynamic_tree_test.cpp
   requiredBy: []
-  timestamp: '2021-06-09 19:36:06-04:00'
+  timestamp: '2021-07-24 17:17:14-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/graphs/dmoj_dynamic_tree_test.cpp

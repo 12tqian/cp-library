@@ -17,8 +17,7 @@ data:
     \t\tif (e[x] > e[y]) std::swap(x, y);\n\t\tmod.push_back({x, y, e[x], e[y]});\n\
     \t\te[x] += e[y], e[y] = x;\n\t\treturn true;\n\t}\n\n\tvoid rollback() {\n\t\t\
     auto a = mod.back();\n\t\tmod.pop_back();\n\t\tif (a[0] != -1) {\n\t\t\te[a[0]]\
-    \ = a[2];\n\t\t\te[a[1]] = a[3];\n\t\t}\n\t}\n};\n\nint main() {\n\treturn 0;\n\
-    }\n"
+    \ = a[2];\n\t\t\te[a[1]] = a[3];\n\t\t}\n\t}\n};\n"
   code: "#include <bits/stdc++.h>\n\nstruct DSURollBack {\n\tstd::vector<int> e;\n\
     \t\n\tvoid init(int n) {\n\t\te = std::vector<int>(n, -1);\n\t}\n\n\tint get(int\
     \ x) {\n\t\treturn e[x] < 0 ? x : get(e[x]);\n\t}\n\n\tbool same_set(int a, int\
@@ -29,12 +28,12 @@ data:
     \t\tmod.push_back({x, y, e[x], e[y]});\n\t\te[x] += e[y], e[y] = x;\n\t\treturn\
     \ true;\n\t}\n\n\tvoid rollback() {\n\t\tauto a = mod.back();\n\t\tmod.pop_back();\n\
     \t\tif (a[0] != -1) {\n\t\t\te[a[0]] = a[2];\n\t\t\te[a[1]] = a[3];\n\t\t}\n\t\
-    }\n};\n\nint main() {\n\treturn 0;\n}"
+    }\n};\n"
   dependsOn: []
   isVerificationFile: false
   path: library/graphs/dsu_rollback.cpp
   requiredBy: []
-  timestamp: '2021-06-09 19:36:06-04:00'
+  timestamp: '2021-07-24 17:17:14-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/graphs/dsu_rollback.cpp

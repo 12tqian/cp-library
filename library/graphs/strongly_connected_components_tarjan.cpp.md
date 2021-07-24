@@ -19,13 +19,13 @@ data:
     \ -1; nxt != src;)\n\t\t\t\tid[nxt = stk.back()] = num_comps, stk.pop_back();\n\
     \t\t\tnum_comps++;\n\t\t}\n\t\treturn low;\n\t}\n\t\n\tvoid build() {\n\t\t//\
     \ builds in topological order\n\t\tfor (int i = 0; i < n; i++) \n\t\t\tif (!disc[i])\n\
-    \t\t\t\tdfs(i);\n\t\tfor (auto& x : id) \n\t\t\tx = num_comps - 1 - x;\n\t\tcomps.resize(num_comps);\n\
+    \t\t\t\tdfs(i);\n\t\tfor (auto &x : id) \n\t\t\tx = num_comps - 1 - x;\n\t\tcomps.resize(num_comps);\n\
     \t\tfor (int i = 0; i < n; i++)\n\t\t\tcomps[id[i]].push_back(i);\n\t}\n};\n\n\
     int main() {\n\tusing namespace std;\n\tint n, m; cin >> n >> m;\n\tSCC S;\n\t\
     S.init(n);\n\tfor (int i = 0; i < m; i++) {\n\t\tint u, v;\n\t\tcin >> u >> v;\n\
-    \t\tS.ae(u, v);\n\t}\n\tS.build();\n\tcout << S.num_comps << '\\n';\n\tfor (auto&\
-    \ comp : S.comps) {\n\t\tcout << (int)comp.size() << \" \";\n\t\tfor (int& x :\
-    \ comp)\n\t\t\tcout << x << \" \";\n\t\tcout << '\\n';\n\t}\n\treturn 0;\n}\n"
+    \t\tS.ae(u, v);\n\t}\n\tS.build();\n\tcout << S.num_comps << '\\n';\n\tfor (auto\
+    \ &comp : S.comps) {\n\t\tcout << (int)comp.size() << \" \";\n\t\tfor (int &x\
+    \ : comp)\n\t\t\tcout << x << \" \";\n\t\tcout << '\\n';\n\t}\n\treturn 0;\n}\n"
   code: "#include <bits/stdc++.h>\n\nstruct SCC {\n\tint n, time, num_comps;\n\tstd::vector<std::vector<int>>\
     \ adj;\n\tstd::vector<int> disc, id, stk;\n\tstd::vector<std::vector<int>> comps;\n\
     \n\tvoid init(int n_) {\n\t\tn = n_;\n\t\ttime = 0;\n\t\tnum_comps = 0;\n\t\t\
@@ -37,18 +37,18 @@ data:
     \ -1; nxt != src;)\n\t\t\t\tid[nxt = stk.back()] = num_comps, stk.pop_back();\n\
     \t\t\tnum_comps++;\n\t\t}\n\t\treturn low;\n\t}\n\t\n\tvoid build() {\n\t\t//\
     \ builds in topological order\n\t\tfor (int i = 0; i < n; i++) \n\t\t\tif (!disc[i])\n\
-    \t\t\t\tdfs(i);\n\t\tfor (auto& x : id) \n\t\t\tx = num_comps - 1 - x;\n\t\tcomps.resize(num_comps);\n\
+    \t\t\t\tdfs(i);\n\t\tfor (auto &x : id) \n\t\t\tx = num_comps - 1 - x;\n\t\tcomps.resize(num_comps);\n\
     \t\tfor (int i = 0; i < n; i++)\n\t\t\tcomps[id[i]].push_back(i);\n\t}\n};\n\n\
     int main() {\n\tusing namespace std;\n\tint n, m; cin >> n >> m;\n\tSCC S;\n\t\
     S.init(n);\n\tfor (int i = 0; i < m; i++) {\n\t\tint u, v;\n\t\tcin >> u >> v;\n\
-    \t\tS.ae(u, v);\n\t}\n\tS.build();\n\tcout << S.num_comps << '\\n';\n\tfor (auto&\
-    \ comp : S.comps) {\n\t\tcout << (int)comp.size() << \" \";\n\t\tfor (int& x :\
-    \ comp)\n\t\t\tcout << x << \" \";\n\t\tcout << '\\n';\n\t}\n\treturn 0;\n}"
+    \t\tS.ae(u, v);\n\t}\n\tS.build();\n\tcout << S.num_comps << '\\n';\n\tfor (auto\
+    \ &comp : S.comps) {\n\t\tcout << (int)comp.size() << \" \";\n\t\tfor (int &x\
+    \ : comp)\n\t\t\tcout << x << \" \";\n\t\tcout << '\\n';\n\t}\n\treturn 0;\n}"
   dependsOn: []
   isVerificationFile: false
   path: library/graphs/strongly_connected_components_tarjan.cpp
   requiredBy: []
-  timestamp: '2021-06-09 19:36:06-04:00'
+  timestamp: '2021-07-24 17:17:14-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/graphs/strongly_connected_components_tarjan.cpp

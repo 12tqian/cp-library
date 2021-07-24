@@ -14,7 +14,7 @@ data:
     \ ls[i + 1] : s[i] < s[i + 1];\n\tstd::vector<int> sum_l(upper), sum_s(upper);\n\
     \tfor (int i = 0; i < n; i++)\n\t\t(ls[i] ? sum_l[s[i] + 1] : sum_s[s[i]])++;\n\
     \tfor (int i = 0; i < upper; i++) {\n\t\tif (i)\n\t\t\tsum_l[i] += sum_s[i - 1];\n\
-    \t\tsum_s[i] += sum_l[i];\n\t}\n\tauto induce = [&](const std::vector<int>& lms)\
+    \t\tsum_s[i] += sum_l[i];\n\t}\n\tauto induce = [&](const std::vector<int> &lms)\
     \ {\n\t\tfill(sa.begin(), sa.end(), -1);\n\t\tstd::vector<int> buf = sum_s;\n\t\
     \tfor (int d : lms) \n\t\t\tif (d != n)\n\t\t\t\tsa[buf[s[d]]++] = d;\n\t\tbuf\
     \ = sum_l;\n\t\tsa[buf[s[n - 1]]++] = n - 1;\n\t\tfor (int i = 0; i < n; i++)\
@@ -24,7 +24,7 @@ data:
     \ = v;\n\t\t}\n\t};  \n\tstd::vector<int> lms_map(n + 1, -1), lms;\n\tint m =\
     \ 0;\n\tfor (int i = 1; i < n; i++) \n\t\tif (!ls[i - 1] && ls[i])\n\t\t\tlms_map[i]\
     \ = m++, lms.push_back(i);\n\tinduce(lms);\n\tstd::vector<int> sorted_lms;\n\t\
-    for (auto& v : sa)\n\t\tif (lms_map[v] != -1)\n\t\t\tsorted_lms.push_back(v);\n\
+    for (auto &v : sa)\n\t\tif (lms_map[v] != -1)\n\t\t\tsorted_lms.push_back(v);\n\
     \tstd::vector<int> rec_s(m);\n\tint rec_upper = 0;\n\tfor (int i = 1; i < m; i++)\
     \ {\n\t\tint l = sorted_lms[i - 1];\n\t\tint r = sorted_lms[i];\n\t\tint end_l\
     \ = lms_map[l] + 1 < m ? lms[lms_map[l] + 1] : n;\n\t\tint end_r = lms_map[r]\
@@ -45,7 +45,7 @@ data:
     \ sum_l(upper), sum_s(upper);\n\tfor (int i = 0; i < n; i++)\n\t\t(ls[i] ? sum_l[s[i]\
     \ + 1] : sum_s[s[i]])++;\n\tfor (int i = 0; i < upper; i++) {\n\t\tif (i)\n\t\t\
     \tsum_l[i] += sum_s[i - 1];\n\t\tsum_s[i] += sum_l[i];\n\t}\n\tauto induce = [&](const\
-    \ std::vector<int>& lms) {\n\t\tfill(sa.begin(), sa.end(), -1);\n\t\tstd::vector<int>\
+    \ std::vector<int> &lms) {\n\t\tfill(sa.begin(), sa.end(), -1);\n\t\tstd::vector<int>\
     \ buf = sum_s;\n\t\tfor (int d : lms) \n\t\t\tif (d != n)\n\t\t\t\tsa[buf[s[d]]++]\
     \ = d;\n\t\tbuf = sum_l;\n\t\tsa[buf[s[n - 1]]++] = n - 1;\n\t\tfor (int i = 0;\
     \ i < n; i++) {\n\t\t\tint v = sa[i] - 1;\n\t\t\tif (v >= 0 && !ls[v])\n\t\t\t\
@@ -54,7 +54,7 @@ data:
     \ + 1]] = v;\n\t\t}\n\t};  \n\tstd::vector<int> lms_map(n + 1, -1), lms;\n\tint\
     \ m = 0;\n\tfor (int i = 1; i < n; i++) \n\t\tif (!ls[i - 1] && ls[i])\n\t\t\t\
     lms_map[i] = m++, lms.push_back(i);\n\tinduce(lms);\n\tstd::vector<int> sorted_lms;\n\
-    \tfor (auto& v : sa)\n\t\tif (lms_map[v] != -1)\n\t\t\tsorted_lms.push_back(v);\n\
+    \tfor (auto &v : sa)\n\t\tif (lms_map[v] != -1)\n\t\t\tsorted_lms.push_back(v);\n\
     \tstd::vector<int> rec_s(m);\n\tint rec_upper = 0;\n\tfor (int i = 1; i < m; i++)\
     \ {\n\t\tint l = sorted_lms[i - 1];\n\t\tint r = sorted_lms[i];\n\t\tint end_l\
     \ = lms_map[l] + 1 < m ? lms[lms_map[l] + 1] : n;\n\t\tint end_r = lms_map[r]\
@@ -72,7 +72,7 @@ data:
   isVerificationFile: false
   path: library/string/suffix_array_linear.cpp
   requiredBy: []
-  timestamp: '2021-06-09 19:36:06-04:00'
+  timestamp: '2021-07-24 17:17:14-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/string/suffix_array_linear.cpp

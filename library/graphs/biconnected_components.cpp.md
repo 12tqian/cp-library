@@ -30,7 +30,7 @@ data:
     \tcomps.emplace_back();\n\t\tfill_component(src);\n\t}\n\t\n\tint build() {\n\t\
     \tfor (int i = 0; i < n; i++) \n\t\t\tif (ord[i] == -1)\n\t\t\t\tdfs(i, -1);\n\
     \t\tfor (int i = 0; i < n; i++) \n\t\t\tadd_component(i);\n\t\ttree.resize(num_comps);\n\
-    \t\tfor (auto& b : bridge) {\n\t\t\tint u = id[b.first];\n\t\t\tint v = id[b.second];\n\
+    \t\tfor (auto &b : bridge) {\n\t\t\tint u = id[b.first];\n\t\t\tint v = id[b.second];\n\
     \t\t\ttree[u].push_back(v);\n\t\t\ttree[v].push_back(u);            \n\t\t}\n\t\
     \treturn num_comps;\n\t}\n};\n\nint main() {\n\tusing namespace std;\n\tios_base::sync_with_stdio(0);\n\
     \tint n, m; \n\tcin >> n >> m;\n\tBCC B; B.init(n);\n\tfor (int i = 0; i < m ;i++)\
@@ -61,7 +61,7 @@ data:
     \tcomps.emplace_back();\n\t\tfill_component(src);\n\t}\n\t\n\tint build() {\n\t\
     \tfor (int i = 0; i < n; i++) \n\t\t\tif (ord[i] == -1)\n\t\t\t\tdfs(i, -1);\n\
     \t\tfor (int i = 0; i < n; i++) \n\t\t\tadd_component(i);\n\t\ttree.resize(num_comps);\n\
-    \t\tfor (auto& b : bridge) {\n\t\t\tint u = id[b.first];\n\t\t\tint v = id[b.second];\n\
+    \t\tfor (auto &b : bridge) {\n\t\t\tint u = id[b.first];\n\t\t\tint v = id[b.second];\n\
     \t\t\ttree[u].push_back(v);\n\t\t\ttree[v].push_back(u);            \n\t\t}\n\t\
     \treturn num_comps;\n\t}\n};\n\nint main() {\n\tusing namespace std;\n\tios_base::sync_with_stdio(0);\n\
     \tint n, m; \n\tcin >> n >> m;\n\tBCC B; B.init(n);\n\tfor (int i = 0; i < m ;i++)\
@@ -73,7 +73,7 @@ data:
   isVerificationFile: false
   path: library/graphs/biconnected_components.cpp
   requiredBy: []
-  timestamp: '2021-06-09 19:36:06-04:00'
+  timestamp: '2021-07-24 17:17:14-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/graphs/biconnected_components.cpp

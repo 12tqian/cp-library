@@ -34,8 +34,7 @@ data:
     \t\tif (hull_prev(it)) update(prev(it));\n\t\tif (hull_next(it)) update(next(it));\n\
     \t}\n\t\n\tlong long query(long long x) const {\n\t\tif (hull.empty()) return\
     \ INF;\n\t\tline q; q.val = x, q.is_query = 1;\n\t\tstd::set<line>::iterator it\
-    \ = --hull.lower_bound(q);\n\t\treturn -(it->eval(x));\n\t}\n};\n\nint main()\
-    \ {\n\treturn 0;\n}\n"
+    \ = --hull.lower_bound(q);\n\t\treturn -(it->eval(x));\n\t}\n};\n"
   code: "#include <bits/stdc++.h>\n\nconst long long INF = 1e18;\n\nstruct ConvexHullTrick\
     \ {\n\t// modified for minimums\n\tstruct line {\n\t\tlong long m, b; long double\
     \ x, val;\n\t\tbool is_query;\n\n\t\tline(long long _m = 0, long long _b = 0)\
@@ -62,13 +61,12 @@ data:
     \t\tif (hull_prev(it)) update(prev(it));\n\t\tif (hull_next(it)) update(next(it));\n\
     \t}\n\t\n\tlong long query(long long x) const {\n\t\tif (hull.empty()) return\
     \ INF;\n\t\tline q; q.val = x, q.is_query = 1;\n\t\tstd::set<line>::iterator it\
-    \ = --hull.lower_bound(q);\n\t\treturn -(it->eval(x));\n\t}\n};\n\nint main()\
-    \ {\n\treturn 0;\n}\n"
+    \ = --hull.lower_bound(q);\n\t\treturn -(it->eval(x));\n\t}\n};\n"
   dependsOn: []
   isVerificationFile: false
   path: library/dynamic-programming/dynamic_convex_hull_trick.cpp
   requiredBy: []
-  timestamp: '2021-07-10 12:34:57-04:00'
+  timestamp: '2021-07-24 17:17:14-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/dynamic-programming/dynamic_convex_hull_trick.cpp

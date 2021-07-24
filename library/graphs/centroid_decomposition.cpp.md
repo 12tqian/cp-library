@@ -23,7 +23,7 @@ data:
     \t\treturn par;\n\t}\n\n\tvoid centroid_decomposition(int src, int par = -1) {\n\
     \t\tint c = get_centroid(src);\n\t\tvis[c] = true;\n\t\tparent[c] = par;\n\t\t\
     for (int nxt : adj[c]) {\n\t\t\tif (vis[nxt]) \n\t\t\t\tcontinue;\n\t\t\tcentroid_decomposition(nxt,\
-    \ c);\n\t\t}\n\t}\n};  \n\nint main() {\n\treturn 0;\n}\n"
+    \ c);\n\t\t}\n\t}\n};  \n"
   code: "#include <bits/stdc++.h>\n\nstruct CentroidDecomposition {\n\tint n;\n\t\
     std::vector<std::vector<int>> adj;\n\tstd::vector<bool> vis;\n\tstd::vector<int>\
     \ size;\n\tstd::vector<int> parent;\n\n\tvoid init(int n_) {\n\t\tn = n_;\n\t\t\
@@ -39,13 +39,12 @@ data:
     \ != -1);\n\t\treturn par;\n\t}\n\n\tvoid centroid_decomposition(int src, int\
     \ par = -1) {\n\t\tint c = get_centroid(src);\n\t\tvis[c] = true;\n\t\tparent[c]\
     \ = par;\n\t\tfor (int nxt : adj[c]) {\n\t\t\tif (vis[nxt]) \n\t\t\t\tcontinue;\n\
-    \t\t\tcentroid_decomposition(nxt, c);\n\t\t}\n\t}\n};  \n\nint main() {\n\treturn\
-    \ 0;\n}"
+    \t\t\tcentroid_decomposition(nxt, c);\n\t\t}\n\t}\n};  \n"
   dependsOn: []
   isVerificationFile: false
   path: library/graphs/centroid_decomposition.cpp
   requiredBy: []
-  timestamp: '2021-06-09 19:36:06-04:00'
+  timestamp: '2021-07-24 17:17:14-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/graphs/centroid_decomposition.cpp

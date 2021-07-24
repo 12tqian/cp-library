@@ -30,10 +30,10 @@ data:
     \t\tlong long mod = mod_pow(a, tmp, p);\n\t\twhile (tmp != p - 1 && mod != 1 &&\
     \ mod != p - 1) {\n\t\t\tmod = mod_mul(mod, mod, p);\n\t\t\ttmp *= 2;\n\t\t}\n\
     \t\tif (mod != p - 1 && tmp % 2 == 0) {\n\t\t\treturn false;\n\t\t}\n\t}\n\treturn\
-    \ true;\n}\n\nlong long f(long long a, long long n, long long& has) {\n\treturn\
+    \ true;\n}\n\nlong long f(long long a, long long n, long long &has) {\n\treturn\
     \ (mod_mul(a, a, n) + has) % n;\n}\n\nstd::vector<std::pair<long long, long long>>\
     \ pollards_rho(long long d) {\n\tstd::vector<std::pair<long long, long long>>\
-    \ res;\n\tauto& pr = S.pr;\n\tfor (int i = 0; i < (int)pr.size() && pr[i] * pr[i]\
+    \ res;\n\tauto &pr = S.pr;\n\tfor (int i = 0; i < (int)pr.size() && pr[i] * pr[i]\
     \ <= d; i++) {\n\t\tif (d % pr[i] == 0) {\n\t\t\tint co = 0;\n\t\t\twhile (d %\
     \ pr[i] == 0) {\n\t\t\t\td /= pr[i];\n\t\t\t\tco++;\n\t\t\t}\n\t\t\tres.emplace_back(pr[i],\
     \ co);\n\t\t}\n\t}\n\tif (d > 1) {\n\t\tif (miller_rabin(d)) {\n\t\t\tres.emplace_back(d,\
@@ -45,7 +45,7 @@ data:
     if (c == d) {\n\t\t\t\t\t\tres.emplace_back(c, 2);\n\t\t\t\t\t} else {\n\t\t\t\
     \t\t\tres.emplace_back(c, 1);\n\t\t\t\t\t\tres.emplace_back(d, 1);\n\t\t\t\t\t\
     }\n\t\t\t\t\tbreak;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\treturn res;\n}\n\n}\n\n\
-    \nint main() {\n\tusing namespace FactorFast;\n\tusing namespace std;\n\tint q;\
+    int main() {\n\tusing namespace FactorFast;\n\tusing namespace std;\n\tint q;\
     \ cin >> q;\n\twhile (q--) {\n\t\tlong long a; cin >> a;\n\t\tauto f = pollards_rho(a);\n\
     \t\tint tot = 0;\n\t\tfor (auto x : f) {\n\t\t\ttot += x.second;\n\t\t}\n\t\t\
     cout << tot << \" \";\n\t\tfor (auto x : f) {\n\t\t\tfor (int i = 0; i < x.second;\
@@ -73,10 +73,10 @@ data:
     \t\tlong long mod = mod_pow(a, tmp, p);\n\t\twhile (tmp != p - 1 && mod != 1 &&\
     \ mod != p - 1) {\n\t\t\tmod = mod_mul(mod, mod, p);\n\t\t\ttmp *= 2;\n\t\t}\n\
     \t\tif (mod != p - 1 && tmp % 2 == 0) {\n\t\t\treturn false;\n\t\t}\n\t}\n\treturn\
-    \ true;\n}\n\nlong long f(long long a, long long n, long long& has) {\n\treturn\
+    \ true;\n}\n\nlong long f(long long a, long long n, long long &has) {\n\treturn\
     \ (mod_mul(a, a, n) + has) % n;\n}\n\nstd::vector<std::pair<long long, long long>>\
     \ pollards_rho(long long d) {\n\tstd::vector<std::pair<long long, long long>>\
-    \ res;\n\tauto& pr = S.pr;\n\tfor (int i = 0; i < (int)pr.size() && pr[i] * pr[i]\
+    \ res;\n\tauto &pr = S.pr;\n\tfor (int i = 0; i < (int)pr.size() && pr[i] * pr[i]\
     \ <= d; i++) {\n\t\tif (d % pr[i] == 0) {\n\t\t\tint co = 0;\n\t\t\twhile (d %\
     \ pr[i] == 0) {\n\t\t\t\td /= pr[i];\n\t\t\t\tco++;\n\t\t\t}\n\t\t\tres.emplace_back(pr[i],\
     \ co);\n\t\t}\n\t}\n\tif (d > 1) {\n\t\tif (miller_rabin(d)) {\n\t\t\tres.emplace_back(d,\
@@ -88,7 +88,7 @@ data:
     if (c == d) {\n\t\t\t\t\t\tres.emplace_back(c, 2);\n\t\t\t\t\t} else {\n\t\t\t\
     \t\t\tres.emplace_back(c, 1);\n\t\t\t\t\t\tres.emplace_back(d, 1);\n\t\t\t\t\t\
     }\n\t\t\t\t\tbreak;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\treturn res;\n}\n\n}\n\n\
-    \nint main() {\n\tusing namespace FactorFast;\n\tusing namespace std;\n\tint q;\
+    int main() {\n\tusing namespace FactorFast;\n\tusing namespace std;\n\tint q;\
     \ cin >> q;\n\twhile (q--) {\n\t\tlong long a; cin >> a;\n\t\tauto f = pollards_rho(a);\n\
     \t\tint tot = 0;\n\t\tfor (auto x : f) {\n\t\t\ttot += x.second;\n\t\t}\n\t\t\
     cout << tot << \" \";\n\t\tfor (auto x : f) {\n\t\t\tfor (int i = 0; i < x.second;\
@@ -98,7 +98,7 @@ data:
   isVerificationFile: false
   path: library/unused/big_fast_factor_failed.cpp
   requiredBy: []
-  timestamp: '2021-07-10 12:34:57-04:00'
+  timestamp: '2021-07-24 17:17:14-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/unused/big_fast_factor_failed.cpp

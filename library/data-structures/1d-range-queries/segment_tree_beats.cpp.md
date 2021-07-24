@@ -31,7 +31,7 @@ data:
     \ pull(int ind) {\n\t\tsum[ind] = sum[2 * ind] + sum[2 * ind + 1];\n\t\tmn[ind]\
     \ = comb_mn(mn[2 * ind], mn[2 * ind + 1]);\n\t\tmx[ind] = comb_mx(mx[2 * ind],\
     \ mx[2 * ind + 1]);\n\t}\n\n\tvoid push(int ind, int L, int R) {\n\t\tauto chk\
-    \ = [](C& a, C b, C c) {\n\t\t\tif (a == b)\n\t\t\t\ta = c;\n\t\t};\n\t\tif (mn_mod[ind]\
+    \ = [](C &a, C b, C c) {\n\t\t\tif (a == b)\n\t\t\t\ta = c;\n\t\t};\n\t\tif (mn_mod[ind]\
     \ != -INF) {\n\t\t\tif (mn_mod[ind] > mn[ind].first.first) {\n\t\t\t\tsum[ind]\
     \ += (mn_mod[ind] - mn[ind].first.first) * mn[ind].second;\n\t\t\t\tchk(mx[ind].first.first,\
     \ mn[ind].first.first, mn_mod[ind]);\n\t\t\t\tchk(mx[ind].first.second, mn[ind].first.first,\
@@ -48,7 +48,7 @@ data:
     mx_mod[pos] = std::min(mx_mod[pos], mx_mod[ind] - mod[pos]);\n\t\t\t\t\t\tmn_mod[pos]\
     \ = std::min(mn_mod[pos], mx_mod[pos]);\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t\
     \tmx_mod[ind] = INF;\n\t\t}\n\t\tif (mod[ind] != 0) {\n\t\t\tsum[ind] += mod[ind]\
-    \ * (R - L + 1);\n\t\t\tauto inc = [&](T& a, C b) {\n\t\t\t\tif (std::abs(a.first.first)\
+    \ * (R - L + 1);\n\t\t\tauto inc = [&](T &a, C b) {\n\t\t\t\tif (std::abs(a.first.first)\
     \ != INF) \n\t\t\t\t\ta.first.first += b;\n\t\t\t\tif (std::abs(a.first.second)\
     \ != INF)\n\t\t\t\t\ta.first.second += b;\n\t\t\t};\n\t\t\tinc(mx[ind], mod[ind]);\
     \ inc(mn[ind], mod[ind]);\n\t\t\tif (L != R) {\n\t\t\t\tfor (int i = 0; i < 2;\
@@ -108,7 +108,7 @@ data:
     \ pull(int ind) {\n\t\tsum[ind] = sum[2 * ind] + sum[2 * ind + 1];\n\t\tmn[ind]\
     \ = comb_mn(mn[2 * ind], mn[2 * ind + 1]);\n\t\tmx[ind] = comb_mx(mx[2 * ind],\
     \ mx[2 * ind + 1]);\n\t}\n\n\tvoid push(int ind, int L, int R) {\n\t\tauto chk\
-    \ = [](C& a, C b, C c) {\n\t\t\tif (a == b)\n\t\t\t\ta = c;\n\t\t};\n\t\tif (mn_mod[ind]\
+    \ = [](C &a, C b, C c) {\n\t\t\tif (a == b)\n\t\t\t\ta = c;\n\t\t};\n\t\tif (mn_mod[ind]\
     \ != -INF) {\n\t\t\tif (mn_mod[ind] > mn[ind].first.first) {\n\t\t\t\tsum[ind]\
     \ += (mn_mod[ind] - mn[ind].first.first) * mn[ind].second;\n\t\t\t\tchk(mx[ind].first.first,\
     \ mn[ind].first.first, mn_mod[ind]);\n\t\t\t\tchk(mx[ind].first.second, mn[ind].first.first,\
@@ -125,7 +125,7 @@ data:
     mx_mod[pos] = std::min(mx_mod[pos], mx_mod[ind] - mod[pos]);\n\t\t\t\t\t\tmn_mod[pos]\
     \ = std::min(mn_mod[pos], mx_mod[pos]);\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t\
     \tmx_mod[ind] = INF;\n\t\t}\n\t\tif (mod[ind] != 0) {\n\t\t\tsum[ind] += mod[ind]\
-    \ * (R - L + 1);\n\t\t\tauto inc = [&](T& a, C b) {\n\t\t\t\tif (std::abs(a.first.first)\
+    \ * (R - L + 1);\n\t\t\tauto inc = [&](T &a, C b) {\n\t\t\t\tif (std::abs(a.first.first)\
     \ != INF) \n\t\t\t\t\ta.first.first += b;\n\t\t\t\tif (std::abs(a.first.second)\
     \ != INF)\n\t\t\t\t\ta.first.second += b;\n\t\t\t};\n\t\t\tinc(mx[ind], mod[ind]);\
     \ inc(mn[ind], mod[ind]);\n\t\t\tif (L != R) {\n\t\t\t\tfor (int i = 0; i < 2;\
@@ -166,7 +166,7 @@ data:
   isVerificationFile: false
   path: library/data-structures/1d-range-queries/segment_tree_beats.cpp
   requiredBy: []
-  timestamp: '2021-06-09 19:36:06-04:00'
+  timestamp: '2021-07-24 17:17:14-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/data-structures/1d-range-queries/segment_tree_beats.cpp

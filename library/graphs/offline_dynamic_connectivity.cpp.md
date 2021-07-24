@@ -24,14 +24,14 @@ data:
     \ int>>> seg;\n\n\tvoid upd(int l, int r, std::pair<int, int> p) {\n\t\t// add\
     \ edge p from time [l, r]\n\t\tfor (l += sz, r += sz + 1; l < r; l /= 2, r /=\
     \ 2) {\n\t\t\tif (l & 1) seg[l++].push_back(p);\n\t\t\tif (r & 1) seg[--r].push_back(p);\n\
-    \t\t}\n\t}\n\n\tvoid process(int ind) {\n\t\tfor (auto& t : seg[ind]) {\n\t\t\t\
+    \t\t}\n\t}\n\n\tvoid process(int ind) {\n\t\tfor (auto &t : seg[ind]) {\n\t\t\t\
     D.unite(t.first, t.second);\n\t\t}\n\t\tif (ind >= sz) {\n\t\t\t// Process the\
     \ queries at time ti\n\t\t\t// Do stuff with D\n\t\t\tint ti = ind - sz; \n\t\t\
-    } else {\n\t\t\tprocess(2 * ind); process(2 * ind + 1);\n\t\t}\n\t\tfor (auto&\
-    \ t : seg[ind]) {\n\t\t\tD.rollback();\n\t\t}\n\t}\n\n\tvoid init(int n, int max_time)\
-    \ {\n\t\tsz = 1;\n\t\twhile (sz < max_time) sz *= 2;\n\t\tseg.assign(2 * sz, {});\n\
-    \t\tD.init(n);\n\t}\n\t\n\tvoid solve() {\n\t\tprocess(1);\n\t}\n};\n\nint main()\
-    \ {\n\treturn 0;\n}\n"
+    } else {\n\t\t\tprocess(2 * ind); process(2 * ind + 1);\n\t\t}\n\t\tfor (auto\
+    \ &t : seg[ind]) {\n\t\t\tD.rollback();\n\t\t}\n\t}\n\n\tvoid init(int n, int\
+    \ max_time) {\n\t\tsz = 1;\n\t\twhile (sz < max_time) sz *= 2;\n\t\tseg.assign(2\
+    \ * sz, {});\n\t\tD.init(n);\n\t}\n\t\n\tvoid solve() {\n\t\tprocess(1);\n\t}\n\
+    };\n\nint main() {\n\treturn 0;\n}\n"
   code: "#include <bits/stdc++.h>\n\n/** \n * Example of use: https://ideone.com/J3R7nb\n\
     \ * Solves SPOJ DYNACON2\n */\n\nstruct DSURollBack {\n\tstd::vector<int> e;\n\
     \n\tvoid init(int n) {\n\t\te = std::vector<int>(n, -1);\n\t}\n\n\tint get(int\
@@ -47,19 +47,19 @@ data:
     \ int>>> seg;\n\n\tvoid upd(int l, int r, std::pair<int, int> p) {\n\t\t// add\
     \ edge p from time [l, r]\n\t\tfor (l += sz, r += sz + 1; l < r; l /= 2, r /=\
     \ 2) {\n\t\t\tif (l & 1) seg[l++].push_back(p);\n\t\t\tif (r & 1) seg[--r].push_back(p);\n\
-    \t\t}\n\t}\n\n\tvoid process(int ind) {\n\t\tfor (auto& t : seg[ind]) {\n\t\t\t\
+    \t\t}\n\t}\n\n\tvoid process(int ind) {\n\t\tfor (auto &t : seg[ind]) {\n\t\t\t\
     D.unite(t.first, t.second);\n\t\t}\n\t\tif (ind >= sz) {\n\t\t\t// Process the\
     \ queries at time ti\n\t\t\t// Do stuff with D\n\t\t\tint ti = ind - sz; \n\t\t\
-    } else {\n\t\t\tprocess(2 * ind); process(2 * ind + 1);\n\t\t}\n\t\tfor (auto&\
-    \ t : seg[ind]) {\n\t\t\tD.rollback();\n\t\t}\n\t}\n\n\tvoid init(int n, int max_time)\
-    \ {\n\t\tsz = 1;\n\t\twhile (sz < max_time) sz *= 2;\n\t\tseg.assign(2 * sz, {});\n\
-    \t\tD.init(n);\n\t}\n\t\n\tvoid solve() {\n\t\tprocess(1);\n\t}\n};\n\nint main()\
-    \ {\n\treturn 0;\n}"
+    } else {\n\t\t\tprocess(2 * ind); process(2 * ind + 1);\n\t\t}\n\t\tfor (auto\
+    \ &t : seg[ind]) {\n\t\t\tD.rollback();\n\t\t}\n\t}\n\n\tvoid init(int n, int\
+    \ max_time) {\n\t\tsz = 1;\n\t\twhile (sz < max_time) sz *= 2;\n\t\tseg.assign(2\
+    \ * sz, {});\n\t\tD.init(n);\n\t}\n\t\n\tvoid solve() {\n\t\tprocess(1);\n\t}\n\
+    };\n\nint main() {\n\treturn 0;\n}"
   dependsOn: []
   isVerificationFile: false
   path: library/graphs/offline_dynamic_connectivity.cpp
   requiredBy: []
-  timestamp: '2021-06-09 19:36:06-04:00'
+  timestamp: '2021-07-24 17:17:14-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/graphs/offline_dynamic_connectivity.cpp

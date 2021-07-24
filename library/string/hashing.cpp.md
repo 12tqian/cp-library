@@ -21,7 +21,7 @@ data:
     \ c) {\n\treturn {c, c};\n}\n\nstruct HashRange {\n\tstd::vector<std::array<int,\
     \ 2>> pre = {{0, 0}};\n\tstd::string s;\n\n\tvoid add(char c) {\n\t\ts += c;\n\
     \t\tpre.push_back(base * pre.back() + make_hash(c));\n\t}\n\n\tvoid add(std::string\
-    \ t) {\n\t\tfor (auto& c : t)\n\t\t\tadd(c);\n\t}\n\n\tvoid extend(int len) {\n\
+    \ t) {\n\t\tfor (auto &c : t)\n\t\t\tadd(c);\n\t}\n\n\tvoid extend(int len) {\n\
     \t\twhile ((int)pows.size() <= len)\n\t\t\tpows.push_back(base * pows.back());\n\
     \t}\n\t\n\tstd::array<int, 2> hash(int l, int r) {\n\t\tint len = r + 1 - l;\n\
     \t\textend(len);\n\t\treturn pre[r + 1] - pows[len] * pre[l];\n\t}\n};\n\n} //\
@@ -43,7 +43,7 @@ data:
     \ c) {\n\treturn {c, c};\n}\n\nstruct HashRange {\n\tstd::vector<std::array<int,\
     \ 2>> pre = {{0, 0}};\n\tstd::string s;\n\n\tvoid add(char c) {\n\t\ts += c;\n\
     \t\tpre.push_back(base * pre.back() + make_hash(c));\n\t}\n\n\tvoid add(std::string\
-    \ t) {\n\t\tfor (auto& c : t)\n\t\t\tadd(c);\n\t}\n\n\tvoid extend(int len) {\n\
+    \ t) {\n\t\tfor (auto &c : t)\n\t\t\tadd(c);\n\t}\n\n\tvoid extend(int len) {\n\
     \t\twhile ((int)pows.size() <= len)\n\t\t\tpows.push_back(base * pows.back());\n\
     \t}\n\t\n\tstd::array<int, 2> hash(int l, int r) {\n\t\tint len = r + 1 - l;\n\
     \t\textend(len);\n\t\treturn pre[r + 1] - pows[len] * pre[l];\n\t}\n};\n\n} //\
@@ -55,7 +55,7 @@ data:
   isVerificationFile: false
   path: library/string/hashing.cpp
   requiredBy: []
-  timestamp: '2021-06-09 19:36:06-04:00'
+  timestamp: '2021-07-24 17:17:14-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/string/hashing.cpp

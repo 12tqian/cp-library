@@ -23,8 +23,7 @@ data:
     pull(ind);\n\t}\n\tT qsum(int lo, int hi, int ind = 1, int L = 0, int R = SZ -\
     \ 1) {\n\t\tpush(ind, L, R);\n\t\tif (lo > R || L > hi) return 0;\n\t\tif (lo\
     \ <= L && R <= hi) return sum[ind];\n\t\tint M = (L + R) / 2;\n\t\treturn qsum(lo,\
-    \ hi, 2 * ind, L, M) + qsum(lo, hi, 2 * ind + 1, M + 1, R);\n\t}\n};\nint main()\
-    \ {\n\treturn 0;\n}\n"
+    \ hi, 2 * ind, L, M) + qsum(lo, hi, 2 * ind + 1, M + 1, R);\n\t}\n};\n"
   code: "#include <bits/stdc++.h>\n/**\nmake sure SZ is a power of 2\n*/\ntemplate\
     \ <class T, int SZ> struct LazySeg {\n\tT sum[2 * SZ], lazy[2 * SZ];\n\tLazySeg()\
     \ {\n\t\tfor (int i = 0; i < 2 * SZ; i++) {\n\t\t\tsum[i] = 0;\n\t\t\tlazy[i]\
@@ -41,12 +40,12 @@ data:
     \ = 1, int L = 0, int R = SZ - 1) {\n\t\tpush(ind, L, R);\n\t\tif (lo > R || L\
     \ > hi) return 0;\n\t\tif (lo <= L && R <= hi) return sum[ind];\n\t\tint M = (L\
     \ + R) / 2;\n\t\treturn qsum(lo, hi, 2 * ind, L, M) + qsum(lo, hi, 2 * ind + 1,\
-    \ M + 1, R);\n\t}\n};\nint main() {\n\treturn 0;\n}\n"
+    \ M + 1, R);\n\t}\n};"
   dependsOn: []
   isVerificationFile: false
   path: library/unused/array_lazy_segment_tree.cpp
   requiredBy: []
-  timestamp: '2021-07-10 12:34:57-04:00'
+  timestamp: '2021-07-24 17:17:14-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/unused/array_lazy_segment_tree.cpp

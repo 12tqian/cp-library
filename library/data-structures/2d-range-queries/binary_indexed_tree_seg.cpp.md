@@ -10,9 +10,9 @@ data:
   bundledCode: "#line 1 \"library/data-structures/2d-range-queries/binary_indexed_tree_seg.cpp\"\
     \n#include <bits/stdc++.h>\n\n// bump allocator\n\nstatic char buf[450 << 20];\n\
     void* operator new(size_t s) {\n\tstatic size_t i = sizeof buf;\n\tassert(s <\
-    \ i);\n\treturn (void*)& buf[i -= s];\n}\nvoid operator delete(void*) {}\n\nconst\
+    \ i);\n\treturn (void*)&buf[i -= s];\n}\nvoid operator delete(void*) {}\n\nconst\
     \ int SZ = (1 << 18);\n\n// [0, SZ - 1) for x axis, [0, SZ) for y axis\ntemplate\
-    \ <class T> struct Node {\n\tT val = 0; \n\tNode<T>* c[2];\n\tNode() { c[0] =\
+    \ <class T> struct Node {\n\tT val = 0; \n\tNode<T> *c[2];\n\tNode() { c[0] =\
     \ c[1] = NULL; }\n\n\tvoid upd(int ind, T v, int L = 0, int R = SZ - 1) { // add\
     \ v\n\t\tif (L == ind && R == ind) { val += v; return; }\n\t\tint M = (L + R)\
     \ / 2;\n\t\tif (ind <= M) {\n\t\t\tif (!c[0]) c[0] = new Node();\n\t\t\tc[0]->upd(ind,\
@@ -22,8 +22,8 @@ data:
     \ = SZ - 1) { // query sum of segment\n\t\tif (hi < L || R < lo) return 0;\n\t\
     \tif (lo <= L && R <= hi) return val;\n\t\tint M = (L + R) / 2; \n\t\tT res =\
     \ 0;\n\t\tif (c[0]) res += c[0]->query(lo, hi, L, M);\n\t\tif (c[1]) res += c[1]->query(lo,\
-    \ hi, M + 1, R);\n\t\treturn res;\n\t}\n\n\tvoid update_2d(int ind, Node* c0,\
-    \ Node* c1, int L = 0, int R = SZ - 1) { // for 2D segtree\n\t\tif (L != R) {\n\
+    \ hi, M + 1, R);\n\t\treturn res;\n\t}\n\n\tvoid update_2d(int ind, Node *c0,\
+    \ Node *c1, int L = 0, int R = SZ - 1) { // for 2D segtree\n\t\tif (L != R) {\n\
     \t\t\tint M = (L + R) / 2;\n\t\t\tif (ind <= M) {\n\t\t\t\tif (!c[0]) c[0] = new\
     \ Node();\n\t\t\t\tc[0]->update_2d(ind, (c0 ? c0->c[0] : NULL), (c1 ? c1->c[0]\
     \ : NULL), L, M);\n\t\t\t} else {\n\t\t\t\tif (!c[1]) c[1] = new Node();\n\t\t\
@@ -37,12 +37,12 @@ data:
     T res = 0; \n\t\tfor (; x; x -= x & -x) \n\t\t\tres += seg[x].query(y1, y2);\n\
     \t\treturn res; \n\t}\n\n\tT query(int x1, int x2, int y1, int y2) { // query\
     \ sum of rectangle\n\t\tx1++, x2++;\n\t\treturn query(x2, y1, y2) - query(x1 -\
-    \ 1, y1, y2); \n\t}\n};\n\nint main() {\n\treturn 0;\n}\n"
+    \ 1, y1, y2); \n\t}\n};\n\n"
   code: "#include <bits/stdc++.h>\n\n// bump allocator\n\nstatic char buf[450 << 20];\n\
     void* operator new(size_t s) {\n\tstatic size_t i = sizeof buf;\n\tassert(s <\
-    \ i);\n\treturn (void*)& buf[i -= s];\n}\nvoid operator delete(void*) {}\n\nconst\
+    \ i);\n\treturn (void*)&buf[i -= s];\n}\nvoid operator delete(void*) {}\n\nconst\
     \ int SZ = (1 << 18);\n\n// [0, SZ - 1) for x axis, [0, SZ) for y axis\ntemplate\
-    \ <class T> struct Node {\n\tT val = 0; \n\tNode<T>* c[2];\n\tNode() { c[0] =\
+    \ <class T> struct Node {\n\tT val = 0; \n\tNode<T> *c[2];\n\tNode() { c[0] =\
     \ c[1] = NULL; }\n\n\tvoid upd(int ind, T v, int L = 0, int R = SZ - 1) { // add\
     \ v\n\t\tif (L == ind && R == ind) { val += v; return; }\n\t\tint M = (L + R)\
     \ / 2;\n\t\tif (ind <= M) {\n\t\t\tif (!c[0]) c[0] = new Node();\n\t\t\tc[0]->upd(ind,\
@@ -52,8 +52,8 @@ data:
     \ = SZ - 1) { // query sum of segment\n\t\tif (hi < L || R < lo) return 0;\n\t\
     \tif (lo <= L && R <= hi) return val;\n\t\tint M = (L + R) / 2; \n\t\tT res =\
     \ 0;\n\t\tif (c[0]) res += c[0]->query(lo, hi, L, M);\n\t\tif (c[1]) res += c[1]->query(lo,\
-    \ hi, M + 1, R);\n\t\treturn res;\n\t}\n\n\tvoid update_2d(int ind, Node* c0,\
-    \ Node* c1, int L = 0, int R = SZ - 1) { // for 2D segtree\n\t\tif (L != R) {\n\
+    \ hi, M + 1, R);\n\t\treturn res;\n\t}\n\n\tvoid update_2d(int ind, Node *c0,\
+    \ Node *c1, int L = 0, int R = SZ - 1) { // for 2D segtree\n\t\tif (L != R) {\n\
     \t\t\tint M = (L + R) / 2;\n\t\t\tif (ind <= M) {\n\t\t\t\tif (!c[0]) c[0] = new\
     \ Node();\n\t\t\t\tc[0]->update_2d(ind, (c0 ? c0->c[0] : NULL), (c1 ? c1->c[0]\
     \ : NULL), L, M);\n\t\t\t} else {\n\t\t\t\tif (!c[1]) c[1] = new Node();\n\t\t\
@@ -67,12 +67,12 @@ data:
     T res = 0; \n\t\tfor (; x; x -= x & -x) \n\t\t\tres += seg[x].query(y1, y2);\n\
     \t\treturn res; \n\t}\n\n\tT query(int x1, int x2, int y1, int y2) { // query\
     \ sum of rectangle\n\t\tx1++, x2++;\n\t\treturn query(x2, y1, y2) - query(x1 -\
-    \ 1, y1, y2); \n\t}\n};\n\nint main() {\n\treturn 0;\n}"
+    \ 1, y1, y2); \n\t}\n};\n\n"
   dependsOn: []
   isVerificationFile: false
   path: library/data-structures/2d-range-queries/binary_indexed_tree_seg.cpp
   requiredBy: []
-  timestamp: '2021-07-18 15:40:18-04:00'
+  timestamp: '2021-07-24 17:17:14-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/data-structures/2d-range-queries/binary_indexed_tree_seg.cpp

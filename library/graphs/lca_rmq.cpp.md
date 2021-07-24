@@ -17,7 +17,7 @@ data:
     \ end\n */\n\ntemplate <class T> struct SparseTable {\n\tstd::vector<T> v;\n\t\
     std::vector<std::vector<int>> jump;\n\n\tint level(int x) {\n\t\treturn 31 - __builtin_clz(x);\n\
     \t}\n\n\tint comb(int a, int b) {\n\t\treturn v[a] == v[b] ? std::min(a, b) :\
-    \ (v[a] < v[b] ? a : b);\n\t}\n\n\tvoid init(const std::vector<T>& _v) {\n\t\t\
+    \ (v[a] < v[b] ? a : b);\n\t}\n\n\tvoid init(const std::vector<T> &_v) {\n\t\t\
     v = _v;\n\t\tjump = {std::vector<int>((int)v.size())};\n\t\tiota(jump[0].begin(),\
     \ jump[0].end(), 0);\n\t\tfor (int j = 1; (1 << j) <= (int)v.size(); j++) {\n\t\
     \t\tjump.push_back(std::vector<int>((int)v.size() - (1 << j) + 1));\n\t\t\tfor\
@@ -34,7 +34,7 @@ data:
     \ - (1 << j) + 1));\n\t\t}\n\t}\n\n\tvoid ae(int u, int v) {\n\t\tadj[u].push_back(v);\n\
     \t\tadj[v].push_back(u);\n\t}\n\n\tvoid dfs(int src) {\n\t\tin[src] = ti++;\n\t\
     \tsparse[0][in[src]] = src;\n\t\tpos[src] = (int)tmp.size();\n\t\ttmp.emplace_back(dep[src],\
-    \ src);\n\t\tfor (auto& nxt : adj[src]) {\n\t\t\tif (nxt == par[src]) continue;\n\
+    \ src);\n\t\tfor (auto &nxt : adj[src]) {\n\t\t\tif (nxt == par[src]) continue;\n\
     \t\t\tdep[nxt] = dep[par[nxt] = src] + 1;\n\t\t\tdfs(nxt);\n\t\t\ttmp.emplace_back(dep[src],\
     \ src);\n\t\t}\n\t\tout[src] = ti;\n\t}\n\n\tinline int mini(int u, int v) {\n\
     \t\treturn (dep[u] < dep[v] || (dep[u] == dep[v] && in[u] > in[v])) ? u : v;\n\
@@ -72,7 +72,7 @@ data:
     \ {\n\tstd::vector<T> v;\n\tstd::vector<std::vector<int>> jump;\n\n\tint level(int\
     \ x) {\n\t\treturn 31 - __builtin_clz(x);\n\t}\n\n\tint comb(int a, int b) {\n\
     \t\treturn v[a] == v[b] ? std::min(a, b) : (v[a] < v[b] ? a : b);\n\t}\n\n\tvoid\
-    \ init(const std::vector<T>& _v) {\n\t\tv = _v;\n\t\tjump = {std::vector<int>((int)v.size())};\n\
+    \ init(const std::vector<T> &_v) {\n\t\tv = _v;\n\t\tjump = {std::vector<int>((int)v.size())};\n\
     \t\tiota(jump[0].begin(), jump[0].end(), 0);\n\t\tfor (int j = 1; (1 << j) <=\
     \ (int)v.size(); j++) {\n\t\t\tjump.push_back(std::vector<int>((int)v.size() -\
     \ (1 << j) + 1));\n\t\t\tfor (int i = 0; i < (int)jump[j].size(); i++) {\n\t\t\
@@ -89,7 +89,7 @@ data:
     \ j) + 1));\n\t\t}\n\t}\n\n\tvoid ae(int u, int v) {\n\t\tadj[u].push_back(v);\n\
     \t\tadj[v].push_back(u);\n\t}\n\n\tvoid dfs(int src) {\n\t\tin[src] = ti++;\n\t\
     \tsparse[0][in[src]] = src;\n\t\tpos[src] = (int)tmp.size();\n\t\ttmp.emplace_back(dep[src],\
-    \ src);\n\t\tfor (auto& nxt : adj[src]) {\n\t\t\tif (nxt == par[src]) continue;\n\
+    \ src);\n\t\tfor (auto &nxt : adj[src]) {\n\t\t\tif (nxt == par[src]) continue;\n\
     \t\t\tdep[nxt] = dep[par[nxt] = src] + 1;\n\t\t\tdfs(nxt);\n\t\t\ttmp.emplace_back(dep[src],\
     \ src);\n\t\t}\n\t\tout[src] = ti;\n\t}\n\n\tinline int mini(int u, int v) {\n\
     \t\treturn (dep[u] < dep[v] || (dep[u] == dep[v] && in[u] > in[v])) ? u : v;\n\
@@ -121,7 +121,7 @@ data:
   isVerificationFile: false
   path: library/graphs/lca_rmq.cpp
   requiredBy: []
-  timestamp: '2021-06-09 19:36:06-04:00'
+  timestamp: '2021-07-24 17:17:14-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/graphs/lca_rmq.cpp

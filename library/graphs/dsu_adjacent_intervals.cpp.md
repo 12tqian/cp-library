@@ -20,8 +20,7 @@ data:
     \ false;\n\t\tif (e[x] > e[y]) std::swap(x, y);\n\t\tinterval[x].first = std::min(interval[x].first,\
     \ interval[y].first);\n\t\tinterval[x].second = std::max(interval[x].second, interval[y].second);\n\
     \t\te[x] += e[y]; e[y] = x;\n\t\treturn true;\n\t}\n\t\n\tstd::pair<int, int>\
-    \ get_interval(int x) {\n\t\tx = get(x);\n\t\treturn interval[x];\n\t}\n};\n\n\
-    int main() {\n\treturn 0;\n}\n"
+    \ get_interval(int x) {\n\t\tx = get(x);\n\t\treturn interval[x];\n\t}\n};\n"
   code: "#include <bits/stdc++.h>\n\n/**\n * Call unite to join interval with right\
     \ endpoint x and left endpoint y\n * It is assumed that x + 1 = y\n * get_interval\
     \ finds the interval element x is in\n */\n\nstruct IntervalJoin {\n\tstd::vector<int>\
@@ -35,13 +34,12 @@ data:
     \ y);\n\t\tinterval[x].first = std::min(interval[x].first, interval[y].first);\n\
     \t\tinterval[x].second = std::max(interval[x].second, interval[y].second);\n\t\
     \te[x] += e[y]; e[y] = x;\n\t\treturn true;\n\t}\n\t\n\tstd::pair<int, int> get_interval(int\
-    \ x) {\n\t\tx = get(x);\n\t\treturn interval[x];\n\t}\n};\n\nint main() {\n\t\
-    return 0;\n}"
+    \ x) {\n\t\tx = get(x);\n\t\treturn interval[x];\n\t}\n};\n"
   dependsOn: []
   isVerificationFile: false
   path: library/graphs/dsu_adjacent_intervals.cpp
   requiredBy: []
-  timestamp: '2021-06-09 19:36:06-04:00'
+  timestamp: '2021-07-24 17:17:14-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/graphs/dsu_adjacent_intervals.cpp

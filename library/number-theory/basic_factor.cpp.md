@@ -14,8 +14,8 @@ data:
     \ i * i <= x; ++i) {\n\t\tif (x % i == 0) {\n\t\t\tint t = 0;\n\t\t\twhile (x\
     \ % i == 0) x /= i, t++;\n\t\t\tpri.push_back({i, t});\n\t\t}\n\t}\n\tif (x >\
     \ 1) pri.push_back({x, 1});\n\treturn pri;\n}\n\ntemplate <class T> T phi(T x)\
-    \ {\n\tfor (auto& a : factor(x)) x -= x / a.first;\n\treturn x;\n}\n\ntemplate\
-    \ <class T> void tour(std::vector<std::pair<T, int>>& v, std::vector<T>& res,\
+    \ {\n\tfor (auto &a : factor(x)) x -= x / a.first;\n\treturn x;\n}\n\ntemplate\
+    \ <class T> void tour(std::vector<std::pair<T, int>> &v, std::vector<T> &res,\
     \ int ind, T cur) {\n\tif (ind == (int)v.size()) res.push_back(cur);\n\telse {\n\
     \t\tT mul = 1;\n\t\tfor (int i = 0; i < v[ind].second + 1; i++) {\n\t\t\ttour(v,\
     \ res, ind + 1, cur * mul);\n\t\t\tmul *= v[ind].first;\n\t\t}\n\t}\n}\n\ntemplate\
@@ -32,9 +32,9 @@ data:
     \ int>> pri;\n\tfor (T i = 2; i * i <= x; ++i) {\n\t\tif (x % i == 0) {\n\t\t\t\
     int t = 0;\n\t\t\twhile (x % i == 0) x /= i, t++;\n\t\t\tpri.push_back({i, t});\n\
     \t\t}\n\t}\n\tif (x > 1) pri.push_back({x, 1});\n\treturn pri;\n}\n\ntemplate\
-    \ <class T> T phi(T x) {\n\tfor (auto& a : factor(x)) x -= x / a.first;\n\treturn\
-    \ x;\n}\n\ntemplate <class T> void tour(std::vector<std::pair<T, int>>& v, std::vector<T>&\
-    \ res, int ind, T cur) {\n\tif (ind == (int)v.size()) res.push_back(cur);\n\t\
+    \ <class T> T phi(T x) {\n\tfor (auto &a : factor(x)) x -= x / a.first;\n\treturn\
+    \ x;\n}\n\ntemplate <class T> void tour(std::vector<std::pair<T, int>> &v, std::vector<T>\
+    \ &res, int ind, T cur) {\n\tif (ind == (int)v.size()) res.push_back(cur);\n\t\
     else {\n\t\tT mul = 1;\n\t\tfor (int i = 0; i < v[ind].second + 1; i++) {\n\t\t\
     \ttour(v, res, ind + 1, cur * mul);\n\t\t\tmul *= v[ind].first;\n\t\t}\n\t}\n\
     }\n\ntemplate <class T> std::vector<T> get_divisor(T x) {\n\tauto v = factor(x);\n\
@@ -48,7 +48,7 @@ data:
   isVerificationFile: false
   path: library/number-theory/basic_factor.cpp
   requiredBy: []
-  timestamp: '2021-06-09 19:36:06-04:00'
+  timestamp: '2021-07-24 17:17:14-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/number-theory/basic_factor.cpp

@@ -14,7 +14,7 @@ data:
     \ {\n\tstd::vector<T> v;\n\tstd::vector<std::vector<int>> jump;\n\n\tint level(int\
     \ x) {\n\t\treturn 31 - __builtin_clz(x);\n\t}\n\n\tint comb(int a, int b) {\n\
     \t\treturn v[a] == v[b] ? std::min(a, b) : (v[a] < v[b] ? a : b);\n\t}\n\n\tvoid\
-    \ init(const std::vector<T>& _v) {\n\t\tv = _v;\n\t\tjump = {std::vector<int>((int)v.size())};\n\
+    \ init(const std::vector<T> &_v) {\n\t\tv = _v;\n\t\tjump = {std::vector<int>((int)v.size())};\n\
     \t\tiota(jump[0].begin(), jump[0].end(), 0);\n\t\tfor (int j = 1; (1 << j) <=\
     \ (int)v.size(); j++) {\n\t\t\tjump.push_back(std::vector<int>((int)v.size() -\
     \ (1 << j) + 1));\n\t\t\tfor (int i = 0; i < (int)jump[j].size(); i++) {\n\t\t\
@@ -31,7 +31,7 @@ data:
     \ i < n; i++) {\n\t\t\tint a = sa[i - 1], b = sa[i];\n\t\t\tisa[b] = i > 1 &&\
     \ s[a] == s[b] ? isa[a] : i;\n\t\t}\n\t\tfor (int len = 1; len < n; len *= 2)\
     \ {\n\t\t\tstd::vector<int> ss(sa), is(isa), pos(n);\n\t\t\tiota(pos.begin(),\
-    \ pos.end(), 0);\n\t\t\tfor (auto& t : ss) {\n\t\t\t\tint tt = t - len;\n\t\t\t\
+    \ pos.end(), 0);\n\t\t\tfor (auto &t : ss) {\n\t\t\t\tint tt = t - len;\n\t\t\t\
     \tif (tt >= 0) \n\t\t\t\t\tsa[pos[isa[tt]]++] = tt;\n\t\t\t}\n\t\t\tfor (int i\
     \ = 1; i < n; i++) {\n\t\t\t\tint a = sa[i - 1], b = sa[i];\n\t\t\t\tisa[b] =\
     \ is[a] == is[b] && is[a + len] == is[b + len] ? isa[a] : i;\n\t\t\t}\n\t\t}\n\
@@ -54,7 +54,7 @@ data:
     template <class T> struct SparseTable {\n\tstd::vector<T> v;\n\tstd::vector<std::vector<int>>\
     \ jump;\n\n\tint level(int x) {\n\t\treturn 31 - __builtin_clz(x);\n\t}\n\n\t\
     int comb(int a, int b) {\n\t\treturn v[a] == v[b] ? std::min(a, b) : (v[a] < v[b]\
-    \ ? a : b);\n\t}\n\n\tvoid init(const std::vector<T>& _v) {\n\t\tv = _v;\n\t\t\
+    \ ? a : b);\n\t}\n\n\tvoid init(const std::vector<T> &_v) {\n\t\tv = _v;\n\t\t\
     jump = {std::vector<int>((int)v.size())};\n\t\tiota(jump[0].begin(), jump[0].end(),\
     \ 0);\n\t\tfor (int j = 1; (1 << j) <= (int)v.size(); j++) {\n\t\t\tjump.push_back(std::vector<int>((int)v.size()\
     \ - (1 << j) + 1));\n\t\t\tfor (int i = 0; i < (int)jump[j].size(); i++) {\n\t\
@@ -71,7 +71,7 @@ data:
     \ i < n; i++) {\n\t\t\tint a = sa[i - 1], b = sa[i];\n\t\t\tisa[b] = i > 1 &&\
     \ s[a] == s[b] ? isa[a] : i;\n\t\t}\n\t\tfor (int len = 1; len < n; len *= 2)\
     \ {\n\t\t\tstd::vector<int> ss(sa), is(isa), pos(n);\n\t\t\tiota(pos.begin(),\
-    \ pos.end(), 0);\n\t\t\tfor (auto& t : ss) {\n\t\t\t\tint tt = t - len;\n\t\t\t\
+    \ pos.end(), 0);\n\t\t\tfor (auto &t : ss) {\n\t\t\t\tint tt = t - len;\n\t\t\t\
     \tif (tt >= 0) \n\t\t\t\t\tsa[pos[isa[tt]]++] = tt;\n\t\t\t}\n\t\t\tfor (int i\
     \ = 1; i < n; i++) {\n\t\t\t\tint a = sa[i - 1], b = sa[i];\n\t\t\t\tisa[b] =\
     \ is[a] == is[b] && is[a + len] == is[b + len] ? isa[a] : i;\n\t\t\t}\n\t\t}\n\
@@ -92,7 +92,7 @@ data:
   isVerificationFile: false
   path: library/string/suffix_array.cpp
   requiredBy: []
-  timestamp: '2021-06-09 19:36:06-04:00'
+  timestamp: '2021-07-24 17:17:14-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/string/suffix_array.cpp

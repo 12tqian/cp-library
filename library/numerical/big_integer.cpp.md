@@ -273,12 +273,12 @@ data:
     \ (cur % 1000000));\n\t\t\tcarry = (int) (cur / 1000000);\n\t\t}\n\t\tres.z =\
     \ convert_base(res.z, 6, base_digits);\n\t\tres.trim();\n\t\treturn res;\n\t}\n\
     };\n\nBigInt random_big_int(int n) {\n\tstd::string s;\n\tfor (int i = 0; i <\
-    \ n; i++) {\n\t\ts += rand() % 10 + '0';\n\t}\n\treturn BigInt(s);\n}\n"
+    \ n; i++) {\n\t\ts += rand() % 10 + '0';\n\t}\n\treturn BigInt(s);\n}"
   dependsOn: []
   isVerificationFile: false
   path: library/numerical/big_integer.cpp
   requiredBy: []
-  timestamp: '2021-06-09 19:36:06-04:00'
+  timestamp: '2021-07-24 17:17:14-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/numerical/big_integer.cpp

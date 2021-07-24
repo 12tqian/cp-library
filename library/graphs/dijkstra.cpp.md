@@ -17,9 +17,8 @@ data:
     \ std::vector<T>, std::greater<T>> pq;\n\t\tauto ad = [&](int a, C b) {\n\t\t\t\
     if (dist[a] <= b) return;\n\t\t\tpq.push({dist[a] = b, a});\n\t\t};\n\t\tad(st,\
     \ 0);\n\t\twhile (!pq.empty()) {\n\t\t\tauto x = pq.top();\n\t\t\tpq.pop();\n\t\
-    \t\tif (dist[x.second] < x.first) continue;\n\t\t\tfor (auto& y: adj[x.second])\
-    \ {\n\t\t\t\tad(y.first, x.first + y.second);\n\t\t\t}\n\t\t}\n\t}\n};\n\nint\
-    \ main() {\n\treturn 0;\n}\n"
+    \t\tif (dist[x.second] < x.first) continue;\n\t\t\tfor (auto &y: adj[x.second])\
+    \ {\n\t\t\t\tad(y.first, x.first + y.second);\n\t\t\t}\n\t\t}\n\t}\n};\n"
   code: "#include <bits/stdc++.h>\n\ntemplate <class C, bool directed> struct Dijkstra\
     \ {\n\tint SZ; std::vector<C> dist;\n\tstd::vector<std::vector<std::pair<int,\
     \ C>>> adj;\n\n\tvoid init(int _SZ) {\n\t\tSZ = _SZ;\n\t\tadj.clear();\n\t\tadj.resize(SZ);\n\
@@ -30,13 +29,13 @@ data:
     \tauto ad = [&](int a, C b) {\n\t\t\tif (dist[a] <= b) return;\n\t\t\tpq.push({dist[a]\
     \ = b, a});\n\t\t};\n\t\tad(st, 0);\n\t\twhile (!pq.empty()) {\n\t\t\tauto x =\
     \ pq.top();\n\t\t\tpq.pop();\n\t\t\tif (dist[x.second] < x.first) continue;\n\t\
-    \t\tfor (auto& y: adj[x.second]) {\n\t\t\t\tad(y.first, x.first + y.second);\n\
-    \t\t\t}\n\t\t}\n\t}\n};\n\nint main() {\n\treturn 0;\n}\n"
+    \t\tfor (auto &y: adj[x.second]) {\n\t\t\t\tad(y.first, x.first + y.second);\n\
+    \t\t\t}\n\t\t}\n\t}\n};\n"
   dependsOn: []
   isVerificationFile: false
   path: library/graphs/dijkstra.cpp
   requiredBy: []
-  timestamp: '2021-07-10 12:34:57-04:00'
+  timestamp: '2021-07-24 17:17:14-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/graphs/dijkstra.cpp
