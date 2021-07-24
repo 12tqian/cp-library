@@ -8,9 +8,12 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: '#line 1 "library/dynamic-programming/min_deque.cpp"
-
-    '
+  bundledCode: "#include <bits/stdc++.h>\n\ntemplate <class T> struct MinDeque {\n\
+    \tint lo = 0, hi = -1;\n\n\tstd::deque<std::pair<T, int>> d;\n\tvoid ins(T x)\
+    \ { // add to back\n\t\twhile ((int)d.size() && d.back().first >= x) d.pop_back();\n\
+    \t\td.push_back({x, ++hi});\n\t}\n\n\tvoid del() { // delete from front\n\t\t\
+    if (d.front().second == lo++) d.pop_front();\n\t}\n\n\tT get() {\n\t\treturn (int)d.size()\
+    \ ? d.front().first : std::numeric_limits<T>::max();\n\t}\n};\n"
   code: "#include <bits/stdc++.h>\n\ntemplate <class T> struct MinDeque {\n\tint lo\
     \ = 0, hi = -1;\n\n\tstd::deque<std::pair<T, int>> d;\n\tvoid ins(T x) { // add\
     \ to back\n\t\twhile ((int)d.size() && d.back().first >= x) d.pop_back();\n\t\t\
