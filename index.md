@@ -263,11 +263,14 @@ data:
   - name: library/unused
     pages:
     - icon: ':warning:'
-      path: library/unused/array_lazy_segment_tree.cpp
-      title: library/unused/array_lazy_segment_tree.cpp
+      path: library/unused/array_lazy_segment_tree.hpp
+      title: library/unused/array_lazy_segment_tree.hpp
     - icon: ':warning:'
-      path: library/unused/big_fast_factor_failed.cpp
-      title: library/unused/big_fast_factor_failed.cpp
+      path: library/unused/big_fast_factor_failed.hpp
+      title: library/unused/big_fast_factor_failed.hpp
+    - icon: ':warning:'
+      path: library/unused/include_test.hpp
+      title: library/unused/include_test.hpp
   verificationCategories:
   - name: test
     pages:
