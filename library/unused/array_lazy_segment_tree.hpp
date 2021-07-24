@@ -1,7 +1,5 @@
-#include <bits/stdc++.h>
-/**
-make sure SZ is a power of 2
-*/
+#pragma once
+
 template <class T, int SZ> struct LazySeg {
 	T sum[2 * SZ], lazy[2 * SZ];
 	LazySeg() {
