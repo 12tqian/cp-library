@@ -4,11 +4,11 @@ data:
   - name: library/contest
     pages:
     - icon: ':warning:'
-      path: library/contest/template-full.hpp
-      title: library/contest/template-full.hpp
+      path: library/contest/template-full.cpp
+      title: library/contest/template-full.cpp
     - icon: ':warning:'
-      path: library/contest/template-short.hpp
-      title: library/contest/template-short.hpp
+      path: library/contest/template-short.cpp
+      title: library/contest/template-short.cpp
   - name: library/data-structures/1d-range-queries
     pages:
     - icon: ':warning:'

@@ -4,7 +4,7 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
-  _pathExtension: hpp
+  _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
     links:
@@ -312,15 +312,15 @@ data:
     \treturn 0;\n}\n"
   dependsOn: []
   isVerificationFile: false
-  path: library/contest/template-full.hpp
+  path: library/contest/template-full.cpp
   requiredBy: []
-  timestamp: '2021-07-24 19:26:06-04:00'
+  timestamp: '2021-07-24 19:43:32-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: library/contest/template-full.hpp
+documentation_of: library/contest/template-full.cpp
 layout: document
 redirect_from:
-- /library/library/contest/template-full.hpp
-- /library/library/contest/template-full.hpp.html
-title: library/contest/template-full.hpp
+- /library/library/contest/template-full.cpp
+- /library/library/contest/template-full.cpp.html
+title: library/contest/template-full.cpp
 ---
