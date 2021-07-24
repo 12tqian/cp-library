@@ -12,6 +12,9 @@ data:
   - name: library/data-structures/1d-range-queries
     pages:
     - icon: ':warning:'
+      path: library/data-structures/1d-range-queries/affine_seg.cpp
+      title: library/data-structures/1d-range-queries/affine_seg.cpp
+    - icon: ':warning:'
       path: library/data-structures/1d-range-queries/associative_range_query.cpp
       title: library/data-structures/1d-range-queries/associative_range_query.cpp
     - icon: ':warning:'
@@ -29,9 +32,6 @@ data:
     - icon: ':warning:'
       path: library/data-structures/1d-range-queries/li_chao_tree_online.cpp
       title: library/data-structures/1d-range-queries/li_chao_tree_online.cpp
-    - icon: ':warning:'
-      path: library/data-structures/1d-range-queries/mult_add_seg.cpp
-      title: library/data-structures/1d-range-queries/mult_add_seg.cpp
     - icon: ':warning:'
       path: library/data-structures/1d-range-queries/point_update_segment_tree.cpp
       title: library/data-structures/1d-range-queries/point_update_segment_tree.cpp
