@@ -14,7 +14,7 @@ data:
     - icon: ':warning:'
       path: library/data-structures/1d-range-queries/affine-seg.hpp
       title: library/data-structures/1d-range-queries/affine-seg.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/data-structures/1d-range-queries/associative-range-query.hpp
       title: library/data-structures/1d-range-queries/associative-range-query.hpp
     - icon: ':warning:'
@@ -274,7 +274,7 @@ data:
   verificationCategories:
   - name: test
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/associative-range-query.test.cpp
       title: test/associative-range-query.test.cpp
     - icon: ':heavy_check_mark:'
