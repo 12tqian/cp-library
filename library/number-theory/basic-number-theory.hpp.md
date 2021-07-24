@@ -8,22 +8,22 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#include <bits/stdc++.h>\n\nnamespace BasicNumberTheory { \n\n// find\
-    \ solution to a * x + b * y = gcd(a, b)\n// |a * x|, |b * y| <= lcm(a, b)\nstd::pair<long\
-    \ long, long long> euclid(long long a, long long b) {\n\tif (!b) \n\t\treturn\
-    \ {1, 0};\n\tstd::pair<long long, long long> p = euclid(b, a % b);\n\treturn {p.second,\
-    \ p.first - a / b * p.second};\n}\n\nlong long mod_inverse(long long a, long long\
-    \ b) {\n\tauto p = euclid(a, b);\n\tassert(p.first * a + p.second * b == 1); //\
-    \ gcd is 1\n\treturn p.first + (p.first < 0) * b;\n}\n\nstd::pair<long long, long\
-    \ long> CRT(std::pair<long long, long long> a, \n\tstd::pair<long long, long long>\
-    \ b) {\n\tif (a.second < b.second)\n\t\tstd::swap(a, b);\n\tlong long x, y;\n\t\
-    std::tie(x, y) = euclid(a.second, b.second);\n\tlong long g = a.second * x + b.second\
-    \ * y;\n\tlong long l = a.second / g * b.second;\n\tif ((b.first - a.first) %\
-    \ g)\n\t\treturn {-1, -1}; // no solution\n\tx = (b.first - a.first) % b.second\
-    \ * x % b.second / g * a.second + a.first;\n\treturn {x + (x < 0) * l, l};\n}\n\
-    \nlong long cdiv(long long a, long long b) { // a / b rounded up\n\treturn a /\
-    \ b + ((a ^ b) > 0 && a % b);\n}\n\nlong long fdiv(long long a, long long b) {\
-    \ // a / b rounded down\n\treturn a / b - ((a ^ b) < 0 && a % b);\n}\n\n// minimum\
+  bundledCode: "\nnamespace BasicNumberTheory { \n\n// find solution to a * x + b\
+    \ * y = gcd(a, b)\n// |a * x|, |b * y| <= lcm(a, b)\nstd::pair<long long, long\
+    \ long> euclid(long long a, long long b) {\n\tif (!b) \n\t\treturn {1, 0};\n\t\
+    std::pair<long long, long long> p = euclid(b, a % b);\n\treturn {p.second, p.first\
+    \ - a / b * p.second};\n}\n\nlong long mod_inverse(long long a, long long b) {\n\
+    \tauto p = euclid(a, b);\n\tassert(p.first * a + p.second * b == 1); // gcd is\
+    \ 1\n\treturn p.first + (p.first < 0) * b;\n}\n\nstd::pair<long long, long long>\
+    \ CRT(std::pair<long long, long long> a, \n\tstd::pair<long long, long long> b)\
+    \ {\n\tif (a.second < b.second)\n\t\tstd::swap(a, b);\n\tlong long x, y;\n\tstd::tie(x,\
+    \ y) = euclid(a.second, b.second);\n\tlong long g = a.second * x + b.second *\
+    \ y;\n\tlong long l = a.second / g * b.second;\n\tif ((b.first - a.first) % g)\n\
+    \t\treturn {-1, -1}; // no solution\n\tx = (b.first - a.first) % b.second * x\
+    \ % b.second / g * a.second + a.first;\n\treturn {x + (x < 0) * l, l};\n}\n\n\
+    long long cdiv(long long a, long long b) { // a / b rounded up\n\treturn a / b\
+    \ + ((a ^ b) > 0 && a % b);\n}\n\nlong long fdiv(long long a, long long b) { //\
+    \ a / b rounded down\n\treturn a / b - ((a ^ b) < 0 && a % b);\n}\n\n// minimum\
     \ x such that there is a y such that l <= a * x + b * y <= r\nlong long between(long\
     \ long a, long long b, long long l, long long r) {\n\ta %= b;\n\tif (a == 0)\n\
     \t\treturn l == 0 ? 0 : -1;\n\tlong long k = cdiv(l, a);\n\tif (a * k <= r)\n\t\
@@ -43,22 +43,22 @@ data:
     \ n}, {b, m});\n\t\tif (ans.first == -1) \n\t\t\tcout << \"no solution\\n\";\n\
     \t\telse \n\t\t\tcout << ans.first << \" \" << ans.second << '\\n';\n\t}   \n\t\
     return 0;\n}\n"
-  code: "#include <bits/stdc++.h>\n\nnamespace BasicNumberTheory { \n\n// find solution\
-    \ to a * x + b * y = gcd(a, b)\n// |a * x|, |b * y| <= lcm(a, b)\nstd::pair<long\
-    \ long, long long> euclid(long long a, long long b) {\n\tif (!b) \n\t\treturn\
-    \ {1, 0};\n\tstd::pair<long long, long long> p = euclid(b, a % b);\n\treturn {p.second,\
-    \ p.first - a / b * p.second};\n}\n\nlong long mod_inverse(long long a, long long\
-    \ b) {\n\tauto p = euclid(a, b);\n\tassert(p.first * a + p.second * b == 1); //\
-    \ gcd is 1\n\treturn p.first + (p.first < 0) * b;\n}\n\nstd::pair<long long, long\
-    \ long> CRT(std::pair<long long, long long> a, \n\tstd::pair<long long, long long>\
-    \ b) {\n\tif (a.second < b.second)\n\t\tstd::swap(a, b);\n\tlong long x, y;\n\t\
-    std::tie(x, y) = euclid(a.second, b.second);\n\tlong long g = a.second * x + b.second\
-    \ * y;\n\tlong long l = a.second / g * b.second;\n\tif ((b.first - a.first) %\
-    \ g)\n\t\treturn {-1, -1}; // no solution\n\tx = (b.first - a.first) % b.second\
-    \ * x % b.second / g * a.second + a.first;\n\treturn {x + (x < 0) * l, l};\n}\n\
-    \nlong long cdiv(long long a, long long b) { // a / b rounded up\n\treturn a /\
-    \ b + ((a ^ b) > 0 && a % b);\n}\n\nlong long fdiv(long long a, long long b) {\
-    \ // a / b rounded down\n\treturn a / b - ((a ^ b) < 0 && a % b);\n}\n\n// minimum\
+  code: "#pragma once\n\nnamespace BasicNumberTheory { \n\n// find solution to a *\
+    \ x + b * y = gcd(a, b)\n// |a * x|, |b * y| <= lcm(a, b)\nstd::pair<long long,\
+    \ long long> euclid(long long a, long long b) {\n\tif (!b) \n\t\treturn {1, 0};\n\
+    \tstd::pair<long long, long long> p = euclid(b, a % b);\n\treturn {p.second, p.first\
+    \ - a / b * p.second};\n}\n\nlong long mod_inverse(long long a, long long b) {\n\
+    \tauto p = euclid(a, b);\n\tassert(p.first * a + p.second * b == 1); // gcd is\
+    \ 1\n\treturn p.first + (p.first < 0) * b;\n}\n\nstd::pair<long long, long long>\
+    \ CRT(std::pair<long long, long long> a, \n\tstd::pair<long long, long long> b)\
+    \ {\n\tif (a.second < b.second)\n\t\tstd::swap(a, b);\n\tlong long x, y;\n\tstd::tie(x,\
+    \ y) = euclid(a.second, b.second);\n\tlong long g = a.second * x + b.second *\
+    \ y;\n\tlong long l = a.second / g * b.second;\n\tif ((b.first - a.first) % g)\n\
+    \t\treturn {-1, -1}; // no solution\n\tx = (b.first - a.first) % b.second * x\
+    \ % b.second / g * a.second + a.first;\n\treturn {x + (x < 0) * l, l};\n}\n\n\
+    long long cdiv(long long a, long long b) { // a / b rounded up\n\treturn a / b\
+    \ + ((a ^ b) > 0 && a % b);\n}\n\nlong long fdiv(long long a, long long b) { //\
+    \ a / b rounded down\n\treturn a / b - ((a ^ b) < 0 && a % b);\n}\n\n// minimum\
     \ x such that there is a y such that l <= a * x + b * y <= r\nlong long between(long\
     \ long a, long long b, long long l, long long r) {\n\ta %= b;\n\tif (a == 0)\n\
     \t\treturn l == 0 ? 0 : -1;\n\tlong long k = cdiv(l, a);\n\tif (a * k <= r)\n\t\
@@ -82,7 +82,7 @@ data:
   isVerificationFile: false
   path: library/number-theory/basic-number-theory.hpp
   requiredBy: []
-  timestamp: '2021-07-24 19:26:06-04:00'
+  timestamp: '2021-07-24 19:40:07-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/number-theory/basic-number-theory.hpp

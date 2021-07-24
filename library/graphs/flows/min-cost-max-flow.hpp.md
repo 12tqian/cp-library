@@ -8,15 +8,15 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#include <bits/stdc++.h>\n/**\n * to get back the original edges,\
-    \ assign ID's in ae\n */\n\ntemplate <class F, class C> struct MCMF {\n\tstruct\
-    \ Edge { int to; F flow, cap; C cost; };\n\n\tint n;\n\tstd::vector<C> p, dist;\n\
-    \tstd::vector<int> pre;\n\tstd::vector<Edge> edges;\n\tstd::vector<std::vector<int>>\
-    \ adj;\n\n\tconst C INF  = std::numeric_limits<C>::max();\n\n\tvoid init(int n_)\
-    \ {\n\t\tn = n_;\n\t\tp.assign(n, 0);\n\t\tdist.assign(n, 0);\n\t\tpre.assign(n,\
-    \ 0);\n\t\tadj.clear(); adj.resize(n);\n\t\tedges.clear();\n\t}\n\n\tvoid ae(int\
-    \ u, int v, F cap, C cost) {\n\t\tassert(cap >= 0);\n\t\tadj[u].push_back((int)edges.size());\n\
-    \t\tedges.push_back({v, 0, cap, cost});\n\t\tadj[v].push_back((int)edges.size());\n\
+  bundledCode: "/**\n * to get back the original edges, assign ID's in ae\n */\n\n\
+    template <class F, class C> struct MCMF {\n\tstruct Edge { int to; F flow, cap;\
+    \ C cost; };\n\n\tint n;\n\tstd::vector<C> p, dist;\n\tstd::vector<int> pre;\n\
+    \tstd::vector<Edge> edges;\n\tstd::vector<std::vector<int>> adj;\n\n\tconst C\
+    \ INF  = std::numeric_limits<C>::max();\n\n\tvoid init(int n_) {\n\t\tn = n_;\n\
+    \t\tp.assign(n, 0);\n\t\tdist.assign(n, 0);\n\t\tpre.assign(n, 0);\n\t\tadj.clear();\
+    \ adj.resize(n);\n\t\tedges.clear();\n\t}\n\n\tvoid ae(int u, int v, F cap, C\
+    \ cost) {\n\t\tassert(cap >= 0);\n\t\tadj[u].push_back((int)edges.size());\n\t\
+    \tedges.push_back({v, 0, cap, cost});\n\t\tadj[v].push_back((int)edges.size());\n\
     \t\tedges.push_back({u, 0, 0, -cost});\n\t}\n\n\tbool path(int s, int t) {\n\t\
     \tfor (int i = 0; i < n; i++) \n\t\t\tdist[i] = INF;\n\t\tusing T = std::pair<C,\
     \ int>;\n\t\tstd::priority_queue<T, std::vector<T>, std::greater<T>> todo;\n\t\
@@ -42,15 +42,15 @@ data:
     M.init(n);\n\tfor (int i = 0; i < m; i++) {\n\t\tint u, v, c, w;\n\t\tcin >> u\
     \ >> v >> c >> w;\n\t\tM.ae(u, v, c, w);\n\t}\n\tauto res = M.calc(s, t);\n\t\
     cout << res.first << \" \" << res.second << '\\n';\n\treturn 0;\n}\n"
-  code: "#include <bits/stdc++.h>\n/**\n * to get back the original edges, assign\
-    \ ID's in ae\n */\n\ntemplate <class F, class C> struct MCMF {\n\tstruct Edge\
-    \ { int to; F flow, cap; C cost; };\n\n\tint n;\n\tstd::vector<C> p, dist;\n\t\
-    std::vector<int> pre;\n\tstd::vector<Edge> edges;\n\tstd::vector<std::vector<int>>\
-    \ adj;\n\n\tconst C INF  = std::numeric_limits<C>::max();\n\n\tvoid init(int n_)\
-    \ {\n\t\tn = n_;\n\t\tp.assign(n, 0);\n\t\tdist.assign(n, 0);\n\t\tpre.assign(n,\
-    \ 0);\n\t\tadj.clear(); adj.resize(n);\n\t\tedges.clear();\n\t}\n\n\tvoid ae(int\
-    \ u, int v, F cap, C cost) {\n\t\tassert(cap >= 0);\n\t\tadj[u].push_back((int)edges.size());\n\
-    \t\tedges.push_back({v, 0, cap, cost});\n\t\tadj[v].push_back((int)edges.size());\n\
+  code: "#pragma once\n/**\n * to get back the original edges, assign ID's in ae\n\
+    \ */\n\ntemplate <class F, class C> struct MCMF {\n\tstruct Edge { int to; F flow,\
+    \ cap; C cost; };\n\n\tint n;\n\tstd::vector<C> p, dist;\n\tstd::vector<int> pre;\n\
+    \tstd::vector<Edge> edges;\n\tstd::vector<std::vector<int>> adj;\n\n\tconst C\
+    \ INF  = std::numeric_limits<C>::max();\n\n\tvoid init(int n_) {\n\t\tn = n_;\n\
+    \t\tp.assign(n, 0);\n\t\tdist.assign(n, 0);\n\t\tpre.assign(n, 0);\n\t\tadj.clear();\
+    \ adj.resize(n);\n\t\tedges.clear();\n\t}\n\n\tvoid ae(int u, int v, F cap, C\
+    \ cost) {\n\t\tassert(cap >= 0);\n\t\tadj[u].push_back((int)edges.size());\n\t\
+    \tedges.push_back({v, 0, cap, cost});\n\t\tadj[v].push_back((int)edges.size());\n\
     \t\tedges.push_back({u, 0, 0, -cost});\n\t}\n\n\tbool path(int s, int t) {\n\t\
     \tfor (int i = 0; i < n; i++) \n\t\t\tdist[i] = INF;\n\t\tusing T = std::pair<C,\
     \ int>;\n\t\tstd::priority_queue<T, std::vector<T>, std::greater<T>> todo;\n\t\
@@ -80,7 +80,7 @@ data:
   isVerificationFile: false
   path: library/graphs/flows/min-cost-max-flow.hpp
   requiredBy: []
-  timestamp: '2021-07-24 19:26:06-04:00'
+  timestamp: '2021-07-24 19:40:07-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/graphs/flows/min-cost-max-flow.hpp

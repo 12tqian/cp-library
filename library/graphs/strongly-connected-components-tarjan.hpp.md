@@ -8,10 +8,10 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#include <bits/stdc++.h>\n\nstruct SCC {\n\tint n, time, num_comps;\n\
-    \tstd::vector<std::vector<int>> adj;\n\tstd::vector<int> disc, id, stk;\n\tstd::vector<std::vector<int>>\
-    \ comps;\n\n\tvoid init(int n_) {\n\t\tn = n_;\n\t\ttime = 0;\n\t\tnum_comps =\
-    \ 0;\n\t\tadj.assign(n, std::vector<int>());\n\t\tid.assign(n, -1);\n\t\tdisc.assign(n,\
+  bundledCode: "\nstruct SCC {\n\tint n, time, num_comps;\n\tstd::vector<std::vector<int>>\
+    \ adj;\n\tstd::vector<int> disc, id, stk;\n\tstd::vector<std::vector<int>> comps;\n\
+    \n\tvoid init(int n_) {\n\t\tn = n_;\n\t\ttime = 0;\n\t\tnum_comps = 0;\n\t\t\
+    adj.assign(n, std::vector<int>());\n\t\tid.assign(n, -1);\n\t\tdisc.assign(n,\
     \ 0);\n\t\tcomps.clear();\n\t}\n\n\tvoid ae(int u, int v) {\n\t\tadj[u].push_back(v);\n\
     \t}\n\n\tint dfs(int src) {\n\t\tint low = disc[src] = ++time;\n\t\tstk.push_back(src);\n\
     \t\tfor (int nxt : adj[src]) \n\t\t\tif (id[nxt] == -1)\n\t\t\t\tlow = std::min(low,\
@@ -26,7 +26,7 @@ data:
     \t\tS.ae(u, v);\n\t}\n\tS.build();\n\tcout << S.num_comps << '\\n';\n\tfor (auto\
     \ &comp : S.comps) {\n\t\tcout << (int)comp.size() << \" \";\n\t\tfor (int &x\
     \ : comp)\n\t\t\tcout << x << \" \";\n\t\tcout << '\\n';\n\t}\n\treturn 0;\n}\n"
-  code: "#include <bits/stdc++.h>\n\nstruct SCC {\n\tint n, time, num_comps;\n\tstd::vector<std::vector<int>>\
+  code: "#pragma once\n\nstruct SCC {\n\tint n, time, num_comps;\n\tstd::vector<std::vector<int>>\
     \ adj;\n\tstd::vector<int> disc, id, stk;\n\tstd::vector<std::vector<int>> comps;\n\
     \n\tvoid init(int n_) {\n\t\tn = n_;\n\t\ttime = 0;\n\t\tnum_comps = 0;\n\t\t\
     adj.assign(n, std::vector<int>());\n\t\tid.assign(n, -1);\n\t\tdisc.assign(n,\
@@ -48,7 +48,7 @@ data:
   isVerificationFile: false
   path: library/graphs/strongly-connected-components-tarjan.hpp
   requiredBy: []
-  timestamp: '2021-07-24 19:26:06-04:00'
+  timestamp: '2021-07-24 19:40:07-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/graphs/strongly-connected-components-tarjan.hpp

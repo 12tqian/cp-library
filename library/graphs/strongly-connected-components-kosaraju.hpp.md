@@ -8,8 +8,8 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#include <bits/stdc++.h>\n\nstruct SCC {\n\tint n; \n\tstd::vector<std::vector<int>>\
-    \ g, rg, scc_graph, comps;\n\tstd::vector<int> id, ord, roots, topo_ord;\n\tstd::vector<bool>\
+  bundledCode: "\nstruct SCC {\n\tint n; \n\tstd::vector<std::vector<int>> g, rg,\
+    \ scc_graph, comps;\n\tstd::vector<int> id, ord, roots, topo_ord;\n\tstd::vector<bool>\
     \ vis;\n\n\tvoid init(int n_) {\n\t\tn = n_;\n\t\tg.assign(n, std::vector<int>());\n\
     \t\trg.assign(n, std::vector<int>());\n\t\tscc_graph.assign(n, std::vector<int>());\n\
     \t\tcomps.assign(n, std::vector<int>());\n\t\tvis.assign(n, false);\n\t\tid.assign(n,\
@@ -37,7 +37,7 @@ data:
     \tS.build_scc_graph();\n\tcout << S.roots.size() << '\\n';\n\tfor (auto &c : S.topo_ord)\
     \ {\n\t\tcout << S.comps[c].size() << \" \";\n\t\tfor (auto &x : S.comps[c]) \n\
     \t\t\tcout << x << \" \";\n\t\tcout << '\\n';\n\t}\n\treturn 0;\n}\n"
-  code: "#include <bits/stdc++.h>\n\nstruct SCC {\n\tint n; \n\tstd::vector<std::vector<int>>\
+  code: "#pragma once\n\nstruct SCC {\n\tint n; \n\tstd::vector<std::vector<int>>\
     \ g, rg, scc_graph, comps;\n\tstd::vector<int> id, ord, roots, topo_ord;\n\tstd::vector<bool>\
     \ vis;\n\n\tvoid init(int n_) {\n\t\tn = n_;\n\t\tg.assign(n, std::vector<int>());\n\
     \t\trg.assign(n, std::vector<int>());\n\t\tscc_graph.assign(n, std::vector<int>());\n\
@@ -70,7 +70,7 @@ data:
   isVerificationFile: false
   path: library/graphs/strongly-connected-components-kosaraju.hpp
   requiredBy: []
-  timestamp: '2021-07-24 19:26:06-04:00'
+  timestamp: '2021-07-24 19:40:07-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/graphs/strongly-connected-components-kosaraju.hpp

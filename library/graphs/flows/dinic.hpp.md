@@ -8,10 +8,10 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#include <bits/stdc++.h>\n\ntemplate <class F> struct Dinic {\n\t\
-    struct Edge { int to; F flow, cap; };\n\tint n;\n\tstd::vector<Edge> edges;\n\t\
-    std::vector<std::vector<int>> adj;\n\tstd::vector<int> level;\n\tstd::vector<std::vector<int>::iterator>\
-    \ cur;\n\n\tvoid init(int n_) {\n\t\tn = n_;\n\t\tadj.assign(n, std::vector<int>());\n\
+  bundledCode: "\ntemplate <class F> struct Dinic {\n\tstruct Edge { int to; F flow,\
+    \ cap; };\n\tint n;\n\tstd::vector<Edge> edges;\n\tstd::vector<std::vector<int>>\
+    \ adj;\n\tstd::vector<int> level;\n\tstd::vector<std::vector<int>::iterator> cur;\n\
+    \n\tvoid init(int n_) {\n\t\tn = n_;\n\t\tadj.assign(n, std::vector<int>());\n\
     \t\tcur.assign(n, std::vector<int>::iterator());\n\t\tedges.clear();\n\t\tlevel.clear();\n\
     \t}\n\n\tvoid ae(int u, int v, F cap, F rcap = 0) {\n\t\tassert(std::min(cap,\
     \ rcap) >= 0);\n\t\tadj[u].push_back((int)edges.size());\n\t\tedges.push_back({v,\
@@ -41,8 +41,8 @@ data:
     \tif (e.cap == e.flow) {\n\t\t\t\tint u = i - 1;\n\t\t\t\tint v = e.to - L - 1;\n\
     \t\t\t\tcout << u << \" \" << v << '\\n';\n\t\t\t}\n\t\t}\n\t}\n\treturn 0;\n\
     }\n"
-  code: "#include <bits/stdc++.h>\n\ntemplate <class F> struct Dinic {\n\tstruct Edge\
-    \ { int to; F flow, cap; };\n\tint n;\n\tstd::vector<Edge> edges;\n\tstd::vector<std::vector<int>>\
+  code: "#pragma once\n\ntemplate <class F> struct Dinic {\n\tstruct Edge { int to;\
+    \ F flow, cap; };\n\tint n;\n\tstd::vector<Edge> edges;\n\tstd::vector<std::vector<int>>\
     \ adj;\n\tstd::vector<int> level;\n\tstd::vector<std::vector<int>::iterator> cur;\n\
     \n\tvoid init(int n_) {\n\t\tn = n_;\n\t\tadj.assign(n, std::vector<int>());\n\
     \t\tcur.assign(n, std::vector<int>::iterator());\n\t\tedges.clear();\n\t\tlevel.clear();\n\
@@ -77,7 +77,7 @@ data:
   isVerificationFile: false
   path: library/graphs/flows/dinic.hpp
   requiredBy: []
-  timestamp: '2021-07-24 19:26:06-04:00'
+  timestamp: '2021-07-24 19:40:07-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/graphs/flows/dinic.hpp

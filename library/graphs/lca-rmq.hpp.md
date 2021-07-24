@@ -8,31 +8,30 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#include <bits/stdc++.h>\n\n/**\n * O(n log n) preprocessing with\
-    \ O(1) query\n * Compress compute sthe minimal subtree containing\n * all node\
-    \ LCAs and comrpesses edges\n * O(S log S) compression\n * Returns list of (parent,\
-    \ original index)\n * Parent is the parent of node in compressed tree\n * Original\
-    \ index is the node it represents\n * get_child also returns the subtree child\
-    \ of node and -1 if it doesn't exist in O(1)\n * To support forest, gen on all\
-    \ the roots, initialize tmp and sparse at the end\n */\n\ntemplate <class T> struct\
-    \ SparseTable {\n\tstd::vector<T> v;\n\tstd::vector<std::vector<int>> jump;\n\n\
-    \tint level(int x) {\n\t\treturn 31 - __builtin_clz(x);\n\t}\n\n\tint comb(int\
-    \ a, int b) {\n\t\treturn v[a] == v[b] ? std::min(a, b) : (v[a] < v[b] ? a : b);\n\
-    \t}\n\n\tvoid init(const std::vector<T> &_v) {\n\t\tv = _v;\n\t\tjump = {std::vector<int>((int)v.size())};\n\
-    \t\tiota(jump[0].begin(), jump[0].end(), 0);\n\t\tfor (int j = 1; (1 << j) <=\
-    \ (int)v.size(); j++) {\n\t\t\tjump.push_back(std::vector<int>((int)v.size() -\
-    \ (1 << j) + 1));\n\t\t\tfor (int i = 0; i < (int)jump[j].size(); i++) {\n\t\t\
-    \t\tjump[j][i] = comb(jump[j - 1][i], jump[j - 1][i + (1 << (j - 1))]);\n\t\t\t\
-    }\n\t\t}\n\t}\n\n\tint index(int l, int r) {\n\t\tassert(l <= r);\n\t\tint d =\
-    \ level(r - l + 1);\n\t\treturn comb(jump[d][l], jump[d][r - (1 << d) + 1]);\n\
-    \t}\n\n\tT query(int l, int r) {\n\t\treturn v[index(l, r)];\n\t}\n};\n\nstruct\
-    \ LCARMQ {\n\tint n; \n\tstd::vector<std::vector<int>> adj;\n\tstd::vector<int>\
-    \ dep, in, par, rev, out, pos;\n\tstd::vector<std::pair<int, int>> tmp;\n\tSparseTable<std::pair<int,\
-    \ int>> S;\n\tstd::vector<std::vector<int>> sparse;\n\tint ti = 0;\n\n\tvoid init(int\
-    \ _n) {\n\t\tn = _n;\n\t\tadj.resize(n);\n\t\tdep = in = out = par = rev = pos\
-    \ = std::vector<int>(n);\n\t\tsparse = {std::vector<int>(n)};\n\t\tfor (int j\
-    \ = 1; (1 << j) <= n; j++) {\n\t\t\tsparse.push_back(std::vector<int>(n - (1 <<\
-    \ j) + 1));\n\t\t}\n\t}\n\n\tvoid ae(int u, int v) {\n\t\tadj[u].push_back(v);\n\
+  bundledCode: "\n/**\n * O(n log n) preprocessing with O(1) query\n * Compress compute\
+    \ sthe minimal subtree containing\n * all node LCAs and comrpesses edges\n * O(S\
+    \ log S) compression\n * Returns list of (parent, original index)\n * Parent is\
+    \ the parent of node in compressed tree\n * Original index is the node it represents\n\
+    \ * get_child also returns the subtree child of node and -1 if it doesn't exist\
+    \ in O(1)\n * To support forest, gen on all the roots, initialize tmp and sparse\
+    \ at the end\n */\n\ntemplate <class T> struct SparseTable {\n\tstd::vector<T>\
+    \ v;\n\tstd::vector<std::vector<int>> jump;\n\n\tint level(int x) {\n\t\treturn\
+    \ 31 - __builtin_clz(x);\n\t}\n\n\tint comb(int a, int b) {\n\t\treturn v[a] ==\
+    \ v[b] ? std::min(a, b) : (v[a] < v[b] ? a : b);\n\t}\n\n\tvoid init(const std::vector<T>\
+    \ &_v) {\n\t\tv = _v;\n\t\tjump = {std::vector<int>((int)v.size())};\n\t\tiota(jump[0].begin(),\
+    \ jump[0].end(), 0);\n\t\tfor (int j = 1; (1 << j) <= (int)v.size(); j++) {\n\t\
+    \t\tjump.push_back(std::vector<int>((int)v.size() - (1 << j) + 1));\n\t\t\tfor\
+    \ (int i = 0; i < (int)jump[j].size(); i++) {\n\t\t\t\tjump[j][i] = comb(jump[j\
+    \ - 1][i], jump[j - 1][i + (1 << (j - 1))]);\n\t\t\t}\n\t\t}\n\t}\n\n\tint index(int\
+    \ l, int r) {\n\t\tassert(l <= r);\n\t\tint d = level(r - l + 1);\n\t\treturn\
+    \ comb(jump[d][l], jump[d][r - (1 << d) + 1]);\n\t}\n\n\tT query(int l, int r)\
+    \ {\n\t\treturn v[index(l, r)];\n\t}\n};\n\nstruct LCARMQ {\n\tint n; \n\tstd::vector<std::vector<int>>\
+    \ adj;\n\tstd::vector<int> dep, in, par, rev, out, pos;\n\tstd::vector<std::pair<int,\
+    \ int>> tmp;\n\tSparseTable<std::pair<int, int>> S;\n\tstd::vector<std::vector<int>>\
+    \ sparse;\n\tint ti = 0;\n\n\tvoid init(int _n) {\n\t\tn = _n;\n\t\tadj.resize(n);\n\
+    \t\tdep = in = out = par = rev = pos = std::vector<int>(n);\n\t\tsparse = {std::vector<int>(n)};\n\
+    \t\tfor (int j = 1; (1 << j) <= n; j++) {\n\t\t\tsparse.push_back(std::vector<int>(n\
+    \ - (1 << j) + 1));\n\t\t}\n\t}\n\n\tvoid ae(int u, int v) {\n\t\tadj[u].push_back(v);\n\
     \t\tadj[v].push_back(u);\n\t}\n\n\tvoid dfs(int src) {\n\t\tin[src] = ti++;\n\t\
     \tsparse[0][in[src]] = src;\n\t\tpos[src] = (int)tmp.size();\n\t\ttmp.emplace_back(dep[src],\
     \ src);\n\t\tfor (auto &nxt : adj[src]) {\n\t\t\tif (nxt == par[src]) continue;\n\
@@ -63,31 +62,30 @@ data:
     \ >> n >> q;\n\tLCARMQ L;\n\tL.init(n);\n\tfor (int i = 1; i < n; i++) {\n\t\t\
     int p; cin >> p;\n\t\tL.ae(i, p);\n\t}\n\tL.gen(0);\n\twhile (q--) {\n\t\tint\
     \ u, v; cin >> u >> v;\n\t\tcout << L.lca(u, v) << '\\n';\n\t}\n}\n"
-  code: "#include <bits/stdc++.h>\n\n/**\n * O(n log n) preprocessing with O(1) query\n\
-    \ * Compress compute sthe minimal subtree containing\n * all node LCAs and comrpesses\
-    \ edges\n * O(S log S) compression\n * Returns list of (parent, original index)\n\
-    \ * Parent is the parent of node in compressed tree\n * Original index is the\
-    \ node it represents\n * get_child also returns the subtree child of node and\
-    \ -1 if it doesn't exist in O(1)\n * To support forest, gen on all the roots,\
-    \ initialize tmp and sparse at the end\n */\n\ntemplate <class T> struct SparseTable\
-    \ {\n\tstd::vector<T> v;\n\tstd::vector<std::vector<int>> jump;\n\n\tint level(int\
-    \ x) {\n\t\treturn 31 - __builtin_clz(x);\n\t}\n\n\tint comb(int a, int b) {\n\
-    \t\treturn v[a] == v[b] ? std::min(a, b) : (v[a] < v[b] ? a : b);\n\t}\n\n\tvoid\
-    \ init(const std::vector<T> &_v) {\n\t\tv = _v;\n\t\tjump = {std::vector<int>((int)v.size())};\n\
-    \t\tiota(jump[0].begin(), jump[0].end(), 0);\n\t\tfor (int j = 1; (1 << j) <=\
-    \ (int)v.size(); j++) {\n\t\t\tjump.push_back(std::vector<int>((int)v.size() -\
-    \ (1 << j) + 1));\n\t\t\tfor (int i = 0; i < (int)jump[j].size(); i++) {\n\t\t\
-    \t\tjump[j][i] = comb(jump[j - 1][i], jump[j - 1][i + (1 << (j - 1))]);\n\t\t\t\
-    }\n\t\t}\n\t}\n\n\tint index(int l, int r) {\n\t\tassert(l <= r);\n\t\tint d =\
-    \ level(r - l + 1);\n\t\treturn comb(jump[d][l], jump[d][r - (1 << d) + 1]);\n\
-    \t}\n\n\tT query(int l, int r) {\n\t\treturn v[index(l, r)];\n\t}\n};\n\nstruct\
-    \ LCARMQ {\n\tint n; \n\tstd::vector<std::vector<int>> adj;\n\tstd::vector<int>\
-    \ dep, in, par, rev, out, pos;\n\tstd::vector<std::pair<int, int>> tmp;\n\tSparseTable<std::pair<int,\
-    \ int>> S;\n\tstd::vector<std::vector<int>> sparse;\n\tint ti = 0;\n\n\tvoid init(int\
-    \ _n) {\n\t\tn = _n;\n\t\tadj.resize(n);\n\t\tdep = in = out = par = rev = pos\
-    \ = std::vector<int>(n);\n\t\tsparse = {std::vector<int>(n)};\n\t\tfor (int j\
-    \ = 1; (1 << j) <= n; j++) {\n\t\t\tsparse.push_back(std::vector<int>(n - (1 <<\
-    \ j) + 1));\n\t\t}\n\t}\n\n\tvoid ae(int u, int v) {\n\t\tadj[u].push_back(v);\n\
+  code: "#pragma once\n\n/**\n * O(n log n) preprocessing with O(1) query\n * Compress\
+    \ compute sthe minimal subtree containing\n * all node LCAs and comrpesses edges\n\
+    \ * O(S log S) compression\n * Returns list of (parent, original index)\n * Parent\
+    \ is the parent of node in compressed tree\n * Original index is the node it represents\n\
+    \ * get_child also returns the subtree child of node and -1 if it doesn't exist\
+    \ in O(1)\n * To support forest, gen on all the roots, initialize tmp and sparse\
+    \ at the end\n */\n\ntemplate <class T> struct SparseTable {\n\tstd::vector<T>\
+    \ v;\n\tstd::vector<std::vector<int>> jump;\n\n\tint level(int x) {\n\t\treturn\
+    \ 31 - __builtin_clz(x);\n\t}\n\n\tint comb(int a, int b) {\n\t\treturn v[a] ==\
+    \ v[b] ? std::min(a, b) : (v[a] < v[b] ? a : b);\n\t}\n\n\tvoid init(const std::vector<T>\
+    \ &_v) {\n\t\tv = _v;\n\t\tjump = {std::vector<int>((int)v.size())};\n\t\tiota(jump[0].begin(),\
+    \ jump[0].end(), 0);\n\t\tfor (int j = 1; (1 << j) <= (int)v.size(); j++) {\n\t\
+    \t\tjump.push_back(std::vector<int>((int)v.size() - (1 << j) + 1));\n\t\t\tfor\
+    \ (int i = 0; i < (int)jump[j].size(); i++) {\n\t\t\t\tjump[j][i] = comb(jump[j\
+    \ - 1][i], jump[j - 1][i + (1 << (j - 1))]);\n\t\t\t}\n\t\t}\n\t}\n\n\tint index(int\
+    \ l, int r) {\n\t\tassert(l <= r);\n\t\tint d = level(r - l + 1);\n\t\treturn\
+    \ comb(jump[d][l], jump[d][r - (1 << d) + 1]);\n\t}\n\n\tT query(int l, int r)\
+    \ {\n\t\treturn v[index(l, r)];\n\t}\n};\n\nstruct LCARMQ {\n\tint n; \n\tstd::vector<std::vector<int>>\
+    \ adj;\n\tstd::vector<int> dep, in, par, rev, out, pos;\n\tstd::vector<std::pair<int,\
+    \ int>> tmp;\n\tSparseTable<std::pair<int, int>> S;\n\tstd::vector<std::vector<int>>\
+    \ sparse;\n\tint ti = 0;\n\n\tvoid init(int _n) {\n\t\tn = _n;\n\t\tadj.resize(n);\n\
+    \t\tdep = in = out = par = rev = pos = std::vector<int>(n);\n\t\tsparse = {std::vector<int>(n)};\n\
+    \t\tfor (int j = 1; (1 << j) <= n; j++) {\n\t\t\tsparse.push_back(std::vector<int>(n\
+    \ - (1 << j) + 1));\n\t\t}\n\t}\n\n\tvoid ae(int u, int v) {\n\t\tadj[u].push_back(v);\n\
     \t\tadj[v].push_back(u);\n\t}\n\n\tvoid dfs(int src) {\n\t\tin[src] = ti++;\n\t\
     \tsparse[0][in[src]] = src;\n\t\tpos[src] = (int)tmp.size();\n\t\ttmp.emplace_back(dep[src],\
     \ src);\n\t\tfor (auto &nxt : adj[src]) {\n\t\t\tif (nxt == par[src]) continue;\n\
@@ -122,7 +120,7 @@ data:
   isVerificationFile: false
   path: library/graphs/lca-rmq.hpp
   requiredBy: []
-  timestamp: '2021-07-24 19:26:06-04:00'
+  timestamp: '2021-07-24 19:40:07-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/graphs/lca-rmq.hpp

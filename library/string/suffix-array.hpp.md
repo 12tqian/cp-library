@@ -8,19 +8,19 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#include <bits/stdc++.h>\n\n/**\n * sa stores sorted suffixes\n *\
-    \ isa is inverse of sa\n * lcp is longest common prefix between consecutive elements\n\
-    \ * Indexing has been fixed so that everything is 0-indexed by the end\n */\n\n\
-    template <class T> struct SparseTable {\n\tstd::vector<T> v;\n\tstd::vector<std::vector<int>>\
-    \ jump;\n\n\tint level(int x) {\n\t\treturn 31 - __builtin_clz(x);\n\t}\n\n\t\
-    int comb(int a, int b) {\n\t\treturn v[a] == v[b] ? std::min(a, b) : (v[a] < v[b]\
-    \ ? a : b);\n\t}\n\n\tvoid init(const std::vector<T> &_v) {\n\t\tv = _v;\n\t\t\
-    jump = {std::vector<int>((int)v.size())};\n\t\tiota(jump[0].begin(), jump[0].end(),\
-    \ 0);\n\t\tfor (int j = 1; (1 << j) <= (int)v.size(); j++) {\n\t\t\tjump.push_back(std::vector<int>((int)v.size()\
-    \ - (1 << j) + 1));\n\t\t\tfor (int i = 0; i < (int)jump[j].size(); i++) {\n\t\
-    \t\t\tjump[j][i] = comb(jump[j - 1][i], jump[j - 1][i + (1 << (j - 1))]);\n\t\t\
-    \t}\n\t\t}\n\t}\n\n\tint index(int l, int r) {\n\t\tassert(l <= r);\n\t\tint d\
-    \ = level(r - l + 1);\n\t\treturn comb(jump[d][l], jump[d][r - (1 << d) + 1]);\n\
+  bundledCode: "\n/**\n * sa stores sorted suffixes\n * isa is inverse of sa\n * lcp\
+    \ is longest common prefix between consecutive elements\n * Indexing has been\
+    \ fixed so that everything is 0-indexed by the end\n */\n\ntemplate <class T>\
+    \ struct SparseTable {\n\tstd::vector<T> v;\n\tstd::vector<std::vector<int>> jump;\n\
+    \n\tint level(int x) {\n\t\treturn 31 - __builtin_clz(x);\n\t}\n\n\tint comb(int\
+    \ a, int b) {\n\t\treturn v[a] == v[b] ? std::min(a, b) : (v[a] < v[b] ? a : b);\n\
+    \t}\n\n\tvoid init(const std::vector<T> &_v) {\n\t\tv = _v;\n\t\tjump = {std::vector<int>((int)v.size())};\n\
+    \t\tiota(jump[0].begin(), jump[0].end(), 0);\n\t\tfor (int j = 1; (1 << j) <=\
+    \ (int)v.size(); j++) {\n\t\t\tjump.push_back(std::vector<int>((int)v.size() -\
+    \ (1 << j) + 1));\n\t\t\tfor (int i = 0; i < (int)jump[j].size(); i++) {\n\t\t\
+    \t\tjump[j][i] = comb(jump[j - 1][i], jump[j - 1][i + (1 << (j - 1))]);\n\t\t\t\
+    }\n\t\t}\n\t}\n\n\tint index(int l, int r) {\n\t\tassert(l <= r);\n\t\tint d =\
+    \ level(r - l + 1);\n\t\treturn comb(jump[d][l], jump[d][r - (1 << d) + 1]);\n\
     \t}\n\n\tT query(int l, int r) {\n\t\treturn v[index(l, r)];\n\t}\n};\n\nstruct\
     \ SuffixArray {\n\tstd::string s;\n\tint n;\n\tstd::vector<int> sa, isa, lcp;\n\
     \tSparseTable<int> S;\n\n\tvoid init(std::string _s) {\n\t\tn = (int)(s = _s).size()\
@@ -48,10 +48,10 @@ data:
     \ >> s;\n\tint n = (int)s.size();\n\tSuffixArray S;\n\tS.init(s);\n\tfor (int\
     \ i = 0; i < n; i++)\n\t\tcout << S.sa[i] << \" \";\n\tcout << '\\n';\n\treturn\
     \ 0;\n}\n"
-  code: "#include <bits/stdc++.h>\n\n/**\n * sa stores sorted suffixes\n * isa is\
-    \ inverse of sa\n * lcp is longest common prefix between consecutive elements\n\
-    \ * Indexing has been fixed so that everything is 0-indexed by the end\n */\n\n\
-    template <class T> struct SparseTable {\n\tstd::vector<T> v;\n\tstd::vector<std::vector<int>>\
+  code: "#pragma once\n\n/**\n * sa stores sorted suffixes\n * isa is inverse of sa\n\
+    \ * lcp is longest common prefix between consecutive elements\n * Indexing has\
+    \ been fixed so that everything is 0-indexed by the end\n */\n\ntemplate <class\
+    \ T> struct SparseTable {\n\tstd::vector<T> v;\n\tstd::vector<std::vector<int>>\
     \ jump;\n\n\tint level(int x) {\n\t\treturn 31 - __builtin_clz(x);\n\t}\n\n\t\
     int comb(int a, int b) {\n\t\treturn v[a] == v[b] ? std::min(a, b) : (v[a] < v[b]\
     \ ? a : b);\n\t}\n\n\tvoid init(const std::vector<T> &_v) {\n\t\tv = _v;\n\t\t\
@@ -92,7 +92,7 @@ data:
   isVerificationFile: false
   path: library/string/suffix-array.hpp
   requiredBy: []
-  timestamp: '2021-07-24 19:26:06-04:00'
+  timestamp: '2021-07-24 19:40:07-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/string/suffix-array.hpp

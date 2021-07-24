@@ -8,15 +8,15 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#include <bits/stdc++.h>\n\n/**\n * Treat this as a black box xD\n\
-    \ * Calculates max flow\n * You can probably add stuff to recover it\n * Most\
-    \ cases, Dinic is better since you understand it\n */\n\ntemplate <class F> struct\
-    \ PushRelabel {\n\n\tstruct Edge { int to, rev; F flow; };\n\n\tconst F INF =\
-    \ std::numeric_limits<F>::max();  \n\n\tint n, s, t, highest, work;\n\tstd::vector<std::vector<Edge>>\
-    \ adj;\n\tstd::vector<std::vector<int>> lst, gap;\n\tstd::vector<int> height,\
-    \ cnt;\n\tstd::vector<F> excess;\n\n\tvoid init(int n_) {\n\t\tn = n_;\n\t\tadj.clear();\
-    \ adj.resize(2 * n);\n\t\tlst.clear(); lst.resize(2 * n);\n\t\tgap.clear(); gap.resize(2\
-    \ * n);\n\t\theight.assign(2 * n, 0);\n\t\tcnt.assign(2 * n, 0);\n\t\texcess.assign(2\
+  bundledCode: "\n/**\n * Treat this as a black box xD\n * Calculates max flow\n *\
+    \ You can probably add stuff to recover it\n * Most cases, Dinic is better since\
+    \ you understand it\n */\n\ntemplate <class F> struct PushRelabel {\n\n\tstruct\
+    \ Edge { int to, rev; F flow; };\n\n\tconst F INF = std::numeric_limits<F>::max();\
+    \  \n\n\tint n, s, t, highest, work;\n\tstd::vector<std::vector<Edge>> adj;\n\t\
+    std::vector<std::vector<int>> lst, gap;\n\tstd::vector<int> height, cnt;\n\tstd::vector<F>\
+    \ excess;\n\n\tvoid init(int n_) {\n\t\tn = n_;\n\t\tadj.clear(); adj.resize(2\
+    \ * n);\n\t\tlst.clear(); lst.resize(2 * n);\n\t\tgap.clear(); gap.resize(2 *\
+    \ n);\n\t\theight.assign(2 * n, 0);\n\t\tcnt.assign(2 * n, 0);\n\t\texcess.assign(2\
     \ * n, 0);\n\t\twork = highest = 0;\n\t\ts = 0;\n\t\tt = n - 1;\n\t}\n\n\tvoid\
     \ ae(int u, int v, F cap) {\n\t\tassert(cap >= 0);\n\t\tEdge a{v, (int)adj[v].size(),\
     \ cap};\n\t\tEdge b{u, (int)adj[u].size(), 0};\n\t\tadj[u].push_back(a);\n\t\t\
@@ -51,10 +51,10 @@ data:
     \ (int i = 0; i < m; i++) {\n\t\tint u, v, w; cin >> u >> v >> w;\n\t\tu--, v--;\n\
     \t\tP.ae(u, v, w);\n\t\tP.ae(v, u, w);\n\t}\n\tcout << P.max_flow(0, n - 1) <<\
     \ '\\n';\n\treturn 0;\n}\n"
-  code: "#include <bits/stdc++.h>\n\n/**\n * Treat this as a black box xD\n * Calculates\
-    \ max flow\n * You can probably add stuff to recover it\n * Most cases, Dinic\
-    \ is better since you understand it\n */\n\ntemplate <class F> struct PushRelabel\
-    \ {\n\n\tstruct Edge { int to, rev; F flow; };\n\n\tconst F INF = std::numeric_limits<F>::max();\
+  code: "#pragma once\n\n/**\n * Treat this as a black box xD\n * Calculates max flow\n\
+    \ * You can probably add stuff to recover it\n * Most cases, Dinic is better since\
+    \ you understand it\n */\n\ntemplate <class F> struct PushRelabel {\n\n\tstruct\
+    \ Edge { int to, rev; F flow; };\n\n\tconst F INF = std::numeric_limits<F>::max();\
     \  \n\n\tint n, s, t, highest, work;\n\tstd::vector<std::vector<Edge>> adj;\n\t\
     std::vector<std::vector<int>> lst, gap;\n\tstd::vector<int> height, cnt;\n\tstd::vector<F>\
     \ excess;\n\n\tvoid init(int n_) {\n\t\tn = n_;\n\t\tadj.clear(); adj.resize(2\
@@ -98,7 +98,7 @@ data:
   isVerificationFile: false
   path: library/graphs/flows/push-relabel.hpp
   requiredBy: []
-  timestamp: '2021-07-24 19:26:06-04:00'
+  timestamp: '2021-07-24 19:40:07-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/graphs/flows/push-relabel.hpp

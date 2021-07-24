@@ -8,13 +8,13 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#include <bits/stdc++.h>\n\n// Set to minimums, negate for maximums\n\
-    \ntemplate <class T> struct LiChaoTree {\n\tstruct Line {\n\t\tT slope, intercept;\n\
-    \t\tLine(T slope, T intercept) : slope(slope), intercept(intercept) {}\n\t\tinline\
-    \ T get(T x) const { return slope * x + intercept; }\n\t\tinline bool over(const\
-    \ Line &other, const T &x) {\n\t\t\treturn get(x) < other.get(x);\n\t\t}\n\t};\n\
-    \n\tstd::vector<T> xset;\n\tstd::vector<Line> seg;\n\tint sz;\n\n\tLiChaoTree(const\
-    \ std::vector<T> &x) : xset(x) {\n\t\tsort(xset.begin(), xset.end());\n\t\txset.erase(unique(xset.begin(),\
+  bundledCode: "\n// Set to minimums, negate for maximums\n\ntemplate <class T> struct\
+    \ LiChaoTree {\n\tstruct Line {\n\t\tT slope, intercept;\n\t\tLine(T slope, T\
+    \ intercept) : slope(slope), intercept(intercept) {}\n\t\tinline T get(T x) const\
+    \ { return slope * x + intercept; }\n\t\tinline bool over(const Line &other, const\
+    \ T &x) {\n\t\t\treturn get(x) < other.get(x);\n\t\t}\n\t};\n\n\tstd::vector<T>\
+    \ xset;\n\tstd::vector<Line> seg;\n\tint sz;\n\n\tLiChaoTree(const std::vector<T>\
+    \ &x) : xset(x) {\n\t\tsort(xset.begin(), xset.end());\n\t\txset.erase(unique(xset.begin(),\
     \ xset.end()), xset.end());\n\t\tsz = 1;\n\t\twhile (sz < (int) xset.size()) sz\
     \ <<= 1;\n\t\twhile ((int) xset.size() < sz) xset.push_back(xset.back());\n\t\t\
     seg.assign(2 * sz, Line(0, std::numeric_limits<T>::max()));\n\t}\n\n\tint get_more_idx(T\
@@ -52,12 +52,12 @@ data:
     \ \n\t\t\t\tcout << \"INFINITY\\n\";\n\t\t\telse \n\t\t\t\tcout << ans << '\\\
     n';\n\t\t} else {\n\t\t\tL.update_segment(f[i], g[i], d[i], e[i] - 1);\n\t\t}\n\
     \t}\n\treturn 0;\n}\n"
-  code: "#include <bits/stdc++.h>\n\n// Set to minimums, negate for maximums\n\ntemplate\
-    \ <class T> struct LiChaoTree {\n\tstruct Line {\n\t\tT slope, intercept;\n\t\t\
-    Line(T slope, T intercept) : slope(slope), intercept(intercept) {}\n\t\tinline\
-    \ T get(T x) const { return slope * x + intercept; }\n\t\tinline bool over(const\
-    \ Line &other, const T &x) {\n\t\t\treturn get(x) < other.get(x);\n\t\t}\n\t};\n\
-    \n\tstd::vector<T> xset;\n\tstd::vector<Line> seg;\n\tint sz;\n\n\tLiChaoTree(const\
+  code: "#pragma once\n\n// Set to minimums, negate for maximums\n\ntemplate <class\
+    \ T> struct LiChaoTree {\n\tstruct Line {\n\t\tT slope, intercept;\n\t\tLine(T\
+    \ slope, T intercept) : slope(slope), intercept(intercept) {}\n\t\tinline T get(T\
+    \ x) const { return slope * x + intercept; }\n\t\tinline bool over(const Line\
+    \ &other, const T &x) {\n\t\t\treturn get(x) < other.get(x);\n\t\t}\n\t};\n\n\t\
+    std::vector<T> xset;\n\tstd::vector<Line> seg;\n\tint sz;\n\n\tLiChaoTree(const\
     \ std::vector<T> &x) : xset(x) {\n\t\tsort(xset.begin(), xset.end());\n\t\txset.erase(unique(xset.begin(),\
     \ xset.end()), xset.end());\n\t\tsz = 1;\n\t\twhile (sz < (int) xset.size()) sz\
     \ <<= 1;\n\t\twhile ((int) xset.size() < sz) xset.push_back(xset.back());\n\t\t\
@@ -100,7 +100,7 @@ data:
   isVerificationFile: false
   path: library/data-structures/1d-range-queries/li-chao-tree-offline.hpp
   requiredBy: []
-  timestamp: '2021-07-24 19:26:06-04:00'
+  timestamp: '2021-07-24 19:40:07-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/data-structures/1d-range-queries/li-chao-tree-offline.hpp

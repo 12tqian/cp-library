@@ -8,7 +8,7 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#include <bits/stdc++.h>\n\nstruct SCC {\n\tint n, ti;\n\t\n\tstd::vector<std::vector<int>>\
+  bundledCode: "\nstruct SCC {\n\tint n, ti;\n\t\n\tstd::vector<std::vector<int>>\
     \ g;\n\t\n\tstd::vector<int> disc, comp, stk, comps;\n\n\tvoid init(int _n) {\n\
     \t\tn = _n;\n\t\tti = 0;\n\t\tg.resize(n);\n\t\tdisc.resize(n);\n\t\tcomp.assign(n,\
     \ -1);\n\t}\n\n\tvoid ae(int u, int v) {\n\t\tg[u].push_back(v);\n\t}\n\n\tint\
@@ -37,7 +37,7 @@ data:
     tmp[i] = 1;\n\t\t\t\ttmp[S.comp[i ^ 1]] = -1;\n\t\t\t}\n\t\t}\n\t\tstd::vector<bool>\
     \ ans(n);\n\t\tfor (int i = 0; i < n; ++i) {\n\t\t\tans[i] = tmp[S.comp[2 * i]]\
     \ == 1;\n\t\t}\n\t\treturn ans;\n\t}\n};\n"
-  code: "#include <bits/stdc++.h>\n\nstruct SCC {\n\tint n, ti;\n\t\n\tstd::vector<std::vector<int>>\
+  code: "#pragma once\n\nstruct SCC {\n\tint n, ti;\n\t\n\tstd::vector<std::vector<int>>\
     \ g;\n\t\n\tstd::vector<int> disc, comp, stk, comps;\n\n\tvoid init(int _n) {\n\
     \t\tn = _n;\n\t\tti = 0;\n\t\tg.resize(n);\n\t\tdisc.resize(n);\n\t\tcomp.assign(n,\
     \ -1);\n\t}\n\n\tvoid ae(int u, int v) {\n\t\tg[u].push_back(v);\n\t}\n\n\tint\
@@ -70,7 +70,7 @@ data:
   isVerificationFile: false
   path: library/graphs/two-sat.hpp
   requiredBy: []
-  timestamp: '2021-07-24 19:26:06-04:00'
+  timestamp: '2021-07-24 19:40:07-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/graphs/two-sat.hpp

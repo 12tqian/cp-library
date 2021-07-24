@@ -8,8 +8,8 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#include <bits/stdc++.h>\n\nnamespace Hashing {\n\nconst int MOD =\
-    \ 1e9 + 7;\n\nstd::mt19937 rng((uint32_t) std::chrono::steady_clock::now().time_since_epoch().count());\n\
+  bundledCode: "\nnamespace Hashing {\n\nconst int MOD = 1e9 + 7;\n\nstd::mt19937\
+    \ rng((uint32_t) std::chrono::steady_clock::now().time_since_epoch().count());\n\
     std::uniform_int_distribution<int> BDIST(0.1 * MOD, 0.9 * MOD);\nconst std::array<int,\
     \ 2> base = {BDIST(rng), BDIST(rng)};\nstd::vector<std::array<int, 2>> pows =\
     \ {{1, 1}};\n\nstd::array<int, 2> operator+(std::array<int, 2> l, std::array<int,\
@@ -30,8 +30,8 @@ data:
     \tHashRange H;\n\tH.add(\"ababab\");\n\tfor (int i = 0; i < 6; i++) \n\t\tfor\
     \ (int j = i; j < 6; j++) {\n\t\t\tauto val = H.hash(i, j);\n\t\t\tcout << i <<\
     \ \" \" << j << \" \" << val[0] << \" \" << val[1] << '\\n';\n\t\t}\n}\n"
-  code: "#include <bits/stdc++.h>\n\nnamespace Hashing {\n\nconst int MOD = 1e9 +\
-    \ 7;\n\nstd::mt19937 rng((uint32_t) std::chrono::steady_clock::now().time_since_epoch().count());\n\
+  code: "#pragma once\n\nnamespace Hashing {\n\nconst int MOD = 1e9 + 7;\n\nstd::mt19937\
+    \ rng((uint32_t) std::chrono::steady_clock::now().time_since_epoch().count());\n\
     std::uniform_int_distribution<int> BDIST(0.1 * MOD, 0.9 * MOD);\nconst std::array<int,\
     \ 2> base = {BDIST(rng), BDIST(rng)};\nstd::vector<std::array<int, 2>> pows =\
     \ {{1, 1}};\n\nstd::array<int, 2> operator+(std::array<int, 2> l, std::array<int,\
@@ -56,7 +56,7 @@ data:
   isVerificationFile: false
   path: library/string/hashing.hpp
   requiredBy: []
-  timestamp: '2021-07-24 19:26:06-04:00'
+  timestamp: '2021-07-24 19:40:07-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/string/hashing.hpp

@@ -8,12 +8,12 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#include <bits/stdc++.h>\n\nnamespace Polynomial {\n\nusing T = int;\n\
-    using Poly = std::vector<T>;\n\nT eval(const Poly &p, const T &x) {\n\tT res =\
-    \ 0;\n\tfor (int i = (int)p.size() - 1; i >= 0; --i) {\n\t\tres = x * res + p[i];\n\
-    \t}\n\treturn res;\n}\n\nPoly& operator+=(Poly &l, const Poly &r ){\n\tl.resize(std::max(l.size(),\
-    \ r.size()));\n\tfor (int i = 0; i < r.size(); ++i) {\n\t\tl[i] += r[i];\n\t}\n\
-    \treturn l;\n}\n\nPoly& operator-=(Poly &l, const Poly &r ){\n\tl.resize(std::max(l.size(),\
+  bundledCode: "\nnamespace Polynomial {\n\nusing T = int;\nusing Poly = std::vector<T>;\n\
+    \nT eval(const Poly &p, const T &x) {\n\tT res = 0;\n\tfor (int i = (int)p.size()\
+    \ - 1; i >= 0; --i) {\n\t\tres = x * res + p[i];\n\t}\n\treturn res;\n}\n\nPoly&\
+    \ operator+=(Poly &l, const Poly &r ){\n\tl.resize(std::max(l.size(), r.size()));\n\
+    \tfor (int i = 0; i < r.size(); ++i) {\n\t\tl[i] += r[i];\n\t}\n\treturn l;\n\
+    }\n\nPoly& operator-=(Poly &l, const Poly &r ){\n\tl.resize(std::max(l.size(),\
     \ r.size()));\n\tfor (int i = 0; i < r.size(); ++i) {\n\t\tl[i] -= r[i];\n\t}\n\
     \treturn l;\n}\n\nPoly& operator*=(Poly &l, const T& r) {\n\tfor (int i = 0; i\
     \ < l.size(); ++i) {\n\t\tl[i] *= r;\n\t}\n\treturn l;\n}\n\nPoly& operator/=(Poly\
@@ -33,12 +33,12 @@ data:
     \ i <= p.size(); ++i ){\n\t\tinvs.push_back(1 / T(i));\n\t}\n\tPoly res(p.size()\
     \ + 1);\n\tfor (int i = 0; i < p.size(); ++i) {\n\t\tres[i + 1] = p[i] * invs[i\
     \ + 1];\n\t}\n\treturn res;\n}\n\n}\n\n\n"
-  code: "#include <bits/stdc++.h>\n\nnamespace Polynomial {\n\nusing T = int;\nusing\
-    \ Poly = std::vector<T>;\n\nT eval(const Poly &p, const T &x) {\n\tT res = 0;\n\
-    \tfor (int i = (int)p.size() - 1; i >= 0; --i) {\n\t\tres = x * res + p[i];\n\t\
-    }\n\treturn res;\n}\n\nPoly& operator+=(Poly &l, const Poly &r ){\n\tl.resize(std::max(l.size(),\
-    \ r.size()));\n\tfor (int i = 0; i < r.size(); ++i) {\n\t\tl[i] += r[i];\n\t}\n\
-    \treturn l;\n}\n\nPoly& operator-=(Poly &l, const Poly &r ){\n\tl.resize(std::max(l.size(),\
+  code: "#pragma once\n\nnamespace Polynomial {\n\nusing T = int;\nusing Poly = std::vector<T>;\n\
+    \nT eval(const Poly &p, const T &x) {\n\tT res = 0;\n\tfor (int i = (int)p.size()\
+    \ - 1; i >= 0; --i) {\n\t\tres = x * res + p[i];\n\t}\n\treturn res;\n}\n\nPoly&\
+    \ operator+=(Poly &l, const Poly &r ){\n\tl.resize(std::max(l.size(), r.size()));\n\
+    \tfor (int i = 0; i < r.size(); ++i) {\n\t\tl[i] += r[i];\n\t}\n\treturn l;\n\
+    }\n\nPoly& operator-=(Poly &l, const Poly &r ){\n\tl.resize(std::max(l.size(),\
     \ r.size()));\n\tfor (int i = 0; i < r.size(); ++i) {\n\t\tl[i] -= r[i];\n\t}\n\
     \treturn l;\n}\n\nPoly& operator*=(Poly &l, const T& r) {\n\tfor (int i = 0; i\
     \ < l.size(); ++i) {\n\t\tl[i] *= r;\n\t}\n\treturn l;\n}\n\nPoly& operator/=(Poly\
@@ -62,7 +62,7 @@ data:
   isVerificationFile: false
   path: library/numerical/polynomial.hpp
   requiredBy: []
-  timestamp: '2021-07-24 19:26:06-04:00'
+  timestamp: '2021-07-24 19:40:07-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/numerical/polynomial.hpp

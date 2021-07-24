@@ -8,44 +8,43 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#include <bits/stdc++.h>\n\ntemplate <typename T> struct Point {\n\
-    public:\n\tT x, y;\n\tPoint() : x(0), y(0) {}\n\tPoint(T x_, T y_) : x(x_), y(y_)\
-    \ {}\n\ttemplate <typename U> explicit Point(const Point<U> &p) : x(p.x), y(p.y)\
-    \ {}\n\tPoint(const std::pair<T, T> &p) : x(p.first), y(p.second) {}\n\tPoint(const\
-    \ std::complex<T> &p) : x(real(p)), y(imag(p)) {}\n\texplicit operator std::pair<T,\
-    \ T>() const { return std::pair<T, T>(x, y); }\n\texplicit operator std::complex<T>()\
-    \ const { return std::complex<T>(x, y); }\n\n\tfriend std::ostream& operator<<(std::ostream\
-    \ &o, const Point &p) { \n\t\treturn o << '(' << p.x << ',' << p.y << ')'; }\n\
-    \tfriend std::istream& operator>>(std::istream &i, Point &p) { return i >> p.x\
-    \ >> p.y; }\n\tfriend bool operator==(const Point &a, const Point &b) { return\
-    \ a.x == b.x && a.y == b.y; }\n\tfriend bool operator!=(const Point &a, const\
-    \ Point &b) { return !(a == b); }\n\tfriend bool operator<(const Point &a, const\
-    \ Point &b) { \n\t\treturn (a.x != b.x ? a.x < b.x : a.y < b.y); }\n\n\tfriend\
-    \ T norm(const Point &a) { return a.x * a.x + a.y * a.y; }\n\tfriend T abs(const\
-    \ Point &p) { return std::hypot(p.x, p.y); }\n\tfriend T unit(const Point &a)\
-    \ { if (a == Point()) return a; return a / abs(a); }\n\tfriend Point conj(const\
-    \ Point &a) { return Point(a.x, -a.y); }\n\tfriend Point perp(const Point &a)\
-    \ { return Point(-a.y, a.x); }\n\tfriend long double arg(const Point &p) { return\
-    \ atan2(p.y, p.x); }\n\tfriend Point dir(long double angle) { return Point(cos(angle),\
-    \ sin(angle)); }\n\n\tPoint& operator+=(const Point &p) { x += p.x, y += p.y;\
-    \ return *this; }\n\tPoint& operator-=(const Point &p) { x -= p.x, y -= p.y; return\
-    \ *this; }\n\tPoint& operator*=(const T &t) { x *= t, y *= t; return *this; }\n\
-    \tPoint& operator/=(const T &t) { x /= t, y /= t; return *this; }\n\tPoint& operator*=(const\
-    \ Point &t) { \n\t\tPoint res = Point(x, y) * t; x = res.x, y = res.y; return\
-    \ *this; }\n\tPoint& operator/=(const Point &t) { \n\t\tPoint res = Point(x, y)\
-    \ / t; x = res.x, y = res.y; return *this; }\n\n\tfriend Point operator+(const\
-    \ Point &a, const Point &b) { return Point(a.x + b.x, a.y + b.y); }\n\tfriend\
-    \ Point operator-(const Point &a, const Point &b) { return Point(a.x - b.x, a.y\
-    \ - b.y); }\n\tfriend Point operator*(const Point &a, const T &t) { return Point(a.x\
-    \ * t, a.y * t); }\n\tfriend Point operator*(const T &t ,const Point &a) { return\
-    \ Point(t * a.x, t * a.y); }\n\tfriend Point operator/(const Point &a, const T\
-    \ &t) { return Point(a.x / t, a.y / t); }\n\tfriend Point operator*(const Point\
-    \ &a, const Point &b) { \n\t\treturn Point(a.x * b.x - a.y * b.y, a.y * b.x +\
-    \ a.x * b.y); }\n\tfriend Point operator/(const Point &a, const Point &b) { \n\
-    \t\treturn Point(a * conj(b) / norm(b)); }\n\n\tfriend T int_norm(const Point\
-    \ &a) { return __gcd(a.x, a.y); }\n\tfriend T int_unit(const Point &a) { if (a\
-    \ == Point()) return a; return a / int_norm(a); }\n\n\tfriend T cross(const Point\
-    \ &a, const Point &b) { return a.x * b.y - a.y * b.x; }\n\tfriend T dot(const\
+  bundledCode: "\ntemplate <typename T> struct Point {\npublic:\n\tT x, y;\n\tPoint()\
+    \ : x(0), y(0) {}\n\tPoint(T x_, T y_) : x(x_), y(y_) {}\n\ttemplate <typename\
+    \ U> explicit Point(const Point<U> &p) : x(p.x), y(p.y) {}\n\tPoint(const std::pair<T,\
+    \ T> &p) : x(p.first), y(p.second) {}\n\tPoint(const std::complex<T> &p) : x(real(p)),\
+    \ y(imag(p)) {}\n\texplicit operator std::pair<T, T>() const { return std::pair<T,\
+    \ T>(x, y); }\n\texplicit operator std::complex<T>() const { return std::complex<T>(x,\
+    \ y); }\n\n\tfriend std::ostream& operator<<(std::ostream &o, const Point &p)\
+    \ { \n\t\treturn o << '(' << p.x << ',' << p.y << ')'; }\n\tfriend std::istream&\
+    \ operator>>(std::istream &i, Point &p) { return i >> p.x >> p.y; }\n\tfriend\
+    \ bool operator==(const Point &a, const Point &b) { return a.x == b.x && a.y ==\
+    \ b.y; }\n\tfriend bool operator!=(const Point &a, const Point &b) { return !(a\
+    \ == b); }\n\tfriend bool operator<(const Point &a, const Point &b) { \n\t\treturn\
+    \ (a.x != b.x ? a.x < b.x : a.y < b.y); }\n\n\tfriend T norm(const Point &a) {\
+    \ return a.x * a.x + a.y * a.y; }\n\tfriend T abs(const Point &p) { return std::hypot(p.x,\
+    \ p.y); }\n\tfriend T unit(const Point &a) { if (a == Point()) return a; return\
+    \ a / abs(a); }\n\tfriend Point conj(const Point &a) { return Point(a.x, -a.y);\
+    \ }\n\tfriend Point perp(const Point &a) { return Point(-a.y, a.x); }\n\tfriend\
+    \ long double arg(const Point &p) { return atan2(p.y, p.x); }\n\tfriend Point\
+    \ dir(long double angle) { return Point(cos(angle), sin(angle)); }\n\n\tPoint&\
+    \ operator+=(const Point &p) { x += p.x, y += p.y; return *this; }\n\tPoint& operator-=(const\
+    \ Point &p) { x -= p.x, y -= p.y; return *this; }\n\tPoint& operator*=(const T\
+    \ &t) { x *= t, y *= t; return *this; }\n\tPoint& operator/=(const T &t) { x /=\
+    \ t, y /= t; return *this; }\n\tPoint& operator*=(const Point &t) { \n\t\tPoint\
+    \ res = Point(x, y) * t; x = res.x, y = res.y; return *this; }\n\tPoint& operator/=(const\
+    \ Point &t) { \n\t\tPoint res = Point(x, y) / t; x = res.x, y = res.y; return\
+    \ *this; }\n\n\tfriend Point operator+(const Point &a, const Point &b) { return\
+    \ Point(a.x + b.x, a.y + b.y); }\n\tfriend Point operator-(const Point &a, const\
+    \ Point &b) { return Point(a.x - b.x, a.y - b.y); }\n\tfriend Point operator*(const\
+    \ Point &a, const T &t) { return Point(a.x * t, a.y * t); }\n\tfriend Point operator*(const\
+    \ T &t ,const Point &a) { return Point(t * a.x, t * a.y); }\n\tfriend Point operator/(const\
+    \ Point &a, const T &t) { return Point(a.x / t, a.y / t); }\n\tfriend Point operator*(const\
+    \ Point &a, const Point &b) { \n\t\treturn Point(a.x * b.x - a.y * b.y, a.y *\
+    \ b.x + a.x * b.y); }\n\tfriend Point operator/(const Point &a, const Point &b)\
+    \ { \n\t\treturn Point(a * conj(b) / norm(b)); }\n\n\tfriend T int_norm(const\
+    \ Point &a) { return __gcd(a.x, a.y); }\n\tfriend T int_unit(const Point &a) {\
+    \ if (a == Point()) return a; return a / int_norm(a); }\n\n\tfriend T cross(const\
+    \ Point &a, const Point &b) { return a.x * b.y - a.y * b.x; }\n\tfriend T dot(const\
     \ Point &a, const Point &b) { return a.x * b.x + a.y * b.y; }\n\tfriend T area(const\
     \ Point &a, const Point &b, const Point &c) { return cross(b - a, c - a); }\n\n\
     \t// Returns conj(a) * b\n\tfriend Point rotation(const Point &a, const Point\
@@ -85,44 +84,43 @@ data:
     \ 0; i < n; i++)\n\t\t\tcin >> v[i].x >> v[i].y;\n\t\tauto hull = convex_hull(v);\n\
     \t\tcout << (int)hull.size() << '\\n';       \n\t\tfor (auto &p : hull)\n\t\t\t\
     cout << p.x << \" \" << p.y << '\\n';\n\t}\n\treturn 0;\n}\n"
-  code: "#include <bits/stdc++.h>\n\ntemplate <typename T> struct Point {\npublic:\n\
-    \tT x, y;\n\tPoint() : x(0), y(0) {}\n\tPoint(T x_, T y_) : x(x_), y(y_) {}\n\t\
-    template <typename U> explicit Point(const Point<U> &p) : x(p.x), y(p.y) {}\n\t\
-    Point(const std::pair<T, T> &p) : x(p.first), y(p.second) {}\n\tPoint(const std::complex<T>\
-    \ &p) : x(real(p)), y(imag(p)) {}\n\texplicit operator std::pair<T, T>() const\
-    \ { return std::pair<T, T>(x, y); }\n\texplicit operator std::complex<T>() const\
-    \ { return std::complex<T>(x, y); }\n\n\tfriend std::ostream& operator<<(std::ostream\
-    \ &o, const Point &p) { \n\t\treturn o << '(' << p.x << ',' << p.y << ')'; }\n\
-    \tfriend std::istream& operator>>(std::istream &i, Point &p) { return i >> p.x\
-    \ >> p.y; }\n\tfriend bool operator==(const Point &a, const Point &b) { return\
-    \ a.x == b.x && a.y == b.y; }\n\tfriend bool operator!=(const Point &a, const\
-    \ Point &b) { return !(a == b); }\n\tfriend bool operator<(const Point &a, const\
-    \ Point &b) { \n\t\treturn (a.x != b.x ? a.x < b.x : a.y < b.y); }\n\n\tfriend\
-    \ T norm(const Point &a) { return a.x * a.x + a.y * a.y; }\n\tfriend T abs(const\
-    \ Point &p) { return std::hypot(p.x, p.y); }\n\tfriend T unit(const Point &a)\
-    \ { if (a == Point()) return a; return a / abs(a); }\n\tfriend Point conj(const\
-    \ Point &a) { return Point(a.x, -a.y); }\n\tfriend Point perp(const Point &a)\
-    \ { return Point(-a.y, a.x); }\n\tfriend long double arg(const Point &p) { return\
-    \ atan2(p.y, p.x); }\n\tfriend Point dir(long double angle) { return Point(cos(angle),\
-    \ sin(angle)); }\n\n\tPoint& operator+=(const Point &p) { x += p.x, y += p.y;\
-    \ return *this; }\n\tPoint& operator-=(const Point &p) { x -= p.x, y -= p.y; return\
-    \ *this; }\n\tPoint& operator*=(const T &t) { x *= t, y *= t; return *this; }\n\
-    \tPoint& operator/=(const T &t) { x /= t, y /= t; return *this; }\n\tPoint& operator*=(const\
-    \ Point &t) { \n\t\tPoint res = Point(x, y) * t; x = res.x, y = res.y; return\
-    \ *this; }\n\tPoint& operator/=(const Point &t) { \n\t\tPoint res = Point(x, y)\
-    \ / t; x = res.x, y = res.y; return *this; }\n\n\tfriend Point operator+(const\
-    \ Point &a, const Point &b) { return Point(a.x + b.x, a.y + b.y); }\n\tfriend\
-    \ Point operator-(const Point &a, const Point &b) { return Point(a.x - b.x, a.y\
-    \ - b.y); }\n\tfriend Point operator*(const Point &a, const T &t) { return Point(a.x\
-    \ * t, a.y * t); }\n\tfriend Point operator*(const T &t ,const Point &a) { return\
-    \ Point(t * a.x, t * a.y); }\n\tfriend Point operator/(const Point &a, const T\
-    \ &t) { return Point(a.x / t, a.y / t); }\n\tfriend Point operator*(const Point\
-    \ &a, const Point &b) { \n\t\treturn Point(a.x * b.x - a.y * b.y, a.y * b.x +\
-    \ a.x * b.y); }\n\tfriend Point operator/(const Point &a, const Point &b) { \n\
-    \t\treturn Point(a * conj(b) / norm(b)); }\n\n\tfriend T int_norm(const Point\
-    \ &a) { return __gcd(a.x, a.y); }\n\tfriend T int_unit(const Point &a) { if (a\
-    \ == Point()) return a; return a / int_norm(a); }\n\n\tfriend T cross(const Point\
-    \ &a, const Point &b) { return a.x * b.y - a.y * b.x; }\n\tfriend T dot(const\
+  code: "#pragma once\n\ntemplate <typename T> struct Point {\npublic:\n\tT x, y;\n\
+    \tPoint() : x(0), y(0) {}\n\tPoint(T x_, T y_) : x(x_), y(y_) {}\n\ttemplate <typename\
+    \ U> explicit Point(const Point<U> &p) : x(p.x), y(p.y) {}\n\tPoint(const std::pair<T,\
+    \ T> &p) : x(p.first), y(p.second) {}\n\tPoint(const std::complex<T> &p) : x(real(p)),\
+    \ y(imag(p)) {}\n\texplicit operator std::pair<T, T>() const { return std::pair<T,\
+    \ T>(x, y); }\n\texplicit operator std::complex<T>() const { return std::complex<T>(x,\
+    \ y); }\n\n\tfriend std::ostream& operator<<(std::ostream &o, const Point &p)\
+    \ { \n\t\treturn o << '(' << p.x << ',' << p.y << ')'; }\n\tfriend std::istream&\
+    \ operator>>(std::istream &i, Point &p) { return i >> p.x >> p.y; }\n\tfriend\
+    \ bool operator==(const Point &a, const Point &b) { return a.x == b.x && a.y ==\
+    \ b.y; }\n\tfriend bool operator!=(const Point &a, const Point &b) { return !(a\
+    \ == b); }\n\tfriend bool operator<(const Point &a, const Point &b) { \n\t\treturn\
+    \ (a.x != b.x ? a.x < b.x : a.y < b.y); }\n\n\tfriend T norm(const Point &a) {\
+    \ return a.x * a.x + a.y * a.y; }\n\tfriend T abs(const Point &p) { return std::hypot(p.x,\
+    \ p.y); }\n\tfriend T unit(const Point &a) { if (a == Point()) return a; return\
+    \ a / abs(a); }\n\tfriend Point conj(const Point &a) { return Point(a.x, -a.y);\
+    \ }\n\tfriend Point perp(const Point &a) { return Point(-a.y, a.x); }\n\tfriend\
+    \ long double arg(const Point &p) { return atan2(p.y, p.x); }\n\tfriend Point\
+    \ dir(long double angle) { return Point(cos(angle), sin(angle)); }\n\n\tPoint&\
+    \ operator+=(const Point &p) { x += p.x, y += p.y; return *this; }\n\tPoint& operator-=(const\
+    \ Point &p) { x -= p.x, y -= p.y; return *this; }\n\tPoint& operator*=(const T\
+    \ &t) { x *= t, y *= t; return *this; }\n\tPoint& operator/=(const T &t) { x /=\
+    \ t, y /= t; return *this; }\n\tPoint& operator*=(const Point &t) { \n\t\tPoint\
+    \ res = Point(x, y) * t; x = res.x, y = res.y; return *this; }\n\tPoint& operator/=(const\
+    \ Point &t) { \n\t\tPoint res = Point(x, y) / t; x = res.x, y = res.y; return\
+    \ *this; }\n\n\tfriend Point operator+(const Point &a, const Point &b) { return\
+    \ Point(a.x + b.x, a.y + b.y); }\n\tfriend Point operator-(const Point &a, const\
+    \ Point &b) { return Point(a.x - b.x, a.y - b.y); }\n\tfriend Point operator*(const\
+    \ Point &a, const T &t) { return Point(a.x * t, a.y * t); }\n\tfriend Point operator*(const\
+    \ T &t ,const Point &a) { return Point(t * a.x, t * a.y); }\n\tfriend Point operator/(const\
+    \ Point &a, const T &t) { return Point(a.x / t, a.y / t); }\n\tfriend Point operator*(const\
+    \ Point &a, const Point &b) { \n\t\treturn Point(a.x * b.x - a.y * b.y, a.y *\
+    \ b.x + a.x * b.y); }\n\tfriend Point operator/(const Point &a, const Point &b)\
+    \ { \n\t\treturn Point(a * conj(b) / norm(b)); }\n\n\tfriend T int_norm(const\
+    \ Point &a) { return __gcd(a.x, a.y); }\n\tfriend T int_unit(const Point &a) {\
+    \ if (a == Point()) return a; return a / int_norm(a); }\n\n\tfriend T cross(const\
+    \ Point &a, const Point &b) { return a.x * b.y - a.y * b.x; }\n\tfriend T dot(const\
     \ Point &a, const Point &b) { return a.x * b.x + a.y * b.y; }\n\tfriend T area(const\
     \ Point &a, const Point &b, const Point &c) { return cross(b - a, c - a); }\n\n\
     \t// Returns conj(a) * b\n\tfriend Point rotation(const Point &a, const Point\
@@ -166,7 +164,7 @@ data:
   isVerificationFile: false
   path: library/geometry/convex-hull.hpp
   requiredBy: []
-  timestamp: '2021-07-24 19:26:06-04:00'
+  timestamp: '2021-07-24 19:40:07-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/geometry/convex-hull.hpp

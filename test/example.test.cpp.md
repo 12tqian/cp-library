@@ -3,9 +3,9 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
-  _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _isVerificationFailed: false
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/4/ALDS1_4_B
@@ -27,15 +27,15 @@ data:
     \ t_i);\n    }\n    cout << cnt << endl;\n    return 0;\n}    "
   dependsOn: []
   isVerificationFile: true
-  path: test/example.test.hpp
+  path: test/example.test.cpp
   requiredBy: []
-  timestamp: '2021-07-24 19:26:06-04:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2021-07-24 19:40:07-04:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/example.test.hpp
+documentation_of: test/example.test.cpp
 layout: document
 redirect_from:
-- /verify/test/example.test.hpp
-- /verify/test/example.test.hpp.html
-title: test/example.test.hpp
+- /verify/test/example.test.cpp
+- /verify/test/example.test.cpp.html
+title: test/example.test.cpp
 ---

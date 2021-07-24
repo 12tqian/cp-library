@@ -8,32 +8,31 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#include <bits/stdc++.h>\n#include <unistd.h>\n\nnamespace FastIO\
-    \ {\n\nnamespace Internal {\n\ntemplate <class T>\nusing is_signed_int128 =\n\t\
-    typename std::conditional<std::is_same<T, __int128_t>::value ||\n\t\t\t\t\t\t\t\
-    \t  std::is_same<T, __int128>::value,\n\t\t\t\t\t\t\t  std::true_type,\n\t\t\t\
-    \t\t\t\t  std::false_type>::type;\n\ntemplate <class T>\nusing is_unsigned_int128\
-    \ =\n\ttypename std::conditional<std::is_same<T, __uint128_t>::value ||\n\t\t\t\
-    \t\t\t\t\t  std::is_same<T, unsigned __int128>::value,\n\t\t\t\t\t\t\t  std::true_type,\n\
-    \t\t\t\t\t\t\t  std::false_type>::type;\n\ntemplate <class T>\nusing make_unsigned_int128\
-    \ =\n\ttypename std::conditional<std::is_same<T, __int128_t>::value,\n\t\t\t\t\
-    \t\t\t  __uint128_t,\n\t\t\t\t\t\t\t  unsigned __int128>;\n\ntemplate <class T>\n\
-    using is_integral =\n\ttypename std::conditional<std::is_integral<T>::value ||\n\
-    \t\t\t\t\t\t\t\t  Internal::is_signed_int128<T>::value ||\n\t\t\t\t\t\t\t\t  Internal::is_unsigned_int128<T>::value,\n\
+  bundledCode: "#include <unistd.h>\n\nnamespace FastIO {\n\nnamespace Internal {\n\
+    \ntemplate <class T>\nusing is_signed_int128 =\n\ttypename std::conditional<std::is_same<T,\
+    \ __int128_t>::value ||\n\t\t\t\t\t\t\t\t  std::is_same<T, __int128>::value,\n\
     \t\t\t\t\t\t\t  std::true_type,\n\t\t\t\t\t\t\t  std::false_type>::type;\n\ntemplate\
-    \ <class T>\nusing is_signed_int = typename std::conditional<(is_integral<T>::value\
-    \ &&\n\t\t\t\t\t\t\t\t\t\t\t\t std::is_signed<T>::value) ||\n\t\t\t\t\t\t\t\t\t\
-    \t\t\t\tis_signed_int128<T>::value,\n\t\t\t\t\t\t\t\t\t\t\t\tstd::true_type,\n\
-    \t\t\t\t\t\t\t\t\t\t\t\tstd::false_type>::type;\n\ntemplate <class T>\nusing is_unsigned_int\
-    \ =\n\ttypename std::conditional<(is_integral<T>::value &&\n\t\t\t\t\t\t\t   std::is_unsigned<T>::value)\
-    \ ||\n\t\t\t\t\t\t\t\t  is_unsigned_int128<T>::value,\n\t\t\t\t\t\t\t  std::true_type,\n\
-    \t\t\t\t\t\t\t  std::false_type>::type;\n\ntemplate <class T>\nusing to_unsigned\
-    \ = typename std::conditional<\n\tis_signed_int128<T>::value,\n\tmake_unsigned_int128<T>,\n\
-    \ttypename std::conditional<std::is_signed<T>::value,\n\t\t\t\t\t\t\t  std::make_unsigned<T>,\n\
-    \t\t\t\t\t\t\t  std::common_type<T>>::type>::type;\n\ntemplate <class T>\nusing\
-    \ is_integral_t = std::enable_if_t<is_integral<T>::value>;\n\ntemplate <class\
-    \ T>\nusing is_signed_int_t = std::enable_if_t<is_signed_int<T>::value>;\n\ntemplate\
-    \ <class T>\nusing is_unsigned_int_t = std::enable_if_t<is_unsigned_int<T>::value>;\n\
+    \ <class T>\nusing is_unsigned_int128 =\n\ttypename std::conditional<std::is_same<T,\
+    \ __uint128_t>::value ||\n\t\t\t\t\t\t\t\t  std::is_same<T, unsigned __int128>::value,\n\
+    \t\t\t\t\t\t\t  std::true_type,\n\t\t\t\t\t\t\t  std::false_type>::type;\n\ntemplate\
+    \ <class T>\nusing make_unsigned_int128 =\n\ttypename std::conditional<std::is_same<T,\
+    \ __int128_t>::value,\n\t\t\t\t\t\t\t  __uint128_t,\n\t\t\t\t\t\t\t  unsigned\
+    \ __int128>;\n\ntemplate <class T>\nusing is_integral =\n\ttypename std::conditional<std::is_integral<T>::value\
+    \ ||\n\t\t\t\t\t\t\t\t  Internal::is_signed_int128<T>::value ||\n\t\t\t\t\t\t\t\
+    \t  Internal::is_unsigned_int128<T>::value,\n\t\t\t\t\t\t\t  std::true_type,\n\
+    \t\t\t\t\t\t\t  std::false_type>::type;\n\ntemplate <class T>\nusing is_signed_int\
+    \ = typename std::conditional<(is_integral<T>::value &&\n\t\t\t\t\t\t\t\t\t\t\t\
+    \t std::is_signed<T>::value) ||\n\t\t\t\t\t\t\t\t\t\t\t\t\tis_signed_int128<T>::value,\n\
+    \t\t\t\t\t\t\t\t\t\t\t\tstd::true_type,\n\t\t\t\t\t\t\t\t\t\t\t\tstd::false_type>::type;\n\
+    \ntemplate <class T>\nusing is_unsigned_int =\n\ttypename std::conditional<(is_integral<T>::value\
+    \ &&\n\t\t\t\t\t\t\t   std::is_unsigned<T>::value) ||\n\t\t\t\t\t\t\t\t  is_unsigned_int128<T>::value,\n\
+    \t\t\t\t\t\t\t  std::true_type,\n\t\t\t\t\t\t\t  std::false_type>::type;\n\ntemplate\
+    \ <class T>\nusing to_unsigned = typename std::conditional<\n\tis_signed_int128<T>::value,\n\
+    \tmake_unsigned_int128<T>,\n\ttypename std::conditional<std::is_signed<T>::value,\n\
+    \t\t\t\t\t\t\t  std::make_unsigned<T>,\n\t\t\t\t\t\t\t  std::common_type<T>>::type>::type;\n\
+    \ntemplate <class T>\nusing is_integral_t = std::enable_if_t<is_integral<T>::value>;\n\
+    \ntemplate <class T>\nusing is_signed_int_t = std::enable_if_t<is_signed_int<T>::value>;\n\
+    \ntemplate <class T>\nusing is_unsigned_int_t = std::enable_if_t<is_unsigned_int<T>::value>;\n\
     \ntemplate <class T> using to_unsigned_t = typename to_unsigned<T>::type;\n\n\
     }  // namespace Internal\n\n\nstruct Scanner {\npublic:\n\tScanner(FILE* fp) :\
     \ fd(fileno(fp)) {}\n\n\tvoid read() {}\n\ttemplate <class H, class... T> void\
@@ -103,8 +102,8 @@ data:
     \ &val) {\n\t\tauto n = val.size();\n\t\tfor (size_t i = 0; i < n; i++) {\n\t\t\
     \tif (i) write_single(' ');\n\t\t\twrite_single(val[i]);\n\t\t}\n\t}\n};\n\n}\
     \  // FastIO\n"
-  code: "#include <bits/stdc++.h>\n#include <unistd.h>\n\nnamespace FastIO {\n\nnamespace\
-    \ Internal {\n\ntemplate <class T>\nusing is_signed_int128 =\n\ttypename std::conditional<std::is_same<T,\
+  code: "#pragma once\n#include <unistd.h>\n\nnamespace FastIO {\n\nnamespace Internal\
+    \ {\n\ntemplate <class T>\nusing is_signed_int128 =\n\ttypename std::conditional<std::is_same<T,\
     \ __int128_t>::value ||\n\t\t\t\t\t\t\t\t  std::is_same<T, __int128>::value,\n\
     \t\t\t\t\t\t\t  std::true_type,\n\t\t\t\t\t\t\t  std::false_type>::type;\n\ntemplate\
     \ <class T>\nusing is_unsigned_int128 =\n\ttypename std::conditional<std::is_same<T,\
@@ -201,7 +200,7 @@ data:
   isVerificationFile: false
   path: library/misc/fast-io.hpp
   requiredBy: []
-  timestamp: '2021-07-24 19:26:06-04:00'
+  timestamp: '2021-07-24 19:40:07-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/misc/fast-io.hpp

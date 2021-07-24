@@ -8,12 +8,12 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#include <bits/stdc++.h>\n\n/**\n * Finds Euler path in O(N + M) from\
-    \ a starting vertex\n * To find which vertex to start, use parities\n */\n\ntemplate\
-    \ <bool directed> struct Euler {\n\tint n;\n\tstd::vector<std::vector<std::pair<int,\
-    \ int>>> adj;\n\tstd::vector<std::vector<std::pair<int, int>>::iterator> its;\n\
-    \tstd::vector<bool> used;\n\n\tvoid init(int _n) {\n\t\tn = _n;\n\t\tadj.resize(n);\n\
-    \t}\n\n\tvoid ae(int u, int v) {\n\t\tint m = (int)used.size();\n\t\tused.push_back(false);\n\
+  bundledCode: "\n/**\n * Finds Euler path in O(N + M) from a starting vertex\n *\
+    \ To find which vertex to start, use parities\n */\n\ntemplate <bool directed>\
+    \ struct Euler {\n\tint n;\n\tstd::vector<std::vector<std::pair<int, int>>> adj;\n\
+    \tstd::vector<std::vector<std::pair<int, int>>::iterator> its;\n\tstd::vector<bool>\
+    \ used;\n\n\tvoid init(int _n) {\n\t\tn = _n;\n\t\tadj.resize(n);\n\t}\n\n\tvoid\
+    \ ae(int u, int v) {\n\t\tint m = (int)used.size();\n\t\tused.push_back(false);\n\
     \t\tadj[u].emplace_back(v, m);\n\t\tif (!directed) {\n\t\t\tadj[v].emplace_back(u,\
     \ m);\n\t\t}\n\t}\n\t\n\tstd::vector<std::pair<int, int>> get_path(int src = 0)\
     \ {\n\t\tits.resize(n);\n\t\tstd::vector<std::pair<int, int>> ans, s{{src, -1}};\n\
@@ -27,12 +27,12 @@ data:
     \ = 1;\n\t\t\t}\n\t\t}\n\t\tif ((int)ans.size() != (int)used.size() + 1) {\n\t\
     \t\treturn {};\n\t\t}\n\t\treverse(ans.begin(), ans.end());\n\t\treturn ans;\n\
     \t}\n};\n"
-  code: "#include <bits/stdc++.h>\n\n/**\n * Finds Euler path in O(N + M) from a starting\
-    \ vertex\n * To find which vertex to start, use parities\n */\n\ntemplate <bool\
-    \ directed> struct Euler {\n\tint n;\n\tstd::vector<std::vector<std::pair<int,\
-    \ int>>> adj;\n\tstd::vector<std::vector<std::pair<int, int>>::iterator> its;\n\
-    \tstd::vector<bool> used;\n\n\tvoid init(int _n) {\n\t\tn = _n;\n\t\tadj.resize(n);\n\
-    \t}\n\n\tvoid ae(int u, int v) {\n\t\tint m = (int)used.size();\n\t\tused.push_back(false);\n\
+  code: "#pragma once\n\n/**\n * Finds Euler path in O(N + M) from a starting vertex\n\
+    \ * To find which vertex to start, use parities\n */\n\ntemplate <bool directed>\
+    \ struct Euler {\n\tint n;\n\tstd::vector<std::vector<std::pair<int, int>>> adj;\n\
+    \tstd::vector<std::vector<std::pair<int, int>>::iterator> its;\n\tstd::vector<bool>\
+    \ used;\n\n\tvoid init(int _n) {\n\t\tn = _n;\n\t\tadj.resize(n);\n\t}\n\n\tvoid\
+    \ ae(int u, int v) {\n\t\tint m = (int)used.size();\n\t\tused.push_back(false);\n\
     \t\tadj[u].emplace_back(v, m);\n\t\tif (!directed) {\n\t\t\tadj[v].emplace_back(u,\
     \ m);\n\t\t}\n\t}\n\t\n\tstd::vector<std::pair<int, int>> get_path(int src = 0)\
     \ {\n\t\tits.resize(n);\n\t\tstd::vector<std::pair<int, int>> ans, s{{src, -1}};\n\
@@ -50,7 +50,7 @@ data:
   isVerificationFile: false
   path: library/graphs/euler-path.hpp
   requiredBy: []
-  timestamp: '2021-07-24 19:26:06-04:00'
+  timestamp: '2021-07-24 19:40:07-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/graphs/euler-path.hpp

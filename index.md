@@ -14,7 +14,7 @@ data:
     - icon: ':warning:'
       path: library/data-structures/1d-range-queries/affine-seg.hpp
       title: library/data-structures/1d-range-queries/affine-seg.hpp
-    - icon: ':warning:'
+    - icon: ':x:'
       path: library/data-structures/1d-range-queries/associative-range-query.hpp
       title: library/data-structures/1d-range-queries/associative-range-query.hpp
     - icon: ':warning:'
@@ -275,8 +275,11 @@ data:
   - name: test
     pages:
     - icon: ':x:'
-      path: test/example.test.hpp
-      title: test/example.test.hpp
+      path: test/associative-range-query.test.cpp
+      title: test/associative-range-query.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/example.test.cpp
+      title: test/example.test.cpp
 layout: toppage
 ---
 ![Badge](https://cp-logo.vercel.app/codeforces/12tqian)

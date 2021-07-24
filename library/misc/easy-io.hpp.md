@@ -10,8 +10,8 @@ data:
     links:
     - https://nafe.es/posts/2020-02-29-is-printable/
     - https://stackoverflow.com/questions/13830158/check-if-a-variable-type-is-iterable
-  bundledCode: "#include <bits/stdc++.h>\n\nusing namespace std;\n\ninline namespace\
-    \ Helpers {\n\t//////////// is_iterable\n\t// https://stackoverflow.com/questions/13830158/check-if-a-variable-type-is-iterable\n\
+  bundledCode: "\nusing namespace std;\n\ninline namespace Helpers {\n\t////////////\
+    \ is_iterable\n\t// https://stackoverflow.com/questions/13830158/check-if-a-variable-type-is-iterable\n\
     \t// this gets used only when we can call begin() and end() on that type\n\ttemplate\
     \ <class T, class = void> struct is_iterable : false_type {};\n\ttemplate <class\
     \ T> struct is_iterable<T, void_t<decltype(begin(declval<T>())),\n\t\t\t\t\t\t\
@@ -93,8 +93,8 @@ data:
     \t\t// throws exception when do smth illegal\n\t\t// ex. try to read letter into\
     \ int\n\t\tif (!s.empty()) set_in(s + \".in\"), set_out(s + \".out\"); // for\
     \ old USACO\n\t}\n}\n"
-  code: "#include <bits/stdc++.h>\n\nusing namespace std;\n\ninline namespace Helpers\
-    \ {\n\t//////////// is_iterable\n\t// https://stackoverflow.com/questions/13830158/check-if-a-variable-type-is-iterable\n\
+  code: "#pragma once\n\nusing namespace std;\n\ninline namespace Helpers {\n\t////////////\
+    \ is_iterable\n\t// https://stackoverflow.com/questions/13830158/check-if-a-variable-type-is-iterable\n\
     \t// this gets used only when we can call begin() and end() on that type\n\ttemplate\
     \ <class T, class = void> struct is_iterable : false_type {};\n\ttemplate <class\
     \ T> struct is_iterable<T, void_t<decltype(begin(declval<T>())),\n\t\t\t\t\t\t\
@@ -180,7 +180,7 @@ data:
   isVerificationFile: false
   path: library/misc/easy-io.hpp
   requiredBy: []
-  timestamp: '2021-07-24 19:26:06-04:00'
+  timestamp: '2021-07-24 19:40:07-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/misc/easy-io.hpp
