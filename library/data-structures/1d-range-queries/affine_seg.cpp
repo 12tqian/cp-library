@@ -1,7 +1,5 @@
 #include<bits/stdc++.h>
 
-using namespace std;
-
 template <class T> struct AffineSeg {
 	int sz;
 	std::vector<T> sum, mult, add;
