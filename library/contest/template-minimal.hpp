@@ -12,6 +12,7 @@
 #include <deque>
 #include <iostream>
 #include <iomanip>
+#include <list>
 #include <map>
 #include <numeric>
 #include <queue>
