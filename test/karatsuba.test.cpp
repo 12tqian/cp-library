@@ -2,23 +2,25 @@
 
 #include "../library/contest/template-minimal.hpp"
 #include "../library/numerical/karatsuba.hpp"
+#include "../library/numerical/mod-int2.hpp"
 
 int main() {
 	const int MOD = 1e9 + 7;
+	using mi = Mint<MOD, 5>;
 	using namespace Karatsuba;
 	ios_base::sync_with_stdio(false);
 	cin.tie(nullptr);
 	int sa, sb;
 	cin >> sa >> sb;
-	vector<long long> a(sa);
+	vector<mi> a(sa);
 	for (int i = 0; i < sa; i++)
 		cin >> a[i];
-	vector<long long> b(sb);
+	vector<mi> b(sb);
 	for (int i = 0; i < sb; i++)
 		cin >> b[i];
-	vector<long long> c = convolution<long long>(a, b);
+	vector<mi> c = convolution<mi>(a, b);
 	for (int i = 0; i < (int)c.size(); i++)
-		cout << c[i] % MOD << " ";
+		cout << c[i] << " ";
 	cout << '\n';
 	return 0;
 }
