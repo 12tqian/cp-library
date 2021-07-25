@@ -57,7 +57,3 @@ template <class T> struct IntervalUnion {
 		return ret;
 	}
 };
-
-int main() {
-	return 0;
-}

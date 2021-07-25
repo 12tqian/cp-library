@@ -38,7 +38,3 @@ template <class T> struct SegmentTree {
 		return comb(ra, rb);
 	}
 };
-
-int main() {
-	return 0;
-}
