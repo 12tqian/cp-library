@@ -14,7 +14,7 @@ data:
       title: library/contest/template-short.cpp
   - name: library/data-structures/1d-range-queries
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/data-structures/1d-range-queries/affine-segment-tree.hpp
       title: library/data-structures/1d-range-queries/affine-segment-tree.hpp
     - icon: ':heavy_check_mark:'
@@ -29,6 +29,9 @@ data:
     - icon: ':warning:'
       path: library/data-structures/1d-range-queries/interval-union.hpp
       title: library/data-structures/1d-range-queries/interval-union.hpp
+    - icon: ':x:'
+      path: library/data-structures/1d-range-queries/lazy-segment-tree.hpp
+      title: library/data-structures/1d-range-queries/lazy-segment-tree.hpp
     - icon: ':warning:'
       path: library/data-structures/1d-range-queries/li-chao-tree-offline.hpp
       title: library/data-structures/1d-range-queries/li-chao-tree-offline.hpp
@@ -50,9 +53,6 @@ data:
     - icon: ':warning:'
       path: library/data-structures/1d-range-queries/sparse-table.hpp
       title: library/data-structures/1d-range-queries/sparse-table.hpp
-    - icon: ':warning:'
-      path: library/data-structures/1d-range-queries/vector-lazy-segment-tree.hpp
-      title: library/data-structures/1d-range-queries/vector-lazy-segment-tree.hpp
   - name: library/data-structures/2d-range-queries
     pages:
     - icon: ':warning:'
@@ -234,7 +234,7 @@ data:
     - icon: ':warning:'
       path: library/numerical/mod-int.hpp
       title: library/numerical/mod-int.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/numerical/mod-int2.hpp
       title: library/numerical/mod-int2.hpp
     - icon: ':warning:'
@@ -277,7 +277,7 @@ data:
   verificationCategories:
   - name: test
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/affine-segment-tree.test.cpp
       title: test/affine-segment-tree.test.cpp
     - icon: ':heavy_check_mark:'
@@ -287,8 +287,11 @@ data:
       path: test/example.test.cpp
       title: test/example.test.cpp
     - icon: ':x:'
-      path: test/fenwick.test.cpp
-      title: test/fenwick.test.cpp
+      path: test/fenwick-tree.test.cpp
+      title: test/fenwick-tree.test.cpp
+    - icon: ':x:'
+      path: test/lazy-segment-tree.test.cpp
+      title: test/lazy-segment-tree.test.cpp
 layout: toppage
 ---
 ![Badge](https://cp-logo.vercel.app/codeforces/12tqian)

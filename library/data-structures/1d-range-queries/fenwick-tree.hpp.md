@@ -4,8 +4,8 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':x:'
-    path: test/fenwick.test.cpp
-    title: test/fenwick.test.cpp
+    path: test/fenwick-tree.test.cpp
+    title: test/fenwick-tree.test.cpp
   _isVerificationFailed: true
   _pathExtension: hpp
   _verificationStatusIcon: ':x:'
@@ -34,7 +34,7 @@ data:
   timestamp: '2021-07-24 21:09:23-04:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
-  - test/fenwick.test.cpp
+  - test/fenwick-tree.test.cpp
 documentation_of: library/data-structures/1d-range-queries/fenwick-tree.hpp
 layout: document
 redirect_from:

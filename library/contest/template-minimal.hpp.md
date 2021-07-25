@@ -3,15 +3,18 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/affine-segment-tree.test.cpp
     title: test/affine-segment-tree.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/associative-range-query.test.cpp
     title: test/associative-range-query.test.cpp
   - icon: ':x:'
-    path: test/fenwick.test.cpp
-    title: test/fenwick.test.cpp
+    path: test/fenwick-tree.test.cpp
+    title: test/fenwick-tree.test.cpp
+  - icon: ':x:'
+    path: test/lazy-segment-tree.test.cpp
+    title: test/lazy-segment-tree.test.cpp
   _isVerificationFailed: true
   _pathExtension: hpp
   _verificationStatusIcon: ':question:'
@@ -122,7 +125,8 @@ data:
   timestamp: '2021-07-24 20:00:47-04:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
-  - test/fenwick.test.cpp
+  - test/lazy-segment-tree.test.cpp
+  - test/fenwick-tree.test.cpp
   - test/affine-segment-tree.test.cpp
   - test/associative-range-query.test.cpp
 documentation_of: library/contest/template-minimal.hpp

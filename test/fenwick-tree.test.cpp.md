@@ -53,15 +53,15 @@ data:
   - library/contest/template-minimal.hpp
   - library/data-structures/1d-range-queries/fenwick-tree.hpp
   isVerificationFile: true
-  path: test/fenwick.test.cpp
+  path: test/fenwick-tree.test.cpp
   requiredBy: []
-  timestamp: '2021-07-24 21:09:23-04:00'
+  timestamp: '2021-07-24 21:14:38-04:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
-documentation_of: test/fenwick.test.cpp
+documentation_of: test/fenwick-tree.test.cpp
 layout: document
 redirect_from:
-- /verify/test/fenwick.test.cpp
-- /verify/test/fenwick.test.cpp.html
-title: test/fenwick.test.cpp
+- /verify/test/fenwick-tree.test.cpp
+- /verify/test/fenwick-tree.test.cpp.html
+title: test/fenwick-tree.test.cpp
 ---

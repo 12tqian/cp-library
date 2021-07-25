@@ -4,17 +4,17 @@ data:
   - icon: ':question:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/data-structures/1d-range-queries/affine-segment-tree.hpp
     title: library/data-structures/1d-range-queries/affine-segment-tree.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/numerical/mod-int2.hpp
     title: library/numerical/mod-int2.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/range_affine_range_sum
@@ -74,11 +74,10 @@ data:
     \ <= hi) return sum[ind];\n\t\tint M = (L + R) / 2;\n\t\treturn qsum(lo, hi, 2\
     \ * ind, L, M) + qsum(lo, hi, 2 * ind + 1, M + 1, R);\n\t}\n};\n\nusing mi = Mint<998244353,\
     \ 5>;\n\nint main() {\n\tcin.tie(0)->sync_with_stdio(false);\n    int n, q;\n\
-    \    AffineSegmentTree<int> seg;\n    cin >> n >> q;\n    seg.init(n);\n    vector<int>\
+    \    AffineSegmentTree<mi> seg;\n    cin >> n >> q;\n    seg.init(n);\n    vector<int>\
     \ a(n);\n    for (int i = 0; i < n; i++) {\n        cin >> a[i];\n        seg.upd(0,\
-    \ i, i, a[i]);\n    }\n    for (int i = 0; i < n; ++i) {\n        cout << seg.qsum(i,\
-    \ i) << endl;\n    }\n    while (q--) {\n        int t;\n        cin >> t;\n \
-    \       if (t == 0) {\n            int l, r, b, c;\n            cin >> l >> r\
+    \ i, i, a[i]);\n    }\n    while (q--) {\n        int t;\n        cin >> t;\n\
+    \        if (t == 0) {\n            int l, r, b, c;\n            cin >> l >> r\
     \ >> b >> c;\n            seg.upd(1, l, r - 1, b);\n            seg.upd(0, l,\
     \ r - 1, c);\n        } else {\n            int l, r;\n            cin >> l >>\
     \ r;\n            cout << seg.qsum(l, r - 1) << '\\n';\n        }\n    }\n   \
@@ -87,15 +86,14 @@ data:
     \n\n#include \"../library/contest/template-minimal.hpp\"\n#include \"../library/numerical/mod-int2.hpp\"\
     \n#include \"../library/data-structures/1d-range-queries/affine-segment-tree.hpp\"\
     \n\nusing mi = Mint<998244353, 5>;\n\nint main() {\n\tcin.tie(0)->sync_with_stdio(false);\n\
-    \    int n, q;\n    AffineSegmentTree<int> seg;\n    cin >> n >> q;\n    seg.init(n);\n\
+    \    int n, q;\n    AffineSegmentTree<mi> seg;\n    cin >> n >> q;\n    seg.init(n);\n\
     \    vector<int> a(n);\n    for (int i = 0; i < n; i++) {\n        cin >> a[i];\n\
-    \        seg.upd(0, i, i, a[i]);\n    }\n    for (int i = 0; i < n; ++i) {\n \
-    \       cout << seg.qsum(i, i) << endl;\n    }\n    while (q--) {\n        int\
-    \ t;\n        cin >> t;\n        if (t == 0) {\n            int l, r, b, c;\n\
-    \            cin >> l >> r >> b >> c;\n            seg.upd(1, l, r - 1, b);\n\
-    \            seg.upd(0, l, r - 1, c);\n        } else {\n            int l, r;\n\
-    \            cin >> l >> r;\n            cout << seg.qsum(l, r - 1) << '\\n';\n\
-    \        }\n    }\n    return 0;\n}"
+    \        seg.upd(0, i, i, a[i]);\n    }\n    while (q--) {\n        int t;\n \
+    \       cin >> t;\n        if (t == 0) {\n            int l, r, b, c;\n      \
+    \      cin >> l >> r >> b >> c;\n            seg.upd(1, l, r - 1, b);\n      \
+    \      seg.upd(0, l, r - 1, c);\n        } else {\n            int l, r;\n   \
+    \         cin >> l >> r;\n            cout << seg.qsum(l, r - 1) << '\\n';\n \
+    \       }\n    }\n    return 0;\n}"
   dependsOn:
   - library/contest/template-minimal.hpp
   - library/numerical/mod-int2.hpp
@@ -103,8 +101,8 @@ data:
   isVerificationFile: true
   path: test/affine-segment-tree.test.cpp
   requiredBy: []
-  timestamp: '2021-07-24 21:04:01-04:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2021-07-24 21:11:18-04:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/affine-segment-tree.test.cpp
 layout: document

@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: test/lazy-segment-tree.test.cpp
+    title: test/lazy-segment-tree.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "\ntemplate <class T> struct LazySeg {\n\tstd::vector<T> sum, lazy;\n\
@@ -45,15 +48,16 @@ data:
     }\n"
   dependsOn: []
   isVerificationFile: false
-  path: library/data-structures/1d-range-queries/vector-lazy-segment-tree.hpp
+  path: library/data-structures/1d-range-queries/lazy-segment-tree.hpp
   requiredBy: []
-  timestamp: '2021-07-24 19:40:07-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
-documentation_of: library/data-structures/1d-range-queries/vector-lazy-segment-tree.hpp
+  timestamp: '2021-07-24 21:14:38-04:00'
+  verificationStatus: LIBRARY_ALL_WA
+  verifiedWith:
+  - test/lazy-segment-tree.test.cpp
+documentation_of: library/data-structures/1d-range-queries/lazy-segment-tree.hpp
 layout: document
 redirect_from:
-- /library/library/data-structures/1d-range-queries/vector-lazy-segment-tree.hpp
-- /library/library/data-structures/1d-range-queries/vector-lazy-segment-tree.hpp.html
-title: library/data-structures/1d-range-queries/vector-lazy-segment-tree.hpp
+- /library/library/data-structures/1d-range-queries/lazy-segment-tree.hpp
+- /library/library/data-structures/1d-range-queries/lazy-segment-tree.hpp.html
+title: library/data-structures/1d-range-queries/lazy-segment-tree.hpp
 ---
