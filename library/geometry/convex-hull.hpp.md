@@ -1,17 +1,14 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':warning:'
     path: library/geometry/point.hpp
     title: library/geometry/point.hpp
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':x:'
-    path: test/convex-hull.test.cpp
-    title: test/convex-hull.test.cpp
-  _isVerificationFailed: true
+  _extendedVerifiedWith: []
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     links: []
   bundledCode: "\n\ntemplate <typename T> struct Point {\npublic:\n\tT x, y;\n\tPoint()\
@@ -108,9 +105,8 @@ data:
   path: library/geometry/convex-hull.hpp
   requiredBy: []
   timestamp: '2021-07-24 21:53:34-04:00'
-  verificationStatus: LIBRARY_ALL_WA
-  verifiedWith:
-  - test/convex-hull.test.cpp
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
 documentation_of: library/geometry/convex-hull.hpp
 layout: document
 redirect_from:

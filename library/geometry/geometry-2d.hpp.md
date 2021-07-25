@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':warning:'
     path: library/geometry/point.hpp
     title: library/geometry/point.hpp
-  _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':x:'
-    path: test/geometry-2d.test.cpp
-    title: test/geometry-2d.test.cpp
-  _isVerificationFailed: true
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: test/geometry-2d.cpp
+    title: test/geometry-2d.cpp
+  _extendedVerifiedWith: []
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     links: []
   bundledCode: "\n\ntemplate <typename T> struct Point {\npublic:\n\tT x, y;\n\tPoint()\
@@ -152,11 +152,11 @@ data:
   - library/geometry/point.hpp
   isVerificationFile: false
   path: library/geometry/geometry-2d.hpp
-  requiredBy: []
+  requiredBy:
+  - test/geometry-2d.cpp
   timestamp: '2021-07-24 21:53:34-04:00'
-  verificationStatus: LIBRARY_ALL_WA
-  verifiedWith:
-  - test/geometry-2d.test.cpp
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
 documentation_of: library/geometry/geometry-2d.hpp
 layout: document
 redirect_from:

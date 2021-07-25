@@ -75,7 +75,7 @@ data:
     - icon: ':warning:'
       path: library/dynamic-programming/dynamic-convex-hull-trick.hpp
       title: library/dynamic-programming/dynamic-convex-hull-trick.hpp
-    - icon: ':x:'
+    - icon: ':warning:'
       path: library/dynamic-programming/gosper-hack.hpp
       title: library/dynamic-programming/gosper-hack.hpp
     - icon: ':warning:'
@@ -84,18 +84,18 @@ data:
     - icon: ':warning:'
       path: library/dynamic-programming/min-deque.hpp
       title: library/dynamic-programming/min-deque.hpp
-    - icon: ':x:'
+    - icon: ':warning:'
       path: library/dynamic-programming/monotonic-convex-hull.hpp
       title: library/dynamic-programming/monotonic-convex-hull.hpp
   - name: library/geometry
     pages:
-    - icon: ':x:'
+    - icon: ':warning:'
       path: library/geometry/convex-hull.hpp
       title: library/geometry/convex-hull.hpp
-    - icon: ':x:'
+    - icon: ':warning:'
       path: library/geometry/geometry-2d.hpp
       title: library/geometry/geometry-2d.hpp
-    - icon: ':x:'
+    - icon: ':warning:'
       path: library/geometry/point.hpp
       title: library/geometry/point.hpp
   - name: library/graphs
@@ -277,6 +277,20 @@ data:
     - icon: ':warning:'
       path: library/unused/include_test.hpp
       title: library/unused/include_test.hpp
+  - name: test
+    pages:
+    - icon: ':warning:'
+      path: test/convex-hull.cpp
+      title: test/convex-hull.cpp
+    - icon: ':warning:'
+      path: test/geometry-2d.cpp
+      title: test/geometry-2d.cpp
+    - icon: ':warning:'
+      path: test/gosper-hack.cpp
+      title: test/gosper-hack.cpp
+    - icon: ':warning:'
+      path: test/monotonic-convex-hull.cpp
+      title: test/monotonic-convex-hull.cpp
   verificationCategories:
   - name: test
     pages:
@@ -292,21 +306,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/biconnected-components.test.cpp
       title: test/biconnected-components.test.cpp
-    - icon: ':x:'
-      path: test/convex-hull.test.cpp
-      title: test/convex-hull.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/example.test.cpp
       title: test/example.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/fenwick-tree.test.cpp
       title: test/fenwick-tree.test.cpp
-    - icon: ':x:'
-      path: test/geometry-2d.test.cpp
-      title: test/geometry-2d.test.cpp
-    - icon: ':x:'
-      path: test/gosper-hack.test.cpp
-      title: test/gosper-hack.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/implicit-lazy-segment-tree.test.cpp
       title: test/implicit-lazy-segment-tree.test.cpp
@@ -322,9 +327,6 @@ data:
     - icon: ':x:'
       path: test/link-cut-tree.test.cpp
       title: test/link-cut-tree.test.cpp
-    - icon: ':x:'
-      path: test/monotonic-convex-hull.test.cpp
-      title: test/monotonic-convex-hull.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/point-update-segment-tree.test.cpp
       title: test/point-update-segment-tree.test.cpp

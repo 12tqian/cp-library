@@ -2,22 +2,19 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':warning:'
     path: library/geometry/convex-hull.hpp
     title: library/geometry/convex-hull.hpp
-  - icon: ':x:'
+  - icon: ':warning:'
     path: library/geometry/geometry-2d.hpp
     title: library/geometry/geometry-2d.hpp
-  _extendedVerifiedWith:
-  - icon: ':x:'
-    path: test/convex-hull.test.cpp
-    title: test/convex-hull.test.cpp
-  - icon: ':x:'
-    path: test/geometry-2d.test.cpp
-    title: test/geometry-2d.test.cpp
-  _isVerificationFailed: true
+  - icon: ':warning:'
+    path: test/geometry-2d.cpp
+    title: test/geometry-2d.cpp
+  _extendedVerifiedWith: []
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     links: []
   bundledCode: "\ntemplate <typename T> struct Point {\npublic:\n\tT x, y;\n\tPoint()\
@@ -134,13 +131,12 @@ data:
   isVerificationFile: false
   path: library/geometry/point.hpp
   requiredBy:
+  - test/geometry-2d.cpp
   - library/geometry/geometry-2d.hpp
   - library/geometry/convex-hull.hpp
   timestamp: '2021-07-24 21:53:34-04:00'
-  verificationStatus: LIBRARY_ALL_WA
-  verifiedWith:
-  - test/geometry-2d.test.cpp
-  - test/convex-hull.test.cpp
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
 documentation_of: library/geometry/point.hpp
 layout: document
 redirect_from:

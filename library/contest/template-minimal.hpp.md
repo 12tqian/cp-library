@@ -5,6 +5,15 @@ data:
   - icon: ':warning:'
     path: library/graphs/enumerate-triangles.cpp
     title: library/graphs/enumerate-triangles.cpp
+  - icon: ':warning:'
+    path: test/geometry-2d.cpp
+    title: test/geometry-2d.cpp
+  - icon: ':warning:'
+    path: test/gosper-hack.cpp
+    title: test/gosper-hack.cpp
+  - icon: ':warning:'
+    path: test/monotonic-convex-hull.cpp
+    title: test/monotonic-convex-hull.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/affine-segment-tree.test.cpp
@@ -18,18 +27,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/biconnected-components.test.cpp
     title: test/biconnected-components.test.cpp
-  - icon: ':x:'
-    path: test/convex-hull.test.cpp
-    title: test/convex-hull.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/fenwick-tree.test.cpp
     title: test/fenwick-tree.test.cpp
-  - icon: ':x:'
-    path: test/geometry-2d.test.cpp
-    title: test/geometry-2d.test.cpp
-  - icon: ':x:'
-    path: test/gosper-hack.test.cpp
-    title: test/gosper-hack.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/implicit-lazy-segment-tree.test.cpp
     title: test/implicit-lazy-segment-tree.test.cpp
@@ -45,9 +45,6 @@ data:
   - icon: ':x:'
     path: test/link-cut-tree.test.cpp
     title: test/link-cut-tree.test.cpp
-  - icon: ':x:'
-    path: test/monotonic-convex-hull.test.cpp
-    title: test/monotonic-convex-hull.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/point-update-segment-tree.test.cpp
     title: test/point-update-segment-tree.test.cpp
@@ -164,24 +161,23 @@ data:
   isVerificationFile: false
   path: library/contest/template-minimal.hpp
   requiredBy:
+  - test/geometry-2d.cpp
+  - test/monotonic-convex-hull.cpp
+  - test/gosper-hack.cpp
   - library/graphs/enumerate-triangles.cpp
   timestamp: '2021-07-24 20:00:47-04:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/bellman-ford.test.cpp
-  - test/monotonic-convex-hull.test.cpp
   - test/implicit-lazy-segment-tree.test.cpp
   - test/biconnected-components.test.cpp
   - test/sparse-segment-tree.test.cpp
   - test/lazy-segment-tree.test.cpp
   - test/link-cut-tree.test.cpp
-  - test/geometry-2d.test.cpp
   - test/fenwick-tree.test.cpp
-  - test/convex-hull.test.cpp
   - test/affine-segment-tree.test.cpp
   - test/associative-range-query.test.cpp
   - test/point-update-segment-tree.test.cpp
-  - test/gosper-hack.test.cpp
   - test/segment-tree-beats.test.cpp
   - test/li-chao-tree-online.test.cpp
   - test/li-chao-tree-offline.test.cpp

@@ -4,19 +4,15 @@ data:
   - icon: ':question:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
-  - icon: ':x:'
+  - icon: ':warning:'
     path: library/dynamic-programming/gosper-hack.hpp
     title: library/dynamic-programming/gosper-hack.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
-    IGNORE: ''
-    IGNORE_IF_CLANG: ''
-    IGNORE_IF_GCC: ''
     links: []
   bundledCode: "#define IGNORE\n\n#include <algorithm>\n#include <array>\n#include\
     \ <bitset>\n#include <cassert>\n#include <chrono>\n#include <cmath>\n#include\
@@ -41,16 +37,16 @@ data:
   dependsOn:
   - library/contest/template-minimal.hpp
   - library/dynamic-programming/gosper-hack.hpp
-  isVerificationFile: true
-  path: test/gosper-hack.test.cpp
+  isVerificationFile: false
+  path: test/gosper-hack.cpp
   requiredBy: []
-  timestamp: '2021-07-24 21:49:44-04:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2021-07-24 22:12:48-04:00'
+  verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: test/gosper-hack.test.cpp
+documentation_of: test/gosper-hack.cpp
 layout: document
 redirect_from:
-- /verify/test/gosper-hack.test.cpp
-- /verify/test/gosper-hack.test.cpp.html
-title: test/gosper-hack.test.cpp
+- /library/test/gosper-hack.cpp
+- /library/test/gosper-hack.cpp.html
+title: test/gosper-hack.cpp
 ---

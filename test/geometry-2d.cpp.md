@@ -4,22 +4,18 @@ data:
   - icon: ':question:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
-  - icon: ':x:'
+  - icon: ':warning:'
     path: library/geometry/geometry-2d.hpp
     title: library/geometry/geometry-2d.hpp
-  - icon: ':x:'
+  - icon: ':warning:'
     path: library/geometry/point.hpp
     title: library/geometry/point.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
-    IGNORE: ''
-    IGNORE_IF_CLANG: ''
-    IGNORE_IF_GCC: ''
     links: []
   bundledCode: "#define IGNORE\n\n#include <algorithm>\n#include <array>\n#include\
     \ <bitset>\n#include <cassert>\n#include <chrono>\n#include <cmath>\n#include\
@@ -144,16 +140,16 @@ data:
   - library/contest/template-minimal.hpp
   - library/geometry/geometry-2d.hpp
   - library/geometry/point.hpp
-  isVerificationFile: true
-  path: test/geometry-2d.test.cpp
+  isVerificationFile: false
+  path: test/geometry-2d.cpp
   requiredBy: []
-  timestamp: '2021-07-24 21:57:36-04:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2021-07-24 22:12:48-04:00'
+  verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: test/geometry-2d.test.cpp
+documentation_of: test/geometry-2d.cpp
 layout: document
 redirect_from:
-- /verify/test/geometry-2d.test.cpp
-- /verify/test/geometry-2d.test.cpp.html
-title: test/geometry-2d.test.cpp
+- /library/test/geometry-2d.cpp
+- /library/test/geometry-2d.cpp.html
+title: test/geometry-2d.cpp
 ---

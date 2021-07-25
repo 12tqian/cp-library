@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':x:'
-    path: test/gosper-hack.test.cpp
-    title: test/gosper-hack.test.cpp
-  _isVerificationFailed: true
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: test/gosper-hack.cpp
+    title: test/gosper-hack.cpp
+  _extendedVerifiedWith: []
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     links: []
   bundledCode: "\nstd::string binary(unsigned long long n ) { //long long to binary\
@@ -21,11 +21,11 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: library/dynamic-programming/gosper-hack.hpp
-  requiredBy: []
+  requiredBy:
+  - test/gosper-hack.cpp
   timestamp: '2021-07-24 21:49:44-04:00'
-  verificationStatus: LIBRARY_ALL_WA
-  verifiedWith:
-  - test/gosper-hack.test.cpp
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
 documentation_of: library/dynamic-programming/gosper-hack.hpp
 layout: document
 redirect_from:
