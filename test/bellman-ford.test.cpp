@@ -17,11 +17,17 @@ int main() {
 	}
 	B.gen(r);
 	for (int i = 0; i < n; ++i) {
+		if (B.dist[i] == -B.INF) {
+			cout << "NEGATIVE CYCLE" << '\n';
+			return 0;
+		}
+	}
+	for (int i = 0; i < n; ++i) {
 		long long dist = B.dist[i];
 		if (dist == B.INF) 
 			cout << "INF\n";
 		else if (dist == -B.INF)
-			cout << "NEGATIVE CYCLE\n";
+			assert(false);
 		else 
 			cout << dist << '\n';
 	}
