@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/data-structures/1d-range-queries/lazy-segment-tree.hpp
     title: library/data-structures/1d-range-queries/lazy-segment-tree.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/point_add_range_sum
@@ -40,9 +40,8 @@ data:
     \ int R = -1) {\n\t\tif (R == -1) R += sz;\n\t\tpush(ind, L, R);\n\t\tif (lo >\
     \ R || L > hi) return 0;\n\t\tif (lo <= L && R <= hi) return sum[ind];\n\t\tint\
     \ M = (L + R) / 2;\n\t\treturn qsum(lo, hi, 2 * ind, L, M) + qsum(lo, hi, 2 *\
-    \ ind + 1, M + 1, R);\n\t}\n};\n\nint main() {\n\treturn 0;\n}\n\nint main() {\n\
-    \tusing namespace std;\n\tcin.tie(0)->sync_with_stdio(0);\n\tint n, q; \n    cin\
-    \ >> n >> q;\n\tvector<long long> a(n);\n\tLazySeg<long long> seg;\n    seg.init(n);\n\
+    \ ind + 1, M + 1, R);\n\t}\n};\n\nint main() {\n\tusing namespace std;\n\tcin.tie(0)->sync_with_stdio(0);\n\
+    \tint n, q; \n    cin >> n >> q;\n\tLazySeg<long long> seg;\n    seg.init(n);\n\
     \tfor (int i = 0; i < n; i++) {\n        int x;\n        cin >> x;\n        seg.upd(i,\
     \ i, x);\n    }\n\twhile (q--) {\n        int t;\n        cin >> t;\n        if\
     \ (t == 0) {\n            int p, x;\n            cin >> p >> x;\n            seg.upd(p,\
@@ -52,21 +51,21 @@ data:
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/point_add_range_sum\"\n\
     \n#include \"../library/contest/template-minimal.hpp\"\n#include \"../library/data-structures/1d-range-queries/lazy-segment-tree.hpp\"\
     \n\nint main() {\n\tusing namespace std;\n\tcin.tie(0)->sync_with_stdio(0);\n\t\
-    int n, q; \n    cin >> n >> q;\n\tvector<long long> a(n);\n\tLazySeg<long long>\
-    \ seg;\n    seg.init(n);\n\tfor (int i = 0; i < n; i++) {\n        int x;\n  \
-    \      cin >> x;\n        seg.upd(i, i, x);\n    }\n\twhile (q--) {\n        int\
-    \ t;\n        cin >> t;\n        if (t == 0) {\n            int p, x;\n      \
-    \      cin >> p >> x;\n            seg.upd(p, p, x);\n        } else {\n     \
-    \       int l, r;\n            cin >> l >> r;\n            --r;\n            cout\
-    \ << seg.qsum(l, r) << '\\n';\n        }\n\t}\n\treturn 0;\n}"
+    int n, q; \n    cin >> n >> q;\n\tLazySeg<long long> seg;\n    seg.init(n);\n\t\
+    for (int i = 0; i < n; i++) {\n        int x;\n        cin >> x;\n        seg.upd(i,\
+    \ i, x);\n    }\n\twhile (q--) {\n        int t;\n        cin >> t;\n        if\
+    \ (t == 0) {\n            int p, x;\n            cin >> p >> x;\n            seg.upd(p,\
+    \ p, x);\n        } else {\n            int l, r;\n            cin >> l >> r;\n\
+    \            --r;\n            cout << seg.qsum(l, r) << '\\n';\n        }\n\t\
+    }\n\treturn 0;\n}"
   dependsOn:
   - library/contest/template-minimal.hpp
   - library/data-structures/1d-range-queries/lazy-segment-tree.hpp
   isVerificationFile: true
   path: test/lazy-segment-tree.test.cpp
   requiredBy: []
-  timestamp: '2021-07-24 21:17:26-04:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2021-07-24 21:20:09-04:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/lazy-segment-tree.test.cpp
 layout: document

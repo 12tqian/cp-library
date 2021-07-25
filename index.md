@@ -6,7 +6,7 @@ data:
     - icon: ':warning:'
       path: library/contest/template-full.cpp
       title: library/contest/template-full.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/contest/template-minimal.hpp
       title: library/contest/template-minimal.hpp
     - icon: ':warning:'
@@ -29,7 +29,7 @@ data:
     - icon: ':warning:'
       path: library/data-structures/1d-range-queries/interval-union.hpp
       title: library/data-structures/1d-range-queries/interval-union.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/data-structures/1d-range-queries/lazy-segment-tree.hpp
       title: library/data-structures/1d-range-queries/lazy-segment-tree.hpp
     - icon: ':warning:'
@@ -289,7 +289,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/fenwick-tree.test.cpp
       title: test/fenwick-tree.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/lazy-segment-tree.test.cpp
       title: test/lazy-segment-tree.test.cpp
 layout: toppage
