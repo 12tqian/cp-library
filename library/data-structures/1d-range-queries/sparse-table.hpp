@@ -38,7 +38,3 @@ template <class T> struct SparseTable {
 		return v[index(l, r)];
 	}
 };
-
-int main() {
-	return 0;
-}
