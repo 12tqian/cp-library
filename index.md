@@ -6,7 +6,7 @@ data:
     - icon: ':warning:'
       path: library/contest/template-full.cpp
       title: library/contest/template-full.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/contest/template-minimal.hpp
       title: library/contest/template-minimal.hpp
     - icon: ':warning:'
@@ -64,7 +64,7 @@ data:
     - icon: ':warning:'
       path: library/data-structures/2d-range-queries/general-fenwick-tree.hpp
       title: library/data-structures/2d-range-queries/general-fenwick-tree.hpp
-    - icon: ':x:'
+    - icon: ':warning:'
       path: library/data-structures/2d-range-queries/offline-2d-binary-indexed-tree.hpp
       title: library/data-structures/2d-range-queries/offline-2d-binary-indexed-tree.hpp
     - icon: ':warning:'
@@ -100,7 +100,7 @@ data:
       title: library/geometry/point.hpp
   - name: library/graphs
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/graphs/bellman-ford.hpp
       title: library/graphs/bellman-ford.hpp
     - icon: ':heavy_check_mark:'
@@ -154,7 +154,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/graphs/strongly-connected-components-tarjan.hpp
       title: library/graphs/strongly-connected-components-tarjan.hpp
-    - icon: ':x:'
+    - icon: ':warning:'
       path: library/graphs/topological-sort.hpp
       title: library/graphs/topological-sort.hpp
     - icon: ':warning:'
@@ -165,7 +165,7 @@ data:
       title: library/graphs/two-sat.hpp
   - name: library/graphs/flows
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/graphs/flows/dinic.hpp
       title: library/graphs/flows/dinic.hpp
     - icon: ':heavy_check_mark:'
@@ -174,12 +174,12 @@ data:
     - icon: ':warning:'
       path: library/graphs/flows/min-cost-max-flow.hpp
       title: library/graphs/flows/min-cost-max-flow.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/graphs/flows/push-relabel.hpp
       title: library/graphs/flows/push-relabel.hpp
   - name: library/misc
     pages:
-    - icon: ':x:'
+    - icon: ':warning:'
       path: library/misc/easy-io.hpp
       title: library/misc/easy-io.hpp
     - icon: ':warning:'
@@ -289,6 +289,9 @@ data:
       path: test/convex-hull.cpp
       title: test/convex-hull.cpp
     - icon: ':warning:'
+      path: test/dinic-bipartite.cpp
+      title: test/dinic-bipartite.cpp
+    - icon: ':warning:'
       path: test/geometry-2d.cpp
       title: test/geometry-2d.cpp
     - icon: ':warning:'
@@ -310,11 +313,17 @@ data:
       path: test/monotonic-convex-hull.cpp
       title: test/monotonic-convex-hull.cpp
     - icon: ':warning:'
+      path: test/offline-2d-binary-indexed-tree.cpp
+      title: test/offline-2d-binary-indexed-tree.cpp
+    - icon: ':warning:'
       path: test/offline-dynamic-connectivity.cpp
       title: test/offline-dynamic-connectivity.cpp
     - icon: ':warning:'
       path: test/simplex.cpp
       title: test/simplex.cpp
+    - icon: ':warning:'
+      path: test/topological-sort.cpp
+      title: test/topological-sort.cpp
   verificationCategories:
   - name: test
     pages:
@@ -324,7 +333,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/associative-range-query.test.cpp
       title: test/associative-range-query.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/bellman-ford.test.cpp
       title: test/bellman-ford.test.cpp
     - icon: ':heavy_check_mark:'
@@ -333,7 +342,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/dijkstra.test.cpp
       title: test/dijkstra.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/dinic.test.cpp
       title: test/dinic.test.cpp
     - icon: ':heavy_check_mark:'
@@ -384,13 +393,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/mod-sqrt.test.cpp
       title: test/mod-sqrt.test.cpp
-    - icon: ':x:'
-      path: test/offline-2d-binary-indexed-tree.test.cpp
-      title: test/offline-2d-binary-indexed-tree.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/point-update-segment-tree.test.cpp
       title: test/point-update-segment-tree.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/push-relabel.test.cpp
       title: test/push-relabel.test.cpp
     - icon: ':heavy_check_mark:'
@@ -411,9 +417,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/suffix-array.test.cpp
       title: test/suffix-array.test.cpp
-    - icon: ':x:'
-      path: test/topological-sort.test.cpp
-      title: test/topological-sort.test.cpp
 layout: toppage
 ---
 [![Badge](https://cp-logo.vercel.app/codeforces/12tqian)](https://codeforces.com/profile/12tqian)

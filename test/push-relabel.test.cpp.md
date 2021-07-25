@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/graphs/flows/push-relabel.hpp
     title: library/graphs/flows/push-relabel.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_6_A
@@ -65,23 +65,23 @@ data:
     };\n\nint main() {\n\tusing namespace std;\n\tios_base::sync_with_stdio(false);\n\
     \tcin.tie(nullptr);\n\tint n, m;\n\tcin >> n >> m;\n\tPushRelabel<long long> P;\n\
     \tP.init(n);\n\tfor (int i = 0; i < m; i++) {\n\t\tint u, v, w; \n\t\tcin >> u\
-    \ >> v >> w;\n\t\tP.ae(u, v, w);\n\t\tP.ae(v, u, w);\n\t}\n\tcout << P.max_flow(0,\
-    \ n - 1) << '\\n';\n\treturn 0;\n}\n"
+    \ >> v >> w;\n\t\tP.ae(u, v, w);\n\t}\n\tcout << P.max_flow(0, n - 1) << '\\n';\n\
+    \treturn 0;\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_6_A\"\
     \n\n#include \"../library/contest/template-minimal.hpp\"\n#include \"../library/graphs/flows/push-relabel.hpp\"\
     \n\nint main() {\n\tusing namespace std;\n\tios_base::sync_with_stdio(false);\n\
     \tcin.tie(nullptr);\n\tint n, m;\n\tcin >> n >> m;\n\tPushRelabel<long long> P;\n\
     \tP.init(n);\n\tfor (int i = 0; i < m; i++) {\n\t\tint u, v, w; \n\t\tcin >> u\
-    \ >> v >> w;\n\t\tP.ae(u, v, w);\n\t\tP.ae(v, u, w);\n\t}\n\tcout << P.max_flow(0,\
-    \ n - 1) << '\\n';\n\treturn 0;\n}\n"
+    \ >> v >> w;\n\t\tP.ae(u, v, w);\n\t}\n\tcout << P.max_flow(0, n - 1) << '\\n';\n\
+    \treturn 0;\n}\n"
   dependsOn:
   - library/contest/template-minimal.hpp
   - library/graphs/flows/push-relabel.hpp
   isVerificationFile: true
   path: test/push-relabel.test.cpp
   requiredBy: []
-  timestamp: '2021-07-25 00:42:29-04:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2021-07-25 01:16:14-04:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/push-relabel.test.cpp
 layout: document

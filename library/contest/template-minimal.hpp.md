@@ -15,6 +15,9 @@ data:
     path: test/convex-hull.cpp
     title: test/convex-hull.cpp
   - icon: ':warning:'
+    path: test/dinic-bipartite.cpp
+    title: test/dinic-bipartite.cpp
+  - icon: ':warning:'
     path: test/geometry-2d.cpp
     title: test/geometry-2d.cpp
   - icon: ':warning:'
@@ -36,11 +39,17 @@ data:
     path: test/monotonic-convex-hull.cpp
     title: test/monotonic-convex-hull.cpp
   - icon: ':warning:'
+    path: test/offline-2d-binary-indexed-tree.cpp
+    title: test/offline-2d-binary-indexed-tree.cpp
+  - icon: ':warning:'
     path: test/offline-dynamic-connectivity.cpp
     title: test/offline-dynamic-connectivity.cpp
   - icon: ':warning:'
     path: test/simplex.cpp
     title: test/simplex.cpp
+  - icon: ':warning:'
+    path: test/topological-sort.cpp
+    title: test/topological-sort.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/affine-segment-tree.test.cpp
@@ -48,7 +57,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/associative-range-query.test.cpp
     title: test/associative-range-query.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/bellman-ford.test.cpp
     title: test/bellman-ford.test.cpp
   - icon: ':heavy_check_mark:'
@@ -57,7 +66,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/dijkstra.test.cpp
     title: test/dijkstra.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/dinic.test.cpp
     title: test/dinic.test.cpp
   - icon: ':heavy_check_mark:'
@@ -105,13 +114,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/mod-sqrt.test.cpp
     title: test/mod-sqrt.test.cpp
-  - icon: ':x:'
-    path: test/offline-2d-binary-indexed-tree.test.cpp
-    title: test/offline-2d-binary-indexed-tree.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/point-update-segment-tree.test.cpp
     title: test/point-update-segment-tree.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/push-relabel.test.cpp
     title: test/push-relabel.test.cpp
   - icon: ':heavy_check_mark:'
@@ -132,12 +138,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/suffix-array.test.cpp
     title: test/suffix-array.test.cpp
-  - icon: ':x:'
-    path: test/topological-sort.test.cpp
-    title: test/topological-sort.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: '#include <algorithm>
@@ -249,10 +252,13 @@ data:
   - test/offline-dynamic-connectivity.cpp
   - test/geometry-2d.cpp
   - test/basic-factor.cpp
+  - test/dinic-bipartite.cpp
   - test/monotonic-convex-hull.cpp
   - test/convex-hull.cpp
   - test/2d-sparse-segment-tree.cpp
   - test/gosper-hack.cpp
+  - test/offline-2d-binary-indexed-tree.cpp
+  - test/topological-sort.cpp
   - test/hashing.cpp
   - test/simplex.cpp
   - test/matrix.cpp
@@ -260,7 +266,7 @@ data:
   - test/link-cut-tree.cpp
   - library/graphs/enumerate-triangles.cpp
   timestamp: '2021-07-24 23:00:09-04:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/bellman-ford.test.cpp
   - test/lca-jump.test.cpp
@@ -273,7 +279,6 @@ data:
   - test/strongly-connected-components-kosaraju.test.cpp
   - test/heavy-light-decomposition.test.cpp
   - test/sparse-segment-tree.test.cpp
-  - test/topological-sort.test.cpp
   - test/hungarian.test.cpp
   - test/dijkstra.test.cpp
   - test/karatsuba.test.cpp
@@ -281,7 +286,6 @@ data:
   - test/fast-fourier-transform.test.cpp
   - test/lazy-segment-tree.test.cpp
   - test/kruskal.test.cpp
-  - test/offline-2d-binary-indexed-tree.test.cpp
   - test/fenwick-tree.test.cpp
   - test/affine-segment-tree.test.cpp
   - test/associative-range-query.test.cpp

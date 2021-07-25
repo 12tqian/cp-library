@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':x:'
-    path: test/offline-2d-binary-indexed-tree.test.cpp
-    title: test/offline-2d-binary-indexed-tree.test.cpp
-  _isVerificationFailed: true
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: test/offline-2d-binary-indexed-tree.cpp
+    title: test/offline-2d-binary-indexed-tree.cpp
+  _extendedVerifiedWith: []
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     links: []
   bundledCode: "\n/**\n * x \\in [0, sz)\n * y \\in [0, sz)\n * First do all the updates,\
@@ -70,11 +70,11 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: library/data-structures/2d-range-queries/offline-2d-binary-indexed-tree.hpp
-  requiredBy: []
+  requiredBy:
+  - test/offline-2d-binary-indexed-tree.cpp
   timestamp: '2021-07-25 00:42:29-04:00'
-  verificationStatus: LIBRARY_ALL_WA
-  verifiedWith:
-  - test/offline-2d-binary-indexed-tree.test.cpp
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
 documentation_of: library/data-structures/2d-range-queries/offline-2d-binary-indexed-tree.hpp
 layout: document
 redirect_from:

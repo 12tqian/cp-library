@@ -5,13 +5,13 @@ data:
   - icon: ':warning:'
     path: test/2d-sparse-segment-tree.cpp
     title: test/2d-sparse-segment-tree.cpp
-  _extendedVerifiedWith:
-  - icon: ':x:'
-    path: test/offline-2d-binary-indexed-tree.test.cpp
-    title: test/offline-2d-binary-indexed-tree.test.cpp
-  _isVerificationFailed: true
+  - icon: ':warning:'
+    path: test/offline-2d-binary-indexed-tree.cpp
+    title: test/offline-2d-binary-indexed-tree.cpp
+  _extendedVerifiedWith: []
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     links:
     - https://nafe.es/posts/2020-02-29-is-printable/
@@ -187,10 +187,10 @@ data:
   path: library/misc/easy-io.hpp
   requiredBy:
   - test/2d-sparse-segment-tree.cpp
+  - test/offline-2d-binary-indexed-tree.cpp
   timestamp: '2021-07-24 19:40:07-04:00'
-  verificationStatus: LIBRARY_ALL_WA
-  verifiedWith:
-  - test/offline-2d-binary-indexed-tree.test.cpp
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
 documentation_of: library/misc/easy-io.hpp
 layout: document
 redirect_from:

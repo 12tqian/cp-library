@@ -1,20 +1,18 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
-  - icon: ':x:'
+  - icon: ':warning:'
     path: library/graphs/topological-sort.hpp
     title: library/graphs/topological-sort.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_4_B
     links:
     - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_4_B
   bundledCode: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_4_B\"\
@@ -47,16 +45,16 @@ data:
   dependsOn:
   - library/contest/template-minimal.hpp
   - library/graphs/topological-sort.hpp
-  isVerificationFile: true
-  path: test/topological-sort.test.cpp
+  isVerificationFile: false
+  path: test/topological-sort.cpp
   requiredBy: []
-  timestamp: '2021-07-25 00:42:29-04:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2021-07-25 01:16:14-04:00'
+  verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: test/topological-sort.test.cpp
+documentation_of: test/topological-sort.cpp
 layout: document
 redirect_from:
-- /verify/test/topological-sort.test.cpp
-- /verify/test/topological-sort.test.cpp.html
-title: test/topological-sort.test.cpp
+- /library/test/topological-sort.cpp
+- /library/test/topological-sort.cpp.html
+title: test/topological-sort.cpp
 ---

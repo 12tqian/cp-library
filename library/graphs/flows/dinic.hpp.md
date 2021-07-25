@@ -1,14 +1,17 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: test/dinic-bipartite.cpp
+    title: test/dinic-bipartite.cpp
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/dinic.test.cpp
     title: test/dinic.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "\ntemplate <class F> struct Dinic {\n\tstruct Edge { int to; F flow,\
@@ -60,9 +63,10 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: library/graphs/flows/dinic.hpp
-  requiredBy: []
+  requiredBy:
+  - test/dinic-bipartite.cpp
   timestamp: '2021-07-25 00:42:29-04:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/dinic.test.cpp
 documentation_of: library/graphs/flows/dinic.hpp

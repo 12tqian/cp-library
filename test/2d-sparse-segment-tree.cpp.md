@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
   - icon: ':warning:'
     path: library/data-structures/2d-range-queries/2d-sparse-segment-tree.hpp
     title: library/data-structures/2d-range-queries/2d-sparse-segment-tree.hpp
-  - icon: ':x:'
+  - icon: ':warning:'
     path: library/misc/easy-io.hpp
     title: library/misc/easy-io.hpp
   _extendedRequiredBy: []
