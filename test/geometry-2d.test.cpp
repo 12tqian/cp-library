@@ -3,6 +3,7 @@
 #include "../library/contest/template-minimal.hpp"
 #include "../library/geometry/geometry-2d.hpp"
 
+//  kattis 
 int main() {
 	using namespace std;
 	using namespace Geometry2D;
