@@ -5,8 +5,8 @@
 
 int main() {
 	using namespace std;
-	ios_base::sync_with_stdio(NULL);
-    cin.tie(false);
+	ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
 	int n, q; cin >> n >> q;
 	SegmentTreeBeats<long long> S;
 	S.init(n);
