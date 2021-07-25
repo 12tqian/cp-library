@@ -4,7 +4,10 @@ data:
   - icon: ':warning:'
     path: library/geometry/point.hpp
     title: library/geometry/point.hpp
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: test/convex-hull.cpp
+    title: test/convex-hull.cpp
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
@@ -103,7 +106,8 @@ data:
   - library/geometry/point.hpp
   isVerificationFile: false
   path: library/geometry/convex-hull.hpp
-  requiredBy: []
+  requiredBy:
+  - test/convex-hull.cpp
   timestamp: '2021-07-24 21:53:34-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []

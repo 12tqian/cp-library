@@ -9,6 +9,9 @@ data:
     path: library/geometry/geometry-2d.hpp
     title: library/geometry/geometry-2d.hpp
   - icon: ':warning:'
+    path: test/convex-hull.cpp
+    title: test/convex-hull.cpp
+  - icon: ':warning:'
     path: test/geometry-2d.cpp
     title: test/geometry-2d.cpp
   _extendedVerifiedWith: []
@@ -132,6 +135,7 @@ data:
   path: library/geometry/point.hpp
   requiredBy:
   - test/geometry-2d.cpp
+  - test/convex-hull.cpp
   - library/geometry/geometry-2d.hpp
   - library/geometry/convex-hull.hpp
   timestamp: '2021-07-24 21:53:34-04:00'

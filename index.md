@@ -142,7 +142,7 @@ data:
     - icon: ':warning:'
       path: library/graphs/lca-rmq.hpp
       title: library/graphs/lca-rmq.hpp
-    - icon: ':x:'
+    - icon: ':warning:'
       path: library/graphs/link-cut-tree.hpp
       title: library/graphs/link-cut-tree.hpp
     - icon: ':warning:'
@@ -289,6 +289,9 @@ data:
       path: test/gosper-hack.cpp
       title: test/gosper-hack.cpp
     - icon: ':warning:'
+      path: test/link-cut-tree.cpp
+      title: test/link-cut-tree.cpp
+    - icon: ':warning:'
       path: test/monotonic-convex-hull.cpp
       title: test/monotonic-convex-hull.cpp
   verificationCategories:
@@ -324,9 +327,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/li-chao-tree-online.test.cpp
       title: test/li-chao-tree-online.test.cpp
-    - icon: ':x:'
-      path: test/link-cut-tree.test.cpp
-      title: test/link-cut-tree.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/point-update-segment-tree.test.cpp
       title: test/point-update-segment-tree.test.cpp

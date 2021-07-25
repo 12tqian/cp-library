@@ -4,19 +4,15 @@ data:
   - icon: ':question:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
-  - icon: ':x:'
+  - icon: ':warning:'
     path: library/graphs/link-cut-tree.hpp
     title: library/graphs/link-cut-tree.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
-    IGNORE: ''
-    IGNORE_IF_CLANG: ''
-    IGNORE_IF_GCC: ''
     links: []
   bundledCode: "#define IGNORE\n\n#pragma GCC optimize (\"O3\")\n#pragma GCC target\
     \ (\"sse4\")\n\n#include <algorithm>\n#include <array>\n#include <bitset>\n#include\
@@ -180,16 +176,16 @@ data:
   dependsOn:
   - library/contest/template-minimal.hpp
   - library/graphs/link-cut-tree.hpp
-  isVerificationFile: true
-  path: test/link-cut-tree.test.cpp
+  isVerificationFile: false
+  path: test/link-cut-tree.cpp
   requiredBy: []
-  timestamp: '2021-07-24 22:10:06-04:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2021-07-24 22:13:13-04:00'
+  verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: test/link-cut-tree.test.cpp
+documentation_of: test/link-cut-tree.cpp
 layout: document
 redirect_from:
-- /verify/test/link-cut-tree.test.cpp
-- /verify/test/link-cut-tree.test.cpp.html
-title: test/link-cut-tree.test.cpp
+- /library/test/link-cut-tree.cpp
+- /library/test/link-cut-tree.cpp.html
+title: test/link-cut-tree.cpp
 ---

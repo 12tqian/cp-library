@@ -14,11 +14,11 @@ data:
   _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: '"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_B'
+    PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_B
     links:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_B
-  bundledCode: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_B\n\
-    \n#include <algorithm>\n#include <array>\n#include <bitset>\n#include <cassert>\n\
+  bundledCode: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_B\"\
+    \n\n#include <algorithm>\n#include <array>\n#include <bitset>\n#include <cassert>\n\
     #include <chrono>\n#include <cmath>\n#include <complex>\n#include <cstdio>\n#include\
     \ <cstdlib>\n#include <cstring>\n#include <ctime>\n#include <deque>\n#include\
     \ <iostream>\n#include <iomanip>\n#include <map>\n#include <numeric>\n#include\
@@ -59,8 +59,8 @@ data:
     \ long dist = B.dist[i];\n\t\tif (dist == B.INF) \n\t\t\tcout << \"INF\\n\";\n\
     \t\telse if (dist == -B.INF)\n\t\t\tcout << \"NEGATIVE CYCLE\\n\";\n\t\telse \n\
     \t\t\tcout << dist << '\\n';\n\t}\n\treturn 0;\n}\n"
-  code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_B\n\
-    \n#include \"../library/contest/template-minimal.hpp\"\n#include \"../library/graphs/bellman-ford.hpp\"\
+  code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_B\"\
+    \n\n#include \"../library/contest/template-minimal.hpp\"\n#include \"../library/graphs/bellman-ford.hpp\"\
     \n\n// kattis\nint main() {\n\tusing namespace std;\n\tint n, m, r;\n\tcin >>\
     \ n >> m >> r;\n\tBellmanFord<long long> B;\n\tB.init(n);\n\tfor (int i = 0; i\
     \ < m; i++) {\n\t\tint u, v, w; \n\t\tcin >> u >> v >> w;\n\t\tB.ae(u, v, w);\n\
@@ -74,7 +74,7 @@ data:
   isVerificationFile: true
   path: test/bellman-ford.test.cpp
   requiredBy: []
-  timestamp: '2021-07-24 22:10:06-04:00'
+  timestamp: '2021-07-24 22:15:51-04:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/bellman-ford.test.cpp

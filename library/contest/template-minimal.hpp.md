@@ -6,11 +6,17 @@ data:
     path: library/graphs/enumerate-triangles.cpp
     title: library/graphs/enumerate-triangles.cpp
   - icon: ':warning:'
+    path: test/convex-hull.cpp
+    title: test/convex-hull.cpp
+  - icon: ':warning:'
     path: test/geometry-2d.cpp
     title: test/geometry-2d.cpp
   - icon: ':warning:'
     path: test/gosper-hack.cpp
     title: test/gosper-hack.cpp
+  - icon: ':warning:'
+    path: test/link-cut-tree.cpp
+    title: test/link-cut-tree.cpp
   - icon: ':warning:'
     path: test/monotonic-convex-hull.cpp
     title: test/monotonic-convex-hull.cpp
@@ -42,9 +48,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/li-chao-tree-online.test.cpp
     title: test/li-chao-tree-online.test.cpp
-  - icon: ':x:'
-    path: test/link-cut-tree.test.cpp
-    title: test/link-cut-tree.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/point-update-segment-tree.test.cpp
     title: test/point-update-segment-tree.test.cpp
@@ -163,7 +166,9 @@ data:
   requiredBy:
   - test/geometry-2d.cpp
   - test/monotonic-convex-hull.cpp
+  - test/convex-hull.cpp
   - test/gosper-hack.cpp
+  - test/link-cut-tree.cpp
   - library/graphs/enumerate-triangles.cpp
   timestamp: '2021-07-24 20:00:47-04:00'
   verificationStatus: LIBRARY_SOME_WA
@@ -173,7 +178,6 @@ data:
   - test/biconnected-components.test.cpp
   - test/sparse-segment-tree.test.cpp
   - test/lazy-segment-tree.test.cpp
-  - test/link-cut-tree.test.cpp
   - test/fenwick-tree.test.cpp
   - test/affine-segment-tree.test.cpp
   - test/associative-range-query.test.cpp
