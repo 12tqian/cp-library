@@ -4,7 +4,7 @@ data:
   - icon: ':question:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/data-structures/1d-range-queries/sparse-table.hpp
     title: library/data-structures/1d-range-queries/sparse-table.hpp
   - icon: ':heavy_check_mark:'
@@ -24,11 +24,11 @@ data:
     \ <algorithm>\n#include <array>\n#include <bitset>\n#include <cassert>\n#include\
     \ <chrono>\n#include <cmath>\n#include <complex>\n#include <cstdio>\n#include\
     \ <cstdlib>\n#include <cstring>\n#include <ctime>\n#include <deque>\n#include\
-    \ <iostream>\n#include <iomanip>\n#include <map>\n#include <numeric>\n#include\
-    \ <queue>\n#include <random>\n#include <set>\n#include <stack>\n#include <string>\n\
-    #include <unordered_map>\n#include <vector>\n\nusing namespace std;\n\n/**\n *\
-    \ O(n log n) preprocessing with O(1) query\n * Compress compute sthe minimal subtree\
-    \ containing\n * all node LCAs and comrpesses edges\n * O(S log S) compression\n\
+    \ <iostream>\n#include <iomanip>\n#include <list>\n#include <map>\n#include <numeric>\n\
+    #include <queue>\n#include <random>\n#include <set>\n#include <stack>\n#include\
+    \ <string>\n#include <unordered_map>\n#include <vector>\n\nusing namespace std;\n\
+    \n/**\n * O(n log n) preprocessing with O(1) query\n * Compress compute sthe minimal\
+    \ subtree containing\n * all node LCAs and comrpesses edges\n * O(S log S) compression\n\
     \ * Returns list of (parent, original index)\n * Parent is the parent of node\
     \ in compressed tree\n * Original index is the node it represents\n * get_child\
     \ also returns the subtree child of node and -1 if it doesn't exist in O(1)\n\
@@ -97,7 +97,7 @@ data:
   isVerificationFile: true
   path: test/lca-rmq.test.cpp
   requiredBy: []
-  timestamp: '2021-07-24 22:46:46-04:00'
+  timestamp: '2021-07-24 23:00:09-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/lca-rmq.test.cpp

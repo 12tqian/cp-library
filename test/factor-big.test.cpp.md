@@ -21,12 +21,12 @@ data:
     #include <algorithm>\n#include <array>\n#include <bitset>\n#include <cassert>\n\
     #include <chrono>\n#include <cmath>\n#include <complex>\n#include <cstdio>\n#include\
     \ <cstdlib>\n#include <cstring>\n#include <ctime>\n#include <deque>\n#include\
-    \ <iostream>\n#include <iomanip>\n#include <map>\n#include <numeric>\n#include\
-    \ <queue>\n#include <random>\n#include <set>\n#include <stack>\n#include <string>\n\
-    #include <unordered_map>\n#include <vector>\n\nusing namespace std;\n\nnamespace\
-    \ FactorBig {\n\nlong long gcd(long long _a, long long _b) {\n\tunsigned long\
-    \ long a = abs(_a), b = abs(_b);\n\tif (a == 0) return b;\n\tif (b == 0) return\
-    \ a;\n\tauto bsf = [](unsigned long long x) -> int {\n\t\treturn __builtin_ctzll(x);\n\
+    \ <iostream>\n#include <iomanip>\n#include <list>\n#include <map>\n#include <numeric>\n\
+    #include <queue>\n#include <random>\n#include <set>\n#include <stack>\n#include\
+    \ <string>\n#include <unordered_map>\n#include <vector>\n\nusing namespace std;\n\
+    \nnamespace FactorBig {\n\nlong long gcd(long long _a, long long _b) {\n\tunsigned\
+    \ long long a = abs(_a), b = abs(_b);\n\tif (a == 0) return b;\n\tif (b == 0)\
+    \ return a;\n\tauto bsf = [](unsigned long long x) -> int {\n\t\treturn __builtin_ctzll(x);\n\
     \t};\n\tint shift = bsf(a | b);\n\ta >>= bsf(a);\n\tdo {\n\t\tb >>= bsf(b);\n\t\
     \tif (a > b) \n\t\t\tstd::swap(a, b);\n\t\tb -= a;\n\t} while (b);\n\treturn (a\
     \ << shift);\n}\n\ntemplate <class T, class U> T pow_mod(T x, U n, T md) {\n\t\
@@ -68,7 +68,7 @@ data:
   isVerificationFile: true
   path: test/factor-big.test.cpp
   requiredBy: []
-  timestamp: '2021-07-24 22:46:46-04:00'
+  timestamp: '2021-07-24 23:00:09-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/factor-big.test.cpp

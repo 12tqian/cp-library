@@ -4,17 +4,17 @@ data:
   - icon: ':question:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/data-structures/1d-range-queries/sparse-table.hpp
     title: library/data-structures/1d-range-queries/sparse-table.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/string/suffix-array.hpp
     title: library/string/suffix-array.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/suffixarray
@@ -24,13 +24,13 @@ data:
     #include <algorithm>\n#include <array>\n#include <bitset>\n#include <cassert>\n\
     #include <chrono>\n#include <cmath>\n#include <complex>\n#include <cstdio>\n#include\
     \ <cstdlib>\n#include <cstring>\n#include <ctime>\n#include <deque>\n#include\
-    \ <iostream>\n#include <iomanip>\n#include <map>\n#include <numeric>\n#include\
-    \ <queue>\n#include <random>\n#include <set>\n#include <stack>\n#include <string>\n\
-    #include <unordered_map>\n#include <vector>\n\nusing namespace std;\n\n/**\n *\
-    \ sa stores sorted suffixes\n * isa is inverse of sa\n * lcp is longest common\
-    \ prefix between consecutive elements\n * Indexing has been fixed so that everything\
-    \ is 0-indexed by the end\n */\n\n\n/**\n * This Sparse Table stores indices of\
-    \ things\n * For destructive combinations like gcd, use associative_range_query.cpp\n\
+    \ <iostream>\n#include <iomanip>\n#include <list>\n#include <map>\n#include <numeric>\n\
+    #include <queue>\n#include <random>\n#include <set>\n#include <stack>\n#include\
+    \ <string>\n#include <unordered_map>\n#include <vector>\n\nusing namespace std;\n\
+    \n/**\n * sa stores sorted suffixes\n * isa is inverse of sa\n * lcp is longest\
+    \ common prefix between consecutive elements\n * Indexing has been fixed so that\
+    \ everything is 0-indexed by the end\n */\n\n\n/**\n * This Sparse Table stores\
+    \ indices of things\n * For destructive combinations like gcd, use associative_range_query.cpp\n\
     \ * Use this for min, max, and when you need the indices of things\n */\n\ntemplate\
     \ <class T> struct SparseTable {\n\tstd::vector<T> v;\n\tstd::vector<std::vector<int>>\
     \ jump;\n\n\tint level(int x) { return 31 - __builtin_clz(x); }\n\n\tint comb(int\
@@ -82,8 +82,8 @@ data:
   isVerificationFile: true
   path: test/suffix-array.test.cpp
   requiredBy: []
-  timestamp: '2021-07-24 22:46:46-04:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2021-07-24 23:00:09-04:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/suffix-array.test.cpp
 layout: document

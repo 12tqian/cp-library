@@ -18,24 +18,25 @@ data:
     \ <bitset>\n#include <cassert>\n#include <chrono>\n#include <cmath>\n#include\
     \ <complex>\n#include <cstdio>\n#include <cstdlib>\n#include <cstring>\n#include\
     \ <ctime>\n#include <deque>\n#include <iostream>\n#include <iomanip>\n#include\
-    \ <map>\n#include <numeric>\n#include <queue>\n#include <random>\n#include <set>\n\
-    #include <stack>\n#include <string>\n#include <unordered_map>\n#include <vector>\n\
-    \nusing namespace std;\n\nnamespace MatrixOperations {\n\ntemplate <class T> using\
-    \ Matrix = std::vector<std::vector<T>>;\n\ntemplate <class T> Matrix<T> make_matrix(int\
-    \ r, int c) { return Matrix<T>(r, std::vector<T>(c)); }\n\ntemplate <class T>\
-    \ Matrix<T>& operator+=(Matrix<T>& a, const Matrix<T>& b) {\n\tfor (int i = 0;\
-    \ i < (int)a.size(); i++) {\n\t\tfor (int j = 0; j < (int)a[0].size(); j++) {\n\
-    \t\t\ta[i][j] += b[i][j];\n\t\t}\n\t}\n\treturn a;\n}\n\ntemplate <class T> Matrix<T>&\
-    \ operator-=(Matrix<T>& a, const Matrix<T>& b) {\n\tfor (int i = 0; i < (int)a.size();\
-    \ i++) {\n\t\tfor (int j = 0; j < (int)a[0].size(); j++) {\n\t\t\ta[i][j] -= b[i][j];\n\
-    \t\t}\n\t}\n\treturn a;\n}\n\ntemplate <class T> Matrix<T> operator*(const Matrix<T>&\
-    \ a, const Matrix<T>& b) {\n\tassert(a[0].size() == b.size());\n\tint x = (int)a.size();\n\
-    \tint y = (int)a[0].size();\n\tint z = (int)b[0].size();\n\tMatrix<T> c = make_matrix<T>(x,\
-    \ z);\n\tfor (int i = 0; i < x; i++) {\n\t\tfor (int j = 0; j < y; j++) {\n\t\t\
-    \tfor (int k = 0; k < z; k++) {\n\t\t\t\tc[i][k] += a[i][j] * b[j][k];\n\t\t\t\
-    }\n\t\t}\n\t}\n\treturn c;\n}\n\ntemplate <class T> Matrix<T> operator+(Matrix<T>\
-    \ a, const Matrix<T>& b) { return a += b; }\ntemplate <class T> Matrix<T> operator-(Matrix<T>\
-    \ a, const Matrix<T>& b) { return a -= b; }\ntemplate <class T> Matrix<T>& operator*=(Matrix<T>&\
+    \ <list>\n#include <map>\n#include <numeric>\n#include <queue>\n#include <random>\n\
+    #include <set>\n#include <stack>\n#include <string>\n#include <unordered_map>\n\
+    #include <vector>\n\nusing namespace std;\n\nnamespace MatrixOperations {\n\n\
+    template <class T> using Matrix = std::vector<std::vector<T>>;\n\ntemplate <class\
+    \ T> Matrix<T> make_matrix(int r, int c) { return Matrix<T>(r, std::vector<T>(c));\
+    \ }\n\ntemplate <class T> Matrix<T>& operator+=(Matrix<T>& a, const Matrix<T>&\
+    \ b) {\n\tfor (int i = 0; i < (int)a.size(); i++) {\n\t\tfor (int j = 0; j < (int)a[0].size();\
+    \ j++) {\n\t\t\ta[i][j] += b[i][j];\n\t\t}\n\t}\n\treturn a;\n}\n\ntemplate <class\
+    \ T> Matrix<T>& operator-=(Matrix<T>& a, const Matrix<T>& b) {\n\tfor (int i =\
+    \ 0; i < (int)a.size(); i++) {\n\t\tfor (int j = 0; j < (int)a[0].size(); j++)\
+    \ {\n\t\t\ta[i][j] -= b[i][j];\n\t\t}\n\t}\n\treturn a;\n}\n\ntemplate <class\
+    \ T> Matrix<T> operator*(const Matrix<T>& a, const Matrix<T>& b) {\n\tassert(a[0].size()\
+    \ == b.size());\n\tint x = (int)a.size();\n\tint y = (int)a[0].size();\n\tint\
+    \ z = (int)b[0].size();\n\tMatrix<T> c = make_matrix<T>(x, z);\n\tfor (int i =\
+    \ 0; i < x; i++) {\n\t\tfor (int j = 0; j < y; j++) {\n\t\t\tfor (int k = 0; k\
+    \ < z; k++) {\n\t\t\t\tc[i][k] += a[i][j] * b[j][k];\n\t\t\t}\n\t\t}\n\t}\n\t\
+    return c;\n}\n\ntemplate <class T> Matrix<T> operator+(Matrix<T> a, const Matrix<T>&\
+    \ b) { return a += b; }\ntemplate <class T> Matrix<T> operator-(Matrix<T> a, const\
+    \ Matrix<T>& b) { return a -= b; }\ntemplate <class T> Matrix<T>& operator*=(Matrix<T>&\
     \ a, const Matrix<T>& b) { return a = a * b; }\n\ntemplate <class T> Matrix<T>\
     \ pow(Matrix<T> m, long long p) {\n\tint n = (int)m.size();\n\tassert(n == (int)m[0].size()\
     \ && p >= 0);\n\tMatrix<T> res = make_matrix<T>(n, n);\n\tfor (int i = 0; i <\
@@ -102,7 +103,7 @@ data:
   isVerificationFile: false
   path: test/matrix.cpp
   requiredBy: []
-  timestamp: '2021-07-24 22:46:46-04:00'
+  timestamp: '2021-07-24 23:00:09-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: test/matrix.cpp

@@ -21,11 +21,11 @@ data:
     \n\n#include <algorithm>\n#include <array>\n#include <bitset>\n#include <cassert>\n\
     #include <chrono>\n#include <cmath>\n#include <complex>\n#include <cstdio>\n#include\
     \ <cstdlib>\n#include <cstring>\n#include <ctime>\n#include <deque>\n#include\
-    \ <iostream>\n#include <iomanip>\n#include <map>\n#include <numeric>\n#include\
-    \ <queue>\n#include <random>\n#include <set>\n#include <stack>\n#include <string>\n\
-    #include <unordered_map>\n#include <vector>\n\nusing namespace std;\n\nstruct\
-    \ BCC {\n\tint n, time, num_comps; \n\tstd::vector<int> ord, low, id; \n\t// order\
-    \ encountered, earliest time in subtree, component id\n\tstd::vector<std::vector<int>>\
+    \ <iostream>\n#include <iomanip>\n#include <list>\n#include <map>\n#include <numeric>\n\
+    #include <queue>\n#include <random>\n#include <set>\n#include <stack>\n#include\
+    \ <string>\n#include <unordered_map>\n#include <vector>\n\nusing namespace std;\n\
+    \nstruct BCC {\n\tint n, time, num_comps; \n\tstd::vector<int> ord, low, id; \n\
+    \t// order encountered, earliest time in subtree, component id\n\tstd::vector<std::vector<int>>\
     \ adj, comps, tree;\n\t// adj, comps storage, bridge block tree\n\tstd::vector<std::pair<int,\
     \ int>> bridge;\n\t// bridges\n\t\n\tvoid init(int n_) {\n\t\tnum_comps = time\
     \ = 0;\n\t\tn = n_;\n\t\tord.assign(n, -1);\n\t\tlow.assign(n, 0);\n\t\tid.assign(n,\
@@ -68,7 +68,7 @@ data:
   isVerificationFile: true
   path: test/biconnected-components.test.cpp
   requiredBy: []
-  timestamp: '2021-07-24 21:57:36-04:00'
+  timestamp: '2021-07-24 23:00:09-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/biconnected-components.test.cpp

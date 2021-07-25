@@ -35,22 +35,22 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/data-structures/1d-range-queries/li-chao-tree-offline.hpp
       title: library/data-structures/1d-range-queries/li-chao-tree-offline.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: library/data-structures/1d-range-queries/li-chao-tree-online.hpp
       title: library/data-structures/1d-range-queries/li-chao-tree-online.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: library/data-structures/1d-range-queries/point-update-segment-tree.hpp
       title: library/data-structures/1d-range-queries/point-update-segment-tree.hpp
     - icon: ':warning:'
       path: library/data-structures/1d-range-queries/range-set-segment-tree.hpp
       title: library/data-structures/1d-range-queries/range-set-segment-tree.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: library/data-structures/1d-range-queries/segment-tree-beats.hpp
       title: library/data-structures/1d-range-queries/segment-tree-beats.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: library/data-structures/1d-range-queries/sparse-segment-tree.hpp
       title: library/data-structures/1d-range-queries/sparse-segment-tree.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/data-structures/1d-range-queries/sparse-table.hpp
       title: library/data-structures/1d-range-queries/sparse-table.hpp
   - name: library/data-structures/2d-range-queries
@@ -151,7 +151,7 @@ data:
     - icon: ':x:'
       path: library/graphs/strongly-connected-components-kosaraju.hpp
       title: library/graphs/strongly-connected-components-kosaraju.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: library/graphs/strongly-connected-components-tarjan.hpp
       title: library/graphs/strongly-connected-components-tarjan.hpp
     - icon: ':warning:'
@@ -211,7 +211,7 @@ data:
     - icon: ':warning:'
       path: library/number-theory/fast-factor-sieve.hpp
       title: library/number-theory/fast-factor-sieve.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: library/number-theory/mod-sqrt.hpp
       title: library/number-theory/mod-sqrt.hpp
     - icon: ':warning:'
@@ -228,7 +228,7 @@ data:
     - icon: ':warning:'
       path: library/numerical/frac.hpp
       title: library/numerical/frac.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/numerical/karatsuba.hpp
       title: library/numerical/karatsuba.hpp
     - icon: ':warning:'
@@ -257,13 +257,13 @@ data:
     - icon: ':warning:'
       path: library/string/hashing.hpp
       title: library/string/hashing.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: library/string/manacher.hpp
       title: library/string/manacher.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: library/string/suffix-array-linear.hpp
       title: library/string/suffix-array-linear.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: library/string/suffix-array.hpp
       title: library/string/suffix-array.hpp
   - name: library/unused
@@ -342,7 +342,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/implicit-lazy-segment-tree.test.cpp
       title: test/implicit-lazy-segment-tree.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/karatsuba.test.cpp
       title: test/karatsuba.test.cpp
     - icon: ':heavy_check_mark:'
@@ -357,41 +357,41 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/li-chao-tree-offline.test.cpp
       title: test/li-chao-tree-offline.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/li-chao-tree-online.test.cpp
       title: test/li-chao-tree-online.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/manacher.test.cpp
       title: test/manacher.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/mod-sqrt.test.cpp
       title: test/mod-sqrt.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/point-update-segment-tree.test.cpp
       title: test/point-update-segment-tree.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/segment-tree-beats.test.cpp
       title: test/segment-tree-beats.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/sparse-segment-tree.test.cpp
       title: test/sparse-segment-tree.test.cpp
     - icon: ':x:'
       path: test/strongly-connected-components-kosaraju.test.cpp
       title: test/strongly-connected-components-kosaraju.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/strongly-connected-components-tarjan.test.cpp
       title: test/strongly-connected-components-tarjan.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/suffix-array-linear.test.cpp
       title: test/suffix-array-linear.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/suffix-array.test.cpp
       title: test/suffix-array.test.cpp
 layout: toppage
 ---
-![Badge](https://cp-logo.vercel.app/codeforces/12tqian)
-![Badge](https://cp-logo.vercel.app/atcoder/tqian)
-![Badge](https://cp-logo.vercel.app/codechef/tqian)
+[![Badge](https://cp-logo.vercel.app/codeforces/12tqian)](https://codeforces.com/profile/12tqian)
+[![Badge](https://cp-logo.vercel.app/atcoder/tqian)](https://atcoder.jp/users/tqian)
+[![Badge](https://cp-logo.vercel.app/codechef/tqian)](https://www.codechef.com/users/tqian)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/12tqian/cp-library?style=flat-square)
 
 This is a collection of my templates for competitive programming. 

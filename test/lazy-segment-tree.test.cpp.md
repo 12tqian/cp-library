@@ -21,11 +21,11 @@ data:
     \n\n#include <algorithm>\n#include <array>\n#include <bitset>\n#include <cassert>\n\
     #include <chrono>\n#include <cmath>\n#include <complex>\n#include <cstdio>\n#include\
     \ <cstdlib>\n#include <cstring>\n#include <ctime>\n#include <deque>\n#include\
-    \ <iostream>\n#include <iomanip>\n#include <map>\n#include <numeric>\n#include\
-    \ <queue>\n#include <random>\n#include <set>\n#include <stack>\n#include <string>\n\
-    #include <unordered_map>\n#include <vector>\n\nusing namespace std;\n\ntemplate\
-    \ <class T> struct LazySeg {\n\tstd::vector<T> sum, lazy;\n\tint sz;\n\n\tvoid\
-    \ init(int sz_) {\n\t\tsz = 1;\n\t\twhile (sz < sz_) sz *= 2;\n\t\tsum.assign(2\
+    \ <iostream>\n#include <iomanip>\n#include <list>\n#include <map>\n#include <numeric>\n\
+    #include <queue>\n#include <random>\n#include <set>\n#include <stack>\n#include\
+    \ <string>\n#include <unordered_map>\n#include <vector>\n\nusing namespace std;\n\
+    \ntemplate <class T> struct LazySeg {\n\tstd::vector<T> sum, lazy;\n\tint sz;\n\
+    \n\tvoid init(int sz_) {\n\t\tsz = 1;\n\t\twhile (sz < sz_) sz *= 2;\n\t\tsum.assign(2\
     \ * sz, 0);\n\t\tlazy.assign(2 * sz, 0);\n\t}\n\n\tvoid push(int ind, int L, int\
     \ R) {\n\t\tsum[ind] += (R - L + 1) * lazy[ind];\n\t\tif (L != R) {\n\t\t\tlazy[2\
     \ * ind] += lazy[ind];\n\t\t\tlazy[2 * ind + 1] += lazy[ind];\n\t\t}\n\t\tlazy[ind]\
@@ -62,7 +62,7 @@ data:
   isVerificationFile: true
   path: test/lazy-segment-tree.test.cpp
   requiredBy: []
-  timestamp: '2021-07-24 21:44:19-04:00'
+  timestamp: '2021-07-24 23:00:09-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/lazy-segment-tree.test.cpp

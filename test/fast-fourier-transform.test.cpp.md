@@ -24,12 +24,12 @@ data:
     \n\n#include <algorithm>\n#include <array>\n#include <bitset>\n#include <cassert>\n\
     #include <chrono>\n#include <cmath>\n#include <complex>\n#include <cstdio>\n#include\
     \ <cstdlib>\n#include <cstring>\n#include <ctime>\n#include <deque>\n#include\
-    \ <iostream>\n#include <iomanip>\n#include <map>\n#include <numeric>\n#include\
-    \ <queue>\n#include <random>\n#include <set>\n#include <stack>\n#include <string>\n\
-    #include <unordered_map>\n#include <vector>\n\nusing namespace std;\n\n\n// 5\
-    \ is a root of both mods\ntemplate <int MOD, int RT> struct Mint {\n\tstatic const\
-    \ int mod = MOD;\n\tstatic constexpr Mint rt() { return RT; } // primitive root\
-    \ for FFT\n\tint v; \n\texplicit operator int() const { return v; } // explicit\
+    \ <iostream>\n#include <iomanip>\n#include <list>\n#include <map>\n#include <numeric>\n\
+    #include <queue>\n#include <random>\n#include <set>\n#include <stack>\n#include\
+    \ <string>\n#include <unordered_map>\n#include <vector>\n\nusing namespace std;\n\
+    \n\n// 5 is a root of both mods\ntemplate <int MOD, int RT> struct Mint {\n\t\
+    static const int mod = MOD;\n\tstatic constexpr Mint rt() { return RT; } // primitive\
+    \ root for FFT\n\tint v; \n\texplicit operator int() const { return v; } // explicit\
     \ -> don't silently convert to int\n\tMint() { v = 0; }\n\tMint(long long _v)\
     \ { v = int((-MOD < _v && _v < MOD) ? _v : _v % MOD); if (v < 0) v += MOD; }\n\
     \tfriend bool operator==(const Mint &a, const Mint &b) { return a.v == b.v; }\n\
@@ -101,7 +101,7 @@ data:
   isVerificationFile: true
   path: test/fast-fourier-transform.test.cpp
   requiredBy: []
-  timestamp: '2021-07-24 22:46:46-04:00'
+  timestamp: '2021-07-24 23:00:09-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/fast-fourier-transform.test.cpp

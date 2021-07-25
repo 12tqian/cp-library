@@ -21,13 +21,13 @@ data:
     \n\n#include <algorithm>\n#include <array>\n#include <bitset>\n#include <cassert>\n\
     #include <chrono>\n#include <cmath>\n#include <complex>\n#include <cstdio>\n#include\
     \ <cstdlib>\n#include <cstring>\n#include <ctime>\n#include <deque>\n#include\
-    \ <iostream>\n#include <iomanip>\n#include <map>\n#include <numeric>\n#include\
-    \ <queue>\n#include <random>\n#include <set>\n#include <stack>\n#include <string>\n\
-    #include <unordered_map>\n#include <vector>\n\nusing namespace std;\n/**\n * dist\
-    \ is INF if you can't reach and -INF if it is in a negative cycle\n * negative\
-    \ cycle is same thing as gen, it just doesn't do gen_bad\n * also it returns a\
-    \ negative cycle :D\n */\n\ntemplate <class T> struct BellmanFord {\n\tconst T\
-    \ INF = std::numeric_limits<T>::max();\n\tint n; \n\tstd::vector<std::vector<int>>\
+    \ <iostream>\n#include <iomanip>\n#include <list>\n#include <map>\n#include <numeric>\n\
+    #include <queue>\n#include <random>\n#include <set>\n#include <stack>\n#include\
+    \ <string>\n#include <unordered_map>\n#include <vector>\n\nusing namespace std;\n\
+    /**\n * dist is INF if you can't reach and -INF if it is in a negative cycle\n\
+    \ * negative cycle is same thing as gen, it just doesn't do gen_bad\n * also it\
+    \ returns a negative cycle :D\n */\n\ntemplate <class T> struct BellmanFord {\n\
+    \tconst T INF = std::numeric_limits<T>::max();\n\tint n; \n\tstd::vector<std::vector<int>>\
     \ adj;\n\tstd::vector<std::pair<std::pair<int, int>, T>> edges;\n\tstd::vector<T>\
     \ dist;\n\n\tvoid init(int n_) {\n\t\tn = n_;\n\t\tadj.assign(n, std::vector<int>());\n\
     \t\tedges.clear();\n\t\tdist.assign(n, 0);\n\t}\n\n\tvoid ae(int u, int v, T w)\
@@ -77,7 +77,7 @@ data:
   isVerificationFile: true
   path: test/bellman-ford.test.cpp
   requiredBy: []
-  timestamp: '2021-07-24 22:49:15-04:00'
+  timestamp: '2021-07-24 23:00:09-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/bellman-ford.test.cpp

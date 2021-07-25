@@ -21,10 +21,10 @@ data:
     \ <algorithm>\n#include <array>\n#include <bitset>\n#include <cassert>\n#include\
     \ <chrono>\n#include <cmath>\n#include <complex>\n#include <cstdio>\n#include\
     \ <cstdlib>\n#include <cstring>\n#include <ctime>\n#include <deque>\n#include\
-    \ <iostream>\n#include <iomanip>\n#include <map>\n#include <numeric>\n#include\
-    \ <queue>\n#include <random>\n#include <set>\n#include <stack>\n#include <string>\n\
-    #include <unordered_map>\n#include <vector>\n\nusing namespace std;\n\nstruct\
-    \ SCC {\n\tint n; \n\tstd::vector<std::vector<int>> g, rg, scc_graph, comps;\n\
+    \ <iostream>\n#include <iomanip>\n#include <list>\n#include <map>\n#include <numeric>\n\
+    #include <queue>\n#include <random>\n#include <set>\n#include <stack>\n#include\
+    \ <string>\n#include <unordered_map>\n#include <vector>\n\nusing namespace std;\n\
+    \nstruct SCC {\n\tint n; \n\tstd::vector<std::vector<int>> g, rg, scc_graph, comps;\n\
     \tstd::vector<int> id, ord, roots, topo_ord;\n\tstd::vector<bool> vis;\n\n\tvoid\
     \ init(int n_) {\n\t\tn = n_;\n\t\tg.assign(n, std::vector<int>());\n\t\trg.assign(n,\
     \ std::vector<int>());\n\t\tscc_graph.assign(n, std::vector<int>());\n\t\tcomps.assign(n,\
@@ -67,7 +67,7 @@ data:
   isVerificationFile: true
   path: test/strongly-connected-components-kosaraju.test.cpp
   requiredBy: []
-  timestamp: '2021-07-24 22:47:47-04:00'
+  timestamp: '2021-07-24 23:00:09-04:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/strongly-connected-components-kosaraju.test.cpp

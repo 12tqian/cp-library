@@ -4,14 +4,14 @@ data:
   - icon: ':question:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/string/manacher.hpp
     title: library/string/manacher.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/enumerate_palindromes
@@ -21,14 +21,14 @@ data:
     \n\n#include <algorithm>\n#include <array>\n#include <bitset>\n#include <cassert>\n\
     #include <chrono>\n#include <cmath>\n#include <complex>\n#include <cstdio>\n#include\
     \ <cstdlib>\n#include <cstring>\n#include <ctime>\n#include <deque>\n#include\
-    \ <iostream>\n#include <iomanip>\n#include <map>\n#include <numeric>\n#include\
-    \ <queue>\n#include <random>\n#include <set>\n#include <stack>\n#include <string>\n\
-    #include <unordered_map>\n#include <vector>\n\nusing namespace std;\n\n/**\n *\
-    \ Example use:\n * Call: manacher(\"abacaba\")\n * Return: {1 0 3 0 1 0 7 0 1\
-    \ 0 3 0 1}\n */\n\nstd::vector<int> manacher(std::string s) {\n\tstd::string t\
-    \ = \"@\";\n\tfor (auto &c : s) \n\t\tt += c, t += '#';\n\tt.back() = '&';\n\t\
-    std::vector<int> res((int)t.size() - 1);\n\tint lo = 0, hi = 0;\n\tfor (int i\
-    \ = 1; i < (int)t.size() - 1; i++) {\n\t\tif (i != 1)\n\t\t\tres[i] = std::min(hi\
+    \ <iostream>\n#include <iomanip>\n#include <list>\n#include <map>\n#include <numeric>\n\
+    #include <queue>\n#include <random>\n#include <set>\n#include <stack>\n#include\
+    \ <string>\n#include <unordered_map>\n#include <vector>\n\nusing namespace std;\n\
+    \n/**\n * Example use:\n * Call: manacher(\"abacaba\")\n * Return: {1 0 3 0 1\
+    \ 0 7 0 1 0 3 0 1}\n */\n\nstd::vector<int> manacher(std::string s) {\n\tstd::string\
+    \ t = \"@\";\n\tfor (auto &c : s) \n\t\tt += c, t += '#';\n\tt.back() = '&';\n\
+    \tstd::vector<int> res((int)t.size() - 1);\n\tint lo = 0, hi = 0;\n\tfor (int\
+    \ i = 1; i < (int)t.size() - 1; i++) {\n\t\tif (i != 1)\n\t\t\tres[i] = std::min(hi\
     \ - i, res[hi - i + lo]);\n\t\twhile (t[i - res[i] - 1] == t[i + res[i] + 1])\n\
     \t\t\tres[i]++;\n\t\tif (i + res[i] > hi)\n\t\t\tlo = i - res[i], hi = i + res[i];\n\
     \t}\n\tres.erase(res.begin());\n\tfor (int i = 0; i < (int)res.size(); i++)\n\t\
@@ -47,8 +47,8 @@ data:
   isVerificationFile: true
   path: test/manacher.test.cpp
   requiredBy: []
-  timestamp: '2021-07-24 22:46:46-04:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2021-07-24 23:00:09-04:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/manacher.test.cpp
 layout: document

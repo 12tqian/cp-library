@@ -16,9 +16,9 @@ data:
     \ <bitset>\n#include <cassert>\n#include <chrono>\n#include <cmath>\n#include\
     \ <complex>\n#include <cstdio>\n#include <cstdlib>\n#include <cstring>\n#include\
     \ <ctime>\n#include <deque>\n#include <iostream>\n#include <iomanip>\n#include\
-    \ <map>\n#include <numeric>\n#include <queue>\n#include <random>\n#include <set>\n\
-    #include <stack>\n#include <string>\n#include <unordered_map>\n#include <vector>\n\
-    \nusing namespace std;\n\n/** \n * Example of use: https://ideone.com/J3R7nb\n\
+    \ <list>\n#include <map>\n#include <numeric>\n#include <queue>\n#include <random>\n\
+    #include <set>\n#include <stack>\n#include <string>\n#include <unordered_map>\n\
+    #include <vector>\n\nusing namespace std;\n\n/** \n * Example of use: https://ideone.com/J3R7nb\n\
     \ * Solves SPOJ DYNACON2\n */\n\nstruct DSURollBack {\n    std::vector<int> e;\n\
     \    void init(int n) {\n        e = std::vector<int>(n, -1);\n    }\n    int\
     \ get(int x) {\n        return e[x] < 0 ? x : get(e[x]);\n    }\n    bool same_set(int\
@@ -109,7 +109,7 @@ data:
   isVerificationFile: false
   path: test/offline-dynamic-connectivity.cpp
   requiredBy: []
-  timestamp: '2021-07-24 22:29:57-04:00'
+  timestamp: '2021-07-24 23:00:09-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: test/offline-dynamic-connectivity.cpp

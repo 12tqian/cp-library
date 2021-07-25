@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/segment-tree-beats.test.cpp
     title: test/segment-tree-beats.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "\n/**\n * 0 is ckmin, 1 is ckmax, 2 is range add\n */\ntemplate <class\
@@ -158,7 +158,7 @@ data:
   path: library/data-structures/1d-range-queries/segment-tree-beats.hpp
   requiredBy: []
   timestamp: '2021-07-24 21:33:21-04:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/segment-tree-beats.test.cpp
 documentation_of: library/data-structures/1d-range-queries/segment-tree-beats.hpp

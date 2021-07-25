@@ -63,7 +63,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/implicit-lazy-segment-tree.test.cpp
     title: test/implicit-lazy-segment-tree.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/karatsuba.test.cpp
     title: test/karatsuba.test.cpp
   - icon: ':heavy_check_mark:'
@@ -78,34 +78,34 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/li-chao-tree-offline.test.cpp
     title: test/li-chao-tree-offline.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/li-chao-tree-online.test.cpp
     title: test/li-chao-tree-online.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/manacher.test.cpp
     title: test/manacher.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/mod-sqrt.test.cpp
     title: test/mod-sqrt.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/point-update-segment-tree.test.cpp
     title: test/point-update-segment-tree.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/segment-tree-beats.test.cpp
     title: test/segment-tree-beats.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/sparse-segment-tree.test.cpp
     title: test/sparse-segment-tree.test.cpp
   - icon: ':x:'
     path: test/strongly-connected-components-kosaraju.test.cpp
     title: test/strongly-connected-components-kosaraju.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/strongly-connected-components-tarjan.test.cpp
     title: test/strongly-connected-components-tarjan.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/suffix-array-linear.test.cpp
     title: test/suffix-array-linear.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/suffix-array.test.cpp
     title: test/suffix-array.test.cpp
   _isVerificationFailed: true
@@ -140,6 +140,8 @@ data:
     #include <iostream>
 
     #include <iomanip>
+
+    #include <list>
 
     #include <map>
 
@@ -191,6 +193,8 @@ data:
 
     #include <iomanip>
 
+    #include <list>
+
     #include <map>
 
     #include <numeric>
@@ -226,7 +230,7 @@ data:
   - test/matrix.cpp
   - test/link-cut-tree.cpp
   - library/graphs/enumerate-triangles.cpp
-  timestamp: '2021-07-24 20:00:47-04:00'
+  timestamp: '2021-07-24 23:00:09-04:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/bellman-ford.test.cpp

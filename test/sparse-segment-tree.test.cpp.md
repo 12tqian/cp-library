@@ -4,14 +4,14 @@ data:
   - icon: ':question:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/data-structures/1d-range-queries/sparse-segment-tree.hpp
     title: library/data-structures/1d-range-queries/sparse-segment-tree.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/point_add_range_sum
@@ -21,17 +21,17 @@ data:
     \n\n#include <algorithm>\n#include <array>\n#include <bitset>\n#include <cassert>\n\
     #include <chrono>\n#include <cmath>\n#include <complex>\n#include <cstdio>\n#include\
     \ <cstdlib>\n#include <cstring>\n#include <ctime>\n#include <deque>\n#include\
-    \ <iostream>\n#include <iomanip>\n#include <map>\n#include <numeric>\n#include\
-    \ <queue>\n#include <random>\n#include <set>\n#include <stack>\n#include <string>\n\
-    #include <unordered_map>\n#include <vector>\n\nusing namespace std;\n\n// bump\
-    \ allocator\n\nstatic char buf[450 << 20];\nvoid* operator new(size_t s) {\n\t\
-    static size_t i = sizeof buf;\n\tassert(s < i);\n\treturn (void*)&buf[i -= s];\n\
-    }\nvoid operator delete(void*) {}\n\nconst int SZ = 1 << 30;\n\ntemplate <class\
-    \ T> struct Node {\n\tT val = 0; \n\tNode<T> *c[2];\n\tNode() { c[0] = c[1] =\
-    \ NULL; }\n\n\tvoid upd(int ind, T v, int L = 0, int R = SZ - 1) { // add v\n\t\
-    \tif (L == ind && R == ind) { val += v; return; }\n\t\tint M = (L + R) / 2;\n\t\
-    \tif (ind <= M) {\n\t\t\tif (!c[0]) c[0] = new Node();\n\t\t\tc[0]->upd(ind, v,\
-    \ L, M);\n\t\t} else {\n\t\t\tif (!c[1]) c[1] = new Node();\n\t\t\tc[1]->upd(ind,\
+    \ <iostream>\n#include <iomanip>\n#include <list>\n#include <map>\n#include <numeric>\n\
+    #include <queue>\n#include <random>\n#include <set>\n#include <stack>\n#include\
+    \ <string>\n#include <unordered_map>\n#include <vector>\n\nusing namespace std;\n\
+    \n// bump allocator\n\nstatic char buf[450 << 20];\nvoid* operator new(size_t\
+    \ s) {\n\tstatic size_t i = sizeof buf;\n\tassert(s < i);\n\treturn (void*)&buf[i\
+    \ -= s];\n}\nvoid operator delete(void*) {}\n\nconst int SZ = 1 << 30;\n\ntemplate\
+    \ <class T> struct Node {\n\tT val = 0; \n\tNode<T> *c[2];\n\tNode() { c[0] =\
+    \ c[1] = NULL; }\n\n\tvoid upd(int ind, T v, int L = 0, int R = SZ - 1) { // add\
+    \ v\n\t\tif (L == ind && R == ind) { val += v; return; }\n\t\tint M = (L + R)\
+    \ / 2;\n\t\tif (ind <= M) {\n\t\t\tif (!c[0]) c[0] = new Node();\n\t\t\tc[0]->upd(ind,\
+    \ v, L, M);\n\t\t} else {\n\t\t\tif (!c[1]) c[1] = new Node();\n\t\t\tc[1]->upd(ind,\
     \ v, M + 1, R);\n\t\t}\n\t\tval = 0; \n\t\tfor (int i = 0; i < 2; i++)\n\t\t\t\
     if (c[i]) val += c[i]->val;\n\t}\n\n\tT query(int lo, int hi, int L = 0, int R\
     \ = SZ - 1) { // query sum of segment\n\t\tif (hi < L || R < lo) return 0;\n\t\
@@ -66,8 +66,8 @@ data:
   isVerificationFile: true
   path: test/sparse-segment-tree.test.cpp
   requiredBy: []
-  timestamp: '2021-07-24 21:39:13-04:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2021-07-24 23:00:09-04:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/sparse-segment-tree.test.cpp
 layout: document

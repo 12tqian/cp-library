@@ -14,10 +14,10 @@ data:
   bundledCode: "#include <algorithm>\n#include <array>\n#include <bitset>\n#include\
     \ <cassert>\n#include <chrono>\n#include <cmath>\n#include <complex>\n#include\
     \ <cstdio>\n#include <cstdlib>\n#include <cstring>\n#include <ctime>\n#include\
-    \ <deque>\n#include <iostream>\n#include <iomanip>\n#include <map>\n#include <numeric>\n\
-    #include <queue>\n#include <random>\n#include <set>\n#include <stack>\n#include\
-    \ <string>\n#include <unordered_map>\n#include <vector>\n\nusing namespace std;\n\
-    \nconst int MOD = 998244353;\n\nint main() {\n\tstd::ios_base::sync_with_stdio(0);\
+    \ <deque>\n#include <iostream>\n#include <iomanip>\n#include <list>\n#include\
+    \ <map>\n#include <numeric>\n#include <queue>\n#include <random>\n#include <set>\n\
+    #include <stack>\n#include <string>\n#include <unordered_map>\n#include <vector>\n\
+    \nusing namespace std;\n\nconst int MOD = 998244353;\n\nint main() {\n\tstd::ios_base::sync_with_stdio(0);\
     \ std::cin.tie(0);\n\tint n, m; std::cin >> n >> m;\n\tstd::vector<long long>\
     \ x(n);\n\tfor (int i = 0; i < n; i++) std::cin >> x[i];\n\tstd::vector<std::vector<int>>\
     \ adj(n);\n\tfor (int i = 0; i < m; i++) {\n\t\tint u, v; std::cin >> u >> v;\n\
@@ -59,7 +59,7 @@ data:
   isVerificationFile: false
   path: library/graphs/enumerate-triangles.cpp
   requiredBy: []
-  timestamp: '2021-07-24 22:10:06-04:00'
+  timestamp: '2021-07-24 23:00:09-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/graphs/enumerate-triangles.cpp

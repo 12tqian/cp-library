@@ -18,10 +18,10 @@ data:
     \ <bitset>\n#include <cassert>\n#include <chrono>\n#include <cmath>\n#include\
     \ <complex>\n#include <cstdio>\n#include <cstdlib>\n#include <cstring>\n#include\
     \ <ctime>\n#include <deque>\n#include <iostream>\n#include <iomanip>\n#include\
-    \ <map>\n#include <numeric>\n#include <queue>\n#include <random>\n#include <set>\n\
-    #include <stack>\n#include <string>\n#include <unordered_map>\n#include <vector>\n\
-    \nusing namespace std;\n\nnamespace Hashing {\n\nconst int MOD = 1e9 + 7;\n\n\
-    std::mt19937 rng((uint32_t) std::chrono::steady_clock::now().time_since_epoch().count());\n\
+    \ <list>\n#include <map>\n#include <numeric>\n#include <queue>\n#include <random>\n\
+    #include <set>\n#include <stack>\n#include <string>\n#include <unordered_map>\n\
+    #include <vector>\n\nusing namespace std;\n\nnamespace Hashing {\n\nconst int\
+    \ MOD = 1e9 + 7;\n\nstd::mt19937 rng((uint32_t) std::chrono::steady_clock::now().time_since_epoch().count());\n\
     std::uniform_int_distribution<int> BDIST(0.1 * MOD, 0.9 * MOD);\nconst std::array<int,\
     \ 2> base = {BDIST(rng), BDIST(rng)};\nstd::vector<std::array<int, 2>> pows =\
     \ {{1, 1}};\n\nstd::array<int, 2> operator+(std::array<int, 2> l, std::array<int,\
@@ -54,7 +54,7 @@ data:
   isVerificationFile: false
   path: test/hashing.cpp
   requiredBy: []
-  timestamp: '2021-07-24 22:46:46-04:00'
+  timestamp: '2021-07-24 23:00:09-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: test/hashing.cpp

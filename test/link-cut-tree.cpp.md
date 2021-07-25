@@ -18,36 +18,36 @@ data:
     \ (\"sse4\")\n\n#include <algorithm>\n#include <array>\n#include <bitset>\n#include\
     \ <cassert>\n#include <chrono>\n#include <cmath>\n#include <complex>\n#include\
     \ <cstdio>\n#include <cstdlib>\n#include <cstring>\n#include <ctime>\n#include\
-    \ <deque>\n#include <iostream>\n#include <iomanip>\n#include <map>\n#include <numeric>\n\
-    #include <queue>\n#include <random>\n#include <set>\n#include <stack>\n#include\
-    \ <string>\n#include <unordered_map>\n#include <vector>\n\nusing namespace std;\n\
-    \nstruct info {\n\tint sz, sum, mn, mx;\n\n\tinfo (int v) {\n\t\tif (v == INT_MAX)\
-    \ {\n\t\t\tsz = sum = 0;\n\t\t\tmn = INT_MAX, mx = INT_MIN;\n\t\t} else {\n\t\t\
-    \tsz = 1; sum = mn = mx = v;\n\t\t}\n\t}\n\n\tinfo() : info(INT_MAX) {}\n\n\t\
-    friend info& operator += (info &a, const info &b) {\n\t\ta.sz += b.sz, a.sum +=\
-    \ b.sum;\n\t\ta.mn = std::min(a.mn, b.mn);\n\t\ta.mx = std::max(a.mx, b.mx);\n\
-    \t\treturn a;\n\t}\n};\n\ntypedef struct snode *sn;\n\nstruct snode {\n\tint id,\
-    \ val; // value in node\n\tsn p; // parent\n\tsn c[5]; // children\n\tbool flip\
-    \ = 0;\n\tinfo data[2];\n\tint next_num[2], lazy[2];\n\n\tsnode(int _id, int v)\
-    \ {\n\t\tid = _id; val = v;\n\t\tp = NULL;\n\t\tfor (int i = 0; i < 5; i++) {\n\
-    \t\t\tc[i] = NULL;\n\t\t}\n\t\tnext_num[0] = next_num[1] = INT_MAX;\n\t\tlazy[0]\
-    \ = lazy[1] = 0;\n\t\tcalc();\n\t}\n\n\t//////// splay tree operations\n\tvoid\
-    \ prop() {\n\t\tif (flip) {\n\t\t\tstd::swap(c[0], c[1]);\n\t\t\tfor (int i =\
-    \ 0; i < 2; i++) {\n\t\t\t\tif (c[i]) {\n\t\t\t\t\tc[i]->flip ^= 1;\n\t\t\t\t\
-    }\n\t\t\t}\n\t\t\tflip = 0;\n\t\t}\n\t\tif (next_num[1] != INT_MAX) {\n\t\t\t\
-    if (data[1].sz) {\n\t\t\t\tdata[1].sum = next_num[1] * data[1].sz;\n\t\t\t\tdata[1].mn\
-    \ = data[1].mx = next_num[1];\n\t\t\t}\n\t\t\tfor (int i = 0; i < 5; i++) {\n\t\
-    \t\t\tif (c[i]) {\n\t\t\t\t\tc[i]->next_num[1] = next_num[1], c[i]->lazy[1] =\
-    \ 0;\n\t\t\t\t\tif (i >= 2) {\n\t\t\t\t\t\tc[i]->next_num[0] = next_num[1];\n\t\
-    \t\t\t\t\tc[i]->lazy[0] = 0;\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t\tnext_num[1]\
-    \ = INT_MAX;\n\t\t}\n\t\tif (lazy[1] != 0) {\n\t\t\tif (data[1].sz) {\n\t\t\t\t\
-    data[1].sum += lazy[1] * data[1].sz;\n\t\t\t\tdata[1].mn += lazy[1], data[1].mx\
-    \ += lazy[1];\n\t\t\t}\n\t\t\tfor (int i = 0; i < 5; i++) {\n\t\t\t\tif (c[i])\
-    \ {\n\t\t\t\t\tc[i]->lazy[1] += lazy[1];\n\t\t\t\t\tif (i >= 2) {\n\t\t\t\t\t\t\
-    c[i]->lazy[0] += lazy[1];\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t\tlazy[1] = 0;\n\
-    \t\t}\n\t\tif (next_num[0] != INT_MAX) {\n\t\t\tval = next_num[0];\n\t\t\tdata[0].sum\
-    \ = next_num[0] * data[0].sz;\n\t\t\tdata[0].mn = data[0].mx = next_num[0];\n\t\
-    \t\tfor (int i = 0; i < 2; i++) {\n\t\t\t\tif (c[i]) {\n\t\t\t\t\tc[i]->next_num[0]\
+    \ <deque>\n#include <iostream>\n#include <iomanip>\n#include <list>\n#include\
+    \ <map>\n#include <numeric>\n#include <queue>\n#include <random>\n#include <set>\n\
+    #include <stack>\n#include <string>\n#include <unordered_map>\n#include <vector>\n\
+    \nusing namespace std;\n\nstruct info {\n\tint sz, sum, mn, mx;\n\n\tinfo (int\
+    \ v) {\n\t\tif (v == INT_MAX) {\n\t\t\tsz = sum = 0;\n\t\t\tmn = INT_MAX, mx =\
+    \ INT_MIN;\n\t\t} else {\n\t\t\tsz = 1; sum = mn = mx = v;\n\t\t}\n\t}\n\n\tinfo()\
+    \ : info(INT_MAX) {}\n\n\tfriend info& operator += (info &a, const info &b) {\n\
+    \t\ta.sz += b.sz, a.sum += b.sum;\n\t\ta.mn = std::min(a.mn, b.mn);\n\t\ta.mx\
+    \ = std::max(a.mx, b.mx);\n\t\treturn a;\n\t}\n};\n\ntypedef struct snode *sn;\n\
+    \nstruct snode {\n\tint id, val; // value in node\n\tsn p; // parent\n\tsn c[5];\
+    \ // children\n\tbool flip = 0;\n\tinfo data[2];\n\tint next_num[2], lazy[2];\n\
+    \n\tsnode(int _id, int v) {\n\t\tid = _id; val = v;\n\t\tp = NULL;\n\t\tfor (int\
+    \ i = 0; i < 5; i++) {\n\t\t\tc[i] = NULL;\n\t\t}\n\t\tnext_num[0] = next_num[1]\
+    \ = INT_MAX;\n\t\tlazy[0] = lazy[1] = 0;\n\t\tcalc();\n\t}\n\n\t//////// splay\
+    \ tree operations\n\tvoid prop() {\n\t\tif (flip) {\n\t\t\tstd::swap(c[0], c[1]);\n\
+    \t\t\tfor (int i = 0; i < 2; i++) {\n\t\t\t\tif (c[i]) {\n\t\t\t\t\tc[i]->flip\
+    \ ^= 1;\n\t\t\t\t}\n\t\t\t}\n\t\t\tflip = 0;\n\t\t}\n\t\tif (next_num[1] != INT_MAX)\
+    \ {\n\t\t\tif (data[1].sz) {\n\t\t\t\tdata[1].sum = next_num[1] * data[1].sz;\n\
+    \t\t\t\tdata[1].mn = data[1].mx = next_num[1];\n\t\t\t}\n\t\t\tfor (int i = 0;\
+    \ i < 5; i++) {\n\t\t\t\tif (c[i]) {\n\t\t\t\t\tc[i]->next_num[1] = next_num[1],\
+    \ c[i]->lazy[1] = 0;\n\t\t\t\t\tif (i >= 2) {\n\t\t\t\t\t\tc[i]->next_num[0] =\
+    \ next_num[1];\n\t\t\t\t\t\tc[i]->lazy[0] = 0;\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\
+    }\n\t\t\tnext_num[1] = INT_MAX;\n\t\t}\n\t\tif (lazy[1] != 0) {\n\t\t\tif (data[1].sz)\
+    \ {\n\t\t\t\tdata[1].sum += lazy[1] * data[1].sz;\n\t\t\t\tdata[1].mn += lazy[1],\
+    \ data[1].mx += lazy[1];\n\t\t\t}\n\t\t\tfor (int i = 0; i < 5; i++) {\n\t\t\t\
+    \tif (c[i]) {\n\t\t\t\t\tc[i]->lazy[1] += lazy[1];\n\t\t\t\t\tif (i >= 2) {\n\t\
+    \t\t\t\t\tc[i]->lazy[0] += lazy[1];\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t\tlazy[1]\
+    \ = 0;\n\t\t}\n\t\tif (next_num[0] != INT_MAX) {\n\t\t\tval = next_num[0];\n\t\
+    \t\tdata[0].sum = next_num[0] * data[0].sz;\n\t\t\tdata[0].mn = data[0].mx = next_num[0];\n\
+    \t\t\tfor (int i = 0; i < 2; i++) {\n\t\t\t\tif (c[i]) {\n\t\t\t\t\tc[i]->next_num[0]\
     \ = next_num[0];\n\t\t\t\t\tc[i]->lazy[0] = 0;\n\t\t\t\t}\n\t\t\t}\n\t\t\tnext_num[0]\
     \ = INT_MAX;\n\t\t}\n\t\tif (lazy[0] != 0) {\n\t\t\tval += lazy[0];\n\t\t\tdata[0].sum\
     \ += lazy[0] * data[0].sz;\n\t\t\tdata[0].mn += lazy[0], data[0].mx += lazy[0];\n\
@@ -179,7 +179,7 @@ data:
   isVerificationFile: false
   path: test/link-cut-tree.cpp
   requiredBy: []
-  timestamp: '2021-07-24 22:13:13-04:00'
+  timestamp: '2021-07-24 23:00:09-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: test/link-cut-tree.cpp
