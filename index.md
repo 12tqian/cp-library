@@ -6,7 +6,7 @@ data:
     - icon: ':warning:'
       path: library/contest/template-full.cpp
       title: library/contest/template-full.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/contest/template-minimal.hpp
       title: library/contest/template-minimal.hpp
     - icon: ':warning:'
@@ -64,7 +64,7 @@ data:
     - icon: ':warning:'
       path: library/data-structures/2d-range-queries/general-fenwick-tree.hpp
       title: library/data-structures/2d-range-queries/general-fenwick-tree.hpp
-    - icon: ':warning:'
+    - icon: ':x:'
       path: library/data-structures/2d-range-queries/offline-2d-binary-indexed-tree.hpp
       title: library/data-structures/2d-range-queries/offline-2d-binary-indexed-tree.hpp
     - icon: ':warning:'
@@ -100,7 +100,7 @@ data:
       title: library/geometry/point.hpp
   - name: library/graphs
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: library/graphs/bellman-ford.hpp
       title: library/graphs/bellman-ford.hpp
     - icon: ':heavy_check_mark:'
@@ -109,7 +109,7 @@ data:
     - icon: ':warning:'
       path: library/graphs/centroid-decomposition.hpp
       title: library/graphs/centroid-decomposition.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/graphs/dijkstra.hpp
       title: library/graphs/dijkstra.hpp
     - icon: ':warning:'
@@ -118,7 +118,7 @@ data:
     - icon: ':warning:'
       path: library/graphs/dsu-rollback.hpp
       title: library/graphs/dsu-rollback.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/graphs/dsu.hpp
       title: library/graphs/dsu.hpp
     - icon: ':warning:'
@@ -130,7 +130,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/graphs/heavy-light-decomposition.hpp
       title: library/graphs/heavy-light-decomposition.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/graphs/kruskal.hpp
       title: library/graphs/kruskal.hpp
     - icon: ':warning:'
@@ -154,7 +154,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/graphs/strongly-connected-components-tarjan.hpp
       title: library/graphs/strongly-connected-components-tarjan.hpp
-    - icon: ':warning:'
+    - icon: ':x:'
       path: library/graphs/topological-sort.hpp
       title: library/graphs/topological-sort.hpp
     - icon: ':warning:'
@@ -165,21 +165,21 @@ data:
       title: library/graphs/two-sat.hpp
   - name: library/graphs/flows
     pages:
-    - icon: ':warning:'
+    - icon: ':x:'
       path: library/graphs/flows/dinic.hpp
       title: library/graphs/flows/dinic.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/graphs/flows/hungarian.hpp
       title: library/graphs/flows/hungarian.hpp
     - icon: ':warning:'
       path: library/graphs/flows/min-cost-max-flow.hpp
       title: library/graphs/flows/min-cost-max-flow.hpp
-    - icon: ':warning:'
+    - icon: ':x:'
       path: library/graphs/flows/push-relabel.hpp
       title: library/graphs/flows/push-relabel.hpp
   - name: library/misc
     pages:
-    - icon: ':warning:'
+    - icon: ':x:'
       path: library/misc/easy-io.hpp
       title: library/misc/easy-io.hpp
     - icon: ':warning:'
@@ -280,6 +280,9 @@ data:
   - name: test
     pages:
     - icon: ':warning:'
+      path: test/2d-sparse-segment-tree.cpp
+      title: test/2d-sparse-segment-tree.cpp
+    - icon: ':warning:'
       path: test/basic-factor.cpp
       title: test/basic-factor.cpp
     - icon: ':warning:'
@@ -301,6 +304,9 @@ data:
       path: test/matrix.cpp
       title: test/matrix.cpp
     - icon: ':warning:'
+      path: test/min-cost-max-flow.cpp
+      title: test/min-cost-max-flow.cpp
+    - icon: ':warning:'
       path: test/monotonic-convex-hull.cpp
       title: test/monotonic-convex-hull.cpp
     - icon: ':warning:'
@@ -318,12 +324,18 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/associative-range-query.test.cpp
       title: test/associative-range-query.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/bellman-ford.test.cpp
       title: test/bellman-ford.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/biconnected-components.test.cpp
       title: test/biconnected-components.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/dijkstra.test.cpp
+      title: test/dijkstra.test.cpp
+    - icon: ':x:'
+      path: test/dinic.test.cpp
+      title: test/dinic.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/example.test.cpp
       title: test/example.test.cpp
@@ -340,11 +352,17 @@ data:
       path: test/heavy-light-decomposition.test.cpp
       title: test/heavy-light-decomposition.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/hungarian.test.cpp
+      title: test/hungarian.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/implicit-lazy-segment-tree.test.cpp
       title: test/implicit-lazy-segment-tree.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/karatsuba.test.cpp
       title: test/karatsuba.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/kruskal.test.cpp
+      title: test/kruskal.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/lazy-segment-tree.test.cpp
       title: test/lazy-segment-tree.test.cpp
@@ -366,9 +384,15 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/mod-sqrt.test.cpp
       title: test/mod-sqrt.test.cpp
+    - icon: ':x:'
+      path: test/offline-2d-binary-indexed-tree.test.cpp
+      title: test/offline-2d-binary-indexed-tree.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/point-update-segment-tree.test.cpp
       title: test/point-update-segment-tree.test.cpp
+    - icon: ':x:'
+      path: test/push-relabel.test.cpp
+      title: test/push-relabel.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/segment-tree-beats.test.cpp
       title: test/segment-tree-beats.test.cpp
@@ -387,6 +411,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/suffix-array.test.cpp
       title: test/suffix-array.test.cpp
+    - icon: ':x:'
+      path: test/topological-sort.test.cpp
+      title: test/topological-sort.test.cpp
 layout: toppage
 ---
 [![Badge](https://cp-logo.vercel.app/codeforces/12tqian)](https://codeforces.com/profile/12tqian)

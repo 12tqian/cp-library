@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/bellman-ford.test.cpp
     title: test/bellman-ford.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "/**\n * dist is INF if you can't reach and -INF if it is in a negative\
@@ -75,7 +75,7 @@ data:
   path: library/graphs/bellman-ford.hpp
   requiredBy: []
   timestamp: '2021-07-24 21:57:36-04:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/bellman-ford.test.cpp
 documentation_of: library/graphs/bellman-ford.hpp

@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: test/topological-sort.test.cpp
+    title: test/topological-sort.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "\n/**\n * If size of std::vector is n, then it is a DAG, if it's not\
@@ -31,8 +34,9 @@ data:
   path: library/graphs/topological-sort.hpp
   requiredBy: []
   timestamp: '2021-07-24 22:29:57-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_WA
+  verifiedWith:
+  - test/topological-sort.test.cpp
 documentation_of: library/graphs/topological-sort.hpp
 layout: document
 redirect_from:

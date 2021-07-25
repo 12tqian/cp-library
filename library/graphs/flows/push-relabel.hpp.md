@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: test/push-relabel.test.cpp
+    title: test/push-relabel.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "\n/**\n * Treat this as a black box xD\n * Calculates max flow\n *\
@@ -46,11 +49,7 @@ data:
     \t\t\twhile (!lst[highest].empty()) {\n\t\t\t\tint v = lst[highest].back();\n\t\
     \t\t\tlst[highest].pop_back();\n\t\t\t\tdischarge(v);\n\t\t\t\tif (work > 4 *\
     \ n)\n\t\t\t\t\tglobal_relabel();\n\t\t\t}\n\t\treturn excess[t] + INF;\n\t}\n\
-    };\n\nint main() {\n\tusing namespace std;\n\tios_base::sync_with_stdio(0);\n\t\
-    int n, m;\n\tcin >> n >> m;\n\tPushRelabel<long long> P;\n\tP.init(n);\n\tfor\
-    \ (int i = 0; i < m; i++) {\n\t\tint u, v, w; cin >> u >> v >> w;\n\t\tu--, v--;\n\
-    \t\tP.ae(u, v, w);\n\t\tP.ae(v, u, w);\n\t}\n\tcout << P.max_flow(0, n - 1) <<\
-    \ '\\n';\n\treturn 0;\n}\n"
+    };\n"
   code: "#pragma once\n\n/**\n * Treat this as a black box xD\n * Calculates max flow\n\
     \ * You can probably add stuff to recover it\n * Most cases, Dinic is better since\
     \ you understand it\n */\n\ntemplate <class F> struct PushRelabel {\n\n\tstruct\
@@ -89,18 +88,15 @@ data:
     \t\t\twhile (!lst[highest].empty()) {\n\t\t\t\tint v = lst[highest].back();\n\t\
     \t\t\tlst[highest].pop_back();\n\t\t\t\tdischarge(v);\n\t\t\t\tif (work > 4 *\
     \ n)\n\t\t\t\t\tglobal_relabel();\n\t\t\t}\n\t\treturn excess[t] + INF;\n\t}\n\
-    };\n\nint main() {\n\tusing namespace std;\n\tios_base::sync_with_stdio(0);\n\t\
-    int n, m;\n\tcin >> n >> m;\n\tPushRelabel<long long> P;\n\tP.init(n);\n\tfor\
-    \ (int i = 0; i < m; i++) {\n\t\tint u, v, w; cin >> u >> v >> w;\n\t\tu--, v--;\n\
-    \t\tP.ae(u, v, w);\n\t\tP.ae(v, u, w);\n\t}\n\tcout << P.max_flow(0, n - 1) <<\
-    \ '\\n';\n\treturn 0;\n}\n"
+    };"
   dependsOn: []
   isVerificationFile: false
   path: library/graphs/flows/push-relabel.hpp
   requiredBy: []
-  timestamp: '2021-07-24 19:40:07-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  timestamp: '2021-07-25 00:42:29-04:00'
+  verificationStatus: LIBRARY_ALL_WA
+  verifiedWith:
+  - test/push-relabel.test.cpp
 documentation_of: library/graphs/flows/push-relabel.hpp
 layout: document
 redirect_from:

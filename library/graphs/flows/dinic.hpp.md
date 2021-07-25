@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: test/dinic.test.cpp
+    title: test/dinic.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "\ntemplate <class F> struct Dinic {\n\tstruct Edge { int to; F flow,\
@@ -30,17 +33,7 @@ data:
     \ -= df;\n\t\t\t\treturn df;\n\t\t\t}\n\t\t}\n\t\treturn 0;\n\t}\n\t\n\tF max_flow(int\
     \ s, int t) {\n\t\tF tot = 0;\n\t\twhile (bfs(s, t)) \n\t\t\twhile (F df = dfs(s,\
     \ t, std::numeric_limits<F>::max())) \n\t\t\t\ttot += df;\n\t\treturn tot;\n\t\
-    }\n};\n\nint main() {\n\tusing namespace std;\n\tios_base::sync_with_stdio(0);\n\
-    \tint L, R; cin >> L >> R;\n\tint M; cin >> M;\n\tDinic<int> D;\n\tD.init(L +\
-    \ R + 2);\n\tfor (int i = 0; i < M; i++) {\n\t\tint u, v; cin >> u >> v;\n\t\t\
-    u--, v--;\n\t\tint x = u + 1;\n\t\tint y = L + v + 1;\n\t\tD.ae(x, y, 1);\n\t\
-    }\n\tfor (int i = 1; i <= L; i++) \n\t\tD.ae(0, i, 1);\n\tfor (int i = L + 1;\
-    \ i <= L + R; i++) \n\t\tD.ae(i, L + R + 1, 1);\n\tcout << D.max_flow(0, L + R\
-    \ + 1) << '\\n';\n\tfor (int i = 1; i <= L; i++) {\n\t\tfor (auto& eid : D.adj[i])\
-    \ {\n\t\t\tif (eid & 1)\n\t\t\t\tcontinue;\n\t\t\tauto& e = D.edges[eid];\n\t\t\
-    \tif (e.cap == e.flow) {\n\t\t\t\tint u = i - 1;\n\t\t\t\tint v = e.to - L - 1;\n\
-    \t\t\t\tcout << u << \" \" << v << '\\n';\n\t\t\t}\n\t\t}\n\t}\n\treturn 0;\n\
-    }\n"
+    }\n};\n"
   code: "#pragma once\n\ntemplate <class F> struct Dinic {\n\tstruct Edge { int to;\
     \ F flow, cap; };\n\tint n;\n\tstd::vector<Edge> edges;\n\tstd::vector<std::vector<int>>\
     \ adj;\n\tstd::vector<int> level;\n\tstd::vector<std::vector<int>::iterator> cur;\n\
@@ -63,23 +56,15 @@ data:
     \ -= df;\n\t\t\t\treturn df;\n\t\t\t}\n\t\t}\n\t\treturn 0;\n\t}\n\t\n\tF max_flow(int\
     \ s, int t) {\n\t\tF tot = 0;\n\t\twhile (bfs(s, t)) \n\t\t\twhile (F df = dfs(s,\
     \ t, std::numeric_limits<F>::max())) \n\t\t\t\ttot += df;\n\t\treturn tot;\n\t\
-    }\n};\n\nint main() {\n\tusing namespace std;\n\tios_base::sync_with_stdio(0);\n\
-    \tint L, R; cin >> L >> R;\n\tint M; cin >> M;\n\tDinic<int> D;\n\tD.init(L +\
-    \ R + 2);\n\tfor (int i = 0; i < M; i++) {\n\t\tint u, v; cin >> u >> v;\n\t\t\
-    u--, v--;\n\t\tint x = u + 1;\n\t\tint y = L + v + 1;\n\t\tD.ae(x, y, 1);\n\t\
-    }\n\tfor (int i = 1; i <= L; i++) \n\t\tD.ae(0, i, 1);\n\tfor (int i = L + 1;\
-    \ i <= L + R; i++) \n\t\tD.ae(i, L + R + 1, 1);\n\tcout << D.max_flow(0, L + R\
-    \ + 1) << '\\n';\n\tfor (int i = 1; i <= L; i++) {\n\t\tfor (auto& eid : D.adj[i])\
-    \ {\n\t\t\tif (eid & 1)\n\t\t\t\tcontinue;\n\t\t\tauto& e = D.edges[eid];\n\t\t\
-    \tif (e.cap == e.flow) {\n\t\t\t\tint u = i - 1;\n\t\t\t\tint v = e.to - L - 1;\n\
-    \t\t\t\tcout << u << \" \" << v << '\\n';\n\t\t\t}\n\t\t}\n\t}\n\treturn 0;\n}"
+    }\n};"
   dependsOn: []
   isVerificationFile: false
   path: library/graphs/flows/dinic.hpp
   requiredBy: []
-  timestamp: '2021-07-24 19:40:07-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  timestamp: '2021-07-25 00:42:29-04:00'
+  verificationStatus: LIBRARY_ALL_WA
+  verifiedWith:
+  - test/dinic.test.cpp
 documentation_of: library/graphs/flows/dinic.hpp
 layout: document
 redirect_from:

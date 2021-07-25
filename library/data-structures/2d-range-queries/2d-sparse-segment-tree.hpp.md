@@ -1,7 +1,10 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: test/2d-sparse-segment-tree.cpp
+    title: test/2d-sparse-segment-tree.cpp
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
@@ -77,7 +80,8 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: library/data-structures/2d-range-queries/2d-sparse-segment-tree.hpp
-  requiredBy: []
+  requiredBy:
+  - test/2d-sparse-segment-tree.cpp
   timestamp: '2021-07-24 21:49:44-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []

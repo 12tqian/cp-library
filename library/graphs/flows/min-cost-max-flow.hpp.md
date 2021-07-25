@@ -1,7 +1,10 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: test/min-cost-max-flow.cpp
+    title: test/min-cost-max-flow.cpp
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
@@ -37,11 +40,7 @@ data:
     \ = std::min(df, e.cap - e.flow);\n\t\t\t}\n\t\t\ttotal_flow += df;\n\t\t\ttotal_cost\
     \ += (p[t] - p[s]) * df;\n\t\t\tfor (int x = t; x != s; x = edges[pre[x] ^ 1].to)\
     \ \n\t\t\t\tedges[pre[x]].flow += df, edges[pre[x] ^ 1].flow -= df;\n\t\t}\n\t\
-    \treturn {total_flow, total_cost};\n\t}\n};\n\nint main() {\n\tusing namespace\
-    \ std;\n\tint n, m, s, t;\n\tcin >> n >> m >> s >> t;\n\tMCMF<int, int> M;\n\t\
-    M.init(n);\n\tfor (int i = 0; i < m; i++) {\n\t\tint u, v, c, w;\n\t\tcin >> u\
-    \ >> v >> c >> w;\n\t\tM.ae(u, v, c, w);\n\t}\n\tauto res = M.calc(s, t);\n\t\
-    cout << res.first << \" \" << res.second << '\\n';\n\treturn 0;\n}\n"
+    \treturn {total_flow, total_cost};\n\t}\n};\n"
   code: "#pragma once\n/**\n * to get back the original edges, assign ID's in ae\n\
     \ */\n\ntemplate <class F, class C> struct MCMF {\n\tstruct Edge { int to; F flow,\
     \ cap; C cost; };\n\n\tint n;\n\tstd::vector<C> p, dist;\n\tstd::vector<int> pre;\n\
@@ -71,16 +70,13 @@ data:
     \ = std::min(df, e.cap - e.flow);\n\t\t\t}\n\t\t\ttotal_flow += df;\n\t\t\ttotal_cost\
     \ += (p[t] - p[s]) * df;\n\t\t\tfor (int x = t; x != s; x = edges[pre[x] ^ 1].to)\
     \ \n\t\t\t\tedges[pre[x]].flow += df, edges[pre[x] ^ 1].flow -= df;\n\t\t}\n\t\
-    \treturn {total_flow, total_cost};\n\t}\n};\n\nint main() {\n\tusing namespace\
-    \ std;\n\tint n, m, s, t;\n\tcin >> n >> m >> s >> t;\n\tMCMF<int, int> M;\n\t\
-    M.init(n);\n\tfor (int i = 0; i < m; i++) {\n\t\tint u, v, c, w;\n\t\tcin >> u\
-    \ >> v >> c >> w;\n\t\tM.ae(u, v, c, w);\n\t}\n\tauto res = M.calc(s, t);\n\t\
-    cout << res.first << \" \" << res.second << '\\n';\n\treturn 0;\n}"
+    \treturn {total_flow, total_cost};\n\t}\n};"
   dependsOn: []
   isVerificationFile: false
   path: library/graphs/flows/min-cost-max-flow.hpp
-  requiredBy: []
-  timestamp: '2021-07-24 19:40:07-04:00'
+  requiredBy:
+  - test/min-cost-max-flow.cpp
+  timestamp: '2021-07-25 00:42:29-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/graphs/flows/min-cost-max-flow.hpp

@@ -1,23 +1,23 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/graphs/bellman-ford.hpp
     title: library/graphs/bellman-ford.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_B
+    PROBLEM: https://judge.yosupo.jp/problem/bipartitematching
     links:
-    - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_B
-  bundledCode: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_B\"\
+    - https://judge.yosupo.jp/problem/bipartitematching
+  bundledCode: "#define PROBLEM \"https://judge.yosupo.jp/problem/bipartitematching\"\
     \n\n#include <algorithm>\n#include <array>\n#include <bitset>\n#include <cassert>\n\
     #include <chrono>\n#include <cmath>\n#include <complex>\n#include <cstdio>\n#include\
     \ <cstdlib>\n#include <cstring>\n#include <ctime>\n#include <deque>\n#include\
@@ -61,8 +61,8 @@ data:
     \tif (dist == B.INF) \n\t\t\tcout << \"INF\\n\";\n\t\telse if (dist == -B.INF)\n\
     \t\t\tassert(false);\n\t\telse \n\t\t\tcout << dist << '\\n';\n\t}\n\treturn 0;\n\
     }\n"
-  code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_B\"\
-    \n\n#include \"../library/contest/template-minimal.hpp\"\n#include \"../library/graphs/bellman-ford.hpp\"\
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/bipartitematching\"\n\n\
+    #include \"../library/contest/template-minimal.hpp\"\n#include \"../library/graphs/bellman-ford.hpp\"\
     \n\n// kattis\nint main() {\n\tusing namespace std;\n\tint n, m, r;\n\tcin >>\
     \ n >> m >> r;\n\tBellmanFord<long long> B;\n\tB.init(n);\n\tfor (int i = 0; i\
     \ < m; i++) {\n\t\tint u, v, w; \n\t\tcin >> u >> v >> w;\n\t\tB.ae(u, v, w);\n\
@@ -77,8 +77,8 @@ data:
   isVerificationFile: true
   path: test/bellman-ford.test.cpp
   requiredBy: []
-  timestamp: '2021-07-24 23:00:09-04:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2021-07-25 00:42:29-04:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/bellman-ford.test.cpp
 layout: document

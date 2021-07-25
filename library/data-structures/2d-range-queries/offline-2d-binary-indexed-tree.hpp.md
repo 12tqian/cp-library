@@ -2,18 +2,21 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: test/offline-2d-binary-indexed-tree.test.cpp
+    title: test/offline-2d-binary-indexed-tree.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "\n/**\n * x \\in [0, sz)\n * y \\in [0, sz)\n * First do all the updates,\
     \ then call init\n * Afterwards, do the updates again, and now you can mix in\
-    \ the queries too\n */\n\ntemplate<class T> struct Offline2DBIT { \n\tbool mode\
-    \ = 0; // mode = 1 -> initialized\n\tint sz;\n\tstd::vector<std::pair<int, int>>\
-    \ todo;\n\tstd::vector<int> cnt, st, val;\n\tstd::vector<T> bit;\n\n\tvoid init(int\
-    \ sz_) {\n\t\tsz = sz_;\n\t\tsz++;\n\t\tcnt.assign(sz, 0);\n\t\tst.assign(sz,\
+    \ the queries too\n */\n\ntemplate <class T> struct Offline2DBIT { \n\tbool mode\
+    \ = false; // mode = 1 -> initialized\n\tint sz;\n\tstd::vector<std::pair<int,\
+    \ int>> todo;\n\tstd::vector<int> cnt, st, val;\n\tstd::vector<T> bit;\n\n\tvoid\
+    \ init(int sz_) {\n\t\tsz = sz_;\n\t\tsz++;\n\t\tcnt.assign(sz, 0);\n\t\tst.assign(sz,\
     \ 0);\n\t\tassert(!mode); mode = 1;\n\t\tstd::vector<int> lst(sz, 0);\n\t\tcnt.assign(sz,\
     \ 0);\n\t\tsort(todo.begin(), todo.end(), [](const std::pair<int, int>& a, const\
     \ std::pair<int, int>& b) { \n\t\t\treturn a.second < b.second; });\n\t\tfor (auto\
@@ -38,8 +41,8 @@ data:
     };\n"
   code: "#pragma once\n\n/**\n * x \\in [0, sz)\n * y \\in [0, sz)\n * First do all\
     \ the updates, then call init\n * Afterwards, do the updates again, and now you\
-    \ can mix in the queries too\n */\n\ntemplate<class T> struct Offline2DBIT { \n\
-    \tbool mode = 0; // mode = 1 -> initialized\n\tint sz;\n\tstd::vector<std::pair<int,\
+    \ can mix in the queries too\n */\n\ntemplate <class T> struct Offline2DBIT {\
+    \ \n\tbool mode = false; // mode = 1 -> initialized\n\tint sz;\n\tstd::vector<std::pair<int,\
     \ int>> todo;\n\tstd::vector<int> cnt, st, val;\n\tstd::vector<T> bit;\n\n\tvoid\
     \ init(int sz_) {\n\t\tsz = sz_;\n\t\tsz++;\n\t\tcnt.assign(sz, 0);\n\t\tst.assign(sz,\
     \ 0);\n\t\tassert(!mode); mode = 1;\n\t\tstd::vector<int> lst(sz, 0);\n\t\tcnt.assign(sz,\
@@ -68,9 +71,10 @@ data:
   isVerificationFile: false
   path: library/data-structures/2d-range-queries/offline-2d-binary-indexed-tree.hpp
   requiredBy: []
-  timestamp: '2021-07-24 21:49:44-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  timestamp: '2021-07-25 00:42:29-04:00'
+  verificationStatus: LIBRARY_ALL_WA
+  verifiedWith:
+  - test/offline-2d-binary-indexed-tree.test.cpp
 documentation_of: library/data-structures/2d-range-queries/offline-2d-binary-indexed-tree.hpp
 layout: document
 redirect_from:

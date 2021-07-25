@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/hungarian.test.cpp
+    title: test/hungarian.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "\n/**\n * Another black box algorithm I don't understand\n * But I\
@@ -30,12 +33,7 @@ data:
     \t\t\t\t} else {\n\t\t\t\t\tdist[ww] -= delta;\n\t\t\t\t}\n\t\t\t}\n\t\t\tw =\
     \ nxt;\n\t\t}\n\t\tfor (int ww; w; w = ww) \n\t\t\tjob[w] = job[ww = pre[w]];\n\
     \t}\n\tjob.erase(job.begin());\n\tfor (int i = 0; i < m; i++)\n\t\tjob[i]--;\n\
-    \treturn {-v[0], job};\n}\n\nint main() {\n\tusing namespace std;\n\tint n; cin\
-    \ >> n;\n\tvector<vector<long long>> a(n, vector<long long>(n));\n\tfor (int i\
-    \ = 0; i < n; i++)\n\t\tfor (int j = 0; j < n; j++) cin >> a[i][j];\n\tauto res\
-    \ = hungarian(a);\n\tvector<int> loc(n);\n\tfor (int i = 0; i < n; i++) {\n\t\t\
-    loc[res.second[i]] = i;\n\t}\n\tcout << res.first << '\\n';\n\tfor (int x : loc)\
-    \ \n\t\tcout << x << \" \";\n\tcout << '\\n';\n\treturn 0;\n}\n"
+    \treturn {-v[0], job};\n}\n"
   code: "#pragma once\n\n/**\n * Another black box algorithm I don't understand\n\
     \ * But I can use \n * O(N^2M) for N jobs and M workers \n * 0-indexed\n * Returns\
     \ the cost, and the assignment\n * job stores the job each worker gets assigned\
@@ -58,19 +56,15 @@ data:
     \t\t\t\t} else {\n\t\t\t\t\tdist[ww] -= delta;\n\t\t\t\t}\n\t\t\t}\n\t\t\tw =\
     \ nxt;\n\t\t}\n\t\tfor (int ww; w; w = ww) \n\t\t\tjob[w] = job[ww = pre[w]];\n\
     \t}\n\tjob.erase(job.begin());\n\tfor (int i = 0; i < m; i++)\n\t\tjob[i]--;\n\
-    \treturn {-v[0], job};\n}\n\nint main() {\n\tusing namespace std;\n\tint n; cin\
-    \ >> n;\n\tvector<vector<long long>> a(n, vector<long long>(n));\n\tfor (int i\
-    \ = 0; i < n; i++)\n\t\tfor (int j = 0; j < n; j++) cin >> a[i][j];\n\tauto res\
-    \ = hungarian(a);\n\tvector<int> loc(n);\n\tfor (int i = 0; i < n; i++) {\n\t\t\
-    loc[res.second[i]] = i;\n\t}\n\tcout << res.first << '\\n';\n\tfor (int x : loc)\
-    \ \n\t\tcout << x << \" \";\n\tcout << '\\n';\n\treturn 0;\n}"
+    \treturn {-v[0], job};\n}"
   dependsOn: []
   isVerificationFile: false
   path: library/graphs/flows/hungarian.hpp
   requiredBy: []
-  timestamp: '2021-07-24 19:40:07-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  timestamp: '2021-07-25 00:42:29-04:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/hungarian.test.cpp
 documentation_of: library/graphs/flows/hungarian.hpp
 layout: document
 redirect_from:

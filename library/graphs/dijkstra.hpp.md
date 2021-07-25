@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/dijkstra.test.cpp
+    title: test/dijkstra.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "\ntemplate <class C, bool directed> struct Dijkstra {\n\tint SZ; std::vector<C>\
@@ -36,8 +39,9 @@ data:
   path: library/graphs/dijkstra.hpp
   requiredBy: []
   timestamp: '2021-07-24 19:40:07-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/dijkstra.test.cpp
 documentation_of: library/graphs/dijkstra.hpp
 layout: document
 redirect_from:

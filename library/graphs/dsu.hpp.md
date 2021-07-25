@@ -1,11 +1,17 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: library/graphs/kruskal.hpp
+    title: library/graphs/kruskal.hpp
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/kruskal.test.cpp
+    title: test/kruskal.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "\nstruct DSU {\n\tstd::vector<int> e;\n\n\tvoid init(int n) {\n\t\t\
@@ -25,10 +31,12 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: library/graphs/dsu.hpp
-  requiredBy: []
+  requiredBy:
+  - library/graphs/kruskal.hpp
   timestamp: '2021-07-24 19:40:07-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/kruskal.test.cpp
 documentation_of: library/graphs/dsu.hpp
 layout: document
 redirect_from:
