@@ -76,15 +76,15 @@ data:
     \ R);\n\t\treturn res;\n\t}\n};\n"
   dependsOn: []
   isVerificationFile: false
-  path: library/data-structures/2d-range-queries/2d-sparse-seg.hpp
+  path: library/data-structures/2d-range-queries/2d-sparse-segment-tree.hpp
   requiredBy: []
-  timestamp: '2021-07-24 19:40:07-04:00'
+  timestamp: '2021-07-24 21:49:44-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: library/data-structures/2d-range-queries/2d-sparse-seg.hpp
+documentation_of: library/data-structures/2d-range-queries/2d-sparse-segment-tree.hpp
 layout: document
 redirect_from:
-- /library/library/data-structures/2d-range-queries/2d-sparse-seg.hpp
-- /library/library/data-structures/2d-range-queries/2d-sparse-seg.hpp.html
-title: library/data-structures/2d-range-queries/2d-sparse-seg.hpp
+- /library/library/data-structures/2d-range-queries/2d-sparse-segment-tree.hpp
+- /library/library/data-structures/2d-range-queries/2d-sparse-segment-tree.hpp.html
+title: library/data-structures/2d-range-queries/2d-sparse-segment-tree.hpp
 ---

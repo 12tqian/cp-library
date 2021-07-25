@@ -21,8 +21,7 @@ data:
     \t\tjump[j][i] = comb(jump[j - 1][i], jump[j - 1][i + (1 << (j - 1))]);\n\t\t\t\
     }\n\t\t}\n\t}\n\n\tint index(int l, int r) {\n\t\tassert(l <= r);\n\t\tint d =\
     \ level(r - l + 1);\n\t\treturn comb(jump[d][l], jump[d][r - (1 << d) + 1]);\n\
-    \t}\n\n\tT query(int l, int r) {\n\t\treturn v[index(l, r)];\n\t}\n};\n\nint main()\
-    \ {\n\treturn 0;\n}\n"
+    \t}\n\n\tT query(int l, int r) {\n\t\treturn v[index(l, r)];\n\t}\n};\n"
   code: "#pragma once\n\n/**\n * This Sparse Table stores indices of things\n * For\
     \ destructive combinations like gcd, use associative_range_query.cpp\n * Use this\
     \ for min, max, and when you need the indices of things\n */\n\ntemplate <class\
@@ -36,13 +35,12 @@ data:
     \t\tjump[j][i] = comb(jump[j - 1][i], jump[j - 1][i + (1 << (j - 1))]);\n\t\t\t\
     }\n\t\t}\n\t}\n\n\tint index(int l, int r) {\n\t\tassert(l <= r);\n\t\tint d =\
     \ level(r - l + 1);\n\t\treturn comb(jump[d][l], jump[d][r - (1 << d) + 1]);\n\
-    \t}\n\n\tT query(int l, int r) {\n\t\treturn v[index(l, r)];\n\t}\n};\n\nint main()\
-    \ {\n\treturn 0;\n}\n"
+    \t}\n\n\tT query(int l, int r) {\n\t\treturn v[index(l, r)];\n\t}\n};"
   dependsOn: []
   isVerificationFile: false
   path: library/data-structures/1d-range-queries/sparse-table.hpp
   requiredBy: []
-  timestamp: '2021-07-24 19:40:07-04:00'
+  timestamp: '2021-07-24 21:49:44-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/data-structures/1d-range-queries/sparse-table.hpp

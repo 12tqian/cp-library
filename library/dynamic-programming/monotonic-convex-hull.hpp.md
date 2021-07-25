@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: test/monotonic-convex-hull.test.cpp
+    title: test/monotonic-convex-hull.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "\n// answers min queries currently\n// don't forget to change ord\n\
@@ -30,15 +33,7 @@ data:
     if (ord == 1) {\n\t\t\twhile (front().lst < x) {\n\t\t\t\tpop_front();\n\t\t\t\
     }\n\t\t\treturn -front().eval(x);\n\t\t} else {\n\t\t\twhile (size() > 1 && prev(prev(end()))->lst\
     \ >= x) {\n\t\t\t\tpop_back();\n\t\t\t}\n\t\t\treturn -back().eval(x);\n\t\t}\n\
-    \t}\n};\n\n// 189 div 1C\nint main() {\n\tstd::ios_base::sync_with_stdio(0);\n\
-    \tstd::cin.tie(0);\n\tint n; std::cin >> n;\n\tstd::vector<long long> a(n), b(n);\n\
-    \tfor (int i = 0; i < n; i++) std::cin >> a[i];\n\tfor (int i = 0; i < n; i++)\
-    \ std::cin >> b[i];\n\tstd::vector<long long> pre(n);\n\tfor (int i = 0; i < n;\
-    \ i++) {\n\t\tpre[i] = a[i] + (i ? pre[i - 1] : 0);\n\t}\n\tConvexHullDeque C;\n\
-    \tstd::vector<long long> dp(n);\n\tfor (int i = 0; i < n; i++) {\n\t\tif (i ==\
-    \ 0) {\n\t\t\tdp[i] = 0;\n\t\t\tC.add(b[i], dp[i]);\n\t\t} else {\n\t\t\tdp[i]\
-    \ = C.query(a[i]);\n\t\t\tC.add(b[i], dp[i]);\n\t\t}\n\t}\n\tstd::cout << dp[n\
-    \ - 1] << '\\n';\n\treturn 0;\n}\n"
+    \t}\n};\n"
   code: "#pragma once\n\n// answers min queries currently\n// don't forget to change\
     \ ord\n\nconst long long INF = 1e18;\nstruct Line {\n\tmutable long long a, b,\
     \ lst;\n\n\tlong long eval(long long x) {\n\t\treturn a * x + b;\n\t}\n\n\tbool\
@@ -61,22 +56,15 @@ data:
     if (ord == 1) {\n\t\t\twhile (front().lst < x) {\n\t\t\t\tpop_front();\n\t\t\t\
     }\n\t\t\treturn -front().eval(x);\n\t\t} else {\n\t\t\twhile (size() > 1 && prev(prev(end()))->lst\
     \ >= x) {\n\t\t\t\tpop_back();\n\t\t\t}\n\t\t\treturn -back().eval(x);\n\t\t}\n\
-    \t}\n};\n\n// 189 div 1C\nint main() {\n\tstd::ios_base::sync_with_stdio(0);\n\
-    \tstd::cin.tie(0);\n\tint n; std::cin >> n;\n\tstd::vector<long long> a(n), b(n);\n\
-    \tfor (int i = 0; i < n; i++) std::cin >> a[i];\n\tfor (int i = 0; i < n; i++)\
-    \ std::cin >> b[i];\n\tstd::vector<long long> pre(n);\n\tfor (int i = 0; i < n;\
-    \ i++) {\n\t\tpre[i] = a[i] + (i ? pre[i - 1] : 0);\n\t}\n\tConvexHullDeque C;\n\
-    \tstd::vector<long long> dp(n);\n\tfor (int i = 0; i < n; i++) {\n\t\tif (i ==\
-    \ 0) {\n\t\t\tdp[i] = 0;\n\t\t\tC.add(b[i], dp[i]);\n\t\t} else {\n\t\t\tdp[i]\
-    \ = C.query(a[i]);\n\t\t\tC.add(b[i], dp[i]);\n\t\t}\n\t}\n\tstd::cout << dp[n\
-    \ - 1] << '\\n';\n\treturn 0;\n}\n"
+    \t}\n};"
   dependsOn: []
   isVerificationFile: false
   path: library/dynamic-programming/monotonic-convex-hull.hpp
   requiredBy: []
-  timestamp: '2021-07-24 19:40:07-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  timestamp: '2021-07-24 21:49:44-04:00'
+  verificationStatus: LIBRARY_ALL_WA
+  verifiedWith:
+  - test/monotonic-convex-hull.test.cpp
 documentation_of: library/dynamic-programming/monotonic-convex-hull.hpp
 layout: document
 redirect_from:

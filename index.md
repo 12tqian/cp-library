@@ -6,7 +6,7 @@ data:
     - icon: ':warning:'
       path: library/contest/template-full.cpp
       title: library/contest/template-full.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/contest/template-minimal.hpp
       title: library/contest/template-minimal.hpp
     - icon: ':warning:'
@@ -56,17 +56,17 @@ data:
   - name: library/data-structures/2d-range-queries
     pages:
     - icon: ':warning:'
-      path: library/data-structures/2d-range-queries/2d-sparse-seg.hpp
-      title: library/data-structures/2d-range-queries/2d-sparse-seg.hpp
+      path: library/data-structures/2d-range-queries/2d-sparse-segment-tree.hpp
+      title: library/data-structures/2d-range-queries/2d-sparse-segment-tree.hpp
     - icon: ':warning:'
-      path: library/data-structures/2d-range-queries/binary-indexed-tree-seg.hpp
-      title: library/data-structures/2d-range-queries/binary-indexed-tree-seg.hpp
+      path: library/data-structures/2d-range-queries/binary-indexed-tree-segment-tree.hpp
+      title: library/data-structures/2d-range-queries/binary-indexed-tree-segment-tree.hpp
     - icon: ':warning:'
-      path: library/data-structures/2d-range-queries/general-fenwick.hpp
-      title: library/data-structures/2d-range-queries/general-fenwick.hpp
+      path: library/data-structures/2d-range-queries/general-fenwick-tree.hpp
+      title: library/data-structures/2d-range-queries/general-fenwick-tree.hpp
     - icon: ':warning:'
-      path: library/data-structures/2d-range-queries/offline-2d-bit.hpp
-      title: library/data-structures/2d-range-queries/offline-2d-bit.hpp
+      path: library/data-structures/2d-range-queries/offline-2d-binary-indexed-tree.hpp
+      title: library/data-structures/2d-range-queries/offline-2d-binary-indexed-tree.hpp
     - icon: ':warning:'
       path: library/data-structures/2d-range-queries/quadtree.hpp
       title: library/data-structures/2d-range-queries/quadtree.hpp
@@ -75,7 +75,7 @@ data:
     - icon: ':warning:'
       path: library/dynamic-programming/dynamic-convex-hull-trick.hpp
       title: library/dynamic-programming/dynamic-convex-hull-trick.hpp
-    - icon: ':warning:'
+    - icon: ':x:'
       path: library/dynamic-programming/gosper-hack.hpp
       title: library/dynamic-programming/gosper-hack.hpp
     - icon: ':warning:'
@@ -84,7 +84,7 @@ data:
     - icon: ':warning:'
       path: library/dynamic-programming/min-deque.hpp
       title: library/dynamic-programming/min-deque.hpp
-    - icon: ':warning:'
+    - icon: ':x:'
       path: library/dynamic-programming/monotonic-convex-hull.hpp
       title: library/dynamic-programming/monotonic-convex-hull.hpp
   - name: library/geometry
@@ -289,6 +289,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/fenwick-tree.test.cpp
       title: test/fenwick-tree.test.cpp
+    - icon: ':x:'
+      path: test/gosper-hack.test.cpp
+      title: test/gosper-hack.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/implicit-lazy-segment-tree.test.cpp
       title: test/implicit-lazy-segment-tree.test.cpp
@@ -301,6 +304,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/li-chao-tree-online.test.cpp
       title: test/li-chao-tree-online.test.cpp
+    - icon: ':x:'
+      path: test/monotonic-convex-hull.test.cpp
+      title: test/monotonic-convex-hull.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/point-update-segment-tree.test.cpp
       title: test/point-update-segment-tree.test.cpp

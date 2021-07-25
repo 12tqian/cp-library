@@ -70,15 +70,15 @@ data:
     \ 1, y1, y2); \n\t}\n};\n\n"
   dependsOn: []
   isVerificationFile: false
-  path: library/data-structures/2d-range-queries/binary-indexed-tree-seg.hpp
+  path: library/data-structures/2d-range-queries/binary-indexed-tree-segment-tree.hpp
   requiredBy: []
-  timestamp: '2021-07-24 19:40:07-04:00'
+  timestamp: '2021-07-24 21:49:44-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: library/data-structures/2d-range-queries/binary-indexed-tree-seg.hpp
+documentation_of: library/data-structures/2d-range-queries/binary-indexed-tree-segment-tree.hpp
 layout: document
 redirect_from:
-- /library/library/data-structures/2d-range-queries/binary-indexed-tree-seg.hpp
-- /library/library/data-structures/2d-range-queries/binary-indexed-tree-seg.hpp.html
-title: library/data-structures/2d-range-queries/binary-indexed-tree-seg.hpp
+- /library/library/data-structures/2d-range-queries/binary-indexed-tree-segment-tree.hpp
+- /library/library/data-structures/2d-range-queries/binary-indexed-tree-segment-tree.hpp.html
+title: library/data-structures/2d-range-queries/binary-indexed-tree-segment-tree.hpp
 ---

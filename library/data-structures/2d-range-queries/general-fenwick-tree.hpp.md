@@ -38,15 +38,15 @@ data:
     \ bit[ind += i].val;\n\t\tassert(ind < N); return ind + 1;\n\t}\n}; \n\n"
   dependsOn: []
   isVerificationFile: false
-  path: library/data-structures/2d-range-queries/general-fenwick.hpp
+  path: library/data-structures/2d-range-queries/general-fenwick-tree.hpp
   requiredBy: []
-  timestamp: '2021-07-24 19:40:07-04:00'
+  timestamp: '2021-07-24 21:49:44-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: library/data-structures/2d-range-queries/general-fenwick.hpp
+documentation_of: library/data-structures/2d-range-queries/general-fenwick-tree.hpp
 layout: document
 redirect_from:
-- /library/library/data-structures/2d-range-queries/general-fenwick.hpp
-- /library/library/data-structures/2d-range-queries/general-fenwick.hpp.html
-title: library/data-structures/2d-range-queries/general-fenwick.hpp
+- /library/library/data-structures/2d-range-queries/general-fenwick-tree.hpp
+- /library/library/data-structures/2d-range-queries/general-fenwick-tree.hpp.html
+title: library/data-structures/2d-range-queries/general-fenwick-tree.hpp
 ---

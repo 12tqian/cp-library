@@ -12,6 +12,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/fenwick-tree.test.cpp
     title: test/fenwick-tree.test.cpp
+  - icon: ':x:'
+    path: test/gosper-hack.test.cpp
+    title: test/gosper-hack.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/implicit-lazy-segment-tree.test.cpp
     title: test/implicit-lazy-segment-tree.test.cpp
@@ -24,6 +27,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/li-chao-tree-online.test.cpp
     title: test/li-chao-tree-online.test.cpp
+  - icon: ':x:'
+    path: test/monotonic-convex-hull.test.cpp
+    title: test/monotonic-convex-hull.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/point-update-segment-tree.test.cpp
     title: test/point-update-segment-tree.test.cpp
@@ -33,9 +39,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/sparse-segment-tree.test.cpp
     title: test/sparse-segment-tree.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: '#include <algorithm>
@@ -141,8 +147,9 @@ data:
   path: library/contest/template-minimal.hpp
   requiredBy: []
   timestamp: '2021-07-24 20:00:47-04:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
+  - test/monotonic-convex-hull.test.cpp
   - test/implicit-lazy-segment-tree.test.cpp
   - test/sparse-segment-tree.test.cpp
   - test/lazy-segment-tree.test.cpp
@@ -150,6 +157,7 @@ data:
   - test/affine-segment-tree.test.cpp
   - test/associative-range-query.test.cpp
   - test/point-update-segment-tree.test.cpp
+  - test/gosper-hack.test.cpp
   - test/segment-tree-beats.test.cpp
   - test/li-chao-tree-online.test.cpp
   - test/li-chao-tree-offline.test.cpp
