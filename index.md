@@ -6,7 +6,7 @@ data:
     - icon: ':warning:'
       path: library/contest/template-full.cpp
       title: library/contest/template-full.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/contest/template-minimal.hpp
       title: library/contest/template-minimal.hpp
     - icon: ':warning:'
@@ -44,12 +44,12 @@ data:
     - icon: ':warning:'
       path: library/data-structures/1d-range-queries/range-set-segment-tree.hpp
       title: library/data-structures/1d-range-queries/range-set-segment-tree.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/data-structures/1d-range-queries/segment-tree-beats.hpp
       title: library/data-structures/1d-range-queries/segment-tree-beats.hpp
-    - icon: ':warning:'
-      path: library/data-structures/1d-range-queries/sparse-seg.hpp
-      title: library/data-structures/1d-range-queries/sparse-seg.hpp
+    - icon: ':heavy_check_mark:'
+      path: library/data-structures/1d-range-queries/sparse-segment-tree.hpp
+      title: library/data-structures/1d-range-queries/sparse-segment-tree.hpp
     - icon: ':warning:'
       path: library/data-structures/1d-range-queries/sparse-table.hpp
       title: library/data-structures/1d-range-queries/sparse-table.hpp
@@ -304,9 +304,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/point-update-segment-tree.test.cpp
       title: test/point-update-segment-tree.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/segment-tree-beats.test.cpp
       title: test/segment-tree-beats.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/sparse-segment-tree.test.cpp
+      title: test/sparse-segment-tree.test.cpp
 layout: toppage
 ---
 ![Badge](https://cp-logo.vercel.app/codeforces/12tqian)

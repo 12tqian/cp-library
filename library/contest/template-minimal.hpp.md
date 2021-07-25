@@ -27,12 +27,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/point-update-segment-tree.test.cpp
     title: test/point-update-segment-tree.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/segment-tree-beats.test.cpp
     title: test/segment-tree-beats.test.cpp
-  _isVerificationFailed: true
+  - icon: ':heavy_check_mark:'
+    path: test/sparse-segment-tree.test.cpp
+    title: test/sparse-segment-tree.test.cpp
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: '#include <algorithm>
@@ -138,9 +141,10 @@ data:
   path: library/contest/template-minimal.hpp
   requiredBy: []
   timestamp: '2021-07-24 20:00:47-04:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/implicit-lazy-segment-tree.test.cpp
+  - test/sparse-segment-tree.test.cpp
   - test/lazy-segment-tree.test.cpp
   - test/fenwick-tree.test.cpp
   - test/affine-segment-tree.test.cpp
