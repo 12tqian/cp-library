@@ -1,4 +1,4 @@
-#define PROBLEM "https://judge.yosupo.jp/problem/static_range_sum"
+#define PROBLEM "https://judge.yosupo.jp/problem/point_add_range_sum"
 
 #include "../library/contest/template-minimal.hpp"
 #include "../library/data-structures/1d-range-queries/fenwick-tree.hpp"
