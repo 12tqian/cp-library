@@ -1,4 +1,4 @@
-#define PROBLEM "https://judge.yosupo.jp/problem/bipartitematching"
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_B"
 
 #include "../library/contest/template-minimal.hpp"
 #include "../library/graphs/bellman-ford.hpp"

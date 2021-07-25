@@ -15,7 +15,6 @@ int main() {
 		int u, v, w; 
 		cin >> u >> v >> w;
 		P.ae(u, v, w);
-		P.ae(v, u, w);
 	}
 	cout << P.max_flow(0, n - 1) << '\n';
 	return 0;
