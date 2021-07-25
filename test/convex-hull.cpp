@@ -1,7 +1,7 @@
 #define IGNORE
 
-#include "../../library/contest/template-minimal.hpp"
-#include "../../library/geometry/convex-hull.hpp"
+#include "../library/contest/template-minimal.hpp"
+#include "../library/geometry/convex-hull.hpp"
 
 // kattis verified
 int main() {
