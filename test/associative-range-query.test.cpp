@@ -1,4 +1,4 @@
-#define PROBLEM "https://atcoder.jp/contests/practice2/tasks/practice2_k"
+#define PROBLEM "https://judge.yosupo.jp/problem/static_range_sum"
 
 #include "../library/contest/template-minimal.hpp"
 #include "../library/data-structures/1d-range-queries/associative-range-query.hpp"
