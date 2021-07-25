@@ -1,7 +1,7 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/scc"
 
 #include "../library/contest/template-minimal.hpp"
-#include "../library/graphs/strongly-connected-components-tarjan.hpp	"
+#include "../library/graphs/strongly-connected-components-tarjan.hpp"
 
 int main() {
 	using namespace std;
