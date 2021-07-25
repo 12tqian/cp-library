@@ -7,5 +7,7 @@
 "test/lazy-segment-tree.test.cpp": "2021-07-24 21:20:09 -0400",
 "test/li-chao-tree-offline.test.cpp": "2021-07-24 21:27:52 -0400",
 "test/li-chao-tree-online.test.cpp": "2021-07-24 21:27:52 -0400",
-"test/point-update-segment-tree.test.cpp": "2021-07-24 21:33:21 -0400"
+"test/point-update-segment-tree.test.cpp": "2021-07-24 21:33:21 -0400",
+"test/segment-tree-beats.test.cpp": "2021-07-24 21:40:44 -0400",
+"test/sparse-segment-tree.test.cpp": "2021-07-24 21:39:13 -0400"
 }
