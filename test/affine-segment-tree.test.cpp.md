@@ -31,7 +31,7 @@ data:
     \ const int mod = MOD;\n\tstatic constexpr Mint rt() { return RT; } // primitive\
     \ root for FFT\n\tint v; \n\texplicit operator int() const { return v; } // explicit\
     \ -> don't silently convert to int\n\tMint() { v = 0; }\n\tMint(long long _v)\
-    \ { v = int((-MOD < _v && _v < MOD) ? _v : _v % MOD); if (v < 0) v += MOD; }\n\
+    \ { v = int((-MOD <= _v && _v < MOD) ? _v : _v % MOD); if (v < 0) v += MOD; }\n\
     \tfriend bool operator==(const Mint &a, const Mint &b) { return a.v == b.v; }\n\
     \tfriend bool operator!=(const Mint &a, const Mint &b) { return !(a == b); }\n\
     \tfriend bool operator<(const Mint &a, const Mint &b) { return a.v < b.v; }\n\t\
@@ -99,7 +99,7 @@ data:
   isVerificationFile: true
   path: test/affine-segment-tree.test.cpp
   requiredBy: []
-  timestamp: '2021-07-24 23:00:09-04:00'
+  timestamp: '2021-07-25 14:11:17-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/affine-segment-tree.test.cpp

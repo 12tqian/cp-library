@@ -11,7 +11,7 @@ data:
   bundledCode: "\nconst int MOD = 1e9 + 7;\n\ntypedef std::decay<decltype(MOD)>::type\
     \ mod_t; \nstruct mi {\n\tmod_t val;\n\texplicit operator mod_t() const { return\
     \ val; }\n\tmi() { val = 0; }\n\tmi(const long long &v) {\n\t\tval = (-MOD <=\
-    \ v && v <= MOD) ? v : v % MOD;\n\t\tif (val < 0) val += MOD; }\n\tfriend std::istream&\
+    \ v && v < MOD) ? v : v % MOD;\n\t\tif (val < 0) val += MOD; }\n\tfriend std::istream&\
     \ operator>>(std::istream &in, mi &a) { \n\t\tlong long x; std::cin >> x; a =\
     \ mi(x); return in; }\n\tfriend std::ostream& operator<<(std::ostream &os, const\
     \ mi &a) { return os << a.val; }\n\tfriend bool operator==(const mi &a, const\
@@ -35,7 +35,7 @@ data:
   code: "#pragma once\n\nconst int MOD = 1e9 + 7;\n\ntypedef std::decay<decltype(MOD)>::type\
     \ mod_t; \nstruct mi {\n\tmod_t val;\n\texplicit operator mod_t() const { return\
     \ val; }\n\tmi() { val = 0; }\n\tmi(const long long &v) {\n\t\tval = (-MOD <=\
-    \ v && v <= MOD) ? v : v % MOD;\n\t\tif (val < 0) val += MOD; }\n\tfriend std::istream&\
+    \ v && v < MOD) ? v : v % MOD;\n\t\tif (val < 0) val += MOD; }\n\tfriend std::istream&\
     \ operator>>(std::istream &in, mi &a) { \n\t\tlong long x; std::cin >> x; a =\
     \ mi(x); return in; }\n\tfriend std::ostream& operator<<(std::ostream &os, const\
     \ mi &a) { return os << a.val; }\n\tfriend bool operator==(const mi &a, const\
@@ -60,7 +60,7 @@ data:
   isVerificationFile: false
   path: library/numerical/mod-int.hpp
   requiredBy: []
-  timestamp: '2021-07-24 19:40:07-04:00'
+  timestamp: '2021-07-25 14:11:17-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/numerical/mod-int.hpp

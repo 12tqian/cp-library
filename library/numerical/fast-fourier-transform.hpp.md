@@ -18,7 +18,7 @@ data:
     \ Mint {\n\tstatic const int mod = MOD;\n\tstatic constexpr Mint rt() { return\
     \ RT; } // primitive root for FFT\n\tint v; \n\texplicit operator int() const\
     \ { return v; } // explicit -> don't silently convert to int\n\tMint() { v = 0;\
-    \ }\n\tMint(long long _v) { v = int((-MOD < _v && _v < MOD) ? _v : _v % MOD);\
+    \ }\n\tMint(long long _v) { v = int((-MOD <= _v && _v < MOD) ? _v : _v % MOD);\
     \ if (v < 0) v += MOD; }\n\tfriend bool operator==(const Mint &a, const Mint &b)\
     \ { return a.v == b.v; }\n\tfriend bool operator!=(const Mint &a, const Mint &b)\
     \ { return !(a == b); }\n\tfriend bool operator<(const Mint &a, const Mint &b)\
@@ -101,7 +101,7 @@ data:
   isVerificationFile: false
   path: library/numerical/fast-fourier-transform.hpp
   requiredBy: []
-  timestamp: '2021-07-24 22:46:46-04:00'
+  timestamp: '2021-07-25 14:11:17-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/fast-fourier-transform.test.cpp
