@@ -2,5 +2,6 @@
 "test/affine-segment-tree.test.cpp": "2021-07-24 21:11:18 -0400",
 "test/associative-range-query.test.cpp": "2021-07-24 20:11:06 -0400",
 "test/example.test.cpp": "2021-07-24 19:40:07 -0400",
-"test/fenwick-tree.test.cpp": "2021-07-24 21:17:26 -0400"
+"test/fenwick-tree.test.cpp": "2021-07-24 21:17:26 -0400",
+"test/lazy-segment-tree.test.cpp": "2021-07-24 21:20:09 -0400"
 }
