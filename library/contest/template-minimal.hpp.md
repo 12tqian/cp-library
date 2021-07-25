@@ -6,12 +6,12 @@ data:
   - icon: ':x:'
     path: test/affine-segment-tree.test.cpp
     title: test/affine-segment-tree.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/associative-range-query.test.cpp
     title: test/associative-range-query.test.cpp
   _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: '#include <algorithm>
@@ -117,7 +117,7 @@ data:
   path: library/contest/template-minimal.hpp
   requiredBy: []
   timestamp: '2021-07-24 20:00:47-04:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/affine-segment-tree.test.cpp
   - test/associative-range-query.test.cpp

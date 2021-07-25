@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
   - icon: ':x:'
@@ -17,10 +17,12 @@ data:
   _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://atcoder.jp/contests/practice2/tasks/practice2_k
+    IGNORE: ''
+    IGNORE_IF_CLANG: ''
+    IGNORE_IF_GCC: ''
     links:
     - https://atcoder.jp/contests/practice2/tasks/practice2_k
-  bundledCode: "#define PROBLEM \"https://atcoder.jp/contests/practice2/tasks/practice2_k\"\
+  bundledCode: "#define IGNORE\n// #define PROBLEM \"https://atcoder.jp/contests/practice2/tasks/practice2_k\"\
     \n\n#include <algorithm>\n#include <array>\n#include <bitset>\n#include <cassert>\n\
     #include <chrono>\n#include <cmath>\n#include <complex>\n#include <cstdio>\n#include\
     \ <cstdlib>\n#include <cstring>\n#include <ctime>\n#include <deque>\n#include\
@@ -78,7 +80,7 @@ data:
     \ - 1, 1, b);\n            seg.upd(l, r - 1, 0, c);\n        } else {\n      \
     \      int l, r;\n            cin >> l >> r;\n            cout << seg.qsum(l,\
     \ r - 1) << '\\n';\n        }\n    }\n    return 0;\n}\n"
-  code: "#define PROBLEM \"https://atcoder.jp/contests/practice2/tasks/practice2_k\"\
+  code: "#define IGNORE\n// #define PROBLEM \"https://atcoder.jp/contests/practice2/tasks/practice2_k\"\
     \n\n#include \"../library/contest/template-minimal.hpp\"\n#include \"../library/numerical/mod-int.hpp\"\
     \n#include \"../library/data-structures/1d-range-queries/affine-segment-tree.hpp\"\
     \n\nint main() {\n    ios_base::sync_with_stdio(0);\n    cin.tie(0);\n    AffineSegmentTree<mi>\
@@ -97,7 +99,7 @@ data:
   isVerificationFile: true
   path: test/affine-segment-tree.test.cpp
   requiredBy: []
-  timestamp: '2021-07-24 20:10:26-04:00'
+  timestamp: '2021-07-24 20:23:37-04:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/affine-segment-tree.test.cpp

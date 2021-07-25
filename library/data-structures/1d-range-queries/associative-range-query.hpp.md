@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/associative-range-query.test.cpp
     title: test/associative-range-query.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "\ntemplate <class T> struct RangeQuery {\n\tint sz; \n\tstd::vector<std::vector<T>>\
@@ -40,7 +40,7 @@ data:
   path: library/data-structures/1d-range-queries/associative-range-query.hpp
   requiredBy: []
   timestamp: '2021-07-24 19:40:07-04:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/associative-range-query.test.cpp
 documentation_of: library/data-structures/1d-range-queries/associative-range-query.hpp

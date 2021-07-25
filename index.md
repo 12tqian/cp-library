@@ -6,7 +6,7 @@ data:
     - icon: ':warning:'
       path: library/contest/template-full.cpp
       title: library/contest/template-full.cpp
-    - icon: ':x:'
+    - icon: ':question:'
       path: library/contest/template-minimal.hpp
       title: library/contest/template-minimal.hpp
     - icon: ':warning:'
@@ -17,7 +17,7 @@ data:
     - icon: ':x:'
       path: library/data-structures/1d-range-queries/affine-segment-tree.hpp
       title: library/data-structures/1d-range-queries/affine-segment-tree.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/data-structures/1d-range-queries/associative-range-query.hpp
       title: library/data-structures/1d-range-queries/associative-range-query.hpp
     - icon: ':warning:'
@@ -280,7 +280,7 @@ data:
     - icon: ':x:'
       path: test/affine-segment-tree.test.cpp
       title: test/affine-segment-tree.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/associative-range-query.test.cpp
       title: test/associative-range-query.test.cpp
     - icon: ':heavy_check_mark:'

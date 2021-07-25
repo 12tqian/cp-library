@@ -1,23 +1,23 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/data-structures/1d-range-queries/associative-range-query.hpp
     title: library/data-structures/1d-range-queries/associative-range-query.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://atcoder.jp/contests/practice2/tasks/practice2_k
+    PROBLEM: https://judge.yosupo.jp/problem/static_range_sum
     links:
-    - https://atcoder.jp/contests/practice2/tasks/practice2_k
-  bundledCode: "#define PROBLEM \"https://atcoder.jp/contests/practice2/tasks/practice2_k\"\
+    - https://judge.yosupo.jp/problem/static_range_sum
+  bundledCode: "#define PROBLEM \"https://judge.yosupo.jp/problem/static_range_sum\"\
     \n\n#include <algorithm>\n#include <array>\n#include <bitset>\n#include <cassert>\n\
     #include <chrono>\n#include <cmath>\n#include <complex>\n#include <cstdio>\n#include\
     \ <cstdlib>\n#include <cstring>\n#include <ctime>\n#include <deque>\n#include\
@@ -40,8 +40,8 @@ data:
     \ i++) \n\t\tcin >> a[i];\n\tRangeQuery<long long> R; \n\tR.init(a);\n\twhile\
     \ (q--) {\n\t\tint l, r; cin >> l >> r;\n\t\tr--;\n\t\tcout << R.query(l, r) <<\
     \ '\\n';\n\t}\n\treturn 0;\n}\n"
-  code: "#define PROBLEM \"https://atcoder.jp/contests/practice2/tasks/practice2_k\"\
-    \n\n#include \"../library/contest/template-minimal.hpp\"\n#include \"../library/data-structures/1d-range-queries/associative-range-query.hpp\"\
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/static_range_sum\"\n\n\
+    #include \"../library/contest/template-minimal.hpp\"\n#include \"../library/data-structures/1d-range-queries/associative-range-query.hpp\"\
     \n\nint main() {\n\tusing namespace std;\n\tcin.tie(0)->sync_with_stdio(0);\n\t\
     int n, q; cin >> n >> q;\n\tvector<long long> a(n);\n\tfor (int i = 0; i < n;\
     \ i++) \n\t\tcin >> a[i];\n\tRangeQuery<long long> R; \n\tR.init(a);\n\twhile\
@@ -53,8 +53,8 @@ data:
   isVerificationFile: true
   path: test/associative-range-query.test.cpp
   requiredBy: []
-  timestamp: '2021-07-24 20:01:04-04:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2021-07-24 20:11:06-04:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/associative-range-query.test.cpp
 layout: document
