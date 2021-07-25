@@ -1,7 +1,10 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: test/simplex.cpp
+    title: test/simplex.cpp
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
@@ -46,15 +49,7 @@ data:
     \t\t\t\t\ts = j;\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t\tpivot(i, s);\n\t\t\t\t\
     }\n\t\t\t}\n\t\t}\n\t\tbool ok = simplex(1);\n\t\tx.assign(n, 0);\n\t\tfor (int\
     \ i = 0; i < m; ++i) {\n\t\t\tif (B[i] < n) {\n\t\t\t\tx[B[i]] = D[i][n + 1];\n\
-    \t\t\t}\n\t\t}\n\t\treturn ok ? D[m][n + 1] : INF;\n\t}\n};\n\nint main() {\n\t\
-    using namespace std;\n\tios::sync_with_stdio(false);\n\tcin.tie(nullptr);\n\t\
-    int n, m; \n\tcin >> n >> m;\n\tvector<vector<double>> A(n, vector<double>(m));\n\
-    \tvector<double> c(m);\n\tvector<double> b(n);\n\tfor (int i = 0; i < n; ++i)\
-    \ {\n\t\tcin >> b[i];\n\t}\n\tfor (int i = 0; i < m; ++i) {\n\t\tfor (int j =\
-    \ 0; j < n; ++j) {\n\t\t\tcin >> A[j][i];\n\t\t\tA[j][i] /= 100;\n\t\t}\n\t\t\
-    cin >> c[i];\n\t}\n\tvector<double> x; \n\tdouble ans = Simplex<double>(A, b,\
-    \ c).solve(x);\n\tcout << fixed << setprecision(2) << ans << '\\n';\n\treturn\
-    \ 0;\n}\n"
+    \t\t\t}\n\t\t}\n\t\treturn ok ? D[m][n + 1] : INF;\n\t}\n};\n"
   code: "#pragma once\n\n/**\n * Maximizes c^Tx given Ax <= b, x >= 0\n * Returns\
     \ -INF if no solution\n * INF if there are many good solutions\n * Maximum value\
     \ of c^Tx otherwise\n */\n\ntemplate <class T> struct Simplex {\n\tconst T EPS\
@@ -93,20 +88,13 @@ data:
     \ N[s])) {\n\t\t\t\t\t\t\ts = j;\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t\tpivot(i,\
     \ s);\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\tbool ok = simplex(1);\n\t\tx.assign(n, 0);\n\
     \t\tfor (int i = 0; i < m; ++i) {\n\t\t\tif (B[i] < n) {\n\t\t\t\tx[B[i]] = D[i][n\
-    \ + 1];\n\t\t\t}\n\t\t}\n\t\treturn ok ? D[m][n + 1] : INF;\n\t}\n};\n\nint main()\
-    \ {\n\tusing namespace std;\n\tios::sync_with_stdio(false);\n\tcin.tie(nullptr);\n\
-    \tint n, m; \n\tcin >> n >> m;\n\tvector<vector<double>> A(n, vector<double>(m));\n\
-    \tvector<double> c(m);\n\tvector<double> b(n);\n\tfor (int i = 0; i < n; ++i)\
-    \ {\n\t\tcin >> b[i];\n\t}\n\tfor (int i = 0; i < m; ++i) {\n\t\tfor (int j =\
-    \ 0; j < n; ++j) {\n\t\t\tcin >> A[j][i];\n\t\t\tA[j][i] /= 100;\n\t\t}\n\t\t\
-    cin >> c[i];\n\t}\n\tvector<double> x; \n\tdouble ans = Simplex<double>(A, b,\
-    \ c).solve(x);\n\tcout << fixed << setprecision(2) << ans << '\\n';\n\treturn\
-    \ 0;\n}"
+    \ + 1];\n\t\t\t}\n\t\t}\n\t\treturn ok ? D[m][n + 1] : INF;\n\t}\n};"
   dependsOn: []
   isVerificationFile: false
   path: library/numerical/simplex.hpp
-  requiredBy: []
-  timestamp: '2021-07-24 19:40:07-04:00'
+  requiredBy:
+  - test/simplex.cpp
+  timestamp: '2021-07-24 22:46:46-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/numerical/simplex.hpp

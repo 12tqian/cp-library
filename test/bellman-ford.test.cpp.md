@@ -4,14 +4,14 @@ data:
   - icon: ':question:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/graphs/bellman-ford.hpp
     title: library/graphs/bellman-ford.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_B
@@ -55,27 +55,30 @@ data:
     }\n\t\treturn {};\n\t}\n};\n\n// kattis\nint main() {\n\tusing namespace std;\n\
     \tint n, m, r;\n\tcin >> n >> m >> r;\n\tBellmanFord<long long> B;\n\tB.init(n);\n\
     \tfor (int i = 0; i < m; i++) {\n\t\tint u, v, w; \n\t\tcin >> u >> v >> w;\n\t\
-    \tB.ae(u, v, w);\n\t}\n\tB.gen(r);\n\tfor (int i = 0; i < n; ++i) {\n\t\tlong\
-    \ long dist = B.dist[i];\n\t\tif (dist == B.INF) \n\t\t\tcout << \"INF\\n\";\n\
-    \t\telse if (dist == -B.INF)\n\t\t\tcout << \"NEGATIVE CYCLE\\n\";\n\t\telse \n\
-    \t\t\tcout << dist << '\\n';\n\t}\n\treturn 0;\n}\n"
+    \tB.ae(u, v, w);\n\t}\n\tB.gen(r);\n\tfor (int i = 0; i < n; ++i) {\n\t\tif (B.dist[i]\
+    \ == -B.INF) {\n\t\t\tcout << \"NEGATIVE CYCLE\" << '\\n';\n\t\t\treturn 0;\n\t\
+    \t}\n\t}\n\tfor (int i = 0; i < n; ++i) {\n\t\tlong long dist = B.dist[i];\n\t\
+    \tif (dist == B.INF) \n\t\t\tcout << \"INF\\n\";\n\t\telse if (dist == -B.INF)\n\
+    \t\t\tassert(false);\n\t\telse \n\t\t\tcout << dist << '\\n';\n\t}\n\treturn 0;\n\
+    }\n"
   code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_B\"\
     \n\n#include \"../library/contest/template-minimal.hpp\"\n#include \"../library/graphs/bellman-ford.hpp\"\
     \n\n// kattis\nint main() {\n\tusing namespace std;\n\tint n, m, r;\n\tcin >>\
     \ n >> m >> r;\n\tBellmanFord<long long> B;\n\tB.init(n);\n\tfor (int i = 0; i\
     \ < m; i++) {\n\t\tint u, v, w; \n\t\tcin >> u >> v >> w;\n\t\tB.ae(u, v, w);\n\
-    \t}\n\tB.gen(r);\n\tfor (int i = 0; i < n; ++i) {\n\t\tlong long dist = B.dist[i];\n\
-    \t\tif (dist == B.INF) \n\t\t\tcout << \"INF\\n\";\n\t\telse if (dist == -B.INF)\n\
-    \t\t\tcout << \"NEGATIVE CYCLE\\n\";\n\t\telse \n\t\t\tcout << dist << '\\n';\n\
-    \t}\n\treturn 0;\n}"
+    \t}\n\tB.gen(r);\n\tfor (int i = 0; i < n; ++i) {\n\t\tif (B.dist[i] == -B.INF)\
+    \ {\n\t\t\tcout << \"NEGATIVE CYCLE\" << '\\n';\n\t\t\treturn 0;\n\t\t}\n\t}\n\
+    \tfor (int i = 0; i < n; ++i) {\n\t\tlong long dist = B.dist[i];\n\t\tif (dist\
+    \ == B.INF) \n\t\t\tcout << \"INF\\n\";\n\t\telse if (dist == -B.INF)\n\t\t\t\
+    assert(false);\n\t\telse \n\t\t\tcout << dist << '\\n';\n\t}\n\treturn 0;\n}"
   dependsOn:
   - library/contest/template-minimal.hpp
   - library/graphs/bellman-ford.hpp
   isVerificationFile: true
   path: test/bellman-ford.test.cpp
   requiredBy: []
-  timestamp: '2021-07-24 22:15:51-04:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2021-07-24 22:49:15-04:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/bellman-ford.test.cpp
 layout: document

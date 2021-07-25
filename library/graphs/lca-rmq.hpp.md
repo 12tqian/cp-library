@@ -1,6 +1,9 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: library/data-structures/1d-range-queries/sparse-table.hpp
+    title: library/data-structures/1d-range-queries/sparse-table.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
@@ -17,24 +20,27 @@ data:
     \ the parent of node in compressed tree\n * Original index is the node it represents\n\
     \ * get_child also returns the subtree child of node and -1 if it doesn't exist\
     \ in O(1)\n * To support forest, gen on all the roots, initialize tmp and sparse\
-    \ at the end\n */\n\ntemplate <class T> struct SparseTable {\n\tstd::vector<T>\
-    \ v;\n\tstd::vector<std::vector<int>> jump;\n\n\tint level(int x) {\n\t\treturn\
-    \ 31 - __builtin_clz(x);\n\t}\n\n\tint comb(int a, int b) {\n\t\treturn v[a] ==\
-    \ v[b] ? std::min(a, b) : (v[a] < v[b] ? a : b);\n\t}\n\n\tvoid init(const std::vector<T>\
-    \ &_v) {\n\t\tv = _v;\n\t\tjump = {std::vector<int>((int)v.size())};\n\t\tiota(jump[0].begin(),\
-    \ jump[0].end(), 0);\n\t\tfor (int j = 1; (1 << j) <= (int)v.size(); j++) {\n\t\
-    \t\tjump.push_back(std::vector<int>((int)v.size() - (1 << j) + 1));\n\t\t\tfor\
-    \ (int i = 0; i < (int)jump[j].size(); i++) {\n\t\t\t\tjump[j][i] = comb(jump[j\
-    \ - 1][i], jump[j - 1][i + (1 << (j - 1))]);\n\t\t\t}\n\t\t}\n\t}\n\n\tint index(int\
-    \ l, int r) {\n\t\tassert(l <= r);\n\t\tint d = level(r - l + 1);\n\t\treturn\
-    \ comb(jump[d][l], jump[d][r - (1 << d) + 1]);\n\t}\n\n\tT query(int l, int r)\
-    \ {\n\t\treturn v[index(l, r)];\n\t}\n};\n\nstruct LCARMQ {\n\tint n; \n\tstd::vector<std::vector<int>>\
-    \ adj;\n\tstd::vector<int> dep, in, par, rev, out, pos;\n\tstd::vector<std::pair<int,\
-    \ int>> tmp;\n\tSparseTable<std::pair<int, int>> S;\n\tstd::vector<std::vector<int>>\
-    \ sparse;\n\tint ti = 0;\n\n\tvoid init(int _n) {\n\t\tn = _n;\n\t\tadj.resize(n);\n\
-    \t\tdep = in = out = par = rev = pos = std::vector<int>(n);\n\t\tsparse = {std::vector<int>(n)};\n\
-    \t\tfor (int j = 1; (1 << j) <= n; j++) {\n\t\t\tsparse.push_back(std::vector<int>(n\
-    \ - (1 << j) + 1));\n\t\t}\n\t}\n\n\tvoid ae(int u, int v) {\n\t\tadj[u].push_back(v);\n\
+    \ at the end\n */\n\n\n/**\n * This Sparse Table stores indices of things\n *\
+    \ For destructive combinations like gcd, use associative_range_query.cpp\n * Use\
+    \ this for min, max, and when you need the indices of things\n */\n\ntemplate\
+    \ <class T> struct SparseTable {\n\tstd::vector<T> v;\n\tstd::vector<std::vector<int>>\
+    \ jump;\n\n\tint level(int x) { return 31 - __builtin_clz(x); }\n\n\tint comb(int\
+    \ a, int b) {\n\t\treturn v[a] == v[b] ? std::min(a, b) : (v[a] < v[b] ? a : b);\n\
+    \t}\n\n\tvoid init(const std::vector<T> &_v) {\n\t\tv = _v;\n\t\tjump = {std::vector<int>((int)v.size())};\n\
+    \t\tiota(jump[0].begin(), jump[0].end(), 0);\n\t\tfor (int j = 1; (1 << j) <=\
+    \ (int)v.size(); j++) {\n\t\t\tjump.push_back(std::vector<int>((int)v.size() -\
+    \ (1 << j) + 1));\n\t\t\tfor (int i = 0; i < (int)jump[j].size(); i++) {\n\t\t\
+    \t\tjump[j][i] = comb(jump[j - 1][i], jump[j - 1][i + (1 << (j - 1))]);\n\t\t\t\
+    }\n\t\t}\n\t}\n\n\tint index(int l, int r) {\n\t\tassert(l <= r);\n\t\tint d =\
+    \ level(r - l + 1);\n\t\treturn comb(jump[d][l], jump[d][r - (1 << d) + 1]);\n\
+    \t}\n\n\tT query(int l, int r) {\n\t\treturn v[index(l, r)];\n\t}\n};\n\nstruct\
+    \ LCARMQ {\n\tint n; \n\tstd::vector<std::vector<int>> adj;\n\tstd::vector<int>\
+    \ dep, in, par, rev, out, pos;\n\tstd::vector<std::pair<int, int>> tmp;\n\tSparseTable<std::pair<int,\
+    \ int>> S;\n\tstd::vector<std::vector<int>> sparse;\n\tint ti = 0;\n\n\tvoid init(int\
+    \ _n) {\n\t\tn = _n;\n\t\tadj.resize(n);\n\t\tdep = in = out = par = rev = pos\
+    \ = std::vector<int>(n);\n\t\tsparse = {std::vector<int>(n)};\n\t\tfor (int j\
+    \ = 1; (1 << j) <= n; j++) {\n\t\t\tsparse.push_back(std::vector<int>(n - (1 <<\
+    \ j) + 1));\n\t\t}\n\t}\n\n\tvoid ae(int u, int v) {\n\t\tadj[u].push_back(v);\n\
     \t\tadj[v].push_back(u);\n\t}\n\n\tvoid dfs(int src) {\n\t\tin[src] = ti++;\n\t\
     \tsparse[0][in[src]] = src;\n\t\tpos[src] = (int)tmp.size();\n\t\ttmp.emplace_back(dep[src],\
     \ src);\n\t\tfor (auto &nxt : adj[src]) {\n\t\t\tif (nxt == par[src]) continue;\n\
@@ -67,24 +73,14 @@ data:
     \ is the parent of node in compressed tree\n * Original index is the node it represents\n\
     \ * get_child also returns the subtree child of node and -1 if it doesn't exist\
     \ in O(1)\n * To support forest, gen on all the roots, initialize tmp and sparse\
-    \ at the end\n */\n\ntemplate <class T> struct SparseTable {\n\tstd::vector<T>\
-    \ v;\n\tstd::vector<std::vector<int>> jump;\n\n\tint level(int x) {\n\t\treturn\
-    \ 31 - __builtin_clz(x);\n\t}\n\n\tint comb(int a, int b) {\n\t\treturn v[a] ==\
-    \ v[b] ? std::min(a, b) : (v[a] < v[b] ? a : b);\n\t}\n\n\tvoid init(const std::vector<T>\
-    \ &_v) {\n\t\tv = _v;\n\t\tjump = {std::vector<int>((int)v.size())};\n\t\tiota(jump[0].begin(),\
-    \ jump[0].end(), 0);\n\t\tfor (int j = 1; (1 << j) <= (int)v.size(); j++) {\n\t\
-    \t\tjump.push_back(std::vector<int>((int)v.size() - (1 << j) + 1));\n\t\t\tfor\
-    \ (int i = 0; i < (int)jump[j].size(); i++) {\n\t\t\t\tjump[j][i] = comb(jump[j\
-    \ - 1][i], jump[j - 1][i + (1 << (j - 1))]);\n\t\t\t}\n\t\t}\n\t}\n\n\tint index(int\
-    \ l, int r) {\n\t\tassert(l <= r);\n\t\tint d = level(r - l + 1);\n\t\treturn\
-    \ comb(jump[d][l], jump[d][r - (1 << d) + 1]);\n\t}\n\n\tT query(int l, int r)\
-    \ {\n\t\treturn v[index(l, r)];\n\t}\n};\n\nstruct LCARMQ {\n\tint n; \n\tstd::vector<std::vector<int>>\
-    \ adj;\n\tstd::vector<int> dep, in, par, rev, out, pos;\n\tstd::vector<std::pair<int,\
-    \ int>> tmp;\n\tSparseTable<std::pair<int, int>> S;\n\tstd::vector<std::vector<int>>\
-    \ sparse;\n\tint ti = 0;\n\n\tvoid init(int _n) {\n\t\tn = _n;\n\t\tadj.resize(n);\n\
-    \t\tdep = in = out = par = rev = pos = std::vector<int>(n);\n\t\tsparse = {std::vector<int>(n)};\n\
-    \t\tfor (int j = 1; (1 << j) <= n; j++) {\n\t\t\tsparse.push_back(std::vector<int>(n\
-    \ - (1 << j) + 1));\n\t\t}\n\t}\n\n\tvoid ae(int u, int v) {\n\t\tadj[u].push_back(v);\n\
+    \ at the end\n */\n\n#include \"../data-structures/1d-range-queries/sparse-table.hpp\"\
+    \n\nstruct LCARMQ {\n\tint n; \n\tstd::vector<std::vector<int>> adj;\n\tstd::vector<int>\
+    \ dep, in, par, rev, out, pos;\n\tstd::vector<std::pair<int, int>> tmp;\n\tSparseTable<std::pair<int,\
+    \ int>> S;\n\tstd::vector<std::vector<int>> sparse;\n\tint ti = 0;\n\n\tvoid init(int\
+    \ _n) {\n\t\tn = _n;\n\t\tadj.resize(n);\n\t\tdep = in = out = par = rev = pos\
+    \ = std::vector<int>(n);\n\t\tsparse = {std::vector<int>(n)};\n\t\tfor (int j\
+    \ = 1; (1 << j) <= n; j++) {\n\t\t\tsparse.push_back(std::vector<int>(n - (1 <<\
+    \ j) + 1));\n\t\t}\n\t}\n\n\tvoid ae(int u, int v) {\n\t\tadj[u].push_back(v);\n\
     \t\tadj[v].push_back(u);\n\t}\n\n\tvoid dfs(int src) {\n\t\tin[src] = ti++;\n\t\
     \tsparse[0][in[src]] = src;\n\t\tpos[src] = (int)tmp.size();\n\t\ttmp.emplace_back(dep[src],\
     \ src);\n\t\tfor (auto &nxt : adj[src]) {\n\t\t\tif (nxt == par[src]) continue;\n\
@@ -111,11 +107,12 @@ data:
     \ i < (int)nodes.size(); i++) {\n\t\t\trev[nodes[i]] = i;\n\t\t}\n\t\tfor (int\
     \ i = 1; i < (int)nodes.size(); i++) {\n\t\t\tret.emplace_back(rev[lca(nodes[i\
     \ - 1], nodes[i])], nodes[i]);\n\t\t}\n\t\treturn ret;\n\t}\n};\n"
-  dependsOn: []
+  dependsOn:
+  - library/data-structures/1d-range-queries/sparse-table.hpp
   isVerificationFile: false
   path: library/graphs/lca-rmq.hpp
   requiredBy: []
-  timestamp: '2021-07-24 22:29:57-04:00'
+  timestamp: '2021-07-24 22:46:46-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/lca-rmq.test.cpp

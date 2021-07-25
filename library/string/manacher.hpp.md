@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/manacher.test.cpp
+    title: test/manacher.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "\n/**\n * Example use:\n * Call: manacher(\"abacaba\")\n * Return:\
@@ -17,9 +20,7 @@ data:
     \ t[i + res[i] + 1])\n\t\t\tres[i]++;\n\t\tif (i + res[i] > hi)\n\t\t\tlo = i\
     \ - res[i], hi = i + res[i];\n\t}\n\tres.erase(res.begin());\n\tfor (int i = 0;\
     \ i < (int)res.size(); i++)\n\t\tif ((i & 1) == (res[i] & 1))\n\t\t\tres[i]++;\n\
-    \treturn res;\n}\n\nint main() {\n\tstd::ios_base::sync_with_stdio(0);\n\tstd::string\
-    \ s; std::cin >> s;\n\tstd::vector<int> ans = manacher(s);\n\tfor (int &x : ans)\n\
-    \t\tstd::cout << x << \" \";\n\tstd::cout << '\\n';\n\treturn 0;\n}   \n"
+    \treturn res;\n}\n"
   code: "#pragma once\n\n/**\n * Example use:\n * Call: manacher(\"abacaba\")\n *\
     \ Return: {1 0 3 0 1 0 7 0 1 0 3 0 1}\n */\n\nstd::vector<int> manacher(std::string\
     \ s) {\n\tstd::string t = \"@\";\n\tfor (auto &c : s) \n\t\tt += c, t += '#';\n\
@@ -29,16 +30,15 @@ data:
     \ t[i + res[i] + 1])\n\t\t\tres[i]++;\n\t\tif (i + res[i] > hi)\n\t\t\tlo = i\
     \ - res[i], hi = i + res[i];\n\t}\n\tres.erase(res.begin());\n\tfor (int i = 0;\
     \ i < (int)res.size(); i++)\n\t\tif ((i & 1) == (res[i] & 1))\n\t\t\tres[i]++;\n\
-    \treturn res;\n}\n\nint main() {\n\tstd::ios_base::sync_with_stdio(0);\n\tstd::string\
-    \ s; std::cin >> s;\n\tstd::vector<int> ans = manacher(s);\n\tfor (int &x : ans)\n\
-    \t\tstd::cout << x << \" \";\n\tstd::cout << '\\n';\n\treturn 0;\n}   "
+    \treturn res;\n}"
   dependsOn: []
   isVerificationFile: false
   path: library/string/manacher.hpp
   requiredBy: []
-  timestamp: '2021-07-24 19:40:07-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  timestamp: '2021-07-24 22:46:46-04:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/manacher.test.cpp
 documentation_of: library/string/manacher.hpp
 layout: document
 redirect_from:

@@ -19,8 +19,7 @@ data:
     \ v) { \n\tv = int((-MOD < v && v < MOD) ? v : v % MOD); if (v < 0) v += MOD;\
     \ return v; }\n\t\nint madd(int &a, int b) { return a = add(a, b); }\nint msub(int\
     \ &a, int b) { return a = sub(a, b); }\nint mmul(int &a, int b) { return a = mul(a,\
-    \ b); }\nint mdivi(int &a, int b) { return a = divi(a, b); }\n\n} // ModOperations\n\
-    \n"
+    \ b); }\nint mdivi(int &a, int b) { return a = divi(a, b); }\n\n} // ModOperations\n"
   code: "#pragma once\n\nnamespace ModOperations {\n\nconst int MOD = 1e9 + 7;\n\n\
     int mpow(long long b, long long e) {\n\tlong long r = 1;\n\twhile (e) {\n\t\t\
     if (e & 1) {\n\t\t\tr *= b; \n\t\t\tr %= MOD;\n\t\t}\n\t\tb *= b; \n\t\tb %= MOD;\n\
@@ -33,12 +32,12 @@ data:
     \ MOD; return v; }\n\t\nint madd(int &a, int b) { return a = add(a, b); }\nint\
     \ msub(int &a, int b) { return a = sub(a, b); }\nint mmul(int &a, int b) { return\
     \ a = mul(a, b); }\nint mdivi(int &a, int b) { return a = divi(a, b); }\n\n} //\
-    \ ModOperations\n\n"
+    \ ModOperations"
   dependsOn: []
   isVerificationFile: false
   path: library/numerical/mod-operations.hpp
   requiredBy: []
-  timestamp: '2021-07-24 19:40:07-04:00'
+  timestamp: '2021-07-24 22:46:46-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/numerical/mod-operations.hpp

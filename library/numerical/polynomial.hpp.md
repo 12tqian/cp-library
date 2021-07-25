@@ -32,7 +32,7 @@ data:
     Poly integral(const Poly &p) {\n\tstatic Poly invs{0, 1};\n\tfor (int i = invs.size();\
     \ i <= p.size(); ++i ){\n\t\tinvs.push_back(1 / T(i));\n\t}\n\tPoly res(p.size()\
     \ + 1);\n\tfor (int i = 0; i < p.size(); ++i) {\n\t\tres[i + 1] = p[i] * invs[i\
-    \ + 1];\n\t}\n\treturn res;\n}\n\n}\n\n\n"
+    \ + 1];\n\t}\n\treturn res;\n}\n\n}\n"
   code: "#pragma once\n\nnamespace Polynomial {\n\nusing T = int;\nusing Poly = std::vector<T>;\n\
     \nT eval(const Poly &p, const T &x) {\n\tT res = 0;\n\tfor (int i = (int)p.size()\
     \ - 1; i >= 0; --i) {\n\t\tres = x * res + p[i];\n\t}\n\treturn res;\n}\n\nPoly&\
@@ -57,12 +57,12 @@ data:
     Poly integral(const Poly &p) {\n\tstatic Poly invs{0, 1};\n\tfor (int i = invs.size();\
     \ i <= p.size(); ++i ){\n\t\tinvs.push_back(1 / T(i));\n\t}\n\tPoly res(p.size()\
     \ + 1);\n\tfor (int i = 0; i < p.size(); ++i) {\n\t\tres[i + 1] = p[i] * invs[i\
-    \ + 1];\n\t}\n\treturn res;\n}\n\n}\n\n\n"
+    \ + 1];\n\t}\n\treturn res;\n}\n\n}"
   dependsOn: []
   isVerificationFile: false
   path: library/numerical/polynomial.hpp
   requiredBy: []
-  timestamp: '2021-07-24 19:40:07-04:00'
+  timestamp: '2021-07-24 22:46:46-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/numerical/polynomial.hpp

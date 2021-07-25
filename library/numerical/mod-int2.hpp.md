@@ -1,11 +1,17 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: library/numerical/fast-fourier-transform.hpp
+    title: library/numerical/fast-fourier-transform.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/affine-segment-tree.test.cpp
     title: test/affine-segment-tree.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/fast-fourier-transform.test.cpp
+    title: test/fast-fourier-transform.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -68,10 +74,12 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: library/numerical/mod-int2.hpp
-  requiredBy: []
+  requiredBy:
+  - library/numerical/fast-fourier-transform.hpp
   timestamp: '2021-07-24 19:40:07-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/fast-fourier-transform.test.cpp
   - test/affine-segment-tree.test.cpp
 documentation_of: library/numerical/mod-int2.hpp
 layout: document

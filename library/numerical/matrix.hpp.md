@@ -1,7 +1,10 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: test/matrix.cpp
+    title: test/matrix.cpp
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
@@ -51,22 +54,7 @@ data:
     \ {\n\t\t\tx[i][j] = m[i][j];\n\t\t}\n\t}\n\tif (gauss(x).second != r) return\
     \ Matrix<T>();\n\tMatrix<T> res = make_matrix<T>(r, r);\n\tfor (int i = 0; i <\
     \ r; i++) {\n\t\tfor (int j = 0; j < r; j++) {\n\t\t\tres[i][j] = x[i][j + r];\n\
-    \t\t}\n\t}\n\treturn res;\n}\n\n} // namespace MatrixOperations\n\nint main()\
-    \ {\n\tusing namespace std;\n\tusing namespace MatrixOperations;\n\tusing Mat\
-    \ = Matrix<long double>;\n\twhile (true) {\n\t\tint n; cin >> n;\n\t\tif (n ==\
-    \ 0) break;\n\t\tMat a = make_matrix<long double>(n, n + 1);\n\t\tfor (int i =\
-    \ 0; i < n; i++) {\n\t\t\tfor (int j = 0; j < n; j++) {\n\t\t\t\tcin >> a[i][j];\n\
-    \t\t\t}\n\t\t}\n\t\tfor (int i = 0; i < n; i++) {\n\t\t\tcin >> a[i][n];\n\t\t\
-    }\n\t\tauto res = gauss(a);\n\t\tvector<long double> ans;\n\t\tbool inf = false;\n\
-    \t\tbool sol = true;\n\t\tfor (int i = 0; i < n; i++) {  \n\t\t\tbool one = false;\n\
-    \t\t\tfor (int j = 0; j < n; j++) {\n\t\t\t\tif (abs(a[i][j] - 1) < EPS) {\n\t\
-    \t\t\t\tone = true;\n\t\t\t\t\tbreak;\n\t\t\t\t}\n\t\t\t}\n\t\t\tif (one) {\n\t\
-    \t\t\tans.push_back(a[i].back());\n\t\t\t\tcontinue;\n\t\t\t}\n\t\t\tif (abs(a[i].back())\
-    \ >= EPS) {\n\t\t\t\tsol = false;\n\t\t\t\tbreak;\n\t\t\t} \n\t\t\tif (abs(a[i].back())\
-    \ < EPS) {\n\t\t\t\tinf = true;\n\t\t\t}\n\t\t}\n\t\tif (!sol) {\n\t\t\tcout <<\
-    \ \"inconsistent\\n\";\n\t\t} else if (inf) {\n\t\t\tcout << \"multiple\\n\";\n\
-    \t\t} else {\n\t\t\tfor (auto& t : ans) \n\t\t\t\tcout << t << \" \";\n\t\t\t\
-    cout << '\\n';\n\t\t}\n\t}\n\treturn 0;\n}\n"
+    \t\t}\n\t}\n\treturn res;\n}\n\n} // namespace MatrixOperations\n"
   code: "#pragma once\n\nnamespace MatrixOperations {\n\ntemplate <class T> using\
     \ Matrix = std::vector<std::vector<T>>;\n\ntemplate <class T> Matrix<T> make_matrix(int\
     \ r, int c) { return Matrix<T>(r, std::vector<T>(c)); }\n\ntemplate <class T>\
@@ -110,27 +98,13 @@ data:
     \ {\n\t\t\tx[i][j] = m[i][j];\n\t\t}\n\t}\n\tif (gauss(x).second != r) return\
     \ Matrix<T>();\n\tMatrix<T> res = make_matrix<T>(r, r);\n\tfor (int i = 0; i <\
     \ r; i++) {\n\t\tfor (int j = 0; j < r; j++) {\n\t\t\tres[i][j] = x[i][j + r];\n\
-    \t\t}\n\t}\n\treturn res;\n}\n\n} // namespace MatrixOperations\n\nint main()\
-    \ {\n\tusing namespace std;\n\tusing namespace MatrixOperations;\n\tusing Mat\
-    \ = Matrix<long double>;\n\twhile (true) {\n\t\tint n; cin >> n;\n\t\tif (n ==\
-    \ 0) break;\n\t\tMat a = make_matrix<long double>(n, n + 1);\n\t\tfor (int i =\
-    \ 0; i < n; i++) {\n\t\t\tfor (int j = 0; j < n; j++) {\n\t\t\t\tcin >> a[i][j];\n\
-    \t\t\t}\n\t\t}\n\t\tfor (int i = 0; i < n; i++) {\n\t\t\tcin >> a[i][n];\n\t\t\
-    }\n\t\tauto res = gauss(a);\n\t\tvector<long double> ans;\n\t\tbool inf = false;\n\
-    \t\tbool sol = true;\n\t\tfor (int i = 0; i < n; i++) {  \n\t\t\tbool one = false;\n\
-    \t\t\tfor (int j = 0; j < n; j++) {\n\t\t\t\tif (abs(a[i][j] - 1) < EPS) {\n\t\
-    \t\t\t\tone = true;\n\t\t\t\t\tbreak;\n\t\t\t\t}\n\t\t\t}\n\t\t\tif (one) {\n\t\
-    \t\t\tans.push_back(a[i].back());\n\t\t\t\tcontinue;\n\t\t\t}\n\t\t\tif (abs(a[i].back())\
-    \ >= EPS) {\n\t\t\t\tsol = false;\n\t\t\t\tbreak;\n\t\t\t} \n\t\t\tif (abs(a[i].back())\
-    \ < EPS) {\n\t\t\t\tinf = true;\n\t\t\t}\n\t\t}\n\t\tif (!sol) {\n\t\t\tcout <<\
-    \ \"inconsistent\\n\";\n\t\t} else if (inf) {\n\t\t\tcout << \"multiple\\n\";\n\
-    \t\t} else {\n\t\t\tfor (auto& t : ans) \n\t\t\t\tcout << t << \" \";\n\t\t\t\
-    cout << '\\n';\n\t\t}\n\t}\n\treturn 0;\n}"
+    \t\t}\n\t}\n\treturn res;\n}\n\n} // namespace MatrixOperations"
   dependsOn: []
   isVerificationFile: false
   path: library/numerical/matrix.hpp
-  requiredBy: []
-  timestamp: '2021-07-24 19:40:07-04:00'
+  requiredBy:
+  - test/matrix.cpp
+  timestamp: '2021-07-24 22:46:46-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/numerical/matrix.hpp

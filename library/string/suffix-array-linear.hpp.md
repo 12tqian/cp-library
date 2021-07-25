@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/suffix-array-linear.test.cpp
+    title: test/suffix-array-linear.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "\nstd::vector<int> suffix_array(std::vector<int> s, int upper) {\n\
@@ -33,11 +36,7 @@ data:
     if (l != n && s[l] == s[r])\n\t\t\t\tsame = true;\n\t\t}\n\t\trec_s[lms_map[sorted_lms[i]]]\
     \ = (rec_upper += !same);\n\t}\n\tstd::vector<int> rec_sa = suffix_array(rec_s,\
     \ rec_upper\n\t\t + 1);\n\tfor (int i = 0; i < m; i++)\n\t\tsorted_lms[i] = lms[rec_sa[i]];\n\
-    \tinduce(sorted_lms);\n\treturn sa;\n}\n\nint main() {\n\tusing namespace std;\n\
-    \tios_base::sync_with_stdio(0);\n\tstring s; cin >> s;\n\tstd::vector<int> a((int)s.size());\n\
-    \tfor (int i = 0; i < (int)s.size(); i++)\n\t\ta[i] = s[i] - 'a';\n\tstd::vector<int>\
-    \ res = suffix_array(a, 26);\n\tfor (int i = 0; i < (int)s.size(); i++)\n\t\t\
-    cout << res[i] << \" \";\n\tcout << '\\n';\n\treturn 0;\n}\n"
+    \tinduce(sorted_lms);\n\treturn sa;\n}\n"
   code: "#pragma once\n\nstd::vector<int> suffix_array(std::vector<int> s, int upper)\
     \ {\n\tint n = (int)s.size();\n\tif (n == 0)\n\t\treturn {};\n\tstd::vector<int>\
     \ sa(n);\n\tstd::vector<bool> ls(n);\n\tfor (int i = n - 2; i >= 0; i--) \n\t\t\
@@ -63,18 +62,15 @@ data:
     if (l != n && s[l] == s[r])\n\t\t\t\tsame = true;\n\t\t}\n\t\trec_s[lms_map[sorted_lms[i]]]\
     \ = (rec_upper += !same);\n\t}\n\tstd::vector<int> rec_sa = suffix_array(rec_s,\
     \ rec_upper\n\t\t + 1);\n\tfor (int i = 0; i < m; i++)\n\t\tsorted_lms[i] = lms[rec_sa[i]];\n\
-    \tinduce(sorted_lms);\n\treturn sa;\n}\n\nint main() {\n\tusing namespace std;\n\
-    \tios_base::sync_with_stdio(0);\n\tstring s; cin >> s;\n\tstd::vector<int> a((int)s.size());\n\
-    \tfor (int i = 0; i < (int)s.size(); i++)\n\t\ta[i] = s[i] - 'a';\n\tstd::vector<int>\
-    \ res = suffix_array(a, 26);\n\tfor (int i = 0; i < (int)s.size(); i++)\n\t\t\
-    cout << res[i] << \" \";\n\tcout << '\\n';\n\treturn 0;\n}"
+    \tinduce(sorted_lms);\n\treturn sa;\n}"
   dependsOn: []
   isVerificationFile: false
   path: library/string/suffix-array-linear.hpp
   requiredBy: []
-  timestamp: '2021-07-24 19:40:07-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  timestamp: '2021-07-24 22:46:46-04:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/suffix-array-linear.test.cpp
 documentation_of: library/string/suffix-array-linear.hpp
 layout: document
 redirect_from:

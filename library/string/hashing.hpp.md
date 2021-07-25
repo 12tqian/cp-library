@@ -1,7 +1,10 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: test/hashing.cpp
+    title: test/hashing.cpp
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
@@ -26,10 +29,7 @@ data:
     \t\twhile ((int)pows.size() <= len)\n\t\t\tpows.push_back(base * pows.back());\n\
     \t}\n\t\n\tstd::array<int, 2> hash(int l, int r) {\n\t\tint len = r + 1 - l;\n\
     \t\textend(len);\n\t\treturn pre[r + 1] - pows[len] * pre[l];\n\t}\n};\n\n} //\
-    \ Hashing\n\nint main() {\n\tusing namespace std;\n\tusing namespace Hashing;\n\
-    \tHashRange H;\n\tH.add(\"ababab\");\n\tfor (int i = 0; i < 6; i++) \n\t\tfor\
-    \ (int j = i; j < 6; j++) {\n\t\t\tauto val = H.hash(i, j);\n\t\t\tcout << i <<\
-    \ \" \" << j << \" \" << val[0] << \" \" << val[1] << '\\n';\n\t\t}\n}\n"
+    \ Hashing\n"
   code: "#pragma once\n\nnamespace Hashing {\n\nconst int MOD = 1e9 + 7;\n\nstd::mt19937\
     \ rng((uint32_t) std::chrono::steady_clock::now().time_since_epoch().count());\n\
     std::uniform_int_distribution<int> BDIST(0.1 * MOD, 0.9 * MOD);\nconst std::array<int,\
@@ -48,15 +48,13 @@ data:
     \t\twhile ((int)pows.size() <= len)\n\t\t\tpows.push_back(base * pows.back());\n\
     \t}\n\t\n\tstd::array<int, 2> hash(int l, int r) {\n\t\tint len = r + 1 - l;\n\
     \t\textend(len);\n\t\treturn pre[r + 1] - pows[len] * pre[l];\n\t}\n};\n\n} //\
-    \ Hashing\n\nint main() {\n\tusing namespace std;\n\tusing namespace Hashing;\n\
-    \tHashRange H;\n\tH.add(\"ababab\");\n\tfor (int i = 0; i < 6; i++) \n\t\tfor\
-    \ (int j = i; j < 6; j++) {\n\t\t\tauto val = H.hash(i, j);\n\t\t\tcout << i <<\
-    \ \" \" << j << \" \" << val[0] << \" \" << val[1] << '\\n';\n\t\t}\n}"
+    \ Hashing"
   dependsOn: []
   isVerificationFile: false
   path: library/string/hashing.hpp
-  requiredBy: []
-  timestamp: '2021-07-24 19:40:07-04:00'
+  requiredBy:
+  - test/hashing.cpp
+  timestamp: '2021-07-24 22:46:46-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/string/hashing.hpp

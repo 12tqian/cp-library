@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/mod-sqrt.test.cpp
+    title: test/mod-sqrt.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "\nunsigned xrand() {\n\tstatic unsigned x = 314159265, y = 358979323,\
@@ -30,10 +33,7 @@ data:
     \ * f0) % p;\n\t\t\tg0 = tmp;\n\t\t}\n\t\ttmp = (f0 * f0 + d * ((f1 * f1) % p))\
     \ % p;\n\t\tf1 = (2 * f0 * f1) % p;\n\t\tf0 = tmp;\n\t}\n\treturn (g0 < p - g0)\
     \ ? std::vector<long long>{g0, p - g0} : std::vector<long long>{p - g0, g0};\n\
-    }\n\nint main() {\n\tusing namespace std;\n\tint tt; cin >> tt;\n\twhile (tt--)\
-    \ {\n\t\tlong long y, p;\n\t\tcin >> y >> p;\n\t\tauto res = mod_sqrt(y, p);\n\
-    \t\tif (res.empty()) cout << -1 << '\\n';\n\t\telse cout << res[0] << '\\n';\n\
-    \t}\n\treturn 0;\n}\n"
+    }\n"
   code: "#pragma once\n\nunsigned xrand() {\n\tstatic unsigned x = 314159265, y =\
     \ 358979323, z = 846264338, w = 327950288;\n\tunsigned t = x ^ x << 11; x = y;\
     \ y = z; z = w; return w = w ^ w >> 19 ^ t ^ t >> 8;\n}\n\nlong long mod_inverse(long\
@@ -56,17 +56,15 @@ data:
     \ * f0) % p;\n\t\t\tg0 = tmp;\n\t\t}\n\t\ttmp = (f0 * f0 + d * ((f1 * f1) % p))\
     \ % p;\n\t\tf1 = (2 * f0 * f1) % p;\n\t\tf0 = tmp;\n\t}\n\treturn (g0 < p - g0)\
     \ ? std::vector<long long>{g0, p - g0} : std::vector<long long>{p - g0, g0};\n\
-    }\n\nint main() {\n\tusing namespace std;\n\tint tt; cin >> tt;\n\twhile (tt--)\
-    \ {\n\t\tlong long y, p;\n\t\tcin >> y >> p;\n\t\tauto res = mod_sqrt(y, p);\n\
-    \t\tif (res.empty()) cout << -1 << '\\n';\n\t\telse cout << res[0] << '\\n';\n\
-    \t}\n\treturn 0;\n}"
+    }"
   dependsOn: []
   isVerificationFile: false
   path: library/number-theory/mod-sqrt.hpp
   requiredBy: []
-  timestamp: '2021-07-24 19:40:07-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  timestamp: '2021-07-24 22:46:46-04:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/mod-sqrt.test.cpp
 documentation_of: library/number-theory/mod-sqrt.hpp
 layout: document
 redirect_from:

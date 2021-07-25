@@ -1,34 +1,62 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':question:'
+    path: library/contest/template-minimal.hpp
+    title: library/contest/template-minimal.hpp
+  - icon: ':heavy_check_mark:'
+    path: library/graphs/strongly-connected-components-tarjan.hpp
+    title: library/graphs/strongly-connected-components-tarjan.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
-  attributes: {}
-  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages/onlinejudge_verify/documentation/build.py\"\
-    , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
-    \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
-    , line 187, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
-    , line 401, in update\n    self.update(self._resolve(pathlib.Path(included), included_from=path))\n\
-    \  File \"/opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
-    , line 260, in _resolve\n    raise BundleErrorAt(path, -1, \"no such header\"\
-    )\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: ../library/graphs/strongly-connected-components-tarjan.hpp\t\
-    : line -1: no such header\n"
+  _verificationStatusIcon: ':heavy_check_mark:'
+  attributes:
+    '*NOT_SPECIAL_COMMENTS*': ''
+    PROBLEM: https://judge.yosupo.jp/problem/scc
+    links:
+    - https://judge.yosupo.jp/problem/scc
+  bundledCode: "#define PROBLEM \"https://judge.yosupo.jp/problem/scc\"\n\n#include\
+    \ <algorithm>\n#include <array>\n#include <bitset>\n#include <cassert>\n#include\
+    \ <chrono>\n#include <cmath>\n#include <complex>\n#include <cstdio>\n#include\
+    \ <cstdlib>\n#include <cstring>\n#include <ctime>\n#include <deque>\n#include\
+    \ <iostream>\n#include <iomanip>\n#include <map>\n#include <numeric>\n#include\
+    \ <queue>\n#include <random>\n#include <set>\n#include <stack>\n#include <string>\n\
+    #include <unordered_map>\n#include <vector>\n\nusing namespace std;\n\nstruct\
+    \ SCC {\n\tint n, time, num_comps;\n\tstd::vector<std::vector<int>> adj;\n\tstd::vector<int>\
+    \ disc, id, stk;\n\tstd::vector<std::vector<int>> comps;\n\n\tvoid init(int n_)\
+    \ {\n\t\tn = n_;\n\t\ttime = 0;\n\t\tnum_comps = 0;\n\t\tadj.assign(n, std::vector<int>());\n\
+    \t\tid.assign(n, -1);\n\t\tdisc.assign(n, 0);\n\t\tcomps.clear();\n\t}\n\n\tvoid\
+    \ ae(int u, int v) {\n\t\tadj[u].push_back(v);\n\t}\n\n\tint dfs(int src) {\n\t\
+    \tint low = disc[src] = ++time;\n\t\tstk.push_back(src);\n\t\tfor (int nxt : adj[src])\
+    \ \n\t\t\tif (id[nxt] == -1)\n\t\t\t\tlow = std::min(low, disc[nxt] ? : dfs(nxt));\n\
+    \t\tif (low == disc[src]) {\n\t\t\tfor (int nxt = -1; nxt != src;)\n\t\t\t\tid[nxt\
+    \ = stk.back()] = num_comps, stk.pop_back();\n\t\t\tnum_comps++;\n\t\t}\n\t\t\
+    return low;\n\t}\n\t\n\tvoid build() {\n\t\t// builds in topological order\n\t\
+    \tfor (int i = 0; i < n; i++) \n\t\t\tif (!disc[i])\n\t\t\t\tdfs(i);\n\t\tfor\
+    \ (auto &x : id) \n\t\t\tx = num_comps - 1 - x;\n\t\tcomps.resize(num_comps);\n\
+    \t\tfor (int i = 0; i < n; i++)\n\t\t\tcomps[id[i]].push_back(i);\n\t}\n};\n\n\
+    int main() {\n\tusing namespace std;\n\tint n, m; cin >> n >> m;\n\tSCC S;\n\t\
+    S.init(n);\n\tfor (int i = 0; i < m; i++) {\n\t\tint u, v;\n\t\tcin >> u >> v;\n\
+    \t\tS.ae(u, v);\n\t}\n\tS.build();\n\tcout << S.num_comps << '\\n';\n\tfor (auto\
+    \ &comp : S.comps) {\n\t\tcout << (int)comp.size() << \" \";\n\t\tfor (int &x\
+    \ : comp)\n\t\t\tcout << x << \" \";\n\t\tcout << '\\n';\n\t}\n\treturn 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/scc\"\n\n#include \"../library/contest/template-minimal.hpp\"\
-    \n#include \"../library/graphs/strongly-connected-components-tarjan.hpp\t\"\n\n\
+    \n#include \"../library/graphs/strongly-connected-components-tarjan.hpp\"\n\n\
     int main() {\n\tusing namespace std;\n\tint n, m; cin >> n >> m;\n\tSCC S;\n\t\
     S.init(n);\n\tfor (int i = 0; i < m; i++) {\n\t\tint u, v;\n\t\tcin >> u >> v;\n\
     \t\tS.ae(u, v);\n\t}\n\tS.build();\n\tcout << S.num_comps << '\\n';\n\tfor (auto\
     \ &comp : S.comps) {\n\t\tcout << (int)comp.size() << \" \";\n\t\tfor (int &x\
     \ : comp)\n\t\t\tcout << x << \" \";\n\t\tcout << '\\n';\n\t}\n\treturn 0;\n}"
-  dependsOn: []
+  dependsOn:
+  - library/contest/template-minimal.hpp
+  - library/graphs/strongly-connected-components-tarjan.hpp
   isVerificationFile: true
   path: test/strongly-connected-components-tarjan.test.cpp
   requiredBy: []
-  timestamp: '1970-01-01 00:00:00+00:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2021-07-24 22:47:47-04:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/strongly-connected-components-tarjan.test.cpp
 layout: document

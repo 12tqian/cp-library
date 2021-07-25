@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: test/karatsuba.test.cpp
+    title: test/karatsuba.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "\nnamespace Karatsuba {\n\nint size(int s) {\n\treturn s > 1 ? 32\
@@ -25,15 +28,7 @@ data:
     \tint sa = (int)a.size(), sb = (int)b.size();\n\tif (!sa || !sb) \n\t\treturn\
     \ {};\n\tint n = (1 << size(std::max(sa, sb)));\n\ta.resize(n);\n\tb.resize(n);\n\
     \tstd::vector<T> c(2 * n), t(2 * n);\n\tkaratsuba(&a[0], &b[0], &c[0], &t[0],\
-    \ n);\n\tc.resize(sa + sb - 1);\n\treturn c;\n}\n\n}\n\nint main() {\n\tusing\
-    \ namespace std;\n\tusing namespace Karatsuba;\n\tios_base::sync_with_stdio(0);\n\
-    \tint tt; \n\tcin >> tt;\n\twhile (tt--) {\n\t\tint sa, sb;\n\t\tcin >> sa;\n\t\
-    \tvector<long long> a(sa + 1);\n\t\tfor (int i = 0; i < sa + 1; i++)\n\t\t\tcin\
-    \ >> a[i];\n\t\tcin >> sb;\n\t\tvector<long long> b(sb + 1);\n\t\tfor (int i =\
-    \ 0; i < sb + 1; i++)\n\t\t\tcin >> b[i];\n\t\tvector<long long> c = convolution<long\
-    \ long>(a, b);\n\t\tcout << (int)c.size() - 1 << '\\n';\n\t\tfor (int i = 0; i\
-    \ < (int)c.size(); i++)\n\t\t\tcout << c[i] << \" \";\n\t\tcout << '\\n';\n\t\
-    }\n\treturn 0;\n}\n"
+    \ n);\n\tc.resize(sa + sb - 1);\n\treturn c;\n}\n\n}\n"
   code: "#pragma once\n\nnamespace Karatsuba {\n\nint size(int s) {\n\treturn s >\
     \ 1 ? 32 - __builtin_clz(s - 1) : 0;\n}\n\ntemplate <class T> void karatsuba(T\
     \ *a, T *b, T *c, T *t, int n) {\n\tint ca = 0, cb = 0;\n\tfor (int i = 0; i <\
@@ -51,22 +46,15 @@ data:
     \ b) {\n\tint sa = (int)a.size(), sb = (int)b.size();\n\tif (!sa || !sb) \n\t\t\
     return {};\n\tint n = (1 << size(std::max(sa, sb)));\n\ta.resize(n);\n\tb.resize(n);\n\
     \tstd::vector<T> c(2 * n), t(2 * n);\n\tkaratsuba(&a[0], &b[0], &c[0], &t[0],\
-    \ n);\n\tc.resize(sa + sb - 1);\n\treturn c;\n}\n\n}\n\nint main() {\n\tusing\
-    \ namespace std;\n\tusing namespace Karatsuba;\n\tios_base::sync_with_stdio(0);\n\
-    \tint tt; \n\tcin >> tt;\n\twhile (tt--) {\n\t\tint sa, sb;\n\t\tcin >> sa;\n\t\
-    \tvector<long long> a(sa + 1);\n\t\tfor (int i = 0; i < sa + 1; i++)\n\t\t\tcin\
-    \ >> a[i];\n\t\tcin >> sb;\n\t\tvector<long long> b(sb + 1);\n\t\tfor (int i =\
-    \ 0; i < sb + 1; i++)\n\t\t\tcin >> b[i];\n\t\tvector<long long> c = convolution<long\
-    \ long>(a, b);\n\t\tcout << (int)c.size() - 1 << '\\n';\n\t\tfor (int i = 0; i\
-    \ < (int)c.size(); i++)\n\t\t\tcout << c[i] << \" \";\n\t\tcout << '\\n';\n\t\
-    }\n\treturn 0;\n}"
+    \ n);\n\tc.resize(sa + sb - 1);\n\treturn c;\n}\n\n}"
   dependsOn: []
   isVerificationFile: false
   path: library/numerical/karatsuba.hpp
   requiredBy: []
-  timestamp: '2021-07-24 19:40:07-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  timestamp: '2021-07-24 22:46:46-04:00'
+  verificationStatus: LIBRARY_ALL_WA
+  verifiedWith:
+  - test/karatsuba.test.cpp
 documentation_of: library/numerical/karatsuba.hpp
 layout: document
 redirect_from:

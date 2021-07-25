@@ -1,7 +1,10 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: test/basic-factor.cpp
+    title: test/basic-factor.cpp
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
@@ -21,11 +24,7 @@ data:
     \ res, ind + 1, cur * mul);\n\t\t\tmul *= v[ind].first;\n\t\t}\n\t}\n}\n\ntemplate\
     \ <class T> std::vector<T> get_divisor(T x) {\n\tauto v = factor(x);\n\tstd::vector<T>\
     \ res; \n\ttour(v, res, 0, (T) 1);\n\tsort(res.begin(), res.end());\n\treturn\
-    \ res;\n}\n\n}\n\nint main() {\n\tusing namespace FactorBasic;\n\tusing namespace\
-    \ std;\n\twhile (true) {\n\t\tlong long n;\n\t\tcin >> n;\n\t\tif (n == 0) return\
-    \ 0;\n\t\tauto f = factor(n);\n\t\tfor (auto x : f) {\n\t\t\tcout << x.first <<\
-    \ \"^\" << x.second << \" \";\n\t\t}\n\t\tcout << '\\n';\n\t}  \n\treturn 0;\n\
-    }\n"
+    \ res;\n}\n\n}\n"
   code: "#pragma once\n\n/**\n * Factors in O(sqrt(n))\n * Divisors in O(sqrt(n))\n\
     \ * phi in O(sqrt(n))\n */\n\nnamespace FactorBasic {\n\ntemplate <class T> std::vector<std::pair<T,\
     \ int>> factor(T x) {\n\tstd::vector<std::pair<T, int>> pri;\n\tfor (T i = 2;\
@@ -39,16 +38,13 @@ data:
     \ res, ind + 1, cur * mul);\n\t\t\tmul *= v[ind].first;\n\t\t}\n\t}\n}\n\ntemplate\
     \ <class T> std::vector<T> get_divisor(T x) {\n\tauto v = factor(x);\n\tstd::vector<T>\
     \ res; \n\ttour(v, res, 0, (T) 1);\n\tsort(res.begin(), res.end());\n\treturn\
-    \ res;\n}\n\n}\n\nint main() {\n\tusing namespace FactorBasic;\n\tusing namespace\
-    \ std;\n\twhile (true) {\n\t\tlong long n;\n\t\tcin >> n;\n\t\tif (n == 0) return\
-    \ 0;\n\t\tauto f = factor(n);\n\t\tfor (auto x : f) {\n\t\t\tcout << x.first <<\
-    \ \"^\" << x.second << \" \";\n\t\t}\n\t\tcout << '\\n';\n\t}  \n\treturn 0;\n\
-    }"
+    \ res;\n}\n\n}"
   dependsOn: []
   isVerificationFile: false
   path: library/number-theory/basic-factor.hpp
-  requiredBy: []
-  timestamp: '2021-07-24 19:40:07-04:00'
+  requiredBy:
+  - test/basic-factor.cpp
+  timestamp: '2021-07-24 22:46:46-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/number-theory/basic-factor.hpp

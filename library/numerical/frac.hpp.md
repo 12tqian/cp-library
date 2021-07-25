@@ -33,8 +33,7 @@ data:
     \ttemplate <class T> friend Frac& operator*=(Frac& l, const T& r) { return l =\
     \ l * r; }\n\ttemplate <class T> friend Frac& operator/=(Frac& l, const T& r)\
     \ { return l = l / r; }\n\tfriend std::ostream& operator<<(std::ostream& os, const\
-    \ Frac& a) { return os << a.n << \"/\" << a.d; }\n};\n\nint main() {\n\treturn\
-    \ 0;\n}\n"
+    \ Frac& a) { return os << a.n << \"/\" << a.d; }\n};\n"
   code: "#pragma once\n\nstruct Frac {\n\tlong long n, d;\n\tFrac(long long _n, long\
     \ long _d) {\n\t\tn = _n, d = _d;\n\t\tlong long g = std::__gcd(n, d); n /= g,\
     \ d /= g;\n\t\tif (d < 0) n *= -1, d *= -1;\n\t}\n\tFrac(long long _n) : Frac(_n,\
@@ -60,13 +59,12 @@ data:
     \ttemplate <class T> friend Frac& operator*=(Frac& l, const T& r) { return l =\
     \ l * r; }\n\ttemplate <class T> friend Frac& operator/=(Frac& l, const T& r)\
     \ { return l = l / r; }\n\tfriend std::ostream& operator<<(std::ostream& os, const\
-    \ Frac& a) { return os << a.n << \"/\" << a.d; }\n};\n\nint main() {\n\treturn\
-    \ 0;\n}\n"
+    \ Frac& a) { return os << a.n << \"/\" << a.d; }\n};"
   dependsOn: []
   isVerificationFile: false
   path: library/numerical/frac.hpp
   requiredBy: []
-  timestamp: '2021-07-24 19:40:07-04:00'
+  timestamp: '2021-07-24 22:46:46-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/numerical/frac.hpp

@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/factor-big.test.cpp
+    title: test/factor-big.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "\nnamespace FactorBig {\n\nlong long gcd(long long _a, long long _b)\
@@ -31,14 +34,7 @@ data:
     \t\t}\n\t}\n}\n\nstd::vector<long long> pollard(long long n) {\n\tif (n == 1)\
     \ return {};\n\tlong long x = pollard_single(n);\n\tif (x == n) return {x};\n\t\
     std::vector<long long> le = pollard(x);\n\tstd::vector<long long> ri = pollard(n\
-    \ / x);\n\tle.insert(le.end(), ri.begin(), ri.end());\n\treturn le;\n}\n\n}\n\n\
-    int main() {\n\tusing namespace std;\n\tusing namespace FactorBig;\n\tint q;\n\
-    \tscanf(\"%d\", &q);\n\tmap<long long, vector<long long>> cache;\n\tfor (int i\
-    \ = 0; i < q; i++) {\n\t\tlong long a;\n\t\tscanf(\"%lld\", &a);\n\t\tif (!cache.count(a))\
-    \ {\n\t\t\tauto v = pollard(a);\n\t\t\tsort(v.begin(), v.end());\n\t\t\tcache[a]\
-    \ = v;\n\t\t}\n\t\tauto v = cache[a];\n\t\tprintf(\"%d\", (int)v.size());\n\t\t\
-    for (auto d: v) printf(\" %lld\", d);\n\t\tprintf(\"\\n\");\n\t}\n\treturn 0;\n\
-    }\n"
+    \ / x);\n\tle.insert(le.end(), ri.begin(), ri.end());\n\treturn le;\n}\n\n}\n"
   code: "#pragma once\n\nnamespace FactorBig {\n\nlong long gcd(long long _a, long\
     \ long _b) {\n\tunsigned long long a = abs(_a), b = abs(_b);\n\tif (a == 0) return\
     \ b;\n\tif (b == 0) return a;\n\tauto bsf = [](unsigned long long x) -> int {\n\
@@ -62,25 +58,19 @@ data:
     \t\t}\n\t}\n}\n\nstd::vector<long long> pollard(long long n) {\n\tif (n == 1)\
     \ return {};\n\tlong long x = pollard_single(n);\n\tif (x == n) return {x};\n\t\
     std::vector<long long> le = pollard(x);\n\tstd::vector<long long> ri = pollard(n\
-    \ / x);\n\tle.insert(le.end(), ri.begin(), ri.end());\n\treturn le;\n}\n\n}\n\n\
-    int main() {\n\tusing namespace std;\n\tusing namespace FactorBig;\n\tint q;\n\
-    \tscanf(\"%d\", &q);\n\tmap<long long, vector<long long>> cache;\n\tfor (int i\
-    \ = 0; i < q; i++) {\n\t\tlong long a;\n\t\tscanf(\"%lld\", &a);\n\t\tif (!cache.count(a))\
-    \ {\n\t\t\tauto v = pollard(a);\n\t\t\tsort(v.begin(), v.end());\n\t\t\tcache[a]\
-    \ = v;\n\t\t}\n\t\tauto v = cache[a];\n\t\tprintf(\"%d\", (int)v.size());\n\t\t\
-    for (auto d: v) printf(\" %lld\", d);\n\t\tprintf(\"\\n\");\n\t}\n\treturn 0;\n\
-    }"
+    \ / x);\n\tle.insert(le.end(), ri.begin(), ri.end());\n\treturn le;\n}\n\n}"
   dependsOn: []
   isVerificationFile: false
-  path: library/number-theory/big-fast-factor-better.hpp
+  path: library/number-theory/factor-big.hpp
   requiredBy: []
-  timestamp: '2021-07-24 19:40:07-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
-documentation_of: library/number-theory/big-fast-factor-better.hpp
+  timestamp: '2021-07-24 22:46:46-04:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/factor-big.test.cpp
+documentation_of: library/number-theory/factor-big.hpp
 layout: document
 redirect_from:
-- /library/library/number-theory/big-fast-factor-better.hpp
-- /library/library/number-theory/big-fast-factor-better.hpp.html
-title: library/number-theory/big-fast-factor-better.hpp
+- /library/library/number-theory/factor-big.hpp
+- /library/library/number-theory/factor-big.hpp.html
+title: library/number-theory/factor-big.hpp
 ---

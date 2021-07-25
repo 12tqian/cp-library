@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/strongly-connected-components-tarjan.test.cpp
+    title: test/strongly-connected-components-tarjan.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "\nstruct SCC {\n\tint n, time, num_comps;\n\tstd::vector<std::vector<int>>\
@@ -39,8 +42,9 @@ data:
   path: library/graphs/strongly-connected-components-tarjan.hpp
   requiredBy: []
   timestamp: '2021-07-24 22:29:57-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/strongly-connected-components-tarjan.test.cpp
 documentation_of: library/graphs/strongly-connected-components-tarjan.hpp
 layout: document
 redirect_from:

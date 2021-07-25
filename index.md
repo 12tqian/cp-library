@@ -50,7 +50,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/data-structures/1d-range-queries/sparse-segment-tree.hpp
       title: library/data-structures/1d-range-queries/sparse-segment-tree.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/data-structures/1d-range-queries/sparse-table.hpp
       title: library/data-structures/1d-range-queries/sparse-table.hpp
   - name: library/data-structures/2d-range-queries
@@ -100,7 +100,7 @@ data:
       title: library/geometry/point.hpp
   - name: library/graphs
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/graphs/bellman-ford.hpp
       title: library/graphs/bellman-ford.hpp
     - icon: ':heavy_check_mark:'
@@ -148,10 +148,10 @@ data:
     - icon: ':warning:'
       path: library/graphs/offline-dynamic-connectivity.hpp
       title: library/graphs/offline-dynamic-connectivity.hpp
-    - icon: ':warning:'
+    - icon: ':x:'
       path: library/graphs/strongly-connected-components-kosaraju.hpp
       title: library/graphs/strongly-connected-components-kosaraju.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/graphs/strongly-connected-components-tarjan.hpp
       title: library/graphs/strongly-connected-components-tarjan.hpp
     - icon: ':warning:'
@@ -203,15 +203,15 @@ data:
       path: library/number-theory/basic-number-theory.hpp
       title: library/number-theory/basic-number-theory.hpp
     - icon: ':warning:'
-      path: library/number-theory/big-fast-factor-better.hpp
-      title: library/number-theory/big-fast-factor-better.hpp
-    - icon: ':warning:'
       path: library/number-theory/counting-primes.hpp
       title: library/number-theory/counting-primes.hpp
+    - icon: ':heavy_check_mark:'
+      path: library/number-theory/factor-big.hpp
+      title: library/number-theory/factor-big.hpp
     - icon: ':warning:'
       path: library/number-theory/fast-factor-sieve.hpp
       title: library/number-theory/fast-factor-sieve.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/number-theory/mod-sqrt.hpp
       title: library/number-theory/mod-sqrt.hpp
     - icon: ':warning:'
@@ -222,13 +222,13 @@ data:
     - icon: ':warning:'
       path: library/numerical/big-integer.hpp
       title: library/numerical/big-integer.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/numerical/fast-fourier-transform.hpp
       title: library/numerical/fast-fourier-transform.hpp
     - icon: ':warning:'
       path: library/numerical/frac.hpp
       title: library/numerical/frac.hpp
-    - icon: ':warning:'
+    - icon: ':x:'
       path: library/numerical/karatsuba.hpp
       title: library/numerical/karatsuba.hpp
     - icon: ':warning:'
@@ -257,13 +257,13 @@ data:
     - icon: ':warning:'
       path: library/string/hashing.hpp
       title: library/string/hashing.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/string/manacher.hpp
       title: library/string/manacher.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/string/suffix-array-linear.hpp
       title: library/string/suffix-array-linear.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/string/suffix-array.hpp
       title: library/string/suffix-array.hpp
   - name: library/unused
@@ -280,6 +280,9 @@ data:
   - name: test
     pages:
     - icon: ':warning:'
+      path: test/basic-factor.cpp
+      title: test/basic-factor.cpp
+    - icon: ':warning:'
       path: test/convex-hull.cpp
       title: test/convex-hull.cpp
     - icon: ':warning:'
@@ -289,14 +292,23 @@ data:
       path: test/gosper-hack.cpp
       title: test/gosper-hack.cpp
     - icon: ':warning:'
+      path: test/hashing.cpp
+      title: test/hashing.cpp
+    - icon: ':warning:'
       path: test/link-cut-tree.cpp
       title: test/link-cut-tree.cpp
+    - icon: ':warning:'
+      path: test/matrix.cpp
+      title: test/matrix.cpp
     - icon: ':warning:'
       path: test/monotonic-convex-hull.cpp
       title: test/monotonic-convex-hull.cpp
     - icon: ':warning:'
       path: test/offline-dynamic-connectivity.cpp
       title: test/offline-dynamic-connectivity.cpp
+    - icon: ':warning:'
+      path: test/simplex.cpp
+      title: test/simplex.cpp
   verificationCategories:
   - name: test
     pages:
@@ -306,7 +318,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/associative-range-query.test.cpp
       title: test/associative-range-query.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/bellman-ford.test.cpp
       title: test/bellman-ford.test.cpp
     - icon: ':heavy_check_mark:'
@@ -316,6 +328,12 @@ data:
       path: test/example.test.cpp
       title: test/example.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/factor-big.test.cpp
+      title: test/factor-big.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/fast-fourier-transform.test.cpp
+      title: test/fast-fourier-transform.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/fenwick-tree.test.cpp
       title: test/fenwick-tree.test.cpp
     - icon: ':heavy_check_mark:'
@@ -324,6 +342,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/implicit-lazy-segment-tree.test.cpp
       title: test/implicit-lazy-segment-tree.test.cpp
+    - icon: ':x:'
+      path: test/karatsuba.test.cpp
+      title: test/karatsuba.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/lazy-segment-tree.test.cpp
       title: test/lazy-segment-tree.test.cpp
@@ -340,6 +361,12 @@ data:
       path: test/li-chao-tree-online.test.cpp
       title: test/li-chao-tree-online.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/manacher.test.cpp
+      title: test/manacher.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/mod-sqrt.test.cpp
+      title: test/mod-sqrt.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/point-update-segment-tree.test.cpp
       title: test/point-update-segment-tree.test.cpp
     - icon: ':heavy_check_mark:'
@@ -351,9 +378,15 @@ data:
     - icon: ':x:'
       path: test/strongly-connected-components-kosaraju.test.cpp
       title: test/strongly-connected-components-kosaraju.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/strongly-connected-components-tarjan.test.cpp
       title: test/strongly-connected-components-tarjan.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/suffix-array-linear.test.cpp
+      title: test/suffix-array-linear.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/suffix-array.test.cpp
+      title: test/suffix-array.test.cpp
 layout: toppage
 ---
 ![Badge](https://cp-logo.vercel.app/codeforces/12tqian)
