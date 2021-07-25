@@ -79,8 +79,3 @@ template <class T> struct LCAJumpSparse {
 		return comb(res1, res2);
 	}
 };
-
-int main() {
-	LCAJumpSparse<int> L;
-	return 0;
-}

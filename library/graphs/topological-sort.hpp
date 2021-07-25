@@ -31,7 +31,3 @@ std::vector<int> topo_sort(std::vector<std::vector<int>> adj) {
 	}
 	return res;
 }
-
-int main() {
-	return 0;
-}

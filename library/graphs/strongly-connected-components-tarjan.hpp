@@ -46,24 +46,3 @@ struct SCC {
 			comps[id[i]].push_back(i);
 	}
 };
-
-int main() {
-	using namespace std;
-	int n, m; cin >> n >> m;
-	SCC S;
-	S.init(n);
-	for (int i = 0; i < m; i++) {
-		int u, v;
-		cin >> u >> v;
-		S.ae(u, v);
-	}
-	S.build();
-	cout << S.num_comps << '\n';
-	for (auto &comp : S.comps) {
-		cout << (int)comp.size() << " ";
-		for (int &x : comp)
-			cout << x << " ";
-		cout << '\n';
-	}
-	return 0;
-}
