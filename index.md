@@ -20,9 +20,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/data-structures/1d-range-queries/associative-range-query.hpp
       title: library/data-structures/1d-range-queries/associative-range-query.hpp
-    - icon: ':warning:'
-      path: library/data-structures/1d-range-queries/fenwick.hpp
-      title: library/data-structures/1d-range-queries/fenwick.hpp
+    - icon: ':x:'
+      path: library/data-structures/1d-range-queries/fenwick-tree.hpp
+      title: library/data-structures/1d-range-queries/fenwick-tree.hpp
     - icon: ':warning:'
       path: library/data-structures/1d-range-queries/implicit-lazy-segment-tree.hpp
       title: library/data-structures/1d-range-queries/implicit-lazy-segment-tree.hpp
@@ -286,6 +286,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/example.test.cpp
       title: test/example.test.cpp
+    - icon: ':x:'
+      path: test/fenwick.test.cpp
+      title: test/fenwick.test.cpp
 layout: toppage
 ---
 ![Badge](https://cp-logo.vercel.app/codeforces/12tqian)

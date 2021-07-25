@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: test/fenwick.test.cpp
+    title: test/fenwick.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "\ntemplate <class T> struct FenwickTree {\n\tstd::vector<T> fwt;\n\
@@ -15,8 +18,7 @@ data:
     }\n\n\tT sum(int r) {\n\t\tT ret = 0;\n\t\tfor (; r >= 0; r = (r & (r + 1)) -\
     \ 1) \n\t\t\tret += fwt[r];\n\t\treturn ret;\n\t}\n\n\tT query(int l, int r) {\n\
     \t\treturn sum(r) - sum(l - 1);\n\t}\n\t\n\tvoid add(int idx, T delta) {\n\t\t\
-    for (; idx < n; idx = idx | (idx + 1)) \n\t\t\tfwt[idx] += delta;\n\t}\n};\n\n\
-    int main() {\n\treturn 0;\n}\n"
+    for (; idx < n; idx = idx | (idx + 1)) \n\t\t\tfwt[idx] += delta;\n\t}\n};\n"
   code: "#pragma once\n\ntemplate <class T> struct FenwickTree {\n\tstd::vector<T>\
     \ fwt;\n\tint n;\n\n\tvoid init(int n_) {\n\t\tn = n_;\n\t\tfwt.assign(n, 0);\n\
     \t}\n\n\tvoid init(std::vector<T> &a) {\n\t\tn = (int)a.size();\n\t\tfwt.assign(n,\
@@ -24,19 +26,19 @@ data:
     }\n\t}\n\n\tT sum(int r) {\n\t\tT ret = 0;\n\t\tfor (; r >= 0; r = (r & (r + 1))\
     \ - 1) \n\t\t\tret += fwt[r];\n\t\treturn ret;\n\t}\n\n\tT query(int l, int r)\
     \ {\n\t\treturn sum(r) - sum(l - 1);\n\t}\n\t\n\tvoid add(int idx, T delta) {\n\
-    \t\tfor (; idx < n; idx = idx | (idx + 1)) \n\t\t\tfwt[idx] += delta;\n\t}\n};\n\
-    \nint main() {\n\treturn 0;\n}"
+    \t\tfor (; idx < n; idx = idx | (idx + 1)) \n\t\t\tfwt[idx] += delta;\n\t}\n};"
   dependsOn: []
   isVerificationFile: false
-  path: library/data-structures/1d-range-queries/fenwick.hpp
+  path: library/data-structures/1d-range-queries/fenwick-tree.hpp
   requiredBy: []
-  timestamp: '2021-07-24 19:40:07-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
-documentation_of: library/data-structures/1d-range-queries/fenwick.hpp
+  timestamp: '2021-07-24 21:09:23-04:00'
+  verificationStatus: LIBRARY_ALL_WA
+  verifiedWith:
+  - test/fenwick.test.cpp
+documentation_of: library/data-structures/1d-range-queries/fenwick-tree.hpp
 layout: document
 redirect_from:
-- /library/library/data-structures/1d-range-queries/fenwick.hpp
-- /library/library/data-structures/1d-range-queries/fenwick.hpp.html
-title: library/data-structures/1d-range-queries/fenwick.hpp
+- /library/library/data-structures/1d-range-queries/fenwick-tree.hpp
+- /library/library/data-structures/1d-range-queries/fenwick-tree.hpp.html
+title: library/data-structures/1d-range-queries/fenwick-tree.hpp
 ---
