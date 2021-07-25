@@ -17,12 +17,10 @@ data:
   _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    IGNORE: ''
-    IGNORE_IF_CLANG: ''
-    IGNORE_IF_GCC: ''
+    PROBLEM: https://judge.yosupo.jp/problem/range_affine_range_sum
     links:
-    - https://atcoder.jp/contests/practice2/tasks/practice2_k
-  bundledCode: "#define IGNORE\n#define PROBLEM \"https://atcoder.jp/contests/practice2/tasks/practice2_k\"\
+    - https://judge.yosupo.jp/problem/range_affine_range_sum
+  bundledCode: "#define PROBLEM \"https://judge.yosupo.jp/problem/range_affine_range_sum\"\
     \n\n#include <algorithm>\n#include <array>\n#include <bitset>\n#include <cassert>\n\
     #include <chrono>\n#include <cmath>\n#include <complex>\n#include <cstdio>\n#include\
     \ <cstdlib>\n#include <cstring>\n#include <ctime>\n#include <deque>\n#include\
@@ -85,7 +83,7 @@ data:
     \ r - 1, c);\n        } else {\n            int l, r;\n            cin >> l >>\
     \ r;\n            cout << seg.qsum(l, r - 1) << '\\n';\n        }\n    }\n   \
     \ return 0;\n}\n"
-  code: "#define IGNORE\n#define PROBLEM \"https://atcoder.jp/contests/practice2/tasks/practice2_k\"\
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/range_affine_range_sum\"\
     \n\n#include \"../library/contest/template-minimal.hpp\"\n#include \"../library/numerical/mod-int2.hpp\"\
     \n#include \"../library/data-structures/1d-range-queries/affine-segment-tree.hpp\"\
     \n\nusing mi = Mint<998244353, 5>;\n\nint main() {\n\tcin.tie(0)->sync_with_stdio(false);\n\
@@ -105,7 +103,7 @@ data:
   isVerificationFile: true
   path: test/affine-segment-tree.test.cpp
   requiredBy: []
-  timestamp: '2021-07-24 21:02:15-04:00'
+  timestamp: '2021-07-24 21:04:01-04:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/affine-segment-tree.test.cpp
