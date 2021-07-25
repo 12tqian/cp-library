@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/li-chao-tree-online.test.cpp
+    title: test/li-chao-tree-online.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "\n// Currently set to get the max of things, use negatives for minimum\n\
@@ -28,17 +31,7 @@ data:
     \ X, long long lo, long long hi, long long L, long long R) {\n\t\tif (R < lo ||\
     \ hi < L) return;\n\t\tif (lo <= L && R <= hi) return modify(X, L, R);\n\t\tlong\
     \ long M = mid(L + R);\n\t\tif (lo <= M) mc(0), c[0]->upd(X, lo, hi, L, M);\n\t\
-    \tif (hi > M) mc(1), c[1]->upd(X, lo, hi, M + 1, R);\n\t}\n};\n\nint main() {\n\
-    \tusing namespace std;\n\tcin.tie(0)->sync_with_stdio(0);\n\tconst int INF = 1e9;\n\
-    \tint n, q; cin >> n >> q;\n\tNode L;\n\tfor (int i = 0; i < n; i++) {\n\t\tint\
-    \ l, r, a; long long b;\n\t\tcin >> l >> r >> a >> b;\n\t\tL.upd({-a, -b}, l,\
-    \ r - 1, -INF, INF);\n\t}\n\tfor (int i = 0; i < q; i++) {\n\t\tint t; cin >>\
-    \ t;\n\t\tif (t == 0) {\n\t\t\tint l, r, a; long long b; \n\t\t\tcin >> l >> r\
-    \ >> a >> b;\n\t\t\tL.upd({-a, -b}, l, r - 1, -INF, INF);\n\t\t} else {\n\t\t\t\
-    int p; cin >> p;\n\t\t\tlong long ans = L.query(p, -INF, INF);\n\t\t\tif (ans\
-    \ == numeric_limits<long long>::min()) {\n\t\t\t\tcout << \"INFINITY\" << '\\\
-    n';\n\t\t\t} else {\n\t\t\t\tcout << -ans << '\\n';\n\t\t\t}\n\t\t}\n\t}\n\treturn\
-    \ 0;\n}\n"
+    \tif (hi > M) mc(1), c[1]->upd(X, lo, hi, M + 1, R);\n\t}\n};\n"
   code: "#pragma once\n\n// Currently set to get the max of things, use negatives\
     \ for minimum\n\nstruct Line {\n\tint k; long long m;\n\n\tLine(int _k, long long\
     \ _m) { k = _k, m = _m; }\n\tLine() : Line(0, std::numeric_limits<long long>::min())\
@@ -59,24 +52,15 @@ data:
     \ X, long long lo, long long hi, long long L, long long R) {\n\t\tif (R < lo ||\
     \ hi < L) return;\n\t\tif (lo <= L && R <= hi) return modify(X, L, R);\n\t\tlong\
     \ long M = mid(L + R);\n\t\tif (lo <= M) mc(0), c[0]->upd(X, lo, hi, L, M);\n\t\
-    \tif (hi > M) mc(1), c[1]->upd(X, lo, hi, M + 1, R);\n\t}\n};\n\nint main() {\n\
-    \tusing namespace std;\n\tcin.tie(0)->sync_with_stdio(0);\n\tconst int INF = 1e9;\n\
-    \tint n, q; cin >> n >> q;\n\tNode L;\n\tfor (int i = 0; i < n; i++) {\n\t\tint\
-    \ l, r, a; long long b;\n\t\tcin >> l >> r >> a >> b;\n\t\tL.upd({-a, -b}, l,\
-    \ r - 1, -INF, INF);\n\t}\n\tfor (int i = 0; i < q; i++) {\n\t\tint t; cin >>\
-    \ t;\n\t\tif (t == 0) {\n\t\t\tint l, r, a; long long b; \n\t\t\tcin >> l >> r\
-    \ >> a >> b;\n\t\t\tL.upd({-a, -b}, l, r - 1, -INF, INF);\n\t\t} else {\n\t\t\t\
-    int p; cin >> p;\n\t\t\tlong long ans = L.query(p, -INF, INF);\n\t\t\tif (ans\
-    \ == numeric_limits<long long>::min()) {\n\t\t\t\tcout << \"INFINITY\" << '\\\
-    n';\n\t\t\t} else {\n\t\t\t\tcout << -ans << '\\n';\n\t\t\t}\n\t\t}\n\t}\n\treturn\
-    \ 0;\n}"
+    \tif (hi > M) mc(1), c[1]->upd(X, lo, hi, M + 1, R);\n\t}\n};"
   dependsOn: []
   isVerificationFile: false
   path: library/data-structures/1d-range-queries/li-chao-tree-online.hpp
   requiredBy: []
-  timestamp: '2021-07-24 19:40:07-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  timestamp: '2021-07-24 21:27:52-04:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/li-chao-tree-online.test.cpp
 documentation_of: library/data-structures/1d-range-queries/li-chao-tree-online.hpp
 layout: document
 redirect_from:

@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/li-chao-tree-offline.test.cpp
+    title: test/li-chao-tree-offline.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "\n// Set to minimums, negate for maximums\n\ntemplate <class T> struct\
@@ -38,20 +41,7 @@ data:
     \t\twhile (ind > 1) {\n\t\t\tind = ind >> 1;\n\t\t\tret = std::min(ret, seg[ind].get(x));\n\
     \t\t}\n\t\treturn ret;\n\t}\n\n\tT query_idx(int k) {\n\t\tconst T x = xset[k];\n\
     \t\tk += sz;\n\t\treturn inner_query(x, k);\n\t}\n\t\n\tT query(T x) { return\
-    \ query_idx(get_more_idx(x)); }\n};\n\nint main() {\n\tusing namespace std;\n\t\
-    cin.tie(0)->sync_with_stdio(0);\n\tint n, q; cin >> n >> q;\n\tvector<long long>\
-    \ a(n), b(n), l(n), r(n);\n\tfor (int i = 0; i < n; i++) \n\t\tcin >> l[i] >>\
-    \ r[i] >> a[i] >> b[i];\n\tvector<long long> c(q), d(q), e(q), f(q), g(q);\n\t\
-    vector<long long> xs;\n\tfor (int i = 0; i < q; i++) {\n\t\tcin >> c[i];\n\t\t\
-    if (c[i]) {\n\t\t\tcin >> d[i];\n\t\t\txs.push_back(d[i]);\n\t\t} else {\n\t\t\
-    \tcin >> d[i] >> e[i] >> f[i] >> g[i];\n\t\t}\n\t}\n\txs.push_back(numeric_limits<long\
-    \ long>::min());\n\txs.push_back(numeric_limits<long long>::max());\n\tLiChaoTree<long\
-    \ long> L(xs);\n\tfor (int i = 0; i < n; i++) {\n\t\tL.update_segment(a[i], b[i],\
-    \ l[i], r[i] - 1);\n\t}\n\tfor (int i = 0; i < q; i++) {\n\t\tif (c[i]) {\n\t\t\
-    \tlong long ans = L.query(d[i]);\n\t\t\tif (ans == numeric_limits<long long>::max())\
-    \ \n\t\t\t\tcout << \"INFINITY\\n\";\n\t\t\telse \n\t\t\t\tcout << ans << '\\\
-    n';\n\t\t} else {\n\t\t\tL.update_segment(f[i], g[i], d[i], e[i] - 1);\n\t\t}\n\
-    \t}\n\treturn 0;\n}\n"
+    \ query_idx(get_more_idx(x)); }\n};\n"
   code: "#pragma once\n\n// Set to minimums, negate for maximums\n\ntemplate <class\
     \ T> struct LiChaoTree {\n\tstruct Line {\n\t\tT slope, intercept;\n\t\tLine(T\
     \ slope, T intercept) : slope(slope), intercept(intercept) {}\n\t\tinline T get(T\
@@ -82,27 +72,15 @@ data:
     \t\twhile (ind > 1) {\n\t\t\tind = ind >> 1;\n\t\t\tret = std::min(ret, seg[ind].get(x));\n\
     \t\t}\n\t\treturn ret;\n\t}\n\n\tT query_idx(int k) {\n\t\tconst T x = xset[k];\n\
     \t\tk += sz;\n\t\treturn inner_query(x, k);\n\t}\n\t\n\tT query(T x) { return\
-    \ query_idx(get_more_idx(x)); }\n};\n\nint main() {\n\tusing namespace std;\n\t\
-    cin.tie(0)->sync_with_stdio(0);\n\tint n, q; cin >> n >> q;\n\tvector<long long>\
-    \ a(n), b(n), l(n), r(n);\n\tfor (int i = 0; i < n; i++) \n\t\tcin >> l[i] >>\
-    \ r[i] >> a[i] >> b[i];\n\tvector<long long> c(q), d(q), e(q), f(q), g(q);\n\t\
-    vector<long long> xs;\n\tfor (int i = 0; i < q; i++) {\n\t\tcin >> c[i];\n\t\t\
-    if (c[i]) {\n\t\t\tcin >> d[i];\n\t\t\txs.push_back(d[i]);\n\t\t} else {\n\t\t\
-    \tcin >> d[i] >> e[i] >> f[i] >> g[i];\n\t\t}\n\t}\n\txs.push_back(numeric_limits<long\
-    \ long>::min());\n\txs.push_back(numeric_limits<long long>::max());\n\tLiChaoTree<long\
-    \ long> L(xs);\n\tfor (int i = 0; i < n; i++) {\n\t\tL.update_segment(a[i], b[i],\
-    \ l[i], r[i] - 1);\n\t}\n\tfor (int i = 0; i < q; i++) {\n\t\tif (c[i]) {\n\t\t\
-    \tlong long ans = L.query(d[i]);\n\t\t\tif (ans == numeric_limits<long long>::max())\
-    \ \n\t\t\t\tcout << \"INFINITY\\n\";\n\t\t\telse \n\t\t\t\tcout << ans << '\\\
-    n';\n\t\t} else {\n\t\t\tL.update_segment(f[i], g[i], d[i], e[i] - 1);\n\t\t}\n\
-    \t}\n\treturn 0;\n}"
+    \ query_idx(get_more_idx(x)); }\n};"
   dependsOn: []
   isVerificationFile: false
   path: library/data-structures/1d-range-queries/li-chao-tree-offline.hpp
   requiredBy: []
-  timestamp: '2021-07-24 19:40:07-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  timestamp: '2021-07-24 21:27:52-04:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/li-chao-tree-offline.test.cpp
 documentation_of: library/data-structures/1d-range-queries/li-chao-tree-offline.hpp
 layout: document
 redirect_from:

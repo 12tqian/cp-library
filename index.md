@@ -32,10 +32,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/data-structures/1d-range-queries/lazy-segment-tree.hpp
       title: library/data-structures/1d-range-queries/lazy-segment-tree.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/data-structures/1d-range-queries/li-chao-tree-offline.hpp
       title: library/data-structures/1d-range-queries/li-chao-tree-offline.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/data-structures/1d-range-queries/li-chao-tree-online.hpp
       title: library/data-structures/1d-range-queries/li-chao-tree-online.hpp
     - icon: ':warning:'
@@ -292,6 +292,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/lazy-segment-tree.test.cpp
       title: test/lazy-segment-tree.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/li-chao-tree-offline.test.cpp
+      title: test/li-chao-tree-offline.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/li-chao-tree-online.test.cpp
+      title: test/li-chao-tree-online.test.cpp
 layout: toppage
 ---
 ![Badge](https://cp-logo.vercel.app/codeforces/12tqian)
