@@ -1,30 +1,34 @@
 #define IGNORE
-// #define PROBLEM "https://atcoder.jp/contests/practice2/tasks/practice2_k"
+#define PROBLEM "https://atcoder.jp/contests/practice2/tasks/practice2_k"
 
 #include "../library/contest/template-minimal.hpp"
-#include "../library/numerical/mod-int.hpp"
+#include "../library/numerical/mod-int2.hpp"
 #include "../library/data-structures/1d-range-queries/affine-segment-tree.hpp"
 
+using mi = Mint<998244353, 5>;
+
 int main() {
-    ios_base::sync_with_stdio(0);
-    cin.tie(0);
-    AffineSegmentTree<mi> seg;
+	cin.tie(0)->sync_with_stdio(false);
     int n, q;
-    seg.init(n);
+    AffineSegmentTree<int> seg;
     cin >> n >> q;
+    seg.init(n);
     vector<int> a(n);
     for (int i = 0; i < n; i++) {
         cin >> a[i];
-        seg.upd(i, i, 0, a[i]);
+        seg.upd(0, i, i, a[i]);
     }
-    while (q--) {	
+    for (int i = 0; i < n; ++i) {
+        cout << seg.qsum(i, i) << endl;
+    }
+    while (q--) {
         int t;
         cin >> t;
         if (t == 0) {
             int l, r, b, c;
             cin >> l >> r >> b >> c;
-            seg.upd(l, r - 1, 1, b);
-            seg.upd(l, r - 1, 0, c);
+            seg.upd(1, l, r - 1, b);
+            seg.upd(0, l, r - 1, c);
         } else {
             int l, r;
             cin >> l >> r;
