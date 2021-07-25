@@ -1,4 +1,4 @@
-#pragma once
+#include "../contest/template-minimal.hpp"
 
 const int MOD = 998244353;
 
