@@ -9,16 +9,13 @@ using mi = Mint<998244353, 5>;
 int main() {
 	cin.tie(0)->sync_with_stdio(false);
     int n, q;
-    AffineSegmentTree<int> seg;
+    AffineSegmentTree<mi> seg;
     cin >> n >> q;
     seg.init(n);
     vector<int> a(n);
     for (int i = 0; i < n; i++) {
         cin >> a[i];
         seg.upd(0, i, i, a[i]);
-    }
-    for (int i = 0; i < n; ++i) {
-        cout << seg.qsum(i, i) << endl;
     }
     while (q--) {
         int t;
