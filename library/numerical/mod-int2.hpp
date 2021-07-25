@@ -7,7 +7,7 @@ template <int MOD, int RT> struct Mint {
 	int v; 
 	explicit operator int() const { return v; } // explicit -> don't silently convert to int
 	Mint() { v = 0; }
-	Mint(long long _v) { v = int((-MOD < _v && _v < MOD) ? _v : _v % MOD); if (v < 0) v += MOD; }
+	Mint(long long _v) { v = int((-MOD <= _v && _v < MOD) ? _v : _v % MOD); if (v < 0) v += MOD; }
 	friend bool operator==(const Mint &a, const Mint &b) { return a.v == b.v; }
 	friend bool operator!=(const Mint &a, const Mint &b) { return !(a == b); }
 	friend bool operator<(const Mint &a, const Mint &b) { return a.v < b.v; }
