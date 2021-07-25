@@ -61,21 +61,3 @@ template <class C> std::pair<C, std::vector<int>> hungarian(const std::vector<st
 		job[i]--;
 	return {-v[0], job};
 }
-
-int main() {
-	using namespace std;
-	int n; cin >> n;
-	vector<vector<long long>> a(n, vector<long long>(n));
-	for (int i = 0; i < n; i++)
-		for (int j = 0; j < n; j++) cin >> a[i][j];
-	auto res = hungarian(a);
-	vector<int> loc(n);
-	for (int i = 0; i < n; i++) {
-		loc[res.second[i]] = i;
-	}
-	cout << res.first << '\n';
-	for (int x : loc) 
-		cout << x << " ";
-	cout << '\n';
-	return 0;
-}

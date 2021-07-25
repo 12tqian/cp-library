@@ -123,20 +123,3 @@ template <class F> struct PushRelabel {
 		return excess[t] + INF;
 	}
 };
-
-int main() {
-	using namespace std;
-	ios_base::sync_with_stdio(0);
-	int n, m;
-	cin >> n >> m;
-	PushRelabel<long long> P;
-	P.init(n);
-	for (int i = 0; i < m; i++) {
-		int u, v, w; cin >> u >> v >> w;
-		u--, v--;
-		P.ae(u, v, w);
-		P.ae(v, u, w);
-	}
-	cout << P.max_flow(0, n - 1) << '\n';
-	return 0;
-}

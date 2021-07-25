@@ -7,8 +7,8 @@
  * Afterwards, do the updates again, and now you can mix in the queries too
  */
 
-template<class T> struct Offline2DBIT { 
-	bool mode = 0; // mode = 1 -> initialized
+template <class T> struct Offline2DBIT { 
+	bool mode = false; // mode = 1 -> initialized
 	int sz;
 	std::vector<std::pair<int, int>> todo;
 	std::vector<int> cnt, st, val;
