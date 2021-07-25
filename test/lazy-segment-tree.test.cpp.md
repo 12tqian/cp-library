@@ -41,30 +41,28 @@ data:
     \ R || L > hi) return 0;\n\t\tif (lo <= L && R <= hi) return sum[ind];\n\t\tint\
     \ M = (L + R) / 2;\n\t\treturn qsum(lo, hi, 2 * ind, L, M) + qsum(lo, hi, 2 *\
     \ ind + 1, M + 1, R);\n\t}\n};\n\nint main() {\n\tusing namespace std;\n\tcin.tie(0)->sync_with_stdio(0);\n\
-    \tint n, q; \n    cin >> n >> q;\n\tLazySeg<long long> seg;\n    seg.init(n);\n\
-    \tfor (int i = 0; i < n; i++) {\n        int x;\n        cin >> x;\n        seg.upd(i,\
-    \ i, x);\n    }\n\twhile (q--) {\n        int t;\n        cin >> t;\n        if\
-    \ (t == 0) {\n            int p, x;\n            cin >> p >> x;\n            seg.upd(p,\
-    \ p, x);\n        } else {\n            int l, r;\n            cin >> l >> r;\n\
-    \            --r;\n            cout << seg.qsum(l, r) << '\\n';\n        }\n\t\
-    }\n\treturn 0;\n}\n"
+    \tint n, q; \n\tcin >> n >> q;\n\tLazySeg<long long> seg;\n\tseg.init(n);\n\t\
+    for (int i = 0; i < n; i++) {\n\t\tint x;\n\t\tcin >> x;\n\t\tseg.upd(i, i, x);\n\
+    \t}\n\twhile (q--) {\n\t\tint t;\n\t\tcin >> t;\n\t\tif (t == 0) {\n\t\t\tint\
+    \ p, x;\n\t\t\tcin >> p >> x;\n\t\t\tseg.upd(p, p, x);\n\t\t} else {\n\t\t\tint\
+    \ l, r;\n\t\t\tcin >> l >> r;\n\t\t\t--r;\n\t\t\tcout << seg.qsum(l, r) << '\\\
+    n';\n\t\t}\n\t}\n\treturn 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/point_add_range_sum\"\n\
     \n#include \"../library/contest/template-minimal.hpp\"\n#include \"../library/data-structures/1d-range-queries/lazy-segment-tree.hpp\"\
     \n\nint main() {\n\tusing namespace std;\n\tcin.tie(0)->sync_with_stdio(0);\n\t\
-    int n, q; \n    cin >> n >> q;\n\tLazySeg<long long> seg;\n    seg.init(n);\n\t\
-    for (int i = 0; i < n; i++) {\n        int x;\n        cin >> x;\n        seg.upd(i,\
-    \ i, x);\n    }\n\twhile (q--) {\n        int t;\n        cin >> t;\n        if\
-    \ (t == 0) {\n            int p, x;\n            cin >> p >> x;\n            seg.upd(p,\
-    \ p, x);\n        } else {\n            int l, r;\n            cin >> l >> r;\n\
-    \            --r;\n            cout << seg.qsum(l, r) << '\\n';\n        }\n\t\
-    }\n\treturn 0;\n}"
+    int n, q; \n\tcin >> n >> q;\n\tLazySeg<long long> seg;\n\tseg.init(n);\n\tfor\
+    \ (int i = 0; i < n; i++) {\n\t\tint x;\n\t\tcin >> x;\n\t\tseg.upd(i, i, x);\n\
+    \t}\n\twhile (q--) {\n\t\tint t;\n\t\tcin >> t;\n\t\tif (t == 0) {\n\t\t\tint\
+    \ p, x;\n\t\t\tcin >> p >> x;\n\t\t\tseg.upd(p, p, x);\n\t\t} else {\n\t\t\tint\
+    \ l, r;\n\t\t\tcin >> l >> r;\n\t\t\t--r;\n\t\t\tcout << seg.qsum(l, r) << '\\\
+    n';\n\t\t}\n\t}\n\treturn 0;\n}"
   dependsOn:
   - library/contest/template-minimal.hpp
   - library/data-structures/1d-range-queries/lazy-segment-tree.hpp
   isVerificationFile: true
   path: test/lazy-segment-tree.test.cpp
   requiredBy: []
-  timestamp: '2021-07-24 21:20:09-04:00'
+  timestamp: '2021-07-24 21:44:19-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/lazy-segment-tree.test.cpp

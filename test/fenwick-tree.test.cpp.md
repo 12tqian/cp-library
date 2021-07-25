@@ -32,30 +32,28 @@ data:
     \t\treturn ret;\n\t}\n\n\tT query(int l, int r) {\n\t\treturn sum(r) - sum(l -\
     \ 1);\n\t}\n\t\n\tvoid add(int idx, T delta) {\n\t\tfor (; idx < n; idx = idx\
     \ | (idx + 1)) \n\t\t\tfwt[idx] += delta;\n\t}\n};\n\nint main() {\n\tusing namespace\
-    \ std;\n\tcin.tie(0)->sync_with_stdio(0);\n\tint n, q; \n    cin >> n >> q;\n\t\
+    \ std;\n\tcin.tie(0)->sync_with_stdio(0);\n\tint n, q; \n\tcin >> n >> q;\n\t\
     vector<long long> a(n);\n\tfor (int i = 0; i < n; i++) \n\t\tcin >> a[i];\n\t\
-    FenwickTree<long long> F; \n\tF.init(a);\n\twhile (q--) {\n        int t;\n  \
-    \      cin >> t;\n        if (t == 0) {\n            int p, x;\n            cin\
-    \ >> p >> x;\n            F.add(p, x);\n        } else {\n            int l, r;\n\
-    \            cin >> l >> r;\n            --r;\n            cout << F.query(l,\
-    \ r) << '\\n';\n        }\n\t}\n\treturn 0;\n}\n"
+    FenwickTree<long long> F; \n\tF.init(a);\n\twhile (q--) {\n\t\tint t;\n\t\tcin\
+    \ >> t;\n\t\tif (t == 0) {\n\t\t\tint p, x;\n\t\t\tcin >> p >> x;\n\t\t\tF.add(p,\
+    \ x);\n\t\t} else {\n\t\t\tint l, r;\n\t\t\tcin >> l >> r;\n\t\t\t--r;\n\t\t\t\
+    cout << F.query(l, r) << '\\n';\n\t\t}\n\t}\n\treturn 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/point_add_range_sum\"\n\
     \n#include \"../library/contest/template-minimal.hpp\"\n#include \"../library/data-structures/1d-range-queries/fenwick-tree.hpp\"\
     \n\nint main() {\n\tusing namespace std;\n\tcin.tie(0)->sync_with_stdio(0);\n\t\
-    int n, q; \n    cin >> n >> q;\n\tvector<long long> a(n);\n\tfor (int i = 0; i\
-    \ < n; i++) \n\t\tcin >> a[i];\n\tFenwickTree<long long> F; \n\tF.init(a);\n\t\
-    while (q--) {\n        int t;\n        cin >> t;\n        if (t == 0) {\n    \
-    \        int p, x;\n            cin >> p >> x;\n            F.add(p, x);\n   \
-    \     } else {\n            int l, r;\n            cin >> l >> r;\n          \
-    \  --r;\n            cout << F.query(l, r) << '\\n';\n        }\n\t}\n\treturn\
-    \ 0;\n}"
+    int n, q; \n\tcin >> n >> q;\n\tvector<long long> a(n);\n\tfor (int i = 0; i <\
+    \ n; i++) \n\t\tcin >> a[i];\n\tFenwickTree<long long> F; \n\tF.init(a);\n\twhile\
+    \ (q--) {\n\t\tint t;\n\t\tcin >> t;\n\t\tif (t == 0) {\n\t\t\tint p, x;\n\t\t\
+    \tcin >> p >> x;\n\t\t\tF.add(p, x);\n\t\t} else {\n\t\t\tint l, r;\n\t\t\tcin\
+    \ >> l >> r;\n\t\t\t--r;\n\t\t\tcout << F.query(l, r) << '\\n';\n\t\t}\n\t}\n\t\
+    return 0;\n}"
   dependsOn:
   - library/contest/template-minimal.hpp
   - library/data-structures/1d-range-queries/fenwick-tree.hpp
   isVerificationFile: true
   path: test/fenwick-tree.test.cpp
   requiredBy: []
-  timestamp: '2021-07-24 21:17:26-04:00'
+  timestamp: '2021-07-24 21:44:19-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/fenwick-tree.test.cpp

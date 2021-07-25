@@ -34,30 +34,28 @@ data:
     \ += n + 1; l < r; l /= 2, r /= 2) {\n\t\t\tif (l & 1) ra = comb(ra, seg[l++]);\n\
     \t\t\tif (r & 1) rb = comb(seg[--r], rb);\n\t\t}\n\t\treturn comb(ra, rb);\n\t\
     }\n};\n\nint main() {\n\tusing namespace std;\n\tcin.tie(0)->sync_with_stdio(0);\n\
-    \tint n, q; \n    cin >> n >> q;\n\tvector<long long> a(n);\n\tSegmentTree<long\
-    \ long> seg; \n    seg.init(n);\n\tfor (int i = 0; i < n; i++) \n\t\tcin >> a[i],\
-    \ seg.add(i, a[i]);\n\twhile (q--) {\n        int t;\n        cin >> t;\n    \
-    \    if (t == 0) {\n            int p, x;\n            cin >> p >> x;\n      \
-    \      seg.add(p, x);\n        } else {\n            int l, r;\n            cin\
-    \ >> l >> r;\n            --r;\n            cout << seg.query(l, r) << '\\n';\n\
-    \        }\n\t}\n\treturn 0;\n}\n"
+    \tint n, q; \n\tcin >> n >> q;\n\tvector<long long> a(n);\n\tSegmentTree<long\
+    \ long> seg; \n\tseg.init(n);\n\tfor (int i = 0; i < n; i++) \n\t\tcin >> a[i],\
+    \ seg.add(i, a[i]);\n\twhile (q--) {\n\t\tint t;\n\t\tcin >> t;\n\t\tif (t ==\
+    \ 0) {\n\t\t\tint p, x;\n\t\t\tcin >> p >> x;\n\t\t\tseg.add(p, x);\n\t\t} else\
+    \ {\n\t\t\tint l, r;\n\t\t\tcin >> l >> r;\n\t\t\t--r;\n\t\t\tcout << seg.query(l,\
+    \ r) << '\\n';\n\t\t}\n\t}\n\treturn 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/point_add_range_sum\"\n\
     \n#include \"../library/contest/template-minimal.hpp\"\n#include \"../library/data-structures/1d-range-queries/point-update-segment-tree.hpp\"\
     \n\nint main() {\n\tusing namespace std;\n\tcin.tie(0)->sync_with_stdio(0);\n\t\
-    int n, q; \n    cin >> n >> q;\n\tvector<long long> a(n);\n\tSegmentTree<long\
-    \ long> seg; \n    seg.init(n);\n\tfor (int i = 0; i < n; i++) \n\t\tcin >> a[i],\
-    \ seg.add(i, a[i]);\n\twhile (q--) {\n        int t;\n        cin >> t;\n    \
-    \    if (t == 0) {\n            int p, x;\n            cin >> p >> x;\n      \
-    \      seg.add(p, x);\n        } else {\n            int l, r;\n            cin\
-    \ >> l >> r;\n            --r;\n            cout << seg.query(l, r) << '\\n';\n\
-    \        }\n\t}\n\treturn 0;\n}"
+    int n, q; \n\tcin >> n >> q;\n\tvector<long long> a(n);\n\tSegmentTree<long long>\
+    \ seg; \n\tseg.init(n);\n\tfor (int i = 0; i < n; i++) \n\t\tcin >> a[i], seg.add(i,\
+    \ a[i]);\n\twhile (q--) {\n\t\tint t;\n\t\tcin >> t;\n\t\tif (t == 0) {\n\t\t\t\
+    int p, x;\n\t\t\tcin >> p >> x;\n\t\t\tseg.add(p, x);\n\t\t} else {\n\t\t\tint\
+    \ l, r;\n\t\t\tcin >> l >> r;\n\t\t\t--r;\n\t\t\tcout << seg.query(l, r) << '\\\
+    n';\n\t\t}\n\t}\n\treturn 0;\n}"
   dependsOn:
   - library/contest/template-minimal.hpp
   - library/data-structures/1d-range-queries/point-update-segment-tree.hpp
   isVerificationFile: true
   path: test/point-update-segment-tree.test.cpp
   requiredBy: []
-  timestamp: '2021-07-24 21:33:21-04:00'
+  timestamp: '2021-07-24 21:44:19-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/point-update-segment-tree.test.cpp

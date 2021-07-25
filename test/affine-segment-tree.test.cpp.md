@@ -73,27 +73,25 @@ data:
     \tpush(ind, L, R);\n\t\tif (lo > R || L > hi) return 0;\n\t\tif (lo <= L && R\
     \ <= hi) return sum[ind];\n\t\tint M = (L + R) / 2;\n\t\treturn qsum(lo, hi, 2\
     \ * ind, L, M) + qsum(lo, hi, 2 * ind + 1, M + 1, R);\n\t}\n};\n\nusing mi = Mint<998244353,\
-    \ 5>;\n\nint main() {\n\tcin.tie(0)->sync_with_stdio(false);\n    int n, q;\n\
-    \    AffineSegmentTree<mi> seg;\n    cin >> n >> q;\n    seg.init(n);\n    vector<int>\
-    \ a(n);\n    for (int i = 0; i < n; i++) {\n        cin >> a[i];\n        seg.upd(0,\
-    \ i, i, a[i]);\n    }\n    while (q--) {\n        int t;\n        cin >> t;\n\
-    \        if (t == 0) {\n            int l, r, b, c;\n            cin >> l >> r\
-    \ >> b >> c;\n            seg.upd(1, l, r - 1, b);\n            seg.upd(0, l,\
-    \ r - 1, c);\n        } else {\n            int l, r;\n            cin >> l >>\
-    \ r;\n            cout << seg.qsum(l, r - 1) << '\\n';\n        }\n    }\n   \
-    \ return 0;\n}\n"
+    \ 5>;\n\nint main() {\n\tcin.tie(0)->sync_with_stdio(false);\n\tint n, q;\n\t\
+    AffineSegmentTree<mi> seg;\n\tcin >> n >> q;\n\tseg.init(n);\n\tvector<int> a(n);\n\
+    \tfor (int i = 0; i < n; i++) {\n\t\tcin >> a[i];\n\t\tseg.upd(0, i, i, a[i]);\n\
+    \t}\n\twhile (q--) {\n\t\tint t;\n\t\tcin >> t;\n\t\tif (t == 0) {\n\t\t\tint\
+    \ l, r, b, c;\n\t\t\tcin >> l >> r >> b >> c;\n\t\t\tseg.upd(1, l, r - 1, b);\n\
+    \t\t\tseg.upd(0, l, r - 1, c);\n\t\t} else {\n\t\t\tint l, r;\n\t\t\tcin >> l\
+    \ >> r;\n\t\t\tcout << seg.qsum(l, r - 1) << '\\n';\n\t\t}\n\t}\n\treturn 0;\n\
+    }\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/range_affine_range_sum\"\
     \n\n#include \"../library/contest/template-minimal.hpp\"\n#include \"../library/numerical/mod-int2.hpp\"\
     \n#include \"../library/data-structures/1d-range-queries/affine-segment-tree.hpp\"\
     \n\nusing mi = Mint<998244353, 5>;\n\nint main() {\n\tcin.tie(0)->sync_with_stdio(false);\n\
-    \    int n, q;\n    AffineSegmentTree<mi> seg;\n    cin >> n >> q;\n    seg.init(n);\n\
-    \    vector<int> a(n);\n    for (int i = 0; i < n; i++) {\n        cin >> a[i];\n\
-    \        seg.upd(0, i, i, a[i]);\n    }\n    while (q--) {\n        int t;\n \
-    \       cin >> t;\n        if (t == 0) {\n            int l, r, b, c;\n      \
-    \      cin >> l >> r >> b >> c;\n            seg.upd(1, l, r - 1, b);\n      \
-    \      seg.upd(0, l, r - 1, c);\n        } else {\n            int l, r;\n   \
-    \         cin >> l >> r;\n            cout << seg.qsum(l, r - 1) << '\\n';\n \
-    \       }\n    }\n    return 0;\n}"
+    \tint n, q;\n\tAffineSegmentTree<mi> seg;\n\tcin >> n >> q;\n\tseg.init(n);\n\t\
+    vector<int> a(n);\n\tfor (int i = 0; i < n; i++) {\n\t\tcin >> a[i];\n\t\tseg.upd(0,\
+    \ i, i, a[i]);\n\t}\n\twhile (q--) {\n\t\tint t;\n\t\tcin >> t;\n\t\tif (t ==\
+    \ 0) {\n\t\t\tint l, r, b, c;\n\t\t\tcin >> l >> r >> b >> c;\n\t\t\tseg.upd(1,\
+    \ l, r - 1, b);\n\t\t\tseg.upd(0, l, r - 1, c);\n\t\t} else {\n\t\t\tint l, r;\n\
+    \t\t\tcin >> l >> r;\n\t\t\tcout << seg.qsum(l, r - 1) << '\\n';\n\t\t}\n\t}\n\
+    \treturn 0;\n}"
   dependsOn:
   - library/contest/template-minimal.hpp
   - library/numerical/mod-int2.hpp
@@ -101,7 +99,7 @@ data:
   isVerificationFile: true
   path: test/affine-segment-tree.test.cpp
   requiredBy: []
-  timestamp: '2021-07-24 21:11:18-04:00'
+  timestamp: '2021-07-24 21:44:19-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/affine-segment-tree.test.cpp
