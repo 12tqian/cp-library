@@ -78,39 +78,39 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/li-chao-tree-offline.test.cpp
     title: test/li-chao-tree-offline.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/li-chao-tree-online.test.cpp
     title: test/li-chao-tree-online.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/manacher.test.cpp
     title: test/manacher.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/mod-sqrt.test.cpp
     title: test/mod-sqrt.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/point-update-segment-tree.test.cpp
     title: test/point-update-segment-tree.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/segment-tree-beats.test.cpp
     title: test/segment-tree-beats.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/sparse-segment-tree.test.cpp
     title: test/sparse-segment-tree.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/strongly-connected-components-kosaraju.test.cpp
     title: test/strongly-connected-components-kosaraju.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/strongly-connected-components-tarjan.test.cpp
     title: test/strongly-connected-components-tarjan.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/suffix-array-linear.test.cpp
     title: test/suffix-array-linear.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/suffix-array.test.cpp
     title: test/suffix-array.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: '#include <algorithm>
@@ -231,7 +231,7 @@ data:
   - test/link-cut-tree.cpp
   - library/graphs/enumerate-triangles.cpp
   timestamp: '2021-07-24 23:00:09-04:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/bellman-ford.test.cpp
   - test/lca-jump.test.cpp

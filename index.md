@@ -6,7 +6,7 @@ data:
     - icon: ':warning:'
       path: library/contest/template-full.cpp
       title: library/contest/template-full.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/contest/template-minimal.hpp
       title: library/contest/template-minimal.hpp
     - icon: ':warning:'
@@ -35,22 +35,22 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/data-structures/1d-range-queries/li-chao-tree-offline.hpp
       title: library/data-structures/1d-range-queries/li-chao-tree-offline.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/data-structures/1d-range-queries/li-chao-tree-online.hpp
       title: library/data-structures/1d-range-queries/li-chao-tree-online.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/data-structures/1d-range-queries/point-update-segment-tree.hpp
       title: library/data-structures/1d-range-queries/point-update-segment-tree.hpp
     - icon: ':warning:'
       path: library/data-structures/1d-range-queries/range-set-segment-tree.hpp
       title: library/data-structures/1d-range-queries/range-set-segment-tree.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/data-structures/1d-range-queries/segment-tree-beats.hpp
       title: library/data-structures/1d-range-queries/segment-tree-beats.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/data-structures/1d-range-queries/sparse-segment-tree.hpp
       title: library/data-structures/1d-range-queries/sparse-segment-tree.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/data-structures/1d-range-queries/sparse-table.hpp
       title: library/data-structures/1d-range-queries/sparse-table.hpp
   - name: library/data-structures/2d-range-queries
@@ -148,10 +148,10 @@ data:
     - icon: ':warning:'
       path: library/graphs/offline-dynamic-connectivity.hpp
       title: library/graphs/offline-dynamic-connectivity.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/graphs/strongly-connected-components-kosaraju.hpp
       title: library/graphs/strongly-connected-components-kosaraju.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/graphs/strongly-connected-components-tarjan.hpp
       title: library/graphs/strongly-connected-components-tarjan.hpp
     - icon: ':warning:'
@@ -211,7 +211,7 @@ data:
     - icon: ':warning:'
       path: library/number-theory/fast-factor-sieve.hpp
       title: library/number-theory/fast-factor-sieve.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/number-theory/mod-sqrt.hpp
       title: library/number-theory/mod-sqrt.hpp
     - icon: ':warning:'
@@ -257,13 +257,13 @@ data:
     - icon: ':warning:'
       path: library/string/hashing.hpp
       title: library/string/hashing.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/string/manacher.hpp
       title: library/string/manacher.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/string/suffix-array-linear.hpp
       title: library/string/suffix-array-linear.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/string/suffix-array.hpp
       title: library/string/suffix-array.hpp
   - name: library/unused
@@ -357,34 +357,34 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/li-chao-tree-offline.test.cpp
       title: test/li-chao-tree-offline.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/li-chao-tree-online.test.cpp
       title: test/li-chao-tree-online.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/manacher.test.cpp
       title: test/manacher.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/mod-sqrt.test.cpp
       title: test/mod-sqrt.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/point-update-segment-tree.test.cpp
       title: test/point-update-segment-tree.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/segment-tree-beats.test.cpp
       title: test/segment-tree-beats.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/sparse-segment-tree.test.cpp
       title: test/sparse-segment-tree.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/strongly-connected-components-kosaraju.test.cpp
       title: test/strongly-connected-components-kosaraju.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/strongly-connected-components-tarjan.test.cpp
       title: test/strongly-connected-components-tarjan.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/suffix-array-linear.test.cpp
       title: test/suffix-array-linear.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/suffix-array.test.cpp
       title: test/suffix-array.test.cpp
 layout: toppage
