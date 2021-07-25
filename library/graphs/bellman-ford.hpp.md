@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: test/bellman-ford.test.cpp
+    title: test/bellman-ford.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "/**\n * dist is INF if you can't reach and -INF if it is in a negative\
@@ -36,14 +39,7 @@ data:
     \t\t\t\tx = pre[x];\n\t\t\t\t\tstd::vector<int> cycle;\n\t\t\t\t\tfor (int v =\
     \ x; v != x || cycle.empty(); v = pre[v])\n\t\t\t\t\t\tcycle.push_back(v);\n\t\
     \t\t\t\treverse(cycle.begin(), cycle.end());\n\t\t\t\t\treturn cycle;\n\t\t\t\t\
-    }\n\t\treturn {};\n\t}\n};\n\nint main() {\n\tusing namespace std;\n\twhile (true)\
-    \ {\n\t\tint n, m, q, s; cin >> n >> m >> q >> s;\n\t\tif (n == 0)\n\t\t\texit(0);\n\
-    \t\tBellmanFord<long long> B;\n\t\tB.init(n);\n\t\tfor (int i = 0; i < m; i++)\
-    \ {\n\t\t\tint u, v, w; cin >> u >> v >> w;\n\t\t\tB.ae(u, v, w);\n\t\t}\n\t\t\
-    B.gen(s);\n\t\twhile (q--) {\n\t\t\tint x; cin >> x;\n\t\t\tlong long dist = B.dist[x];\n\
-    \t\t\tif (dist == B.INF) \n\t\t\t\tcout << \"Impossible\\n\";\n\t\t\telse if (dist\
-    \ == -B.INF)\n\t\t\t\tcout << \"-Infinity\\n\";\n\t\t\telse \n\t\t\t\tcout <<\
-    \ B.dist[x] << '\\n';\n\t\t}\n\t}\n\treturn 0;\n}\n"
+    }\n\t\treturn {};\n\t}\n};\n"
   code: "#pragma once\n/**\n * dist is INF if you can't reach and -INF if it is in\
     \ a negative cycle\n * negative cycle is same thing as gen, it just doesn't do\
     \ gen_bad\n * also it returns a negative cycle :D\n */\n\ntemplate <class T> struct\
@@ -73,21 +69,15 @@ data:
     x = pre[x];\n\t\t\t\t\tstd::vector<int> cycle;\n\t\t\t\t\tfor (int v = x; v !=\
     \ x || cycle.empty(); v = pre[v])\n\t\t\t\t\t\tcycle.push_back(v);\n\t\t\t\t\t\
     reverse(cycle.begin(), cycle.end());\n\t\t\t\t\treturn cycle;\n\t\t\t\t}\n\t\t\
-    return {};\n\t}\n};\n\nint main() {\n\tusing namespace std;\n\twhile (true) {\n\
-    \t\tint n, m, q, s; cin >> n >> m >> q >> s;\n\t\tif (n == 0)\n\t\t\texit(0);\n\
-    \t\tBellmanFord<long long> B;\n\t\tB.init(n);\n\t\tfor (int i = 0; i < m; i++)\
-    \ {\n\t\t\tint u, v, w; cin >> u >> v >> w;\n\t\t\tB.ae(u, v, w);\n\t\t}\n\t\t\
-    B.gen(s);\n\t\twhile (q--) {\n\t\t\tint x; cin >> x;\n\t\t\tlong long dist = B.dist[x];\n\
-    \t\t\tif (dist == B.INF) \n\t\t\t\tcout << \"Impossible\\n\";\n\t\t\telse if (dist\
-    \ == -B.INF)\n\t\t\t\tcout << \"-Infinity\\n\";\n\t\t\telse \n\t\t\t\tcout <<\
-    \ B.dist[x] << '\\n';\n\t\t}\n\t}\n\treturn 0;\n}"
+    return {};\n\t}\n};"
   dependsOn: []
   isVerificationFile: false
   path: library/graphs/bellman-ford.hpp
   requiredBy: []
-  timestamp: '2021-07-24 19:40:07-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  timestamp: '2021-07-24 21:57:36-04:00'
+  verificationStatus: LIBRARY_ALL_WA
+  verifiedWith:
+  - test/bellman-ford.test.cpp
 documentation_of: library/graphs/bellman-ford.hpp
 layout: document
 redirect_from:

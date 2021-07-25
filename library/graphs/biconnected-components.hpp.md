@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/biconnected-components.test.cpp
+    title: test/biconnected-components.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "\nstruct BCC {\n\tint n, time, num_comps; \n\tstd::vector<int> ord,\
@@ -32,13 +35,7 @@ data:
     \ -1)\n\t\t\t\tdfs(i, -1);\n\t\tfor (int i = 0; i < n; i++) \n\t\t\tadd_component(i);\n\
     \t\ttree.resize(num_comps);\n\t\tfor (auto &b : bridge) {\n\t\t\tint u = id[b.first];\n\
     \t\t\tint v = id[b.second];\n\t\t\ttree[u].push_back(v);\n\t\t\ttree[v].push_back(u);\
-    \            \n\t\t}\n\t\treturn num_comps;\n\t}\n};\n\nint main() {\n\tusing\
-    \ namespace std;\n\tios_base::sync_with_stdio(0);\n\tint n, m; \n\tcin >> n >>\
-    \ m;\n\tBCC B; B.init(n);\n\tfor (int i = 0; i < m ;i++) {\n\t\tint u, v; cin\
-    \ >> u >> v;\n\t\tB.ae(u, v);\n\t}\n\tB.build();\n\tcout << B.num_comps << '\\\
-    n';\n\tfor (int i = 0; i < B.num_comps; i++) {\n\t\tcout << (int)B.comps[i].size()\
-    \ << \" \";\n\t\tfor (int v : B.comps[i]) \n\t\t\tcout << v << \" \";\n\t\tcout\
-    \ << '\\n';\n\t}\n}\n"
+    \            \n\t\t}\n\t\treturn num_comps;\n\t}\n};\n"
   code: "#pragma once\n\nstruct BCC {\n\tint n, time, num_comps; \n\tstd::vector<int>\
     \ ord, low, id; \n\t// order encountered, earliest time in subtree, component\
     \ id\n\tstd::vector<std::vector<int>> adj, comps, tree;\n\t// adj, comps storage,\
@@ -63,20 +60,15 @@ data:
     \ -1)\n\t\t\t\tdfs(i, -1);\n\t\tfor (int i = 0; i < n; i++) \n\t\t\tadd_component(i);\n\
     \t\ttree.resize(num_comps);\n\t\tfor (auto &b : bridge) {\n\t\t\tint u = id[b.first];\n\
     \t\t\tint v = id[b.second];\n\t\t\ttree[u].push_back(v);\n\t\t\ttree[v].push_back(u);\
-    \            \n\t\t}\n\t\treturn num_comps;\n\t}\n};\n\nint main() {\n\tusing\
-    \ namespace std;\n\tios_base::sync_with_stdio(0);\n\tint n, m; \n\tcin >> n >>\
-    \ m;\n\tBCC B; B.init(n);\n\tfor (int i = 0; i < m ;i++) {\n\t\tint u, v; cin\
-    \ >> u >> v;\n\t\tB.ae(u, v);\n\t}\n\tB.build();\n\tcout << B.num_comps << '\\\
-    n';\n\tfor (int i = 0; i < B.num_comps; i++) {\n\t\tcout << (int)B.comps[i].size()\
-    \ << \" \";\n\t\tfor (int v : B.comps[i]) \n\t\t\tcout << v << \" \";\n\t\tcout\
-    \ << '\\n';\n\t}\n}"
+    \            \n\t\t}\n\t\treturn num_comps;\n\t}\n};"
   dependsOn: []
   isVerificationFile: false
   path: library/graphs/biconnected-components.hpp
   requiredBy: []
-  timestamp: '2021-07-24 19:40:07-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  timestamp: '2021-07-24 21:57:36-04:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/biconnected-components.test.cpp
 documentation_of: library/graphs/biconnected-components.hpp
 layout: document
 redirect_from:

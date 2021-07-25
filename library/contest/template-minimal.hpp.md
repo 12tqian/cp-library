@@ -10,6 +10,12 @@ data:
     path: test/associative-range-query.test.cpp
     title: test/associative-range-query.test.cpp
   - icon: ':x:'
+    path: test/bellman-ford.test.cpp
+    title: test/bellman-ford.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/biconnected-components.test.cpp
+    title: test/biconnected-components.test.cpp
+  - icon: ':x:'
     path: test/convex-hull.test.cpp
     title: test/convex-hull.test.cpp
   - icon: ':heavy_check_mark:'
@@ -155,8 +161,10 @@ data:
   timestamp: '2021-07-24 20:00:47-04:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
+  - test/bellman-ford.test.cpp
   - test/monotonic-convex-hull.test.cpp
   - test/implicit-lazy-segment-tree.test.cpp
+  - test/biconnected-components.test.cpp
   - test/sparse-segment-tree.test.cpp
   - test/lazy-segment-tree.test.cpp
   - test/geometry-2d.test.cpp

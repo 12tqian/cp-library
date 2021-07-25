@@ -121,25 +121,25 @@ data:
     \tfor (int i = 0; i < n; i++) {\n\t\tPoint<T> x = p[i], y = p[(i + 1) % n];\n\t\
     \tif (x.y > y.y) \n\t\t\tstd::swap(x, y);\n\t\tif (on_segment(z, x, y))\n\t\t\t\
     return 0;\n\t\tans ^= (x.y <= z.y && y.y > z.y && area(z, x, y) > 0);\n\t}\n\t\
-    return ans ? 1 : -1;\n}\n\n} // Geometry2D\n\nint main() {\n\tusing namespace\
-    \ std;\n\tusing namespace Geometry2D;\n\ttypedef long double ld;\n\ttypedef Point<long\
-    \ double> P;\n\tcout << setprecision(1) << fixed;\n\twhile (true) {\n\t\tint n;\
-    \ cin >> n;\n\t\tif (n == 0)\n\t\t\treturn 0;\n\t\tvector<Point<int>> v(n);\n\t\
-    \tfor (int i = 0; i < n; i++) \n\t\t\tcin >> v[i].x >> v[i].y;\n\t\tint m; cin\
-    \ >> m;\n\t\twhile (m--) {\n\t\t\tPoint<int> p;\n\t\t\tcin >> p.x >> p.y;\n\t\t\
-    \tint res = polygon_point(v, p);\n\t\t\tif (res == -1)\n\t\t\t\tcout << \"out\\\
-    n\";\n\t\t\telse if (res == 0)\n\t\t\t\tcout << \"on\\n\";\n\t\t\telse \n\t\t\t\
-    \tcout << \"in\\n\";\n\t\t}\n\t}\n\treturn 0;\n}\n"
+    return ans ? 1 : -1;\n}\n\n} // Geometry2D\n\n//  kattis \nint main() {\n\tusing\
+    \ namespace std;\n\tusing namespace Geometry2D;\n\ttypedef long double ld;\n\t\
+    typedef Point<long double> P;\n\tcout << setprecision(1) << fixed;\n\twhile (true)\
+    \ {\n\t\tint n; cin >> n;\n\t\tif (n == 0)\n\t\t\treturn 0;\n\t\tvector<Point<int>>\
+    \ v(n);\n\t\tfor (int i = 0; i < n; i++) \n\t\t\tcin >> v[i].x >> v[i].y;\n\t\t\
+    int m; cin >> m;\n\t\twhile (m--) {\n\t\t\tPoint<int> p;\n\t\t\tcin >> p.x >>\
+    \ p.y;\n\t\t\tint res = polygon_point(v, p);\n\t\t\tif (res == -1)\n\t\t\t\tcout\
+    \ << \"out\\n\";\n\t\t\telse if (res == 0)\n\t\t\t\tcout << \"on\\n\";\n\t\t\t\
+    else \n\t\t\t\tcout << \"in\\n\";\n\t\t}\n\t}\n\treturn 0;\n}\n"
   code: "#define IGNORE\n\n#include \"../library/contest/template-minimal.hpp\"\n\
-    #include \"../library/geometry/geometry-2d.hpp\"\n\nint main() {\n\tusing namespace\
-    \ std;\n\tusing namespace Geometry2D;\n\ttypedef long double ld;\n\ttypedef Point<long\
-    \ double> P;\n\tcout << setprecision(1) << fixed;\n\twhile (true) {\n\t\tint n;\
-    \ cin >> n;\n\t\tif (n == 0)\n\t\t\treturn 0;\n\t\tvector<Point<int>> v(n);\n\t\
-    \tfor (int i = 0; i < n; i++) \n\t\t\tcin >> v[i].x >> v[i].y;\n\t\tint m; cin\
-    \ >> m;\n\t\twhile (m--) {\n\t\t\tPoint<int> p;\n\t\t\tcin >> p.x >> p.y;\n\t\t\
-    \tint res = polygon_point(v, p);\n\t\t\tif (res == -1)\n\t\t\t\tcout << \"out\\\
-    n\";\n\t\t\telse if (res == 0)\n\t\t\t\tcout << \"on\\n\";\n\t\t\telse \n\t\t\t\
-    \tcout << \"in\\n\";\n\t\t}\n\t}\n\treturn 0;\n}"
+    #include \"../library/geometry/geometry-2d.hpp\"\n\n//  kattis \nint main() {\n\
+    \tusing namespace std;\n\tusing namespace Geometry2D;\n\ttypedef long double ld;\n\
+    \ttypedef Point<long double> P;\n\tcout << setprecision(1) << fixed;\n\twhile\
+    \ (true) {\n\t\tint n; cin >> n;\n\t\tif (n == 0)\n\t\t\treturn 0;\n\t\tvector<Point<int>>\
+    \ v(n);\n\t\tfor (int i = 0; i < n; i++) \n\t\t\tcin >> v[i].x >> v[i].y;\n\t\t\
+    int m; cin >> m;\n\t\twhile (m--) {\n\t\t\tPoint<int> p;\n\t\t\tcin >> p.x >>\
+    \ p.y;\n\t\t\tint res = polygon_point(v, p);\n\t\t\tif (res == -1)\n\t\t\t\tcout\
+    \ << \"out\\n\";\n\t\t\telse if (res == 0)\n\t\t\t\tcout << \"on\\n\";\n\t\t\t\
+    else \n\t\t\t\tcout << \"in\\n\";\n\t\t}\n\t}\n\treturn 0;\n}"
   dependsOn:
   - library/contest/template-minimal.hpp
   - library/geometry/geometry-2d.hpp
@@ -147,7 +147,7 @@ data:
   isVerificationFile: true
   path: test/geometry-2d.test.cpp
   requiredBy: []
-  timestamp: '2021-07-24 21:53:34-04:00'
+  timestamp: '2021-07-24 21:57:36-04:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/geometry-2d.test.cpp

@@ -100,10 +100,10 @@ data:
       title: library/geometry/point.hpp
   - name: library/graphs
     pages:
-    - icon: ':warning:'
+    - icon: ':x:'
       path: library/graphs/bellman-ford.hpp
       title: library/graphs/bellman-ford.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/graphs/biconnected-components.hpp
       title: library/graphs/biconnected-components.hpp
     - icon: ':warning:'
@@ -286,6 +286,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/associative-range-query.test.cpp
       title: test/associative-range-query.test.cpp
+    - icon: ':x:'
+      path: test/bellman-ford.test.cpp
+      title: test/bellman-ford.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/biconnected-components.test.cpp
+      title: test/biconnected-components.test.cpp
     - icon: ':x:'
       path: test/convex-hull.test.cpp
       title: test/convex-hull.test.cpp
