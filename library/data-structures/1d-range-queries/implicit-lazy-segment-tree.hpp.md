@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/implicit-lazy-segment-tree.test.cpp
+    title: test/implicit-lazy-segment-tree.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "\ntemplate <class T> struct SegmentTree {\n\tSegmentTree<T> *left,\
@@ -23,14 +26,7 @@ data:
     \ int l, int r) {\n\t\tpush(l, r);\n\t\tif (r < lo || hi < l) {\n\t\t\treturn\
     \ 0;\n\t\t} else if (lo <= l && r <= hi) {\n\t\t\treturn sum;\n\t\t} else {\n\t\
     \t\tint m = (l + r) >> 1;\n\t\t\treturn left->query(lo, hi, l, m) + right->query(lo,\
-    \ hi, m + 1, r);\n\t\t}\n\t}\n};\n\nint main() {\n\tusing namespace std;\n\tcin.tie(0)->sync_with_stdio(0);\n\
-    \tint n, q; \n\tcin >> n >> q;\n\tSegmentTree<long long> *seg = new SegmentTree<long\
-    \ long>(0, n - 1);\n\tfor (int i = 0; i < n; ++i) {\n\t\tint a; \n\t\tcin >> a;\n\
-    \t\tseg->update(i, i, a, 0, n - 1);\n\t}\n\twhile (q--) {\n\t\tint t;\n\t\tcin\
-    \ >> t;\n\t\tif (t == 0) {  \n\t\t\tint p, x; \n\t\t\tcin >> p >> x;\n\t\t\tseg->update(p,\
-    \ p, x, 0, n - 1);\n\t\t} else {\n\t\t\tint l, r; \n\t\t\tcin >> l >> r;\n\t\t\
-    \t--r;\n\t\t\tcout << seg->query(l, r, 0, n - 1) << '\\n';\n\t\t}\n\t}\n\treturn\
-    \ 0;\n}\n"
+    \ hi, m + 1, r);\n\t\t}\n\t}\n};\n"
   code: "#pragma once\n\ntemplate <class T> struct SegmentTree {\n\tSegmentTree<T>\
     \ *left, *right;\n\tT sum, lazy;\n\n\tSegmentTree(int l, int r) {\n\t\tlazy =\
     \ 0;\n\t\tif (l == r) {\n\t\t\tsum = 0;\n\t\t} else {\n\t\t\tint m = (l + r) >>\
@@ -46,21 +42,15 @@ data:
     \ int l, int r) {\n\t\tpush(l, r);\n\t\tif (r < lo || hi < l) {\n\t\t\treturn\
     \ 0;\n\t\t} else if (lo <= l && r <= hi) {\n\t\t\treturn sum;\n\t\t} else {\n\t\
     \t\tint m = (l + r) >> 1;\n\t\t\treturn left->query(lo, hi, l, m) + right->query(lo,\
-    \ hi, m + 1, r);\n\t\t}\n\t}\n};\n\nint main() {\n\tusing namespace std;\n\tcin.tie(0)->sync_with_stdio(0);\n\
-    \tint n, q; \n\tcin >> n >> q;\n\tSegmentTree<long long> *seg = new SegmentTree<long\
-    \ long>(0, n - 1);\n\tfor (int i = 0; i < n; ++i) {\n\t\tint a; \n\t\tcin >> a;\n\
-    \t\tseg->update(i, i, a, 0, n - 1);\n\t}\n\twhile (q--) {\n\t\tint t;\n\t\tcin\
-    \ >> t;\n\t\tif (t == 0) {  \n\t\t\tint p, x; \n\t\t\tcin >> p >> x;\n\t\t\tseg->update(p,\
-    \ p, x, 0, n - 1);\n\t\t} else {\n\t\t\tint l, r; \n\t\t\tcin >> l >> r;\n\t\t\
-    \t--r;\n\t\t\tcout << seg->query(l, r, 0, n - 1) << '\\n';\n\t\t}\n\t}\n\treturn\
-    \ 0;\n}"
+    \ hi, m + 1, r);\n\t\t}\n\t}\n};"
   dependsOn: []
   isVerificationFile: false
   path: library/data-structures/1d-range-queries/implicit-lazy-segment-tree.hpp
   requiredBy: []
-  timestamp: '2021-07-24 19:40:07-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  timestamp: '2021-07-24 21:33:21-04:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/implicit-lazy-segment-tree.test.cpp
 documentation_of: library/data-structures/1d-range-queries/implicit-lazy-segment-tree.hpp
 layout: document
 redirect_from:

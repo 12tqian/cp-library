@@ -6,7 +6,7 @@ data:
     - icon: ':warning:'
       path: library/contest/template-full.cpp
       title: library/contest/template-full.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/contest/template-minimal.hpp
       title: library/contest/template-minimal.hpp
     - icon: ':warning:'
@@ -23,7 +23,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/data-structures/1d-range-queries/fenwick-tree.hpp
       title: library/data-structures/1d-range-queries/fenwick-tree.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/data-structures/1d-range-queries/implicit-lazy-segment-tree.hpp
       title: library/data-structures/1d-range-queries/implicit-lazy-segment-tree.hpp
     - icon: ':warning:'
@@ -38,13 +38,13 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/data-structures/1d-range-queries/li-chao-tree-online.hpp
       title: library/data-structures/1d-range-queries/li-chao-tree-online.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/data-structures/1d-range-queries/point-update-segment-tree.hpp
       title: library/data-structures/1d-range-queries/point-update-segment-tree.hpp
     - icon: ':warning:'
       path: library/data-structures/1d-range-queries/range-set-segment-tree.hpp
       title: library/data-structures/1d-range-queries/range-set-segment-tree.hpp
-    - icon: ':warning:'
+    - icon: ':x:'
       path: library/data-structures/1d-range-queries/segment-tree-beats.hpp
       title: library/data-structures/1d-range-queries/segment-tree-beats.hpp
     - icon: ':warning:'
@@ -290,6 +290,9 @@ data:
       path: test/fenwick-tree.test.cpp
       title: test/fenwick-tree.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/implicit-lazy-segment-tree.test.cpp
+      title: test/implicit-lazy-segment-tree.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/lazy-segment-tree.test.cpp
       title: test/lazy-segment-tree.test.cpp
     - icon: ':heavy_check_mark:'
@@ -298,6 +301,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/li-chao-tree-online.test.cpp
       title: test/li-chao-tree-online.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/point-update-segment-tree.test.cpp
+      title: test/point-update-segment-tree.test.cpp
+    - icon: ':x:'
+      path: test/segment-tree-beats.test.cpp
+      title: test/segment-tree-beats.test.cpp
 layout: toppage
 ---
 ![Badge](https://cp-logo.vercel.app/codeforces/12tqian)

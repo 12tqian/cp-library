@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: test/segment-tree-beats.test.cpp
+    title: test/segment-tree-beats.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "\n/**\n * 0 is ckmin, 1 is ckmax, 2 is range add\n */\ntemplate <class\
@@ -78,13 +81,7 @@ data:
     \ if (t == 2) {\n\t\t\t\tmod[ind] = b;\n\t\t\t\tpush(ind, L, R);\n\t\t\t\treturn;\n\
     \t\t\t} else assert(false);\n\t\t}\n\t\tassert(L != R);\n\t\tint M = (L + R) /\
     \ 2;\n\t\tupd(t, lo, hi, b, 2 * ind, L, M); upd(t, lo, hi, b, 2 * ind + 1, M +\
-    \ 1, R);\n\t\tpull(ind);\n\t}\n};\n\nint main() {\n\tusing namespace std;\n\t\
-    ios_base::sync_with_stdio(0);\n\tint n, q; cin >> n >> q;\n\tSegmentTreeBeats<long\
-    \ long> S;\n\tS.init(n);\n\tstd::vector<long long> a(n);\n\tfor (int i = 0; i\
-    \ < n; i++)\n\t   \n\t\tcin >> a[i], S.upd(2, i, i, a[i]);\n\twhile (q--) {\n\t\
-    \tint t, l, r; cin >> t >> l >> r;\n\t\tr--;\n\t\tif (t <= 2) {\n\t\t\tlong long\
-    \ b; cin >> b;\n\t\t\tS.upd(t, l, r, b);\n\t\t} else {\n\t\t\tcout << S.qsum(l,\
-    \ r) << '\\n';\n\t\t}\n\t}\n}\n"
+    \ 1, R);\n\t\tpull(ind);\n\t}\n};\n"
   code: "#pragma once\n\n/**\n * 0 is ckmin, 1 is ckmax, 2 is range add\n */\ntemplate\
     \ <class C> struct SegmentTreeBeats {\n\tusing T = std::pair<std::pair<C, C>,\
     \ int>;\n\tconst C INF = std::numeric_limits<C>::max();\n\tstd::vector<C> mx_mod,\
@@ -155,20 +152,15 @@ data:
     \ if (t == 2) {\n\t\t\t\tmod[ind] = b;\n\t\t\t\tpush(ind, L, R);\n\t\t\t\treturn;\n\
     \t\t\t} else assert(false);\n\t\t}\n\t\tassert(L != R);\n\t\tint M = (L + R) /\
     \ 2;\n\t\tupd(t, lo, hi, b, 2 * ind, L, M); upd(t, lo, hi, b, 2 * ind + 1, M +\
-    \ 1, R);\n\t\tpull(ind);\n\t}\n};\n\nint main() {\n\tusing namespace std;\n\t\
-    ios_base::sync_with_stdio(0);\n\tint n, q; cin >> n >> q;\n\tSegmentTreeBeats<long\
-    \ long> S;\n\tS.init(n);\n\tstd::vector<long long> a(n);\n\tfor (int i = 0; i\
-    \ < n; i++)\n\t   \n\t\tcin >> a[i], S.upd(2, i, i, a[i]);\n\twhile (q--) {\n\t\
-    \tint t, l, r; cin >> t >> l >> r;\n\t\tr--;\n\t\tif (t <= 2) {\n\t\t\tlong long\
-    \ b; cin >> b;\n\t\t\tS.upd(t, l, r, b);\n\t\t} else {\n\t\t\tcout << S.qsum(l,\
-    \ r) << '\\n';\n\t\t}\n\t}\n}"
+    \ 1, R);\n\t\tpull(ind);\n\t}\n};"
   dependsOn: []
   isVerificationFile: false
   path: library/data-structures/1d-range-queries/segment-tree-beats.hpp
   requiredBy: []
-  timestamp: '2021-07-24 19:40:07-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  timestamp: '2021-07-24 21:33:21-04:00'
+  verificationStatus: LIBRARY_ALL_WA
+  verifiedWith:
+  - test/segment-tree-beats.test.cpp
 documentation_of: library/data-structures/1d-range-queries/segment-tree-beats.hpp
 layout: document
 redirect_from:

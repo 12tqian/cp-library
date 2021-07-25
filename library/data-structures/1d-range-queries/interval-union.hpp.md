@@ -29,8 +29,7 @@ data:
     \t\t\t}\n\t\t}\n\t\tfor (auto &b : bad) ret.emplace_back(b);\n\t\tT mn = x.first,\
     \ mx = x.second;\n\t\tfor (auto &b : ret) {\n\t\t\tle.erase(b); ri.erase({b.second,\
     \ b.first});\n\t\t\tmn = std::min(mn, b.first); mx = std::max(mx, b.second);\n\
-    \t\t}\n\t\tle.emplace(mn, mx); ri.emplace(mx, mn);\n\t\treturn ret;\n\t}\n};\n\
-    \nint main() {\n\treturn 0;\n}\n"
+    \t\t}\n\t\tle.emplace(mn, mx); ri.emplace(mx, mn);\n\t\treturn ret;\n\t}\n};\n"
   code: "#pragma once\n\ntemplate <class T> struct IntervalUnion {\n\tconst T INF\
     \ = std::numeric_limits<T>::max();\n\tstd::set<std::pair<T, T>> le, ri;\n\n\t\
     void reset() {\n\t\tle.clear();\n\t\tri.clear();\n\t}\n\n\t// inserts an interval\
@@ -53,12 +52,12 @@ data:
     \t\tT mn = x.first, mx = x.second;\n\t\tfor (auto &b : ret) {\n\t\t\tle.erase(b);\
     \ ri.erase({b.second, b.first});\n\t\t\tmn = std::min(mn, b.first); mx = std::max(mx,\
     \ b.second);\n\t\t}\n\t\tle.emplace(mn, mx); ri.emplace(mx, mn);\n\t\treturn ret;\n\
-    \t}\n};\n\nint main() {\n\treturn 0;\n}\n"
+    \t}\n};"
   dependsOn: []
   isVerificationFile: false
   path: library/data-structures/1d-range-queries/interval-union.hpp
   requiredBy: []
-  timestamp: '2021-07-24 19:40:07-04:00'
+  timestamp: '2021-07-24 21:33:21-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/data-structures/1d-range-queries/interval-union.hpp

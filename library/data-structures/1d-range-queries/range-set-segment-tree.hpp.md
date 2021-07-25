@@ -25,7 +25,7 @@ data:
     \ 0, int R = -1) {\n\t\tif (R == -1) R += sz;\n\t\tpush(ind, L, R); if (lo > R\
     \ || L > hi) return 0;\n\t\tif (lo <= L && R <= hi) return sum[ind];\n\t\tint\
     \ M = (L + R) / 2;\n\t\treturn qsum(lo, hi, 2 * ind, L, M) + qsum(lo, hi, 2 *\
-    \ ind + 1, M + 1, R);\n\t}\n};\n\nint main() {\n\treturn 0;\n}\n"
+    \ ind + 1, M + 1, R);\n\t}\n};\n"
   code: "#pragma once\n\ntemplate <class T> struct RangeSetSeg {\n\tconst T UNUSED\
     \ = -1;\n\tstd::vector<T> sum, lazy;\n\tint sz;\n\n\t// lazy stores what to set\
     \ to\n\tvoid init(int sz_) {\n\t\tsz = 1;\n\t\twhile (sz < sz_) sz *= 2;\n\t\t\
@@ -43,12 +43,12 @@ data:
     \ 0, int R = -1) {\n\t\tif (R == -1) R += sz;\n\t\tpush(ind, L, R); if (lo > R\
     \ || L > hi) return 0;\n\t\tif (lo <= L && R <= hi) return sum[ind];\n\t\tint\
     \ M = (L + R) / 2;\n\t\treturn qsum(lo, hi, 2 * ind, L, M) + qsum(lo, hi, 2 *\
-    \ ind + 1, M + 1, R);\n\t}\n};\n\nint main() {\n\treturn 0;\n}\n"
+    \ ind + 1, M + 1, R);\n\t}\n};"
   dependsOn: []
   isVerificationFile: false
   path: library/data-structures/1d-range-queries/range-set-segment-tree.hpp
   requiredBy: []
-  timestamp: '2021-07-24 19:40:07-04:00'
+  timestamp: '2021-07-24 21:33:21-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/data-structures/1d-range-queries/range-set-segment-tree.hpp

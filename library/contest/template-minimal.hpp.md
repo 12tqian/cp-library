@@ -13,6 +13,9 @@ data:
     path: test/fenwick-tree.test.cpp
     title: test/fenwick-tree.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/implicit-lazy-segment-tree.test.cpp
+    title: test/implicit-lazy-segment-tree.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/lazy-segment-tree.test.cpp
     title: test/lazy-segment-tree.test.cpp
   - icon: ':heavy_check_mark:'
@@ -21,9 +24,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/li-chao-tree-online.test.cpp
     title: test/li-chao-tree-online.test.cpp
-  _isVerificationFailed: false
+  - icon: ':heavy_check_mark:'
+    path: test/point-update-segment-tree.test.cpp
+    title: test/point-update-segment-tree.test.cpp
+  - icon: ':x:'
+    path: test/segment-tree-beats.test.cpp
+    title: test/segment-tree-beats.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: '#include <algorithm>
@@ -129,12 +138,15 @@ data:
   path: library/contest/template-minimal.hpp
   requiredBy: []
   timestamp: '2021-07-24 20:00:47-04:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
+  - test/implicit-lazy-segment-tree.test.cpp
   - test/lazy-segment-tree.test.cpp
   - test/fenwick-tree.test.cpp
   - test/affine-segment-tree.test.cpp
   - test/associative-range-query.test.cpp
+  - test/point-update-segment-tree.test.cpp
+  - test/segment-tree-beats.test.cpp
   - test/li-chao-tree-online.test.cpp
   - test/li-chao-tree-offline.test.cpp
 documentation_of: library/contest/template-minimal.hpp
