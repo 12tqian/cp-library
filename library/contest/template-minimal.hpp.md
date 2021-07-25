@@ -1,7 +1,10 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: library/graphs/enumerate-triangles.cpp
+    title: library/graphs/enumerate-triangles.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/affine-segment-tree.test.cpp
@@ -39,6 +42,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/li-chao-tree-online.test.cpp
     title: test/li-chao-tree-online.test.cpp
+  - icon: ':x:'
+    path: test/link-cut-tree.test.cpp
+    title: test/link-cut-tree.test.cpp
   - icon: ':x:'
     path: test/monotonic-convex-hull.test.cpp
     title: test/monotonic-convex-hull.test.cpp
@@ -157,7 +163,8 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: library/contest/template-minimal.hpp
-  requiredBy: []
+  requiredBy:
+  - library/graphs/enumerate-triangles.cpp
   timestamp: '2021-07-24 20:00:47-04:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
@@ -167,6 +174,7 @@ data:
   - test/biconnected-components.test.cpp
   - test/sparse-segment-tree.test.cpp
   - test/lazy-segment-tree.test.cpp
+  - test/link-cut-tree.test.cpp
   - test/geometry-2d.test.cpp
   - test/fenwick-tree.test.cpp
   - test/convex-hull.test.cpp

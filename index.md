@@ -113,9 +113,6 @@ data:
       path: library/graphs/dijkstra.hpp
       title: library/graphs/dijkstra.hpp
     - icon: ':warning:'
-      path: library/graphs/dmoj-dynamic-tree-test.hpp
-      title: library/graphs/dmoj-dynamic-tree-test.hpp
-    - icon: ':warning:'
       path: library/graphs/dsu-adjacent-intervals.hpp
       title: library/graphs/dsu-adjacent-intervals.hpp
     - icon: ':warning:'
@@ -125,8 +122,8 @@ data:
       path: library/graphs/dsu.hpp
       title: library/graphs/dsu.hpp
     - icon: ':warning:'
-      path: library/graphs/enumerate-triangles.hpp
-      title: library/graphs/enumerate-triangles.hpp
+      path: library/graphs/enumerate-triangles.cpp
+      title: library/graphs/enumerate-triangles.cpp
     - icon: ':warning:'
       path: library/graphs/euler-path.hpp
       title: library/graphs/euler-path.hpp
@@ -145,6 +142,9 @@ data:
     - icon: ':warning:'
       path: library/graphs/lca-rmq.hpp
       title: library/graphs/lca-rmq.hpp
+    - icon: ':x:'
+      path: library/graphs/link-cut-tree.hpp
+      title: library/graphs/link-cut-tree.hpp
     - icon: ':warning:'
       path: library/graphs/offline-dynamic-connectivity.hpp
       title: library/graphs/offline-dynamic-connectivity.hpp
@@ -319,6 +319,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/li-chao-tree-online.test.cpp
       title: test/li-chao-tree-online.test.cpp
+    - icon: ':x:'
+      path: test/link-cut-tree.test.cpp
+      title: test/link-cut-tree.test.cpp
     - icon: ':x:'
       path: test/monotonic-convex-hull.test.cpp
       title: test/monotonic-convex-hull.test.cpp
