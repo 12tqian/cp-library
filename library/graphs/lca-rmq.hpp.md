@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/lca-rmq.test.cpp
+    title: test/lca-rmq.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "\n/**\n * O(n log n) preprocessing with O(1) query\n * Compress compute\
@@ -57,11 +60,7 @@ data:
     \t\tstd::vector<std::pair<int, int>> ret{{0, nodes[0]}};\n\t\tfor (int i = 0;\
     \ i < (int)nodes.size(); i++) {\n\t\t\trev[nodes[i]] = i;\n\t\t}\n\t\tfor (int\
     \ i = 1; i < (int)nodes.size(); i++) {\n\t\t\tret.emplace_back(rev[lca(nodes[i\
-    \ - 1], nodes[i])], nodes[i]);\n\t\t}\n\t\treturn ret;\n\t}\n};\n\nint main()\
-    \ {\n\tusing namespace std;\n\tcin.tie(0)->sync_with_stdio(0);\n\tint n, q; cin\
-    \ >> n >> q;\n\tLCARMQ L;\n\tL.init(n);\n\tfor (int i = 1; i < n; i++) {\n\t\t\
-    int p; cin >> p;\n\t\tL.ae(i, p);\n\t}\n\tL.gen(0);\n\twhile (q--) {\n\t\tint\
-    \ u, v; cin >> u >> v;\n\t\tcout << L.lca(u, v) << '\\n';\n\t}\n}\n"
+    \ - 1], nodes[i])], nodes[i]);\n\t\t}\n\t\treturn ret;\n\t}\n};\n"
   code: "#pragma once\n\n/**\n * O(n log n) preprocessing with O(1) query\n * Compress\
     \ compute sthe minimal subtree containing\n * all node LCAs and comrpesses edges\n\
     \ * O(S log S) compression\n * Returns list of (parent, original index)\n * Parent\
@@ -111,18 +110,15 @@ data:
     \t\tstd::vector<std::pair<int, int>> ret{{0, nodes[0]}};\n\t\tfor (int i = 0;\
     \ i < (int)nodes.size(); i++) {\n\t\t\trev[nodes[i]] = i;\n\t\t}\n\t\tfor (int\
     \ i = 1; i < (int)nodes.size(); i++) {\n\t\t\tret.emplace_back(rev[lca(nodes[i\
-    \ - 1], nodes[i])], nodes[i]);\n\t\t}\n\t\treturn ret;\n\t}\n};\n\nint main()\
-    \ {\n\tusing namespace std;\n\tcin.tie(0)->sync_with_stdio(0);\n\tint n, q; cin\
-    \ >> n >> q;\n\tLCARMQ L;\n\tL.init(n);\n\tfor (int i = 1; i < n; i++) {\n\t\t\
-    int p; cin >> p;\n\t\tL.ae(i, p);\n\t}\n\tL.gen(0);\n\twhile (q--) {\n\t\tint\
-    \ u, v; cin >> u >> v;\n\t\tcout << L.lca(u, v) << '\\n';\n\t}\n}"
+    \ - 1], nodes[i])], nodes[i]);\n\t\t}\n\t\treturn ret;\n\t}\n};\n"
   dependsOn: []
   isVerificationFile: false
   path: library/graphs/lca-rmq.hpp
   requiredBy: []
-  timestamp: '2021-07-24 19:40:07-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  timestamp: '2021-07-24 22:29:57-04:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/lca-rmq.test.cpp
 documentation_of: library/graphs/lca-rmq.hpp
 layout: document
 redirect_from:

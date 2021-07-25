@@ -1,8 +1,14 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: library/graphs/heavy-light-decomposition.hpp
+    title: library/graphs/heavy-light-decomposition.hpp
   _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/heavy-light-decomposition.test.cpp
+    title: test/heavy-light-decomposition.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/lazy-segment-tree.test.cpp
     title: test/lazy-segment-tree.test.cpp
@@ -48,10 +54,12 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: library/data-structures/1d-range-queries/lazy-segment-tree.hpp
-  requiredBy: []
+  requiredBy:
+  - library/graphs/heavy-light-decomposition.hpp
   timestamp: '2021-07-24 21:20:09-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/heavy-light-decomposition.test.cpp
   - test/lazy-segment-tree.test.cpp
 documentation_of: library/data-structures/1d-range-queries/lazy-segment-tree.hpp
 layout: document

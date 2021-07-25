@@ -20,6 +20,9 @@ data:
   - icon: ':warning:'
     path: test/monotonic-convex-hull.cpp
     title: test/monotonic-convex-hull.cpp
+  - icon: ':warning:'
+    path: test/offline-dynamic-connectivity.cpp
+    title: test/offline-dynamic-connectivity.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/affine-segment-tree.test.cpp
@@ -37,11 +40,20 @@ data:
     path: test/fenwick-tree.test.cpp
     title: test/fenwick-tree.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/heavy-light-decomposition.test.cpp
+    title: test/heavy-light-decomposition.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/implicit-lazy-segment-tree.test.cpp
     title: test/implicit-lazy-segment-tree.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/lazy-segment-tree.test.cpp
     title: test/lazy-segment-tree.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/lca-jump.test.cpp
+    title: test/lca-jump.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/lca-rmq.test.cpp
+    title: test/lca-rmq.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/li-chao-tree-offline.test.cpp
     title: test/li-chao-tree-offline.test.cpp
@@ -164,6 +176,7 @@ data:
   isVerificationFile: false
   path: library/contest/template-minimal.hpp
   requiredBy:
+  - test/offline-dynamic-connectivity.cpp
   - test/geometry-2d.cpp
   - test/monotonic-convex-hull.cpp
   - test/convex-hull.cpp
@@ -174,8 +187,11 @@ data:
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/bellman-ford.test.cpp
+  - test/lca-jump.test.cpp
+  - test/lca-rmq.test.cpp
   - test/implicit-lazy-segment-tree.test.cpp
   - test/biconnected-components.test.cpp
+  - test/heavy-light-decomposition.test.cpp
   - test/sparse-segment-tree.test.cpp
   - test/lazy-segment-tree.test.cpp
   - test/fenwick-tree.test.cpp

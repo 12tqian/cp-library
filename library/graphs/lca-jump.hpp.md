@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/lca-jump.test.cpp
+    title: test/lca-jump.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "\n/**\n * To support forest, call gen for each roots\n */\nstruct\
@@ -24,11 +27,7 @@ data:
     \ < depth[y]) std::swap(x, y);\n\t\tx = jump(x, depth[x] - depth[y]);\n\t\tif\
     \ (x == y) return x;\n\t\tfor (int i = (int)par.size() - 1; i >= 0; i--) {\n\t\
     \t\tint nx = par[i][x];\n\t\t\tint ny = par[i][y];\n\t\t\tif (nx != ny) x = nx,\
-    \ y = ny;\n\t\t}\n\t\treturn par[0][x];\n\t}\n};\n\nint main() {\n\tusing namespace\
-    \ std;\n\tcin.tie(0)->sync_with_stdio(0);\n\tint n, q; cin >> n >> q;\n\tLCAJump\
-    \ L;\n\tL.init(n);\n\tfor (int i = 1; i < n; i++) {\n\t\tint p; cin >> p;\n\t\t\
-    L.ae(i, p);\n\t}\n\tL.gen(0);\n\twhile (q--) {\n\t\tint u, v; cin >> u >> v;\n\
-    \t\tcout << L.lca(u, v) << '\\n';\n\t}\n}\n"
+    \ y = ny;\n\t\t}\n\t\treturn par[0][x];\n\t}\n};\n"
   code: "#pragma once\n\n/**\n * To support forest, call gen for each roots\n */\n\
     struct LCAJump {\n\tint n;\n\tstd::vector<std::vector<int>> par;\n\tstd::vector<std::vector<int>>\
     \ adj;\n\tstd::vector<int> depth;\n\n\tvoid init(int _n) {\n\t\tn = _n;\n\t\t\
@@ -45,18 +44,15 @@ data:
     \ < depth[y]) std::swap(x, y);\n\t\tx = jump(x, depth[x] - depth[y]);\n\t\tif\
     \ (x == y) return x;\n\t\tfor (int i = (int)par.size() - 1; i >= 0; i--) {\n\t\
     \t\tint nx = par[i][x];\n\t\t\tint ny = par[i][y];\n\t\t\tif (nx != ny) x = nx,\
-    \ y = ny;\n\t\t}\n\t\treturn par[0][x];\n\t}\n};\n\nint main() {\n\tusing namespace\
-    \ std;\n\tcin.tie(0)->sync_with_stdio(0);\n\tint n, q; cin >> n >> q;\n\tLCAJump\
-    \ L;\n\tL.init(n);\n\tfor (int i = 1; i < n; i++) {\n\t\tint p; cin >> p;\n\t\t\
-    L.ae(i, p);\n\t}\n\tL.gen(0);\n\twhile (q--) {\n\t\tint u, v; cin >> u >> v;\n\
-    \t\tcout << L.lca(u, v) << '\\n';\n\t}\n}"
+    \ y = ny;\n\t\t}\n\t\treturn par[0][x];\n\t}\n};"
   dependsOn: []
   isVerificationFile: false
   path: library/graphs/lca-jump.hpp
   requiredBy: []
-  timestamp: '2021-07-24 19:40:07-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  timestamp: '2021-07-24 22:29:57-04:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/lca-jump.test.cpp
 documentation_of: library/graphs/lca-jump.hpp
 layout: document
 redirect_from:

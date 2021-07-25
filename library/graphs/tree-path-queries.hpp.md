@@ -32,8 +32,7 @@ data:
     \t\tT res1 = comb(sparse[d][x], sparse[d][jump(x, depth[x] - depth[anc] - (1 <<\
     \ d) + 1)]);\n\t\td = 31 - __builtin_clz(depth[y] - depth[anc]);\n\t\tT res2 =\
     \ comb(sparse[d][y], sparse[d][jump(y, depth[y] - depth[anc] - (1 << d) + 1)]);\n\
-    \t\treturn comb(res1, res2);\n\t}\n};\n\nint main() {\n\tLCAJumpSparse<int> L;\n\
-    \treturn 0;\n}\n"
+    \t\treturn comb(res1, res2);\n\t}\n};\n"
   code: "#pragma once\n\ntemplate <class T> struct LCAJumpSparse {\n\tint n;\n\tstd::vector<std::vector<int>>\
     \ par;\n\tstd::vector<std::vector<T>> sparse;\n\tstd::vector<T> vals;\n\tstd::vector<std::vector<int>>\
     \ adj;\n\tstd::vector<int> depth;\n\n\tT comb(T a, T b) {\n\t\treturn min(a, b);\n\
@@ -58,13 +57,12 @@ data:
     \t\tT res1 = comb(sparse[d][x], sparse[d][jump(x, depth[x] - depth[anc] - (1 <<\
     \ d) + 1)]);\n\t\td = 31 - __builtin_clz(depth[y] - depth[anc]);\n\t\tT res2 =\
     \ comb(sparse[d][y], sparse[d][jump(y, depth[y] - depth[anc] - (1 << d) + 1)]);\n\
-    \t\treturn comb(res1, res2);\n\t}\n};\n\nint main() {\n\tLCAJumpSparse<int> L;\n\
-    \treturn 0;\n}\n"
+    \t\treturn comb(res1, res2);\n\t}\n};"
   dependsOn: []
   isVerificationFile: false
   path: library/graphs/tree-path-queries.hpp
   requiredBy: []
-  timestamp: '2021-07-24 19:40:07-04:00'
+  timestamp: '2021-07-24 22:29:57-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/graphs/tree-path-queries.hpp

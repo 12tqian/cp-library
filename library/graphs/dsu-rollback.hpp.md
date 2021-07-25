@@ -1,7 +1,10 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: library/graphs/offline-dynamic-connectivity.hpp
+    title: library/graphs/offline-dynamic-connectivity.hpp
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
@@ -31,7 +34,8 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: library/graphs/dsu-rollback.hpp
-  requiredBy: []
+  requiredBy:
+  - library/graphs/offline-dynamic-connectivity.hpp
   timestamp: '2021-07-24 19:40:07-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []

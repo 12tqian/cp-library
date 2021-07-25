@@ -127,19 +127,19 @@ data:
     - icon: ':warning:'
       path: library/graphs/euler-path.hpp
       title: library/graphs/euler-path.hpp
-    - icon: ':warning:'
-      path: library/graphs/heavy-light.hpp
-      title: library/graphs/heavy-light.hpp
+    - icon: ':heavy_check_mark:'
+      path: library/graphs/heavy-light-decomposition.hpp
+      title: library/graphs/heavy-light-decomposition.hpp
     - icon: ':warning:'
       path: library/graphs/kruskal.hpp
       title: library/graphs/kruskal.hpp
     - icon: ':warning:'
       path: library/graphs/lca-jump-distance.hpp
       title: library/graphs/lca-jump-distance.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/graphs/lca-jump.hpp
       title: library/graphs/lca-jump.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/graphs/lca-rmq.hpp
       title: library/graphs/lca-rmq.hpp
     - icon: ':warning:'
@@ -294,6 +294,9 @@ data:
     - icon: ':warning:'
       path: test/monotonic-convex-hull.cpp
       title: test/monotonic-convex-hull.cpp
+    - icon: ':warning:'
+      path: test/offline-dynamic-connectivity.cpp
+      title: test/offline-dynamic-connectivity.cpp
   verificationCategories:
   - name: test
     pages:
@@ -316,11 +319,20 @@ data:
       path: test/fenwick-tree.test.cpp
       title: test/fenwick-tree.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/heavy-light-decomposition.test.cpp
+      title: test/heavy-light-decomposition.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/implicit-lazy-segment-tree.test.cpp
       title: test/implicit-lazy-segment-tree.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/lazy-segment-tree.test.cpp
       title: test/lazy-segment-tree.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/lca-jump.test.cpp
+      title: test/lca-jump.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/lca-rmq.test.cpp
+      title: test/lca-rmq.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/li-chao-tree-offline.test.cpp
       title: test/li-chao-tree-offline.test.cpp
@@ -336,6 +348,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/sparse-segment-tree.test.cpp
       title: test/sparse-segment-tree.test.cpp
+    - icon: ':x:'
+      path: test/strongly-connected-components-kosaraju.test.cpp
+      title: test/strongly-connected-components-kosaraju.test.cpp
+    - icon: ':x:'
+      path: test/strongly-connected-components-tarjan.test.cpp
+      title: test/strongly-connected-components-tarjan.test.cpp
 layout: toppage
 ---
 ![Badge](https://cp-logo.vercel.app/codeforces/12tqian)

@@ -31,12 +31,7 @@ data:
     \t}\n\n\tvoid gen() {\n\t\tfor (int i = 0; i < n; ++i) {\n\t\t\tif (!vis[i])\n\
     \t\t\t\tdfs_order(i);\n\t\t}\n\t\treverse(ord.begin(), ord.end());\n\t\tfor (auto\
     \ &x : ord) \n\t\t\tif (id[x] == -1) \n\t\t\t\tdfs_color(x, x), roots.push_back(x);\n\
-    \t}\n};\n\nint main() {\n\tusing namespace std;\n\tcin.tie(0)->sync_with_stdio(0);\n\
-    \tint n, m; \n\tcin >> n >> m;\n\tSCC S; S.init(n);\n\tfor (int i = 0; i < m;\
-    \ ++i) {\n\t\tint u, v;\n\t\tcin >> u >> v;\n\t\tS.ae(u, v);\n\t}\n\tS.gen();\n\
-    \tS.build_scc_graph();\n\tcout << S.roots.size() << '\\n';\n\tfor (auto &c : S.topo_ord)\
-    \ {\n\t\tcout << S.comps[c].size() << \" \";\n\t\tfor (auto &x : S.comps[c]) \n\
-    \t\t\tcout << x << \" \";\n\t\tcout << '\\n';\n\t}\n\treturn 0;\n}\n"
+    \t}\n};\n"
   code: "#pragma once\n\nstruct SCC {\n\tint n; \n\tstd::vector<std::vector<int>>\
     \ g, rg, scc_graph, comps;\n\tstd::vector<int> id, ord, roots, topo_ord;\n\tstd::vector<bool>\
     \ vis;\n\n\tvoid init(int n_) {\n\t\tn = n_;\n\t\tg.assign(n, std::vector<int>());\n\
@@ -60,17 +55,12 @@ data:
     \t}\n\n\tvoid gen() {\n\t\tfor (int i = 0; i < n; ++i) {\n\t\t\tif (!vis[i])\n\
     \t\t\t\tdfs_order(i);\n\t\t}\n\t\treverse(ord.begin(), ord.end());\n\t\tfor (auto\
     \ &x : ord) \n\t\t\tif (id[x] == -1) \n\t\t\t\tdfs_color(x, x), roots.push_back(x);\n\
-    \t}\n};\n\nint main() {\n\tusing namespace std;\n\tcin.tie(0)->sync_with_stdio(0);\n\
-    \tint n, m; \n\tcin >> n >> m;\n\tSCC S; S.init(n);\n\tfor (int i = 0; i < m;\
-    \ ++i) {\n\t\tint u, v;\n\t\tcin >> u >> v;\n\t\tS.ae(u, v);\n\t}\n\tS.gen();\n\
-    \tS.build_scc_graph();\n\tcout << S.roots.size() << '\\n';\n\tfor (auto &c : S.topo_ord)\
-    \ {\n\t\tcout << S.comps[c].size() << \" \";\n\t\tfor (auto &x : S.comps[c]) \n\
-    \t\t\tcout << x << \" \";\n\t\tcout << '\\n';\n\t}\n\treturn 0;\n}"
+    \t}\n};\n"
   dependsOn: []
   isVerificationFile: false
   path: library/graphs/strongly-connected-components-kosaraju.hpp
   requiredBy: []
-  timestamp: '2021-07-24 19:40:07-04:00'
+  timestamp: '2021-07-24 22:29:57-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/graphs/strongly-connected-components-kosaraju.hpp
