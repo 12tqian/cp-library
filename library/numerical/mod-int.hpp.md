@@ -2,13 +2,10 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':x:'
-    path: test/affine-segment-tree.test.cpp
-    title: test/affine-segment-tree.test.cpp
-  _isVerificationFailed: true
+  _extendedVerifiedWith: []
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     links: []
   bundledCode: "\nconst int MOD = 1e9 + 7;\n\ntypedef std::decay<decltype(MOD)>::type\
@@ -64,9 +61,8 @@ data:
   path: library/numerical/mod-int.hpp
   requiredBy: []
   timestamp: '2021-07-24 19:40:07-04:00'
-  verificationStatus: LIBRARY_ALL_WA
-  verifiedWith:
-  - test/affine-segment-tree.test.cpp
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
 documentation_of: library/numerical/mod-int.hpp
 layout: document
 redirect_from:

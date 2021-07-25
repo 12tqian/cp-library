@@ -231,10 +231,10 @@ data:
     - icon: ':warning:'
       path: library/numerical/matrix.hpp
       title: library/numerical/matrix.hpp
-    - icon: ':x:'
+    - icon: ':warning:'
       path: library/numerical/mod-int.hpp
       title: library/numerical/mod-int.hpp
-    - icon: ':warning:'
+    - icon: ':x:'
       path: library/numerical/mod-int2.hpp
       title: library/numerical/mod-int2.hpp
     - icon: ':warning:'

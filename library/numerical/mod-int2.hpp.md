@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: test/affine-segment-tree.test.cpp
+    title: test/affine-segment-tree.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "\n// 5 is a root of both mods\ntemplate <int MOD, int RT> struct Mint\
@@ -67,8 +70,9 @@ data:
   path: library/numerical/mod-int2.hpp
   requiredBy: []
   timestamp: '2021-07-24 19:40:07-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_WA
+  verifiedWith:
+  - test/affine-segment-tree.test.cpp
 documentation_of: library/numerical/mod-int2.hpp
 layout: document
 redirect_from:
