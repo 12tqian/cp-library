@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/fenwick-tree.test.cpp
     title: test/fenwick-tree.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "\ntemplate <class T> struct FenwickTree {\n\tstd::vector<T> fwt;\n\
@@ -32,7 +32,7 @@ data:
   path: library/data-structures/1d-range-queries/fenwick-tree.hpp
   requiredBy: []
   timestamp: '2021-07-24 21:09:23-04:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/fenwick-tree.test.cpp
 documentation_of: library/data-structures/1d-range-queries/fenwick-tree.hpp

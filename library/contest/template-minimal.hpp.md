@@ -9,7 +9,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/associative-range-query.test.cpp
     title: test/associative-range-query.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/fenwick-tree.test.cpp
     title: test/fenwick-tree.test.cpp
   - icon: ':x:'

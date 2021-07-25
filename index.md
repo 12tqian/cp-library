@@ -20,7 +20,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/data-structures/1d-range-queries/associative-range-query.hpp
       title: library/data-structures/1d-range-queries/associative-range-query.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/data-structures/1d-range-queries/fenwick-tree.hpp
       title: library/data-structures/1d-range-queries/fenwick-tree.hpp
     - icon: ':warning:'
@@ -286,7 +286,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/example.test.cpp
       title: test/example.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/fenwick-tree.test.cpp
       title: test/fenwick-tree.test.cpp
     - icon: ':x:'

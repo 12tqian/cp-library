@@ -14,10 +14,10 @@ data:
   _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.yosupo.jp/problem/static_range_sum
+    PROBLEM: https://judge.yosupo.jp/problem/point_add_range_sum
     links:
-    - https://judge.yosupo.jp/problem/static_range_sum
-  bundledCode: "#define PROBLEM \"https://judge.yosupo.jp/problem/static_range_sum\"\
+    - https://judge.yosupo.jp/problem/point_add_range_sum
+  bundledCode: "#define PROBLEM \"https://judge.yosupo.jp/problem/point_add_range_sum\"\
     \n\n#include <algorithm>\n#include <array>\n#include <bitset>\n#include <cassert>\n\
     #include <chrono>\n#include <cmath>\n#include <complex>\n#include <cstdio>\n#include\
     \ <cstdlib>\n#include <cstring>\n#include <ctime>\n#include <deque>\n#include\
@@ -49,8 +49,8 @@ data:
     \ p, x);\n        } else {\n            int l, r;\n            cin >> l >> r;\n\
     \            --r;\n            cout << seg.qsum(l, r) << '\\n';\n        }\n\t\
     }\n\treturn 0;\n}\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/static_range_sum\"\n\n\
-    #include \"../library/contest/template-minimal.hpp\"\n#include \"../library/data-structures/1d-range-queries/lazy-segment-tree.hpp\"\
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/point_add_range_sum\"\n\
+    \n#include \"../library/contest/template-minimal.hpp\"\n#include \"../library/data-structures/1d-range-queries/lazy-segment-tree.hpp\"\
     \n\nint main() {\n\tusing namespace std;\n\tcin.tie(0)->sync_with_stdio(0);\n\t\
     int n, q; \n    cin >> n >> q;\n\tvector<long long> a(n);\n\tLazySeg<long long>\
     \ seg;\n    seg.init(n);\n\tfor (int i = 0; i < n; i++) {\n        int x;\n  \
@@ -65,7 +65,7 @@ data:
   isVerificationFile: true
   path: test/lazy-segment-tree.test.cpp
   requiredBy: []
-  timestamp: '2021-07-24 21:14:38-04:00'
+  timestamp: '2021-07-24 21:17:26-04:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/lazy-segment-tree.test.cpp
