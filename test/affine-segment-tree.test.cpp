@@ -1,20 +1,22 @@
-#include <bits/stdc++.h>
+#define PROBLEM "https://atcoder.jp/contests/practice2/tasks/practice2_k"
 
+#include "../library/contest/template-minimal.hpp"
+#include "../library/numerical/mod-int.hpp"
 #include "../library/data-structures/1d-range-queries/affine-segment-tree.hpp"
 
 int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
-    AffineSeg<mi, (1 << 19)> seg;
-    seg.init();
+    AffineSegmentTree<mi> seg;
     int n, q;
+    seg.init(n);
     cin >> n >> q;
     vector<int> a(n);
     for (int i = 0; i < n; i++) {
         cin >> a[i];
         seg.upd(i, i, 0, a[i]);
     }
-    while (q--) {
+    while (q--) {	
         int t;
         cin >> t;
         if (t == 0) {
