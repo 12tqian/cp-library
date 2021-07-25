@@ -54,7 +54,3 @@ template <class T> struct LazySeg {
 		return qsum(lo, hi, 2 * ind, L, M) + qsum(lo, hi, 2 * ind + 1, M + 1, R);
 	}
 };
-
-int main() {
-	return 0;
-}

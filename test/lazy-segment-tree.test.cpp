@@ -8,7 +8,6 @@ int main() {
 	cin.tie(0)->sync_with_stdio(0);
 	int n, q; 
     cin >> n >> q;
-	vector<long long> a(n);
 	LazySeg<long long> seg;
     seg.init(n);
 	for (int i = 0; i < n; i++) {
