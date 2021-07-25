@@ -1,4 +1,4 @@
-#define PROBLEM "https://judge.yosupo.jp/problem/rectang	le_sum"
+#define PROBLEM "https://judge.yosupo.jp/problem/rectangle_sum"
 
 #include "../library/contest/template-minimal.hpp"
 #include "../library/misc/easy-io.hpp"
