@@ -33,7 +33,3 @@ template <class T> struct FenwickTree {
 			fwt[idx] += delta;
 	}
 };
-
-int main() {
-	return 0;
-}
