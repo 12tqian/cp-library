@@ -9,9 +9,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/associative-range-query.test.cpp
     title: test/associative-range-query.test.cpp
+  - icon: ':x:'
+    path: test/convex-hull.test.cpp
+    title: test/convex-hull.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/fenwick-tree.test.cpp
     title: test/fenwick-tree.test.cpp
+  - icon: ':x:'
+    path: test/geometry-2d.test.cpp
+    title: test/geometry-2d.test.cpp
   - icon: ':x:'
     path: test/gosper-hack.test.cpp
     title: test/gosper-hack.test.cpp
@@ -153,7 +159,9 @@ data:
   - test/implicit-lazy-segment-tree.test.cpp
   - test/sparse-segment-tree.test.cpp
   - test/lazy-segment-tree.test.cpp
+  - test/geometry-2d.test.cpp
   - test/fenwick-tree.test.cpp
+  - test/convex-hull.test.cpp
   - test/affine-segment-tree.test.cpp
   - test/associative-range-query.test.cpp
   - test/point-update-segment-tree.test.cpp
