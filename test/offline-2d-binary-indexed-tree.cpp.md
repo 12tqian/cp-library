@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
   - icon: ':warning:'
@@ -17,9 +17,9 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links:
-    - https://judge.yosupo.jp/problem/rectang
-  bundledCode: "#define PROBLEM \"https://judge.yosupo.jp/problem/rectang\tle_sum\"\
-    \n\n#include <algorithm>\n#include <array>\n#include <bitset>\n#include <cassert>\n\
+    - https://judge.yosupo.jp/problem/rectangle_sum
+  bundledCode: "#define PROBLEM \"https://judge.yosupo.jp/problem/rectangle_sum\"\n\
+    \n#include <algorithm>\n#include <array>\n#include <bitset>\n#include <cassert>\n\
     #include <chrono>\n#include <cmath>\n#include <complex>\n#include <cstdio>\n#include\
     \ <cstdlib>\n#include <cstring>\n#include <ctime>\n#include <deque>\n#include\
     \ <iostream>\n#include <iomanip>\n#include <list>\n#include <map>\n#include <numeric>\n\
@@ -151,7 +151,7 @@ data:
     \ pts[i][2]);\n\t}\n\tfor (int i = 0; i < q; ++i) {\n\t\tcout << O.query(get(xs,\
     \ qs[i][0]), get(xs, qs[i][1]), get(ys, qs[i][2]), get(ys, qs[i][3])) << '\\n';\n\
     \t}\n\treturn 0;\n}\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/rectang\tle_sum\"\n\n#include\
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/rectangle_sum\"\n\n#include\
     \ \"../library/contest/template-minimal.hpp\"\n#include \"../library/misc/easy-io.hpp\"\
     \n#include \"../library/data-structures/2d-range-queries/offline-2d-binary-indexed-tree.hpp\"\
     \n\nint main() {\n\tios::sync_with_stdio(false);\n\tcin.tie(nullptr);\n\tint n,\
@@ -178,7 +178,7 @@ data:
   isVerificationFile: false
   path: test/offline-2d-binary-indexed-tree.cpp
   requiredBy: []
-  timestamp: '2021-07-25 01:16:14-04:00'
+  timestamp: '2021-07-25 17:11:24-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: test/offline-2d-binary-indexed-tree.cpp

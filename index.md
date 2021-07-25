@@ -6,7 +6,7 @@ data:
     - icon: ':warning:'
       path: library/contest/template-full.cpp
       title: library/contest/template-full.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/contest/template-minimal.hpp
       title: library/contest/template-minimal.hpp
     - icon: ':warning:'
@@ -95,7 +95,7 @@ data:
     - icon: ':warning:'
       path: library/geometry/geometry-2d.hpp
       title: library/geometry/geometry-2d.hpp
-    - icon: ':warning:'
+    - icon: ':x:'
       path: library/geometry/point.hpp
       title: library/geometry/point.hpp
   - name: library/graphs
@@ -202,7 +202,7 @@ data:
     - icon: ':warning:'
       path: library/number-theory/basic-number-theory.hpp
       title: library/number-theory/basic-number-theory.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/number-theory/counting-primes.hpp
       title: library/number-theory/counting-primes.hpp
     - icon: ':heavy_check_mark:'
@@ -330,6 +330,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/affine-segment-tree.test.cpp
       title: test/affine-segment-tree.test.cpp
+    - icon: ':x:'
+      path: test/angular-sort.test.cpp
+      title: test/angular-sort.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/associative-range-query.test.cpp
       title: test/associative-range-query.test.cpp
@@ -340,11 +343,17 @@ data:
       path: test/biconnected-components.test.cpp
       title: test/biconnected-components.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/counting-primes.test.cpp
+      title: test/counting-primes.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/dijkstra.test.cpp
       title: test/dijkstra.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/dinic.test.cpp
       title: test/dinic.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/dsu.test.cpp
+      title: test/dsu.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/example.test.cpp
       title: test/example.test.cpp

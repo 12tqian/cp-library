@@ -1,8 +1,14 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: library/number-theory/counting-primes.hpp
+    title: library/number-theory/counting-primes.hpp
   _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/counting-primes.test.cpp
+    title: test/counting-primes.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/fenwick-tree.test.cpp
     title: test/fenwick-tree.test.cpp
@@ -30,10 +36,12 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: library/data-structures/1d-range-queries/fenwick-tree.hpp
-  requiredBy: []
+  requiredBy:
+  - library/number-theory/counting-primes.hpp
   timestamp: '2021-07-24 21:09:23-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/counting-primes.test.cpp
   - test/fenwick-tree.test.cpp
 documentation_of: library/data-structures/1d-range-queries/fenwick-tree.hpp
 layout: document

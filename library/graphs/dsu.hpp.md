@@ -7,6 +7,9 @@ data:
     title: library/graphs/kruskal.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/dsu.test.cpp
+    title: test/dsu.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/kruskal.test.cpp
     title: test/kruskal.test.cpp
   _isVerificationFailed: false
@@ -37,6 +40,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/kruskal.test.cpp
+  - test/dsu.test.cpp
 documentation_of: library/graphs/dsu.hpp
 layout: document
 redirect_from:

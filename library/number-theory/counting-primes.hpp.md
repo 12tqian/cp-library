@@ -1,22 +1,28 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: library/data-structures/1d-range-queries/fenwick-tree.hpp
+    title: library/data-structures/1d-range-queries/fenwick-tree.hpp
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/counting-primes.test.cpp
+    title: test/counting-primes.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "\ntemplate <class T> struct FenwickTree {\n\tstd::vector<T> fwt;\n\
-    \tint n;\n\n\tvoid init(int n_) {\n\t\tn = n_;\n\t\tfwt.resize(n);\n\t}\n\n\t\
-    void init(std::vector<T> &a) {\n\t\tn = (int)a.size();\n\t\ta.assign(n, 0);\n\t\
-    \tfor (int i = 0; i < (int)a.size(); i++) {\n\t\t\tadd(i, a[i]);\n\t\t}\n\t}\n\
-    \n\tT sum(int r) {\n\t\tT ret = 0;\n\t\tfor (; r >= 0; r = (r & (r + 1)) - 1)\
-    \ \n\t\t\tret += fwt[r];\n\t\treturn ret;\n\t}\n\n\tT query(int l, int r) {\n\t\
-    \treturn sum(r) - sum(l - 1);\n\t}\n\t\n\tvoid add(int idx, T delta) {\n\t\tfor\
-    \ (; idx < n; idx = idx | (idx + 1)) \n\t\t\tfwt[idx] += delta;\n\t}\n};\n\nconst\
-    \ int RL = 1010101;\nconst int CL = 10101;\n\nstd::bitset<RL + 1> isp;\nstd::vector<int>\
+  bundledCode: "\n\ntemplate <class T> struct FenwickTree {\n\tstd::vector<T> fwt;\n\
+    \tint n;\n\n\tvoid init(int n_) {\n\t\tn = n_;\n\t\tfwt.assign(n, 0);\n\t}\n\n\
+    \tvoid init(std::vector<T> &a) {\n\t\tn = (int)a.size();\n\t\tfwt.assign(n, 0);\n\
+    \t\tfor (int i = 0; i < (int)a.size(); i++) {\n\t\t\tadd(i, a[i]);\n\t\t}\n\t\
+    }\n\n\tT sum(int r) {\n\t\tT ret = 0;\n\t\tfor (; r >= 0; r = (r & (r + 1)) -\
+    \ 1) \n\t\t\tret += fwt[r];\n\t\treturn ret;\n\t}\n\n\tT query(int l, int r) {\n\
+    \t\treturn sum(r) - sum(l - 1);\n\t}\n\t\n\tvoid add(int idx, T delta) {\n\t\t\
+    for (; idx < n; idx = idx | (idx + 1)) \n\t\t\tfwt[idx] += delta;\n\t}\n};\n\n\
+    const int RL = 1010101;\nconst int CL = 10101;\n\nstd::bitset<RL + 1> isp;\nstd::vector<int>\
     \ ps, cs;\n\nvoid init(int c) {\n\tps.clear(); cs.clear();\n\tisp[0] = isp[1]\
     \ = 1;\n\tfor (int p = 2; p * p <= RL; p++) \n\t\tif (!isp[p]) \n\t\t\tfor (int\
     \ q = p * p; q <= RL; q += p) \n\t\t\t\tisp[q] = 1;\n\tfor (int i = 2; i <= RL;\
@@ -47,18 +53,9 @@ data:
     \ - s % p) % p; q <= c; q += p) \n\t\t\t\tval[q] = 0;\n\t\tfor (int i = 1; i <=\
     \ c; i++) cur[i] = cur[i - 1] + val[i];\n\t\t\tb = cur[c];\n\t\twhile (s <= x\
     \ / ps[idx] && x / ps[idx] < s + c && idx >= a) {\n\t\t\tres -= cur[x / ps[idx]\
-    \ - s];\n\t\t\tidx--;\n\t\t}\n\t}\n\treturn res;\n}\n\nint main() {\n\tusing namespace\
-    \ std;\n\tcin.tie(0)->sync_with_stdio(0);\n\tlong long n; cin >> n;\n\tcout <<\
-    \ count_primes(n) << '\\n';\n\treturn 0;\n}\n"
-  code: "#pragma once\n\ntemplate <class T> struct FenwickTree {\n\tstd::vector<T>\
-    \ fwt;\n\tint n;\n\n\tvoid init(int n_) {\n\t\tn = n_;\n\t\tfwt.resize(n);\n\t\
-    }\n\n\tvoid init(std::vector<T> &a) {\n\t\tn = (int)a.size();\n\t\ta.assign(n,\
-    \ 0);\n\t\tfor (int i = 0; i < (int)a.size(); i++) {\n\t\t\tadd(i, a[i]);\n\t\t\
-    }\n\t}\n\n\tT sum(int r) {\n\t\tT ret = 0;\n\t\tfor (; r >= 0; r = (r & (r + 1))\
-    \ - 1) \n\t\t\tret += fwt[r];\n\t\treturn ret;\n\t}\n\n\tT query(int l, int r)\
-    \ {\n\t\treturn sum(r) - sum(l - 1);\n\t}\n\t\n\tvoid add(int idx, T delta) {\n\
-    \t\tfor (; idx < n; idx = idx | (idx + 1)) \n\t\t\tfwt[idx] += delta;\n\t}\n};\n\
-    \nconst int RL = 1010101;\nconst int CL = 10101;\n\nstd::bitset<RL + 1> isp;\n\
+    \ - s];\n\t\t\tidx--;\n\t\t}\n\t}\n\treturn res;\n}\n"
+  code: "#pragma once\n\n#include \"../data-structures/1d-range-queries/fenwick-tree.hpp\"\
+    \n\nconst int RL = 1010101;\nconst int CL = 10101;\n\nstd::bitset<RL + 1> isp;\n\
     std::vector<int> ps, cs;\n\nvoid init(int c) {\n\tps.clear(); cs.clear();\n\t\
     isp[0] = isp[1] = 1;\n\tfor (int p = 2; p * p <= RL; p++) \n\t\tif (!isp[p]) \n\
     \t\t\tfor (int q = p * p; q <= RL; q += p) \n\t\t\t\tisp[q] = 1;\n\tfor (int i\
@@ -90,15 +87,16 @@ data:
     \ p) \n\t\t\t\tval[q] = 0;\n\t\tfor (int i = 1; i <= c; i++) cur[i] = cur[i -\
     \ 1] + val[i];\n\t\t\tb = cur[c];\n\t\twhile (s <= x / ps[idx] && x / ps[idx]\
     \ < s + c && idx >= a) {\n\t\t\tres -= cur[x / ps[idx] - s];\n\t\t\tidx--;\n\t\
-    \t}\n\t}\n\treturn res;\n}\n\nint main() {\n\tusing namespace std;\n\tcin.tie(0)->sync_with_stdio(0);\n\
-    \tlong long n; cin >> n;\n\tcout << count_primes(n) << '\\n';\n\treturn 0;\n}"
-  dependsOn: []
+    \t}\n\t}\n\treturn res;\n}"
+  dependsOn:
+  - library/data-structures/1d-range-queries/fenwick-tree.hpp
   isVerificationFile: false
   path: library/number-theory/counting-primes.hpp
   requiredBy: []
-  timestamp: '2021-07-24 19:40:07-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  timestamp: '2021-07-25 17:11:24-04:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/counting-primes.test.cpp
 documentation_of: library/number-theory/counting-primes.hpp
 layout: document
 redirect_from:

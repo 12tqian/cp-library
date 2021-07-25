@@ -14,10 +14,13 @@ data:
   - icon: ':warning:'
     path: test/geometry-2d.cpp
     title: test/geometry-2d.cpp
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: test/angular-sort.test.cpp
+    title: test/angular-sort.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "\ntemplate <typename T> struct Point {\npublic:\n\tT x, y;\n\tPoint()\
@@ -139,8 +142,9 @@ data:
   - library/geometry/geometry-2d.hpp
   - library/geometry/convex-hull.hpp
   timestamp: '2021-07-24 21:53:34-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_WA
+  verifiedWith:
+  - test/angular-sort.test.cpp
 documentation_of: library/geometry/point.hpp
 layout: document
 redirect_from:

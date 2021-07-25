@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':x:'
     path: library/geometry/point.hpp
     title: library/geometry/point.hpp
   _extendedRequiredBy:
