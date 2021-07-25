@@ -11,7 +11,6 @@ int main() {
 	S.init(n);
 	std::vector<long long> a(n);
 	for (int i = 0; i < n; i++)
-	   
 		cin >> a[i], S.upd(2, i, i, a[i]);
 	while (q--) {
 		int t, l, r; cin >> t >> l >> r;
