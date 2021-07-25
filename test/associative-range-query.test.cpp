@@ -1,6 +1,7 @@
-#define PROBLEM "https://judge.yosupo.jp/problem/static_range_sum"
+#define IGNORE
+#define PROBLEM "https://atcoder.jp/contests/practice2/tasks/practice2_k"
 
-#include <bits/stdc++.h>
+#include "../library/contest/template-minimal.hpp"
 #include "../library/data-structures/1d-range-queries/associative-range-query.hpp"
 
 int main() {

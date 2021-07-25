@@ -1,6 +1,6 @@
 #pragma once
 
-template <class T> struct AffineSeg {
+template <class T> struct AffineSegmentTree {
 	int sz;
 	std::vector<T> sum, mult, add;
 
