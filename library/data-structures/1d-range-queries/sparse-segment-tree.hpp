@@ -43,7 +43,7 @@ template <class T> struct Node {
 	}
 
 	void update_2d(int ind, Node *c0, Node *c1, int L = 0, int R = SZ - 1) { // for 2D segtree
-		if (L != R) {
+		if (L != R)	 {
 			int M = (L + R) / 2;
 			if (ind <= M) {
 				if (!c[0]) c[0] = new Node();
@@ -56,25 +56,3 @@ template <class T> struct Node {
 		val = (c0 ? c0->val : 0) + (c1 ? c1->val : 0);
 	}
 };
-
-int main() {
-	using namespace std;
-	typedef long long ll;
-	int n, q; cin >> n >> q;
-	vector<ll> a(n);
-	Node<ll> seg;
-	for (int i = 0; i < n; i++) 
-		cin >> a[i], seg.upd(i, a[i]);
-	while (q--) {
-		int t; cin >> t;
-		if (t == 0) {
-			int p, x;
-			cin >> p >> x;
-			seg.upd(p, x);
-		} else {
-			int l, r; cin >> l >> r;
-			cout << seg.query(l, r - 1) << '\n';
-		}
-	}
-	return 0;
-}
