@@ -46,19 +46,3 @@ template <class T> std::vector<T> get_divisor(T x) {
 }
 
 }
-
-int main() {
-	using namespace FactorBasic;
-	using namespace std;
-	while (true) {
-		long long n;
-		cin >> n;
-		if (n == 0) return 0;
-		auto f = factor(n);
-		for (auto x : f) {
-			cout << x.first << "^" << x.second << " ";
-		}
-		cout << '\n';
-	}  
-	return 0;
-}

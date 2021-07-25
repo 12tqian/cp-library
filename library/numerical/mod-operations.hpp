@@ -33,4 +33,3 @@ int mmul(int &a, int b) { return a = mul(a, b); }
 int mdivi(int &a, int b) { return a = divi(a, b); }
 
 } // ModOperations
-

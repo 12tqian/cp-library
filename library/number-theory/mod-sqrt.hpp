@@ -65,16 +65,3 @@ std::vector<long long> mod_sqrt(long long a, long long p) {
 	}
 	return (g0 < p - g0) ? std::vector<long long>{g0, p - g0} : std::vector<long long>{p - g0, g0};
 }
-
-int main() {
-	using namespace std;
-	int tt; cin >> tt;
-	while (tt--) {
-		long long y, p;
-		cin >> y >> p;
-		auto res = mod_sqrt(y, p);
-		if (res.empty()) cout << -1 << '\n';
-		else cout << res[0] << '\n';
-	}
-	return 0;
-}

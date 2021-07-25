@@ -48,28 +48,3 @@ template <class T> std::vector<T> convolution(std::vector<T> a, std::vector<T> b
 }
 
 }
-
-int main() {
-	using namespace std;
-	using namespace Karatsuba;
-	ios_base::sync_with_stdio(0);
-	int tt; 
-	cin >> tt;
-	while (tt--) {
-		int sa, sb;
-		cin >> sa;
-		vector<long long> a(sa + 1);
-		for (int i = 0; i < sa + 1; i++)
-			cin >> a[i];
-		cin >> sb;
-		vector<long long> b(sb + 1);
-		for (int i = 0; i < sb + 1; i++)
-			cin >> b[i];
-		vector<long long> c = convolution<long long>(a, b);
-		cout << (int)c.size() - 1 << '\n';
-		for (int i = 0; i < (int)c.size(); i++)
-			cout << c[i] << " ";
-		cout << '\n';
-	}
-	return 0;
-}

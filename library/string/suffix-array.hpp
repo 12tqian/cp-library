@@ -7,40 +7,7 @@
  * Indexing has been fixed so that everything is 0-indexed by the end
  */
 
-template <class T> struct SparseTable {
-	std::vector<T> v;
-	std::vector<std::vector<int>> jump;
-
-	int level(int x) {
-		return 31 - __builtin_clz(x);
-	}
-
-	int comb(int a, int b) {
-		return v[a] == v[b] ? std::min(a, b) : (v[a] < v[b] ? a : b);
-	}
-
-	void init(const std::vector<T> &_v) {
-		v = _v;
-		jump = {std::vector<int>((int)v.size())};
-		iota(jump[0].begin(), jump[0].end(), 0);
-		for (int j = 1; (1 << j) <= (int)v.size(); j++) {
-			jump.push_back(std::vector<int>((int)v.size() - (1 << j) + 1));
-			for (int i = 0; i < (int)jump[j].size(); i++) {
-				jump[j][i] = comb(jump[j - 1][i], jump[j - 1][i + (1 << (j - 1))]);
-			}
-		}
-	}
-
-	int index(int l, int r) {
-		assert(l <= r);
-		int d = level(r - l + 1);
-		return comb(jump[d][l], jump[d][r - (1 << d) + 1]);
-	}
-
-	T query(int l, int r) {
-		return v[index(l, r)];
-	}
-};
+#include "../data-structures/1d-range-queries/sparse-table.hpp"
 
 struct SuffixArray {
 	std::string s;
@@ -112,16 +79,3 @@ struct SuffixArray {
 		return S.query(l, r - 1);
 	}
 };
- 
-int main() {
-	using namespace std;
-	ios_base::sync_with_stdio(0);
-	string s; cin >> s;
-	int n = (int)s.size();
-	SuffixArray S;
-	S.init(s);
-	for (int i = 0; i < n; i++)
-		cout << S.sa[i] << " ";
-	cout << '\n';
-	return 0;
-}

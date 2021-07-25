@@ -31,7 +31,3 @@ struct Frac {
 	template <class T> friend Frac& operator/=(Frac& l, const T& r) { return l = l / r; }
 	friend std::ostream& operator<<(std::ostream& os, const Frac& a) { return os << a.n << "/" << a.d; }
 };
-
-int main() {
-	return 0;
-}

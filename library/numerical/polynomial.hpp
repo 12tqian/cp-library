@@ -85,5 +85,3 @@ Poly integral(const Poly &p) {
 }
 
 }
-
-

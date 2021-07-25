@@ -1,45 +1,6 @@
 #pragma once
 
-// 5 is a root of both mods
-template <int MOD, int RT> struct Mint {
-	static const int mod = MOD;
-	static constexpr Mint rt() { return RT; } // primitive root for FFT
-	int v; 
-	explicit operator int() const { return v; } // explicit -> don't silently convert to int
-	Mint() { v = 0; }
-	Mint(long long _v) { v = int((-MOD < _v && _v < MOD) ? _v : _v % MOD); if (v < 0) v += MOD; }
-	friend bool operator==(const Mint &a, const Mint &b) { return a.v == b.v; }
-	friend bool operator!=(const Mint &a, const Mint &b) { return !(a == b); }
-	friend bool operator<(const Mint &a, const Mint &b) { return a.v < b.v; }
-	friend bool operator>(const Mint &a, const Mint &b) { return a.v > b.v; }
-	friend bool operator<=(const Mint &a, const Mint &b) { return a.v <= b.v; }
-	friend bool operator>=(const Mint &a, const Mint &b) { return a.v >= b.v; }
-	friend std::istream& operator >> (std::istream &in, Mint &a) { 
-		long long x; std::cin >> x; a = Mint(x); return in; }
-	friend std::ostream& operator << (std::ostream &os, const Mint &a) { return os << a.v; }
-	Mint& operator+=(const Mint &m) { 
-		if ((v += m.v) >= MOD) v -= MOD; 
-		return *this; }
-	Mint& operator-=(const Mint &m) { 
-		if ((v -= m.v) < 0) v += MOD; 
-		return *this; }
-	Mint& operator*=(const Mint &m) { 
-		v = (long long)v * m.v % MOD; return *this; }
-	Mint& operator/=(const Mint &m) { return (*this) *= inv(m); }
-	friend Mint pow(Mint a, long long p) {
-		Mint ans = 1; assert(p >= 0);
-		for (; p; p /= 2, a *= a) if (p & 1) ans *= a;
-		return ans; 
-	}
-	friend Mint inv(const Mint &a) { assert(a.v != 0); return pow(a, MOD - 2); }
-	Mint operator-() const { return Mint(-v); }
-	Mint& operator++() { return *this += 1; }
-	Mint& operator--() { return *this -= 1; }
-	friend Mint operator+(Mint a, const Mint &b) { return a += b; }
-	friend Mint operator-(Mint a, const Mint &b) { return a -= b; }
-	friend Mint operator*(Mint a, const Mint &b) { return a *= b; }
-	friend Mint operator/(Mint a, const Mint &b) { return a /= b; }
-};
+#include "mod-int2.hpp"
 
 namespace FFT {
 
@@ -121,22 +82,3 @@ template <class T> std::vector<T> general_multiply(const std::vector<T> &A, cons
 }
 
 } // namespace FFT
-
-int main() {
-	using namespace std;
-	using namespace FFT;
-	ios_base::sync_with_stdio(0);
-	int n, m; 
-	cin >> n >> m;
-	const int MOD = 1e9 + 7;
-	using num = Mint<MOD, 5>;
-	vector<num> a(n), b(m);
-	for (int i = 0; i < n; i++)
-		cin >> a[i];
-	for (int i = 0; i < m; i++)
-		cin >> b[i];
-	vector<num> c = general_multiply(a, b);
-	for (int i = 0; i < (int)c.size(); i++)
-		cout << c[i] << " ";
-	cout << '\n';
-}
