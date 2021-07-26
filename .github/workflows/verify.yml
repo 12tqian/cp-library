@@ -21,8 +21,10 @@ jobs:
 			# run: pip3 install -U online-judge-verify-helper
 		- name: Prepare Selenium
 			uses: naasess/setup-chromedriver@master
+
 		- name: Start XVFB
-			run: sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 & # optional, disables headless mode
+			run: |
+			sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 & # optional, disables headless mode
 		- name: Run tests
 			env:
 				DISPLAY: :99
