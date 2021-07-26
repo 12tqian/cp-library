@@ -147,7 +147,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/suffix-array.test.cpp
     title: test/suffix-array.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/watermelon.test.cpp
     title: test/watermelon.test.cpp
   _isVerificationFailed: true
