@@ -6,7 +6,7 @@ data:
     - icon: ':warning:'
       path: library/contest/template-full.cpp
       title: library/contest/template-full.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/contest/template-minimal.hpp
       title: library/contest/template-minimal.hpp
     - icon: ':warning:'
@@ -95,7 +95,7 @@ data:
     - icon: ':warning:'
       path: library/geometry/geometry-2d.hpp
       title: library/geometry/geometry-2d.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/geometry/point.hpp
       title: library/geometry/point.hpp
   - name: library/graphs
@@ -330,7 +330,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/affine-segment-tree.test.cpp
       title: test/affine-segment-tree.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/angular-sort.test.cpp
       title: test/angular-sort.test.cpp
     - icon: ':heavy_check_mark:'
@@ -426,6 +426,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/suffix-array.test.cpp
       title: test/suffix-array.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/watermelon.test.cpp
+      title: test/watermelon.test.cpp
 layout: toppage
 ---
 [![Badge](https://cp-logo.vercel.app/codeforces/12tqian)](https://codeforces.com/profile/12tqian)

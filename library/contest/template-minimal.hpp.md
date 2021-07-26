@@ -54,7 +54,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/affine-segment-tree.test.cpp
     title: test/affine-segment-tree.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/angular-sort.test.cpp
     title: test/angular-sort.test.cpp
   - icon: ':heavy_check_mark:'
@@ -147,9 +147,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/suffix-array.test.cpp
     title: test/suffix-array.test.cpp
-  _isVerificationFailed: true
+  - icon: ':heavy_check_mark:'
+    path: test/watermelon.test.cpp
+    title: test/watermelon.test.cpp
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: '#include <algorithm>
@@ -275,7 +278,7 @@ data:
   - test/link-cut-tree.cpp
   - library/graphs/enumerate-triangles.cpp
   timestamp: '2021-07-24 23:00:09-04:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/counting-primes.test.cpp
   - test/bellman-ford.test.cpp
@@ -305,6 +308,7 @@ data:
   - test/suffix-array-linear.test.cpp
   - test/dinic.test.cpp
   - test/point-update-segment-tree.test.cpp
+  - test/watermelon.test.cpp
   - test/segment-tree-beats.test.cpp
   - test/suffix-array.test.cpp
   - test/li-chao-tree-online.test.cpp
