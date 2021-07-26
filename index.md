@@ -84,7 +84,7 @@ data:
     - icon: ':warning:'
       path: library/dynamic-programming/min-deque.hpp
       title: library/dynamic-programming/min-deque.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/dynamic-programming/monotonic-convex-hull.hpp
       title: library/dynamic-programming/monotonic-convex-hull.hpp
   - name: library/geometry
@@ -310,9 +310,6 @@ data:
       path: test/min-cost-max-flow.cpp
       title: test/min-cost-max-flow.cpp
     - icon: ':warning:'
-      path: test/monotonic-convex-hull.cpp
-      title: test/monotonic-convex-hull.cpp
-    - icon: ':warning:'
       path: test/offline-2d-binary-indexed-tree.cpp
       title: test/offline-2d-binary-indexed-tree.cpp
     - icon: ':warning:'
@@ -402,6 +399,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/mod-sqrt.test.cpp
       title: test/mod-sqrt.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/monotonic-convex-hull.test.cpp
+      title: test/monotonic-convex-hull.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/point-update-segment-tree.test.cpp
       title: test/point-update-segment-tree.test.cpp

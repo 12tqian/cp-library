@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy:
-  - icon: ':warning:'
-    path: test/monotonic-convex-hull.cpp
-    title: test/monotonic-convex-hull.cpp
-  _extendedVerifiedWith: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/monotonic-convex-hull.test.cpp
+    title: test/monotonic-convex-hull.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "\n// answers min queries currently\n// don't forget to change ord\n\
@@ -60,11 +60,11 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: library/dynamic-programming/monotonic-convex-hull.hpp
-  requiredBy:
-  - test/monotonic-convex-hull.cpp
+  requiredBy: []
   timestamp: '2021-07-24 21:49:44-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/monotonic-convex-hull.test.cpp
 documentation_of: library/dynamic-programming/monotonic-convex-hull.hpp
 layout: document
 redirect_from:

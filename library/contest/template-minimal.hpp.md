@@ -36,9 +36,6 @@ data:
     path: test/min-cost-max-flow.cpp
     title: test/min-cost-max-flow.cpp
   - icon: ':warning:'
-    path: test/monotonic-convex-hull.cpp
-    title: test/monotonic-convex-hull.cpp
-  - icon: ':warning:'
     path: test/offline-2d-binary-indexed-tree.cpp
     title: test/offline-2d-binary-indexed-tree.cpp
   - icon: ':warning:'
@@ -123,6 +120,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/mod-sqrt.test.cpp
     title: test/mod-sqrt.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/monotonic-convex-hull.test.cpp
+    title: test/monotonic-convex-hull.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/point-update-segment-tree.test.cpp
     title: test/point-update-segment-tree.test.cpp
@@ -265,7 +265,6 @@ data:
   - test/geometry-2d.cpp
   - test/basic-factor.cpp
   - test/dinic-bipartite.cpp
-  - test/monotonic-convex-hull.cpp
   - test/convex-hull.cpp
   - test/2d-sparse-segment-tree.cpp
   - test/gosper-hack.cpp
@@ -282,6 +281,7 @@ data:
   verifiedWith:
   - test/counting-primes.test.cpp
   - test/bellman-ford.test.cpp
+  - test/monotonic-convex-hull.test.cpp
   - test/lca-jump.test.cpp
   - test/lca-rmq.test.cpp
   - test/implicit-lazy-segment-tree.test.cpp
