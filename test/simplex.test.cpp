@@ -1,4 +1,4 @@
-#define IGNORE
+#define PROBLEM "https://open.kattis.com/contests/ecna19open/problems/cheeseifyouplease"
 
 #include "../library/contest/template-minimal.hpp"
 #include "../library/numerical/simplex.hpp"
