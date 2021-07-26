@@ -3,35 +3,34 @@ name: verify
 on: push
 
 jobs:
-	verify:
-		runs-on: ubuntu-latest
+  verify:
+    runs-on: ubuntu-latest
 
-		services:
-			selenium:
-				image: selenium/standalone-chrome
+    services:
+      selenium:
+        image: selenium/standalone-chrome
 
-		steps:
-		- uses: actions/checkout@v1
+    steps:
+    - uses: actions/checkout@v1
 
-		- name: Set up Python
-			uses: actions/setup-python@v1
+    - name: Set up Python
+      uses: actions/setup-python@v1
 
-		- name: Install dependencies
-			run: pip3 install -U git+https://github.com/12tqian/verification-helper-1@master
-			# run: pip3 install -U online-judge-verify-helper
-		- name: Prepare Selenium
-			uses: naasess/setup-chromedriver@master
+    - name: Install dependencies
+      run: pip3 install -U git+https://github.com/12tqian/verification-helper-1@master
+      # run: pip3 install -U online-judge-verify-helper
+    - name: Prepare Selenium
+      uses: naasess/setup-chromedriver@master
 
-		- name: Start XVFB
-			run: |
-			sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 & # optional, disables headless mode
-		- name: Run tests
-			env:
-				DISPLAY: :99
-				GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-				DROPBOX_TOKEN: ${{ secrets.DROPBOX_TOKEN }}
-				OJ_USERNAME: ${{ secrets.OJ_USERNAME }}
-				OJ_PASSWORD: ${{ secrets.OJ_PASSWORD }}
-				# YUKICODER_TOKEN: ${{ secrets.YUKICODER_TOKEN }}
-				GH_PAT: ${{ secrets.GH_PAT }}
-			run: oj-verify all -j 2
+    - name: Start XVFB
+      run: sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 & # optional, disables headless mode
+    - name: Run tests
+      env:
+        DISPLAY: :99
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        DROPBOX_TOKEN: ${{ secrets.DROPBOX_TOKEN }}
+        OJ_USERNAME: ${{ secrets.OJ_USERNAME }}
+        OJ_PASSWORD: ${{ secrets.OJ_PASSWORD }}
+        # YUKICODER_TOKEN: ${{ secrets.YUKICODER_TOKEN }}
+        GH_PAT: ${{ secrets.GH_PAT }}
+      run: oj-verify all -j 2
