@@ -6,7 +6,7 @@ data:
     - icon: ':warning:'
       path: library/contest/template-full.cpp
       title: library/contest/template-full.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/contest/template-minimal.hpp
       title: library/contest/template-minimal.hpp
     - icon: ':warning:'
@@ -84,7 +84,7 @@ data:
     - icon: ':warning:'
       path: library/dynamic-programming/min-deque.hpp
       title: library/dynamic-programming/min-deque.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: library/dynamic-programming/monotonic-convex-hull.hpp
       title: library/dynamic-programming/monotonic-convex-hull.hpp
   - name: library/geometry
@@ -399,7 +399,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/mod-sqrt.test.cpp
       title: test/mod-sqrt.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/monotonic-convex-hull.test.cpp
       title: test/monotonic-convex-hull.test.cpp
     - icon: ':heavy_check_mark:'

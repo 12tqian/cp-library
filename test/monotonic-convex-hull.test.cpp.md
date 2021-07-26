@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/dynamic-programming/monotonic-convex-hull.hpp
     title: library/dynamic-programming/monotonic-convex-hull.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://codeforces.com/contest/319/problem/C
@@ -73,7 +73,7 @@ data:
   path: test/monotonic-convex-hull.test.cpp
   requiredBy: []
   timestamp: '2021-07-25 21:03:21-04:00'
-  verificationStatus: TEST_ACCEPTED
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/monotonic-convex-hull.test.cpp
 layout: document
