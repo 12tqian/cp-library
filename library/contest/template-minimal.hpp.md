@@ -33,6 +33,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/biconnected-components.test.cpp
     title: test/biconnected-components.test.cpp
+  - icon: ':x:'
+    path: test/codeforces/codeforces-1074F.test.cpp
+    title: test/codeforces/codeforces-1074F.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/convex-hull.test.cpp
     title: test/convex-hull.test.cpp
@@ -147,9 +150,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/twosat.test.cpp
     title: test/twosat.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: '#include <algorithm>
@@ -263,7 +266,7 @@ data:
   - test/offline-2d-binary-indexed-tree.cpp
   - library/graphs/enumerate-triangles.cpp
   timestamp: '2021-07-24 23:00:09-04:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/counting-primes.test.cpp
   - test/bellman-ford.test.cpp
@@ -273,6 +276,7 @@ data:
   - test/lca-rmq.test.cpp
   - test/point-in-polygon.test.cpp
   - test/implicit-lazy-segment-tree.test.cpp
+  - test/codeforces/codeforces-1074F.test.cpp
   - test/biconnected-components.test.cpp
   - test/manacher.test.cpp
   - test/angular-sort.test.cpp
