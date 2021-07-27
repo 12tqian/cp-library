@@ -1,4 +1,4 @@
-#define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_4_B"
+#define PROBLEM "https://www.spoj.com/problems/TOPOSORT/"
 
 #include "../library/contest/template-minimal.hpp"
 #include "../library/graphs/topological-sort.hpp"
@@ -12,11 +12,17 @@ int main() {
 	for (int i = 0; i < m; ++i) {
 		int u, v;
 		cin >> u >> v;
+		--u, --v;
 		g[u].push_back(v);
 	}
 	auto res = topo_sort(g);
-	for (int x : res) {
-		cout << x << '\n';
+	if (res.empty()) {
+		cout << "Sandro fails." << '\n';
+	} else {
+		for (int x : res) {
+			cout << x + 1 << ' ';
+		}
+		cout << '\n';
 	}
 	return 0;
 }

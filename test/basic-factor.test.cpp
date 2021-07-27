@@ -1,4 +1,4 @@
-#define IGNORE
+#define PROBLEM "https://www.spoj.com/problems/FACT0/"
 
 #include "../library/contest/template-minimal.hpp"
 #include "../library/number-theory/basic-factor.hpp"
