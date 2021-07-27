@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: test/twosat.test.cpp
+    title: test/twosat.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "\ntemplate <int SZ> struct Sieve {\n\tint spf[SZ];\n\t\n\tSieve()\
@@ -33,8 +36,9 @@ data:
   path: library/number-theory/fast-factor-sieve.hpp
   requiredBy: []
   timestamp: '2021-07-24 19:40:07-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_WA
+  verifiedWith:
+  - test/twosat.test.cpp
 documentation_of: library/number-theory/fast-factor-sieve.hpp
 layout: document
 redirect_from:

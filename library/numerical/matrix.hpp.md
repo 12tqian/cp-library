@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy:
-  - icon: ':warning:'
-    path: test/matrix.cpp
-    title: test/matrix.cpp
-  _extendedVerifiedWith: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/matrix.test.cpp
+    title: test/matrix.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "\nnamespace MatrixOperations {\n\ntemplate <class T> using Matrix\
@@ -102,11 +102,11 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: library/numerical/matrix.hpp
-  requiredBy:
-  - test/matrix.cpp
+  requiredBy: []
   timestamp: '2021-07-24 22:46:46-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/matrix.test.cpp
 documentation_of: library/numerical/matrix.hpp
 layout: document
 redirect_from:

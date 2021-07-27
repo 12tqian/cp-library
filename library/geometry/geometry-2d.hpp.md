@@ -4,14 +4,14 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/geometry/point.hpp
     title: library/geometry/point.hpp
-  _extendedRequiredBy:
-  - icon: ':warning:'
-    path: test/geometry-2d.cpp
-    title: test/geometry-2d.cpp
-  _extendedVerifiedWith: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/point-in-polygon.test.cpp
+    title: test/point-in-polygon.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "\n\ntemplate <typename T> struct Point {\npublic:\n\tT x, y;\n\tPoint()\
@@ -152,11 +152,11 @@ data:
   - library/geometry/point.hpp
   isVerificationFile: false
   path: library/geometry/geometry-2d.hpp
-  requiredBy:
-  - test/geometry-2d.cpp
+  requiredBy: []
   timestamp: '2021-07-24 21:53:34-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/point-in-polygon.test.cpp
 documentation_of: library/geometry/geometry-2d.hpp
 layout: document
 redirect_from:
