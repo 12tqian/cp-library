@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy:
-  - icon: ':warning:'
-    path: test/hashing.cpp
-    title: test/hashing.cpp
-  _extendedVerifiedWith: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/hashing.test.cpp
+    title: test/hashing.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "\nnamespace Hashing {\n\nconst int MOD = 1e9 + 7;\n\nstd::mt19937\
@@ -52,11 +52,11 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: library/string/hashing.hpp
-  requiredBy:
-  - test/hashing.cpp
+  requiredBy: []
   timestamp: '2021-07-24 22:46:46-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/hashing.test.cpp
 documentation_of: library/string/hashing.hpp
 layout: document
 redirect_from:

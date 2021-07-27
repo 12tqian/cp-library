@@ -1,33 +1,36 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: library/graphs/flows/min-cost-max-flow.hpp
     title: library/graphs/flows/min-cost-max-flow.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    links: []
-  bundledCode: "#define IGNORE\n\n#include <algorithm>\n#include <array>\n#include\
-    \ <bitset>\n#include <cassert>\n#include <chrono>\n#include <cmath>\n#include\
-    \ <complex>\n#include <cstdio>\n#include <cstdlib>\n#include <cstring>\n#include\
-    \ <ctime>\n#include <deque>\n#include <iostream>\n#include <iomanip>\n#include\
-    \ <list>\n#include <map>\n#include <numeric>\n#include <queue>\n#include <random>\n\
-    #include <set>\n#include <stack>\n#include <string>\n#include <unordered_map>\n\
-    #include <vector>\n\nusing namespace std;\n/**\n * to get back the original edges,\
-    \ assign ID's in ae\n */\n\ntemplate <class F, class C> struct MCMF {\n\tstruct\
-    \ Edge { int to; F flow, cap; C cost; };\n\n\tint n;\n\tstd::vector<C> p, dist;\n\
-    \tstd::vector<int> pre;\n\tstd::vector<Edge> edges;\n\tstd::vector<std::vector<int>>\
-    \ adj;\n\n\tconst C INF  = std::numeric_limits<C>::max();\n\n\tvoid init(int n_)\
-    \ {\n\t\tn = n_;\n\t\tp.assign(n, 0);\n\t\tdist.assign(n, 0);\n\t\tpre.assign(n,\
-    \ 0);\n\t\tadj.clear(); adj.resize(n);\n\t\tedges.clear();\n\t}\n\n\tvoid ae(int\
-    \ u, int v, F cap, C cost) {\n\t\tassert(cap >= 0);\n\t\tadj[u].push_back((int)edges.size());\n\
+    '*NOT_SPECIAL_COMMENTS*': ''
+    PROBLEM: https://open.kattis.com/problems/mincostmaxflow
+    links:
+    - https://open.kattis.com/problems/mincostmaxflow
+  bundledCode: "#define PROBLEM \"https://open.kattis.com/problems/mincostmaxflow\"\
+    \n\n#include <algorithm>\n#include <array>\n#include <bitset>\n#include <cassert>\n\
+    #include <chrono>\n#include <cmath>\n#include <complex>\n#include <cstdio>\n#include\
+    \ <cstdlib>\n#include <cstring>\n#include <ctime>\n#include <deque>\n#include\
+    \ <iostream>\n#include <iomanip>\n#include <list>\n#include <map>\n#include <numeric>\n\
+    #include <queue>\n#include <random>\n#include <set>\n#include <stack>\n#include\
+    \ <string>\n#include <unordered_map>\n#include <vector>\n\nusing namespace std;\n\
+    /**\n * to get back the original edges, assign ID's in ae\n */\n\ntemplate <class\
+    \ F, class C> struct MCMF {\n\tstruct Edge { int to; F flow, cap; C cost; };\n\
+    \n\tint n;\n\tstd::vector<C> p, dist;\n\tstd::vector<int> pre;\n\tstd::vector<Edge>\
+    \ edges;\n\tstd::vector<std::vector<int>> adj;\n\n\tconst C INF  = std::numeric_limits<C>::max();\n\
+    \n\tvoid init(int n_) {\n\t\tn = n_;\n\t\tp.assign(n, 0);\n\t\tdist.assign(n,\
+    \ 0);\n\t\tpre.assign(n, 0);\n\t\tadj.clear(); adj.resize(n);\n\t\tedges.clear();\n\
+    \t}\n\n\tvoid ae(int u, int v, F cap, C cost) {\n\t\tassert(cap >= 0);\n\t\tadj[u].push_back((int)edges.size());\n\
     \t\tedges.push_back({v, 0, cap, cost});\n\t\tadj[v].push_back((int)edges.size());\n\
     \t\tedges.push_back({u, 0, 0, -cost});\n\t}\n\n\tbool path(int s, int t) {\n\t\
     \tfor (int i = 0; i < n; i++) \n\t\t\tdist[i] = INF;\n\t\tusing T = std::pair<C,\
@@ -54,25 +57,26 @@ data:
     M.init(n);\n\tfor (int i = 0; i < m; i++) {\n\t\tint u, v, c, w;\n\t\tcin >> u\
     \ >> v >> c >> w;\n\t\tM.ae(u, v, c, w);\n\t}\n\tauto res = M.calc(s, t);\n\t\
     cout << res.first << \" \" << res.second << '\\n';\n\treturn 0;\n}\n"
-  code: "#define IGNORE\n\n#include \"../library/contest/template-minimal.hpp\"\n\
-    #include \"../library/graphs/flows/min-cost-max-flow.hpp\"\n\nint main() {\n\t\
-    using namespace std;\n\tint n, m, s, t;\n\tcin >> n >> m >> s >> t;\n\tMCMF<int,\
-    \ int> M;\n\tM.init(n);\n\tfor (int i = 0; i < m; i++) {\n\t\tint u, v, c, w;\n\
-    \t\tcin >> u >> v >> c >> w;\n\t\tM.ae(u, v, c, w);\n\t}\n\tauto res = M.calc(s,\
-    \ t);\n\tcout << res.first << \" \" << res.second << '\\n';\n\treturn 0;\n}"
+  code: "#define PROBLEM \"https://open.kattis.com/problems/mincostmaxflow\"\n\n#include\
+    \ \"../library/contest/template-minimal.hpp\"\n#include \"../library/graphs/flows/min-cost-max-flow.hpp\"\
+    \n\nint main() {\n\tusing namespace std;\n\tint n, m, s, t;\n\tcin >> n >> m >>\
+    \ s >> t;\n\tMCMF<int, int> M;\n\tM.init(n);\n\tfor (int i = 0; i < m; i++) {\n\
+    \t\tint u, v, c, w;\n\t\tcin >> u >> v >> c >> w;\n\t\tM.ae(u, v, c, w);\n\t}\n\
+    \tauto res = M.calc(s, t);\n\tcout << res.first << \" \" << res.second << '\\\
+    n';\n\treturn 0;\n}"
   dependsOn:
   - library/contest/template-minimal.hpp
   - library/graphs/flows/min-cost-max-flow.hpp
-  isVerificationFile: false
-  path: test/min-cost-max-flow.cpp
+  isVerificationFile: true
+  path: test/min-cost-max-flow.test.cpp
   requiredBy: []
-  timestamp: '2021-07-25 00:42:29-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
+  timestamp: '2021-07-26 20:58:46-04:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/min-cost-max-flow.cpp
+documentation_of: test/min-cost-max-flow.test.cpp
 layout: document
 redirect_from:
-- /library/test/min-cost-max-flow.cpp
-- /library/test/min-cost-max-flow.cpp.html
-title: test/min-cost-max-flow.cpp
+- /verify/test/min-cost-max-flow.test.cpp
+- /verify/test/min-cost-max-flow.test.cpp.html
+title: test/min-cost-max-flow.test.cpp
 ---

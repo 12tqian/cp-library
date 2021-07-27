@@ -1,21 +1,25 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: library/string/hashing.hpp
     title: library/string/hashing.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
+    '*NOT_SPECIAL_COMMENTS*': ''
+    IGNORE: ''
+    IGNORE_IF_CLANG: ''
+    IGNORE_IF_GCC: ''
     links: []
-  bundledCode: "#define IGNORE\n\n#include <algorithm>\n#include <array>\n#include\
-    \ <bitset>\n#include <cassert>\n#include <chrono>\n#include <cmath>\n#include\
+  bundledCode: "#define IGNORE \"self tested\"\n\n#include <algorithm>\n#include <array>\n\
+    #include <bitset>\n#include <cassert>\n#include <chrono>\n#include <cmath>\n#include\
     \ <complex>\n#include <cstdio>\n#include <cstdlib>\n#include <cstring>\n#include\
     \ <ctime>\n#include <deque>\n#include <iostream>\n#include <iomanip>\n#include\
     \ <list>\n#include <map>\n#include <numeric>\n#include <queue>\n#include <random>\n\
@@ -42,8 +46,8 @@ data:
     \tHashRange H;\n\tH.add(\"ababab\");\n\tfor (int i = 0; i < 6; i++) \n\t\tfor\
     \ (int j = i; j < 6; j++) {\n\t\t\tauto val = H.hash(i, j);\n\t\t\tcout << i <<\
     \ \" \" << j << \" \" << val[0] << \" \" << val[1] << '\\n';\n\t\t}\n}\n"
-  code: "#define IGNORE\n\n#include \"../library/contest/template-minimal.hpp\"\n\
-    #include \"../library/string/hashing.hpp\"\n\nint main() {\n\tusing namespace\
+  code: "#define IGNORE \"self tested\"\n\n#include \"../library/contest/template-minimal.hpp\"\
+    \n#include \"../library/string/hashing.hpp\"\n\nint main() {\n\tusing namespace\
     \ std;\n\tusing namespace Hashing;\n\tHashRange H;\n\tH.add(\"ababab\");\n\tfor\
     \ (int i = 0; i < 6; i++) \n\t\tfor (int j = i; j < 6; j++) {\n\t\t\tauto val\
     \ = H.hash(i, j);\n\t\t\tcout << i << \" \" << j << \" \" << val[0] << \" \" <<\
@@ -51,16 +55,16 @@ data:
   dependsOn:
   - library/contest/template-minimal.hpp
   - library/string/hashing.hpp
-  isVerificationFile: false
-  path: test/hashing.cpp
+  isVerificationFile: true
+  path: test/hashing.test.cpp
   requiredBy: []
-  timestamp: '2021-07-24 23:00:09-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
+  timestamp: '2021-07-26 20:58:46-04:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/hashing.cpp
+documentation_of: test/hashing.test.cpp
 layout: document
 redirect_from:
-- /library/test/hashing.cpp
-- /library/test/hashing.cpp.html
-title: test/hashing.cpp
+- /verify/test/hashing.test.cpp
+- /verify/test/hashing.test.cpp.html
+title: test/hashing.test.cpp
 ---

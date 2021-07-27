@@ -2,19 +2,19 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: library/geometry/convex-hull.hpp
     title: library/geometry/convex-hull.hpp
   - icon: ':heavy_check_mark:'
     path: library/geometry/geometry-2d.hpp
     title: library/geometry/geometry-2d.hpp
-  - icon: ':warning:'
-    path: test/convex-hull.cpp
-    title: test/convex-hull.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/angular-sort.test.cpp
     title: test/angular-sort.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/convex-hull.test.cpp
+    title: test/convex-hull.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/point-in-polygon.test.cpp
     title: test/point-in-polygon.test.cpp
@@ -137,7 +137,6 @@ data:
   isVerificationFile: false
   path: library/geometry/point.hpp
   requiredBy:
-  - test/convex-hull.cpp
   - library/geometry/geometry-2d.hpp
   - library/geometry/convex-hull.hpp
   timestamp: '2021-07-24 21:53:34-04:00'
@@ -145,6 +144,7 @@ data:
   verifiedWith:
   - test/point-in-polygon.test.cpp
   - test/angular-sort.test.cpp
+  - test/convex-hull.test.cpp
 documentation_of: library/geometry/point.hpp
 layout: document
 redirect_from:

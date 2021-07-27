@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: library/geometry/convex-hull.hpp
     title: library/geometry/convex-hull.hpp
   - icon: ':heavy_check_mark:'
@@ -14,45 +14,48 @@ data:
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    links: []
-  bundledCode: "#define IGNORE\n\n#include <algorithm>\n#include <array>\n#include\
-    \ <bitset>\n#include <cassert>\n#include <chrono>\n#include <cmath>\n#include\
-    \ <complex>\n#include <cstdio>\n#include <cstdlib>\n#include <cstring>\n#include\
-    \ <ctime>\n#include <deque>\n#include <iostream>\n#include <iomanip>\n#include\
-    \ <list>\n#include <map>\n#include <numeric>\n#include <queue>\n#include <random>\n\
-    #include <set>\n#include <stack>\n#include <string>\n#include <unordered_map>\n\
-    #include <vector>\n\nusing namespace std;\n\n\ntemplate <typename T> struct Point\
-    \ {\npublic:\n\tT x, y;\n\tPoint() : x(0), y(0) {}\n\tPoint(T x_, T y_) : x(x_),\
-    \ y(y_) {}\n\ttemplate <typename U> explicit Point(const Point<U> &p) : x(p.x),\
-    \ y(p.y) {}\n\tPoint(const std::pair<T, T> &p) : x(p.first), y(p.second) {}\n\t\
-    Point(const std::complex<T> &p) : x(real(p)), y(imag(p)) {}\n\texplicit operator\
-    \ std::pair<T, T>() const { return std::pair<T, T>(x, y); }\n\texplicit operator\
-    \ std::complex<T>() const { return std::complex<T>(x, y); }\n\n\tfriend std::ostream&\
-    \ operator<<(std::ostream &o, const Point &p) { \n\t\treturn o << '(' << p.x <<\
-    \ ',' << p.y << ')'; }\n\tfriend std::istream& operator>>(std::istream &i, Point\
-    \ &p) { return i >> p.x >> p.y; }\n\tfriend bool operator==(const Point &a, const\
-    \ Point &b) { return a.x == b.x && a.y == b.y; }\n\tfriend bool operator!=(const\
-    \ Point &a, const Point &b) { return !(a == b); }\n\tfriend bool operator<(const\
-    \ Point &a, const Point &b) { \n\t\treturn (a.x != b.x ? a.x < b.x : a.y < b.y);\
-    \ }\n\n\tfriend T norm(const Point &a) { return a.x * a.x + a.y * a.y; }\n\tfriend\
-    \ T abs(const Point &p) { return std::hypot(p.x, p.y); }\n\tfriend T unit(const\
-    \ Point &a) { if (a == Point()) return a; return a / abs(a); }\n\tfriend Point\
-    \ conj(const Point &a) { return Point(a.x, -a.y); }\n\tfriend Point perp(const\
-    \ Point &a) { return Point(-a.y, a.x); }\n\tfriend long double arg(const Point\
-    \ &p) { return atan2(p.y, p.x); }\n\tfriend Point dir(long double angle) { return\
-    \ Point(cos(angle), sin(angle)); }\n\n\tPoint& operator+=(const Point &p) { x\
-    \ += p.x, y += p.y; return *this; }\n\tPoint& operator-=(const Point &p) { x -=\
-    \ p.x, y -= p.y; return *this; }\n\tPoint& operator*=(const T &t) { x *= t, y\
-    \ *= t; return *this; }\n\tPoint& operator/=(const T &t) { x /= t, y /= t; return\
-    \ *this; }\n\tPoint& operator*=(const Point &t) { \n\t\tPoint res = Point(x, y)\
-    \ * t; x = res.x, y = res.y; return *this; }\n\tPoint& operator/=(const Point\
-    \ &t) { \n\t\tPoint res = Point(x, y) / t; x = res.x, y = res.y; return *this;\
-    \ }\n\n\tfriend Point operator+(const Point &a, const Point &b) { return Point(a.x\
-    \ + b.x, a.y + b.y); }\n\tfriend Point operator-(const Point &a, const Point &b)\
-    \ { return Point(a.x - b.x, a.y - b.y); }\n\tfriend Point operator*(const Point\
-    \ &a, const T &t) { return Point(a.x * t, a.y * t); }\n\tfriend Point operator*(const\
+    '*NOT_SPECIAL_COMMENTS*': ''
+    PROBLEM: https://open.kattis.com/problems/convexhull
+    links:
+    - https://open.kattis.com/problems/convexhull
+  bundledCode: "#define PROBLEM \"https://open.kattis.com/problems/convexhull\"\n\n\
+    #include <algorithm>\n#include <array>\n#include <bitset>\n#include <cassert>\n\
+    #include <chrono>\n#include <cmath>\n#include <complex>\n#include <cstdio>\n#include\
+    \ <cstdlib>\n#include <cstring>\n#include <ctime>\n#include <deque>\n#include\
+    \ <iostream>\n#include <iomanip>\n#include <list>\n#include <map>\n#include <numeric>\n\
+    #include <queue>\n#include <random>\n#include <set>\n#include <stack>\n#include\
+    \ <string>\n#include <unordered_map>\n#include <vector>\n\nusing namespace std;\n\
+    \n\ntemplate <typename T> struct Point {\npublic:\n\tT x, y;\n\tPoint() : x(0),\
+    \ y(0) {}\n\tPoint(T x_, T y_) : x(x_), y(y_) {}\n\ttemplate <typename U> explicit\
+    \ Point(const Point<U> &p) : x(p.x), y(p.y) {}\n\tPoint(const std::pair<T, T>\
+    \ &p) : x(p.first), y(p.second) {}\n\tPoint(const std::complex<T> &p) : x(real(p)),\
+    \ y(imag(p)) {}\n\texplicit operator std::pair<T, T>() const { return std::pair<T,\
+    \ T>(x, y); }\n\texplicit operator std::complex<T>() const { return std::complex<T>(x,\
+    \ y); }\n\n\tfriend std::ostream& operator<<(std::ostream &o, const Point &p)\
+    \ { \n\t\treturn o << '(' << p.x << ',' << p.y << ')'; }\n\tfriend std::istream&\
+    \ operator>>(std::istream &i, Point &p) { return i >> p.x >> p.y; }\n\tfriend\
+    \ bool operator==(const Point &a, const Point &b) { return a.x == b.x && a.y ==\
+    \ b.y; }\n\tfriend bool operator!=(const Point &a, const Point &b) { return !(a\
+    \ == b); }\n\tfriend bool operator<(const Point &a, const Point &b) { \n\t\treturn\
+    \ (a.x != b.x ? a.x < b.x : a.y < b.y); }\n\n\tfriend T norm(const Point &a) {\
+    \ return a.x * a.x + a.y * a.y; }\n\tfriend T abs(const Point &p) { return std::hypot(p.x,\
+    \ p.y); }\n\tfriend T unit(const Point &a) { if (a == Point()) return a; return\
+    \ a / abs(a); }\n\tfriend Point conj(const Point &a) { return Point(a.x, -a.y);\
+    \ }\n\tfriend Point perp(const Point &a) { return Point(-a.y, a.x); }\n\tfriend\
+    \ long double arg(const Point &p) { return atan2(p.y, p.x); }\n\tfriend Point\
+    \ dir(long double angle) { return Point(cos(angle), sin(angle)); }\n\n\tPoint&\
+    \ operator+=(const Point &p) { x += p.x, y += p.y; return *this; }\n\tPoint& operator-=(const\
+    \ Point &p) { x -= p.x, y -= p.y; return *this; }\n\tPoint& operator*=(const T\
+    \ &t) { x *= t, y *= t; return *this; }\n\tPoint& operator/=(const T &t) { x /=\
+    \ t, y /= t; return *this; }\n\tPoint& operator*=(const Point &t) { \n\t\tPoint\
+    \ res = Point(x, y) * t; x = res.x, y = res.y; return *this; }\n\tPoint& operator/=(const\
+    \ Point &t) { \n\t\tPoint res = Point(x, y) / t; x = res.x, y = res.y; return\
+    \ *this; }\n\n\tfriend Point operator+(const Point &a, const Point &b) { return\
+    \ Point(a.x + b.x, a.y + b.y); }\n\tfriend Point operator-(const Point &a, const\
+    \ Point &b) { return Point(a.x - b.x, a.y - b.y); }\n\tfriend Point operator*(const\
+    \ Point &a, const T &t) { return Point(a.x * t, a.y * t); }\n\tfriend Point operator*(const\
     \ T &t ,const Point &a) { return Point(t * a.x, t * a.y); }\n\tfriend Point operator/(const\
     \ Point &a, const T &t) { return Point(a.x / t, a.y / t); }\n\tfriend Point operator*(const\
     \ Point &a, const Point &b) { \n\t\treturn Point(a.x * b.x - a.y * b.y, a.y *\
@@ -95,34 +98,35 @@ data:
     \ std::vector<Point<T>> &v) {\n\tstd::vector<int> w = hull_index(v);\n\tstd::vector<Point<T>>\
     \ res;\n\tfor (auto &t : w)\n\t\tres.push_back(v[t]);\n\treturn res;\n}\n\n} //\
     \ ConvexHull\n\n// kattis verified\nint main() {\n\tusing namespace std;\n\tusing\
-    \ namespace ConvexHull;\n\tios_base::sync_with_stdio(0);\n\twhile (true) {\n\t\
-    \tint n; cin >> n;\n\t\tif (n == 0) \n\t\t\treturn 0;\n\t\tvector<Point<int>>\
-    \ v(n);\n\t\tfor (int i = 0; i < n; i++)\n\t\t\tcin >> v[i].x >> v[i].y;\n\t\t\
-    auto hull = convex_hull(v);\n\t\tcout << (int)hull.size() << '\\n';       \n\t\
-    \tfor (auto &p : hull)\n\t\t\tcout << p.x << \" \" << p.y << '\\n';\n\t}\n\treturn\
-    \ 0;\n}\n"
-  code: "#define IGNORE\n\n#include \"../library/contest/template-minimal.hpp\"\n\
-    #include \"../library/geometry/convex-hull.hpp\"\n\n// kattis verified\nint main()\
-    \ {\n\tusing namespace std;\n\tusing namespace ConvexHull;\n\tios_base::sync_with_stdio(0);\n\
+    \ namespace ConvexHull;\n\tios_base::sync_with_stdio(false);\n\tcin.tie(nullptr);\n\
     \twhile (true) {\n\t\tint n; cin >> n;\n\t\tif (n == 0) \n\t\t\treturn 0;\n\t\t\
     vector<Point<int>> v(n);\n\t\tfor (int i = 0; i < n; i++)\n\t\t\tcin >> v[i].x\
     \ >> v[i].y;\n\t\tauto hull = convex_hull(v);\n\t\tcout << (int)hull.size() <<\
     \ '\\n';       \n\t\tfor (auto &p : hull)\n\t\t\tcout << p.x << \" \" << p.y <<\
-    \ '\\n';\n\t}\n\treturn 0;\n}"
+    \ '\\n';\n\t}\n\treturn 0;\n}\n"
+  code: "#define PROBLEM \"https://open.kattis.com/problems/convexhull\"\n\n#include\
+    \ \"../library/contest/template-minimal.hpp\"\n#include \"../library/geometry/convex-hull.hpp\"\
+    \n\n// kattis verified\nint main() {\n\tusing namespace std;\n\tusing namespace\
+    \ ConvexHull;\n\tios_base::sync_with_stdio(false);\n\tcin.tie(nullptr);\n\twhile\
+    \ (true) {\n\t\tint n; cin >> n;\n\t\tif (n == 0) \n\t\t\treturn 0;\n\t\tvector<Point<int>>\
+    \ v(n);\n\t\tfor (int i = 0; i < n; i++)\n\t\t\tcin >> v[i].x >> v[i].y;\n\t\t\
+    auto hull = convex_hull(v);\n\t\tcout << (int)hull.size() << '\\n';       \n\t\
+    \tfor (auto &p : hull)\n\t\t\tcout << p.x << \" \" << p.y << '\\n';\n\t}\n\treturn\
+    \ 0;\n}"
   dependsOn:
   - library/contest/template-minimal.hpp
   - library/geometry/convex-hull.hpp
   - library/geometry/point.hpp
-  isVerificationFile: false
-  path: test/convex-hull.cpp
+  isVerificationFile: true
+  path: test/convex-hull.test.cpp
   requiredBy: []
-  timestamp: '2021-07-24 23:00:09-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
+  timestamp: '2021-07-26 20:58:46-04:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/convex-hull.cpp
+documentation_of: test/convex-hull.test.cpp
 layout: document
 redirect_from:
-- /library/test/convex-hull.cpp
-- /library/test/convex-hull.cpp.html
-title: test/convex-hull.cpp
+- /verify/test/convex-hull.test.cpp
+- /verify/test/convex-hull.test.cpp.html
+title: test/convex-hull.test.cpp
 ---

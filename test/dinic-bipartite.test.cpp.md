@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
   - icon: ':heavy_check_mark:'
@@ -11,11 +11,15 @@ data:
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
+    '*NOT_SPECIAL_COMMENTS*': ''
+    IGNORE: ''
+    IGNORE_IF_CLANG: ''
+    IGNORE_IF_GCC: ''
     links:
     - https://judge.yosupo.jp/problem/bipartitematching
-  bundledCode: "#define PROBLEM \"https://judge.yosupo.jp/problem/bipartitematching\"\
+  bundledCode: "#define IGNORE\n#define PROBLEM \"https://judge.yosupo.jp/problem/bipartitematching\"\
     \n\n#include <algorithm>\n#include <array>\n#include <bitset>\n#include <cassert>\n\
     #include <chrono>\n#include <cmath>\n#include <complex>\n#include <cstdio>\n#include\
     \ <cstdlib>\n#include <cstring>\n#include <ctime>\n#include <deque>\n#include\
@@ -55,8 +59,8 @@ data:
     \tif (e.cap == e.flow) {\n\t\t\t\tint u = i - 1;\n\t\t\t\tint v = e.to - L - 1;\n\
     \t\t\t\tcout << u << \" \" << v << '\\n';\n\t\t\t}\n\t\t}\n\t}\n\treturn 0;\n\
     }\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/bipartitematching\"\n\n\
-    #include \"../library/contest/template-minimal.hpp\"\n#include \"../library/graphs/flows/dinic.hpp\"\
+  code: "#define IGNORE\n#define PROBLEM \"https://judge.yosupo.jp/problem/bipartitematching\"\
+    \n\n#include \"../library/contest/template-minimal.hpp\"\n#include \"../library/graphs/flows/dinic.hpp\"\
     \n\nint main() {\n\tusing namespace std;\n\tios_base::sync_with_stdio(0);\n\t\
     int L, R; cin >> L >> R;\n\tint M; cin >> M;\n\tDinic<int> D;\n\tD.init(L + R\
     \ + 2);\n\tfor (int i = 0; i < M; i++) {\n\t\tint u, v; cin >> u >> v;\n\t\tu--,\
@@ -70,16 +74,16 @@ data:
   dependsOn:
   - library/contest/template-minimal.hpp
   - library/graphs/flows/dinic.hpp
-  isVerificationFile: false
-  path: test/dinic-bipartite.cpp
+  isVerificationFile: true
+  path: test/dinic-bipartite.test.cpp
   requiredBy: []
-  timestamp: '2021-07-25 01:16:14-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
+  timestamp: '2021-07-26 20:58:46-04:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/dinic-bipartite.cpp
+documentation_of: test/dinic-bipartite.test.cpp
 layout: document
 redirect_from:
-- /library/test/dinic-bipartite.cpp
-- /library/test/dinic-bipartite.cpp.html
-title: test/dinic-bipartite.cpp
+- /verify/test/dinic-bipartite.test.cpp
+- /verify/test/dinic-bipartite.test.cpp.html
+title: test/dinic-bipartite.test.cpp
 ---

@@ -1,11 +1,11 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy:
-  - icon: ':warning:'
-    path: test/dinic-bipartite.cpp
-    title: test/dinic-bipartite.cpp
+  _extendedRequiredBy: []
   _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/dinic-bipartite.test.cpp
+    title: test/dinic-bipartite.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/dinic.test.cpp
     title: test/dinic.test.cpp
@@ -63,11 +63,11 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: library/graphs/flows/dinic.hpp
-  requiredBy:
-  - test/dinic-bipartite.cpp
+  requiredBy: []
   timestamp: '2021-07-25 00:42:29-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/dinic-bipartite.test.cpp
   - test/dinic.test.cpp
 documentation_of: library/graphs/flows/dinic.hpp
 layout: document

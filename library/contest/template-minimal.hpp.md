@@ -9,21 +9,6 @@ data:
     path: test/2d-sparse-segment-tree.cpp
     title: test/2d-sparse-segment-tree.cpp
   - icon: ':warning:'
-    path: test/convex-hull.cpp
-    title: test/convex-hull.cpp
-  - icon: ':warning:'
-    path: test/dinic-bipartite.cpp
-    title: test/dinic-bipartite.cpp
-  - icon: ':warning:'
-    path: test/gosper-hack.cpp
-    title: test/gosper-hack.cpp
-  - icon: ':warning:'
-    path: test/hashing.cpp
-    title: test/hashing.cpp
-  - icon: ':warning:'
-    path: test/min-cost-max-flow.cpp
-    title: test/min-cost-max-flow.cpp
-  - icon: ':warning:'
     path: test/offline-2d-binary-indexed-tree.cpp
     title: test/offline-2d-binary-indexed-tree.cpp
   - icon: ':warning:'
@@ -49,11 +34,17 @@ data:
     path: test/biconnected-components.test.cpp
     title: test/biconnected-components.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/convex-hull.test.cpp
+    title: test/convex-hull.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/counting-primes.test.cpp
     title: test/counting-primes.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/dijkstra.test.cpp
     title: test/dijkstra.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/dinic-bipartite.test.cpp
+    title: test/dinic-bipartite.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/dinic.test.cpp
     title: test/dinic.test.cpp
@@ -69,6 +60,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/fenwick-tree.test.cpp
     title: test/fenwick-tree.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/gosper-hack.test.cpp
+    title: test/gosper-hack.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/hashing.test.cpp
+    title: test/hashing.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/heavy-light-decomposition.test.cpp
     title: test/heavy-light-decomposition.test.cpp
@@ -109,6 +106,9 @@ data:
     path: test/matrix.test.cpp
     title: test/matrix.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/min-cost-max-flow.test.cpp
+    title: test/min-cost-max-flow.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/mod-sqrt.test.cpp
     title: test/mod-sqrt.test.cpp
   - icon: ':heavy_check_mark:'
@@ -144,15 +144,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/suffix-array.test.cpp
     title: test/suffix-array.test.cpp
-  - icon: ':x:'
-    path: test/topological-sort.test.cpp
-    title: test/topological-sort.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/twosat.test.cpp
     title: test/twosat.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: '#include <algorithm>
@@ -262,20 +259,16 @@ data:
   path: library/contest/template-minimal.hpp
   requiredBy:
   - test/offline-dynamic-connectivity.cpp
-  - test/dinic-bipartite.cpp
-  - test/convex-hull.cpp
   - test/2d-sparse-segment-tree.cpp
-  - test/gosper-hack.cpp
   - test/offline-2d-binary-indexed-tree.cpp
-  - test/hashing.cpp
-  - test/min-cost-max-flow.cpp
   - library/graphs/enumerate-triangles.cpp
   timestamp: '2021-07-24 23:00:09-04:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/counting-primes.test.cpp
   - test/bellman-ford.test.cpp
   - test/monotonic-convex-hull.test.cpp
+  - test/dinic-bipartite.test.cpp
   - test/lca-jump.test.cpp
   - test/lca-rmq.test.cpp
   - test/point-in-polygon.test.cpp
@@ -288,11 +281,12 @@ data:
   - test/strongly-connected-components-kosaraju.test.cpp
   - test/heavy-light-decomposition.test.cpp
   - test/sparse-segment-tree.test.cpp
+  - test/hashing.test.cpp
   - test/basic-factor.test.cpp
-  - test/topological-sort.test.cpp
   - test/hungarian.test.cpp
   - test/dijkstra.test.cpp
   - test/karatsuba.test.cpp
+  - test/min-cost-max-flow.test.cpp
   - test/mod-sqrt.test.cpp
   - test/fast-fourier-transform.test.cpp
   - test/simplex.test.cpp
@@ -302,12 +296,14 @@ data:
   - test/dsu.test.cpp
   - test/link-cut-tree.test.cpp
   - test/fenwick-tree.test.cpp
+  - test/convex-hull.test.cpp
   - test/affine-segment-tree.test.cpp
   - test/associative-range-query.test.cpp
   - test/strongly-connected-components-tarjan.test.cpp
   - test/suffix-array-linear.test.cpp
   - test/dinic.test.cpp
   - test/point-update-segment-tree.test.cpp
+  - test/gosper-hack.test.cpp
   - test/matrix.test.cpp
   - test/segment-tree-beats.test.cpp
   - test/suffix-array.test.cpp

@@ -6,7 +6,7 @@ data:
     - icon: ':warning:'
       path: library/contest/template-full.cpp
       title: library/contest/template-full.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/contest/template-minimal.hpp
       title: library/contest/template-minimal.hpp
     - icon: ':warning:'
@@ -75,7 +75,7 @@ data:
     - icon: ':warning:'
       path: library/dynamic-programming/dynamic-convex-hull-trick.hpp
       title: library/dynamic-programming/dynamic-convex-hull-trick.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/dynamic-programming/gosper-hack.hpp
       title: library/dynamic-programming/gosper-hack.hpp
     - icon: ':warning:'
@@ -89,7 +89,7 @@ data:
       title: library/dynamic-programming/monotonic-convex-hull.hpp
   - name: library/geometry
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/geometry/convex-hull.hpp
       title: library/geometry/convex-hull.hpp
     - icon: ':heavy_check_mark:'
@@ -154,7 +154,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/graphs/strongly-connected-components-tarjan.hpp
       title: library/graphs/strongly-connected-components-tarjan.hpp
-    - icon: ':x:'
+    - icon: ':warning:'
       path: library/graphs/topological-sort.hpp
       title: library/graphs/topological-sort.hpp
     - icon: ':warning:'
@@ -171,7 +171,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/graphs/flows/hungarian.hpp
       title: library/graphs/flows/hungarian.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/graphs/flows/min-cost-max-flow.hpp
       title: library/graphs/flows/min-cost-max-flow.hpp
     - icon: ':heavy_check_mark:'
@@ -254,7 +254,7 @@ data:
       title: library/numerical/xor-basis.hpp
   - name: library/string
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/string/hashing.hpp
       title: library/string/hashing.hpp
     - icon: ':heavy_check_mark:'
@@ -283,21 +283,6 @@ data:
       path: test/2d-sparse-segment-tree.cpp
       title: test/2d-sparse-segment-tree.cpp
     - icon: ':warning:'
-      path: test/convex-hull.cpp
-      title: test/convex-hull.cpp
-    - icon: ':warning:'
-      path: test/dinic-bipartite.cpp
-      title: test/dinic-bipartite.cpp
-    - icon: ':warning:'
-      path: test/gosper-hack.cpp
-      title: test/gosper-hack.cpp
-    - icon: ':warning:'
-      path: test/hashing.cpp
-      title: test/hashing.cpp
-    - icon: ':warning:'
-      path: test/min-cost-max-flow.cpp
-      title: test/min-cost-max-flow.cpp
-    - icon: ':warning:'
       path: test/offline-2d-binary-indexed-tree.cpp
       title: test/offline-2d-binary-indexed-tree.cpp
     - icon: ':warning:'
@@ -325,11 +310,17 @@ data:
       path: test/biconnected-components.test.cpp
       title: test/biconnected-components.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/convex-hull.test.cpp
+      title: test/convex-hull.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/counting-primes.test.cpp
       title: test/counting-primes.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/dijkstra.test.cpp
       title: test/dijkstra.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/dinic-bipartite.test.cpp
+      title: test/dinic-bipartite.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/dinic.test.cpp
       title: test/dinic.test.cpp
@@ -348,6 +339,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/fenwick-tree.test.cpp
       title: test/fenwick-tree.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/gosper-hack.test.cpp
+      title: test/gosper-hack.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/hashing.test.cpp
+      title: test/hashing.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/heavy-light-decomposition.test.cpp
       title: test/heavy-light-decomposition.test.cpp
@@ -388,6 +385,9 @@ data:
       path: test/matrix.test.cpp
       title: test/matrix.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/min-cost-max-flow.test.cpp
+      title: test/min-cost-max-flow.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/mod-sqrt.test.cpp
       title: test/mod-sqrt.test.cpp
     - icon: ':heavy_check_mark:'
@@ -423,9 +423,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/suffix-array.test.cpp
       title: test/suffix-array.test.cpp
-    - icon: ':x:'
-      path: test/topological-sort.test.cpp
-      title: test/topological-sort.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/twosat.test.cpp
       title: test/twosat.test.cpp

@@ -4,14 +4,14 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/geometry/point.hpp
     title: library/geometry/point.hpp
-  _extendedRequiredBy:
-  - icon: ':warning:'
-    path: test/convex-hull.cpp
-    title: test/convex-hull.cpp
-  _extendedVerifiedWith: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/convex-hull.test.cpp
+    title: test/convex-hull.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "\n\ntemplate <typename T> struct Point {\npublic:\n\tT x, y;\n\tPoint()\
@@ -106,11 +106,11 @@ data:
   - library/geometry/point.hpp
   isVerificationFile: false
   path: library/geometry/convex-hull.hpp
-  requiredBy:
-  - test/convex-hull.cpp
+  requiredBy: []
   timestamp: '2021-07-24 21:53:34-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/convex-hull.test.cpp
 documentation_of: library/geometry/convex-hull.hpp
 layout: document
 redirect_from:
