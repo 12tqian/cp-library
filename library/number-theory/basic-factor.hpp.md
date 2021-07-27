@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy:
-  - icon: ':warning:'
-    path: test/basic-factor.cpp
-    title: test/basic-factor.cpp
-  _extendedVerifiedWith: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/basic-factor.test.cpp
+    title: test/basic-factor.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "\n/**\n * Factors in O(sqrt(n))\n * Divisors in O(sqrt(n))\n * phi\
@@ -42,11 +42,11 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: library/number-theory/basic-factor.hpp
-  requiredBy:
-  - test/basic-factor.cpp
+  requiredBy: []
   timestamp: '2021-07-24 22:46:46-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/basic-factor.test.cpp
 documentation_of: library/number-theory/basic-factor.hpp
 layout: document
 redirect_from:

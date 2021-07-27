@@ -142,7 +142,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/graphs/lca-rmq.hpp
       title: library/graphs/lca-rmq.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/graphs/link-cut-tree.hpp
       title: library/graphs/link-cut-tree.hpp
     - icon: ':warning:'
@@ -154,7 +154,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/graphs/strongly-connected-components-tarjan.hpp
       title: library/graphs/strongly-connected-components-tarjan.hpp
-    - icon: ':warning:'
+    - icon: ':x:'
       path: library/graphs/topological-sort.hpp
       title: library/graphs/topological-sort.hpp
     - icon: ':warning:'
@@ -196,7 +196,7 @@ data:
       title: library/misc/range-vector.hpp
   - name: library/number-theory
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/number-theory/basic-factor.hpp
       title: library/number-theory/basic-factor.hpp
     - icon: ':warning:'
@@ -283,9 +283,6 @@ data:
       path: test/2d-sparse-segment-tree.cpp
       title: test/2d-sparse-segment-tree.cpp
     - icon: ':warning:'
-      path: test/basic-factor.cpp
-      title: test/basic-factor.cpp
-    - icon: ':warning:'
       path: test/convex-hull.cpp
       title: test/convex-hull.cpp
     - icon: ':warning:'
@@ -306,9 +303,6 @@ data:
     - icon: ':warning:'
       path: test/offline-dynamic-connectivity.cpp
       title: test/offline-dynamic-connectivity.cpp
-    - icon: ':warning:'
-      path: test/topological-sort.cpp
-      title: test/topological-sort.cpp
   verificationCategories:
   - name: test
     pages:
@@ -321,6 +315,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/associative-range-query.test.cpp
       title: test/associative-range-query.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/basic-factor.test.cpp
+      title: test/basic-factor.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/bellman-ford.test.cpp
       title: test/bellman-ford.test.cpp
@@ -381,7 +378,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/li-chao-tree-online.test.cpp
       title: test/li-chao-tree-online.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/link-cut-tree.test.cpp
       title: test/link-cut-tree.test.cpp
     - icon: ':heavy_check_mark:'
@@ -426,6 +423,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/suffix-array.test.cpp
       title: test/suffix-array.test.cpp
+    - icon: ':x:'
+      path: test/topological-sort.test.cpp
+      title: test/topological-sort.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/twosat.test.cpp
       title: test/twosat.test.cpp

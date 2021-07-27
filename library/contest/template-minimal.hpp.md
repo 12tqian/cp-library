@@ -9,9 +9,6 @@ data:
     path: test/2d-sparse-segment-tree.cpp
     title: test/2d-sparse-segment-tree.cpp
   - icon: ':warning:'
-    path: test/basic-factor.cpp
-    title: test/basic-factor.cpp
-  - icon: ':warning:'
     path: test/convex-hull.cpp
     title: test/convex-hull.cpp
   - icon: ':warning:'
@@ -32,9 +29,6 @@ data:
   - icon: ':warning:'
     path: test/offline-dynamic-connectivity.cpp
     title: test/offline-dynamic-connectivity.cpp
-  - icon: ':warning:'
-    path: test/topological-sort.cpp
-    title: test/topological-sort.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/affine-segment-tree.test.cpp
@@ -45,6 +39,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/associative-range-query.test.cpp
     title: test/associative-range-query.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/basic-factor.test.cpp
+    title: test/basic-factor.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/bellman-ford.test.cpp
     title: test/bellman-ford.test.cpp
@@ -102,7 +99,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/li-chao-tree-online.test.cpp
     title: test/li-chao-tree-online.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/link-cut-tree.test.cpp
     title: test/link-cut-tree.test.cpp
   - icon: ':heavy_check_mark:'
@@ -147,6 +144,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/suffix-array.test.cpp
     title: test/suffix-array.test.cpp
+  - icon: ':x:'
+    path: test/topological-sort.test.cpp
+    title: test/topological-sort.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/twosat.test.cpp
     title: test/twosat.test.cpp
@@ -262,13 +262,11 @@ data:
   path: library/contest/template-minimal.hpp
   requiredBy:
   - test/offline-dynamic-connectivity.cpp
-  - test/basic-factor.cpp
   - test/dinic-bipartite.cpp
   - test/convex-hull.cpp
   - test/2d-sparse-segment-tree.cpp
   - test/gosper-hack.cpp
   - test/offline-2d-binary-indexed-tree.cpp
-  - test/topological-sort.cpp
   - test/hashing.cpp
   - test/min-cost-max-flow.cpp
   - library/graphs/enumerate-triangles.cpp
@@ -290,6 +288,8 @@ data:
   - test/strongly-connected-components-kosaraju.test.cpp
   - test/heavy-light-decomposition.test.cpp
   - test/sparse-segment-tree.test.cpp
+  - test/basic-factor.test.cpp
+  - test/topological-sort.test.cpp
   - test/hungarian.test.cpp
   - test/dijkstra.test.cpp
   - test/karatsuba.test.cpp
