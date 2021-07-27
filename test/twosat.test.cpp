@@ -1,4 +1,4 @@
-#define PROBLEM "https://open.kattis.com/contests/ecna19open/problems/cheeseifyouplease"
+#define PROBLEM "https://atcoder.jp/contests/abc210/tasks/abc210_f"
 
 #include "../library/contest/template-minimal.hpp"
 #include "../library/graphs/two-sat.hpp"
