@@ -24,9 +24,6 @@ data:
     path: test/hashing.cpp
     title: test/hashing.cpp
   - icon: ':warning:'
-    path: test/link-cut-tree.cpp
-    title: test/link-cut-tree.cpp
-  - icon: ':warning:'
     path: test/min-cost-max-flow.cpp
     title: test/min-cost-max-flow.cpp
   - icon: ':warning:'
@@ -105,6 +102,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/li-chao-tree-online.test.cpp
     title: test/li-chao-tree-online.test.cpp
+  - icon: ':x:'
+    path: test/link-cut-tree.test.cpp
+    title: test/link-cut-tree.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/manacher.test.cpp
     title: test/manacher.test.cpp
@@ -147,7 +147,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/suffix-array.test.cpp
     title: test/suffix-array.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/twosat.test.cpp
     title: test/twosat.test.cpp
   _isVerificationFailed: true
@@ -271,7 +271,6 @@ data:
   - test/topological-sort.cpp
   - test/hashing.cpp
   - test/min-cost-max-flow.cpp
-  - test/link-cut-tree.cpp
   - library/graphs/enumerate-triangles.cpp
   timestamp: '2021-07-24 23:00:09-04:00'
   verificationStatus: LIBRARY_SOME_WA
@@ -301,6 +300,7 @@ data:
   - test/twosat.test.cpp
   - test/kruskal.test.cpp
   - test/dsu.test.cpp
+  - test/link-cut-tree.test.cpp
   - test/fenwick-tree.test.cpp
   - test/affine-segment-tree.test.cpp
   - test/associative-range-query.test.cpp

@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy:
-  - icon: ':warning:'
-    path: test/link-cut-tree.cpp
-    title: test/link-cut-tree.cpp
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: test/link-cut-tree.test.cpp
+    title: test/link-cut-tree.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "\nstruct info {\n\tint sz, sum, mn, mx;\n\n\tinfo (int v) {\n\t\t\
@@ -176,11 +176,11 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: library/graphs/link-cut-tree.hpp
-  requiredBy:
-  - test/link-cut-tree.cpp
+  requiredBy: []
   timestamp: '2021-07-24 22:10:06-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_WA
+  verifiedWith:
+  - test/link-cut-tree.test.cpp
 documentation_of: library/graphs/link-cut-tree.hpp
 layout: document
 redirect_from:

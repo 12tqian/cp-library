@@ -142,7 +142,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/graphs/lca-rmq.hpp
       title: library/graphs/lca-rmq.hpp
-    - icon: ':warning:'
+    - icon: ':x:'
       path: library/graphs/link-cut-tree.hpp
       title: library/graphs/link-cut-tree.hpp
     - icon: ':warning:'
@@ -160,7 +160,7 @@ data:
     - icon: ':warning:'
       path: library/graphs/tree-path-queries.hpp
       title: library/graphs/tree-path-queries.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/graphs/two-sat.hpp
       title: library/graphs/two-sat.hpp
   - name: library/graphs/flows
@@ -208,7 +208,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/number-theory/factor-big.hpp
       title: library/number-theory/factor-big.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/number-theory/fast-factor-sieve.hpp
       title: library/number-theory/fast-factor-sieve.hpp
     - icon: ':heavy_check_mark:'
@@ -298,9 +298,6 @@ data:
       path: test/hashing.cpp
       title: test/hashing.cpp
     - icon: ':warning:'
-      path: test/link-cut-tree.cpp
-      title: test/link-cut-tree.cpp
-    - icon: ':warning:'
       path: test/min-cost-max-flow.cpp
       title: test/min-cost-max-flow.cpp
     - icon: ':warning:'
@@ -384,6 +381,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/li-chao-tree-online.test.cpp
       title: test/li-chao-tree-online.test.cpp
+    - icon: ':x:'
+      path: test/link-cut-tree.test.cpp
+      title: test/link-cut-tree.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/manacher.test.cpp
       title: test/manacher.test.cpp
@@ -426,7 +426,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/suffix-array.test.cpp
       title: test/suffix-array.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/twosat.test.cpp
       title: test/twosat.test.cpp
 layout: toppage

@@ -4,23 +4,23 @@ data:
   - icon: ':question:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/graphs/two-sat.hpp
     title: library/graphs/two-sat.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/number-theory/fast-factor-sieve.hpp
     title: library/number-theory/fast-factor-sieve.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://open.kattis.com/contests/ecna19open/problems/cheeseifyouplease
+    PROBLEM: https://atcoder.jp/contests/abc210/tasks/abc210_f
     links:
-    - https://open.kattis.com/contests/ecna19open/problems/cheeseifyouplease
-  bundledCode: "#define PROBLEM \"https://open.kattis.com/contests/ecna19open/problems/cheeseifyouplease\"\
+    - https://atcoder.jp/contests/abc210/tasks/abc210_f
+  bundledCode: "#define PROBLEM \"https://atcoder.jp/contests/abc210/tasks/abc210_f\"\
     \n\n#include <algorithm>\n#include <array>\n#include <bitset>\n#include <cassert>\n\
     #include <chrono>\n#include <cmath>\n#include <complex>\n#include <cstdio>\n#include\
     \ <cstdlib>\n#include <cstring>\n#include <ctime>\n#include <deque>\n#include\
@@ -74,8 +74,8 @@ data:
     \ {\n\t\ttwo_sat.at_most_one(v);\n\t}\n\tauto ans = two_sat.solve();\n\tif (ans.empty())\
     \ {\n\t\tcout << \"No\";\n\t} else {\n\t\tcout << \"Yes\";\n\t}\n\tcout << '\\\
     n';\n\treturn 0;\n}\n\n\n"
-  code: "#define PROBLEM \"https://open.kattis.com/contests/ecna19open/problems/cheeseifyouplease\"\
-    \n\n#include \"../library/contest/template-minimal.hpp\"\n#include \"../library/graphs/two-sat.hpp\"\
+  code: "#define PROBLEM \"https://atcoder.jp/contests/abc210/tasks/abc210_f\"\n\n\
+    #include \"../library/contest/template-minimal.hpp\"\n#include \"../library/graphs/two-sat.hpp\"\
     \n#include \"../library/number-theory/fast-factor-sieve.hpp\"\n\nint main() {\n\
     \tios::sync_with_stdio(false);\n\tcin.tie(nullptr);\n\tconst int V = 2e6 + 5;\n\
     \tSieve<V> sieve;\n\tvector<vector<int>> primes(V);\n\tint n;\n\tcin >> n;\n\t\
@@ -93,8 +93,8 @@ data:
   isVerificationFile: true
   path: test/twosat.test.cpp
   requiredBy: []
-  timestamp: '2021-07-26 20:29:45-04:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2021-07-26 20:36:01-04:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/twosat.test.cpp
 layout: document
