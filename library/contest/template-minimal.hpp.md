@@ -42,9 +42,6 @@ data:
     path: test/offline-dynamic-connectivity.cpp
     title: test/offline-dynamic-connectivity.cpp
   - icon: ':warning:'
-    path: test/simplex.cpp
-    title: test/simplex.cpp
-  - icon: ':warning:'
     path: test/topological-sort.cpp
     title: test/topological-sort.cpp
   _extendedVerifiedWith:
@@ -133,6 +130,9 @@ data:
     path: test/segment-tree-beats.test.cpp
     title: test/segment-tree-beats.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/simplex.test.cpp
+    title: test/simplex.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/sparse-segment-tree.test.cpp
     title: test/sparse-segment-tree.test.cpp
   - icon: ':heavy_check_mark:'
@@ -147,9 +147,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/suffix-array.test.cpp
     title: test/suffix-array.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/watermelon.test.cpp
-    title: test/watermelon.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -271,7 +268,6 @@ data:
   - test/offline-2d-binary-indexed-tree.cpp
   - test/topological-sort.cpp
   - test/hashing.cpp
-  - test/simplex.cpp
   - test/matrix.cpp
   - test/min-cost-max-flow.cpp
   - test/link-cut-tree.cpp
@@ -298,6 +294,7 @@ data:
   - test/karatsuba.test.cpp
   - test/mod-sqrt.test.cpp
   - test/fast-fourier-transform.test.cpp
+  - test/simplex.test.cpp
   - test/lazy-segment-tree.test.cpp
   - test/kruskal.test.cpp
   - test/dsu.test.cpp
@@ -308,7 +305,6 @@ data:
   - test/suffix-array-linear.test.cpp
   - test/dinic.test.cpp
   - test/point-update-segment-tree.test.cpp
-  - test/watermelon.test.cpp
   - test/segment-tree-beats.test.cpp
   - test/suffix-array.test.cpp
   - test/li-chao-tree-online.test.cpp

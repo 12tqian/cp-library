@@ -246,7 +246,7 @@ data:
     - icon: ':warning:'
       path: library/numerical/polynomial.hpp
       title: library/numerical/polynomial.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/numerical/simplex.hpp
       title: library/numerical/simplex.hpp
     - icon: ':warning:'
@@ -315,9 +315,6 @@ data:
     - icon: ':warning:'
       path: test/offline-dynamic-connectivity.cpp
       title: test/offline-dynamic-connectivity.cpp
-    - icon: ':warning:'
-      path: test/simplex.cpp
-      title: test/simplex.cpp
     - icon: ':warning:'
       path: test/topological-sort.cpp
       title: test/topological-sort.cpp
@@ -412,6 +409,9 @@ data:
       path: test/segment-tree-beats.test.cpp
       title: test/segment-tree-beats.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/simplex.test.cpp
+      title: test/simplex.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/sparse-segment-tree.test.cpp
       title: test/sparse-segment-tree.test.cpp
     - icon: ':heavy_check_mark:'
@@ -426,9 +426,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/suffix-array.test.cpp
       title: test/suffix-array.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/watermelon.test.cpp
-      title: test/watermelon.test.cpp
 layout: toppage
 ---
 [![Badge](https://cp-logo.vercel.app/codeforces/12tqian)](https://codeforces.com/profile/12tqian)

@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy:
-  - icon: ':warning:'
-    path: test/simplex.cpp
-    title: test/simplex.cpp
-  _extendedVerifiedWith: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/simplex.test.cpp
+    title: test/simplex.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "\n/**\n * Maximizes c^Tx given Ax <= b, x >= 0\n * Returns -INF if\
@@ -92,11 +92,11 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: library/numerical/simplex.hpp
-  requiredBy:
-  - test/simplex.cpp
+  requiredBy: []
   timestamp: '2021-07-24 22:46:46-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/simplex.test.cpp
 documentation_of: library/numerical/simplex.hpp
 layout: document
 redirect_from:
