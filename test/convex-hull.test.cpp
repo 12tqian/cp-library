@@ -1,4 +1,4 @@
-#define IGNORE
+#define PROBLEM "https://open.kattis.com/problems/convexhull"
 
 #include "../library/contest/template-minimal.hpp"
 #include "../library/geometry/convex-hull.hpp"
@@ -7,7 +7,8 @@
 int main() {
 	using namespace std;
 	using namespace ConvexHull;
-	ios_base::sync_with_stdio(0);
+	ios_base::sync_with_stdio(false);
+	cin.tie(nullptr);
 	while (true) {
 		int n; cin >> n;
 		if (n == 0) 

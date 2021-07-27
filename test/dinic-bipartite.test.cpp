@@ -1,3 +1,4 @@
+#define IGNORE
 #define PROBLEM "https://judge.yosupo.jp/problem/bipartitematching"
 
 #include "../library/contest/template-minimal.hpp"

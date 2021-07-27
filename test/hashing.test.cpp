@@ -1,4 +1,4 @@
-#define IGNORE
+#define IGNORE "self tested"
 
 #include "../library/contest/template-minimal.hpp"
 #include "../library/string/hashing.hpp"

@@ -1,4 +1,4 @@
-#define IGNORE
+#define PROBLEM "https://open.kattis.com/problems/mincostmaxflow"
 
 #include "../library/contest/template-minimal.hpp"
 #include "../library/graphs/flows/min-cost-max-flow.hpp"
