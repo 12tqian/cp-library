@@ -6,7 +6,7 @@ data:
     - icon: ':warning:'
       path: library/contest/template-full.cpp
       title: library/contest/template-full.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/contest/template-minimal.hpp
       title: library/contest/template-minimal.hpp
     - icon: ':warning:'
@@ -50,7 +50,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/data-structures/1d-range-queries/sparse-segment-tree.hpp
       title: library/data-structures/1d-range-queries/sparse-segment-tree.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/data-structures/1d-range-queries/sparse-table.hpp
       title: library/data-structures/1d-range-queries/sparse-table.hpp
   - name: library/data-structures/2d-range-queries
@@ -139,7 +139,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/graphs/lca-jump.hpp
       title: library/graphs/lca-jump.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/graphs/lca-rmq.hpp
       title: library/graphs/lca-rmq.hpp
     - icon: ':heavy_check_mark:'
@@ -428,7 +428,7 @@ data:
       title: test/twosat.test.cpp
   - name: test/codeforces
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/codeforces/codeforces-1074F.test.cpp
       title: test/codeforces/codeforces-1074F.test.cpp
 layout: toppage

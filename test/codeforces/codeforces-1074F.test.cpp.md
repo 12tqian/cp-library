@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/data-structures/1d-range-queries/sparse-table.hpp
     title: library/data-structures/1d-range-queries/sparse-table.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/graphs/lca-rmq.hpp
     title: library/graphs/lca-rmq.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://codeforces.com/contest/1074/problem/F
@@ -80,10 +80,10 @@ data:
     \ i < (int)nodes.size(); i++) {\n\t\t\trev[nodes[i]] = i;\n\t\t}\n\t\tfor (int\
     \ i = 1; i < (int)nodes.size(); i++) {\n\t\t\tret.emplace_back(rev[lca(nodes[i\
     \ - 1], nodes[i])], nodes[i]);\n\t\t}\n\t\treturn ret;\n\t}\n};\n\ntemplate <class\
-    \ T> struct SegmentTree {\n\tusing U = pair<T, int>;\n\tconst U ID = make_pair(numeric_limits<T>::max(),\
-    \ 1);\n\tint sz;\t\n\tvector<U> st; // min, cnt\n\tvector<T> lz; // lazy\n\n\t\
-    void init(int _sz) {\n\t\tsz = 1;\n\t\twhile (sz < _sz) {\n\t\t\tsz <<= 1;\n\t\
-    \t}\n\t\tst.assign(2 * sz, make_pair(0, 1));\n\t\tlz.assign(2 * sz, 0);\n\t\t\
+    \ T> struct SegmentTree {\n\tusing U = pair<T, int>;\n\n\tconst U ID = make_pair(numeric_limits<T>::max(),\
+    \ 1);\n\n\tint sz;\t\n\t\n\tvector<U> st; // min, cnt\n\tvector<T> lz; // lazy\n\
+    \n\tvoid init(int _sz) {\n\t\tsz = 1;\n\t\twhile (sz < _sz) {\n\t\t\tsz <<= 1;\n\
+    \t\t}\n\t\tst.assign(2 * sz, make_pair(0, 1));\n\t\tlz.assign(2 * sz, 0);\n\t\t\
     for (int i = sz - 1; i >= 1; --i) {\n\t\t\tpull(i);\n\t\t}\n\t}\n\n\tU comb(U\
     \ x, U y) {\n\t\tU res;\n\t\tif (x.first < y.first) {\n\t\t\tres = x;\n\t\t} else\
     \ if (x.first > y.first) {\n\t\t\tres = y;\n\t\t} else {\n\t\t\tres.first = x.first;\n\
@@ -91,7 +91,7 @@ data:
     \ pull(int i) {\n\t\tst[i] = comb(st[2 * i], st[2 * i + 1]);\n\t}\n\n\tvoid push(int\
     \ i, int l, int r) {\n\t\tif (lz[i] == 0) {\n\t\t\treturn;\n\t\t}\n\t\tst[i].first\
     \ += lz[i];\n\t\tif (l != r) {\n\t\t\tfor (int j = 0; j < 2; ++j) {\n\t\t\t\t\
-    lz[2 * i + j] += lz[j];\n\t\t\t}\n\t\t}\n\t\tlz[i] = 0;\n\t}\n\n\tvoid upd(int\
+    lz[2 * i + j] += lz[i];\n\t\t\t}\n\t\t}\n\t\tlz[i] = 0;\n\t}\n\n\tvoid upd(int\
     \ lo, int hi, T inc, int i = 1, int l = 0, int r = -1) {\n\t\tif (r == -1) {\n\
     \t\t\tr += sz;\n\t\t}\n\t\tpush(i, l, r);\n\t\tif (r < lo || hi < l) {\n\n\t\t\
     } else if (lo <= l && r <= hi) {\n\t\t\tlz[i] = inc;\n\t\t\tpush(i, l, r);\n\t\
@@ -124,10 +124,10 @@ data:
     \ n - 1) << '\\n';\n\t}\n\treturn 0;\n}\n"
   code: "#define PROBLEM \"https://codeforces.com/contest/1074/problem/F\"\n\n#include\
     \ \"../../library/contest/template-minimal.hpp\"\n#include \"../../library/graphs/lca-rmq.hpp\"\
-    \n\ntemplate <class T> struct SegmentTree {\n\tusing U = pair<T, int>;\n\tconst\
-    \ U ID = make_pair(numeric_limits<T>::max(), 1);\n\tint sz;\t\n\tvector<U> st;\
-    \ // min, cnt\n\tvector<T> lz; // lazy\n\n\tvoid init(int _sz) {\n\t\tsz = 1;\n\
-    \t\twhile (sz < _sz) {\n\t\t\tsz <<= 1;\n\t\t}\n\t\tst.assign(2 * sz, make_pair(0,\
+    \n\ntemplate <class T> struct SegmentTree {\n\tusing U = pair<T, int>;\n\n\tconst\
+    \ U ID = make_pair(numeric_limits<T>::max(), 1);\n\n\tint sz;\t\n\t\n\tvector<U>\
+    \ st; // min, cnt\n\tvector<T> lz; // lazy\n\n\tvoid init(int _sz) {\n\t\tsz =\
+    \ 1;\n\t\twhile (sz < _sz) {\n\t\t\tsz <<= 1;\n\t\t}\n\t\tst.assign(2 * sz, make_pair(0,\
     \ 1));\n\t\tlz.assign(2 * sz, 0);\n\t\tfor (int i = sz - 1; i >= 1; --i) {\n\t\
     \t\tpull(i);\n\t\t}\n\t}\n\n\tU comb(U x, U y) {\n\t\tU res;\n\t\tif (x.first\
     \ < y.first) {\n\t\t\tres = x;\n\t\t} else if (x.first > y.first) {\n\t\t\tres\
@@ -135,7 +135,7 @@ data:
     \ + y.second;\n\t\t}\n\t\treturn res;\n\t}\n\n\tvoid pull(int i) {\n\t\tst[i]\
     \ = comb(st[2 * i], st[2 * i + 1]);\n\t}\n\n\tvoid push(int i, int l, int r) {\n\
     \t\tif (lz[i] == 0) {\n\t\t\treturn;\n\t\t}\n\t\tst[i].first += lz[i];\n\t\tif\
-    \ (l != r) {\n\t\t\tfor (int j = 0; j < 2; ++j) {\n\t\t\t\tlz[2 * i + j] += lz[j];\n\
+    \ (l != r) {\n\t\t\tfor (int j = 0; j < 2; ++j) {\n\t\t\t\tlz[2 * i + j] += lz[i];\n\
     \t\t\t}\n\t\t}\n\t\tlz[i] = 0;\n\t}\n\n\tvoid upd(int lo, int hi, T inc, int i\
     \ = 1, int l = 0, int r = -1) {\n\t\tif (r == -1) {\n\t\t\tr += sz;\n\t\t}\n\t\
     \tpush(i, l, r);\n\t\tif (r < lo || hi < l) {\n\n\t\t} else if (lo <= l && r <=\
@@ -174,8 +174,8 @@ data:
   isVerificationFile: true
   path: test/codeforces/codeforces-1074F.test.cpp
   requiredBy: []
-  timestamp: '2021-07-27 19:10:34-04:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2021-07-27 19:19:05-04:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/codeforces/codeforces-1074F.test.cpp
 layout: document
