@@ -35,5 +35,6 @@
 "test/strongly-connected-components-kosaraju.test.cpp": "2021-07-24 23:00:09 -0400",
 "test/strongly-connected-components-tarjan.test.cpp": "2021-07-24 23:00:09 -0400",
 "test/suffix-array-linear.test.cpp": "2021-07-24 23:00:09 -0400",
-"test/suffix-array.test.cpp": "2021-07-24 23:00:09 -0400"
+"test/suffix-array.test.cpp": "2021-07-24 23:00:09 -0400",
+"test/twosat.test.cpp": "2021-07-26 20:36:01 -0400"
 }
