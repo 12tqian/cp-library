@@ -5,8 +5,11 @@
 
 template <class T> struct SegmentTree {
 	using U = pair<T, int>;
+
 	const U ID = make_pair(numeric_limits<T>::max(), 1);
+
 	int sz;	
+	
 	vector<U> st; // min, cnt
 	vector<T> lz; // lazy
 
@@ -46,7 +49,7 @@ template <class T> struct SegmentTree {
 		st[i].first += lz[i];
 		if (l != r) {
 			for (int j = 0; j < 2; ++j) {
-				lz[2 * i + j] += lz[j];
+				lz[2 * i + j] += lz[i];
 			}
 		}
 		lz[i] = 0;
