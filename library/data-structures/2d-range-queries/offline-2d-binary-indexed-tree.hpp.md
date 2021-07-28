@@ -1,7 +1,10 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: verify/unverified/offline-2d-binary-indexed-tree.cpp
+    title: verify/unverified/offline-2d-binary-indexed-tree.cpp
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
@@ -67,7 +70,8 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: library/data-structures/2d-range-queries/offline-2d-binary-indexed-tree.hpp
-  requiredBy: []
+  requiredBy:
+  - verify/unverified/offline-2d-binary-indexed-tree.cpp
   timestamp: '2021-07-25 00:42:29-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []

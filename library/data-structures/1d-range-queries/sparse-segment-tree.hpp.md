@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-point_add_range_sum-sparse-segment-tree.test.cpp
     title: verify/yosupo/yosupo-point_add_range_sum-sparse-segment-tree.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "\n// bump allocator\n\nstatic char buf[450 << 20];\nvoid* operator\
@@ -58,7 +58,7 @@ data:
   path: library/data-structures/1d-range-queries/sparse-segment-tree.hpp
   requiredBy: []
   timestamp: '2021-07-24 21:39:13-04:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/yosupo-point_add_range_sum-sparse-segment-tree.test.cpp
 documentation_of: library/data-structures/1d-range-queries/sparse-segment-tree.hpp

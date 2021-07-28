@@ -1,7 +1,13 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: verify/unverified/2d-sparse-segment-tree.cpp
+    title: verify/unverified/2d-sparse-segment-tree.cpp
+  - icon: ':warning:'
+    path: verify/unverified/offline-2d-binary-indexed-tree.cpp
+    title: verify/unverified/offline-2d-binary-indexed-tree.cpp
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
@@ -179,7 +185,9 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: library/misc/easy-io.hpp
-  requiredBy: []
+  requiredBy:
+  - verify/unverified/2d-sparse-segment-tree.cpp
+  - verify/unverified/offline-2d-binary-indexed-tree.cpp
   timestamp: '2021-07-24 19:40:07-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
