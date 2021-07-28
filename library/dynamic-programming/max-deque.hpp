@@ -6,7 +6,7 @@ template <class T> struct MaxDeque {
 
 	int l = 0,r = -1;
 
-	int del() {
+	int pop_front() {
 		if (mx.front().second == l++) mx.pop_front();
 		int t = tmp.front();
 		tmp.pop_front();
@@ -18,7 +18,7 @@ template <class T> struct MaxDeque {
 		return mx.front().first;
 	}
 
-	void ad(T x) {
+	void push_back(T x) {
 		while ((int)mx.size() && mx.back().first <= x) mx.pop_back();
 		mx.push_back({x, ++r});
 		tmp.push_back(x);
