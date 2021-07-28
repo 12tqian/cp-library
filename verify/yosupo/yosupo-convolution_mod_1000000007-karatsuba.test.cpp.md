@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
   - icon: ':heavy_check_mark:'
     path: library/numerical/karatsuba.hpp
     title: library/numerical/karatsuba.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/numerical/mod-int2.hpp
     title: library/numerical/mod-int2.hpp
   _extendedRequiredBy: []

@@ -9,7 +9,7 @@ data:
     - icon: ':warning:'
       path: library/contest/template-full.hpp
       title: library/contest/template-full.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/contest/template-minimal.hpp
       title: library/contest/template-minimal.hpp
     - icon: ':warning:'
@@ -61,13 +61,13 @@ data:
       title: library/data-structures/1d-range-queries/sparse-table.hpp
   - name: library/data-structures/2d-range-queries
     pages:
-    - icon: ':warning:'
+    - icon: ':x:'
       path: library/data-structures/2d-range-queries/general-fenwick-tree.hpp
       title: library/data-structures/2d-range-queries/general-fenwick-tree.hpp
     - icon: ':heavy_check_mark:'
       path: library/data-structures/2d-range-queries/offline-2d-binary-indexed-tree.hpp
       title: library/data-structures/2d-range-queries/offline-2d-binary-indexed-tree.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/data-structures/2d-range-queries/quadtree.hpp
       title: library/data-structures/2d-range-queries/quadtree.hpp
   - name: library/dynamic-programming
@@ -237,7 +237,7 @@ data:
     - icon: ':warning:'
       path: library/numerical/mod-int.hpp
       title: library/numerical/mod-int.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/numerical/mod-int2.hpp
       title: library/numerical/mod-int2.hpp
     - icon: ':warning:'
@@ -311,6 +311,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/codeforces/codeforces-319C.test.cpp
       title: verify/codeforces/codeforces-319C.test.cpp
+    - icon: ':x:'
+      path: verify/codeforces/codeforces-869E-general-fwt.test.cpp
+      title: verify/codeforces/codeforces-869E-general-fwt.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/codeforces/ecodeforces-869E-quadtree.test.cpp
+      title: verify/codeforces/ecodeforces-869E-quadtree.test.cpp
   - name: verify/dmoj
     pages:
     - icon: ':heavy_check_mark:'
