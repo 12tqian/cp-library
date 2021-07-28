@@ -56,7 +56,7 @@ template <class T> struct Offline2DBIT {
 				inner_update(x, y, t);
 	}
 
-	int inner_query(int x, int y) {
+	T inner_query(int x, int y) {
 		T res = 0;
 		for (y = rank(y, st[x], st[x] + cnt[x]); y; y -= y & -y)
 			res += bit[st[x] + y - 1];
