@@ -1,7 +1,7 @@
 #pragma once
 
 /**
- * Handles point update in log(n), and query in log(n)^2
+ * Handles point update in log(n), and query in O(n) worst case
  */
 
 template <class T, int N, int M> struct QuadTree {
@@ -11,7 +11,7 @@ template <class T, int N, int M> struct QuadTree {
 
 	void upd(int x, int y, T inc, int n = 1, int x1 = 0, int y1 = 0, int x2 = N - 1, int y2 = M - 1) {
 		if (x1 == x2 && y1 == y2) 
-			sm[n] = inc;
+			sm[n] += inc;
 		else {
 			int xm = (x1 + x2) >> 1;
 			int ym = (y1 + y2) >> 1;
