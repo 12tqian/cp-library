@@ -14,10 +14,10 @@ data:
   _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.yosupo.jp/problem/enumerate_triangles
+    PROBLEM: https://judge.yosupo.jp/problem/line_add_get_min
     links:
-    - https://judge.yosupo.jp/problem/enumerate_triangles
-  bundledCode: "#define PROBLEM \"https://judge.yosupo.jp/problem/enumerate_triangles\"\
+    - https://judge.yosupo.jp/problem/line_add_get_min
+  bundledCode: "#define PROBLEM \"https://judge.yosupo.jp/problem/line_add_get_min\"\
     \n\n#include <algorithm>\n#include <array>\n#include <bitset>\n#include <cassert>\n\
     #include <chrono>\n#include <cmath>\n#include <complex>\n#include <cstdio>\n#include\
     \ <cstdlib>\n#include <cstring>\n#include <ctime>\n#include <deque>\n#include\
@@ -56,8 +56,8 @@ data:
     \ >> t;\n\t\tif (t == 0) {\n\t\t\tint a, b;\n\t\t\tcin >> a >> b;\n\t\t\tcht.add_line(a,\
     \ b);\n\t\t} else {\n\t\t\tint p;\n\t\t\tcin >> p;\n\t\t\tcout << cht.query(p)\
     \ << '\\n';\n\t\t}\n\t}\n\treturn 0;\n}\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/enumerate_triangles\"\n\
-    \n#include \"../../library/contest/template-minimal.hpp\"\n#include \"../../library/dynamic-programming/dynamic-convex-hull-trick.hpp\"\
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/line_add_get_min\"\n\n\
+    #include \"../../library/contest/template-minimal.hpp\"\n#include \"../../library/dynamic-programming/dynamic-convex-hull-trick.hpp\"\
     \n\nint main() {\n\tios::sync_with_stdio(false);\n\tcin.tie(nullptr);\n\tint n,\
     \ q;\n\tcin >> n >> q;\n\tConvexHullTrick cht;\t\n\twhile (n--) {\n\t\tint a,\
     \ b;\n\t\tcin >> a >> b;\n\t\tcht.add_line(a, b);\n\t} \n\twhile (q--) {\n\t\t\
@@ -70,7 +70,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/yosupo-line_add_get_min.test.cpp
   requiredBy: []
-  timestamp: '2021-07-28 18:49:29-04:00'
+  timestamp: '2021-07-28 18:52:53-04:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/yosupo/yosupo-line_add_get_min.test.cpp
