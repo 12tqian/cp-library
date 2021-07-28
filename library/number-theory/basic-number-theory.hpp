@@ -73,19 +73,3 @@ long long floor_sum(long long n, long long m, long  long a, long long b) {
 }
 
 } // BasicNumberTheory
-
-int main() {
-	using namespace std;
-	using namespace BasicNumberTheory;
-	int tt; cin >> tt;
-	while (tt--) {
-		long long a, n, b, m;
-		cin >> a >> n >> b >> m;
-		auto ans = CRT({a, n}, {b, m});
-		if (ans.first == -1) 
-			cout << "no solution\n";
-		else 
-			cout << ans.first << " " << ans.second << '\n';
-	}   
-	return 0;
-}
