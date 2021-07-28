@@ -8,5 +8,12 @@
 "verify/atcoder/atcoder-abc210_f.test.cpp": "2021-07-28 02:34:55 -0400",
 "verify/codeforces/codeforces-1074F.test.cpp": "2021-07-28 02:34:55 -0400",
 "verify/codeforces/codeforces-319C.test.cpp": "2021-07-28 02:34:55 -0400",
-"verify/dmoj/dmoj-ds5.test.cpp": "2021-07-28 02:34:55 -0400"
+"verify/dmoj/dmoj-ds5.test.cpp": "2021-07-28 02:34:55 -0400",
+"verify/kattis/kattis-cheeseifyouplease.test.cpp": "2021-07-28 02:34:55 -0400",
+"verify/kattis/kattis-convexhull.test.cpp": "2021-07-28 02:34:55 -0400",
+"verify/kattis/kattis-pointinpolygon.test.cpp": "2021-07-28 02:34:55 -0400",
+"verify/spoj/spoj-FACT0.test.cpp": "2021-07-28 02:34:55 -0400",
+"verify/yosupo/yosupo-bipartitematching.test.cpp": "2021-07-28 02:34:55 -0400",
+"verify/yosupo/yosupo-convolution_mod_1000000007-fast-fourier-transform.test.cpp": "2021-07-28 02:34:55 -0400",
+"verify/yosupo/yosupo-convolution_mod_1000000007-karatsuba.test.cpp": "2021-07-28 02:34:55 -0400"
 }
