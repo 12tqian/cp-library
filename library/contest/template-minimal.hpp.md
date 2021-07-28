@@ -31,6 +31,9 @@ data:
     path: verify/codeforces/codeforces-1074F.test.cpp
     title: verify/codeforces/codeforces-1074F.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/codeforces/codeforces-1195E.test.cpp
+    title: verify/codeforces/codeforces-1195E.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/codeforces/codeforces-1463E.test.cpp
     title: verify/codeforces/codeforces-1463E.test.cpp
   - icon: ':heavy_check_mark:'
@@ -293,6 +296,7 @@ data:
   - verify/unit-test/unit-test-gosper-hack.test.cpp
   - verify/codeforces/codeforces-869E-general-fwt.test.cpp
   - verify/codeforces/codeforces-981G.test.cpp
+  - verify/codeforces/codeforces-1195E.test.cpp
   - verify/codeforces/codeforces-319C.test.cpp
   - verify/codeforces/ecodeforces-869E-quadtree.test.cpp
   - verify/codeforces/codeforces-1542E2.test.cpp

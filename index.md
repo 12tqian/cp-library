@@ -78,10 +78,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/dynamic-programming/line-container.hpp
       title: library/dynamic-programming/line-container.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/dynamic-programming/max-deque.hpp
       title: library/dynamic-programming/max-deque.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/dynamic-programming/min-deque.hpp
       title: library/dynamic-programming/min-deque.hpp
     - icon: ':heavy_check_mark:'
@@ -157,9 +157,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/graphs/topological-sort.hpp
       title: library/graphs/topological-sort.hpp
-    - icon: ':warning:'
-      path: library/graphs/tree-path-queries.hpp
-      title: library/graphs/tree-path-queries.hpp
     - icon: ':heavy_check_mark:'
       path: library/graphs/two-sat.hpp
       title: library/graphs/two-sat.hpp
@@ -297,6 +294,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/codeforces/codeforces-1074F.test.cpp
       title: verify/codeforces/codeforces-1074F.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/codeforces/codeforces-1195E.test.cpp
+      title: verify/codeforces/codeforces-1195E.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/codeforces/codeforces-1463E.test.cpp
       title: verify/codeforces/codeforces-1463E.test.cpp
