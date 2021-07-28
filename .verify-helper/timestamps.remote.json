@@ -21,6 +21,7 @@
 "verify/kattis/kattis-generalchineseremainder.test.cpp": "2021-07-28 03:36:42 -0400",
 "verify/kattis/kattis-mincostmaxflow.test.cpp": "2021-07-28 02:34:55 -0400",
 "verify/kattis/kattis-pointinpolygon.test.cpp": "2021-07-28 02:34:55 -0400",
+"verify/spoj/spoj-DYNACON2.test.cpp": "2021-07-28 18:35:07 -0400",
 "verify/spoj/spoj-FACT0.test.cpp": "2021-07-28 02:34:55 -0400",
 "verify/unit-test/unit-test-gosper-hack.test.cpp": "2021-07-28 02:55:20 -0400",
 "verify/unit-test/unit-test-hashing.test.cpp": "2021-07-28 02:55:20 -0400",
