@@ -24,6 +24,20 @@ template <bool directed> struct Euler {
 			adj[v].emplace_back(u, m);
 		}
 	}
+
+	std::vector<std::pair<int, int>> euler_path() {
+		int cnt = 0;
+		for (int i = 0; i < n; i++) 
+			cnt += (int)adj[i].size() % 2;
+		if (cnt == 2) {
+			for (int i = 0; i < n; i++) 
+				if ((int)adj[i].size() % 2) 
+					return get_path(i);
+		} else if (cnt == 0) {
+			return get_path(0);
+		}
+		return {};
+	}
 	
 	std::vector<std::pair<int, int>> get_path(int src = 0) {
 		its.resize(n);
