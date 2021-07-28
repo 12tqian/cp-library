@@ -3,9 +3,11 @@
 #include "dsu-rollback.hpp"
 
 struct OfflineDynamicConnectivity {
-	DSURollBack D;
+	DSURollBack dsu;
 	int sz;
 	std::vector<std::vector<std::pair<int, int>>> seg;
+	std::vector<std::vector<std::pair<int, int>>> queries;
+	std::vector<int> ans;
 
 	void upd(int l, int r, std::pair<int, int> p) {
 		// add edge p from time [l, r]
@@ -17,17 +19,20 @@ struct OfflineDynamicConnectivity {
 
 	void process(int ind) {
 		for (auto &t : seg[ind]) {
-			D.unite(t.first, t.second);
+			dsu.unite(t.first, t.second);
 		}
 		if (ind >= sz) {
 			// Process the queries at time ti
 			// Do stuff with D
 			int ti = ind - sz; 
+			for (auto &qq : queries[ti]) {
+				ans.push_back(dsu.same_set(qq.first, qq.second));
+			}
 		} else {
 			process(2 * ind); process(2 * ind + 1);
 		}
 		for (auto &t : seg[ind]) {
-			D.rollback();
+			dsu.rollback();
 		}
 	}
 
@@ -35,10 +40,16 @@ struct OfflineDynamicConnectivity {
 		sz = 1;
 		while (sz < max_time) sz *= 2;
 		seg.assign(2 * sz, {});
-		D.init(n);
+		queries.assign(sz, {});
+		dsu.init(n);
+	}
+
+	void add_query(int ti, int u, int v) {
+		queries[ti].emplace_back(u, v);
 	}
 	
-	void solve() {
+	std::vector<int> solve() {
 		process(1);
+		return ans;
 	}
 };
