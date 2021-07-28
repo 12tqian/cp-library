@@ -4,18 +4,20 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: library/data-structures/2d-range-queries/offline-2d-binary-indexed-tree.hpp
     title: library/data-structures/2d-range-queries/offline-2d-binary-indexed-tree.hpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: library/misc/easy-io.hpp
     title: library/misc/easy-io.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
+    '*NOT_SPECIAL_COMMENTS*': ''
+    PROBLEM: https://judge.yosupo.jp/problem/rectangle_sum
     links:
     - https://judge.yosupo.jp/problem/rectangle_sum
   bundledCode: "#define PROBLEM \"https://judge.yosupo.jp/problem/rectangle_sum\"\n\
@@ -175,16 +177,16 @@ data:
   - library/contest/template-minimal.hpp
   - library/misc/easy-io.hpp
   - library/data-structures/2d-range-queries/offline-2d-binary-indexed-tree.hpp
-  isVerificationFile: false
-  path: verify/yosupo/yosupo-rectangle_sum.test-offline-2d-bit.cpp
+  isVerificationFile: true
+  path: verify/yosupo/yosupo-rectangle_sum-offline-2d-bit.test.cpp
   requiredBy: []
-  timestamp: '2021-07-28 15:59:58-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
+  timestamp: '2021-07-28 16:07:45-04:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: verify/yosupo/yosupo-rectangle_sum.test-offline-2d-bit.cpp
+documentation_of: verify/yosupo/yosupo-rectangle_sum-offline-2d-bit.test.cpp
 layout: document
 redirect_from:
-- /library/verify/yosupo/yosupo-rectangle_sum.test-offline-2d-bit.cpp
-- /library/verify/yosupo/yosupo-rectangle_sum.test-offline-2d-bit.cpp.html
-title: verify/yosupo/yosupo-rectangle_sum.test-offline-2d-bit.cpp
+- /verify/verify/yosupo/yosupo-rectangle_sum-offline-2d-bit.test.cpp
+- /verify/verify/yosupo/yosupo-rectangle_sum-offline-2d-bit.test.cpp.html
+title: verify/yosupo/yosupo-rectangle_sum-offline-2d-bit.test.cpp
 ---

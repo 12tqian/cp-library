@@ -8,9 +8,6 @@ data:
   - icon: ':warning:'
     path: verify/unverified/offline-dynamic-connectivity.cpp
     title: verify/unverified/offline-dynamic-connectivity.cpp
-  - icon: ':warning:'
-    path: verify/yosupo/yosupo-rectangle_sum.test-offline-2d-bit.cpp
-    title: verify/yosupo/yosupo-rectangle_sum.test-offline-2d-bit.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/aizu/aizu-1163.test.cpp
@@ -117,6 +114,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-range_chmin_chmax_add_range_sum.test.cpp
     title: verify/yosupo/yosupo-range_chmin_chmax_add_range_sum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/yosupo/yosupo-rectangle_sum-offline-2d-bit.test.cpp
+    title: verify/yosupo/yosupo-rectangle_sum-offline-2d-bit.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-scc-kosaraju.test.cpp
     title: verify/yosupo/yosupo-scc-kosaraju.test.cpp
@@ -265,7 +265,6 @@ data:
   path: library/contest/template-minimal.hpp
   requiredBy:
   - verify/unverified/offline-dynamic-connectivity.cpp
-  - verify/yosupo/yosupo-rectangle_sum.test-offline-2d-bit.cpp
   - library/graphs/enumerate-triangles.cpp
   timestamp: '2021-07-24 23:00:09-04:00'
   verificationStatus: LIBRARY_ALL_AC
@@ -287,6 +286,7 @@ data:
   - verify/yosupo/yosupo-segment_add_get_min-li-chao-tree-offline.test.cpp
   - verify/yosupo/yosupo-point_add_range_sum-implicit-lazy-segment-tree.test.cpp
   - verify/yosupo/yosupo-point_add_range_sum-lazy-segment-tree.test.cpp
+  - verify/yosupo/yosupo-rectangle_sum-offline-2d-bit.test.cpp
   - verify/yosupo/yosupo-lca-lca-jump.test.cpp
   - verify/yosupo/yosupo-point_add_range_sum-fenwick-tree.test.cpp
   - verify/yosupo/yosupo-lca-lca-rmq.test.cpp

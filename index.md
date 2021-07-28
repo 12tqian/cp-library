@@ -64,7 +64,7 @@ data:
     - icon: ':warning:'
       path: library/data-structures/2d-range-queries/general-fenwick-tree.hpp
       title: library/data-structures/2d-range-queries/general-fenwick-tree.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/data-structures/2d-range-queries/offline-2d-binary-indexed-tree.hpp
       title: library/data-structures/2d-range-queries/offline-2d-binary-indexed-tree.hpp
     - icon: ':warning:'
@@ -179,7 +179,7 @@ data:
       title: library/graphs/flows/push-relabel.hpp
   - name: library/misc
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/misc/easy-io.hpp
       title: library/misc/easy-io.hpp
     - icon: ':warning:'
@@ -269,16 +269,8 @@ data:
   - name: verify/unverified
     pages:
     - icon: ':warning:'
-      path: verify/unverified/2d-sparse-segment-tree.cpp
-      title: verify/unverified/2d-sparse-segment-tree.cpp
-    - icon: ':warning:'
       path: verify/unverified/offline-dynamic-connectivity.cpp
       title: verify/unverified/offline-dynamic-connectivity.cpp
-  - name: verify/yosupo
-    pages:
-    - icon: ':warning:'
-      path: verify/yosupo/yosupo-rectangle_sum.test-offline-2d-bit.cpp
-      title: verify/yosupo/yosupo-rectangle_sum.test-offline-2d-bit.cpp
   verificationCategories:
   - name: verify/aizu
     pages:
@@ -404,6 +396,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-range_chmin_chmax_add_range_sum.test.cpp
       title: verify/yosupo/yosupo-range_chmin_chmax_add_range_sum.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/yosupo/yosupo-rectangle_sum-offline-2d-bit.test.cpp
+      title: verify/yosupo/yosupo-rectangle_sum-offline-2d-bit.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-scc-kosaraju.test.cpp
       title: verify/yosupo/yosupo-scc-kosaraju.test.cpp
