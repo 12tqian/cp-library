@@ -1,7 +1,7 @@
 #define IGNORE "self tested"
 
-#include "../library/contest/template-minimal.hpp"
-#include "../library/string/hashing.hpp"
+#include "../../library/contest/template-minimal.hpp"
+#include "../../library/string/hashing.hpp"
 
 int main() {
 	using namespace std;

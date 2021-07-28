@@ -1,7 +1,7 @@
 #define IGNORE "self tested"
 
-#include "../library/contest/template-minimal.hpp"
-#include "../library/dynamic-programming/gosper-hack.hpp"
+#include "../../library/contest/template-minimal.hpp"
+#include "../../library/dynamic-programming/gosper-hack.hpp"
 
 int main() {
 	int n = 4;
