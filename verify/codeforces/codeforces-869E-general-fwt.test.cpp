@@ -1,4 +1,4 @@
-#define PROBLEM "https://codeforces.com/contest/1074/problem/F"
+#define PROBLEM "https://codeforces.com/contest/869/problem/E"
 
 #include "../../library/contest/template-minimal.hpp"
 #include "../../library/data-structures/2d-range-queries/general-fenwick-tree.hpp"
