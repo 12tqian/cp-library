@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':warning:'
     path: library/misc/easy-io.hpp
     title: library/misc/easy-io.hpp
   _extendedRequiredBy: []

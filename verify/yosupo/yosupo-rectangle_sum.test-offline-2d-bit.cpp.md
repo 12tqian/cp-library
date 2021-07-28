@@ -4,20 +4,18 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':warning:'
     path: library/data-structures/2d-range-queries/offline-2d-binary-indexed-tree.hpp
     title: library/data-structures/2d-range-queries/offline-2d-binary-indexed-tree.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':warning:'
     path: library/misc/easy-io.hpp
     title: library/misc/easy-io.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.yosupo.jp/problem/rectangle_sum
     links:
     - https://judge.yosupo.jp/problem/rectangle_sum
   bundledCode: "#define PROBLEM \"https://judge.yosupo.jp/problem/rectangle_sum\"\n\
@@ -177,16 +175,16 @@ data:
   - library/contest/template-minimal.hpp
   - library/misc/easy-io.hpp
   - library/data-structures/2d-range-queries/offline-2d-binary-indexed-tree.hpp
-  isVerificationFile: true
-  path: verify/yosupo/yosupo-rectangle_sum.test.cpp
+  isVerificationFile: false
+  path: verify/yosupo/yosupo-rectangle_sum.test-offline-2d-bit.cpp
   requiredBy: []
-  timestamp: '2021-07-28 12:10:07-04:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2021-07-28 15:59:58-04:00'
+  verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: verify/yosupo/yosupo-rectangle_sum.test.cpp
+documentation_of: verify/yosupo/yosupo-rectangle_sum.test-offline-2d-bit.cpp
 layout: document
 redirect_from:
-- /verify/verify/yosupo/yosupo-rectangle_sum.test.cpp
-- /verify/verify/yosupo/yosupo-rectangle_sum.test.cpp.html
-title: verify/yosupo/yosupo-rectangle_sum.test.cpp
+- /library/verify/yosupo/yosupo-rectangle_sum.test-offline-2d-bit.cpp
+- /library/verify/yosupo/yosupo-rectangle_sum.test-offline-2d-bit.cpp.html
+title: verify/yosupo/yosupo-rectangle_sum.test-offline-2d-bit.cpp
 ---

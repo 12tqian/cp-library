@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: verify/yosupo/yosupo-rectangle_sum.test.cpp
-    title: verify/yosupo/yosupo-rectangle_sum.test.cpp
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: verify/yosupo/yosupo-rectangle_sum.test-offline-2d-bit.cpp
+    title: verify/yosupo/yosupo-rectangle_sum.test-offline-2d-bit.cpp
+  _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     links: []
   bundledCode: "\n/**\n * x \\in [0, sz)\n * y \\in [0, sz)\n * First do all the updates,\
@@ -70,11 +70,11 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: library/data-structures/2d-range-queries/offline-2d-binary-indexed-tree.hpp
-  requiredBy: []
+  requiredBy:
+  - verify/yosupo/yosupo-rectangle_sum.test-offline-2d-bit.cpp
   timestamp: '2021-07-28 12:10:07-04:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - verify/yosupo/yosupo-rectangle_sum.test.cpp
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
 documentation_of: library/data-structures/2d-range-queries/offline-2d-binary-indexed-tree.hpp
 layout: document
 redirect_from:
