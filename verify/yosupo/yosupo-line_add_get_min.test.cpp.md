@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
-  - icon: ':x:'
-    path: library/dynamic-programming/dynamic-convex-hull-trick.hpp
-    title: library/dynamic-programming/dynamic-convex-hull-trick.hpp
+  - icon: ':heavy_check_mark:'
+    path: library/dynamic-programming/line-container.hpp
+    title: library/dynamic-programming/line-container.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/line_add_get_min
@@ -24,54 +24,46 @@ data:
     \ <iostream>\n#include <iomanip>\n#include <list>\n#include <map>\n#include <numeric>\n\
     #include <queue>\n#include <random>\n#include <set>\n#include <stack>\n#include\
     \ <string>\n#include <unordered_map>\n#include <vector>\n\nusing namespace std;\n\
-    \nconst long long INF = 1e18;\n\nstruct ConvexHullTrick {\n\t// modified for minimums\n\
-    \tstruct Line {\n\t\tlong long m, b; long double x, val;\n\t\tbool is_query;\n\
-    \n\t\tLine(long long _m = 0, long long _b = 0) {\n\t\t\tm = _m, b = _b, val =\
-    \ 0, x = -INF, is_query = false;\n\t\t}\n\n\t\tlong long eval(long long x) const\
-    \ { return m * x + b; }\n\t\tbool parallel(const Line &l) const { return m ==\
-    \ l.m; }\n\t\tlong double intersect(const Line &l) const {\n\t\t\treturn parallel(l)\
-    \ ? INF : 1.0 * (l.b - b) / (m - l.m);\n\t\t}\n\n\t\tbool operator<(const Line\
-    \ &l) const {\n\t\t\tif (l.is_query) return x < l.val;\n\t\t\telse return m <\
-    \ l.m;\n\t\t}\n\t};\n\n\tstd::set<Line> hull;\n\n\tbool hull_prev(std::set<Line>::iterator\
-    \ it) { return it != hull.begin(); }\n\tbool hull_next(std::set<Line>::iterator\
-    \ it) { return it != hull.end() && next(it) != hull.end(); }\n\tbool bad(const\
-    \ Line &l1, const Line &l2, const Line &l3) { return l1.intersect(l3) <= l1.intersect(l2);\
-    \ }\n\tbool bad(std::set<Line>::iterator it) { return hull_prev(it) && hull_next(it)\
-    \ && bad(*prev(it), *it, *next(it)); }\n\n\tstd::set<Line>::iterator update(std::set<Line>::iterator\
-    \ it) {\n\t\tif (!hull_prev(it)) return it;\n\t\tlong double x = it->intersect(*prev(it));\n\
-    \t\tLine tmp(*it); tmp.x = x;\n\t\tit = hull.erase(it);\n\t\treturn hull.insert(it,\
-    \ tmp);\n\t}\n\n\tvoid add_line(long long m, long long b) {\n\t\tm = -m, b = -b;\n\
-    \t\tLine l(m, b);\n\t\tstd::set<Line>::iterator it = hull.lower_bound(l);\n\t\t\
-    if (it != hull.end() && l.parallel(*it)) {\n\t\t\tif(it->b < b) it = hull.erase(it);\n\
-    \t\t\telse return;\n\t\t}\n\t\tit = hull.insert(it, l);\n\t\tif (bad(it)) return\
-    \ (void) hull.erase(it);\n\t\twhile (hull_prev(it) && bad(prev(it))) hull.erase(prev(it));\n\
-    \t\twhile (hull_next(it) && bad(next(it))) hull.erase(next(it));\n\t\tit = update(it);\n\
-    \t\tif (hull_prev(it)) update(prev(it));\n\t\tif (hull_next(it)) update(next(it));\n\
-    \t}\n\t\n\tlong long query(long long x) const {\n\t\tif (hull.empty()) return\
-    \ INF;\n\t\tLine q; q.val = x, q.is_query = 1;\n\t\tstd::set<Line>::iterator it\
-    \ = --hull.lower_bound(q);\n\t\treturn -(it->eval(x));\n\t}\n};\n\nint main()\
-    \ {\n\tios::sync_with_stdio(false);\n\tcin.tie(nullptr);\n\tint n, q;\n\tcin >>\
-    \ n >> q;\n\tConvexHullTrick cht;\t\n\twhile (n--) {\n\t\tint a, b;\n\t\tcin >>\
-    \ a >> b;\n\t\tcht.add_line(a, b);\n\t} \n\twhile (q--) {\n\t\tint t;\n\t\tcin\
-    \ >> t;\n\t\tif (t == 0) {\n\t\t\tint a, b;\n\t\t\tcin >> a >> b;\n\t\t\tcht.add_line(a,\
-    \ b);\n\t\t} else {\n\t\t\tint p;\n\t\t\tcin >> p;\n\t\t\tcout << cht.query(p)\
-    \ << '\\n';\n\t\t}\n\t}\n\treturn 0;\n}\n"
+    \n// modified for minimums\n\ntemplate <class T> struct Line {\n\tmutable T k,\
+    \ m, p;\n\t\n\tbool operator<(const Line<T>& o) const { return k < o.k; }\n\t\
+    bool operator<(T x) const { return p < x; }\n};\n\ntemplate <class T> struct LineContainer\
+    \ : std::multiset<Line<T>, std::less<>> {\n\t// (for doubles, use INF = 1/.0,\
+    \ div(a,b) = a/b)\n\tconst T INF = std::numeric_limits<T>::max();\n\n\tT div(T\
+    \ a, T b) { // floored division\n\t\treturn a / b - ((a ^ b) < 0 && a % b); \n\
+    \t}\n\n\tusing super = std::multiset<Line<T>, std::less<>>;\n\tusing iterator\
+    \ = typename LineContainer<T>::iterator;\n\t\n\tbool isect(iterator x, iterator\
+    \ y) {\n\t\tif (y == super::end()) \n\t\t\treturn x->p = INF, 0;\n\t\tif (x->k\
+    \ == y->k) \n\t\t\tx->p = x->m > y->m ? INF : -INF;\n\t\telse \n\t\t\tx->p = div(y->m\
+    \ - x->m, x->k - y->k);\n\t\treturn x->p >= y->p;\n\t}\n\t\n\tvoid add_line(T\
+    \ k, T m) {\n\t\tk = -k, m = -m;\n\t\tauto z = super::insert({k, m, 0}), y = z++,\
+    \ x = y;\n\t\twhile (isect(y, z)) \n\t\t\tz = super::erase(z);\n\t\tif (x != super::begin()\
+    \ && isect(--x, y)) \n\t\t\tisect(x, y = super::erase(y));\n\t\twhile ((y = x)\
+    \ != super::begin() && (--x)->p >= y->p)\n\t\t\tisect(x, super::erase(y));\n\t\
+    }\n\t\n\tT query(T x) {\n\t\tassert(!super::empty());\n\t\tauto l = *super::lower_bound(x);\n\
+    \t\treturn -(l.k * x + l.m);\n\t}\n};\n\nint main() {\n\tios::sync_with_stdio(false);\n\
+    \tcin.tie(nullptr);\n\tint n, q;\n\tcin >> n >> q;\n\tLineContainer<long long>\
+    \ cht;\t\n\twhile (n--) {\n\t\tint a;\n\t\tlong long b;\n\t\tcin >> a >> b;\n\t\
+    \tcht.add_line(a, b);\n\t} \n\twhile (q--) {\n\t\tint t;\n\t\tcin >> t;\n\t\t\
+    if (t == 0) {\n\t\t\tint a;\n\t\t\tlong long b;\n\t\t\tcin >> a >> b;\n\t\t\t\
+    cht.add_line(a, b);\n\t\t} else {\n\t\t\tint p;\n\t\t\tcin >> p;\n\t\t\tcout <<\
+    \ cht.query(p) << '\\n';\n\t\t}\n\t}\n\treturn 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/line_add_get_min\"\n\n\
-    #include \"../../library/contest/template-minimal.hpp\"\n#include \"../../library/dynamic-programming/dynamic-convex-hull-trick.hpp\"\
+    #include \"../../library/contest/template-minimal.hpp\"\n#include \"../../library/dynamic-programming/line-container.hpp\"\
     \n\nint main() {\n\tios::sync_with_stdio(false);\n\tcin.tie(nullptr);\n\tint n,\
-    \ q;\n\tcin >> n >> q;\n\tConvexHullTrick cht;\t\n\twhile (n--) {\n\t\tint a,\
-    \ b;\n\t\tcin >> a >> b;\n\t\tcht.add_line(a, b);\n\t} \n\twhile (q--) {\n\t\t\
-    int t;\n\t\tcin >> t;\n\t\tif (t == 0) {\n\t\t\tint a, b;\n\t\t\tcin >> a >> b;\n\
-    \t\t\tcht.add_line(a, b);\n\t\t} else {\n\t\t\tint p;\n\t\t\tcin >> p;\n\t\t\t\
-    cout << cht.query(p) << '\\n';\n\t\t}\n\t}\n\treturn 0;\n}"
+    \ q;\n\tcin >> n >> q;\n\tLineContainer<long long> cht;\t\n\twhile (n--) {\n\t\
+    \tint a;\n\t\tlong long b;\n\t\tcin >> a >> b;\n\t\tcht.add_line(a, b);\n\t} \n\
+    \twhile (q--) {\n\t\tint t;\n\t\tcin >> t;\n\t\tif (t == 0) {\n\t\t\tint a;\n\t\
+    \t\tlong long b;\n\t\t\tcin >> a >> b;\n\t\t\tcht.add_line(a, b);\n\t\t} else\
+    \ {\n\t\t\tint p;\n\t\t\tcin >> p;\n\t\t\tcout << cht.query(p) << '\\n';\n\t\t\
+    }\n\t}\n\treturn 0;\n}"
   dependsOn:
   - library/contest/template-minimal.hpp
-  - library/dynamic-programming/dynamic-convex-hull-trick.hpp
+  - library/dynamic-programming/line-container.hpp
   isVerificationFile: true
   path: verify/yosupo/yosupo-line_add_get_min.test.cpp
   requiredBy: []
-  timestamp: '2021-07-28 18:52:53-04:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2021-07-28 19:22:19-04:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/yosupo-line_add_get_min.test.cpp
 layout: document

@@ -9,7 +9,7 @@ data:
     - icon: ':warning:'
       path: library/contest/template-full.hpp
       title: library/contest/template-full.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/contest/template-minimal.hpp
       title: library/contest/template-minimal.hpp
     - icon: ':warning:'
@@ -72,12 +72,12 @@ data:
       title: library/data-structures/2d-range-queries/quadtree.hpp
   - name: library/dynamic-programming
     pages:
-    - icon: ':x:'
-      path: library/dynamic-programming/dynamic-convex-hull-trick.hpp
-      title: library/dynamic-programming/dynamic-convex-hull-trick.hpp
     - icon: ':heavy_check_mark:'
       path: library/dynamic-programming/gosper-hack.hpp
       title: library/dynamic-programming/gosper-hack.hpp
+    - icon: ':heavy_check_mark:'
+      path: library/dynamic-programming/line-container.hpp
+      title: library/dynamic-programming/line-container.hpp
     - icon: ':warning:'
       path: library/dynamic-programming/max-deque.hpp
       title: library/dynamic-programming/max-deque.hpp
@@ -391,7 +391,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-lca-lca-rmq.test.cpp
       title: verify/yosupo/yosupo-lca-lca-rmq.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-line_add_get_min.test.cpp
       title: verify/yosupo/yosupo-line_add_get_min.test.cpp
     - icon: ':heavy_check_mark:'
