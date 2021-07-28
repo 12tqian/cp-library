@@ -1,14 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/yosupo/yosupo-enumerate_triangles.test.cpp
+    title: verify/yosupo/yosupo-enumerate_triangles.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#include <algorithm>\n#include <array>\n#include <bitset>\n#include\
@@ -60,8 +63,9 @@ data:
   path: library/graphs/enumerate-triangles.cpp
   requiredBy: []
   timestamp: '2021-07-24 23:00:09-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/yosupo/yosupo-enumerate_triangles.test.cpp
 documentation_of: library/graphs/enumerate-triangles.cpp
 layout: document
 redirect_from:

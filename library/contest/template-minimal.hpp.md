@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: library/graphs/enumerate-triangles.cpp
     title: library/graphs/enumerate-triangles.cpp
   _extendedVerifiedWith:
@@ -100,6 +100,9 @@ data:
     path: verify/yosupo/yosupo-enumerate_palindromes.test.cpp
     title: verify/yosupo/yosupo-enumerate_palindromes.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/yosupo/yosupo-enumerate_triangles.test.cpp
+    title: verify/yosupo/yosupo-enumerate_triangles.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-factorize.test.cpp
     title: verify/yosupo/yosupo-factorize.test.cpp
   - icon: ':heavy_check_mark:'
@@ -108,6 +111,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-lca-lca-rmq.test.cpp
     title: verify/yosupo/yosupo-lca-lca-rmq.test.cpp
+  - icon: ':x:'
+    path: verify/yosupo/yosupo-line_add_get_min.test.cpp
+    title: verify/yosupo/yosupo-line_add_get_min.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-point_add_range_sum-fenwick-tree.test.cpp
     title: verify/yosupo/yosupo-point_add_range_sum-fenwick-tree.test.cpp
@@ -168,9 +174,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-vertex_add_path_sum.test.cpp
     title: verify/yosupo/yosupo-vertex_add_path_sum.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: '#include <algorithm>
@@ -281,7 +287,7 @@ data:
   requiredBy:
   - library/graphs/enumerate-triangles.cpp
   timestamp: '2021-07-24 23:00:09-04:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/unit-test/unit-test-hashing.test.cpp
   - verify/unit-test/unit-test-gosper-hack.test.cpp
@@ -307,6 +313,7 @@ data:
   - verify/yosupo/yosupo-rectangle_sum-offline-2d-bit.test.cpp
   - verify/yosupo/yosupo-lca-lca-jump.test.cpp
   - verify/yosupo/yosupo-point_add_range_sum-fenwick-tree.test.cpp
+  - verify/yosupo/yosupo-line_add_get_min.test.cpp
   - verify/yosupo/yosupo-lca-lca-rmq.test.cpp
   - verify/yosupo/yosupo-scc-tarjan.test.cpp
   - verify/yosupo/yosupo-point_add_range_sum-point-update-segment-tree.test.cpp
@@ -315,6 +322,7 @@ data:
   - verify/yosupo/yosupo-range_affine_range_sum.test.cpp
   - verify/yosupo/yosupo-convolution_mod_1000000007-fast-fourier-transform.test.cpp
   - verify/yosupo/yosupo-enumerate_palindromes.test.cpp
+  - verify/yosupo/yosupo-enumerate_triangles.test.cpp
   - verify/yosupo/yosupo-bipartitematching.test.cpp
   - verify/yosupo/yosupo-static_range_sum.test.cpp
   - verify/yosupo/yosupo-convolution_mod_1000000007-karatsuba.test.cpp

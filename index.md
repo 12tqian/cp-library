@@ -9,7 +9,7 @@ data:
     - icon: ':warning:'
       path: library/contest/template-full.hpp
       title: library/contest/template-full.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/contest/template-minimal.hpp
       title: library/contest/template-minimal.hpp
     - icon: ':warning:'
@@ -72,7 +72,7 @@ data:
       title: library/data-structures/2d-range-queries/quadtree.hpp
   - name: library/dynamic-programming
     pages:
-    - icon: ':warning:'
+    - icon: ':x:'
       path: library/dynamic-programming/dynamic-convex-hull-trick.hpp
       title: library/dynamic-programming/dynamic-convex-hull-trick.hpp
     - icon: ':heavy_check_mark:'
@@ -121,7 +121,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/graphs/dsu.hpp
       title: library/graphs/dsu.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/graphs/enumerate-triangles.cpp
       title: library/graphs/enumerate-triangles.cpp
     - icon: ':heavy_check_mark:'
@@ -380,6 +380,9 @@ data:
       path: verify/yosupo/yosupo-enumerate_palindromes.test.cpp
       title: verify/yosupo/yosupo-enumerate_palindromes.test.cpp
     - icon: ':heavy_check_mark:'
+      path: verify/yosupo/yosupo-enumerate_triangles.test.cpp
+      title: verify/yosupo/yosupo-enumerate_triangles.test.cpp
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-factorize.test.cpp
       title: verify/yosupo/yosupo-factorize.test.cpp
     - icon: ':heavy_check_mark:'
@@ -388,6 +391,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-lca-lca-rmq.test.cpp
       title: verify/yosupo/yosupo-lca-lca-rmq.test.cpp
+    - icon: ':x:'
+      path: verify/yosupo/yosupo-line_add_get_min.test.cpp
+      title: verify/yosupo/yosupo-line_add_get_min.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-point_add_range_sum-fenwick-tree.test.cpp
       title: verify/yosupo/yosupo-point_add_range_sum-fenwick-tree.test.cpp
