@@ -5,6 +5,9 @@ data:
   - icon: ':warning:'
     path: library/graphs/offline-dynamic-connectivity.hpp
     title: library/graphs/offline-dynamic-connectivity.hpp
+  - icon: ':warning:'
+    path: verify/unverified/offline-dynamic-connectivity.cpp
+    title: verify/unverified/offline-dynamic-connectivity.cpp
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
@@ -35,6 +38,7 @@ data:
   isVerificationFile: false
   path: library/graphs/dsu-rollback.hpp
   requiredBy:
+  - verify/unverified/offline-dynamic-connectivity.cpp
   - library/graphs/offline-dynamic-connectivity.hpp
   timestamp: '2021-07-24 19:40:07-04:00'
   verificationStatus: LIBRARY_NO_TESTS
