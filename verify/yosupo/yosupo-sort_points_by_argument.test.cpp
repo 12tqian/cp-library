@@ -1,7 +1,7 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/sort_points_by_argument"
 
 #include "../../library/contest/template-minimal.hpp"
-#include "../../library/geometry/point.hpp"
+#include "../../library/geometry/geometry-2d.hpp"
 
 using P = Point<long long>;
 
