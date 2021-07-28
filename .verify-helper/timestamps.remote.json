@@ -35,6 +35,7 @@
 "verify/yosupo/yosupo-point_add_range_sum-sparse-segment-tree.test.cpp": "2021-07-28 02:34:55 -0400",
 "verify/yosupo/yosupo-range_affine_range_sum.test.cpp": "2021-07-28 02:34:55 -0400",
 "verify/yosupo/yosupo-range_chmin_chmax_add_range_sum.test.cpp": "2021-07-28 02:34:55 -0400",
+"verify/yosupo/yosupo-rectangle_sum-offline-2d-bit.test.cpp": "2021-07-28 16:07:45 -0400",
 "verify/yosupo/yosupo-scc-kosaraju.test.cpp": "2021-07-28 02:34:55 -0400",
 "verify/yosupo/yosupo-scc-tarjan.test.cpp": "2021-07-28 02:34:55 -0400",
 "verify/yosupo/yosupo-segment_add_get_min-li-chao-tree-offline.test.cpp": "2021-07-28 02:34:55 -0400",
