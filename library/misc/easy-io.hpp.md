@@ -3,6 +3,9 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy:
   - icon: ':warning:'
+    path: library/contest/template-full.hpp
+    title: library/contest/template-full.hpp
+  - icon: ':warning:'
     path: verify/unverified/2d-sparse-segment-tree.cpp
     title: verify/unverified/2d-sparse-segment-tree.cpp
   - icon: ':warning:'
@@ -188,6 +191,7 @@ data:
   requiredBy:
   - verify/unverified/2d-sparse-segment-tree.cpp
   - verify/unverified/offline-2d-binary-indexed-tree.cpp
+  - library/contest/template-full.hpp
   timestamp: '2021-07-24 19:40:07-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []

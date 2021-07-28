@@ -6,12 +6,18 @@ data:
     - icon: ':warning:'
       path: library/contest/template-full.cpp
       title: library/contest/template-full.cpp
+    - icon: ':warning:'
+      path: library/contest/template-full.hpp
+      title: library/contest/template-full.hpp
     - icon: ':heavy_check_mark:'
       path: library/contest/template-minimal.hpp
       title: library/contest/template-minimal.hpp
     - icon: ':warning:'
       path: library/contest/template-short.cpp
       title: library/contest/template-short.cpp
+    - icon: ':warning:'
+      path: library/contest/template-short.hpp
+      title: library/contest/template-short.hpp
   - name: library/data-structures/1d-range-queries
     pages:
     - icon: ':heavy_check_mark:'
