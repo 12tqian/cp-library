@@ -266,17 +266,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/string/suffix-array.hpp
       title: library/string/suffix-array.hpp
-  - name: library/unused
-    pages:
-    - icon: ':warning:'
-      path: library/unused/array_lazy_segment_tree.hpp
-      title: library/unused/array_lazy_segment_tree.hpp
-    - icon: ':warning:'
-      path: library/unused/big_fast_factor_failed.hpp
-      title: library/unused/big_fast_factor_failed.hpp
-    - icon: ':warning:'
-      path: library/unused/include_test.hpp
-      title: library/unused/include_test.hpp
   - name: verify/unverified
     pages:
     - icon: ':warning:'
