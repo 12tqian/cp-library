@@ -10,6 +10,9 @@ data:
     path: verify/aizu/aizu-GRL_2_A.test.cpp
     title: verify/aizu/aizu-GRL_2_A.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/codeforces/codeforces-1494F.test.cpp
+    title: verify/codeforces/codeforces-1494F.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-unionfind.test.cpp
     title: verify/yosupo/yosupo-unionfind.test.cpp
   _isVerificationFailed: false
@@ -39,6 +42,7 @@ data:
   timestamp: '2021-07-24 19:40:07-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - verify/codeforces/codeforces-1494F.test.cpp
   - verify/aizu/aizu-GRL_2_A.test.cpp
   - verify/yosupo/yosupo-unionfind.test.cpp
 documentation_of: library/graphs/dsu.hpp

@@ -15,7 +15,7 @@ data:
     - icon: ':warning:'
       path: library/contest/template-short.cpp
       title: library/contest/template-short.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/contest/template-short.hpp
       title: library/contest/template-short.hpp
   - name: library/data-structures/1d-range-queries
@@ -130,7 +130,7 @@ data:
     - icon: ':warning:'
       path: library/graphs/enumerate-triangles.cpp
       title: library/graphs/enumerate-triangles.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/graphs/euler-path.hpp
       title: library/graphs/euler-path.hpp
     - icon: ':heavy_check_mark:'
@@ -325,6 +325,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/codeforces/codeforces-1074F.test.cpp
       title: verify/codeforces/codeforces-1074F.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/codeforces/codeforces-1494F.test.cpp
+      title: verify/codeforces/codeforces-1494F.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/codeforces/codeforces-1542E2.test.cpp
       title: verify/codeforces/codeforces-1542E2.test.cpp
