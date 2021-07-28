@@ -1,26 +1,26 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/data-structures/2d-range-queries/general-fenwick-tree.hpp
     title: library/data-structures/2d-range-queries/general-fenwick-tree.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/numerical/mod-int2.hpp
     title: library/numerical/mod-int2.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://codeforces.com/contest/1074/problem/F
+    PROBLEM: https://codeforces.com/contest/869/problem/E
     links:
-    - https://codeforces.com/contest/1074/problem/F
-  bundledCode: "#define PROBLEM \"https://codeforces.com/contest/1074/problem/F\"\n\
+    - https://codeforces.com/contest/869/problem/E
+  bundledCode: "#define PROBLEM \"https://codeforces.com/contest/869/problem/E\"\n\
     \n#include <algorithm>\n#include <array>\n#include <bitset>\n#include <cassert>\n\
     #include <chrono>\n#include <cmath>\n#include <complex>\n#include <cstdio>\n#include\
     \ <cstdlib>\n#include <cstring>\n#include <ctime>\n#include <deque>\n#include\
@@ -79,7 +79,7 @@ data:
     \t\t} else {\t\n\t\t\tif (bit.query(1, xl, 1, yl) == bit.query(1, xr, 1, yr))\
     \ {\n\t\t\t\tcout << \"Yes\" << '\\n';\n\t\t\t} else {\n\t\t\t\tcout << \"No\"\
     \ << '\\n';\n\t\t\t}\n\t\t}\n\t}\n\treturn 0;\n}\n"
-  code: "#define PROBLEM \"https://codeforces.com/contest/1074/problem/F\"\n\n#include\
+  code: "#define PROBLEM \"https://codeforces.com/contest/869/problem/E\"\n\n#include\
     \ \"../../library/contest/template-minimal.hpp\"\n#include \"../../library/data-structures/2d-range-queries/general-fenwick-tree.hpp\"\
     \n#include \"../../library/numerical/mod-int2.hpp\"\n\nconst int N = 2505;\n\n\
     const int P = 998244353;\nconst int B = 2;\n\nusing mi = Mint<998244353, 5>;\n\
@@ -101,8 +101,8 @@ data:
   isVerificationFile: true
   path: verify/codeforces/codeforces-869E-general-fwt.test.cpp
   requiredBy: []
-  timestamp: '2021-07-28 16:57:35-04:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2021-07-28 18:10:38-04:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/codeforces/codeforces-869E-general-fwt.test.cpp
 layout: document

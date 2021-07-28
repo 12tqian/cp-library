@@ -39,9 +39,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/codeforces/codeforces-319C.test.cpp
     title: verify/codeforces/codeforces-319C.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/codeforces/codeforces-869E-general-fwt.test.cpp
     title: verify/codeforces/codeforces-869E-general-fwt.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/codeforces/codeforces-981G.test.cpp
+    title: verify/codeforces/codeforces-981G.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/codeforces/ecodeforces-869E-quadtree.test.cpp
     title: verify/codeforces/ecodeforces-869E-quadtree.test.cpp
@@ -159,9 +162,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-vertex_add_path_sum.test.cpp
     title: verify/yosupo/yosupo-vertex_add_path_sum.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: '#include <algorithm>
@@ -273,11 +276,12 @@ data:
   - verify/unverified/offline-dynamic-connectivity.cpp
   - library/graphs/enumerate-triangles.cpp
   timestamp: '2021-07-24 23:00:09-04:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/unit-test/unit-test-hashing.test.cpp
   - verify/unit-test/unit-test-gosper-hack.test.cpp
   - verify/codeforces/codeforces-869E-general-fwt.test.cpp
+  - verify/codeforces/codeforces-981G.test.cpp
   - verify/codeforces/codeforces-319C.test.cpp
   - verify/codeforces/ecodeforces-869E-quadtree.test.cpp
   - verify/codeforces/codeforces-1542E2.test.cpp

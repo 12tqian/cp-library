@@ -6,9 +6,12 @@ data:
     path: library/numerical/fast-fourier-transform.hpp
     title: library/numerical/fast-fourier-transform.hpp
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/codeforces/codeforces-869E-general-fwt.test.cpp
     title: verify/codeforces/codeforces-869E-general-fwt.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/codeforces/codeforces-981G.test.cpp
+    title: verify/codeforces/codeforces-981G.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/codeforces/ecodeforces-869E-quadtree.test.cpp
     title: verify/codeforces/ecodeforces-869E-quadtree.test.cpp
@@ -21,9 +24,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-range_affine_range_sum.test.cpp
     title: verify/yosupo/yosupo-range_affine_range_sum.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "\n// 5 is a root of both mods\ntemplate <int MOD, int RT> struct Mint\
@@ -86,9 +89,10 @@ data:
   requiredBy:
   - library/numerical/fast-fourier-transform.hpp
   timestamp: '2021-07-25 14:11:17-04:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/codeforces/codeforces-869E-general-fwt.test.cpp
+  - verify/codeforces/codeforces-981G.test.cpp
   - verify/codeforces/ecodeforces-869E-quadtree.test.cpp
   - verify/yosupo/yosupo-range_affine_range_sum.test.cpp
   - verify/yosupo/yosupo-convolution_mod_1000000007-fast-fourier-transform.test.cpp
