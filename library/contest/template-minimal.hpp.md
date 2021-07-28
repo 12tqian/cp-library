@@ -40,6 +40,9 @@ data:
     path: verify/codeforces/codeforces-1074F.test.cpp
     title: verify/codeforces/codeforces-1074F.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/codeforces/codeforces-1542E2.test.cpp
+    title: verify/codeforces/codeforces-1542E2.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/codeforces/codeforces-319C.test.cpp
     title: verify/codeforces/codeforces-319C.test.cpp
   - icon: ':heavy_check_mark:'
@@ -54,6 +57,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/kattis/kattis-equationsolver.test.cpp
     title: verify/kattis/kattis-equationsolver.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/kattis/kattis-generalchineseremainder.test.cpp
+    title: verify/kattis/kattis-generalchineseremainder.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/kattis/kattis-mincostmaxflow.test.cpp
     title: verify/kattis/kattis-mincostmaxflow.test.cpp
@@ -271,6 +277,7 @@ data:
   - verify/unit-test/unit-test-hashing.test.cpp
   - verify/unit-test/unit-test-gosper-hack.test.cpp
   - verify/codeforces/codeforces-319C.test.cpp
+  - verify/codeforces/codeforces-1542E2.test.cpp
   - verify/codeforces/codeforces-1074F.test.cpp
   - verify/aizu/aizu-GRL_6_A-2.test.cpp
   - verify/aizu/aizu-GRL_1_B.test.cpp
@@ -308,6 +315,7 @@ data:
   - verify/yosupo/yosupo-scc-kosaraju.test.cpp
   - verify/yosupo/yosupo-vertex_add_path_sum.test.cpp
   - verify/kattis/kattis-pointinpolygon.test.cpp
+  - verify/kattis/kattis-generalchineseremainder.test.cpp
   - verify/kattis/kattis-equationsolver.test.cpp
   - verify/kattis/kattis-convexhull.test.cpp
   - verify/kattis/kattis-mincostmaxflow.test.cpp

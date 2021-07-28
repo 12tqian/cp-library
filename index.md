@@ -191,7 +191,7 @@ data:
     - icon: ':warning:'
       path: library/misc/fast-io.hpp
       title: library/misc/fast-io.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/misc/range-vector.hpp
       title: library/misc/range-vector.hpp
   - name: library/number-theory
@@ -199,7 +199,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/number-theory/basic-factor.hpp
       title: library/number-theory/basic-factor.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/number-theory/basic-number-theory.hpp
       title: library/number-theory/basic-number-theory.hpp
     - icon: ':heavy_check_mark:'
@@ -320,6 +320,9 @@ data:
       path: verify/codeforces/codeforces-1074F.test.cpp
       title: verify/codeforces/codeforces-1074F.test.cpp
     - icon: ':heavy_check_mark:'
+      path: verify/codeforces/codeforces-1542E2.test.cpp
+      title: verify/codeforces/codeforces-1542E2.test.cpp
+    - icon: ':heavy_check_mark:'
       path: verify/codeforces/codeforces-319C.test.cpp
       title: verify/codeforces/codeforces-319C.test.cpp
   - name: verify/dmoj
@@ -338,6 +341,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/kattis/kattis-equationsolver.test.cpp
       title: verify/kattis/kattis-equationsolver.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/kattis/kattis-generalchineseremainder.test.cpp
+      title: verify/kattis/kattis-generalchineseremainder.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/kattis/kattis-mincostmaxflow.test.cpp
       title: verify/kattis/kattis-mincostmaxflow.test.cpp

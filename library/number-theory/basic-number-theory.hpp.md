@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/kattis/kattis-generalchineseremainder.test.cpp
+    title: verify/kattis/kattis-generalchineseremainder.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "\nnamespace BasicNumberTheory { \n\n// find solution to a * x + b\
@@ -37,12 +40,7 @@ data:
     \tstd::swap(b, nb);\n\tlong long y_max = (a * n + b) / m;\n\tlong long x_max =\
     \ (y_max * m - b);\n\tif (y_max == 0) return ans;\n\tans += (n - (x_max + a -\
     \ 1) / a) * y_max;\n\tans += floor_sum(y_max, a, m, (a - x_max % a) % a);\n\t\
-    return ans;\n}\n\n} // BasicNumberTheory\n\nint main() {\n\tusing namespace std;\n\
-    \tusing namespace BasicNumberTheory;\n\tint tt; cin >> tt;\n\twhile (tt--) {\n\
-    \t\tlong long a, n, b, m;\n\t\tcin >> a >> n >> b >> m;\n\t\tauto ans = CRT({a,\
-    \ n}, {b, m});\n\t\tif (ans.first == -1) \n\t\t\tcout << \"no solution\\n\";\n\
-    \t\telse \n\t\t\tcout << ans.first << \" \" << ans.second << '\\n';\n\t}   \n\t\
-    return 0;\n}\n"
+    return ans;\n}\n\n} // BasicNumberTheory\n"
   code: "#pragma once\n\nnamespace BasicNumberTheory { \n\n// find solution to a *\
     \ x + b * y = gcd(a, b)\n// |a * x|, |b * y| <= lcm(a, b)\nstd::pair<long long,\
     \ long long> euclid(long long a, long long b) {\n\tif (!b) \n\t\treturn {1, 0};\n\
@@ -72,19 +70,15 @@ data:
     \tstd::swap(b, nb);\n\tlong long y_max = (a * n + b) / m;\n\tlong long x_max =\
     \ (y_max * m - b);\n\tif (y_max == 0) return ans;\n\tans += (n - (x_max + a -\
     \ 1) / a) * y_max;\n\tans += floor_sum(y_max, a, m, (a - x_max % a) % a);\n\t\
-    return ans;\n}\n\n} // BasicNumberTheory\n\nint main() {\n\tusing namespace std;\n\
-    \tusing namespace BasicNumberTheory;\n\tint tt; cin >> tt;\n\twhile (tt--) {\n\
-    \t\tlong long a, n, b, m;\n\t\tcin >> a >> n >> b >> m;\n\t\tauto ans = CRT({a,\
-    \ n}, {b, m});\n\t\tif (ans.first == -1) \n\t\t\tcout << \"no solution\\n\";\n\
-    \t\telse \n\t\t\tcout << ans.first << \" \" << ans.second << '\\n';\n\t}   \n\t\
-    return 0;\n}"
+    return ans;\n}\n\n} // BasicNumberTheory"
   dependsOn: []
   isVerificationFile: false
   path: library/number-theory/basic-number-theory.hpp
   requiredBy: []
-  timestamp: '2021-07-24 19:40:07-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  timestamp: '2021-07-28 03:36:42-04:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/kattis/kattis-generalchineseremainder.test.cpp
 documentation_of: library/number-theory/basic-number-theory.hpp
 layout: document
 redirect_from:

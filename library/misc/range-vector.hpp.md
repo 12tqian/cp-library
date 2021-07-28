@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/codeforces/codeforces-1542E2.test.cpp
+    title: verify/codeforces/codeforces-1542E2.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "\ntemplate <class T> class range_vector : public std::vector<T> {\n\
@@ -29,8 +32,9 @@ data:
   path: library/misc/range-vector.hpp
   requiredBy: []
   timestamp: '2021-07-24 19:40:07-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/codeforces/codeforces-1542E2.test.cpp
 documentation_of: library/misc/range-vector.hpp
 layout: document
 redirect_from:
