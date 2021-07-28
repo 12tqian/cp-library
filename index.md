@@ -214,7 +214,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/number-theory/mod-sqrt.hpp
       title: library/number-theory/mod-sqrt.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/number-theory/sieve.hpp
       title: library/number-theory/sieve.hpp
   - name: library/numerical
@@ -351,6 +351,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/spoj/spoj-FACT0.test.cpp
       title: verify/spoj/spoj-FACT0.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/spoj/spoj-MMFSUNDARAM.test.cpp
+      title: verify/spoj/spoj-MMFSUNDARAM.test.cpp
   - name: verify/unit-test
     pages:
     - icon: ':heavy_check_mark:'

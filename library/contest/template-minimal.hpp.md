@@ -76,6 +76,9 @@ data:
     path: verify/spoj/spoj-FACT0.test.cpp
     title: verify/spoj/spoj-FACT0.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/spoj/spoj-MMFSUNDARAM.test.cpp
+    title: verify/spoj/spoj-MMFSUNDARAM.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/unit-test/unit-test-gosper-hack.test.cpp
     title: verify/unit-test/unit-test-gosper-hack.test.cpp
   - icon: ':heavy_check_mark:'
@@ -333,6 +336,7 @@ data:
   - verify/kattis/kattis-cheeseifyouplease.test.cpp
   - verify/spoj/spoj-FACT0.test.cpp
   - verify/spoj/spoj-DYNACON2.test.cpp
+  - verify/spoj/spoj-MMFSUNDARAM.test.cpp
 documentation_of: library/contest/template-minimal.hpp
 layout: document
 redirect_from:
