@@ -1,16 +1,17 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/line_add_get_min"
 
 #include "../../library/contest/template-minimal.hpp"
-#include "../../library/dynamic-programming/dynamic-convex-hull-trick.hpp"
+#include "../../library/dynamic-programming/line-container.hpp"
 
 int main() {
 	ios::sync_with_stdio(false);
 	cin.tie(nullptr);
 	int n, q;
 	cin >> n >> q;
-	ConvexHullTrick cht;	
+	LineContainer<long long> cht;	
 	while (n--) {
-		int a, b;
+		int a;
+		long long b;
 		cin >> a >> b;
 		cht.add_line(a, b);
 	} 
@@ -18,7 +19,8 @@ int main() {
 		int t;
 		cin >> t;
 		if (t == 0) {
-			int a, b;
+			int a;
+			long long b;
 			cin >> a >> b;
 			cht.add_line(a, b);
 		} else {
