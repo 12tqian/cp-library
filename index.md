@@ -154,7 +154,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/graphs/strongly-connected-components-tarjan.hpp
       title: library/graphs/strongly-connected-components-tarjan.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/graphs/topological-sort.hpp
       title: library/graphs/topological-sort.hpp
     - icon: ':warning:'
@@ -302,6 +302,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/codeforces/codeforces-1074F.test.cpp
       title: verify/codeforces/codeforces-1074F.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/codeforces/codeforces-1463E.test.cpp
+      title: verify/codeforces/codeforces-1463E.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/codeforces/codeforces-1494F.test.cpp
       title: verify/codeforces/codeforces-1494F.test.cpp

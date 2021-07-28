@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/codeforces/codeforces-1463E.test.cpp
+    title: verify/codeforces/codeforces-1463E.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "\n/**\n * If size of std::vector is n, then it is a DAG, if it's not\
@@ -31,8 +34,9 @@ data:
   path: library/graphs/topological-sort.hpp
   requiredBy: []
   timestamp: '2021-07-24 22:29:57-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/codeforces/codeforces-1463E.test.cpp
 documentation_of: library/graphs/topological-sort.hpp
 layout: document
 redirect_from:

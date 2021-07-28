@@ -10,6 +10,9 @@ data:
     path: verify/aizu/aizu-GRL_2_A.test.cpp
     title: verify/aizu/aizu-GRL_2_A.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/codeforces/codeforces-1463E.test.cpp
+    title: verify/codeforces/codeforces-1463E.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/codeforces/codeforces-1494F.test.cpp
     title: verify/codeforces/codeforces-1494F.test.cpp
   - icon: ':heavy_check_mark:'
@@ -43,6 +46,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/codeforces/codeforces-1494F.test.cpp
+  - verify/codeforces/codeforces-1463E.test.cpp
   - verify/aizu/aizu-GRL_2_A.test.cpp
   - verify/yosupo/yosupo-unionfind.test.cpp
 documentation_of: library/graphs/dsu.hpp
