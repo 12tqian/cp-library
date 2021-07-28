@@ -1,6 +1,6 @@
 #define IGNORE
 
-#include "../library/contest/template-minimal.hpp"
+#include "../../library/contest/template-minimal.hpp"
 
 /** 
  * Example of use: https://ideone.com/J3R7nb

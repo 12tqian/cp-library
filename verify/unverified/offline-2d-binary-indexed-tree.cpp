@@ -1,8 +1,8 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/rectangle_sum"
 
-#include "../library/contest/template-minimal.hpp"
-#include "../library/misc/easy-io.hpp"
-#include "../library/data-structures/2d-range-queries/offline-2d-binary-indexed-tree.hpp"
+#include "../../library/contest/template-minimal.hpp"
+#include "../../library/misc/easy-io.hpp"
+#include "../../library/data-structures/2d-range-queries/offline-2d-binary-indexed-tree.hpp"
 
 int main() {
 	ios::sync_with_stdio(false);
