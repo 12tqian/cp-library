@@ -1,4 +1,4 @@
-#define PROBLEM "https://judge.yosupo.jp/problem/enumerate_triangles"
+#define PROBLEM "https://judge.yosupo.jp/problem/line_add_get_min"
 
 #include "../../library/contest/template-minimal.hpp"
 #include "../../library/dynamic-programming/dynamic-convex-hull-trick.hpp"
