@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/data-structures/1d-range-queries/sparse-table.hpp
     title: library/data-structures/1d-range-queries/sparse-table.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/string/suffix-array.hpp
     title: library/string/suffix-array.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/suffixarray
@@ -80,15 +80,15 @@ data:
   - library/string/suffix-array.hpp
   - library/data-structures/1d-range-queries/sparse-table.hpp
   isVerificationFile: true
-  path: verify/yosupo/yosupo-suffixarray-logarithm.test.cpp
+  path: verify/yosupo/yosupo-suffixarray-logarithmic.test.cpp
   requiredBy: []
-  timestamp: '2021-07-28 02:34:55-04:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2021-07-28 03:12:53-04:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: verify/yosupo/yosupo-suffixarray-logarithm.test.cpp
+documentation_of: verify/yosupo/yosupo-suffixarray-logarithmic.test.cpp
 layout: document
 redirect_from:
-- /verify/verify/yosupo/yosupo-suffixarray-logarithm.test.cpp
-- /verify/verify/yosupo/yosupo-suffixarray-logarithm.test.cpp.html
-title: verify/yosupo/yosupo-suffixarray-logarithm.test.cpp
+- /verify/verify/yosupo/yosupo-suffixarray-logarithmic.test.cpp
+- /verify/verify/yosupo/yosupo-suffixarray-logarithmic.test.cpp.html
+title: verify/yosupo/yosupo-suffixarray-logarithmic.test.cpp
 ---

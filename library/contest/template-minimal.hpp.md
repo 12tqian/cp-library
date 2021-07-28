@@ -126,33 +126,33 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-segment_add_get_min-li-chao-tree-online.test.cpp
     title: verify/yosupo/yosupo-segment_add_get_min-li-chao-tree-online.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-sort_points_by_argument.test.cpp
     title: verify/yosupo/yosupo-sort_points_by_argument.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-sqrt_mod.test.cpp
     title: verify/yosupo/yosupo-sqrt_mod.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-static_range_sum.test.cpp
     title: verify/yosupo/yosupo-static_range_sum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-suffixarray-linear.test.cpp
     title: verify/yosupo/yosupo-suffixarray-linear.test.cpp
-  - icon: ':x:'
-    path: verify/yosupo/yosupo-suffixarray-logarithm.test.cpp
-    title: verify/yosupo/yosupo-suffixarray-logarithm.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
+    path: verify/yosupo/yosupo-suffixarray-logarithmic.test.cpp
+    title: verify/yosupo/yosupo-suffixarray-logarithmic.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-two_edge_connected_components.test.cpp
     title: verify/yosupo/yosupo-two_edge_connected_components.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-unionfind.test.cpp
     title: verify/yosupo/yosupo-unionfind.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-vertex_add_path_sum.test.cpp
     title: verify/yosupo/yosupo-vertex_add_path_sum.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: '#include <algorithm>
@@ -266,7 +266,7 @@ data:
   - verify/unverified/offline-2d-binary-indexed-tree.cpp
   - library/graphs/enumerate-triangles.cpp
   timestamp: '2021-07-24 23:00:09-04:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/unit-test/unit-test-hashing.test.cpp
   - verify/unit-test/unit-test-gosper-hack.test.cpp
@@ -297,12 +297,12 @@ data:
   - verify/yosupo/yosupo-bipartitematching.test.cpp
   - verify/yosupo/yosupo-static_range_sum.test.cpp
   - verify/yosupo/yosupo-convolution_mod_1000000007-karatsuba.test.cpp
+  - verify/yosupo/yosupo-suffixarray-logarithmic.test.cpp
   - verify/yosupo/yosupo-sort_points_by_argument.test.cpp
   - verify/yosupo/yosupo-suffixarray-linear.test.cpp
   - verify/yosupo/yosupo-sqrt_mod.test.cpp
   - verify/yosupo/yosupo-range_chmin_chmax_add_range_sum.test.cpp
   - verify/yosupo/yosupo-two_edge_connected_components.test.cpp
-  - verify/yosupo/yosupo-suffixarray-logarithm.test.cpp
   - verify/yosupo/yosupo-segment_add_get_min-li-chao-tree-online.test.cpp
   - verify/yosupo/yosupo-factorize.test.cpp
   - verify/yosupo/yosupo-scc-kosaraju.test.cpp

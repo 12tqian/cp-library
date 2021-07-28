@@ -5,7 +5,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/graphs/lca-rmq.hpp
     title: library/graphs/lca-rmq.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/string/suffix-array.hpp
     title: library/string/suffix-array.hpp
   _extendedVerifiedWith:
@@ -15,12 +15,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-lca-lca-rmq.test.cpp
     title: verify/yosupo/yosupo-lca-lca-rmq.test.cpp
-  - icon: ':x:'
-    path: verify/yosupo/yosupo-suffixarray-logarithm.test.cpp
-    title: verify/yosupo/yosupo-suffixarray-logarithm.test.cpp
-  _isVerificationFailed: true
+  - icon: ':heavy_check_mark:'
+    path: verify/yosupo/yosupo-suffixarray-logarithmic.test.cpp
+    title: verify/yosupo/yosupo-suffixarray-logarithmic.test.cpp
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "\n/**\n * This Sparse Table stores indices of things\n * For destructive\
@@ -58,11 +58,11 @@ data:
   - library/graphs/lca-rmq.hpp
   - library/string/suffix-array.hpp
   timestamp: '2021-07-24 21:49:44-04:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/codeforces/codeforces-1074F.test.cpp
   - verify/yosupo/yosupo-lca-lca-rmq.test.cpp
-  - verify/yosupo/yosupo-suffixarray-logarithm.test.cpp
+  - verify/yosupo/yosupo-suffixarray-logarithmic.test.cpp
 documentation_of: library/data-structures/1d-range-queries/sparse-table.hpp
 layout: document
 redirect_from:

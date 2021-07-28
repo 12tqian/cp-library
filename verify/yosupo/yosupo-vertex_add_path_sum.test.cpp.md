@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/data-structures/1d-range-queries/lazy-segment-tree.hpp
     title: library/data-structures/1d-range-queries/lazy-segment-tree.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/graphs/heavy-light-decomposition.hpp
     title: library/graphs/heavy-light-decomposition.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/vertex_add_path_sum
@@ -94,7 +94,7 @@ data:
   path: verify/yosupo/yosupo-vertex_add_path_sum.test.cpp
   requiredBy: []
   timestamp: '2021-07-28 02:34:55-04:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/yosupo-vertex_add_path_sum.test.cpp
 layout: document

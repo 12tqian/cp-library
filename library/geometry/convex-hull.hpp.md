@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/geometry/point.hpp
     title: library/geometry/point.hpp
   _extendedRequiredBy: []

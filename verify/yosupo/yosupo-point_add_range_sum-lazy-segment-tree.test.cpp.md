@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/data-structures/1d-range-queries/lazy-segment-tree.hpp
     title: library/data-structures/1d-range-queries/lazy-segment-tree.hpp
   _extendedRequiredBy: []

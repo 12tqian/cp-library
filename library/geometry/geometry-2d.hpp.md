@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/geometry/point.hpp
     title: library/geometry/point.hpp
   _extendedRequiredBy: []
@@ -9,6 +9,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/kattis/kattis-pointinpolygon.test.cpp
     title: verify/kattis/kattis-pointinpolygon.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/yosupo/yosupo-sort_points_by_argument.test.cpp
+    title: verify/yosupo/yosupo-sort_points_by_argument.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -156,6 +159,7 @@ data:
   timestamp: '2021-07-24 21:53:34-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - verify/yosupo/yosupo-sort_points_by_argument.test.cpp
   - verify/kattis/kattis-pointinpolygon.test.cpp
 documentation_of: library/geometry/geometry-2d.hpp
 layout: document

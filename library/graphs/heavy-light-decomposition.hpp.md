@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/data-structures/1d-range-queries/lazy-segment-tree.hpp
     title: library/data-structures/1d-range-queries/lazy-segment-tree.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-vertex_add_path_sum.test.cpp
     title: verify/yosupo/yosupo-vertex_add_path_sum.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "\n/**\n * To support forest, just change \n * init to take in a vector\
@@ -84,7 +84,7 @@ data:
   path: library/graphs/heavy-light-decomposition.hpp
   requiredBy: []
   timestamp: '2021-07-24 22:29:57-04:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/yosupo-vertex_add_path_sum.test.cpp
 documentation_of: library/graphs/heavy-light-decomposition.hpp

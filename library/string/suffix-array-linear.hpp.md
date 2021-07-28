@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-suffixarray-linear.test.cpp
     title: verify/yosupo/yosupo-suffixarray-linear.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "\nstd::vector<int> suffix_array(std::vector<int> s, int upper) {\n\
@@ -68,7 +68,7 @@ data:
   path: library/string/suffix-array-linear.hpp
   requiredBy: []
   timestamp: '2021-07-24 22:46:46-04:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/yosupo-suffixarray-linear.test.cpp
 documentation_of: library/string/suffix-array-linear.hpp

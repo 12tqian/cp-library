@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/graphs/dsu.hpp
     title: library/graphs/dsu.hpp
   _extendedRequiredBy: []

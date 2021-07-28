@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/data-structures/1d-range-queries/sparse-table.hpp
     title: library/data-structures/1d-range-queries/sparse-table.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
-    path: verify/yosupo/yosupo-suffixarray-logarithm.test.cpp
-    title: verify/yosupo/yosupo-suffixarray-logarithm.test.cpp
-  _isVerificationFailed: true
+  - icon: ':heavy_check_mark:'
+    path: verify/yosupo/yosupo-suffixarray-logarithmic.test.cpp
+    title: verify/yosupo/yosupo-suffixarray-logarithmic.test.cpp
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "\n/**\n * sa stores sorted suffixes\n * isa is inverse of sa\n * lcp\
@@ -84,9 +84,9 @@ data:
   path: library/string/suffix-array.hpp
   requiredBy: []
   timestamp: '2021-07-24 22:46:46-04:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/yosupo/yosupo-suffixarray-logarithm.test.cpp
+  - verify/yosupo/yosupo-suffixarray-logarithmic.test.cpp
 documentation_of: library/string/suffix-array.hpp
 layout: document
 redirect_from:

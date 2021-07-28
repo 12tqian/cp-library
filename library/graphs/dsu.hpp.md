@@ -9,12 +9,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/aizu/aizu-GRL_2_A.test.cpp
     title: verify/aizu/aizu-GRL_2_A.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-unionfind.test.cpp
     title: verify/yosupo/yosupo-unionfind.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "\nstruct DSU {\n\tstd::vector<int> e;\n\n\tvoid init(int n) {\n\t\t\
@@ -37,7 +37,7 @@ data:
   requiredBy:
   - library/graphs/kruskal.hpp
   timestamp: '2021-07-24 19:40:07-04:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/aizu/aizu-GRL_2_A.test.cpp
   - verify/yosupo/yosupo-unionfind.test.cpp

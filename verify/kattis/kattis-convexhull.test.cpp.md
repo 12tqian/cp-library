@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
   - icon: ':heavy_check_mark:'
     path: library/geometry/convex-hull.hpp
     title: library/geometry/convex-hull.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/geometry/point.hpp
     title: library/geometry/point.hpp
   _extendedRequiredBy: []
