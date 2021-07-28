@@ -4,8 +4,8 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/twosat.test.cpp
-    title: test/twosat.test.cpp
+    path: verify/atcoder/atcoder-abc210_f.test.cpp
+    title: verify/atcoder/atcoder-abc210_f.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -76,7 +76,7 @@ data:
   timestamp: '2021-07-24 19:40:07-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/twosat.test.cpp
+  - verify/atcoder/atcoder-abc210_f.test.cpp
 documentation_of: library/graphs/two-sat.hpp
 layout: document
 redirect_from:

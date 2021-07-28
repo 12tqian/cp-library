@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/graphs/dsu.hpp
     title: library/graphs/dsu.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/kruskal.test.cpp
-    title: test/kruskal.test.cpp
+    path: verify/aizu/aizu-GRL_2_A.test.cpp
+    title: verify/aizu/aizu-GRL_2_A.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -39,7 +39,7 @@ data:
   timestamp: '2021-07-25 00:45:08-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/kruskal.test.cpp
+  - verify/aizu/aizu-GRL_2_A.test.cpp
 documentation_of: library/graphs/kruskal.hpp
 layout: document
 redirect_from:

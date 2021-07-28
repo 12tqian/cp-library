@@ -4,8 +4,8 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/hungarian.test.cpp
-    title: test/hungarian.test.cpp
+    path: verify/aizu/aizu-1163.test.cpp
+    title: verify/aizu/aizu-1163.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -64,7 +64,7 @@ data:
   timestamp: '2021-07-25 00:42:29-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/hungarian.test.cpp
+  - verify/aizu/aizu-1163.test.cpp
 documentation_of: library/graphs/flows/hungarian.hpp
 layout: document
 redirect_from:

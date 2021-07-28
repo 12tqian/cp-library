@@ -4,8 +4,8 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/bellman-ford.test.cpp
-    title: test/bellman-ford.test.cpp
+    path: verify/aizu/aizu-GRL_1_B.test.cpp
+    title: verify/aizu/aizu-GRL_1_B.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -77,7 +77,7 @@ data:
   timestamp: '2021-07-24 21:57:36-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/bellman-ford.test.cpp
+  - verify/aizu/aizu-GRL_1_B.test.cpp
 documentation_of: library/graphs/bellman-ford.hpp
 layout: document
 redirect_from:

@@ -4,8 +4,8 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/simplex.test.cpp
-    title: test/simplex.test.cpp
+    path: verify/kattis/kattis-cheeseifyouplease.test.cpp
+    title: verify/kattis/kattis-cheeseifyouplease.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -96,7 +96,7 @@ data:
   timestamp: '2021-07-24 22:46:46-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/simplex.test.cpp
+  - verify/kattis/kattis-cheeseifyouplease.test.cpp
 documentation_of: library/numerical/simplex.hpp
 layout: document
 redirect_from:

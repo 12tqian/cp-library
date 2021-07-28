@@ -7,17 +7,17 @@ data:
     title: library/numerical/fast-fourier-transform.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/affine-segment-tree.test.cpp
-    title: test/affine-segment-tree.test.cpp
+    path: verify/yosupo/yosupo-convolution_mod_1000000007-fast-fourier-transform.test.cpp
+    title: verify/yosupo/yosupo-convolution_mod_1000000007-fast-fourier-transform.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/fast-fourier-transform.test.cpp
-    title: test/fast-fourier-transform.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/karatsuba.test.cpp
-    title: test/karatsuba.test.cpp
-  _isVerificationFailed: false
+    path: verify/yosupo/yosupo-convolution_mod_1000000007-karatsuba.test.cpp
+    title: verify/yosupo/yosupo-convolution_mod_1000000007-karatsuba.test.cpp
+  - icon: ':x:'
+    path: verify/yosupo/yosupo-range_affine_range_sum.test.cpp
+    title: verify/yosupo/yosupo-range_affine_range_sum.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "\n// 5 is a root of both mods\ntemplate <int MOD, int RT> struct Mint\
@@ -80,11 +80,11 @@ data:
   requiredBy:
   - library/numerical/fast-fourier-transform.hpp
   timestamp: '2021-07-25 14:11:17-04:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
-  - test/karatsuba.test.cpp
-  - test/fast-fourier-transform.test.cpp
-  - test/affine-segment-tree.test.cpp
+  - verify/yosupo/yosupo-range_affine_range_sum.test.cpp
+  - verify/yosupo/yosupo-convolution_mod_1000000007-fast-fourier-transform.test.cpp
+  - verify/yosupo/yosupo-convolution_mod_1000000007-karatsuba.test.cpp
 documentation_of: library/numerical/mod-int2.hpp
 layout: document
 redirect_from:

@@ -4,8 +4,8 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/monotonic-convex-hull.test.cpp
-    title: test/monotonic-convex-hull.test.cpp
+    path: verify/codeforces/codeforces-319C.test.cpp
+    title: verify/codeforces/codeforces-319C.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -64,7 +64,7 @@ data:
   timestamp: '2021-07-24 21:49:44-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/monotonic-convex-hull.test.cpp
+  - verify/codeforces/codeforces-319C.test.cpp
 documentation_of: library/dynamic-programming/monotonic-convex-hull.hpp
 layout: document
 redirect_from:

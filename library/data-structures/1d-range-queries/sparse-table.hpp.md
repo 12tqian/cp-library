@@ -2,25 +2,25 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/graphs/lca-rmq.hpp
     title: library/graphs/lca-rmq.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/string/suffix-array.hpp
     title: library/string/suffix-array.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/codeforces/codeforces-1074F.test.cpp
-    title: test/codeforces/codeforces-1074F.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/lca-rmq.test.cpp
-    title: test/lca-rmq.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/suffix-array.test.cpp
-    title: test/suffix-array.test.cpp
-  _isVerificationFailed: false
+    path: verify/codeforces/codeforces-1074F.test.cpp
+    title: verify/codeforces/codeforces-1074F.test.cpp
+  - icon: ':x:'
+    path: verify/yosupo/yosupo-lca-lca-rmq.test.cpp
+    title: verify/yosupo/yosupo-lca-lca-rmq.test.cpp
+  - icon: ':x:'
+    path: verify/yosupo/yosupo-suffixarray-logarithm.test.cpp
+    title: verify/yosupo/yosupo-suffixarray-logarithm.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "\n/**\n * This Sparse Table stores indices of things\n * For destructive\
@@ -58,11 +58,11 @@ data:
   - library/graphs/lca-rmq.hpp
   - library/string/suffix-array.hpp
   timestamp: '2021-07-24 21:49:44-04:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
-  - test/lca-rmq.test.cpp
-  - test/codeforces/codeforces-1074F.test.cpp
-  - test/suffix-array.test.cpp
+  - verify/codeforces/codeforces-1074F.test.cpp
+  - verify/yosupo/yosupo-lca-lca-rmq.test.cpp
+  - verify/yosupo/yosupo-suffixarray-logarithm.test.cpp
 documentation_of: library/data-structures/1d-range-queries/sparse-table.hpp
 layout: document
 redirect_from:

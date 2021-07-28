@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/matrix.test.cpp
-    title: test/matrix.test.cpp
-  _isVerificationFailed: false
+  - icon: ':x:'
+    path: verify/kattis/kattis-equationsolver.test.cpp
+    title: verify/kattis/kattis-equationsolver.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "\nnamespace MatrixOperations {\n\ntemplate <class T> using Matrix\
@@ -104,9 +104,9 @@ data:
   path: library/numerical/matrix.hpp
   requiredBy: []
   timestamp: '2021-07-24 22:46:46-04:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
-  - test/matrix.test.cpp
+  - verify/kattis/kattis-equationsolver.test.cpp
 documentation_of: library/numerical/matrix.hpp
 layout: document
 redirect_from:

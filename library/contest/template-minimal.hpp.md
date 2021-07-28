@@ -5,154 +5,139 @@ data:
   - icon: ':warning:'
     path: library/graphs/enumerate-triangles.cpp
     title: library/graphs/enumerate-triangles.cpp
-  - icon: ':warning:'
-    path: test/2d-sparse-segment-tree.cpp
-    title: test/2d-sparse-segment-tree.cpp
-  - icon: ':warning:'
-    path: test/offline-2d-binary-indexed-tree.cpp
-    title: test/offline-2d-binary-indexed-tree.cpp
-  - icon: ':warning:'
-    path: test/offline-dynamic-connectivity.cpp
-    title: test/offline-dynamic-connectivity.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/affine-segment-tree.test.cpp
-    title: test/affine-segment-tree.test.cpp
+    path: verify/aizu/aizu-1163.test.cpp
+    title: verify/aizu/aizu-1163.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/angular-sort.test.cpp
-    title: test/angular-sort.test.cpp
+    path: verify/aizu/aizu-GRL_1_A.test.cpp
+    title: verify/aizu/aizu-GRL_1_A.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/associative-range-query.test.cpp
-    title: test/associative-range-query.test.cpp
+    path: verify/aizu/aizu-GRL_1_B.test.cpp
+    title: verify/aizu/aizu-GRL_1_B.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/basic-factor.test.cpp
-    title: test/basic-factor.test.cpp
+    path: verify/aizu/aizu-GRL_2_A.test.cpp
+    title: verify/aizu/aizu-GRL_2_A.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/bellman-ford.test.cpp
-    title: test/bellman-ford.test.cpp
+    path: verify/aizu/aizu-GRL_6_A-2.test.cpp
+    title: verify/aizu/aizu-GRL_6_A-2.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/biconnected-components.test.cpp
-    title: test/biconnected-components.test.cpp
+    path: verify/aizu/aizu-GRL_6_A.test.cpp
+    title: verify/aizu/aizu-GRL_6_A.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/codeforces/codeforces-1074F.test.cpp
-    title: test/codeforces/codeforces-1074F.test.cpp
+    path: verify/atcoder/atcoder-abc210_f.test.cpp
+    title: verify/atcoder/atcoder-abc210_f.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/convex-hull.test.cpp
-    title: test/convex-hull.test.cpp
+    path: verify/codeforces/codeforces-1074F.test.cpp
+    title: verify/codeforces/codeforces-1074F.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/counting-primes.test.cpp
-    title: test/counting-primes.test.cpp
+    path: verify/codeforces/codeforces-319C.test.cpp
+    title: verify/codeforces/codeforces-319C.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/dijkstra.test.cpp
-    title: test/dijkstra.test.cpp
+    path: verify/dmoj/dmoj-ds5.test.cpp
+    title: verify/dmoj/dmoj-ds5.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/dinic-bipartite.test.cpp
-    title: test/dinic-bipartite.test.cpp
+    path: verify/kattis/kattis-cheeseifyouplease.test.cpp
+    title: verify/kattis/kattis-cheeseifyouplease.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/dinic.test.cpp
-    title: test/dinic.test.cpp
+    path: verify/kattis/kattis-convexhull.test.cpp
+    title: verify/kattis/kattis-convexhull.test.cpp
+  - icon: ':x:'
+    path: verify/kattis/kattis-equationsolver.test.cpp
+    title: verify/kattis/kattis-equationsolver.test.cpp
+  - icon: ':x:'
+    path: verify/kattis/kattis-mincostmaxflow.test.cpp
+    title: verify/kattis/kattis-mincostmaxflow.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/dsu.test.cpp
-    title: test/dsu.test.cpp
+    path: verify/kattis/kattis-pointinpolygon.test.cpp
+    title: verify/kattis/kattis-pointinpolygon.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/factor-big.test.cpp
-    title: test/factor-big.test.cpp
+    path: verify/spoj/spoj-FACT0.test.cpp
+    title: verify/spoj/spoj-FACT0.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/fast-fourier-transform.test.cpp
-    title: test/fast-fourier-transform.test.cpp
+    path: verify/yosupo/yosupo-bipartitematching.test.cpp
+    title: verify/yosupo/yosupo-bipartitematching.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/fenwick-tree.test.cpp
-    title: test/fenwick-tree.test.cpp
+    path: verify/yosupo/yosupo-convolution_mod_1000000007-fast-fourier-transform.test.cpp
+    title: verify/yosupo/yosupo-convolution_mod_1000000007-fast-fourier-transform.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/gosper-hack.test.cpp
-    title: test/gosper-hack.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/hashing.test.cpp
-    title: test/hashing.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/heavy-light-decomposition.test.cpp
-    title: test/heavy-light-decomposition.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/hungarian.test.cpp
-    title: test/hungarian.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/implicit-lazy-segment-tree.test.cpp
-    title: test/implicit-lazy-segment-tree.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/karatsuba.test.cpp
-    title: test/karatsuba.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/kruskal.test.cpp
-    title: test/kruskal.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/lazy-segment-tree.test.cpp
-    title: test/lazy-segment-tree.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/lca-jump.test.cpp
-    title: test/lca-jump.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/lca-rmq.test.cpp
-    title: test/lca-rmq.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/li-chao-tree-offline.test.cpp
-    title: test/li-chao-tree-offline.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/li-chao-tree-online.test.cpp
-    title: test/li-chao-tree-online.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/link-cut-tree.test.cpp
-    title: test/link-cut-tree.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/manacher.test.cpp
-    title: test/manacher.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/matrix.test.cpp
-    title: test/matrix.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/min-cost-max-flow.test.cpp
-    title: test/min-cost-max-flow.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/mod-sqrt.test.cpp
-    title: test/mod-sqrt.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/monotonic-convex-hull.test.cpp
-    title: test/monotonic-convex-hull.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/point-in-polygon.test.cpp
-    title: test/point-in-polygon.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/point-update-segment-tree.test.cpp
-    title: test/point-update-segment-tree.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/push-relabel.test.cpp
-    title: test/push-relabel.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/segment-tree-beats.test.cpp
-    title: test/segment-tree-beats.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/simplex.test.cpp
-    title: test/simplex.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/sparse-segment-tree.test.cpp
-    title: test/sparse-segment-tree.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/strongly-connected-components-kosaraju.test.cpp
-    title: test/strongly-connected-components-kosaraju.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/strongly-connected-components-tarjan.test.cpp
-    title: test/strongly-connected-components-tarjan.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/suffix-array-linear.test.cpp
-    title: test/suffix-array-linear.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/suffix-array.test.cpp
-    title: test/suffix-array.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/twosat.test.cpp
-    title: test/twosat.test.cpp
-  _isVerificationFailed: false
+    path: verify/yosupo/yosupo-convolution_mod_1000000007-karatsuba.test.cpp
+    title: verify/yosupo/yosupo-convolution_mod_1000000007-karatsuba.test.cpp
+  - icon: ':x:'
+    path: verify/yosupo/yosupo-counting_primes.test.cpp
+    title: verify/yosupo/yosupo-counting_primes.test.cpp
+  - icon: ':x:'
+    path: verify/yosupo/yosupo-enumerate_palindromes.test.cpp
+    title: verify/yosupo/yosupo-enumerate_palindromes.test.cpp
+  - icon: ':x:'
+    path: verify/yosupo/yosupo-factorize.test.cpp
+    title: verify/yosupo/yosupo-factorize.test.cpp
+  - icon: ':x:'
+    path: verify/yosupo/yosupo-lca-lca-jump.test.cpp
+    title: verify/yosupo/yosupo-lca-lca-jump.test.cpp
+  - icon: ':x:'
+    path: verify/yosupo/yosupo-lca-lca-rmq.test.cpp
+    title: verify/yosupo/yosupo-lca-lca-rmq.test.cpp
+  - icon: ':x:'
+    path: verify/yosupo/yosupo-point_add_range_sum-fenwick-tree.test.cpp
+    title: verify/yosupo/yosupo-point_add_range_sum-fenwick-tree.test.cpp
+  - icon: ':x:'
+    path: verify/yosupo/yosupo-point_add_range_sum-implicit-lazy-segment-tree.test.cpp
+    title: verify/yosupo/yosupo-point_add_range_sum-implicit-lazy-segment-tree.test.cpp
+  - icon: ':x:'
+    path: verify/yosupo/yosupo-point_add_range_sum-lazy-segment-tree.test.cpp
+    title: verify/yosupo/yosupo-point_add_range_sum-lazy-segment-tree.test.cpp
+  - icon: ':x:'
+    path: verify/yosupo/yosupo-point_add_range_sum-point-update-segment-tree.test.cpp
+    title: verify/yosupo/yosupo-point_add_range_sum-point-update-segment-tree.test.cpp
+  - icon: ':x:'
+    path: verify/yosupo/yosupo-point_add_range_sum-sparse-segment-tree.test.cpp
+    title: verify/yosupo/yosupo-point_add_range_sum-sparse-segment-tree.test.cpp
+  - icon: ':x:'
+    path: verify/yosupo/yosupo-range_affine_range_sum.test.cpp
+    title: verify/yosupo/yosupo-range_affine_range_sum.test.cpp
+  - icon: ':x:'
+    path: verify/yosupo/yosupo-range_chmin_chmax_add_range_sum.test.cpp
+    title: verify/yosupo/yosupo-range_chmin_chmax_add_range_sum.test.cpp
+  - icon: ':x:'
+    path: verify/yosupo/yosupo-scc-kosaraju.test.cpp
+    title: verify/yosupo/yosupo-scc-kosaraju.test.cpp
+  - icon: ':x:'
+    path: verify/yosupo/yosupo-scc-tarjan.test.cpp
+    title: verify/yosupo/yosupo-scc-tarjan.test.cpp
+  - icon: ':x:'
+    path: verify/yosupo/yosupo-segment_add_get_min-li-chao-tree-offline.test.cpp
+    title: verify/yosupo/yosupo-segment_add_get_min-li-chao-tree-offline.test.cpp
+  - icon: ':x:'
+    path: verify/yosupo/yosupo-segment_add_get_min-li-chao-tree-online.test.cpp
+    title: verify/yosupo/yosupo-segment_add_get_min-li-chao-tree-online.test.cpp
+  - icon: ':x:'
+    path: verify/yosupo/yosupo-sort_points_by_argument.test.cpp
+    title: verify/yosupo/yosupo-sort_points_by_argument.test.cpp
+  - icon: ':x:'
+    path: verify/yosupo/yosupo-sqrt_mod.test.cpp
+    title: verify/yosupo/yosupo-sqrt_mod.test.cpp
+  - icon: ':x:'
+    path: verify/yosupo/yosupo-static_range_sum.test.cpp
+    title: verify/yosupo/yosupo-static_range_sum.test.cpp
+  - icon: ':x:'
+    path: verify/yosupo/yosupo-suffixarray-linear.test.cpp
+    title: verify/yosupo/yosupo-suffixarray-linear.test.cpp
+  - icon: ':x:'
+    path: verify/yosupo/yosupo-suffixarray-logarithm.test.cpp
+    title: verify/yosupo/yosupo-suffixarray-logarithm.test.cpp
+  - icon: ':x:'
+    path: verify/yosupo/yosupo-two_edge_connected_components.test.cpp
+    title: verify/yosupo/yosupo-two_edge_connected_components.test.cpp
+  - icon: ':x:'
+    path: verify/yosupo/yosupo-unionfind.test.cpp
+    title: verify/yosupo/yosupo-unionfind.test.cpp
+  - icon: ':x:'
+    path: verify/yosupo/yosupo-vertex_add_path_sum.test.cpp
+    title: verify/yosupo/yosupo-vertex_add_path_sum.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: '#include <algorithm>
@@ -261,58 +246,53 @@ data:
   isVerificationFile: false
   path: library/contest/template-minimal.hpp
   requiredBy:
-  - test/offline-dynamic-connectivity.cpp
-  - test/2d-sparse-segment-tree.cpp
-  - test/offline-2d-binary-indexed-tree.cpp
   - library/graphs/enumerate-triangles.cpp
   timestamp: '2021-07-24 23:00:09-04:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
-  - test/counting-primes.test.cpp
-  - test/bellman-ford.test.cpp
-  - test/monotonic-convex-hull.test.cpp
-  - test/dinic-bipartite.test.cpp
-  - test/lca-jump.test.cpp
-  - test/lca-rmq.test.cpp
-  - test/point-in-polygon.test.cpp
-  - test/implicit-lazy-segment-tree.test.cpp
-  - test/codeforces/codeforces-1074F.test.cpp
-  - test/biconnected-components.test.cpp
-  - test/manacher.test.cpp
-  - test/angular-sort.test.cpp
-  - test/factor-big.test.cpp
-  - test/push-relabel.test.cpp
-  - test/strongly-connected-components-kosaraju.test.cpp
-  - test/heavy-light-decomposition.test.cpp
-  - test/sparse-segment-tree.test.cpp
-  - test/hashing.test.cpp
-  - test/basic-factor.test.cpp
-  - test/hungarian.test.cpp
-  - test/dijkstra.test.cpp
-  - test/karatsuba.test.cpp
-  - test/min-cost-max-flow.test.cpp
-  - test/mod-sqrt.test.cpp
-  - test/fast-fourier-transform.test.cpp
-  - test/simplex.test.cpp
-  - test/lazy-segment-tree.test.cpp
-  - test/twosat.test.cpp
-  - test/kruskal.test.cpp
-  - test/dsu.test.cpp
-  - test/link-cut-tree.test.cpp
-  - test/fenwick-tree.test.cpp
-  - test/convex-hull.test.cpp
-  - test/affine-segment-tree.test.cpp
-  - test/associative-range-query.test.cpp
-  - test/strongly-connected-components-tarjan.test.cpp
-  - test/suffix-array-linear.test.cpp
-  - test/dinic.test.cpp
-  - test/point-update-segment-tree.test.cpp
-  - test/gosper-hack.test.cpp
-  - test/matrix.test.cpp
-  - test/segment-tree-beats.test.cpp
-  - test/suffix-array.test.cpp
-  - test/li-chao-tree-online.test.cpp
-  - test/li-chao-tree-offline.test.cpp
+  - verify/codeforces/codeforces-319C.test.cpp
+  - verify/codeforces/codeforces-1074F.test.cpp
+  - verify/aizu/aizu-GRL_6_A-2.test.cpp
+  - verify/aizu/aizu-GRL_1_B.test.cpp
+  - verify/aizu/aizu-1163.test.cpp
+  - verify/aizu/aizu-GRL_2_A.test.cpp
+  - verify/aizu/aizu-GRL_6_A.test.cpp
+  - verify/aizu/aizu-GRL_1_A.test.cpp
+  - verify/atcoder/atcoder-abc210_f.test.cpp
+  - verify/dmoj/dmoj-ds5.test.cpp
+  - verify/yosupo/yosupo-unionfind.test.cpp
+  - verify/yosupo/yosupo-segment_add_get_min-li-chao-tree-offline.test.cpp
+  - verify/yosupo/yosupo-point_add_range_sum-implicit-lazy-segment-tree.test.cpp
+  - verify/yosupo/yosupo-point_add_range_sum-lazy-segment-tree.test.cpp
+  - verify/yosupo/yosupo-lca-lca-jump.test.cpp
+  - verify/yosupo/yosupo-point_add_range_sum-fenwick-tree.test.cpp
+  - verify/yosupo/yosupo-lca-lca-rmq.test.cpp
+  - verify/yosupo/yosupo-scc-tarjan.test.cpp
+  - verify/yosupo/yosupo-point_add_range_sum-point-update-segment-tree.test.cpp
+  - verify/yosupo/yosupo-point_add_range_sum-sparse-segment-tree.test.cpp
+  - verify/yosupo/yosupo-counting_primes.test.cpp
+  - verify/yosupo/yosupo-range_affine_range_sum.test.cpp
+  - verify/yosupo/yosupo-convolution_mod_1000000007-fast-fourier-transform.test.cpp
+  - verify/yosupo/yosupo-enumerate_palindromes.test.cpp
+  - verify/yosupo/yosupo-bipartitematching.test.cpp
+  - verify/yosupo/yosupo-static_range_sum.test.cpp
+  - verify/yosupo/yosupo-convolution_mod_1000000007-karatsuba.test.cpp
+  - verify/yosupo/yosupo-sort_points_by_argument.test.cpp
+  - verify/yosupo/yosupo-suffixarray-linear.test.cpp
+  - verify/yosupo/yosupo-sqrt_mod.test.cpp
+  - verify/yosupo/yosupo-range_chmin_chmax_add_range_sum.test.cpp
+  - verify/yosupo/yosupo-two_edge_connected_components.test.cpp
+  - verify/yosupo/yosupo-suffixarray-logarithm.test.cpp
+  - verify/yosupo/yosupo-segment_add_get_min-li-chao-tree-online.test.cpp
+  - verify/yosupo/yosupo-factorize.test.cpp
+  - verify/yosupo/yosupo-scc-kosaraju.test.cpp
+  - verify/yosupo/yosupo-vertex_add_path_sum.test.cpp
+  - verify/kattis/kattis-pointinpolygon.test.cpp
+  - verify/kattis/kattis-equationsolver.test.cpp
+  - verify/kattis/kattis-convexhull.test.cpp
+  - verify/kattis/kattis-mincostmaxflow.test.cpp
+  - verify/kattis/kattis-cheeseifyouplease.test.cpp
+  - verify/spoj/spoj-FACT0.test.cpp
 documentation_of: library/contest/template-minimal.hpp
 layout: document
 redirect_from:

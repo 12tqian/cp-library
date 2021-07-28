@@ -4,8 +4,8 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/basic-factor.test.cpp
-    title: test/basic-factor.test.cpp
+    path: verify/spoj/spoj-FACT0.test.cpp
+    title: verify/spoj/spoj-FACT0.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -46,7 +46,7 @@ data:
   timestamp: '2021-07-24 22:46:46-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/basic-factor.test.cpp
+  - verify/spoj/spoj-FACT0.test.cpp
 documentation_of: library/number-theory/basic-factor.hpp
 layout: document
 redirect_from:

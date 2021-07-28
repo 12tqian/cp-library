@@ -4,8 +4,8 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/karatsuba.test.cpp
-    title: test/karatsuba.test.cpp
+    path: verify/yosupo/yosupo-convolution_mod_1000000007-karatsuba.test.cpp
+    title: verify/yosupo/yosupo-convolution_mod_1000000007-karatsuba.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -54,7 +54,7 @@ data:
   timestamp: '2021-07-24 22:46:46-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/karatsuba.test.cpp
+  - verify/yosupo/yosupo-convolution_mod_1000000007-karatsuba.test.cpp
 documentation_of: library/numerical/karatsuba.hpp
 layout: document
 redirect_from:

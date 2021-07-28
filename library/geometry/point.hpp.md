@@ -10,17 +10,17 @@ data:
     title: library/geometry/geometry-2d.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/angular-sort.test.cpp
-    title: test/angular-sort.test.cpp
+    path: verify/kattis/kattis-convexhull.test.cpp
+    title: verify/kattis/kattis-convexhull.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/convex-hull.test.cpp
-    title: test/convex-hull.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/point-in-polygon.test.cpp
-    title: test/point-in-polygon.test.cpp
-  _isVerificationFailed: false
+    path: verify/kattis/kattis-pointinpolygon.test.cpp
+    title: verify/kattis/kattis-pointinpolygon.test.cpp
+  - icon: ':x:'
+    path: verify/yosupo/yosupo-sort_points_by_argument.test.cpp
+    title: verify/yosupo/yosupo-sort_points_by_argument.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "\ntemplate <typename T> struct Point {\npublic:\n\tT x, y;\n\tPoint()\
@@ -140,11 +140,11 @@ data:
   - library/geometry/geometry-2d.hpp
   - library/geometry/convex-hull.hpp
   timestamp: '2021-07-24 21:53:34-04:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
-  - test/point-in-polygon.test.cpp
-  - test/angular-sort.test.cpp
-  - test/convex-hull.test.cpp
+  - verify/yosupo/yosupo-sort_points_by_argument.test.cpp
+  - verify/kattis/kattis-pointinpolygon.test.cpp
+  - verify/kattis/kattis-convexhull.test.cpp
 documentation_of: library/geometry/point.hpp
 layout: document
 redirect_from:

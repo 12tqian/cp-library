@@ -4,8 +4,8 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/push-relabel.test.cpp
-    title: test/push-relabel.test.cpp
+    path: verify/aizu/aizu-GRL_6_A-2.test.cpp
+    title: verify/aizu/aizu-GRL_6_A-2.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -96,7 +96,7 @@ data:
   timestamp: '2021-07-25 00:42:29-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/push-relabel.test.cpp
+  - verify/aizu/aizu-GRL_6_A-2.test.cpp
 documentation_of: library/graphs/flows/push-relabel.hpp
 layout: document
 redirect_from:

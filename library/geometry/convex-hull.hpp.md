@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/geometry/point.hpp
     title: library/geometry/point.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/convex-hull.test.cpp
-    title: test/convex-hull.test.cpp
+    path: verify/kattis/kattis-convexhull.test.cpp
+    title: verify/kattis/kattis-convexhull.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -110,7 +110,7 @@ data:
   timestamp: '2021-07-24 21:53:34-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/convex-hull.test.cpp
+  - verify/kattis/kattis-convexhull.test.cpp
 documentation_of: library/geometry/convex-hull.hpp
 layout: document
 redirect_from:

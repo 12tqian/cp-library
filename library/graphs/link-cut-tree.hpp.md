@@ -4,8 +4,8 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/link-cut-tree.test.cpp
-    title: test/link-cut-tree.test.cpp
+    path: verify/dmoj/dmoj-ds5.test.cpp
+    title: verify/dmoj/dmoj-ds5.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -180,7 +180,7 @@ data:
   timestamp: '2021-07-24 22:10:06-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/link-cut-tree.test.cpp
+  - verify/dmoj/dmoj-ds5.test.cpp
 documentation_of: library/graphs/link-cut-tree.hpp
 layout: document
 redirect_from:

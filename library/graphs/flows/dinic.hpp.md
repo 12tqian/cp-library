@@ -4,11 +4,11 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/dinic-bipartite.test.cpp
-    title: test/dinic-bipartite.test.cpp
+    path: verify/aizu/aizu-GRL_6_A.test.cpp
+    title: verify/aizu/aizu-GRL_6_A.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/dinic.test.cpp
-    title: test/dinic.test.cpp
+    path: verify/yosupo/yosupo-bipartitematching.test.cpp
+    title: verify/yosupo/yosupo-bipartitematching.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -67,8 +67,8 @@ data:
   timestamp: '2021-07-25 00:42:29-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/dinic-bipartite.test.cpp
-  - test/dinic.test.cpp
+  - verify/aizu/aizu-GRL_6_A.test.cpp
+  - verify/yosupo/yosupo-bipartitematching.test.cpp
 documentation_of: library/graphs/flows/dinic.hpp
 layout: document
 redirect_from:
