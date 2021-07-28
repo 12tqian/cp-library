@@ -36,5 +36,12 @@
 "verify/yosupo/yosupo-scc-tarjan.test.cpp": "2021-07-28 02:34:55 -0400",
 "verify/yosupo/yosupo-segment_add_get_min-li-chao-tree-offline.test.cpp": "2021-07-28 02:34:55 -0400",
 "verify/yosupo/yosupo-segment_add_get_min-li-chao-tree-online.test.cpp": "2021-07-28 02:34:55 -0400",
-"verify/yosupo/yosupo-sqrt_mod.test.cpp": "2021-07-28 02:34:55 -0400"
+"verify/yosupo/yosupo-sort_points_by_argument.test.cpp": "2021-07-28 03:11:41 -0400",
+"verify/yosupo/yosupo-sqrt_mod.test.cpp": "2021-07-28 02:34:55 -0400",
+"verify/yosupo/yosupo-static_range_sum.test.cpp": "2021-07-28 02:34:55 -0400",
+"verify/yosupo/yosupo-suffixarray-linear.test.cpp": "2021-07-28 02:34:55 -0400",
+"verify/yosupo/yosupo-suffixarray-logarithmic.test.cpp": "2021-07-28 03:12:53 -0400",
+"verify/yosupo/yosupo-two_edge_connected_components.test.cpp": "2021-07-28 02:34:55 -0400",
+"verify/yosupo/yosupo-unionfind.test.cpp": "2021-07-28 02:34:55 -0400",
+"verify/yosupo/yosupo-vertex_add_path_sum.test.cpp": "2021-07-28 02:34:55 -0400"
 }
