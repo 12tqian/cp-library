@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy:
-  - icon: ':warning:'
-    path: verify/unverified/offline-2d-binary-indexed-tree.cpp
-    title: verify/unverified/offline-2d-binary-indexed-tree.cpp
-  _extendedVerifiedWith: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/yosupo/yosupo-rectangle_sum.test.cpp
+    title: verify/yosupo/yosupo-rectangle_sum.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "\n/**\n * x \\in [0, sz)\n * y \\in [0, sz)\n * First do all the updates,\
@@ -31,7 +31,7 @@ data:
     \ x, int y, T t) {\n\t\tfor (y = rank(y, st[x], st[x] + cnt[x]); y <= cnt[x];\
     \ y += y & -y)\n\t\t\tbit[st[x] + y - 1] += t;\n\t}\n\n\tvoid update(int x, int\
     \ y, T t) {\n\t\tx++, y++;\n\t\tif (!mode) todo.push_back({x, y});\n\t\telse \n\
-    \t\t\tfor (; x < sz; x += x & -x)\n\t\t\t\tinner_update(x, y, t);\n\t}\n\n\tint\
+    \t\t\tfor (; x < sz; x += x & -x)\n\t\t\t\tinner_update(x, y, t);\n\t}\n\n\tT\
     \ inner_query(int x, int y) {\n\t\tT res = 0;\n\t\tfor (y = rank(y, st[x], st[x]\
     \ + cnt[x]); y; y -= y & -y)\n\t\t\tres += bit[st[x] + y - 1];\n\t\treturn res;\n\
     \t}\n\n\tT query(int x, int y) {\n\t\tx++, y++;\n\t\tassert(mode);\n\t\tT res\
@@ -59,7 +59,7 @@ data:
     \ x, int y, T t) {\n\t\tfor (y = rank(y, st[x], st[x] + cnt[x]); y <= cnt[x];\
     \ y += y & -y)\n\t\t\tbit[st[x] + y - 1] += t;\n\t}\n\n\tvoid update(int x, int\
     \ y, T t) {\n\t\tx++, y++;\n\t\tif (!mode) todo.push_back({x, y});\n\t\telse \n\
-    \t\t\tfor (; x < sz; x += x & -x)\n\t\t\t\tinner_update(x, y, t);\n\t}\n\n\tint\
+    \t\t\tfor (; x < sz; x += x & -x)\n\t\t\t\tinner_update(x, y, t);\n\t}\n\n\tT\
     \ inner_query(int x, int y) {\n\t\tT res = 0;\n\t\tfor (y = rank(y, st[x], st[x]\
     \ + cnt[x]); y; y -= y & -y)\n\t\t\tres += bit[st[x] + y - 1];\n\t\treturn res;\n\
     \t}\n\n\tT query(int x, int y) {\n\t\tx++, y++;\n\t\tassert(mode);\n\t\tT res\
@@ -70,11 +70,11 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: library/data-structures/2d-range-queries/offline-2d-binary-indexed-tree.hpp
-  requiredBy:
-  - verify/unverified/offline-2d-binary-indexed-tree.cpp
-  timestamp: '2021-07-25 00:42:29-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  requiredBy: []
+  timestamp: '2021-07-28 12:10:07-04:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/yosupo/yosupo-rectangle_sum.test.cpp
 documentation_of: library/data-structures/2d-range-queries/offline-2d-binary-indexed-tree.hpp
 layout: document
 redirect_from:

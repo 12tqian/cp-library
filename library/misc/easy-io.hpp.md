@@ -8,13 +8,13 @@ data:
   - icon: ':warning:'
     path: verify/unverified/2d-sparse-segment-tree.cpp
     title: verify/unverified/2d-sparse-segment-tree.cpp
-  - icon: ':warning:'
-    path: verify/unverified/offline-2d-binary-indexed-tree.cpp
-    title: verify/unverified/offline-2d-binary-indexed-tree.cpp
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/yosupo/yosupo-rectangle_sum.test.cpp
+    title: verify/yosupo/yosupo-rectangle_sum.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links:
     - https://nafe.es/posts/2020-02-29-is-printable/
@@ -190,11 +190,11 @@ data:
   path: library/misc/easy-io.hpp
   requiredBy:
   - verify/unverified/2d-sparse-segment-tree.cpp
-  - verify/unverified/offline-2d-binary-indexed-tree.cpp
   - library/contest/template-full.hpp
   timestamp: '2021-07-24 19:40:07-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/yosupo/yosupo-rectangle_sum.test.cpp
 documentation_of: library/misc/easy-io.hpp
 layout: document
 redirect_from:

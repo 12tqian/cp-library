@@ -7,7 +7,7 @@ data:
   - icon: ':warning:'
     path: library/data-structures/2d-range-queries/2d-sparse-segment-tree.hpp
     title: library/data-structures/2d-range-queries/2d-sparse-segment-tree.hpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: library/misc/easy-io.hpp
     title: library/misc/easy-io.hpp
   _extendedRequiredBy: []

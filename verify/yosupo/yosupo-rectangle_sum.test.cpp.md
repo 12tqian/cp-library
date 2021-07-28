@@ -4,18 +4,20 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: library/data-structures/2d-range-queries/offline-2d-binary-indexed-tree.hpp
     title: library/data-structures/2d-range-queries/offline-2d-binary-indexed-tree.hpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: library/misc/easy-io.hpp
     title: library/misc/easy-io.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
+    '*NOT_SPECIAL_COMMENTS*': ''
+    PROBLEM: https://judge.yosupo.jp/problem/rectangle_sum
     links:
     - https://judge.yosupo.jp/problem/rectangle_sum
   bundledCode: "#define PROBLEM \"https://judge.yosupo.jp/problem/rectangle_sum\"\n\
@@ -127,7 +129,7 @@ data:
     \ x, int y, T t) {\n\t\tfor (y = rank(y, st[x], st[x] + cnt[x]); y <= cnt[x];\
     \ y += y & -y)\n\t\t\tbit[st[x] + y - 1] += t;\n\t}\n\n\tvoid update(int x, int\
     \ y, T t) {\n\t\tx++, y++;\n\t\tif (!mode) todo.push_back({x, y});\n\t\telse \n\
-    \t\t\tfor (; x < sz; x += x & -x)\n\t\t\t\tinner_update(x, y, t);\n\t}\n\n\tint\
+    \t\t\tfor (; x < sz; x += x & -x)\n\t\t\t\tinner_update(x, y, t);\n\t}\n\n\tT\
     \ inner_query(int x, int y) {\n\t\tT res = 0;\n\t\tfor (y = rank(y, st[x], st[x]\
     \ + cnt[x]); y; y -= y & -y)\n\t\t\tres += bit[st[x] + y - 1];\n\t\treturn res;\n\
     \t}\n\n\tT query(int x, int y) {\n\t\tx++, y++;\n\t\tassert(mode);\n\t\tT res\
@@ -175,16 +177,16 @@ data:
   - library/contest/template-minimal.hpp
   - library/misc/easy-io.hpp
   - library/data-structures/2d-range-queries/offline-2d-binary-indexed-tree.hpp
-  isVerificationFile: false
-  path: verify/unverified/offline-2d-binary-indexed-tree.cpp
+  isVerificationFile: true
+  path: verify/yosupo/yosupo-rectangle_sum.test.cpp
   requiredBy: []
-  timestamp: '2021-07-28 02:56:26-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
+  timestamp: '2021-07-28 12:10:07-04:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: verify/unverified/offline-2d-binary-indexed-tree.cpp
+documentation_of: verify/yosupo/yosupo-rectangle_sum.test.cpp
 layout: document
 redirect_from:
-- /library/verify/unverified/offline-2d-binary-indexed-tree.cpp
-- /library/verify/unverified/offline-2d-binary-indexed-tree.cpp.html
-title: verify/unverified/offline-2d-binary-indexed-tree.cpp
+- /verify/verify/yosupo/yosupo-rectangle_sum.test.cpp
+- /verify/verify/yosupo/yosupo-rectangle_sum.test.cpp.html
+title: verify/yosupo/yosupo-rectangle_sum.test.cpp
 ---

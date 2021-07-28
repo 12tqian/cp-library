@@ -9,9 +9,6 @@ data:
     path: verify/unverified/2d-sparse-segment-tree.cpp
     title: verify/unverified/2d-sparse-segment-tree.cpp
   - icon: ':warning:'
-    path: verify/unverified/offline-2d-binary-indexed-tree.cpp
-    title: verify/unverified/offline-2d-binary-indexed-tree.cpp
-  - icon: ':warning:'
     path: verify/unverified/offline-dynamic-connectivity.cpp
     title: verify/unverified/offline-dynamic-connectivity.cpp
   _extendedVerifiedWith:
@@ -120,6 +117,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-range_chmin_chmax_add_range_sum.test.cpp
     title: verify/yosupo/yosupo-range_chmin_chmax_add_range_sum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/yosupo/yosupo-rectangle_sum.test.cpp
+    title: verify/yosupo/yosupo-rectangle_sum.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-scc-kosaraju.test.cpp
     title: verify/yosupo/yosupo-scc-kosaraju.test.cpp
@@ -269,7 +269,6 @@ data:
   requiredBy:
   - verify/unverified/offline-dynamic-connectivity.cpp
   - verify/unverified/2d-sparse-segment-tree.cpp
-  - verify/unverified/offline-2d-binary-indexed-tree.cpp
   - library/graphs/enumerate-triangles.cpp
   timestamp: '2021-07-24 23:00:09-04:00'
   verificationStatus: LIBRARY_ALL_AC
@@ -301,6 +300,7 @@ data:
   - verify/yosupo/yosupo-range_affine_range_sum.test.cpp
   - verify/yosupo/yosupo-convolution_mod_1000000007-fast-fourier-transform.test.cpp
   - verify/yosupo/yosupo-enumerate_palindromes.test.cpp
+  - verify/yosupo/yosupo-rectangle_sum.test.cpp
   - verify/yosupo/yosupo-bipartitematching.test.cpp
   - verify/yosupo/yosupo-static_range_sum.test.cpp
   - verify/yosupo/yosupo-convolution_mod_1000000007-karatsuba.test.cpp
