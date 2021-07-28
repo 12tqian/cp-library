@@ -5,9 +5,6 @@ data:
   - icon: ':warning:'
     path: library/graphs/enumerate-triangles.cpp
     title: library/graphs/enumerate-triangles.cpp
-  - icon: ':warning:'
-    path: verify/unverified/offline-dynamic-connectivity.cpp
-    title: verify/unverified/offline-dynamic-connectivity.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/aizu/aizu-1163.test.cpp
@@ -72,6 +69,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/kattis/kattis-pointinpolygon.test.cpp
     title: verify/kattis/kattis-pointinpolygon.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/spoj/spoj-DYNACON2.test.cpp
+    title: verify/spoj/spoj-DYNACON2.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/spoj/spoj-FACT0.test.cpp
     title: verify/spoj/spoj-FACT0.test.cpp
@@ -276,7 +276,6 @@ data:
   isVerificationFile: false
   path: library/contest/template-minimal.hpp
   requiredBy:
-  - verify/unverified/offline-dynamic-connectivity.cpp
   - library/graphs/enumerate-triangles.cpp
   timestamp: '2021-07-24 23:00:09-04:00'
   verificationStatus: LIBRARY_ALL_AC
@@ -333,6 +332,7 @@ data:
   - verify/kattis/kattis-mincostmaxflow.test.cpp
   - verify/kattis/kattis-cheeseifyouplease.test.cpp
   - verify/spoj/spoj-FACT0.test.cpp
+  - verify/spoj/spoj-DYNACON2.test.cpp
 documentation_of: library/contest/template-minimal.hpp
 layout: document
 redirect_from:

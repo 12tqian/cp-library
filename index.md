@@ -115,7 +115,7 @@ data:
     - icon: ':warning:'
       path: library/graphs/dsu-adjacent-intervals.hpp
       title: library/graphs/dsu-adjacent-intervals.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/graphs/dsu-rollback.hpp
       title: library/graphs/dsu-rollback.hpp
     - icon: ':heavy_check_mark:'
@@ -145,7 +145,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/graphs/link-cut-tree.hpp
       title: library/graphs/link-cut-tree.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/graphs/offline-dynamic-connectivity.hpp
       title: library/graphs/offline-dynamic-connectivity.hpp
     - icon: ':heavy_check_mark:'
@@ -266,11 +266,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/string/suffix-array.hpp
       title: library/string/suffix-array.hpp
-  - name: verify/unverified
-    pages:
-    - icon: ':warning:'
-      path: verify/unverified/offline-dynamic-connectivity.cpp
-      title: verify/unverified/offline-dynamic-connectivity.cpp
   verificationCategories:
   - name: verify/aizu
     pages:
@@ -350,6 +345,9 @@ data:
       title: verify/kattis/kattis-pointinpolygon.test.cpp
   - name: verify/spoj
     pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/spoj/spoj-DYNACON2.test.cpp
+      title: verify/spoj/spoj-DYNACON2.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/spoj/spoj-FACT0.test.cpp
       title: verify/spoj/spoj-FACT0.test.cpp

@@ -4,18 +4,20 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: library/graphs/dsu-rollback.hpp
     title: library/graphs/dsu-rollback.hpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: library/graphs/offline-dynamic-connectivity.hpp
     title: library/graphs/offline-dynamic-connectivity.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
+    '*NOT_SPECIAL_COMMENTS*': ''
+    PROBLEM: https://www.spoj.com/problems/DYNACON2/
     links:
     - https://www.spoj.com/problems/DYNACON2/
   bundledCode: "#define PROBLEM \"https://www.spoj.com/problems/DYNACON2/\"\n\n#include\
@@ -82,16 +84,16 @@ data:
   - library/contest/template-minimal.hpp
   - library/graphs/offline-dynamic-connectivity.hpp
   - library/graphs/dsu-rollback.hpp
-  isVerificationFile: false
-  path: verify/unverified/offline-dynamic-connectivity.cpp
+  isVerificationFile: true
+  path: verify/spoj/spoj-DYNACON2.test.cpp
   requiredBy: []
-  timestamp: '2021-07-28 18:32:54-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
+  timestamp: '2021-07-28 18:35:07-04:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: verify/unverified/offline-dynamic-connectivity.cpp
+documentation_of: verify/spoj/spoj-DYNACON2.test.cpp
 layout: document
 redirect_from:
-- /library/verify/unverified/offline-dynamic-connectivity.cpp
-- /library/verify/unverified/offline-dynamic-connectivity.cpp.html
-title: verify/unverified/offline-dynamic-connectivity.cpp
+- /verify/verify/spoj/spoj-DYNACON2.test.cpp
+- /verify/verify/spoj/spoj-DYNACON2.test.cpp.html
+title: verify/spoj/spoj-DYNACON2.test.cpp
 ---

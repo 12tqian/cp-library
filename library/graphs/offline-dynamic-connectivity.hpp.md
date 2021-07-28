@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: library/graphs/dsu-rollback.hpp
     title: library/graphs/dsu-rollback.hpp
-  _extendedRequiredBy:
-  - icon: ':warning:'
-    path: verify/unverified/offline-dynamic-connectivity.cpp
-    title: verify/unverified/offline-dynamic-connectivity.cpp
-  _extendedVerifiedWith: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/spoj/spoj-DYNACON2.test.cpp
+    title: verify/spoj/spoj-DYNACON2.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "\n\nstruct DSURollBack {\n\tstd::vector<int> e;\n\t\n\tvoid init(int\
@@ -61,11 +61,11 @@ data:
   - library/graphs/dsu-rollback.hpp
   isVerificationFile: false
   path: library/graphs/offline-dynamic-connectivity.hpp
-  requiredBy:
-  - verify/unverified/offline-dynamic-connectivity.cpp
+  requiredBy: []
   timestamp: '2021-07-28 18:32:54-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/spoj/spoj-DYNACON2.test.cpp
 documentation_of: library/graphs/offline-dynamic-connectivity.hpp
 layout: document
 redirect_from:
