@@ -127,8 +127,8 @@ data:
   timestamp: '2021-07-28 19:45:54-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/codeforces/codeforces-1299D.test.cpp
   - verify/codeforces/codeforces-1494F.test.cpp
+  - verify/codeforces/codeforces-1299D.test.cpp
   - verify/spoj/spoj-QTREE2.test.cpp
 documentation_of: library/contest/template-short.hpp
 layout: document

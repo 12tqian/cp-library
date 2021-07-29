@@ -93,18 +93,18 @@ data:
   isVerificationFile: false
   path: library/numerical/mod-int2.hpp
   requiredBy:
-  - library/numerical/fast-fourier-transform.hpp
   - library/numerical/polynomial.hpp
+  - library/numerical/fast-fourier-transform.hpp
   timestamp: '2021-07-25 14:11:17-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/codeforces/codeforces-869E-general-fwt.test.cpp
-  - verify/codeforces/codeforces-981G.test.cpp
-  - verify/codeforces/codeforces-869E-quadtree.test.cpp
-  - verify/yosupo/yosupo-range_affine_range_sum.test.cpp
+  - verify/yosupo/yosupo-convolution_mod_1000000007-karatsuba.test.cpp
   - verify/yosupo/yosupo-convolution_mod_1000000007-fast-fourier-transform.test.cpp
   - verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
-  - verify/yosupo/yosupo-convolution_mod_1000000007-karatsuba.test.cpp
+  - verify/yosupo/yosupo-range_affine_range_sum.test.cpp
+  - verify/codeforces/codeforces-981G.test.cpp
+  - verify/codeforces/codeforces-869E-general-fwt.test.cpp
+  - verify/codeforces/codeforces-869E-quadtree.test.cpp
 documentation_of: library/numerical/mod-int2.hpp
 layout: document
 redirect_from:

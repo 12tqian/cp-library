@@ -383,6 +383,9 @@ data:
   - name: verify/yosupo
     pages:
     - icon: ':heavy_check_mark:'
+      path: verify/yosupo/yosupo-assignment.test.cpp
+      title: verify/yosupo/yosupo-assignment.test.cpp
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-bipartitematching.test.cpp
       title: verify/yosupo/yosupo-bipartitematching.test.cpp
     - icon: ':heavy_check_mark:'

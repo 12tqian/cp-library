@@ -6,6 +6,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/aizu/aizu-1163.test.cpp
     title: verify/aizu/aizu-1163.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/yosupo/yosupo-assignment.test.cpp
+    title: verify/yosupo/yosupo-assignment.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -64,6 +67,7 @@ data:
   timestamp: '2021-07-25 00:42:29-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - verify/yosupo/yosupo-assignment.test.cpp
   - verify/aizu/aizu-1163.test.cpp
 documentation_of: library/graphs/flows/hungarian.hpp
 layout: document

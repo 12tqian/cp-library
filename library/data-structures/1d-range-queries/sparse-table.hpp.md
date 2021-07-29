@@ -58,15 +58,15 @@ data:
   isVerificationFile: false
   path: library/data-structures/1d-range-queries/sparse-table.hpp
   requiredBy:
-  - library/graphs/lca-rmq.hpp
   - library/string/suffix-array.hpp
+  - library/graphs/lca-rmq.hpp
   timestamp: '2021-07-24 21:49:44-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/codeforces/codeforces-1074F.test.cpp
-  - verify/yosupo/yosupo-lca-lca-rmq.test.cpp
   - verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
   - verify/yosupo/yosupo-suffixarray-logarithmic.test.cpp
+  - verify/yosupo/yosupo-lca-lca-rmq.test.cpp
+  - verify/codeforces/codeforces-1074F.test.cpp
 documentation_of: library/data-structures/1d-range-queries/sparse-table.hpp
 layout: document
 redirect_from:

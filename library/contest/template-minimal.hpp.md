@@ -88,6 +88,9 @@ data:
     path: verify/spoj/spoj-MMFSUNDARAM.test.cpp
     title: verify/spoj/spoj-MMFSUNDARAM.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/yosupo/yosupo-assignment.test.cpp
+    title: verify/yosupo/yosupo-assignment.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-bipartitematching.test.cpp
     title: verify/yosupo/yosupo-bipartitematching.test.cpp
   - icon: ':heavy_check_mark:'
@@ -300,64 +303,65 @@ data:
   timestamp: '2021-07-28 19:45:54-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/codeforces/codeforces-869E-general-fwt.test.cpp
-  - verify/codeforces/codeforces-981G.test.cpp
-  - verify/codeforces/codeforces-1195E.test.cpp
-  - verify/codeforces/codeforces-1553G.test.cpp
-  - verify/codeforces/codeforces-319C.test.cpp
-  - verify/codeforces/codeforces-1542E2.test.cpp
-  - verify/codeforces/codeforces-1463E.test.cpp
-  - verify/codeforces/codeforces-869E-quadtree.test.cpp
-  - verify/codeforces/codeforces-1551F.test.cpp
-  - verify/codeforces/codeforces-1074F.test.cpp
-  - verify/aizu/aizu-GRL_6_A-2.test.cpp
-  - verify/aizu/aizu-GRL_1_B.test.cpp
-  - verify/aizu/aizu-1163.test.cpp
-  - verify/aizu/aizu-GRL_2_A.test.cpp
-  - verify/aizu/aizu-GRL_6_A.test.cpp
-  - verify/aizu/aizu-GRL_1_A.test.cpp
-  - verify/atcoder/atcoder-abc210_f.test.cpp
-  - verify/dmoj/dmoj-ds5.test.cpp
-  - verify/yosupo/yosupo-unionfind.test.cpp
-  - verify/yosupo/yosupo-segment_add_get_min-li-chao-tree-offline.test.cpp
-  - verify/yosupo/yosupo-point_add_range_sum-implicit-lazy-segment-tree.test.cpp
-  - verify/yosupo/yosupo-point_add_range_sum-lazy-segment-tree.test.cpp
-  - verify/yosupo/yosupo-rectangle_sum-offline-2d-bit.test.cpp
-  - verify/yosupo/yosupo-lca-lca-jump.test.cpp
-  - verify/yosupo/yosupo-point_add_range_sum-fenwick-tree.test.cpp
-  - verify/yosupo/yosupo-point_add_range_sum-range-set-segment-tree.test.cpp
-  - verify/yosupo/yosupo-line_add_get_min.test.cpp
-  - verify/yosupo/yosupo-lca-lca-rmq.test.cpp
-  - verify/yosupo/yosupo-scc-tarjan.test.cpp
-  - verify/yosupo/yosupo-point_add_range_sum-point-update-segment-tree.test.cpp
-  - verify/yosupo/yosupo-point_add_range_sum-sparse-segment-tree.test.cpp
-  - verify/yosupo/yosupo-counting_primes.test.cpp
-  - verify/yosupo/yosupo-range_affine_range_sum.test.cpp
-  - verify/yosupo/yosupo-convolution_mod_1000000007-fast-fourier-transform.test.cpp
-  - verify/yosupo/yosupo-enumerate_palindromes.test.cpp
-  - verify/yosupo/yosupo-enumerate_triangles.test.cpp
-  - verify/yosupo/yosupo-bipartitematching.test.cpp
-  - verify/yosupo/yosupo-static_range_sum.test.cpp
   - verify/yosupo/yosupo-convolution_mod_1000000007-karatsuba.test.cpp
-  - verify/yosupo/yosupo-suffixarray-logarithmic.test.cpp
-  - verify/yosupo/yosupo-sort_points_by_argument.test.cpp
-  - verify/yosupo/yosupo-suffixarray-linear.test.cpp
-  - verify/yosupo/yosupo-sqrt_mod.test.cpp
-  - verify/yosupo/yosupo-range_chmin_chmax_add_range_sum.test.cpp
+  - verify/yosupo/yosupo-line_add_get_min.test.cpp
+  - verify/yosupo/yosupo-enumerate_triangles.test.cpp
+  - verify/yosupo/yosupo-point_add_range_sum-range-set-segment-tree.test.cpp
+  - verify/yosupo/yosupo-assignment.test.cpp
+  - verify/yosupo/yosupo-convolution_mod_1000000007-fast-fourier-transform.test.cpp
+  - verify/yosupo/yosupo-point_add_range_sum-sparse-segment-tree.test.cpp
+  - verify/yosupo/yosupo-scc-tarjan.test.cpp
   - verify/yosupo/yosupo-two_edge_connected_components.test.cpp
-  - verify/yosupo/yosupo-segment_add_get_min-li-chao-tree-online.test.cpp
-  - verify/yosupo/yosupo-factorize.test.cpp
-  - verify/yosupo/yosupo-scc-kosaraju.test.cpp
   - verify/yosupo/yosupo-vertex_add_path_sum.test.cpp
-  - verify/kattis/kattis-pointinpolygon.test.cpp
-  - verify/kattis/kattis-generalchineseremainder.test.cpp
-  - verify/kattis/kattis-equationsolver.test.cpp
-  - verify/kattis/kattis-convexhull.test.cpp
-  - verify/kattis/kattis-mincostmaxflow.test.cpp
-  - verify/kattis/kattis-cheeseifyouplease.test.cpp
+  - verify/yosupo/yosupo-point_add_range_sum-point-update-segment-tree.test.cpp
+  - verify/yosupo/yosupo-point_add_range_sum-implicit-lazy-segment-tree.test.cpp
+  - verify/yosupo/yosupo-bipartitematching.test.cpp
+  - verify/yosupo/yosupo-factorize.test.cpp
+  - verify/yosupo/yosupo-point_add_range_sum-fenwick-tree.test.cpp
+  - verify/yosupo/yosupo-point_add_range_sum-lazy-segment-tree.test.cpp
+  - verify/yosupo/yosupo-segment_add_get_min-li-chao-tree-online.test.cpp
+  - verify/yosupo/yosupo-static_range_sum.test.cpp
+  - verify/yosupo/yosupo-unionfind.test.cpp
+  - verify/yosupo/yosupo-range_chmin_chmax_add_range_sum.test.cpp
+  - verify/yosupo/yosupo-suffixarray-logarithmic.test.cpp
+  - verify/yosupo/yosupo-rectangle_sum-offline-2d-bit.test.cpp
+  - verify/yosupo/yosupo-sort_points_by_argument.test.cpp
+  - verify/yosupo/yosupo-counting_primes.test.cpp
+  - verify/yosupo/yosupo-lca-lca-rmq.test.cpp
+  - verify/yosupo/yosupo-segment_add_get_min-li-chao-tree-offline.test.cpp
+  - verify/yosupo/yosupo-range_affine_range_sum.test.cpp
+  - verify/yosupo/yosupo-scc-kosaraju.test.cpp
+  - verify/yosupo/yosupo-enumerate_palindromes.test.cpp
+  - verify/yosupo/yosupo-suffixarray-linear.test.cpp
+  - verify/yosupo/yosupo-lca-lca-jump.test.cpp
+  - verify/yosupo/yosupo-sqrt_mod.test.cpp
+  - verify/aizu/aizu-GRL_6_A-2.test.cpp
+  - verify/aizu/aizu-1163.test.cpp
+  - verify/aizu/aizu-GRL_1_B.test.cpp
+  - verify/aizu/aizu-GRL_1_A.test.cpp
+  - verify/aizu/aizu-GRL_6_A.test.cpp
+  - verify/aizu/aizu-GRL_2_A.test.cpp
+  - verify/codeforces/codeforces-981G.test.cpp
+  - verify/codeforces/codeforces-1553G.test.cpp
+  - verify/codeforces/codeforces-1551F.test.cpp
+  - verify/codeforces/codeforces-869E-general-fwt.test.cpp
+  - verify/codeforces/codeforces-1463E.test.cpp
+  - verify/codeforces/codeforces-319C.test.cpp
+  - verify/codeforces/codeforces-869E-quadtree.test.cpp
+  - verify/codeforces/codeforces-1195E.test.cpp
+  - verify/codeforces/codeforces-1074F.test.cpp
+  - verify/codeforces/codeforces-1542E2.test.cpp
+  - verify/dmoj/dmoj-ds5.test.cpp
+  - verify/atcoder/atcoder-abc210_f.test.cpp
+  - verify/spoj/spoj-MMFSUNDARAM.test.cpp
   - verify/spoj/spoj-FACT0.test.cpp
   - verify/spoj/spoj-DYNACON2.test.cpp
-  - verify/spoj/spoj-MMFSUNDARAM.test.cpp
+  - verify/kattis/kattis-equationsolver.test.cpp
+  - verify/kattis/kattis-convexhull.test.cpp
+  - verify/kattis/kattis-generalchineseremainder.test.cpp
+  - verify/kattis/kattis-pointinpolygon.test.cpp
+  - verify/kattis/kattis-cheeseifyouplease.test.cpp
+  - verify/kattis/kattis-mincostmaxflow.test.cpp
 documentation_of: library/contest/template-minimal.hpp
 layout: document
 redirect_from:

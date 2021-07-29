@@ -67,8 +67,8 @@ data:
   timestamp: '2021-07-25 00:42:29-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/aizu/aizu-GRL_6_A.test.cpp
   - verify/yosupo/yosupo-bipartitematching.test.cpp
+  - verify/aizu/aizu-GRL_6_A.test.cpp
 documentation_of: library/graphs/flows/dinic.hpp
 layout: document
 redirect_from:

@@ -251,11 +251,11 @@ data:
   timestamp: '2021-07-28 19:45:54-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/unit-test/unit-test-hashing.test.cpp
-  - verify/unit-test/unit-test-big-integer.test.cpp
-  - verify/unit-test/unit-test-fraction.test.cpp
-  - verify/unit-test/unit-test-gosper-hack.test.cpp
   - verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
+  - verify/unit-test/unit-test-hashing.test.cpp
+  - verify/unit-test/unit-test-fraction.test.cpp
+  - verify/unit-test/unit-test-big-integer.test.cpp
+  - verify/unit-test/unit-test-gosper-hack.test.cpp
 documentation_of: library/contest/template-full.hpp
 layout: document
 redirect_from:
