@@ -6,7 +6,7 @@ data:
     - icon: ':warning:'
       path: library/contest/template-full.cpp
       title: library/contest/template-full.cpp
-    - icon: ':warning:'
+    - icon: ':x:'
       path: library/contest/template-full.hpp
       title: library/contest/template-full.hpp
     - icon: ':heavy_check_mark:'
@@ -56,7 +56,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/data-structures/1d-range-queries/sparse-segment-tree.hpp
       title: library/data-structures/1d-range-queries/sparse-segment-tree.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/data-structures/1d-range-queries/sparse-table.hpp
       title: library/data-structures/1d-range-queries/sparse-table.hpp
   - name: library/data-structures/2d-range-queries
@@ -106,7 +106,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/graphs/biconnected-components.hpp
       title: library/graphs/biconnected-components.hpp
-    - icon: ':warning:'
+    - icon: ':x:'
       path: library/graphs/centroid-decomposition.hpp
       title: library/graphs/centroid-decomposition.hpp
     - icon: ':heavy_check_mark:'
@@ -139,7 +139,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/graphs/lca-jump.hpp
       title: library/graphs/lca-jump.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/graphs/lca-rmq.hpp
       title: library/graphs/lca-rmq.hpp
     - icon: ':heavy_check_mark:'
@@ -176,7 +176,7 @@ data:
       title: library/graphs/flows/push-relabel.hpp
   - name: library/misc
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/misc/easy-io.hpp
       title: library/misc/easy-io.hpp
     - icon: ':warning:'
@@ -219,7 +219,7 @@ data:
     - icon: ':warning:'
       path: library/numerical/big-integer.hpp
       title: library/numerical/big-integer.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/numerical/fast-fourier-transform.hpp
       title: library/numerical/fast-fourier-transform.hpp
     - icon: ':warning:'
@@ -234,13 +234,13 @@ data:
     - icon: ':warning:'
       path: library/numerical/mod-int.hpp
       title: library/numerical/mod-int.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/numerical/mod-int2.hpp
       title: library/numerical/mod-int2.hpp
     - icon: ':heavy_check_mark:'
       path: library/numerical/mod-operations.hpp
       title: library/numerical/mod-operations.hpp
-    - icon: ':warning:'
+    - icon: ':x:'
       path: library/numerical/polynomial.hpp
       title: library/numerical/polynomial.hpp
     - icon: ':heavy_check_mark:'
@@ -391,6 +391,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-factorize.test.cpp
       title: verify/yosupo/yosupo-factorize.test.cpp
+    - icon: ':x:'
+      path: verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
+      title: verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-lca-lca-jump.test.cpp
       title: verify/yosupo/yosupo-lca-lca-jump.test.cpp

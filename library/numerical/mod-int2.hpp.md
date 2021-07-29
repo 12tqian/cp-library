@@ -2,9 +2,12 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/numerical/fast-fourier-transform.hpp
     title: library/numerical/fast-fourier-transform.hpp
+  - icon: ':x:'
+    path: library/numerical/polynomial.hpp
+    title: library/numerical/polynomial.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/codeforces/codeforces-869E-general-fwt.test.cpp
@@ -21,12 +24,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-convolution_mod_1000000007-karatsuba.test.cpp
     title: verify/yosupo/yosupo-convolution_mod_1000000007-karatsuba.test.cpp
+  - icon: ':x:'
+    path: verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
+    title: verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-range_affine_range_sum.test.cpp
     title: verify/yosupo/yosupo-range_affine_range_sum.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "\n// 5 is a root of both mods\ntemplate <int MOD, int RT> struct Mint\
@@ -88,14 +94,16 @@ data:
   path: library/numerical/mod-int2.hpp
   requiredBy:
   - library/numerical/fast-fourier-transform.hpp
+  - library/numerical/polynomial.hpp
   timestamp: '2021-07-25 14:11:17-04:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/codeforces/codeforces-869E-general-fwt.test.cpp
   - verify/codeforces/codeforces-981G.test.cpp
   - verify/codeforces/codeforces-869E-quadtree.test.cpp
   - verify/yosupo/yosupo-range_affine_range_sum.test.cpp
   - verify/yosupo/yosupo-convolution_mod_1000000007-fast-fourier-transform.test.cpp
+  - verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
   - verify/yosupo/yosupo-convolution_mod_1000000007-karatsuba.test.cpp
 documentation_of: library/numerical/mod-int2.hpp
 layout: document

@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/graphs/lca-rmq.hpp
     title: library/graphs/lca-rmq.hpp
   - icon: ':heavy_check_mark:'
@@ -12,15 +12,18 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/codeforces/codeforces-1074F.test.cpp
     title: verify/codeforces/codeforces-1074F.test.cpp
+  - icon: ':x:'
+    path: verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
+    title: verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-lca-lca-rmq.test.cpp
     title: verify/yosupo/yosupo-lca-lca-rmq.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-suffixarray-logarithmic.test.cpp
     title: verify/yosupo/yosupo-suffixarray-logarithmic.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "\n/**\n * This Sparse Table stores indices of things\n * For destructive\
@@ -58,10 +61,11 @@ data:
   - library/graphs/lca-rmq.hpp
   - library/string/suffix-array.hpp
   timestamp: '2021-07-24 21:49:44-04:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/codeforces/codeforces-1074F.test.cpp
   - verify/yosupo/yosupo-lca-lca-rmq.test.cpp
+  - verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
   - verify/yosupo/yosupo-suffixarray-logarithmic.test.cpp
 documentation_of: library/data-structures/1d-range-queries/sparse-table.hpp
 layout: document

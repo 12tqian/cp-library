@@ -1,14 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/misc/easy-io.hpp
     title: library/misc/easy-io.hpp
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
+    title: verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "\n#pragma GCC optimize (\"O3\")\n#pragma GCC target (\"sse4\")\n\n\
@@ -234,8 +237,9 @@ data:
   path: library/contest/template-full.hpp
   requiredBy: []
   timestamp: '2021-07-28 19:45:54-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_WA
+  verifiedWith:
+  - verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
 documentation_of: library/contest/template-full.hpp
 layout: document
 redirect_from:

@@ -1,17 +1,23 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/numerical/mod-int2.hpp
     title: library/numerical/mod-int2.hpp
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':x:'
+    path: library/numerical/polynomial.hpp
+    title: library/numerical/polynomial.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-convolution_mod_1000000007-fast-fourier-transform.test.cpp
     title: verify/yosupo/yosupo-convolution_mod_1000000007-fast-fourier-transform.test.cpp
-  _isVerificationFailed: false
+  - icon: ':x:'
+    path: verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
+    title: verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "\n\n// 5 is a root of both mods\ntemplate <int MOD, int RT> struct\
@@ -100,11 +106,13 @@ data:
   - library/numerical/mod-int2.hpp
   isVerificationFile: false
   path: library/numerical/fast-fourier-transform.hpp
-  requiredBy: []
+  requiredBy:
+  - library/numerical/polynomial.hpp
   timestamp: '2021-07-25 14:11:17-04:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/yosupo/yosupo-convolution_mod_1000000007-fast-fourier-transform.test.cpp
+  - verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
 documentation_of: library/numerical/fast-fourier-transform.hpp
 layout: document
 redirect_from:
