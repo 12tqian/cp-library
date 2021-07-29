@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-rectangle_sum-offline-2d-bit.test.cpp
     title: verify/yosupo/yosupo-rectangle_sum-offline-2d-bit.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "\n/**\n * x \\in [0, sz)\n * y \\in [0, sz)\n * First do all the updates,\
@@ -72,7 +72,7 @@ data:
   path: library/data-structures/2d-range-queries/offline-2d-binary-indexed-tree.hpp
   requiredBy: []
   timestamp: '2021-07-28 12:10:07-04:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/yosupo-rectangle_sum-offline-2d-bit.test.cpp
 documentation_of: library/data-structures/2d-range-queries/offline-2d-binary-indexed-tree.hpp

@@ -2,19 +2,19 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/number-theory/counting-primes.hpp
     title: library/number-theory/counting-primes.hpp
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-counting_primes.test.cpp
     title: verify/yosupo/yosupo-counting_primes.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-point_add_range_sum-fenwick-tree.test.cpp
     title: verify/yosupo/yosupo-point_add_range_sum-fenwick-tree.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "\ntemplate <class T> struct FenwickTree {\n\tstd::vector<T> fwt;\n\
@@ -39,7 +39,7 @@ data:
   requiredBy:
   - library/number-theory/counting-primes.hpp
   timestamp: '2021-07-24 21:09:23-04:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/yosupo-point_add_range_sum-fenwick-tree.test.cpp
   - verify/yosupo/yosupo-counting_primes.test.cpp

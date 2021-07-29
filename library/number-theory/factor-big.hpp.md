@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-factorize.test.cpp
     title: verify/yosupo/yosupo-factorize.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "\nnamespace FactorBig {\n\nlong long gcd(long long _a, long long _b)\
@@ -64,7 +64,7 @@ data:
   path: library/number-theory/factor-big.hpp
   requiredBy: []
   timestamp: '2021-07-24 22:46:46-04:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/yosupo-factorize.test.cpp
 documentation_of: library/number-theory/factor-big.hpp

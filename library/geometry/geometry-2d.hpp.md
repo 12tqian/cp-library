@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/geometry/point.hpp
     title: library/geometry/point.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/kattis/kattis-pointinpolygon.test.cpp
     title: verify/kattis/kattis-pointinpolygon.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-sort_points_by_argument.test.cpp
     title: verify/yosupo/yosupo-sort_points_by_argument.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "\n\ntemplate <typename T> struct Point {\npublic:\n\tT x, y;\n\tPoint()\
@@ -157,7 +157,7 @@ data:
   path: library/geometry/geometry-2d.hpp
   requiredBy: []
   timestamp: '2021-07-24 21:53:34-04:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/yosupo-sort_points_by_argument.test.cpp
   - verify/kattis/kattis-pointinpolygon.test.cpp

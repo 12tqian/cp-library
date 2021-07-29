@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/spoj/spoj-MMFSUNDARAM.test.cpp
     title: verify/spoj/spoj-MMFSUNDARAM.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "\ntemplate <int SZ> struct Sieve {\n\tstd::bitset<SZ> pri;\n\tstd::vector<int>\
@@ -30,7 +30,7 @@ data:
   path: library/number-theory/sieve.hpp
   requiredBy: []
   timestamp: '2021-07-24 19:40:07-04:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/spoj/spoj-MMFSUNDARAM.test.cpp
 documentation_of: library/number-theory/sieve.hpp

@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/number-theory/basic-factor.hpp
     title: library/number-theory/basic-factor.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://www.spoj.com/problems/FACT0/
@@ -56,7 +56,7 @@ data:
   path: verify/spoj/spoj-FACT0.test.cpp
   requiredBy: []
   timestamp: '2021-07-28 19:45:54-04:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/spoj/spoj-FACT0.test.cpp
 layout: document

@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/data-structures/1d-range-queries/li-chao-tree-offline.hpp
     title: library/data-structures/1d-range-queries/li-chao-tree-offline.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/segment_add_get_min
@@ -90,7 +90,7 @@ data:
   path: verify/yosupo/yosupo-segment_add_get_min-li-chao-tree-offline.test.cpp
   requiredBy: []
   timestamp: '2021-07-28 19:45:54-04:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/yosupo-segment_add_get_min-li-chao-tree-offline.test.cpp
 layout: document

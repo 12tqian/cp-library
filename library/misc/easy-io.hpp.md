@@ -9,12 +9,12 @@ data:
   - icon: ':x:'
     path: verify/spoj/spoj-QTREE2.test.cpp
     title: verify/spoj/spoj-QTREE2.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-rectangle_sum-offline-2d-bit.test.cpp
     title: verify/yosupo/yosupo-rectangle_sum-offline-2d-bit.test.cpp
   _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links:
     - https://nafe.es/posts/2020-02-29-is-printable/
@@ -191,7 +191,7 @@ data:
   requiredBy:
   - library/contest/template-full.hpp
   timestamp: '2021-07-24 19:40:07-04:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/yosupo/yosupo-rectangle_sum-offline-2d-bit.test.cpp
   - verify/spoj/spoj-QTREE2.test.cpp

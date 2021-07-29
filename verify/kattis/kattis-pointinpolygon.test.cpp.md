@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/geometry/geometry-2d.hpp
     title: library/geometry/geometry-2d.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/geometry/point.hpp
     title: library/geometry/point.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://open.kattis.com/problems/pointinpolygon
@@ -148,7 +148,7 @@ data:
   path: verify/kattis/kattis-pointinpolygon.test.cpp
   requiredBy: []
   timestamp: '2021-07-28 19:45:54-04:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/kattis/kattis-pointinpolygon.test.cpp
 layout: document

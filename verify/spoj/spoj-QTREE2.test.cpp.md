@@ -7,7 +7,7 @@ data:
   - icon: ':x:'
     path: library/graphs/lca-jump-distance.hpp
     title: library/graphs/lca-jump-distance.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/misc/easy-io.hpp
     title: library/misc/easy-io.hpp
   _extendedRequiredBy: []

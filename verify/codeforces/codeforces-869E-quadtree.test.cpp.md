@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
   - icon: ':heavy_check_mark:'
     path: library/data-structures/2d-range-queries/quadtree.hpp
     title: library/data-structures/2d-range-queries/quadtree.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/numerical/mod-int2.hpp
     title: library/numerical/mod-int2.hpp
   _extendedRequiredBy: []
@@ -30,7 +30,7 @@ data:
     \ <iomanip>\n#include <list>\n#include <map>\n#include <numeric>\n#include <queue>\n\
     #include <random>\n#include <set>\n#include <stack>\n#include <string>\n#include\
     \ <unordered_map>\n#include <vector>\n\nusing namespace std;\n\n/**\n * Handles\
-    \ point update in log(n), and query in O(n) worst case\n */\n\ntemplate <class\
+    \ point update in log(n), and query in O(n) worst case \n */\n\ntemplate <class\
     \ T, int N, int M> struct QuadTree {\n\tT sm[16 * N * M];\n\n\tQuadTree() { memset(sm,\
     \ 0, sizeof(sm)); }\n\n\tvoid upd(int x, int y, T inc, int n = 1, int x1 = 0,\
     \ int y1 = 0, int x2 = N - 1, int y2 = M - 1) {\n\t\tif (x1 == x2 && y1 == y2)\
@@ -109,7 +109,7 @@ data:
   isVerificationFile: true
   path: verify/codeforces/codeforces-869E-quadtree.test.cpp
   requiredBy: []
-  timestamp: '2021-07-28 19:46:23-04:00'
+  timestamp: '2021-07-28 21:00:40-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/codeforces/codeforces-869E-quadtree.test.cpp

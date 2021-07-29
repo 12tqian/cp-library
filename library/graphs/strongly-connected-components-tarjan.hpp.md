@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-scc-tarjan.test.cpp
     title: verify/yosupo/yosupo-scc-tarjan.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "\nstruct SCC {\n\tint n, time, num_comps;\n\tstd::vector<std::vector<int>>\
@@ -42,7 +42,7 @@ data:
   path: library/graphs/strongly-connected-components-tarjan.hpp
   requiredBy: []
   timestamp: '2021-07-24 22:29:57-04:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/yosupo-scc-tarjan.test.cpp
 documentation_of: library/graphs/strongly-connected-components-tarjan.hpp

@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/spoj/spoj-FACT0.test.cpp
     title: verify/spoj/spoj-FACT0.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "\n/**\n * Factors in O(sqrt(n))\n * Divisors in O(sqrt(n))\n * phi\
@@ -44,7 +44,7 @@ data:
   path: library/number-theory/basic-factor.hpp
   requiredBy: []
   timestamp: '2021-07-24 22:46:46-04:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/spoj/spoj-FACT0.test.cpp
 documentation_of: library/number-theory/basic-factor.hpp
