@@ -1,18 +1,32 @@
 #define IGNORE "self tested"
 
-#include "../../library/contest/template-minimal.hpp"
+#include "../../library/contest/template-full.hpp"
 #include "../../library/dynamic-programming/gosper-hack.hpp"
 
-int main() {
-	int n = 4;
-	for (int sz = 1; sz <= n; sz++) {
-		long long c = (1 << sz) - 1;
-		while (c < (1 << n)) {
-			std::cout << binary(c) << std::endl; // do stuff to binary string with sz 1's
-			long long a = c & -c;
-			long long b = c + a;
-			c = (c ^ b) / 4 / a | b;
-		}
+void test_n(int n) {
+	vi res = gosper_generate(n);
+	f0r(i, sz(res) - 1) {
+		assert(__builtin_popcount(res[i]) <= __builtin_popcount(res[i + 1]));
 	}
+	sort(all(res));
+	f0r(i, (1 << n)) {
+		assert(res[i] == i);
+	}
+	assert(res.size() == (1 << n));
+}
+
+void test() {
+	const int L = 17;
+	f1r(i, 1, L) {
+		test_n(i);
+	}
+}
+
+int main() {
+	setIO("");
+	test();
+	int a, b;
+	re(a, b);
+	ps(a + b);
 	return 0;
 }

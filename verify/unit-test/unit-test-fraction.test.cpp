@@ -18,7 +18,6 @@ ld d(pi x) {
 }
 
 void test() {
-	setIO("");
 	const ld EPS = 1e-9;
 	const int T = 100;
 	auto check = [&](ld x, ld y) {
