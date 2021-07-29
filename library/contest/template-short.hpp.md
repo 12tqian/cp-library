@@ -9,6 +9,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/codeforces/codeforces-1494F.test.cpp
     title: verify/codeforces/codeforces-1494F.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/spoj/spoj-QTREE2.test.cpp
+    title: verify/spoj/spoj-QTREE2.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -126,6 +129,7 @@ data:
   verifiedWith:
   - verify/codeforces/codeforces-1299D.test.cpp
   - verify/codeforces/codeforces-1494F.test.cpp
+  - verify/spoj/spoj-QTREE2.test.cpp
 documentation_of: library/contest/template-short.hpp
 layout: document
 redirect_from:

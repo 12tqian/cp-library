@@ -7,7 +7,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/data-structures/2d-range-queries/offline-2d-binary-indexed-tree.hpp
     title: library/data-structures/2d-range-queries/offline-2d-binary-indexed-tree.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/misc/easy-io.hpp
     title: library/misc/easy-io.hpp
   _extendedRequiredBy: []

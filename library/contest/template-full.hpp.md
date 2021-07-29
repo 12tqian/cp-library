@@ -1,17 +1,14 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/misc/easy-io.hpp
     title: library/misc/easy-io.hpp
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':x:'
-    path: verify/spoj/spoj-QTREE2.test.cpp
-    title: verify/spoj/spoj-QTREE2.test.cpp
-  _isVerificationFailed: true
+  _extendedVerifiedWith: []
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     links: []
   bundledCode: "\n#pragma GCC optimize (\"O3\")\n#pragma GCC target (\"sse4\")\n\n\
@@ -237,9 +234,8 @@ data:
   path: library/contest/template-full.hpp
   requiredBy: []
   timestamp: '2021-07-28 19:45:54-04:00'
-  verificationStatus: LIBRARY_ALL_WA
-  verifiedWith:
-  - verify/spoj/spoj-QTREE2.test.cpp
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
 documentation_of: library/contest/template-full.hpp
 layout: document
 redirect_from:

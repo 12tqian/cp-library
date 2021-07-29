@@ -6,7 +6,7 @@ data:
     - icon: ':warning:'
       path: library/contest/template-full.cpp
       title: library/contest/template-full.cpp
-    - icon: ':x:'
+    - icon: ':warning:'
       path: library/contest/template-full.hpp
       title: library/contest/template-full.hpp
     - icon: ':heavy_check_mark:'
@@ -133,7 +133,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/graphs/kruskal.hpp
       title: library/graphs/kruskal.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/graphs/lca-jump-distance.hpp
       title: library/graphs/lca-jump-distance.hpp
     - icon: ':heavy_check_mark:'
@@ -176,7 +176,7 @@ data:
       title: library/graphs/flows/push-relabel.hpp
   - name: library/misc
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/misc/easy-io.hpp
       title: library/misc/easy-io.hpp
     - icon: ':warning:'
@@ -357,7 +357,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/spoj/spoj-MMFSUNDARAM.test.cpp
       title: verify/spoj/spoj-MMFSUNDARAM.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/spoj/spoj-QTREE2.test.cpp
       title: verify/spoj/spoj-QTREE2.test.cpp
   - name: verify/unit-test
