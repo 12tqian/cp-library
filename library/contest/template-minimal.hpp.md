@@ -85,9 +85,6 @@ data:
     path: verify/spoj/spoj-MMFSUNDARAM.test.cpp
     title: verify/spoj/spoj-MMFSUNDARAM.test.cpp
   - icon: ':heavy_check_mark:'
-    path: verify/unit-test/unit-test-gosper-hack.test.cpp
-    title: verify/unit-test/unit-test-gosper-hack.test.cpp
-  - icon: ':heavy_check_mark:'
     path: verify/unit-test/unit-test-hashing.test.cpp
     title: verify/unit-test/unit-test-hashing.test.cpp
   - icon: ':heavy_check_mark:'
@@ -304,7 +301,6 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/unit-test/unit-test-hashing.test.cpp
-  - verify/unit-test/unit-test-gosper-hack.test.cpp
   - verify/codeforces/codeforces-869E-general-fwt.test.cpp
   - verify/codeforces/codeforces-1195E.test.cpp
   - verify/codeforces/codeforces-1553G.test.cpp

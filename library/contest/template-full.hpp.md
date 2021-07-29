@@ -13,6 +13,9 @@ data:
     path: verify/unit-test/unit-test-fraction.test.cpp
     title: verify/unit-test/unit-test-fraction.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/unit-test/unit-test-gosper-hack.test.cpp
+    title: verify/unit-test/unit-test-gosper-hack.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
     title: verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
   _isVerificationFailed: true
@@ -247,6 +250,7 @@ data:
   verifiedWith:
   - verify/unit-test/unit-test-big-integer.test.cpp
   - verify/unit-test/unit-test-fraction.test.cpp
+  - verify/unit-test/unit-test-gosper-hack.test.cpp
   - verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
 documentation_of: library/contest/template-full.hpp
 layout: document
