@@ -9,7 +9,7 @@ using mi = Mint<998244353, 5>;
 
 int main() {
 	ios::sync_with_stdio(false);
-	cin.tie(nullptr);
+	cin.tie(nullptr); 
 	int n, q;
 	cin >> n >> q;
 	vector<IntervalUnion<int>> iu(n);
