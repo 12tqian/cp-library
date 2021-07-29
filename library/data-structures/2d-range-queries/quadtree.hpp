@@ -1,7 +1,7 @@
 #pragma once
 
 /**
- * Handles point update in log(n), and query in O(n) worst case
+ * Handles point update in log(n), and query in O(n) worst case 
  */
 
 template <class T, int N, int M> struct QuadTree {
