@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/unit-test/unit-test-template-full.test.cpp
+    title: verify/unit-test/unit-test-template-full.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links:
     - https://nafe.es/posts/2020-02-29-is-printable/
@@ -313,8 +316,9 @@ data:
   path: library/contest/template-full.cpp
   requiredBy: []
   timestamp: '2021-07-25 14:11:17-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/unit-test/unit-test-template-full.test.cpp
 documentation_of: library/contest/template-full.cpp
 layout: document
 redirect_from:

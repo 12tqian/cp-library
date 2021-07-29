@@ -1,7 +1,10 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: verify/unit-test/unit-test-template-short.cpp
+    title: verify/unit-test/unit-test-template-short.cpp
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: cpp
@@ -31,7 +34,8 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: library/contest/template-short.cpp
-  requiredBy: []
+  requiredBy:
+  - verify/unit-test/unit-test-template-short.cpp
   timestamp: '2021-07-24 19:43:32-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
