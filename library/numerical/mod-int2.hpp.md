@@ -16,6 +16,9 @@ data:
     path: verify/codeforces/codeforces-869E-quadtree.test.cpp
     title: verify/codeforces/codeforces-869E-quadtree.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/codeforces/codeforces-981G.test.cpp
+    title: verify/codeforces/codeforces-981G.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-convolution_mod_1000000007-fast-fourier-transform.test.cpp
     title: verify/yosupo/yosupo-convolution_mod_1000000007-fast-fourier-transform.test.cpp
   - icon: ':heavy_check_mark:'
@@ -96,6 +99,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/codeforces/codeforces-869E-general-fwt.test.cpp
+  - verify/codeforces/codeforces-981G.test.cpp
   - verify/codeforces/codeforces-869E-quadtree.test.cpp
   - verify/yosupo/yosupo-range_affine_range_sum.test.cpp
   - verify/yosupo/yosupo-convolution_mod_1000000007-fast-fourier-transform.test.cpp

@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/codeforces/codeforces-981G.test.cpp
+    title: verify/codeforces/codeforces-981G.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "\ntemplate <class T> struct IntervalUnion {\n\tconst T INF = std::numeric_limits<T>::max();\n\
@@ -55,15 +58,16 @@ data:
     \t}\n};"
   dependsOn: []
   isVerificationFile: false
-  path: library/graphs/interval-union.hpp
+  path: library/data-structures/1d-range-queries/interval-union.hpp
   requiredBy: []
-  timestamp: '2021-07-29 01:57:13-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
-documentation_of: library/graphs/interval-union.hpp
+  timestamp: '2021-07-29 02:02:30-04:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/codeforces/codeforces-981G.test.cpp
+documentation_of: library/data-structures/1d-range-queries/interval-union.hpp
 layout: document
 redirect_from:
-- /library/library/graphs/interval-union.hpp
-- /library/library/graphs/interval-union.hpp.html
-title: library/graphs/interval-union.hpp
+- /library/library/data-structures/1d-range-queries/interval-union.hpp
+- /library/library/data-structures/1d-range-queries/interval-union.hpp.html
+title: library/data-structures/1d-range-queries/interval-union.hpp
 ---

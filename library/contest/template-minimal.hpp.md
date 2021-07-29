@@ -55,6 +55,9 @@ data:
     path: verify/codeforces/codeforces-869E-quadtree.test.cpp
     title: verify/codeforces/codeforces-869E-quadtree.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/codeforces/codeforces-981G.test.cpp
+    title: verify/codeforces/codeforces-981G.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/dmoj/dmoj-ds5.test.cpp
     title: verify/dmoj/dmoj-ds5.test.cpp
   - icon: ':heavy_check_mark:'
@@ -302,6 +305,7 @@ data:
   verifiedWith:
   - verify/unit-test/unit-test-hashing.test.cpp
   - verify/codeforces/codeforces-869E-general-fwt.test.cpp
+  - verify/codeforces/codeforces-981G.test.cpp
   - verify/codeforces/codeforces-1195E.test.cpp
   - verify/codeforces/codeforces-1553G.test.cpp
   - verify/codeforces/codeforces-319C.test.cpp

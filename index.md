@@ -33,6 +33,9 @@ data:
       path: library/data-structures/1d-range-queries/implicit-lazy-segment-tree.hpp
       title: library/data-structures/1d-range-queries/implicit-lazy-segment-tree.hpp
     - icon: ':heavy_check_mark:'
+      path: library/data-structures/1d-range-queries/interval-union.hpp
+      title: library/data-structures/1d-range-queries/interval-union.hpp
+    - icon: ':heavy_check_mark:'
       path: library/data-structures/1d-range-queries/lazy-segment-tree.hpp
       title: library/data-structures/1d-range-queries/lazy-segment-tree.hpp
     - icon: ':heavy_check_mark:'
@@ -124,9 +127,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/graphs/heavy-light-decomposition.hpp
       title: library/graphs/heavy-light-decomposition.hpp
-    - icon: ':warning:'
-      path: library/graphs/interval-union.hpp
-      title: library/graphs/interval-union.hpp
     - icon: ':heavy_check_mark:'
       path: library/graphs/kruskal.hpp
       title: library/graphs/kruskal.hpp
@@ -318,7 +318,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/codeforces/codeforces-869E-quadtree.test.cpp
       title: verify/codeforces/codeforces-869E-quadtree.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/codeforces/codeforces-981G.test.cpp
       title: verify/codeforces/codeforces-981G.test.cpp
   - name: verify/dmoj
