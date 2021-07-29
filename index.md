@@ -109,9 +109,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/graphs/dijkstra.hpp
       title: library/graphs/dijkstra.hpp
-    - icon: ':warning:'
-      path: library/graphs/dsu-adjacent-intervals.hpp
-      title: library/graphs/dsu-adjacent-intervals.hpp
     - icon: ':heavy_check_mark:'
       path: library/graphs/dsu-rollback.hpp
       title: library/graphs/dsu-rollback.hpp
@@ -127,6 +124,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/graphs/heavy-light-decomposition.hpp
       title: library/graphs/heavy-light-decomposition.hpp
+    - icon: ':warning:'
+      path: library/graphs/interval-union.hpp
+      title: library/graphs/interval-union.hpp
     - icon: ':heavy_check_mark:'
       path: library/graphs/kruskal.hpp
       title: library/graphs/kruskal.hpp
