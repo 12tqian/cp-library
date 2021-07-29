@@ -188,28 +188,24 @@ data:
     \t\textend(len);\n\t\treturn pre[r + 1] - pows[len] * pre[l];\n\t}\n};\n\n} //\
     \ Hashing\n\nstring random_string(int n) {\n\tstring s;\n\tf0r(i, n) {\n\t\ts\
     \ += (char)((rng() % 26) + 'a');\n\t}\n\treturn s;\n}\n\nvoid test() {\n\tusing\
-    \ namespace Hashing;\n\tHashRange H;\n\tconst int N = 100;\n\tstring s = random_string(N);\n\
+    \ namespace Hashing;\n\tHashRange H;\n\tconst int N = 200;\n\tstring s = random_string(N);\n\
     \tH.add(s);\n\tf0r(i, N) {\n\t\tf1r(j, i + 1, N) {\n\t\t\tmi x = 0;\n\t\t\tmi\
-    \ y = 0;\n\t\t\tf1r(k, i, j + 1) {\n\t\t\t\tx += s[i] * pow(mi(base[0]), k - i);\n\
-    \t\t\t\ty += s[i] * pow(mi(base[1]), k - i);\n\t\t\t}\n\t\t\tarray<int, 2> tmp\
-    \ = {x.val, y.val};\n\t\t\tassert(tmp == H.hash(i, j));\n\t\t}\n\t}\n\tfor (int\
-    \ i = 0; i < 6; i++) \n\t\tfor (int j = i; j < 6; j++) {\n\t\t\tauto val = H.hash(i,\
-    \ j);\n\t\t\tcout << i << \" \" << j << \" \" << val[0] << \" \" << val[1] <<\
-    \ '\\n';\n\t\t}\n}\n\nint main() {\n\tsetIO(\"\");\n\tint a, b;\n\tre(a, b);\n\
-    \tps(a + b);\n\treturn 0;\n}\n"
+    \ y = 0;\n\t\t\tf1r(k, i, j + 1) {\n\t\t\t\tx += s[k] * pow(mi(base[0]), j - k);\n\
+    \t\t\t\ty += s[k] * pow(mi(base[1]), j - k);\n\t\t\t}\n\t\t\tarray<int, 2> tmp\
+    \ = {x.val, y.val};\n\t\t\tassert(tmp == H.hash(i, j));\n\t\t}\n\t}\n}\n\nint\
+    \ main() {\n\tsetIO(\"\");\n\ttest();\n\tint a, b;\n\tre(a, b);\n\tps(a + b);\n\
+    \treturn 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/aplusb\"\n\n#include \"\
     ../../library/contest/template-full.hpp\"\n#include \"../../library/string/hashing.hpp\"\
     \n\nstring random_string(int n) {\n\tstring s;\n\tf0r(i, n) {\n\t\ts += (char)((rng()\
     \ % 26) + 'a');\n\t}\n\treturn s;\n}\n\nvoid test() {\n\tusing namespace Hashing;\n\
-    \tHashRange H;\n\tconst int N = 100;\n\tstring s = random_string(N);\n\tH.add(s);\n\
+    \tHashRange H;\n\tconst int N = 200;\n\tstring s = random_string(N);\n\tH.add(s);\n\
     \tf0r(i, N) {\n\t\tf1r(j, i + 1, N) {\n\t\t\tmi x = 0;\n\t\t\tmi y = 0;\n\t\t\t\
-    f1r(k, i, j + 1) {\n\t\t\t\tx += s[i] * pow(mi(base[0]), k - i);\n\t\t\t\ty +=\
-    \ s[i] * pow(mi(base[1]), k - i);\n\t\t\t}\n\t\t\tarray<int, 2> tmp = {x.val,\
-    \ y.val};\n\t\t\tassert(tmp == H.hash(i, j));\n\t\t}\n\t}\n\tfor (int i = 0; i\
-    \ < 6; i++) \n\t\tfor (int j = i; j < 6; j++) {\n\t\t\tauto val = H.hash(i, j);\n\
-    \t\t\tcout << i << \" \" << j << \" \" << val[0] << \" \" << val[1] << '\\n';\n\
-    \t\t}\n}\n\nint main() {\n\tsetIO(\"\");\n\tint a, b;\n\tre(a, b);\n\tps(a + b);\n\
-    \treturn 0;\n}"
+    f1r(k, i, j + 1) {\n\t\t\t\tx += s[k] * pow(mi(base[0]), j - k);\n\t\t\t\ty +=\
+    \ s[k] * pow(mi(base[1]), j - k);\n\t\t\t}\n\t\t\tarray<int, 2> tmp = {x.val,\
+    \ y.val};\n\t\t\tassert(tmp == H.hash(i, j));\n\t\t}\n\t}\n}\n\nint main() {\n\
+    \tsetIO(\"\");\n\ttest();\n\tint a, b;\n\tre(a, b);\n\tps(a + b);\n\treturn 0;\n\
+    }"
   dependsOn:
   - library/contest/template-full.hpp
   - library/misc/easy-io.hpp
@@ -217,7 +213,7 @@ data:
   isVerificationFile: true
   path: verify/unit-test/unit-test-hashing.test.cpp
   requiredBy: []
-  timestamp: '2021-07-29 02:11:21-04:00'
+  timestamp: '2021-07-29 02:17:11-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/unit-test/unit-test-hashing.test.cpp
