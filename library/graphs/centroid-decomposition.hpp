@@ -54,10 +54,12 @@ struct CentroidDecomposition {
 		int c = get_centroid(src);
 		vis[c] = true;
 		parent[c] = par;
+		if (par != -1) {
+			cg[par].push_back(c);
+		}
 		for (int nxt : g[c]) {
 			if (vis[nxt]) 
 				continue;
-			cg[c].push_back(nxt);
 			build_dfs(nxt, c);
 		}
 		return c;

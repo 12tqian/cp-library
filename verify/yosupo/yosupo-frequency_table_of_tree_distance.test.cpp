@@ -28,14 +28,20 @@ int main() {
 	lca.gen();
 	cd.build();
 	vl ans(n);
-	function<vl(int)> dfs = [&](int u) { // return how many at dist x
+	function<vi(int)> dfs = [&](int u) { // return how many at dist x
+		vi verts;
 		vector<vl> polys;
 		polys.pb({1});
-		dbg(u);
+		vl tmp;
 		each(v, cd.cg[u]) {	
 			auto res = dfs(v);
-			res.insert(res.begin(), 0);
-			polys.pb(res);
+			each(x, res) verts.pb(x);
+			tmp.assign(res.size() + 1, 0);
+			each(x, res) {
+				++tmp[lca.dist(x, u)];
+			}
+			while (tmp.back() == 0) tmp.pop_back();
+			polys.pb(tmp);
 		}	
 		vl sum;
 		each(x, polys) sum += x;
@@ -45,7 +51,8 @@ int main() {
 		f0r(i, sz(res)) {
 			ans[i] += res[i];
 		}
-		return sum;
+		verts.pb(u);
+		return verts;
 	};
 	dfs(cd.root);
 	f1r(i, 1, n) {
