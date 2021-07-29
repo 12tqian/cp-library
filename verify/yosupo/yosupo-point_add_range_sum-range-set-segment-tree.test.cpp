@@ -4,8 +4,8 @@
 #include "../../library/data-structures/1d-range-queries/range-set-segment-tree.hpp"
 #include "../../library/misc/fast-io.hpp"
 
-FastIO::Scanner sc;
-FastIO::Printer pr;
+FastIO::Scanner sc(stdin);
+FastIO::Printer pr(stdout);
 
 int main() {
 	using namespace std;
