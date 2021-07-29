@@ -5,7 +5,7 @@
 
 const int L = 1e2;
 
-pi random() {
+pi random_pair() {
 	return mp(rng() % L + 1, rng() % L + 1);
 }
 
@@ -24,8 +24,8 @@ void test() {
 		assert(abs(x - y) < EPS);
 	};
 	f0r(t, T) {
-		auto a = random();
-		auto b = random();
+		auto a = random_pair();
+		auto b = random_pair();
 		check((frac_convert(a) + frac_convert(b)).eval(), decimal_convert(a) + decimal_convert(b));
 		check((frac_convert(a) * frac_convert(b)).eval(), decimal_convert(a) * decimal_convert(b));
 		check((frac_convert(a) - frac_convert(b)).eval(), decimal_convert(a) - decimal_convert(b));
