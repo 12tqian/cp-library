@@ -9,10 +9,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/aizu/aizu-GRL_2_A.test.cpp
     title: verify/aizu/aizu-GRL_2_A.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/codeforces/codeforces-1463E.test.cpp
     title: verify/codeforces/codeforces-1463E.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/codeforces/codeforces-1494F.test.cpp
     title: verify/codeforces/codeforces-1494F.test.cpp
   - icon: ':x:'

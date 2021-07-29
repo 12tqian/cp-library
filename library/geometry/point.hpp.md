@@ -2,14 +2,14 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/geometry/convex-hull.hpp
     title: library/geometry/convex-hull.hpp
   - icon: ':x:'
     path: library/geometry/geometry-2d.hpp
     title: library/geometry/geometry-2d.hpp
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/kattis/kattis-convexhull.test.cpp
     title: verify/kattis/kattis-convexhull.test.cpp
   - icon: ':x:'
@@ -20,7 +20,7 @@ data:
     title: verify/yosupo/yosupo-sort_points_by_argument.test.cpp
   _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "\ntemplate <typename T> struct Point {\npublic:\n\tT x, y;\n\tPoint()\
@@ -140,7 +140,7 @@ data:
   - library/geometry/geometry-2d.hpp
   - library/geometry/convex-hull.hpp
   timestamp: '2021-07-24 21:53:34-04:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/yosupo/yosupo-sort_points_by_argument.test.cpp
   - verify/kattis/kattis-pointinpolygon.test.cpp

@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/codeforces/codeforces-1299D.test.cpp
+    title: verify/codeforces/codeforces-1299D.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "\nnamespace ModOperations {\n\nconst int MOD = 1e9 + 7;\n\nint mpow(long\
@@ -38,8 +41,9 @@ data:
   path: library/numerical/mod-operations.hpp
   requiredBy: []
   timestamp: '2021-07-24 22:46:46-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/codeforces/codeforces-1299D.test.cpp
 documentation_of: library/numerical/mod-operations.hpp
 layout: document
 redirect_from:

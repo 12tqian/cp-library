@@ -4,10 +4,10 @@ data:
   - icon: ':question:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/data-structures/1d-range-queries/affine-segment-tree.hpp
     title: library/data-structures/1d-range-queries/affine-segment-tree.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/numerical/mod-int2.hpp
     title: library/numerical/mod-int2.hpp
   _extendedRequiredBy: []

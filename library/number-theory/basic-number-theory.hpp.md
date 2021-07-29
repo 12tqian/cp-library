@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/kattis/kattis-generalchineseremainder.test.cpp
     title: verify/kattis/kattis-generalchineseremainder.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "\nnamespace BasicNumberTheory { \n\n// find solution to a * x + b\
@@ -76,7 +76,7 @@ data:
   path: library/number-theory/basic-number-theory.hpp
   requiredBy: []
   timestamp: '2021-07-28 03:36:42-04:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/kattis/kattis-generalchineseremainder.test.cpp
 documentation_of: library/number-theory/basic-number-theory.hpp

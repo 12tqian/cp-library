@@ -15,12 +15,12 @@ data:
     - icon: ':warning:'
       path: library/contest/template-short.cpp
       title: library/contest/template-short.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/contest/template-short.hpp
       title: library/contest/template-short.hpp
   - name: library/data-structures/1d-range-queries
     pages:
-    - icon: ':x:'
+    - icon: ':question:'
       path: library/data-structures/1d-range-queries/affine-segment-tree.hpp
       title: library/data-structures/1d-range-queries/affine-segment-tree.hpp
     - icon: ':x:'
@@ -32,7 +32,7 @@ data:
     - icon: ':x:'
       path: library/data-structures/1d-range-queries/implicit-lazy-segment-tree.hpp
       title: library/data-structures/1d-range-queries/implicit-lazy-segment-tree.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/data-structures/1d-range-queries/interval-union.hpp
       title: library/data-structures/1d-range-queries/interval-union.hpp
     - icon: ':x:'
@@ -61,13 +61,13 @@ data:
       title: library/data-structures/1d-range-queries/sparse-table.hpp
   - name: library/data-structures/2d-range-queries
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/data-structures/2d-range-queries/general-fenwick-tree.hpp
       title: library/data-structures/2d-range-queries/general-fenwick-tree.hpp
     - icon: ':x:'
       path: library/data-structures/2d-range-queries/offline-2d-binary-indexed-tree.hpp
       title: library/data-structures/2d-range-queries/offline-2d-binary-indexed-tree.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/data-structures/2d-range-queries/quadtree.hpp
       title: library/data-structures/2d-range-queries/quadtree.hpp
   - name: library/dynamic-programming
@@ -84,18 +84,18 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/dynamic-programming/min-deque.hpp
       title: library/dynamic-programming/min-deque.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/dynamic-programming/monotonic-convex-hull.hpp
       title: library/dynamic-programming/monotonic-convex-hull.hpp
   - name: library/geometry
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/geometry/convex-hull.hpp
       title: library/geometry/convex-hull.hpp
     - icon: ':x:'
       path: library/geometry/geometry-2d.hpp
       title: library/geometry/geometry-2d.hpp
-    - icon: ':x:'
+    - icon: ':question:'
       path: library/geometry/point.hpp
       title: library/geometry/point.hpp
   - name: library/graphs
@@ -124,7 +124,7 @@ data:
     - icon: ':x:'
       path: library/graphs/enumerate-triangles.cpp
       title: library/graphs/enumerate-triangles.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/graphs/euler-path.hpp
       title: library/graphs/euler-path.hpp
     - icon: ':x:'
@@ -142,7 +142,7 @@ data:
     - icon: ':question:'
       path: library/graphs/lca-rmq.hpp
       title: library/graphs/lca-rmq.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/graphs/link-cut-tree.hpp
       title: library/graphs/link-cut-tree.hpp
     - icon: ':x:'
@@ -154,7 +154,7 @@ data:
     - icon: ':x:'
       path: library/graphs/strongly-connected-components-tarjan.hpp
       title: library/graphs/strongly-connected-components-tarjan.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/graphs/topological-sort.hpp
       title: library/graphs/topological-sort.hpp
     - icon: ':heavy_check_mark:'
@@ -188,7 +188,7 @@ data:
     - icon: ':warning:'
       path: library/misc/fast-io.hpp
       title: library/misc/fast-io.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/misc/range-vector.hpp
       title: library/misc/range-vector.hpp
   - name: library/number-theory
@@ -196,7 +196,7 @@ data:
     - icon: ':x:'
       path: library/number-theory/basic-factor.hpp
       title: library/number-theory/basic-factor.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/number-theory/basic-number-theory.hpp
       title: library/number-theory/basic-number-theory.hpp
     - icon: ':x:'
@@ -228,25 +228,25 @@ data:
     - icon: ':x:'
       path: library/numerical/karatsuba.hpp
       title: library/numerical/karatsuba.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/numerical/matrix.hpp
       title: library/numerical/matrix.hpp
     - icon: ':warning:'
       path: library/numerical/mod-int.hpp
       title: library/numerical/mod-int.hpp
-    - icon: ':x:'
+    - icon: ':question:'
       path: library/numerical/mod-int2.hpp
       title: library/numerical/mod-int2.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/numerical/mod-operations.hpp
       title: library/numerical/mod-operations.hpp
     - icon: ':warning:'
       path: library/numerical/polynomial.hpp
       title: library/numerical/polynomial.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/numerical/simplex.hpp
       title: library/numerical/simplex.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/numerical/xor-basis.hpp
       title: library/numerical/xor-basis.hpp
   - name: library/string
@@ -297,44 +297,47 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/codeforces/codeforces-1195E.test.cpp
       title: verify/codeforces/codeforces-1195E.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
+      path: verify/codeforces/codeforces-1299D.test.cpp
+      title: verify/codeforces/codeforces-1299D.test.cpp
+    - icon: ':heavy_check_mark:'
       path: verify/codeforces/codeforces-1463E.test.cpp
       title: verify/codeforces/codeforces-1463E.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/codeforces/codeforces-1494F.test.cpp
       title: verify/codeforces/codeforces-1494F.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/codeforces/codeforces-1542E2.test.cpp
       title: verify/codeforces/codeforces-1542E2.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/codeforces/codeforces-319C.test.cpp
       title: verify/codeforces/codeforces-319C.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/codeforces/codeforces-869E-general-fwt.test.cpp
       title: verify/codeforces/codeforces-869E-general-fwt.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/codeforces/codeforces-869E-quadtree.test.cpp
       title: verify/codeforces/codeforces-869E-quadtree.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/codeforces/codeforces-981G.test.cpp
       title: verify/codeforces/codeforces-981G.test.cpp
   - name: verify/dmoj
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/dmoj/dmoj-ds5.test.cpp
       title: verify/dmoj/dmoj-ds5.test.cpp
   - name: verify/kattis
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/kattis/kattis-cheeseifyouplease.test.cpp
       title: verify/kattis/kattis-cheeseifyouplease.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/kattis/kattis-convexhull.test.cpp
       title: verify/kattis/kattis-convexhull.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/kattis/kattis-equationsolver.test.cpp
       title: verify/kattis/kattis-equationsolver.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/kattis/kattis-generalchineseremainder.test.cpp
       title: verify/kattis/kattis-generalchineseremainder.test.cpp
     - icon: ':x:'

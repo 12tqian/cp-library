@@ -33,37 +33,37 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/codeforces/codeforces-1195E.test.cpp
     title: verify/codeforces/codeforces-1195E.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/codeforces/codeforces-1463E.test.cpp
     title: verify/codeforces/codeforces-1463E.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/codeforces/codeforces-1542E2.test.cpp
     title: verify/codeforces/codeforces-1542E2.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/codeforces/codeforces-319C.test.cpp
     title: verify/codeforces/codeforces-319C.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/codeforces/codeforces-869E-general-fwt.test.cpp
     title: verify/codeforces/codeforces-869E-general-fwt.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/codeforces/codeforces-869E-quadtree.test.cpp
     title: verify/codeforces/codeforces-869E-quadtree.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/codeforces/codeforces-981G.test.cpp
     title: verify/codeforces/codeforces-981G.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/dmoj/dmoj-ds5.test.cpp
     title: verify/dmoj/dmoj-ds5.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/kattis/kattis-cheeseifyouplease.test.cpp
     title: verify/kattis/kattis-cheeseifyouplease.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/kattis/kattis-convexhull.test.cpp
     title: verify/kattis/kattis-convexhull.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/kattis/kattis-equationsolver.test.cpp
     title: verify/kattis/kattis-equationsolver.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/kattis/kattis-generalchineseremainder.test.cpp
     title: verify/kattis/kattis-generalchineseremainder.test.cpp
   - icon: ':x:'

@@ -4,20 +4,20 @@ data:
   - icon: ':question:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/data-structures/1d-range-queries/affine-segment-tree.hpp
     title: library/data-structures/1d-range-queries/affine-segment-tree.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/data-structures/1d-range-queries/interval-union.hpp
     title: library/data-structures/1d-range-queries/interval-union.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/numerical/mod-int2.hpp
     title: library/numerical/mod-int2.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://codeforces.com/contest/981/problem/G
@@ -137,7 +137,7 @@ data:
   path: verify/codeforces/codeforces-981G.test.cpp
   requiredBy: []
   timestamp: '2021-07-28 19:45:54-04:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/codeforces/codeforces-981G.test.cpp
 layout: document
