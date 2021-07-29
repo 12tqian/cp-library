@@ -16,6 +16,9 @@ data:
     path: verify/unit-test/unit-test-gosper-hack.test.cpp
     title: verify/unit-test/unit-test-gosper-hack.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/unit-test/unit-test-hashing.test.cpp
+    title: verify/unit-test/unit-test-hashing.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
     title: verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
   _isVerificationFailed: false
@@ -248,6 +251,7 @@ data:
   timestamp: '2021-07-28 19:45:54-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - verify/unit-test/unit-test-hashing.test.cpp
   - verify/unit-test/unit-test-big-integer.test.cpp
   - verify/unit-test/unit-test-fraction.test.cpp
   - verify/unit-test/unit-test-gosper-hack.test.cpp

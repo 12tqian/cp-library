@@ -88,9 +88,6 @@ data:
     path: verify/spoj/spoj-MMFSUNDARAM.test.cpp
     title: verify/spoj/spoj-MMFSUNDARAM.test.cpp
   - icon: ':heavy_check_mark:'
-    path: verify/unit-test/unit-test-hashing.test.cpp
-    title: verify/unit-test/unit-test-hashing.test.cpp
-  - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-bipartitematching.test.cpp
     title: verify/yosupo/yosupo-bipartitematching.test.cpp
   - icon: ':heavy_check_mark:'
@@ -303,7 +300,6 @@ data:
   timestamp: '2021-07-28 19:45:54-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/unit-test/unit-test-hashing.test.cpp
   - verify/codeforces/codeforces-869E-general-fwt.test.cpp
   - verify/codeforces/codeforces-981G.test.cpp
   - verify/codeforces/codeforces-1195E.test.cpp
