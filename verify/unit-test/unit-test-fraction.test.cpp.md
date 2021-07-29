@@ -195,26 +195,30 @@ data:
     \ l * r; }\n\ttemplate <class T> friend Frac& operator/=(Frac& l, const T& r)\
     \ { return l = l / r; }\n\tfriend std::ostream& operator<<(std::ostream& os, const\
     \ Frac& a) { return os << a.n << \"/\" << a.d; }\n};\n\nconst int L = 1e2;\n\n\
-    pi random() {\n\treturn mp(rng() % L + 1, rng() % L + 1);\n}\n\nFrac f(pi x) {\n\
-    \treturn Frac(x.f, x.s);\n}\n\nld d(pi x) {\n\treturn (ld)x.f / x.s;\n}\n\nvoid\
-    \ test() {\n\tconst ld EPS = 1e-9;\n\tconst int T = 100;\n\tauto check = [&](ld\
-    \ x, ld y) {\n\t\tassert(abs(x - y) < EPS);\n\t};\n\tf0r(t, T) {\n\t\tauto a =\
-    \ random();\n\t\tauto b = random();\n\t\tcheck((f(a) + f(b)).eval(), d(a) + d(b));\n\
-    \t\tcheck((f(a) * f(b)).eval(), d(a) * d(b));\n\t\tcheck((f(a) - f(b)).eval(),\
-    \ d(a) - d(b));\n\t\tcheck((f(a) / f(b)).eval(), d(a) / d(b));\n\t}\n}\n\nint\
-    \ main() {\n\tsetIO(\"\");\n\ttest();\n\tint a, b;\n\tre(a, b);\n\tps(a + b);\n\
-    \treturn 0;\n}\n"
+    pi random() {\n\treturn mp(rng() % L + 1, rng() % L + 1);\n}\n\nFrac frac_convert(pi\
+    \ x) {\n\treturn Frac(x.f, x.s);\n}\n\nld decimal_convert(pi x) {\n\treturn (ld)x.f\
+    \ / x.s;\n}\n\nvoid test() {\n\tconst ld EPS = 1e-9;\n\tconst int T = 100;\n\t\
+    auto check = [&](ld x, ld y) {\n\t\tassert(abs(x - y) < EPS);\n\t};\n\tf0r(t,\
+    \ T) {\n\t\tauto a = random();\n\t\tauto b = random();\n\t\tcheck((frac_convert(a)\
+    \ + frac_convert(b)).eval(), decimal_convert(a) + decimal_convert(b));\n\t\tcheck((frac_convert(a)\
+    \ * frac_convert(b)).eval(), decimal_convert(a) * decimal_convert(b));\n\t\tcheck((frac_convert(a)\
+    \ - frac_convert(b)).eval(), decimal_convert(a) - decimal_convert(b));\n\t\tcheck((frac_convert(a)\
+    \ / frac_convert(b)).eval(), decimal_convert(a) / decimal_convert(b));\n\t}\n\
+    }\n\nint main() {\n\tsetIO(\"\");\n\ttest();\n\tint a, b;\n\tre(a, b);\n\tps(a\
+    \ + b);\n\treturn 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/aplusb\"\n\n#include \"\
     ../../library/contest/template-full.hpp\"\n#include \"../../library/numerical/fraction.hpp\"\
     \n\nconst int L = 1e2;\n\npi random() {\n\treturn mp(rng() % L + 1, rng() % L\
-    \ + 1);\n}\n\nFrac f(pi x) {\n\treturn Frac(x.f, x.s);\n}\n\nld d(pi x) {\n\t\
-    return (ld)x.f / x.s;\n}\n\nvoid test() {\n\tconst ld EPS = 1e-9;\n\tconst int\
-    \ T = 100;\n\tauto check = [&](ld x, ld y) {\n\t\tassert(abs(x - y) < EPS);\n\t\
-    };\n\tf0r(t, T) {\n\t\tauto a = random();\n\t\tauto b = random();\n\t\tcheck((f(a)\
-    \ + f(b)).eval(), d(a) + d(b));\n\t\tcheck((f(a) * f(b)).eval(), d(a) * d(b));\n\
-    \t\tcheck((f(a) - f(b)).eval(), d(a) - d(b));\n\t\tcheck((f(a) / f(b)).eval(),\
-    \ d(a) / d(b));\n\t}\n}\n\nint main() {\n\tsetIO(\"\");\n\ttest();\n\tint a, b;\n\
-    \tre(a, b);\n\tps(a + b);\n\treturn 0;\n}"
+    \ + 1);\n}\n\nFrac frac_convert(pi x) {\n\treturn Frac(x.f, x.s);\n}\n\nld decimal_convert(pi\
+    \ x) {\n\treturn (ld)x.f / x.s;\n}\n\nvoid test() {\n\tconst ld EPS = 1e-9;\n\t\
+    const int T = 100;\n\tauto check = [&](ld x, ld y) {\n\t\tassert(abs(x - y) <\
+    \ EPS);\n\t};\n\tf0r(t, T) {\n\t\tauto a = random();\n\t\tauto b = random();\n\
+    \t\tcheck((frac_convert(a) + frac_convert(b)).eval(), decimal_convert(a) + decimal_convert(b));\n\
+    \t\tcheck((frac_convert(a) * frac_convert(b)).eval(), decimal_convert(a) * decimal_convert(b));\n\
+    \t\tcheck((frac_convert(a) - frac_convert(b)).eval(), decimal_convert(a) - decimal_convert(b));\n\
+    \t\tcheck((frac_convert(a) / frac_convert(b)).eval(), decimal_convert(a) / decimal_convert(b));\n\
+    \t}\n}\n\nint main() {\n\tsetIO(\"\");\n\ttest();\n\tint a, b;\n\tre(a, b);\n\t\
+    ps(a + b);\n\treturn 0;\n}"
   dependsOn:
   - library/contest/template-full.hpp
   - library/misc/easy-io.hpp
@@ -222,7 +226,7 @@ data:
   isVerificationFile: true
   path: verify/unit-test/unit-test-fraction.test.cpp
   requiredBy: []
-  timestamp: '2021-07-29 01:54:19-04:00'
+  timestamp: '2021-07-29 01:58:53-04:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/unit-test/unit-test-fraction.test.cpp
