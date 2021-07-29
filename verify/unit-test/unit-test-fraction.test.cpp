@@ -9,11 +9,11 @@ pi random() {
 	return mp(rng() % L + 1, rng() % L + 1);
 }
 
-Frac f(pi x) {
+Frac frac_convert(pi x) {
 	return Frac(x.f, x.s);
 }
 
-ld d(pi x) {
+ld decimal_convert(pi x) {
 	return (ld)x.f / x.s;
 }
 
@@ -26,10 +26,10 @@ void test() {
 	f0r(t, T) {
 		auto a = random();
 		auto b = random();
-		check((f(a) + f(b)).eval(), d(a) + d(b));
-		check((f(a) * f(b)).eval(), d(a) * d(b));
-		check((f(a) - f(b)).eval(), d(a) - d(b));
-		check((f(a) / f(b)).eval(), d(a) / d(b));
+		check((frac_convert(a) + frac_convert(b)).eval(), decimal_convert(a) + decimal_convert(b));
+		check((frac_convert(a) * frac_convert(b)).eval(), decimal_convert(a) * decimal_convert(b));
+		check((frac_convert(a) - frac_convert(b)).eval(), decimal_convert(a) - decimal_convert(b));
+		check((frac_convert(a) / frac_convert(b)).eval(), decimal_convert(a) / decimal_convert(b));
 	}
 }
 
