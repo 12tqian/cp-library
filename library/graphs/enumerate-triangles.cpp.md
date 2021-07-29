@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/yosupo-enumerate_triangles.test.cpp
     title: verify/yosupo/yosupo-enumerate_triangles.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
-  bundledCode: "#include <algorithm>\n#include <array>\n#include <bitset>\n#include\
+  bundledCode: "\n#include <algorithm>\n#include <array>\n#include <bitset>\n#include\
     \ <cassert>\n#include <chrono>\n#include <cmath>\n#include <complex>\n#include\
     \ <cstdio>\n#include <cstdlib>\n#include <cstring>\n#include <ctime>\n#include\
     \ <deque>\n#include <iostream>\n#include <iomanip>\n#include <list>\n#include\
@@ -62,8 +62,8 @@ data:
   isVerificationFile: false
   path: library/graphs/enumerate-triangles.cpp
   requiredBy: []
-  timestamp: '2021-07-24 23:00:09-04:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2021-07-28 19:45:54-04:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - verify/yosupo/yosupo-enumerate_triangles.test.cpp
 documentation_of: library/graphs/enumerate-triangles.cpp

@@ -1,24 +1,24 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/misc/range-vector.hpp
     title: library/misc/range-vector.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://codeforces.com/contest/1542/problem/E2
     links:
     - https://codeforces.com/contest/1542/problem/E2
   bundledCode: "#define PROBLEM \"https://codeforces.com/contest/1542/problem/E2\"\
-    \n\n#include <algorithm>\n#include <array>\n#include <bitset>\n#include <cassert>\n\
+    \n\n\n#include <algorithm>\n#include <array>\n#include <bitset>\n#include <cassert>\n\
     #include <chrono>\n#include <cmath>\n#include <complex>\n#include <cstdio>\n#include\
     \ <cstdlib>\n#include <cstring>\n#include <ctime>\n#include <deque>\n#include\
     \ <iostream>\n#include <iomanip>\n#include <list>\n#include <map>\n#include <numeric>\n\
@@ -161,8 +161,8 @@ data:
   isVerificationFile: true
   path: verify/codeforces/codeforces-1542E2.test.cpp
   requiredBy: []
-  timestamp: '2021-07-28 03:36:42-04:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2021-07-28 19:45:54-04:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/codeforces/codeforces-1542E2.test.cpp
 layout: document

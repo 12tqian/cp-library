@@ -1,31 +1,31 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/string/hashing.hpp
     title: library/string/hashing.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     IGNORE: ''
     IGNORE_IF_CLANG: ''
     IGNORE_IF_GCC: ''
     links: []
-  bundledCode: "#define IGNORE \"self tested\"\n\n#include <algorithm>\n#include <array>\n\
-    #include <bitset>\n#include <cassert>\n#include <chrono>\n#include <cmath>\n#include\
-    \ <complex>\n#include <cstdio>\n#include <cstdlib>\n#include <cstring>\n#include\
-    \ <ctime>\n#include <deque>\n#include <iostream>\n#include <iomanip>\n#include\
-    \ <list>\n#include <map>\n#include <numeric>\n#include <queue>\n#include <random>\n\
-    #include <set>\n#include <stack>\n#include <string>\n#include <unordered_map>\n\
-    #include <vector>\n\nusing namespace std;\n\nnamespace Hashing {\n\nconst int\
-    \ MOD = 1e9 + 7;\n\nstd::mt19937 rng((uint32_t) std::chrono::steady_clock::now().time_since_epoch().count());\n\
+  bundledCode: "#define IGNORE \"self tested\"\n\n\n#include <algorithm>\n#include\
+    \ <array>\n#include <bitset>\n#include <cassert>\n#include <chrono>\n#include\
+    \ <cmath>\n#include <complex>\n#include <cstdio>\n#include <cstdlib>\n#include\
+    \ <cstring>\n#include <ctime>\n#include <deque>\n#include <iostream>\n#include\
+    \ <iomanip>\n#include <list>\n#include <map>\n#include <numeric>\n#include <queue>\n\
+    #include <random>\n#include <set>\n#include <stack>\n#include <string>\n#include\
+    \ <unordered_map>\n#include <vector>\n\nusing namespace std;\n\nnamespace Hashing\
+    \ {\n\nconst int MOD = 1e9 + 7;\n\nstd::mt19937 rng((uint32_t) std::chrono::steady_clock::now().time_since_epoch().count());\n\
     std::uniform_int_distribution<int> BDIST(0.1 * MOD, 0.9 * MOD);\nconst std::array<int,\
     \ 2> base = {BDIST(rng), BDIST(rng)};\nstd::vector<std::array<int, 2>> pows =\
     \ {{1, 1}};\n\nstd::array<int, 2> operator+(std::array<int, 2> l, std::array<int,\
@@ -58,8 +58,8 @@ data:
   isVerificationFile: true
   path: verify/unit-test/unit-test-hashing.test.cpp
   requiredBy: []
-  timestamp: '2021-07-28 02:55:20-04:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2021-07-28 19:45:54-04:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/unit-test/unit-test-hashing.test.cpp
 layout: document

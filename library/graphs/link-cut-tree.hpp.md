@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/dmoj/dmoj-ds5.test.cpp
     title: verify/dmoj/dmoj-ds5.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "\nstruct info {\n\tint sz, sum, mn, mx;\n\n\tinfo (int v) {\n\t\t\
@@ -178,7 +178,7 @@ data:
   path: library/graphs/link-cut-tree.hpp
   requiredBy: []
   timestamp: '2021-07-24 22:10:06-04:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - verify/dmoj/dmoj-ds5.test.cpp
 documentation_of: library/graphs/link-cut-tree.hpp

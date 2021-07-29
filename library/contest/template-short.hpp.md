@@ -3,15 +3,17 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/codeforces/codeforces-1494F.test.cpp
     title: verify/codeforces/codeforces-1494F.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
-  bundledCode: '#include <bits/stdc++.h>
+  bundledCode: '
+
+    #include <bits/stdc++.h>
 
 
     using namespace std;
@@ -61,7 +63,10 @@ data:
     }
 
     '
-  code: '#include <bits/stdc++.h>
+  code: '#pragma once
+
+
+    #include <bits/stdc++.h>
 
 
     using namespace std;
@@ -113,8 +118,8 @@ data:
   isVerificationFile: false
   path: library/contest/template-short.hpp
   requiredBy: []
-  timestamp: '2021-07-28 03:57:46-04:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2021-07-28 19:45:54-04:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - verify/codeforces/codeforces-1494F.test.cpp
 documentation_of: library/contest/template-short.hpp

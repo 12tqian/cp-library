@@ -1,23 +1,23 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/graphs/strongly-connected-components-tarjan.hpp
     title: library/graphs/strongly-connected-components-tarjan.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/scc
     links:
     - https://judge.yosupo.jp/problem/scc
-  bundledCode: "#define PROBLEM \"https://judge.yosupo.jp/problem/scc\"\n\n#include\
+  bundledCode: "#define PROBLEM \"https://judge.yosupo.jp/problem/scc\"\n\n\n#include\
     \ <algorithm>\n#include <array>\n#include <bitset>\n#include <cassert>\n#include\
     \ <chrono>\n#include <cmath>\n#include <complex>\n#include <cstdio>\n#include\
     \ <cstdlib>\n#include <cstring>\n#include <ctime>\n#include <deque>\n#include\
@@ -56,8 +56,8 @@ data:
   isVerificationFile: true
   path: verify/yosupo/yosupo-scc-tarjan.test.cpp
   requiredBy: []
-  timestamp: '2021-07-28 02:34:55-04:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2021-07-28 19:45:54-04:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/yosupo/yosupo-scc-tarjan.test.cpp
 layout: document

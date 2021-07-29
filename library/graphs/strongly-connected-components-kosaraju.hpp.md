@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/yosupo-scc-kosaraju.test.cpp
     title: verify/yosupo/yosupo-scc-kosaraju.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "\nstruct SCC {\n\tint n; \n\tstd::vector<std::vector<int>> g, rg,\
@@ -64,7 +64,7 @@ data:
   path: library/graphs/strongly-connected-components-kosaraju.hpp
   requiredBy: []
   timestamp: '2021-07-24 22:29:57-04:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - verify/yosupo/yosupo-scc-kosaraju.test.cpp
 documentation_of: library/graphs/strongly-connected-components-kosaraju.hpp

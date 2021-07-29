@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
   - icon: ':heavy_check_mark:'
@@ -21,7 +21,7 @@ data:
     links:
     - https://atcoder.jp/contests/abc210/tasks/abc210_f
   bundledCode: "#define PROBLEM \"https://atcoder.jp/contests/abc210/tasks/abc210_f\"\
-    \n\n#include <algorithm>\n#include <array>\n#include <bitset>\n#include <cassert>\n\
+    \n\n\n#include <algorithm>\n#include <array>\n#include <bitset>\n#include <cassert>\n\
     #include <chrono>\n#include <cmath>\n#include <complex>\n#include <cstdio>\n#include\
     \ <cstdlib>\n#include <cstring>\n#include <ctime>\n#include <deque>\n#include\
     \ <iostream>\n#include <iomanip>\n#include <list>\n#include <map>\n#include <numeric>\n\
@@ -93,7 +93,7 @@ data:
   isVerificationFile: true
   path: verify/atcoder/atcoder-abc210_f.test.cpp
   requiredBy: []
-  timestamp: '2021-07-28 02:34:55-04:00'
+  timestamp: '2021-07-28 19:45:54-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/atcoder/atcoder-abc210_f.test.cpp

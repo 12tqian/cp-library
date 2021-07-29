@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/graphs/flows/dinic.hpp
     title: library/graphs/flows/dinic.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     IGNORE: ''
@@ -20,7 +20,7 @@ data:
     links:
     - https://judge.yosupo.jp/problem/bipartitematching
   bundledCode: "#define IGNORE\n#define PROBLEM \"https://judge.yosupo.jp/problem/bipartitematching\"\
-    \n\n#include <algorithm>\n#include <array>\n#include <bitset>\n#include <cassert>\n\
+    \n\n\n#include <algorithm>\n#include <array>\n#include <bitset>\n#include <cassert>\n\
     #include <chrono>\n#include <cmath>\n#include <complex>\n#include <cstdio>\n#include\
     \ <cstdlib>\n#include <cstring>\n#include <ctime>\n#include <deque>\n#include\
     \ <iostream>\n#include <iomanip>\n#include <list>\n#include <map>\n#include <numeric>\n\
@@ -77,8 +77,8 @@ data:
   isVerificationFile: true
   path: verify/yosupo/yosupo-bipartitematching.test.cpp
   requiredBy: []
-  timestamp: '2021-07-28 02:34:55-04:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2021-07-28 19:45:54-04:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/yosupo/yosupo-bipartitematching.test.cpp
 layout: document

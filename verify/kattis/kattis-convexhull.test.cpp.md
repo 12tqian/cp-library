@@ -1,27 +1,27 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/geometry/convex-hull.hpp
     title: library/geometry/convex-hull.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/geometry/point.hpp
     title: library/geometry/point.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://open.kattis.com/problems/convexhull
     links:
     - https://open.kattis.com/problems/convexhull
   bundledCode: "#define PROBLEM \"https://open.kattis.com/problems/convexhull\"\n\n\
-    #include <algorithm>\n#include <array>\n#include <bitset>\n#include <cassert>\n\
+    \n#include <algorithm>\n#include <array>\n#include <bitset>\n#include <cassert>\n\
     #include <chrono>\n#include <cmath>\n#include <complex>\n#include <cstdio>\n#include\
     \ <cstdlib>\n#include <cstring>\n#include <ctime>\n#include <deque>\n#include\
     \ <iostream>\n#include <iomanip>\n#include <list>\n#include <map>\n#include <numeric>\n\
@@ -120,8 +120,8 @@ data:
   isVerificationFile: true
   path: verify/kattis/kattis-convexhull.test.cpp
   requiredBy: []
-  timestamp: '2021-07-28 02:34:55-04:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2021-07-28 19:45:54-04:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/kattis/kattis-convexhull.test.cpp
 layout: document

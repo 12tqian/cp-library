@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/kattis/kattis-cheeseifyouplease.test.cpp
     title: verify/kattis/kattis-cheeseifyouplease.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "\n/**\n * Maximizes c^Tx given Ax <= b, x >= 0\n * Returns -INF if\
@@ -94,7 +94,7 @@ data:
   path: library/numerical/simplex.hpp
   requiredBy: []
   timestamp: '2021-07-24 22:46:46-04:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - verify/kattis/kattis-cheeseifyouplease.test.cpp
 documentation_of: library/numerical/simplex.hpp

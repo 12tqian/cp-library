@@ -1,27 +1,27 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/contest/template-short.hpp
     title: library/contest/template-short.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/graphs/dsu.hpp
     title: library/graphs/dsu.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/graphs/euler-path.hpp
     title: library/graphs/euler-path.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://codeforces.com/contest/1494/problem/F
     links:
     - https://codeforces.com/contest/1494/problem/F
   bundledCode: "#define PROBLEM \"https://codeforces.com/contest/1494/problem/F\"\n\
-    \n#include <bits/stdc++.h>\n\nusing namespace std;\n\n#define f1r(i, a, b) for\
+    \n\n#include <bits/stdc++.h>\n\nusing namespace std;\n\n#define f1r(i, a, b) for\
     \ (int i = (a); i < (b); ++i)\n#define f0r(i, a) f1r(i, 0, a)\n#define each(t,\
     \ a) for (auto &t : a)\n\n#define mp make_pair\n#define f first\n#define s second\n\
     #define pb push_back\n#define eb emplace_back\n#define sz(x) (int)(x).size()\n\
@@ -155,8 +155,8 @@ data:
   isVerificationFile: true
   path: verify/codeforces/codeforces-1494F.test.cpp
   requiredBy: []
-  timestamp: '2021-07-28 03:57:46-04:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2021-07-28 19:45:54-04:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/codeforces/codeforces-1494F.test.cpp
 layout: document

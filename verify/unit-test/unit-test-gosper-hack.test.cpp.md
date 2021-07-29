@@ -1,31 +1,31 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/dynamic-programming/gosper-hack.hpp
     title: library/dynamic-programming/gosper-hack.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     IGNORE: ''
     IGNORE_IF_CLANG: ''
     IGNORE_IF_GCC: ''
     links: []
-  bundledCode: "#define IGNORE \"self tested\"\n\n#include <algorithm>\n#include <array>\n\
-    #include <bitset>\n#include <cassert>\n#include <chrono>\n#include <cmath>\n#include\
-    \ <complex>\n#include <cstdio>\n#include <cstdlib>\n#include <cstring>\n#include\
-    \ <ctime>\n#include <deque>\n#include <iostream>\n#include <iomanip>\n#include\
-    \ <list>\n#include <map>\n#include <numeric>\n#include <queue>\n#include <random>\n\
-    #include <set>\n#include <stack>\n#include <string>\n#include <unordered_map>\n\
-    #include <vector>\n\nusing namespace std;\n\nstd::string binary(unsigned long\
-    \ long n ) { //long long to binary string\n\tstd::string result;\n\tdo result.push_back('0'\
+  bundledCode: "#define IGNORE \"self tested\"\n\n\n#include <algorithm>\n#include\
+    \ <array>\n#include <bitset>\n#include <cassert>\n#include <chrono>\n#include\
+    \ <cmath>\n#include <complex>\n#include <cstdio>\n#include <cstdlib>\n#include\
+    \ <cstring>\n#include <ctime>\n#include <deque>\n#include <iostream>\n#include\
+    \ <iomanip>\n#include <list>\n#include <map>\n#include <numeric>\n#include <queue>\n\
+    #include <random>\n#include <set>\n#include <stack>\n#include <string>\n#include\
+    \ <unordered_map>\n#include <vector>\n\nusing namespace std;\n\nstd::string binary(unsigned\
+    \ long long n ) { //long long to binary string\n\tstd::string result;\n\tdo result.push_back('0'\
     \ + (n & 1));\n\twhile (n >>= 1);\n\treverse(result.begin(), result.end());\n\t\
     return result;\n}\n\nint main() {\n\tint n = 4;\n\tfor (int sz = 1; sz <= n; sz++)\
     \ {\n\t\tlong long c = (1 << sz) - 1;\n\t\twhile (c < (1 << n)) {\n\t\t\tstd::cout\
@@ -45,8 +45,8 @@ data:
   isVerificationFile: true
   path: verify/unit-test/unit-test-gosper-hack.test.cpp
   requiredBy: []
-  timestamp: '2021-07-28 02:55:20-04:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2021-07-28 19:45:54-04:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/unit-test/unit-test-gosper-hack.test.cpp
 layout: document

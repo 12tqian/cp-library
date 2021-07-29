@@ -2,42 +2,48 @@
 data:
   _extendedDependsOn:
   - icon: ':x:'
+    path: library/contest/template-full.hpp
+    title: library/contest/template-full.hpp
+  - icon: ':x:'
+    path: library/graphs/lca-jump-distance.hpp
+    title: library/graphs/lca-jump-distance.hpp
+  - icon: ':x:'
     path: library/misc/easy-io.hpp
     title: library/misc/easy-io.hpp
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':x:'
-    path: verify/spoj/spoj-QTREE2.test.cpp
-    title: verify/spoj/spoj-QTREE2.test.cpp
+  _extendedVerifiedWith: []
   _isVerificationFailed: true
-  _pathExtension: hpp
+  _pathExtension: cpp
   _verificationStatusIcon: ':x:'
   attributes:
-    links: []
-  bundledCode: "\n#pragma GCC optimize (\"O3\")\n#pragma GCC target (\"sse4\")\n\n\
-    #include <algorithm>\n#include <array>\n#include <bitset>\n#include <cassert>\n\
-    #include <chrono>\n#include <cmath>\n#include <complex>\n#include <cstdio>\n#include\
-    \ <cstdlib>\n#include <cstring>\n#include <ctime>\n#include <deque>\n#include\
-    \ <iostream>\n#include <iomanip>\n#include <map>\n#include <numeric>\n#include\
-    \ <queue>\n#include <random>\n#include <set>\n#include <stack>\n#include <string>\n\
-    #include <unordered_map>\n#include <vector>\n#include <ext/pb_ds/tree_policy.hpp>\n\
-    #include <ext/pb_ds/assoc_container.hpp>\n\nusing namespace std;\nusing namespace\
-    \ __gnu_pbds;\ntemplate <class T> using Tree = tree<T, null_type, less<T>, rb_tree_tag,\
-    \ tree_order_statistics_node_update>;\n\ntypedef long long ll;\ntypedef long double\
-    \ ld;\ntypedef double db;\ntypedef string str;\n\ntypedef pair<int, int> pi;\n\
-    typedef pair<ll, ll> pl;\ntypedef pair<db, db> pd;\n\ntypedef vector<int> vi;\n\
-    typedef vector<bool> vb;\ntypedef vector<ll> vl;\ntypedef vector<db> vd;\ntypedef\
-    \ vector<str> vs;\ntypedef vector<pi> vpi;\ntypedef vector<pl> vpl;\ntypedef vector<pd>\
-    \ vpd;\n\n#define mp make_pair\n#define f first\n#define s second\n#define sz(x)\
-    \ (int)(x).size()\n#define all(x) begin(x), end(x)\n#define rall(x) (x).rbegin(),\
-    \ (x).rend()\n#define sor(x) sort(all(x))\n#define rsz resize\n#define resz resize\n\
-    #define ins insert\n#define ft front()\n#define bk back()\n#define pf push_front\n\
-    #define pb push_back\n#define eb emplace_back\n#define lb lower_bound\n#define\
-    \ ub upper_bound\n\n#define f1r(i, a, b) for (int i = (a); i < (b); ++i)\n#define\
-    \ f0r(i, a) f1r(i, 0, a)\n#define FOR(i, a, b) for (int i = (a); i < (b); ++i)\n\
-    #define F0R(i, a) FOR(i, 0, a)\n#define ROF(i, a, b) for (int i = (b) - 1; i >=\
-    \ (a); --i)\n#define R0F(i, a) ROF(i, 0, a)\n#define each(a, x) for (auto &a :\
-    \ x)\n\nmt19937 rng((uint32_t)chrono::steady_clock::now().time_since_epoch().count());\n\
+    '*NOT_SPECIAL_COMMENTS*': ''
+    PROBLEM: https://www.spoj.com/problems/QTREE2/
+    links:
+    - https://www.spoj.com/problems/QTREE2/
+  bundledCode: "#define PROBLEM \"https://www.spoj.com/problems/QTREE2/\"\n\n\n#pragma\
+    \ GCC optimize (\"O3\")\n#pragma GCC target (\"sse4\")\n\n#include <algorithm>\n\
+    #include <array>\n#include <bitset>\n#include <cassert>\n#include <chrono>\n#include\
+    \ <cmath>\n#include <complex>\n#include <cstdio>\n#include <cstdlib>\n#include\
+    \ <cstring>\n#include <ctime>\n#include <deque>\n#include <iostream>\n#include\
+    \ <iomanip>\n#include <map>\n#include <numeric>\n#include <queue>\n#include <random>\n\
+    #include <set>\n#include <stack>\n#include <string>\n#include <unordered_map>\n\
+    #include <vector>\n#include <ext/pb_ds/tree_policy.hpp>\n#include <ext/pb_ds/assoc_container.hpp>\n\
+    \nusing namespace std;\nusing namespace __gnu_pbds;\ntemplate <class T> using\
+    \ Tree = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;\n\
+    \ntypedef long long ll;\ntypedef long double ld;\ntypedef double db;\ntypedef\
+    \ string str;\n\ntypedef pair<int, int> pi;\ntypedef pair<ll, ll> pl;\ntypedef\
+    \ pair<db, db> pd;\n\ntypedef vector<int> vi;\ntypedef vector<bool> vb;\ntypedef\
+    \ vector<ll> vl;\ntypedef vector<db> vd;\ntypedef vector<str> vs;\ntypedef vector<pi>\
+    \ vpi;\ntypedef vector<pl> vpl;\ntypedef vector<pd> vpd;\n\n#define mp make_pair\n\
+    #define f first\n#define s second\n#define sz(x) (int)(x).size()\n#define all(x)\
+    \ begin(x), end(x)\n#define rall(x) (x).rbegin(), (x).rend()\n#define sor(x) sort(all(x))\n\
+    #define rsz resize\n#define resz resize\n#define ins insert\n#define ft front()\n\
+    #define bk back()\n#define pf push_front\n#define pb push_back\n#define eb emplace_back\n\
+    #define lb lower_bound\n#define ub upper_bound\n\n#define f1r(i, a, b) for (int\
+    \ i = (a); i < (b); ++i)\n#define f0r(i, a) f1r(i, 0, a)\n#define FOR(i, a, b)\
+    \ for (int i = (a); i < (b); ++i)\n#define F0R(i, a) FOR(i, 0, a)\n#define ROF(i,\
+    \ a, b) for (int i = (b) - 1; i >= (a); --i)\n#define R0F(i, a) ROF(i, 0, a)\n\
+    #define each(a, x) for (auto &a : x)\n\nmt19937 rng((uint32_t)chrono::steady_clock::now().time_since_epoch().count());\n\
     \ntemplate <class T> bool ckmin(T &a, const T &b) { return b < a ? a = b, 1 :\
     \ 0; }\ntemplate <class T> bool ckmax(T &a, const T &b) { return a < b ? a = b,\
     \ 1 : 0; }\n\ntemplate <class T> using V = vector<T>;\ntemplate <class T> using\
@@ -162,88 +168,66 @@ data:
     friend mi operator-(mi a, const mi &b) { return a -= b; }\n\tfriend mi operator*(mi\
     \ a, const mi &b) { return a *= b; }\n\tfriend mi operator/(mi a, const mi &b)\
     \ { return a /= b; }\n};\n\ntypedef pair<mi, mi> pmi;\ntypedef vector<mi> vmi;\n\
-    typedef vector<pmi> vpmi;\n"
-  code: "#pragma once\n\n#pragma GCC optimize (\"O3\")\n#pragma GCC target (\"sse4\"\
-    )\n\n#include <algorithm>\n#include <array>\n#include <bitset>\n#include <cassert>\n\
-    #include <chrono>\n#include <cmath>\n#include <complex>\n#include <cstdio>\n#include\
-    \ <cstdlib>\n#include <cstring>\n#include <ctime>\n#include <deque>\n#include\
-    \ <iostream>\n#include <iomanip>\n#include <map>\n#include <numeric>\n#include\
-    \ <queue>\n#include <random>\n#include <set>\n#include <stack>\n#include <string>\n\
-    #include <unordered_map>\n#include <vector>\n#include <ext/pb_ds/tree_policy.hpp>\n\
-    #include <ext/pb_ds/assoc_container.hpp>\n\nusing namespace std;\nusing namespace\
-    \ __gnu_pbds;\ntemplate <class T> using Tree = tree<T, null_type, less<T>, rb_tree_tag,\
-    \ tree_order_statistics_node_update>;\n\ntypedef long long ll;\ntypedef long double\
-    \ ld;\ntypedef double db;\ntypedef string str;\n\ntypedef pair<int, int> pi;\n\
-    typedef pair<ll, ll> pl;\ntypedef pair<db, db> pd;\n\ntypedef vector<int> vi;\n\
-    typedef vector<bool> vb;\ntypedef vector<ll> vl;\ntypedef vector<db> vd;\ntypedef\
-    \ vector<str> vs;\ntypedef vector<pi> vpi;\ntypedef vector<pl> vpl;\ntypedef vector<pd>\
-    \ vpd;\n\n#define mp make_pair\n#define f first\n#define s second\n#define sz(x)\
-    \ (int)(x).size()\n#define all(x) begin(x), end(x)\n#define rall(x) (x).rbegin(),\
-    \ (x).rend()\n#define sor(x) sort(all(x))\n#define rsz resize\n#define resz resize\n\
-    #define ins insert\n#define ft front()\n#define bk back()\n#define pf push_front\n\
-    #define pb push_back\n#define eb emplace_back\n#define lb lower_bound\n#define\
-    \ ub upper_bound\n\n#define f1r(i, a, b) for (int i = (a); i < (b); ++i)\n#define\
-    \ f0r(i, a) f1r(i, 0, a)\n#define FOR(i, a, b) for (int i = (a); i < (b); ++i)\n\
-    #define F0R(i, a) FOR(i, 0, a)\n#define ROF(i, a, b) for (int i = (b) - 1; i >=\
-    \ (a); --i)\n#define R0F(i, a) ROF(i, 0, a)\n#define each(a, x) for (auto &a :\
-    \ x)\n\nmt19937 rng((uint32_t)chrono::steady_clock::now().time_since_epoch().count());\n\
-    \ntemplate <class T> bool ckmin(T &a, const T &b) { return b < a ? a = b, 1 :\
-    \ 0; }\ntemplate <class T> bool ckmax(T &a, const T &b) { return a < b ? a = b,\
-    \ 1 : 0; }\n\ntemplate <class T> using V = vector<T>;\ntemplate <class T> using\
-    \ VV = V<V<T>>;\ntemplate <class T> using VVV = V<V<V<T>>>;\ntemplate <class T>\
-    \ using VVVV = V<V<V<V<T>>>>;\n\n#ifdef LOCAL\n#define dbg(...) debug(#__VA_ARGS__,\
-    \ __VA_ARGS__);\n#else\n#define dbg(...) 17;\n#endif\n\ntemplate <typename T,\
-    \ typename S> ostream& operator << (ostream &os, const pair<T, S> &p) { return\
-    \ os << \"(\" << p.first << \", \" << p.second << \")\"; }\ntemplate <typename\
-    \ C, typename T = decay<decltype(*begin(declval<C>()))>, typename enable_if<!is_same<C,\
-    \ string>::value>::type* = nullptr>\nostream& operator << (ostream &os, const\
-    \ C &c) { bool f = true; os << \"{\"; for (const auto &x : c) { if (!f) os <<\
-    \ \", \"; f = false; os << x; } return os << \"}\"; }\ntemplate <typename T> void\
-    \ debug(string s, T x) { cerr << s << \" = \" << x << \"\\n\"; }\ntemplate <typename\
-    \ T, typename... Args> void debug(string s, T x, Args... args) { cerr << s.substr(0,\
-    \ s.find(',')) << \" = \" << x << \" | \"; debug(s.substr(s.find(',') + 2), args...);\
-    \ }\n\nconstexpr int pct(int x) { return __builtin_popcount(x); }\nconstexpr int\
-    \ bits(int x) { return 31 - __builtin_clz(x); } // floor(log2(x))\n\n#include\
-    \ \"../misc/easy-io.hpp\"\n\nconst int MOD = 1e9 + 7; // 998244353;\nconst ld\
-    \ PI = acos((ld) -1);\n\ntypedef std::decay<decltype(MOD)>::type mod_t; \nstruct\
-    \ mi {\n\tmod_t val;\n\texplicit operator mod_t() const { return val; }\n\tmi()\
-    \ { val = 0; }\n\tmi(const long long &v) {\n\t\tval = (-MOD <= v && v < MOD) ?\
-    \ v : v % MOD;\n\t\tif (val < 0) val += MOD; }\n\tfriend std::istream& operator>>(std::istream\
-    \ &in, mi &a) { \n\t\tlong long x; std::cin >> x; a = mi(x); return in; }\n\t\
-    friend std::ostream& operator<<(std::ostream &os, const mi &a) { return os <<\
-    \ a.val; }\n\tfriend void pr(const mi &a) { pr(a.val); }\n\tfriend void re(mi\
-    \ &a) { long long x; cin >> x; a = mi(x); }\n\tfriend bool operator==(const mi\
-    \ &a, const mi &b) { return a.val == b.val; }\n\tfriend bool operator!=(const\
-    \ mi &a, const mi &b) { return !(a == b); }    \n\tfriend bool operator<(const\
-    \ mi &a, const mi &b) { return a.val < b.val; }\n\tfriend bool operator>(const\
-    \ mi &a, const mi &b) { return a.val > b.val; }\n\tfriend bool operator<=(const\
-    \ mi &a, const mi &b) { return a.val <= b.val; }\n\tfriend bool operator>=(const\
-    \ mi &a, const mi &b) { return a.val >= b.val; }\n\tmi operator-() const { return\
-    \ mi(-val); }\n\tmi& operator+=(const mi &m) {\n\t\tif ((val += m.val) >= MOD)\
-    \ val -= MOD;\n\t\treturn *this; }\n\tmi& operator-=(const mi &m) {\n\t\tif ((val\
-    \ -= m.val) < 0) val += MOD;\n\t\treturn *this; }\n\tmi& operator*=(const mi &m)\
-    \ { val = (long long)val * m.val % MOD;\n\t\treturn *this; }\n\tfriend mi pow(mi\
-    \ a, long long p) {\n\t\tmi ans = 1; assert(p >= 0);\n\t\tfor (; p; p /= 2, a\
-    \ *= a) if (p & 1) ans *= a;\n\t\treturn ans; }\n\tfriend mi inv(const mi &a)\
-    \ { assert(a != 0); return pow(a, MOD - 2); }\n\tmi& operator/=(const mi &m) {\
-    \ return (*this) *= inv(m); }\n\tfriend mi operator+(mi a, const mi &b) { return\
-    \ a += b; }\n\tfriend mi operator-(mi a, const mi &b) { return a -= b; }\n\tfriend\
-    \ mi operator*(mi a, const mi &b) { return a *= b; }\n\tfriend mi operator/(mi\
-    \ a, const mi &b) { return a /= b; }\n};\n\ntypedef pair<mi, mi> pmi;\ntypedef\
-    \ vector<mi> vmi;\ntypedef vector<pmi> vpmi;"
+    typedef vector<pmi> vpmi;\n\ntemplate<class T> struct LCAJumpDistance {\n\tint\
+    \ n;\n\tstd::vector<std::vector<int>> par;\n\tstd::vector<std::vector<std::pair<int,\
+    \ T>>> adj;\n\tstd::vector<int> depth;\n\tstd::vector<T> depth_dist;\n\n\tvoid\
+    \ init(int _n) {\n\t\tn = _n;\n\t\tint d = 1;\n\t\twhile ((1 << d) < n) d++;\n\
+    \t\tpar.assign(d, std::vector<int>(n));\n\t\tadj.resize(n);\n\t\tdepth.resize(n);\n\
+    \t\tdepth_dist.resize(n);\n\t}\n\n\tvoid ae(int x, int y, T c = 1) {\n\t\tadj[x].emplace_back(y,\
+    \ c);\n\t\tadj[y].emplace_back(x, c);\n\t}\n\n\tvoid gen(int root = 0) {\n\t\t\
+    par[0][root] = root;\n\t\tdfs(root);\n\t}\n\n\tvoid dfs(int src = 0) {\n\t\tfor\
+    \ (int i = 1; i < (int)par.size(); i++) {\n\t\t\tpar[i][src] = par[i - 1][par[i\
+    \ - 1][src]];\n\t\t}\n\t\tfor (auto nxt: adj[src]) {\n\t\t\tif (nxt.first == par[0][src])\
+    \ continue;\n\t\t\tdepth_dist[nxt.first] = depth_dist[par[0][nxt.first] = src]\
+    \ + nxt.second;\n\t\t\tdepth[nxt.first] = depth[par[0][nxt.first] = src] + 1;\n\
+    \t\t\tdfs(nxt.first);\n\t\t}\n\t}\n\n\tint jump(int x, int d) {\n\t\tfor (int\
+    \ i = 0; i < (int)par.size(); i++) {\n\t\t\tif ((d >> i) & 1) {\n\t\t\t\tx = par[i][x];\n\
+    \t\t\t}\n\t\t}\n\t\treturn x;\n\t}\n\n\tint lca(int x, int y) {\n\t\tif (depth[x]\
+    \ < depth[y]) std::swap(x, y);\n\t\tx = jump(x, depth[x] - depth[y]);\n\t\tif\
+    \ (x == y) return x;\n\t\tfor (int i = (int)par.size() - 1; i >= 0; i--) {\n\t\
+    \t\tint nx = par[i][x];\n\t\t\tint ny = par[i][y];\n\t\t\tif (nx != ny) x = nx,\
+    \ y = ny;\n\t\t}\n\t\treturn par[0][x];\n\t}\n\n\tT distance(int x, int y) {\n\
+    \t\tint l = lca(x, y);\n\t\treturn depth_dist[x] + depth_dist[y] - 2 * depth_dist[l];\n\
+    \t}\n};\n\nvoid solve_case(int tc = 0) {\n\tint n;\n\tre(n);\n\tLCAJumpDistance<long\
+    \ long> lca;\n\tlca.init(n);\n\tf0r(i, n - 1) {\n\t\tint u, v, w;\n\t\tre(u, v,\
+    \ w);\n\t\t--u, --v;\n\t\tlca.ae(u, v, w);\n\t}\n\tlca.gen(0);\n\twhile (true)\
+    \ {\n\t\tstring s;\n\t\tre(s);\n\t\tif (s == \"DIST\") {\n\t\t\tint u, v;\n\t\t\
+    \tre(u, v);\n\t\t\t--u, --v;\n\t\t\tps(lca.distance(u, v));\n\t\t} else if (s\
+    \ == \"KTH\") {\n\t\t\tint u, v, w;\n\t\t\tre(u, v, w);\n\t\t\t--u, --v, --w;\n\
+    \t\t\tint up = lca.lca(u, v);\t\t\t\t\t\t\n\t\t\tint d1 = lca.depth[u] - lca.depth[up];\n\
+    \t\t\tint d2 = lca.depth[v] - lca.depth[up];\n\t\t\tif (d1 >= w) {\n\t\t\t\tps(lca.jump(u,\
+    \ w) + 1);\n\t\t\t} else {\n\t\t\t\tw -= d1;\n\t\t\t\tw = d2 - w;\n\t\t\t\tps(lca.jump(v,\
+    \ w) + 1);\n\t\t\t}\n\t\t} else {\n\t\t\tbreak;\n\t\t}\n\t}\n}\n\nint main() {\n\
+    \tsetIO(\"\");\n\tint tt = 1;\n\tre(tt);\n\tf1r(tc, 1, tt + 1) {\n\t\tsolve_case(tc);\n\
+    \t}\n\treturn 0;\n}\n"
+  code: "#define PROBLEM \"https://www.spoj.com/problems/QTREE2/\"\n\n#include \"\
+    ../../library/contest/template-full.hpp\"\n#include \"../../library/graphs/lca-jump-distance.hpp\"\
+    \n\nvoid solve_case(int tc = 0) {\n\tint n;\n\tre(n);\n\tLCAJumpDistance<long\
+    \ long> lca;\n\tlca.init(n);\n\tf0r(i, n - 1) {\n\t\tint u, v, w;\n\t\tre(u, v,\
+    \ w);\n\t\t--u, --v;\n\t\tlca.ae(u, v, w);\n\t}\n\tlca.gen(0);\n\twhile (true)\
+    \ {\n\t\tstring s;\n\t\tre(s);\n\t\tif (s == \"DIST\") {\n\t\t\tint u, v;\n\t\t\
+    \tre(u, v);\n\t\t\t--u, --v;\n\t\t\tps(lca.distance(u, v));\n\t\t} else if (s\
+    \ == \"KTH\") {\n\t\t\tint u, v, w;\n\t\t\tre(u, v, w);\n\t\t\t--u, --v, --w;\n\
+    \t\t\tint up = lca.lca(u, v);\t\t\t\t\t\t\n\t\t\tint d1 = lca.depth[u] - lca.depth[up];\n\
+    \t\t\tint d2 = lca.depth[v] - lca.depth[up];\n\t\t\tif (d1 >= w) {\n\t\t\t\tps(lca.jump(u,\
+    \ w) + 1);\n\t\t\t} else {\n\t\t\t\tw -= d1;\n\t\t\t\tw = d2 - w;\n\t\t\t\tps(lca.jump(v,\
+    \ w) + 1);\n\t\t\t}\n\t\t} else {\n\t\t\tbreak;\n\t\t}\n\t}\n}\n\nint main() {\n\
+    \tsetIO(\"\");\n\tint tt = 1;\n\tre(tt);\n\tf1r(tc, 1, tt + 1) {\n\t\tsolve_case(tc);\n\
+    \t}\n\treturn 0;\n}"
   dependsOn:
+  - library/contest/template-full.hpp
   - library/misc/easy-io.hpp
-  isVerificationFile: false
-  path: library/contest/template-full.hpp
+  - library/graphs/lca-jump-distance.hpp
+  isVerificationFile: true
+  path: verify/spoj/spoj-QTREE2.test.cpp
   requiredBy: []
   timestamp: '2021-07-28 19:45:54-04:00'
-  verificationStatus: LIBRARY_ALL_WA
-  verifiedWith:
-  - verify/spoj/spoj-QTREE2.test.cpp
-documentation_of: library/contest/template-full.hpp
+  verificationStatus: TEST_WRONG_ANSWER
+  verifiedWith: []
+documentation_of: verify/spoj/spoj-QTREE2.test.cpp
 layout: document
 redirect_from:
-- /library/library/contest/template-full.hpp
-- /library/library/contest/template-full.hpp.html
-title: library/contest/template-full.hpp
+- /verify/verify/spoj/spoj-QTREE2.test.cpp
+- /verify/verify/spoj/spoj-QTREE2.test.cpp.html
+title: verify/spoj/spoj-QTREE2.test.cpp
 ---

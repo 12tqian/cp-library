@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/kattis/kattis-mincostmaxflow.test.cpp
     title: verify/kattis/kattis-mincostmaxflow.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "/**\n * to get back the original edges, assign ID's in ae\n */\n\n\
@@ -76,7 +76,7 @@ data:
   path: library/graphs/flows/min-cost-max-flow.hpp
   requiredBy: []
   timestamp: '2021-07-25 00:42:29-04:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - verify/kattis/kattis-mincostmaxflow.test.cpp
 documentation_of: library/graphs/flows/min-cost-max-flow.hpp

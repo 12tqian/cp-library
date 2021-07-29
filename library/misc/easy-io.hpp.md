@@ -2,16 +2,19 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':warning:'
+  - icon: ':x:'
     path: library/contest/template-full.hpp
     title: library/contest/template-full.hpp
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
+    path: verify/spoj/spoj-QTREE2.test.cpp
+    title: verify/spoj/spoj-QTREE2.test.cpp
+  - icon: ':x:'
     path: verify/yosupo/yosupo-rectangle_sum-offline-2d-bit.test.cpp
     title: verify/yosupo/yosupo-rectangle_sum-offline-2d-bit.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links:
     - https://nafe.es/posts/2020-02-29-is-printable/
@@ -188,9 +191,10 @@ data:
   requiredBy:
   - library/contest/template-full.hpp
   timestamp: '2021-07-24 19:40:07-04:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - verify/yosupo/yosupo-rectangle_sum-offline-2d-bit.test.cpp
+  - verify/spoj/spoj-QTREE2.test.cpp
 documentation_of: library/misc/easy-io.hpp
 layout: document
 redirect_from:

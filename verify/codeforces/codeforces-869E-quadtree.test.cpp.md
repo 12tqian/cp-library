@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/data-structures/2d-range-queries/quadtree.hpp
     title: library/data-structures/2d-range-queries/quadtree.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/numerical/mod-int2.hpp
     title: library/numerical/mod-int2.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     IGNORE: ''
@@ -23,7 +23,7 @@ data:
     links:
     - https://codeforces.com/contest/1074/problem/F
   bundledCode: "#define IGNORE \"this will TLE, but it works\"\n#define PROBLEM \"\
-    https://codeforces.com/contest/1074/problem/F\"\n\n#include <algorithm>\n#include\
+    https://codeforces.com/contest/1074/problem/F\"\n\n\n#include <algorithm>\n#include\
     \ <array>\n#include <bitset>\n#include <cassert>\n#include <chrono>\n#include\
     \ <cmath>\n#include <complex>\n#include <cstdio>\n#include <cstdlib>\n#include\
     \ <cstring>\n#include <ctime>\n#include <deque>\n#include <iostream>\n#include\
@@ -107,15 +107,15 @@ data:
   - library/data-structures/2d-range-queries/quadtree.hpp
   - library/numerical/mod-int2.hpp
   isVerificationFile: true
-  path: verify/codeforces/ecodeforces-869E-quadtree.test.cpp
+  path: verify/codeforces/codeforces-869E-quadtree.test.cpp
   requiredBy: []
-  timestamp: '2021-07-28 16:57:35-04:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2021-07-28 19:46:23-04:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
-documentation_of: verify/codeforces/ecodeforces-869E-quadtree.test.cpp
+documentation_of: verify/codeforces/codeforces-869E-quadtree.test.cpp
 layout: document
 redirect_from:
-- /verify/verify/codeforces/ecodeforces-869E-quadtree.test.cpp
-- /verify/verify/codeforces/ecodeforces-869E-quadtree.test.cpp.html
-title: verify/codeforces/ecodeforces-869E-quadtree.test.cpp
+- /verify/verify/codeforces/codeforces-869E-quadtree.test.cpp
+- /verify/verify/codeforces/codeforces-869E-quadtree.test.cpp.html
+title: verify/codeforces/codeforces-869E-quadtree.test.cpp
 ---

@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/data-structures/1d-range-queries/sparse-table.hpp
     title: library/data-structures/1d-range-queries/sparse-table.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/graphs/lca-rmq.hpp
     title: library/graphs/lca-rmq.hpp
   _extendedRequiredBy: []
@@ -21,7 +21,7 @@ data:
     links:
     - https://codeforces.com/contest/1074/problem/F
   bundledCode: "#define PROBLEM \"https://codeforces.com/contest/1074/problem/F\"\n\
-    \n#include <algorithm>\n#include <array>\n#include <bitset>\n#include <cassert>\n\
+    \n\n#include <algorithm>\n#include <array>\n#include <bitset>\n#include <cassert>\n\
     #include <chrono>\n#include <cmath>\n#include <complex>\n#include <cstdio>\n#include\
     \ <cstdlib>\n#include <cstring>\n#include <ctime>\n#include <deque>\n#include\
     \ <iostream>\n#include <iomanip>\n#include <list>\n#include <map>\n#include <numeric>\n\
@@ -174,7 +174,7 @@ data:
   isVerificationFile: true
   path: verify/codeforces/codeforces-1074F.test.cpp
   requiredBy: []
-  timestamp: '2021-07-28 02:34:55-04:00'
+  timestamp: '2021-07-28 19:45:54-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/codeforces/codeforces-1074F.test.cpp

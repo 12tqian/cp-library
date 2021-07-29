@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/yosupo-segment_add_get_min-li-chao-tree-online.test.cpp
     title: verify/yosupo/yosupo-segment_add_get_min-li-chao-tree-online.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "\n// Currently set to get the max of things, use negatives for minimum\n\
@@ -58,7 +58,7 @@ data:
   path: library/data-structures/1d-range-queries/li-chao-tree-online.hpp
   requiredBy: []
   timestamp: '2021-07-24 21:27:52-04:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - verify/yosupo/yosupo-segment_add_get_min-li-chao-tree-online.test.cpp
 documentation_of: library/data-structures/1d-range-queries/li-chao-tree-online.hpp

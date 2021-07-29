@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: verify/spoj/spoj-QTREE2.test.cpp
+    title: verify/spoj/spoj-QTREE2.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "\ntemplate<class T> struct LCAJumpDistance {\n\tint n;\n\tstd::vector<std::vector<int>>\
@@ -53,8 +56,9 @@ data:
   path: library/graphs/lca-jump-distance.hpp
   requiredBy: []
   timestamp: '2021-07-24 19:40:07-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_WA
+  verifiedWith:
+  - verify/spoj/spoj-QTREE2.test.cpp
 documentation_of: library/graphs/lca-jump-distance.hpp
 layout: document
 redirect_from:

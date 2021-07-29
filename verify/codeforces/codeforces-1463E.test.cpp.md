@@ -1,27 +1,27 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/graphs/dsu.hpp
     title: library/graphs/dsu.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/graphs/topological-sort.hpp
     title: library/graphs/topological-sort.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://codeforces.com/contest/1463/problem/E
     links:
     - https://codeforces.com/contest/1463/problem/E
   bundledCode: "#define PROBLEM \"https://codeforces.com/contest/1463/problem/E\"\n\
-    \n#include <algorithm>\n#include <array>\n#include <bitset>\n#include <cassert>\n\
+    \n\n#include <algorithm>\n#include <array>\n#include <bitset>\n#include <cassert>\n\
     #include <chrono>\n#include <cmath>\n#include <complex>\n#include <cstdio>\n#include\
     \ <cstdlib>\n#include <cstring>\n#include <ctime>\n#include <deque>\n#include\
     \ <iostream>\n#include <iomanip>\n#include <list>\n#include <map>\n#include <numeric>\n\
@@ -100,8 +100,8 @@ data:
   isVerificationFile: true
   path: verify/codeforces/codeforces-1463E.test.cpp
   requiredBy: []
-  timestamp: '2021-07-28 18:23:19-04:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2021-07-28 19:45:54-04:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/codeforces/codeforces-1463E.test.cpp
 layout: document
