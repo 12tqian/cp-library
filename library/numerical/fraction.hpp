@@ -7,6 +7,7 @@ struct Frac {
 		long long g = std::__gcd(n, d); n /= g, d /= g;
 		if (d < 0) n *= -1, d *= -1;
 	}
+	long double eval() { return (long double)n / d; }
 	Frac(long long _n) : Frac(_n, 1) {}
 	Frac() : Frac(0) {}
 	friend Frac abs(Frac F) { return Frac(abs(F.n), F.d); }

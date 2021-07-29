@@ -65,6 +65,7 @@
         "string_view": "cpp",
         "ranges": "cpp",
         "span": "cpp",
-        "*.inc": "cpp"
+        "*.inc": "cpp",
+        "*.tcc": "cpp"
     }
 }
