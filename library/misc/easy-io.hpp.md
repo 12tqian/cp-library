@@ -2,19 +2,25 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/contest/template-full.hpp
     title: library/contest/template-full.hpp
   _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/unit-test/unit-test-big-integer.test.cpp
+    title: verify/unit-test/unit-test-big-integer.test.cpp
+  - icon: ':x:'
+    path: verify/unit-test/unit-test-fraction.test.cpp
+    title: verify/unit-test/unit-test-fraction.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
     title: verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-rectangle_sum-offline-2d-bit.test.cpp
     title: verify/yosupo/yosupo-rectangle_sum-offline-2d-bit.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links:
     - https://nafe.es/posts/2020-02-29-is-printable/
@@ -191,8 +197,10 @@ data:
   requiredBy:
   - library/contest/template-full.hpp
   timestamp: '2021-07-24 19:40:07-04:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
+  - verify/unit-test/unit-test-big-integer.test.cpp
+  - verify/unit-test/unit-test-fraction.test.cpp
   - verify/yosupo/yosupo-rectangle_sum-offline-2d-bit.test.cpp
   - verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
 documentation_of: library/misc/easy-io.hpp

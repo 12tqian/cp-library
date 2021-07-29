@@ -4,9 +4,6 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: verify/codeforces/codeforces-981G.test.cpp
-    title: verify/codeforces/codeforces-981G.test.cpp
-  - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-range_affine_range_sum.test.cpp
     title: verify/yosupo/yosupo-range_affine_range_sum.test.cpp
   _isVerificationFailed: false
@@ -61,7 +58,6 @@ data:
   timestamp: '2021-07-24 20:00:47-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/codeforces/codeforces-981G.test.cpp
   - verify/yosupo/yosupo-range_affine_range_sum.test.cpp
 documentation_of: library/data-structures/1d-range-queries/affine-segment-tree.hpp
 layout: document

@@ -2,48 +2,48 @@
 data:
   _extendedDependsOn:
   - icon: ':question:'
+    path: library/contest/template-full.hpp
+    title: library/contest/template-full.hpp
+  - icon: ':question:'
     path: library/misc/easy-io.hpp
     title: library/misc/easy-io.hpp
-  _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: verify/unit-test/unit-test-big-integer.test.cpp
-    title: verify/unit-test/unit-test-big-integer.test.cpp
   - icon: ':x:'
-    path: verify/unit-test/unit-test-fraction.test.cpp
-    title: verify/unit-test/unit-test-fraction.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
-    title: verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
+    path: library/numerical/fraction.hpp
+    title: library/numerical/fraction.hpp
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
   _isVerificationFailed: true
-  _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _pathExtension: cpp
+  _verificationStatusIcon: ':x:'
   attributes:
-    links: []
-  bundledCode: "\n#pragma GCC optimize (\"O3\")\n#pragma GCC target (\"sse4\")\n\n\
-    #include <algorithm>\n#include <array>\n#include <bitset>\n#include <cassert>\n\
-    #include <chrono>\n#include <cmath>\n#include <complex>\n#include <cstdio>\n#include\
-    \ <cstdlib>\n#include <cstring>\n#include <ctime>\n#include <deque>\n#include\
-    \ <iostream>\n#include <iomanip>\n#include <map>\n#include <numeric>\n#include\
-    \ <queue>\n#include <random>\n#include <set>\n#include <stack>\n#include <string>\n\
-    #include <unordered_map>\n#include <vector>\n#include <ext/pb_ds/tree_policy.hpp>\n\
-    #include <ext/pb_ds/assoc_container.hpp>\n\nusing namespace std;\nusing namespace\
-    \ __gnu_pbds;\ntemplate <class T> using Tree = tree<T, null_type, less<T>, rb_tree_tag,\
-    \ tree_order_statistics_node_update>;\n\ntypedef long long ll;\ntypedef long double\
-    \ ld;\ntypedef double db;\ntypedef string str;\n\ntypedef pair<int, int> pi;\n\
-    typedef pair<ll, ll> pl;\ntypedef pair<db, db> pd;\n\ntypedef vector<int> vi;\n\
-    typedef vector<bool> vb;\ntypedef vector<ll> vl;\ntypedef vector<db> vd;\ntypedef\
-    \ vector<str> vs;\ntypedef vector<pi> vpi;\ntypedef vector<pl> vpl;\ntypedef vector<pd>\
-    \ vpd;\n\n#define mp make_pair\n#define f first\n#define s second\n#define sz(x)\
-    \ (int)(x).size()\n#define all(x) begin(x), end(x)\n#define rall(x) (x).rbegin(),\
-    \ (x).rend()\n#define sor(x) sort(all(x))\n#define rsz resize\n#define resz resize\n\
-    #define ins insert\n#define ft front()\n#define bk back()\n#define pf push_front\n\
-    #define pb push_back\n#define eb emplace_back\n#define lb lower_bound\n#define\
-    \ ub upper_bound\n\n#define f1r(i, a, b) for (int i = (a); i < (b); ++i)\n#define\
-    \ f0r(i, a) f1r(i, 0, a)\n#define FOR(i, a, b) for (int i = (a); i < (b); ++i)\n\
-    #define F0R(i, a) FOR(i, 0, a)\n#define ROF(i, a, b) for (int i = (b) - 1; i >=\
-    \ (a); --i)\n#define R0F(i, a) ROF(i, 0, a)\n#define each(a, x) for (auto &a :\
-    \ x)\n\nmt19937 rng((uint32_t)chrono::steady_clock::now().time_since_epoch().count());\n\
+    '*NOT_SPECIAL_COMMENTS*': ''
+    PROBLEM: https://judge.yosupo.jp/problem/aplusb
+    links:
+    - https://judge.yosupo.jp/problem/aplusb
+  bundledCode: "#define PROBLEM \"https://judge.yosupo.jp/problem/aplusb\"\n\n\n#pragma\
+    \ GCC optimize (\"O3\")\n#pragma GCC target (\"sse4\")\n\n#include <algorithm>\n\
+    #include <array>\n#include <bitset>\n#include <cassert>\n#include <chrono>\n#include\
+    \ <cmath>\n#include <complex>\n#include <cstdio>\n#include <cstdlib>\n#include\
+    \ <cstring>\n#include <ctime>\n#include <deque>\n#include <iostream>\n#include\
+    \ <iomanip>\n#include <map>\n#include <numeric>\n#include <queue>\n#include <random>\n\
+    #include <set>\n#include <stack>\n#include <string>\n#include <unordered_map>\n\
+    #include <vector>\n#include <ext/pb_ds/tree_policy.hpp>\n#include <ext/pb_ds/assoc_container.hpp>\n\
+    \nusing namespace std;\nusing namespace __gnu_pbds;\ntemplate <class T> using\
+    \ Tree = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;\n\
+    \ntypedef long long ll;\ntypedef long double ld;\ntypedef double db;\ntypedef\
+    \ string str;\n\ntypedef pair<int, int> pi;\ntypedef pair<ll, ll> pl;\ntypedef\
+    \ pair<db, db> pd;\n\ntypedef vector<int> vi;\ntypedef vector<bool> vb;\ntypedef\
+    \ vector<ll> vl;\ntypedef vector<db> vd;\ntypedef vector<str> vs;\ntypedef vector<pi>\
+    \ vpi;\ntypedef vector<pl> vpl;\ntypedef vector<pd> vpd;\n\n#define mp make_pair\n\
+    #define f first\n#define s second\n#define sz(x) (int)(x).size()\n#define all(x)\
+    \ begin(x), end(x)\n#define rall(x) (x).rbegin(), (x).rend()\n#define sor(x) sort(all(x))\n\
+    #define rsz resize\n#define resz resize\n#define ins insert\n#define ft front()\n\
+    #define bk back()\n#define pf push_front\n#define pb push_back\n#define eb emplace_back\n\
+    #define lb lower_bound\n#define ub upper_bound\n\n#define f1r(i, a, b) for (int\
+    \ i = (a); i < (b); ++i)\n#define f0r(i, a) f1r(i, 0, a)\n#define FOR(i, a, b)\
+    \ for (int i = (a); i < (b); ++i)\n#define F0R(i, a) FOR(i, 0, a)\n#define ROF(i,\
+    \ a, b) for (int i = (b) - 1; i >= (a); --i)\n#define R0F(i, a) ROF(i, 0, a)\n\
+    #define each(a, x) for (auto &a : x)\n\nmt19937 rng((uint32_t)chrono::steady_clock::now().time_since_epoch().count());\n\
     \ntemplate <class T> bool ckmin(T &a, const T &b) { return b < a ? a = b, 1 :\
     \ 0; }\ntemplate <class T> bool ckmax(T &a, const T &b) { return a < b ? a = b,\
     \ 1 : 0; }\n\ntemplate <class T> using V = vector<T>;\ntemplate <class T> using\
@@ -168,90 +168,67 @@ data:
     friend mi operator-(mi a, const mi &b) { return a -= b; }\n\tfriend mi operator*(mi\
     \ a, const mi &b) { return a *= b; }\n\tfriend mi operator/(mi a, const mi &b)\
     \ { return a /= b; }\n};\n\ntypedef pair<mi, mi> pmi;\ntypedef vector<mi> vmi;\n\
-    typedef vector<pmi> vpmi;\n"
-  code: "#pragma once\n\n#pragma GCC optimize (\"O3\")\n#pragma GCC target (\"sse4\"\
-    )\n\n#include <algorithm>\n#include <array>\n#include <bitset>\n#include <cassert>\n\
-    #include <chrono>\n#include <cmath>\n#include <complex>\n#include <cstdio>\n#include\
-    \ <cstdlib>\n#include <cstring>\n#include <ctime>\n#include <deque>\n#include\
-    \ <iostream>\n#include <iomanip>\n#include <map>\n#include <numeric>\n#include\
-    \ <queue>\n#include <random>\n#include <set>\n#include <stack>\n#include <string>\n\
-    #include <unordered_map>\n#include <vector>\n#include <ext/pb_ds/tree_policy.hpp>\n\
-    #include <ext/pb_ds/assoc_container.hpp>\n\nusing namespace std;\nusing namespace\
-    \ __gnu_pbds;\ntemplate <class T> using Tree = tree<T, null_type, less<T>, rb_tree_tag,\
-    \ tree_order_statistics_node_update>;\n\ntypedef long long ll;\ntypedef long double\
-    \ ld;\ntypedef double db;\ntypedef string str;\n\ntypedef pair<int, int> pi;\n\
-    typedef pair<ll, ll> pl;\ntypedef pair<db, db> pd;\n\ntypedef vector<int> vi;\n\
-    typedef vector<bool> vb;\ntypedef vector<ll> vl;\ntypedef vector<db> vd;\ntypedef\
-    \ vector<str> vs;\ntypedef vector<pi> vpi;\ntypedef vector<pl> vpl;\ntypedef vector<pd>\
-    \ vpd;\n\n#define mp make_pair\n#define f first\n#define s second\n#define sz(x)\
-    \ (int)(x).size()\n#define all(x) begin(x), end(x)\n#define rall(x) (x).rbegin(),\
-    \ (x).rend()\n#define sor(x) sort(all(x))\n#define rsz resize\n#define resz resize\n\
-    #define ins insert\n#define ft front()\n#define bk back()\n#define pf push_front\n\
-    #define pb push_back\n#define eb emplace_back\n#define lb lower_bound\n#define\
-    \ ub upper_bound\n\n#define f1r(i, a, b) for (int i = (a); i < (b); ++i)\n#define\
-    \ f0r(i, a) f1r(i, 0, a)\n#define FOR(i, a, b) for (int i = (a); i < (b); ++i)\n\
-    #define F0R(i, a) FOR(i, 0, a)\n#define ROF(i, a, b) for (int i = (b) - 1; i >=\
-    \ (a); --i)\n#define R0F(i, a) ROF(i, 0, a)\n#define each(a, x) for (auto &a :\
-    \ x)\n\nmt19937 rng((uint32_t)chrono::steady_clock::now().time_since_epoch().count());\n\
-    \ntemplate <class T> bool ckmin(T &a, const T &b) { return b < a ? a = b, 1 :\
-    \ 0; }\ntemplate <class T> bool ckmax(T &a, const T &b) { return a < b ? a = b,\
-    \ 1 : 0; }\n\ntemplate <class T> using V = vector<T>;\ntemplate <class T> using\
-    \ VV = V<V<T>>;\ntemplate <class T> using VVV = V<V<V<T>>>;\ntemplate <class T>\
-    \ using VVVV = V<V<V<V<T>>>>;\n\n#ifdef LOCAL\n#define dbg(...) debug(#__VA_ARGS__,\
-    \ __VA_ARGS__);\n#else\n#define dbg(...) 17;\n#endif\n\ntemplate <typename T,\
-    \ typename S> ostream& operator << (ostream &os, const pair<T, S> &p) { return\
-    \ os << \"(\" << p.first << \", \" << p.second << \")\"; }\ntemplate <typename\
-    \ C, typename T = decay<decltype(*begin(declval<C>()))>, typename enable_if<!is_same<C,\
-    \ string>::value>::type* = nullptr>\nostream& operator << (ostream &os, const\
-    \ C &c) { bool f = true; os << \"{\"; for (const auto &x : c) { if (!f) os <<\
-    \ \", \"; f = false; os << x; } return os << \"}\"; }\ntemplate <typename T> void\
-    \ debug(string s, T x) { cerr << s << \" = \" << x << \"\\n\"; }\ntemplate <typename\
-    \ T, typename... Args> void debug(string s, T x, Args... args) { cerr << s.substr(0,\
-    \ s.find(',')) << \" = \" << x << \" | \"; debug(s.substr(s.find(',') + 2), args...);\
-    \ }\n\nconstexpr int pct(int x) { return __builtin_popcount(x); }\nconstexpr int\
-    \ bits(int x) { return 31 - __builtin_clz(x); } // floor(log2(x))\n\n#include\
-    \ \"../misc/easy-io.hpp\"\n\nconst int MOD = 1e9 + 7; // 998244353;\nconst ld\
-    \ PI = acos((ld) -1);\n\ntypedef std::decay<decltype(MOD)>::type mod_t; \nstruct\
-    \ mi {\n\tmod_t val;\n\texplicit operator mod_t() const { return val; }\n\tmi()\
-    \ { val = 0; }\n\tmi(const long long &v) {\n\t\tval = (-MOD <= v && v < MOD) ?\
-    \ v : v % MOD;\n\t\tif (val < 0) val += MOD; }\n\tfriend std::istream& operator>>(std::istream\
-    \ &in, mi &a) { \n\t\tlong long x; std::cin >> x; a = mi(x); return in; }\n\t\
-    friend std::ostream& operator<<(std::ostream &os, const mi &a) { return os <<\
-    \ a.val; }\n\tfriend void pr(const mi &a) { pr(a.val); }\n\tfriend void re(mi\
-    \ &a) { long long x; cin >> x; a = mi(x); }\n\tfriend bool operator==(const mi\
-    \ &a, const mi &b) { return a.val == b.val; }\n\tfriend bool operator!=(const\
-    \ mi &a, const mi &b) { return !(a == b); }    \n\tfriend bool operator<(const\
-    \ mi &a, const mi &b) { return a.val < b.val; }\n\tfriend bool operator>(const\
-    \ mi &a, const mi &b) { return a.val > b.val; }\n\tfriend bool operator<=(const\
-    \ mi &a, const mi &b) { return a.val <= b.val; }\n\tfriend bool operator>=(const\
-    \ mi &a, const mi &b) { return a.val >= b.val; }\n\tmi operator-() const { return\
-    \ mi(-val); }\n\tmi& operator+=(const mi &m) {\n\t\tif ((val += m.val) >= MOD)\
-    \ val -= MOD;\n\t\treturn *this; }\n\tmi& operator-=(const mi &m) {\n\t\tif ((val\
-    \ -= m.val) < 0) val += MOD;\n\t\treturn *this; }\n\tmi& operator*=(const mi &m)\
-    \ { val = (long long)val * m.val % MOD;\n\t\treturn *this; }\n\tfriend mi pow(mi\
-    \ a, long long p) {\n\t\tmi ans = 1; assert(p >= 0);\n\t\tfor (; p; p /= 2, a\
-    \ *= a) if (p & 1) ans *= a;\n\t\treturn ans; }\n\tfriend mi inv(const mi &a)\
-    \ { assert(a != 0); return pow(a, MOD - 2); }\n\tmi& operator/=(const mi &m) {\
-    \ return (*this) *= inv(m); }\n\tfriend mi operator+(mi a, const mi &b) { return\
-    \ a += b; }\n\tfriend mi operator-(mi a, const mi &b) { return a -= b; }\n\tfriend\
-    \ mi operator*(mi a, const mi &b) { return a *= b; }\n\tfriend mi operator/(mi\
-    \ a, const mi &b) { return a /= b; }\n};\n\ntypedef pair<mi, mi> pmi;\ntypedef\
-    \ vector<mi> vmi;\ntypedef vector<pmi> vpmi;"
+    typedef vector<pmi> vpmi;\n\nstruct Frac {\n\tlong long n, d;\n\tFrac(long long\
+    \ _n, long long _d) {\n\t\tn = _n, d = _d;\n\t\tlong long g = std::__gcd(n, d);\
+    \ n /= g, d /= g;\n\t\tif (d < 0) n *= -1, d *= -1;\n\t}\n\tlong double eval()\
+    \ { return (long double)n / d; }\n\tFrac(long long _n) : Frac(_n, 1) {}\n\tFrac()\
+    \ : Frac(0) {}\n\tfriend Frac abs(Frac F) { return Frac(abs(F.n), F.d); }\n\t\
+    friend bool operator<(const Frac& l, const Frac& r) { return l.n * r.d < r.n *\
+    \ l.d; }\n\tfriend bool operator<=(const Frac& l, const Frac& r) { return l.n\
+    \ * r.d <= r.n * l.d; }\n\tfriend bool operator>(const Frac& l, const Frac& r)\
+    \ { return l.n * r.d > r.n * l.d; }\n\tfriend bool operator>=(const Frac& l, const\
+    \ Frac& r) { return l.n * r.d >= r.n * l.d; }\n\tfriend bool operator==(const\
+    \ Frac& l, const Frac& r) { return l.n == r.n && l.d == r.d; }\n\tfriend bool\
+    \ operator!=(const Frac& l, const Frac& r) { return !(l == r); }\n\tFrac operator-()\
+    \ const { return Frac(-n, d); }\n\tfriend Frac operator+(const Frac& l, const\
+    \ Frac& r) { return Frac(l.n * r.d + r.n * l.d, l.d * r.d); }\n\tfriend Frac operator-(const\
+    \ Frac& l, const Frac& r) { return Frac(l.n * r.d - r.n * l.d, l.d * r.d); }\n\
+    \tfriend Frac operator*(const Frac& l, const Frac& r) { return Frac(l.n * r.n,\
+    \ l.d * r.d); }\n\tfriend Frac operator*(const Frac& l, int r) { return l * Frac(r,\
+    \ 1); }\n\tfriend Frac operator*(int r, const Frac& l) { return l * r; }\n\tfriend\
+    \ Frac operator/(const Frac& l, const Frac& r) { return l * Frac(r.d, r.n); }\n\
+    \tfriend Frac operator/(const Frac& l, const int& r) { return l / Frac(r, 1);\
+    \ }\n\tfriend Frac operator/(const int& l, const Frac& r) { return Frac(l, 1)\
+    \ / r; }\n\tfriend Frac& operator+=(Frac& l, const Frac& r) { return l = l + r;\
+    \ }\n\tfriend Frac& operator-=(Frac& l, const Frac& r) { return l = l - r; }\n\
+    \ttemplate <class T> friend Frac& operator*=(Frac& l, const T& r) { return l =\
+    \ l * r; }\n\ttemplate <class T> friend Frac& operator/=(Frac& l, const T& r)\
+    \ { return l = l / r; }\n\tfriend std::ostream& operator<<(std::ostream& os, const\
+    \ Frac& a) { return os << a.n << \"/\" << a.d; }\n};\n\nconst int L = 1e2;\n\n\
+    pi random() {\n\treturn mp(rng() % L + 1, rng() % L + 1);\n}\n\nFrac f(pi x) {\n\
+    \treturn Frac(x.f, x.s);\n}\n\nld d(pi x) {\n\treturn (ld)x.f / x.s;\n}\n\nvoid\
+    \ test() {\n\tsetIO(\"\");\n\tconst ld EPS = 1e-9;\n\tconst int T = 100;\n\tauto\
+    \ check = [&](ld x, ld y) {\n\t\tassert(abs(x - y) < EPS);\n\t};\n\tf0r(t, T)\
+    \ {\n\t\tauto a = random();\n\t\tauto b = random();\n\t\tcheck((f(a) + f(b)).eval(),\
+    \ d(a) + d(b));\n\t\tcheck((f(a) * f(b)).eval(), d(a) * d(b));\n\t\tcheck((f(a)\
+    \ - f(b)).eval(), d(a) - d(b));\n\t\tcheck((f(a) / f(b)).eval(), d(a) / d(b));\n\
+    \t}\n}\n\nint main() {\n\tsetIO(\"\");\n\ttest();\n\tint a, b;\n\tre(a, b);\n\t\
+    ps(a + b);\n\treturn 0;\n}\n"
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/aplusb\"\n\n#include \"\
+    ../../library/contest/template-full.hpp\"\n#include \"../../library/numerical/fraction.hpp\"\
+    \n\nconst int L = 1e2;\n\npi random() {\n\treturn mp(rng() % L + 1, rng() % L\
+    \ + 1);\n}\n\nFrac f(pi x) {\n\treturn Frac(x.f, x.s);\n}\n\nld d(pi x) {\n\t\
+    return (ld)x.f / x.s;\n}\n\nvoid test() {\n\tsetIO(\"\");\n\tconst ld EPS = 1e-9;\n\
+    \tconst int T = 100;\n\tauto check = [&](ld x, ld y) {\n\t\tassert(abs(x - y)\
+    \ < EPS);\n\t};\n\tf0r(t, T) {\n\t\tauto a = random();\n\t\tauto b = random();\n\
+    \t\tcheck((f(a) + f(b)).eval(), d(a) + d(b));\n\t\tcheck((f(a) * f(b)).eval(),\
+    \ d(a) * d(b));\n\t\tcheck((f(a) - f(b)).eval(), d(a) - d(b));\n\t\tcheck((f(a)\
+    \ / f(b)).eval(), d(a) / d(b));\n\t}\n}\n\nint main() {\n\tsetIO(\"\");\n\ttest();\n\
+    \tint a, b;\n\tre(a, b);\n\tps(a + b);\n\treturn 0;\n}"
   dependsOn:
+  - library/contest/template-full.hpp
   - library/misc/easy-io.hpp
-  isVerificationFile: false
-  path: library/contest/template-full.hpp
+  - library/numerical/fraction.hpp
+  isVerificationFile: true
+  path: verify/unit-test/unit-test-fraction.test.cpp
   requiredBy: []
-  timestamp: '2021-07-28 19:45:54-04:00'
-  verificationStatus: LIBRARY_SOME_WA
-  verifiedWith:
-  - verify/unit-test/unit-test-big-integer.test.cpp
-  - verify/unit-test/unit-test-fraction.test.cpp
-  - verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
-documentation_of: library/contest/template-full.hpp
+  timestamp: '2021-07-29 01:45:55-04:00'
+  verificationStatus: TEST_WRONG_ANSWER
+  verifiedWith: []
+documentation_of: verify/unit-test/unit-test-fraction.test.cpp
 layout: document
 redirect_from:
-- /library/library/contest/template-full.hpp
-- /library/library/contest/template-full.hpp.html
-title: library/contest/template-full.hpp
+- /verify/verify/unit-test/unit-test-fraction.test.cpp
+- /verify/verify/unit-test/unit-test-fraction.test.cpp.html
+title: verify/unit-test/unit-test-fraction.test.cpp
 ---

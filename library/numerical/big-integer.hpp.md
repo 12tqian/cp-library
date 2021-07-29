@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/unit-test/unit-test-big-integer.test.cpp
+    title: verify/unit-test/unit-test-big-integer.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links:
     - https://github.com/indy256/codelibrary/
@@ -279,8 +282,9 @@ data:
   path: library/numerical/big-integer.hpp
   requiredBy: []
   timestamp: '2021-07-24 19:40:07-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/unit-test/unit-test-big-integer.test.cpp
 documentation_of: library/numerical/big-integer.hpp
 layout: document
 redirect_from:

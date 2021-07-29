@@ -6,7 +6,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/contest/template-full.cpp
       title: library/contest/template-full.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/contest/template-full.hpp
       title: library/contest/template-full.hpp
     - icon: ':heavy_check_mark:'
@@ -32,9 +32,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/data-structures/1d-range-queries/implicit-lazy-segment-tree.hpp
       title: library/data-structures/1d-range-queries/implicit-lazy-segment-tree.hpp
-    - icon: ':heavy_check_mark:'
-      path: library/data-structures/1d-range-queries/interval-union.hpp
-      title: library/data-structures/1d-range-queries/interval-union.hpp
     - icon: ':heavy_check_mark:'
       path: library/data-structures/1d-range-queries/lazy-segment-tree.hpp
       title: library/data-structures/1d-range-queries/lazy-segment-tree.hpp
@@ -176,7 +173,7 @@ data:
       title: library/graphs/flows/push-relabel.hpp
   - name: library/misc
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/misc/easy-io.hpp
       title: library/misc/easy-io.hpp
     - icon: ':heavy_check_mark:'
@@ -213,15 +210,15 @@ data:
       title: library/number-theory/sieve.hpp
   - name: library/numerical
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/numerical/big-integer.hpp
       title: library/numerical/big-integer.hpp
     - icon: ':heavy_check_mark:'
       path: library/numerical/fast-fourier-transform.hpp
       title: library/numerical/fast-fourier-transform.hpp
-    - icon: ':warning:'
-      path: library/numerical/frac.hpp
-      title: library/numerical/frac.hpp
+    - icon: ':x:'
+      path: library/numerical/fraction.hpp
+      title: library/numerical/fraction.hpp
     - icon: ':heavy_check_mark:'
       path: library/numerical/karatsuba.hpp
       title: library/numerical/karatsuba.hpp
@@ -321,7 +318,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/codeforces/codeforces-869E-quadtree.test.cpp
       title: verify/codeforces/codeforces-869E-quadtree.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/codeforces/codeforces-981G.test.cpp
       title: verify/codeforces/codeforces-981G.test.cpp
   - name: verify/dmoj
@@ -365,6 +362,12 @@ data:
       title: verify/spoj/spoj-QTREE2.test.cpp
   - name: verify/unit-test
     pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/unit-test/unit-test-big-integer.test.cpp
+      title: verify/unit-test/unit-test-big-integer.test.cpp
+    - icon: ':x:'
+      path: verify/unit-test/unit-test-fraction.test.cpp
+      title: verify/unit-test/unit-test-fraction.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/unit-test/unit-test-gosper-hack.test.cpp
       title: verify/unit-test/unit-test-gosper-hack.test.cpp
