@@ -137,18 +137,18 @@ data:
     \ write_single(s[i]);\n\t}\n\ttemplate <class T> void write_single(const std::vector<T>\
     \ &val) {\n\t\tauto n = val.size();\n\t\tfor (size_t i = 0; i < n; i++) {\n\t\t\
     \tif (i) write_single(' ');\n\t\t\twrite_single(val[i]);\n\t\t}\n\t}\n};\n\n}\
-    \  // FastIO\n\nFastIO::Scanner sc;\nFastIO::Printer pr;\n\nint main() {\n\tusing\
-    \ namespace std;\n\tios::sync_with_stdio(false);\n\tcin.tie(nullptr);\n\tint n,\
-    \ q;\n\tsc.read(n, q);\n\tvector<long long> a(n);\n\tRangeSetSeg<long long> seg;\
-    \ \n\tseg.init(n);\n\tfor (int i = 0; i < n; i++) \n\t\tsc.read(a[i]), seg.range_set(i,\
+    \  // FastIO\n\nFastIO::Scanner sc(stdin);\nFastIO::Printer pr(stdout);\n\nint\
+    \ main() {\n\tusing namespace std;\n\tios::sync_with_stdio(false);\n\tcin.tie(nullptr);\n\
+    \tint n, q;\n\tsc.read(n, q);\n\tvector<long long> a(n);\n\tRangeSetSeg<long long>\
+    \ seg; \n\tseg.init(n);\n\tfor (int i = 0; i < n; i++) \n\t\tsc.read(a[i]), seg.range_set(i,\
     \ i, a[i]);\n\twhile (q--) {\n\t\tint t;\n\t\tsc.read(t);\n\t\tif (t == 0) {\n\
     \t\t\tint p, x;\n\t\t\tsc.read(p, x);\n\t\t\tseg.range_set(p, p, x + seg.qsum(p,\
     \ p));\n\t\t} else {\n\t\t\tint l, r;\n\t\t\tsc.read(l, r);\n\t\t\t--r;\n\t\t\t\
     pr.writeln(seg.qsum(l, r));\n\t\t}\n\t}\n\treturn 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/point_add_range_sum\"\n\
     \n#include \"../../library/contest/template-minimal.hpp\"\n#include \"../../library/data-structures/1d-range-queries/range-set-segment-tree.hpp\"\
-    \n#include \"../../library/misc/fast-io.hpp\"\n\nFastIO::Scanner sc;\nFastIO::Printer\
-    \ pr;\n\nint main() {\n\tusing namespace std;\n\tios::sync_with_stdio(false);\n\
+    \n#include \"../../library/misc/fast-io.hpp\"\n\nFastIO::Scanner sc(stdin);\n\
+    FastIO::Printer pr(stdout);\n\nint main() {\n\tusing namespace std;\n\tios::sync_with_stdio(false);\n\
     \tcin.tie(nullptr);\n\tint n, q;\n\tsc.read(n, q);\n\tvector<long long> a(n);\n\
     \tRangeSetSeg<long long> seg; \n\tseg.init(n);\n\tfor (int i = 0; i < n; i++)\
     \ \n\t\tsc.read(a[i]), seg.range_set(i, i, a[i]);\n\twhile (q--) {\n\t\tint t;\n\
@@ -163,7 +163,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/yosupo-point_add_range_sum-range-set-segment-tree.test.cpp
   requiredBy: []
-  timestamp: '2021-07-29 01:07:15-04:00'
+  timestamp: '2021-07-29 01:10:48-04:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/yosupo/yosupo-point_add_range_sum-range-set-segment-tree.test.cpp

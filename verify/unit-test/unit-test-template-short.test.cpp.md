@@ -1,15 +1,19 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: library/contest/template-short.cpp
     title: library/contest/template-short.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
+    '*NOT_SPECIAL_COMMENTS*': ''
+    IGNORE: ''
+    IGNORE_IF_CLANG: ''
+    IGNORE_IF_GCC: ''
     links: []
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -26,16 +30,16 @@ data:
     #include "../../library/contest/template-short.cpp""'
   dependsOn:
   - library/contest/template-short.cpp
-  isVerificationFile: false
-  path: verify/unit-test/unit-test-template-short.cpp
+  isVerificationFile: true
+  path: verify/unit-test/unit-test-template-short.test.cpp
   requiredBy: []
-  timestamp: '2021-07-29 00:58:12-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
+  timestamp: '2021-07-29 01:07:52-04:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: verify/unit-test/unit-test-template-short.cpp
+documentation_of: verify/unit-test/unit-test-template-short.test.cpp
 layout: document
 redirect_from:
-- /library/verify/unit-test/unit-test-template-short.cpp
-- /library/verify/unit-test/unit-test-template-short.cpp.html
-title: verify/unit-test/unit-test-template-short.cpp
+- /verify/verify/unit-test/unit-test-template-short.test.cpp
+- /verify/verify/unit-test/unit-test-template-short.test.cpp.html
+title: verify/unit-test/unit-test-template-short.test.cpp
 ---

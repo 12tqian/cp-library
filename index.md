@@ -12,7 +12,7 @@ data:
     - icon: ':question:'
       path: library/contest/template-minimal.hpp
       title: library/contest/template-minimal.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/contest/template-short.cpp
       title: library/contest/template-short.cpp
     - icon: ':heavy_check_mark:'
@@ -263,11 +263,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/string/suffix-array.hpp
       title: library/string/suffix-array.hpp
-  - name: verify/unit-test
-    pages:
-    - icon: ':warning:'
-      path: verify/unit-test/unit-test-template-short.cpp
-      title: verify/unit-test/unit-test-template-short.cpp
   verificationCategories:
   - name: verify/aizu
     pages:
@@ -382,6 +377,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/unit-test/unit-test-template-full.test.cpp
       title: verify/unit-test/unit-test-template-full.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/unit-test/unit-test-template-short.test.cpp
+      title: verify/unit-test/unit-test-template-short.test.cpp
   - name: verify/yosupo
     pages:
     - icon: ':heavy_check_mark:'
