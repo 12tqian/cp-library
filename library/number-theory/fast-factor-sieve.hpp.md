@@ -6,6 +6,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/atcoder/atcoder-abc210_f.test.cpp
     title: verify/atcoder/atcoder-abc210_f.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/codeforces/codeforces-1553G.test.cpp
+    title: verify/codeforces/codeforces-1553G.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -38,6 +41,7 @@ data:
   timestamp: '2021-07-24 19:40:07-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - verify/codeforces/codeforces-1553G.test.cpp
   - verify/atcoder/atcoder-abc210_f.test.cpp
 documentation_of: library/number-theory/fast-factor-sieve.hpp
 layout: document

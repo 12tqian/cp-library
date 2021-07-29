@@ -179,10 +179,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/misc/easy-io.hpp
       title: library/misc/easy-io.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/misc/fast-hash-map.hpp
       title: library/misc/fast-hash-map.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/misc/fast-input.hpp
       title: library/misc/fast-input.hpp
     - icon: ':warning:'
@@ -317,6 +317,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/codeforces/codeforces-1551F.test.cpp
       title: verify/codeforces/codeforces-1551F.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/codeforces/codeforces-1553G.test.cpp
+      title: verify/codeforces/codeforces-1553G.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/codeforces/codeforces-319C.test.cpp
       title: verify/codeforces/codeforces-319C.test.cpp

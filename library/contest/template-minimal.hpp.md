@@ -43,6 +43,9 @@ data:
     path: verify/codeforces/codeforces-1551F.test.cpp
     title: verify/codeforces/codeforces-1551F.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/codeforces/codeforces-1553G.test.cpp
+    title: verify/codeforces/codeforces-1553G.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/codeforces/codeforces-319C.test.cpp
     title: verify/codeforces/codeforces-319C.test.cpp
   - icon: ':heavy_check_mark:'
@@ -305,6 +308,7 @@ data:
   - verify/codeforces/codeforces-869E-general-fwt.test.cpp
   - verify/codeforces/codeforces-981G.test.cpp
   - verify/codeforces/codeforces-1195E.test.cpp
+  - verify/codeforces/codeforces-1553G.test.cpp
   - verify/codeforces/codeforces-319C.test.cpp
   - verify/codeforces/codeforces-1542E2.test.cpp
   - verify/codeforces/codeforces-1463E.test.cpp
