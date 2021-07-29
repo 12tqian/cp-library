@@ -6,7 +6,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/contest/template-full.cpp
       title: library/contest/template-full.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/contest/template-full.hpp
       title: library/contest/template-full.hpp
     - icon: ':heavy_check_mark:'
@@ -173,7 +173,7 @@ data:
       title: library/graphs/flows/push-relabel.hpp
   - name: library/misc
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/misc/easy-io.hpp
       title: library/misc/easy-io.hpp
     - icon: ':heavy_check_mark:'
@@ -216,7 +216,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/numerical/fast-fourier-transform.hpp
       title: library/numerical/fast-fourier-transform.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/numerical/fraction.hpp
       title: library/numerical/fraction.hpp
     - icon: ':heavy_check_mark:'
@@ -365,7 +365,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/unit-test/unit-test-big-integer.test.cpp
       title: verify/unit-test/unit-test-big-integer.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/unit-test/unit-test-fraction.test.cpp
       title: verify/unit-test/unit-test-fraction.test.cpp
     - icon: ':heavy_check_mark:'

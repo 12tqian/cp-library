@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/contest/template-full.hpp
     title: library/contest/template-full.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/misc/easy-io.hpp
     title: library/misc/easy-io.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/numerical/fraction.hpp
     title: library/numerical/fraction.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/aplusb
@@ -195,11 +195,11 @@ data:
     \ l * r; }\n\ttemplate <class T> friend Frac& operator/=(Frac& l, const T& r)\
     \ { return l = l / r; }\n\tfriend std::ostream& operator<<(std::ostream& os, const\
     \ Frac& a) { return os << a.n << \"/\" << a.d; }\n};\n\nconst int L = 1e2;\n\n\
-    pi random() {\n\treturn mp(rng() % L + 1, rng() % L + 1);\n}\n\nFrac frac_convert(pi\
+    pi random_pair() {\n\treturn mp(rng() % L + 1, rng() % L + 1);\n}\n\nFrac frac_convert(pi\
     \ x) {\n\treturn Frac(x.f, x.s);\n}\n\nld decimal_convert(pi x) {\n\treturn (ld)x.f\
     \ / x.s;\n}\n\nvoid test() {\n\tconst ld EPS = 1e-9;\n\tconst int T = 100;\n\t\
     auto check = [&](ld x, ld y) {\n\t\tassert(abs(x - y) < EPS);\n\t};\n\tf0r(t,\
-    \ T) {\n\t\tauto a = random();\n\t\tauto b = random();\n\t\tcheck((frac_convert(a)\
+    \ T) {\n\t\tauto a = random_pair();\n\t\tauto b = random_pair();\n\t\tcheck((frac_convert(a)\
     \ + frac_convert(b)).eval(), decimal_convert(a) + decimal_convert(b));\n\t\tcheck((frac_convert(a)\
     \ * frac_convert(b)).eval(), decimal_convert(a) * decimal_convert(b));\n\t\tcheck((frac_convert(a)\
     \ - frac_convert(b)).eval(), decimal_convert(a) - decimal_convert(b));\n\t\tcheck((frac_convert(a)\
@@ -208,17 +208,17 @@ data:
     \ + b);\n\treturn 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/aplusb\"\n\n#include \"\
     ../../library/contest/template-full.hpp\"\n#include \"../../library/numerical/fraction.hpp\"\
-    \n\nconst int L = 1e2;\n\npi random() {\n\treturn mp(rng() % L + 1, rng() % L\
-    \ + 1);\n}\n\nFrac frac_convert(pi x) {\n\treturn Frac(x.f, x.s);\n}\n\nld decimal_convert(pi\
-    \ x) {\n\treturn (ld)x.f / x.s;\n}\n\nvoid test() {\n\tconst ld EPS = 1e-9;\n\t\
-    const int T = 100;\n\tauto check = [&](ld x, ld y) {\n\t\tassert(abs(x - y) <\
-    \ EPS);\n\t};\n\tf0r(t, T) {\n\t\tauto a = random();\n\t\tauto b = random();\n\
-    \t\tcheck((frac_convert(a) + frac_convert(b)).eval(), decimal_convert(a) + decimal_convert(b));\n\
-    \t\tcheck((frac_convert(a) * frac_convert(b)).eval(), decimal_convert(a) * decimal_convert(b));\n\
-    \t\tcheck((frac_convert(a) - frac_convert(b)).eval(), decimal_convert(a) - decimal_convert(b));\n\
-    \t\tcheck((frac_convert(a) / frac_convert(b)).eval(), decimal_convert(a) / decimal_convert(b));\n\
-    \t}\n}\n\nint main() {\n\tsetIO(\"\");\n\ttest();\n\tint a, b;\n\tre(a, b);\n\t\
-    ps(a + b);\n\treturn 0;\n}"
+    \n\nconst int L = 1e2;\n\npi random_pair() {\n\treturn mp(rng() % L + 1, rng()\
+    \ % L + 1);\n}\n\nFrac frac_convert(pi x) {\n\treturn Frac(x.f, x.s);\n}\n\nld\
+    \ decimal_convert(pi x) {\n\treturn (ld)x.f / x.s;\n}\n\nvoid test() {\n\tconst\
+    \ ld EPS = 1e-9;\n\tconst int T = 100;\n\tauto check = [&](ld x, ld y) {\n\t\t\
+    assert(abs(x - y) < EPS);\n\t};\n\tf0r(t, T) {\n\t\tauto a = random_pair();\n\t\
+    \tauto b = random_pair();\n\t\tcheck((frac_convert(a) + frac_convert(b)).eval(),\
+    \ decimal_convert(a) + decimal_convert(b));\n\t\tcheck((frac_convert(a) * frac_convert(b)).eval(),\
+    \ decimal_convert(a) * decimal_convert(b));\n\t\tcheck((frac_convert(a) - frac_convert(b)).eval(),\
+    \ decimal_convert(a) - decimal_convert(b));\n\t\tcheck((frac_convert(a) / frac_convert(b)).eval(),\
+    \ decimal_convert(a) / decimal_convert(b));\n\t}\n}\n\nint main() {\n\tsetIO(\"\
+    \");\n\ttest();\n\tint a, b;\n\tre(a, b);\n\tps(a + b);\n\treturn 0;\n}"
   dependsOn:
   - library/contest/template-full.hpp
   - library/misc/easy-io.hpp
@@ -226,8 +226,8 @@ data:
   isVerificationFile: true
   path: verify/unit-test/unit-test-fraction.test.cpp
   requiredBy: []
-  timestamp: '2021-07-29 01:58:53-04:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2021-07-29 02:04:41-04:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/unit-test/unit-test-fraction.test.cpp
 layout: document

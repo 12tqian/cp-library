@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/unit-test/unit-test-fraction.test.cpp
     title: verify/unit-test/unit-test-fraction.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "\nstruct Frac {\n\tlong long n, d;\n\tFrac(long long _n, long long\
@@ -69,7 +69,7 @@ data:
   path: library/numerical/fraction.hpp
   requiredBy: []
   timestamp: '2021-07-29 01:45:55-04:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/unit-test/unit-test-fraction.test.cpp
 documentation_of: library/numerical/fraction.hpp
