@@ -2,10 +2,10 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/numerical/fast-fourier-transform.hpp
     title: library/numerical/fast-fourier-transform.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/numerical/polynomial.hpp
     title: library/numerical/polynomial.hpp
   _extendedVerifiedWith:
@@ -24,15 +24,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-convolution_mod_1000000007-karatsuba.test.cpp
     title: verify/yosupo/yosupo-convolution_mod_1000000007-karatsuba.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
     title: verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-range_affine_range_sum.test.cpp
     title: verify/yosupo/yosupo-range_affine_range_sum.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "\n// 5 is a root of both mods\ntemplate <int MOD, int RT> struct Mint\
@@ -96,7 +96,7 @@ data:
   - library/numerical/fast-fourier-transform.hpp
   - library/numerical/polynomial.hpp
   timestamp: '2021-07-25 14:11:17-04:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/codeforces/codeforces-869E-general-fwt.test.cpp
   - verify/codeforces/codeforces-981G.test.cpp

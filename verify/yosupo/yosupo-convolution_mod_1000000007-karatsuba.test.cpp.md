@@ -7,7 +7,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/numerical/karatsuba.hpp
     title: library/numerical/karatsuba.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/numerical/mod-int2.hpp
     title: library/numerical/mod-int2.hpp
   _extendedRequiredBy: []

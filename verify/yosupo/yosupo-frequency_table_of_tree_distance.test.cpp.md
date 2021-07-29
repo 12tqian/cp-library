@@ -1,35 +1,35 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/contest/template-full.hpp
     title: library/contest/template-full.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/data-structures/1d-range-queries/sparse-table.hpp
     title: library/data-structures/1d-range-queries/sparse-table.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/graphs/centroid-decomposition.hpp
     title: library/graphs/centroid-decomposition.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/graphs/lca-rmq.hpp
     title: library/graphs/lca-rmq.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/misc/easy-io.hpp
     title: library/misc/easy-io.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/numerical/fast-fourier-transform.hpp
     title: library/numerical/fast-fourier-transform.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/numerical/mod-int2.hpp
     title: library/numerical/mod-int2.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/numerical/polynomial.hpp
     title: library/numerical/polynomial.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/frequency_table_of_tree_distance
@@ -198,36 +198,37 @@ data:
     \ == par || vis[nxt])\n\t\t\t\t\tcontinue;\n\t\t\t\tif (2 * size[nxt] > num) \n\
     \t\t\t\t\tgo = nxt;\n\t\t\t}\n\t\t\tpar = src;\n\t\t\tsrc = go;\n\t\t} while (src\
     \ != -1);\n\t\treturn par;\n\t}\n\n\tint build_dfs(int src, int par = -1) {\n\t\
-    \tint c = get_centroid(src);\n\t\tvis[c] = true;\n\t\tparent[c] = par;\n\t\tfor\
-    \ (int nxt : g[c]) {\n\t\t\tif (vis[nxt]) \n\t\t\t\tcontinue;\n\t\t\tcg[c].push_back(nxt);\n\
-    \t\t\tbuild_dfs(nxt, c);\n\t\t}\n\t\treturn c;\n\t}\n\n\tvoid build() {\n\t\t\
-    root = build_dfs(0);\n\t}\n};  \n\n/**\n * O(n log n) preprocessing with O(1)\
-    \ query\n * Compress compute sthe minimal subtree containing\n * all node LCAs\
-    \ and comrpesses edges\n * O(S log S) compression\n * Returns list of (parent,\
-    \ original index)\n * Parent is the parent of node in compressed tree\n * Original\
-    \ index is the node it represents\n * get_child also returns the subtree child\
-    \ of node and -1 if it doesn't exist in O(1)\n * To support forest, gen on all\
-    \ the roots, initialize tmp and sparse at the end\n */\n\n\n/**\n * This Sparse\
-    \ Table stores indices of things\n * For destructive combinations like gcd, use\
-    \ associative_range_query.cpp\n * Use this for min, max, and when you need the\
-    \ indices of things\n */\n\ntemplate <class T> struct SparseTable {\n\tstd::vector<T>\
-    \ v;\n\tstd::vector<std::vector<int>> jump;\n\n\tint level(int x) { return 31\
-    \ - __builtin_clz(x); }\n\n\tint comb(int a, int b) {\n\t\treturn v[a] == v[b]\
-    \ ? std::min(a, b) : (v[a] < v[b] ? a : b);\n\t}\n\n\tvoid init(const std::vector<T>\
-    \ &_v) {\n\t\tv = _v;\n\t\tjump = {std::vector<int>((int)v.size())};\n\t\tiota(jump[0].begin(),\
-    \ jump[0].end(), 0);\n\t\tfor (int j = 1; (1 << j) <= (int)v.size(); j++) {\n\t\
-    \t\tjump.push_back(std::vector<int>((int)v.size() - (1 << j) + 1));\n\t\t\tfor\
-    \ (int i = 0; i < (int)jump[j].size(); i++) {\n\t\t\t\tjump[j][i] = comb(jump[j\
-    \ - 1][i], jump[j - 1][i + (1 << (j - 1))]);\n\t\t\t}\n\t\t}\n\t}\n\n\tint index(int\
-    \ l, int r) {\n\t\tassert(l <= r);\n\t\tint d = level(r - l + 1);\n\t\treturn\
-    \ comb(jump[d][l], jump[d][r - (1 << d) + 1]);\n\t}\n\n\tT query(int l, int r)\
-    \ {\n\t\treturn v[index(l, r)];\n\t}\n};\n\nstruct LCARMQ {\n\tint n; \n\tstd::vector<std::vector<int>>\
-    \ adj;\n\tstd::vector<int> dep, in, par, rev, out, pos;\n\tstd::vector<std::pair<int,\
-    \ int>> tmp;\n\tSparseTable<std::pair<int, int>> S;\n\tstd::vector<std::vector<int>>\
-    \ sparse;\n\tint ti = 0;\n\n\tvoid init(int _n) {\n\t\tn = _n;\n\t\tadj.resize(n);\n\
-    \t\tdep = in = out = par = rev = pos = std::vector<int>(n);\n\t\tsparse = {std::vector<int>(n)};\n\
-    \t\tfor (int j = 1; (1 << j) <= n; j++) {\n\t\t\tsparse.push_back(std::vector<int>(n\
-    \ - (1 << j) + 1));\n\t\t}\n\t}\n\n\tvoid ae(int u, int v) {\n\t\tadj[u].push_back(v);\n\
+    \tint c = get_centroid(src);\n\t\tvis[c] = true;\n\t\tparent[c] = par;\n\t\tif\
+    \ (par != -1) {\n\t\t\tcg[par].push_back(c);\n\t\t}\n\t\tfor (int nxt : g[c])\
+    \ {\n\t\t\tif (vis[nxt]) \n\t\t\t\tcontinue;\n\t\t\tbuild_dfs(nxt, c);\n\t\t}\n\
+    \t\treturn c;\n\t}\n\n\tvoid build() {\n\t\troot = build_dfs(0);\n\t}\n};  \n\n\
+    /**\n * O(n log n) preprocessing with O(1) query\n * Compress compute sthe minimal\
+    \ subtree containing\n * all node LCAs and comrpesses edges\n * O(S log S) compression\n\
+    \ * Returns list of (parent, original index)\n * Parent is the parent of node\
+    \ in compressed tree\n * Original index is the node it represents\n * get_child\
+    \ also returns the subtree child of node and -1 if it doesn't exist in O(1)\n\
+    \ * To support forest, gen on all the roots, initialize tmp and sparse at the\
+    \ end\n */\n\n\n/**\n * This Sparse Table stores indices of things\n * For destructive\
+    \ combinations like gcd, use associative_range_query.cpp\n * Use this for min,\
+    \ max, and when you need the indices of things\n */\n\ntemplate <class T> struct\
+    \ SparseTable {\n\tstd::vector<T> v;\n\tstd::vector<std::vector<int>> jump;\n\n\
+    \tint level(int x) { return 31 - __builtin_clz(x); }\n\n\tint comb(int a, int\
+    \ b) {\n\t\treturn v[a] == v[b] ? std::min(a, b) : (v[a] < v[b] ? a : b);\n\t\
+    }\n\n\tvoid init(const std::vector<T> &_v) {\n\t\tv = _v;\n\t\tjump = {std::vector<int>((int)v.size())};\n\
+    \t\tiota(jump[0].begin(), jump[0].end(), 0);\n\t\tfor (int j = 1; (1 << j) <=\
+    \ (int)v.size(); j++) {\n\t\t\tjump.push_back(std::vector<int>((int)v.size() -\
+    \ (1 << j) + 1));\n\t\t\tfor (int i = 0; i < (int)jump[j].size(); i++) {\n\t\t\
+    \t\tjump[j][i] = comb(jump[j - 1][i], jump[j - 1][i + (1 << (j - 1))]);\n\t\t\t\
+    }\n\t\t}\n\t}\n\n\tint index(int l, int r) {\n\t\tassert(l <= r);\n\t\tint d =\
+    \ level(r - l + 1);\n\t\treturn comb(jump[d][l], jump[d][r - (1 << d) + 1]);\n\
+    \t}\n\n\tT query(int l, int r) {\n\t\treturn v[index(l, r)];\n\t}\n};\n\nstruct\
+    \ LCARMQ {\n\tint n; \n\tstd::vector<std::vector<int>> adj;\n\tstd::vector<int>\
+    \ dep, in, par, rev, out, pos;\n\tstd::vector<std::pair<int, int>> tmp;\n\tSparseTable<std::pair<int,\
+    \ int>> S;\n\tstd::vector<std::vector<int>> sparse;\n\tint ti = 0;\n\n\tvoid init(int\
+    \ _n) {\n\t\tn = _n;\n\t\tadj.resize(n);\n\t\tdep = in = out = par = rev = pos\
+    \ = std::vector<int>(n);\n\t\tsparse = {std::vector<int>(n)};\n\t\tfor (int j\
+    \ = 1; (1 << j) <= n; j++) {\n\t\t\tsparse.push_back(std::vector<int>(n - (1 <<\
+    \ j) + 1));\n\t\t}\n\t}\n\n\tvoid ae(int u, int v) {\n\t\tadj[u].push_back(v);\n\
     \t\tadj[v].push_back(u);\n\t}\n\n\tvoid dfs(int src) {\n\t\tin[src] = ti++;\n\t\
     \tsparse[0][in[src]] = src;\n\t\tpos[src] = (int)tmp.size();\n\t\ttmp.emplace_back(dep[src],\
     \ src);\n\t\tfor (auto &nxt : adj[src]) {\n\t\t\tif (nxt == par[src]) continue;\n\
@@ -337,13 +338,16 @@ data:
     \");\n\tint n;\n\tre(n);\n\tCentroidDecomposition cd;\n\tcd.init(n);\n\tLCARMQ\
     \ lca;\n\tlca.init(n);\n\tvector<vi> g(n);\n\tf0r(i, n - 1) {\n\t\tint u, v;\n\
     \t\tre(u, v);\n\t\tg[u].pb(v);\n\t\tg[v].pb(u);\n\t\tlca.ae(u, v);\n\t\tcd.ae(u,\
-    \ v);\n\t}\n\tlca.gen();\n\tcd.build();\n\tvl ans(n);\n\tfunction<vl(int)> dfs\
-    \ = [&](int u) { // return how many at dist x\n\t\tvector<vl> polys;\n\t\tpolys.pb({1});\n\
-    \t\tdbg(u);\n\t\teach(v, cd.cg[u]) {\t\n\t\t\tauto res = dfs(v);\n\t\t\tres.insert(res.begin(),\
-    \ 0);\n\t\t\tpolys.pb(res);\n\t\t}\t\n\t\tvl sum;\n\t\teach(x, polys) sum += x;\n\
-    \t\tvl res = sum * sum;\n\t\teach(x, polys) res -= x * x;\n\t\tres /= 2;\n\t\t\
-    f0r(i, sz(res)) {\n\t\t\tans[i] += res[i];\n\t\t}\n\t\treturn sum;\n\t};\n\tdfs(cd.root);\n\
-    \tf1r(i, 1, n) {\n\t\tpr(ans[i], ' ');\n\t}\n\tps();\n\treturn 0;\n}\n"
+    \ v);\n\t}\n\tlca.gen();\n\tcd.build();\n\tvl ans(n);\n\tfunction<vi(int)> dfs\
+    \ = [&](int u) { // return how many at dist x\n\t\tvi verts;\n\t\tvector<vl> polys;\n\
+    \t\tpolys.pb({1});\n\t\tvl tmp;\n\t\teach(v, cd.cg[u]) {\t\n\t\t\tauto res = dfs(v);\n\
+    \t\t\teach(x, res) verts.pb(x);\n\t\t\ttmp.assign(res.size() + 1, 0);\n\t\t\t\
+    each(x, res) {\n\t\t\t\t++tmp[lca.dist(x, u)];\n\t\t\t}\n\t\t\twhile (tmp.back()\
+    \ == 0) tmp.pop_back();\n\t\t\tpolys.pb(tmp);\n\t\t}\t\n\t\tvl sum;\n\t\teach(x,\
+    \ polys) sum += x;\n\t\tvl res = sum * sum;\n\t\teach(x, polys) res -= x * x;\n\
+    \t\tres /= 2;\n\t\tf0r(i, sz(res)) {\n\t\t\tans[i] += res[i];\n\t\t}\n\t\tverts.pb(u);\n\
+    \t\treturn verts;\n\t};\n\tdfs(cd.root);\n\tf1r(i, 1, n) {\n\t\tpr(ans[i], ' ');\n\
+    \t}\n\tps();\n\treturn 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/frequency_table_of_tree_distance\"\
     \n\n#include \"../../library/contest/template-full.hpp\"\n#include \"../../library/graphs/centroid-decomposition.hpp\"\
     \n#include \"../../library/graphs/lca-rmq.hpp\"\n#include \"../../library/numerical/fast-fourier-transform.hpp\"\
@@ -352,13 +356,15 @@ data:
     re(n);\n\tCentroidDecomposition cd;\n\tcd.init(n);\n\tLCARMQ lca;\n\tlca.init(n);\n\
     \tvector<vi> g(n);\n\tf0r(i, n - 1) {\n\t\tint u, v;\n\t\tre(u, v);\n\t\tg[u].pb(v);\n\
     \t\tg[v].pb(u);\n\t\tlca.ae(u, v);\n\t\tcd.ae(u, v);\n\t}\n\tlca.gen();\n\tcd.build();\n\
-    \tvl ans(n);\n\tfunction<vl(int)> dfs = [&](int u) { // return how many at dist\
-    \ x\n\t\tvector<vl> polys;\n\t\tpolys.pb({1});\n\t\tdbg(u);\n\t\teach(v, cd.cg[u])\
-    \ {\t\n\t\t\tauto res = dfs(v);\n\t\t\tres.insert(res.begin(), 0);\n\t\t\tpolys.pb(res);\n\
+    \tvl ans(n);\n\tfunction<vi(int)> dfs = [&](int u) { // return how many at dist\
+    \ x\n\t\tvi verts;\n\t\tvector<vl> polys;\n\t\tpolys.pb({1});\n\t\tvl tmp;\n\t\
+    \teach(v, cd.cg[u]) {\t\n\t\t\tauto res = dfs(v);\n\t\t\teach(x, res) verts.pb(x);\n\
+    \t\t\ttmp.assign(res.size() + 1, 0);\n\t\t\teach(x, res) {\n\t\t\t\t++tmp[lca.dist(x,\
+    \ u)];\n\t\t\t}\n\t\t\twhile (tmp.back() == 0) tmp.pop_back();\n\t\t\tpolys.pb(tmp);\n\
     \t\t}\t\n\t\tvl sum;\n\t\teach(x, polys) sum += x;\n\t\tvl res = sum * sum;\n\t\
     \teach(x, polys) res -= x * x;\n\t\tres /= 2;\n\t\tf0r(i, sz(res)) {\n\t\t\tans[i]\
-    \ += res[i];\n\t\t}\n\t\treturn sum;\n\t};\n\tdfs(cd.root);\n\tf1r(i, 1, n) {\n\
-    \t\tpr(ans[i], ' ');\n\t}\n\tps();\n\treturn 0;\n}"
+    \ += res[i];\n\t\t}\n\t\tverts.pb(u);\n\t\treturn verts;\n\t};\n\tdfs(cd.root);\n\
+    \tf1r(i, 1, n) {\n\t\tpr(ans[i], ' ');\n\t}\n\tps();\n\treturn 0;\n}"
   dependsOn:
   - library/contest/template-full.hpp
   - library/misc/easy-io.hpp
@@ -371,8 +377,8 @@ data:
   isVerificationFile: true
   path: verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
   requiredBy: []
-  timestamp: '2021-07-29 00:30:48-04:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2021-07-29 00:53:10-04:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
 layout: document

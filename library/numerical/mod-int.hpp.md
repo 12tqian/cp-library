@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/codeforces/codeforces-1551F.test.cpp
+    title: verify/codeforces/codeforces-1551F.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "\nconst int MOD = 1e9 + 7;\n\ntypedef std::decay<decltype(MOD)>::type\
@@ -61,8 +64,9 @@ data:
   path: library/numerical/mod-int.hpp
   requiredBy: []
   timestamp: '2021-07-25 14:11:17-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/codeforces/codeforces-1551F.test.cpp
 documentation_of: library/numerical/mod-int.hpp
 layout: document
 redirect_from:

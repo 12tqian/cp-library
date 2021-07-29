@@ -40,6 +40,9 @@ data:
     path: verify/codeforces/codeforces-1542E2.test.cpp
     title: verify/codeforces/codeforces-1542E2.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/codeforces/codeforces-1551F.test.cpp
+    title: verify/codeforces/codeforces-1551F.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/codeforces/codeforces-319C.test.cpp
     title: verify/codeforces/codeforces-319C.test.cpp
   - icon: ':heavy_check_mark:'
@@ -306,6 +309,7 @@ data:
   - verify/codeforces/codeforces-1542E2.test.cpp
   - verify/codeforces/codeforces-1463E.test.cpp
   - verify/codeforces/codeforces-869E-quadtree.test.cpp
+  - verify/codeforces/codeforces-1551F.test.cpp
   - verify/codeforces/codeforces-1074F.test.cpp
   - verify/aizu/aizu-GRL_6_A-2.test.cpp
   - verify/aizu/aizu-GRL_1_B.test.cpp
