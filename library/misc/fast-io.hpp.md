@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: verify/yosupo/yosupo-point_add_range_sum-range-set-segment-tree.test.cpp
+    title: verify/yosupo/yosupo-point_add_range_sum-range-set-segment-tree.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#include <unistd.h>\n\nnamespace FastIO {\n\nnamespace Internal {\n\
@@ -201,8 +204,9 @@ data:
   path: library/misc/fast-io.hpp
   requiredBy: []
   timestamp: '2021-07-24 19:40:07-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_WA
+  verifiedWith:
+  - verify/yosupo/yosupo-point_add_range_sum-range-set-segment-tree.test.cpp
 documentation_of: library/misc/fast-io.hpp
 layout: document
 redirect_from:

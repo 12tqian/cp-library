@@ -9,7 +9,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/contest/template-full.hpp
       title: library/contest/template-full.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/contest/template-minimal.hpp
       title: library/contest/template-minimal.hpp
     - icon: ':warning:'
@@ -47,7 +47,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/data-structures/1d-range-queries/point-update-segment-tree.hpp
       title: library/data-structures/1d-range-queries/point-update-segment-tree.hpp
-    - icon: ':warning:'
+    - icon: ':x:'
       path: library/data-structures/1d-range-queries/range-set-segment-tree.hpp
       title: library/data-structures/1d-range-queries/range-set-segment-tree.hpp
     - icon: ':heavy_check_mark:'
@@ -185,7 +185,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/misc/fast-input.hpp
       title: library/misc/fast-input.hpp
-    - icon: ':warning:'
+    - icon: ':x:'
       path: library/misc/fast-io.hpp
       title: library/misc/fast-io.hpp
     - icon: ':heavy_check_mark:'
@@ -429,6 +429,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-point_add_range_sum-point-update-segment-tree.test.cpp
       title: verify/yosupo/yosupo-point_add_range_sum-point-update-segment-tree.test.cpp
+    - icon: ':x:'
+      path: verify/yosupo/yosupo-point_add_range_sum-range-set-segment-tree.test.cpp
+      title: verify/yosupo/yosupo-point_add_range_sum-range-set-segment-tree.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-point_add_range_sum-sparse-segment-tree.test.cpp
       title: verify/yosupo/yosupo-point_add_range_sum-sparse-segment-tree.test.cpp

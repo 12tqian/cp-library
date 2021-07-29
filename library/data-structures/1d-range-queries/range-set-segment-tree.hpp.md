@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: verify/yosupo/yosupo-point_add_range_sum-range-set-segment-tree.test.cpp
+    title: verify/yosupo/yosupo-point_add_range_sum-range-set-segment-tree.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "\ntemplate <class T> struct RangeSetSeg {\n\tconst T UNUSED = -1;\n\
@@ -49,8 +52,9 @@ data:
   path: library/data-structures/1d-range-queries/range-set-segment-tree.hpp
   requiredBy: []
   timestamp: '2021-07-24 21:33:21-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_WA
+  verifiedWith:
+  - verify/yosupo/yosupo-point_add_range_sum-range-set-segment-tree.test.cpp
 documentation_of: library/data-structures/1d-range-queries/range-set-segment-tree.hpp
 layout: document
 redirect_from:

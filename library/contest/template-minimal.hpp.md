@@ -135,6 +135,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-point_add_range_sum-point-update-segment-tree.test.cpp
     title: verify/yosupo/yosupo-point_add_range_sum-point-update-segment-tree.test.cpp
+  - icon: ':x:'
+    path: verify/yosupo/yosupo-point_add_range_sum-range-set-segment-tree.test.cpp
+    title: verify/yosupo/yosupo-point_add_range_sum-range-set-segment-tree.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-point_add_range_sum-sparse-segment-tree.test.cpp
     title: verify/yosupo/yosupo-point_add_range_sum-sparse-segment-tree.test.cpp
@@ -183,9 +186,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-vertex_add_path_sum.test.cpp
     title: verify/yosupo/yosupo-vertex_add_path_sum.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: '
@@ -301,7 +304,7 @@ data:
   requiredBy:
   - library/graphs/enumerate-triangles.cpp
   timestamp: '2021-07-28 19:45:54-04:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/unit-test/unit-test-hashing.test.cpp
   - verify/unit-test/unit-test-gosper-hack.test.cpp
@@ -330,6 +333,7 @@ data:
   - verify/yosupo/yosupo-rectangle_sum-offline-2d-bit.test.cpp
   - verify/yosupo/yosupo-lca-lca-jump.test.cpp
   - verify/yosupo/yosupo-point_add_range_sum-fenwick-tree.test.cpp
+  - verify/yosupo/yosupo-point_add_range_sum-range-set-segment-tree.test.cpp
   - verify/yosupo/yosupo-line_add_get_min.test.cpp
   - verify/yosupo/yosupo-lca-lca-rmq.test.cpp
   - verify/yosupo/yosupo-scc-tarjan.test.cpp
