@@ -28,6 +28,9 @@ data:
     path: verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
     title: verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/yosupo/yosupo-inverse_matrix.test.cpp
+    title: verify/yosupo/yosupo-inverse_matrix.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-range_affine_range_sum.test.cpp
     title: verify/yosupo/yosupo-range_affine_range_sum.test.cpp
   _isVerificationFailed: false
@@ -102,6 +105,7 @@ data:
   - verify/yosupo/yosupo-convolution_mod_1000000007-fast-fourier-transform.test.cpp
   - verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
   - verify/yosupo/yosupo-range_affine_range_sum.test.cpp
+  - verify/yosupo/yosupo-inverse_matrix.test.cpp
   - verify/codeforces/codeforces-981G.test.cpp
   - verify/codeforces/codeforces-869E-general-fwt.test.cpp
   - verify/codeforces/codeforces-869E-quadtree.test.cpp

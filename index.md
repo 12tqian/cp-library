@@ -410,6 +410,9 @@ data:
       path: verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
       title: verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
     - icon: ':heavy_check_mark:'
+      path: verify/yosupo/yosupo-inverse_matrix.test.cpp
+      title: verify/yosupo/yosupo-inverse_matrix.test.cpp
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-lca-lca-jump.test.cpp
       title: verify/yosupo/yosupo-lca-lca-jump.test.cpp
     - icon: ':heavy_check_mark:'

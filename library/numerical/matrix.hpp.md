@@ -6,6 +6,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/kattis/kattis-equationsolver.test.cpp
     title: verify/kattis/kattis-equationsolver.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/yosupo/yosupo-inverse_matrix.test.cpp
+    title: verify/yosupo/yosupo-inverse_matrix.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -106,6 +109,7 @@ data:
   timestamp: '2021-07-24 22:46:46-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - verify/yosupo/yosupo-inverse_matrix.test.cpp
   - verify/kattis/kattis-equationsolver.test.cpp
 documentation_of: library/numerical/matrix.hpp
 layout: document

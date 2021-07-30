@@ -112,6 +112,9 @@ data:
     path: verify/yosupo/yosupo-factorize.test.cpp
     title: verify/yosupo/yosupo-factorize.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/yosupo/yosupo-inverse_matrix.test.cpp
+    title: verify/yosupo/yosupo-inverse_matrix.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-lca-lca-jump.test.cpp
     title: verify/yosupo/yosupo-lca-lca-jump.test.cpp
   - icon: ':heavy_check_mark:'
@@ -332,6 +335,7 @@ data:
   - verify/yosupo/yosupo-range_affine_range_sum.test.cpp
   - verify/yosupo/yosupo-scc-kosaraju.test.cpp
   - verify/yosupo/yosupo-enumerate_palindromes.test.cpp
+  - verify/yosupo/yosupo-inverse_matrix.test.cpp
   - verify/yosupo/yosupo-suffixarray-linear.test.cpp
   - verify/yosupo/yosupo-lca-lca-jump.test.cpp
   - verify/yosupo/yosupo-sqrt_mod.test.cpp
