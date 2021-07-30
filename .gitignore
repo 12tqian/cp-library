@@ -1,3 +1,6 @@
 #!/usr/bin/env wolframscript
 *.exe
 unused
+bundle.py
+compress.py
+include_path.py
