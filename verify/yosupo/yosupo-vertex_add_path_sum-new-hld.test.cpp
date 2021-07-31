@@ -11,6 +11,7 @@ int main() {
 	struct Node {
 		long long v;
 		int size;
+		
 		Node() : v(0), size(1) {}
 		Node(long long _v, int _size) : v(_v), size(_size) {}
 	};

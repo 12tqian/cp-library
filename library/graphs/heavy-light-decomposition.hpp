@@ -54,7 +54,7 @@ public:
 	G g;
 	int id;
 	std::vector<int> size, depth, down, up, nxt, par;
-	
+
 	HeavyLightDecomposition(G& _g, std::vector<int> roots = {0})
 			: g(_g),
 				id(0),
@@ -65,7 +65,6 @@ public:
 				nxt(g.size(), 0), 
 				par(g.size(), 0) {
 		for (int root : roots) {
-			cout << g.size() << endl;
 			par[root] = nxt[root] = root;
 			dfs_sz(root);
 			dfs_hld(root);
