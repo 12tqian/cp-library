@@ -4,20 +4,17 @@ data:
   - icon: ':warning:'
     path: library/numerical/number-theoretic-transform.hpp
     title: library/numerical/number-theoretic-transform.hpp
-  _extendedRequiredBy:
   - icon: ':warning:'
-    path: library/numerical/berlekamp-massey.hpp
-    title: library/numerical/berlekamp-massey.hpp
-  - icon: ':warning:'
-    path: library/numerical/multipoint-evaluation.hpp
-    title: library/numerical/multipoint-evaluation.hpp
+    path: library/numerical/polynomial.hpp
+    title: library/numerical/polynomial.hpp
+  _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "\n\nnamespace NTT {\n\nint bsf(unsigned int x) { return __builtin_ctz(x);\
+  bundledCode: "\n\n\nnamespace NTT {\n\nint bsf(unsigned int x) { return __builtin_ctz(x);\
     \ }\nint bsf(unsigned long long x) { return __builtin_ctzll(x); }\n\ntemplate\
     \ <class Mint> void nft(bool type, std::vector<Mint>& a) {\n\tint n = int(a.size()),\
     \ s = 0;\n\twhile ((1 << s) < n) s++;\n\tassert(1 << s == n);\n\tstatic std::vector<Mint>\
@@ -125,78 +122,50 @@ data:
     \ os, const Poly& p) {\n\t\tif (p.size() == 0) return os << \"0\";\n\t\tfor (auto\
     \ i = 0; i < p.size(); i++) {\n\t\t\tif (p.v[i]) {\n\t\t\t\tos << p.v[i] << \"\
     x^\" << i;\n\t\t\t\tif (i != p.size() - 1) os << \"+\";\n\t\t\t}\n\t\t}\n\t\t\
-    return os;\n\t}\n};\n"
-  code: "#pragma once\n\n#include \"number-theoretic-transform.hpp\"\n\ntemplate <class\
-    \ D> struct Poly {\n\tstd::vector<D> v;\n\tPoly(const std::vector<D>& _v = {})\
-    \ : v(_v) { shrink(); }\n\n\tvoid shrink() {\n\t\twhile (v.size() && !v.back())\
-    \ v.pop_back();\n\t}\n\n\tvoid resize(int n) { v.resize(n); }\n\tvoid assign(int\
-    \ n, D& x) { v.assign(n, x); }\n\tvoid push_back(const D& x) { v.push_back(x);\
-    \ }\n\tvoid pop_back() { v.pop_back(); }\n\t\n\tint size() const { return int(v.size());\
-    \ }\n\n\tD freq(int p) const { return (p < size()) ? v[p] : D(0); }\n\tD& operator[]\
-    \ (int index) { return v[index]; }\n\t\n\tPoly operator+(const Poly& r) const\
-    \ {\n\t\tauto n = max(size(), r.size());\n\t\tstd::vector<D> res(n);\n\t\tfor\
-    \ (int i = 0; i < n; i++) res[i] = freq(i) + r.freq(i);\n\t\treturn res;\n\t}\n\
-    \t\n\tPoly operator-(const Poly& r) const {\n\t\tint n = max(size(), r.size());\n\
-    \t\tstd::vector<D> res(n);\n\t\tfor (int i = 0; i < n; i++) res[i] = freq(i) -\
-    \ r.freq(i);\n\t\treturn res;\n\t}\n\t\n\tPoly operator*(const Poly& r) const\
-    \ { return {NTT::multiply(v, r.v)}; }\n\t\n\tPoly operator*(const D& r) const\
-    \ {\n\t\tint n = size();\n\t\tstd::vector<D> res(n);\n\t\tfor (int i = 0; i <\
-    \ n; i++) res[i] = v[i] * r;\n\t\treturn res;\n\t}\n\n\tPoly operator/(const D\
-    \ &r) const{  *this * r.inv(); }\n\t\n\tPoly operator/(const Poly& r) const {\n\
-    \t\tif (size() < r.size()) return {{}};\n\t\tint n = size() - r.size() + 1;\n\t\
-    \treturn (rev().pre(n) * r.rev().inv(n)).pre(n).rev(n);\n\t}\n\t\n\tPoly operator%(const\
-    \ Poly& r) const { return *this - *this / r * r; }\n\t\n\tPoly operator<<(int\
-    \ s) const {\n\t\tstd::vector<D> res(size() + s);\n\t\tfor (int i = 0; i < size();\
-    \ i++) res[i + s] = v[i];\n\t\treturn res;\n\t}\n\t\n\tPoly operator>>(int s)\
-    \ const {\n\t\tif (size() <= s) return Poly();\n\t\tstd::vector<D> res(size()\
-    \ - s);\n\t\tfor (int i = 0; i < size() - s; i++) res[i] = v[i + s];\n\t\treturn\
-    \ res;\n\t}\n\t\n\tPoly& operator+=(const Poly& r) { return *this = *this + r;\
-    \ }\n\tPoly& operator-=(const Poly& r) { return *this = *this - r; }\n\tPoly&\
-    \ operator*=(const Poly& r) { return *this = *this * r; }\n\tPoly& operator*=(const\
-    \ D& r) { return *this = *this * r; }\n\tPoly& operator/=(const Poly& r) { return\
-    \ *this = *this / r; }\n\tPoly& operator/=(const D &r) {return *this = *this/r;}\n\
-    \tPoly& operator%=(const Poly& r) { return *this = *this % r; }\n\tPoly& operator<<=(const\
-    \ size_t& n) { return *this = *this << n; }\n\tPoly& operator>>=(const size_t&\
-    \ n) { return *this = *this >> n; }\n\n\tPoly pre(int le) const { return {{v.begin(),\
-    \ v.begin() + min(size(), le)}}; }\n\t\n\tPoly rev(int n = -1) const {\n\t\tstd::vector<D>\
-    \ res = v;\n\t\tif (n != -1) res.resize(n);\n\t\treverse(res.begin(), res.end());\n\
-    \t\treturn res;\n\t}\n\t\n\tPoly diff() const {\n\t\tstd::vector<D> res(max(0,\
-    \ size() - 1));\n\t\tfor (int i = 1; i < size(); i++) res[i - 1] = freq(i) * i;\n\
-    \t\treturn res;\n\t}\n\t\n\tPoly inte() const {\n\t\tstd::vector<D> res(size()\
-    \ + 1);\n\t\tfor (int i = 0; i < size(); i++) res[i + 1] = freq(i) / (i + 1);\n\
-    \t\treturn res;\n\t}\n\n\t// f * f.inv() = 1 + g(x)x^m\n\tPoly inv(int m) const\
-    \ {\n\t\tPoly res = Poly({D(1) / freq(0)});\n\t\tfor (int i = 1; i < m; i *= 2)\
-    \ {\n\t\t\tres = (res * D(2) - res * res * pre(2 * i)).pre(2 * i);\n\t\t}\n\t\t\
-    return res.pre(m);\n\t}\n\t\n\tPoly exp(int n) const {\n\t\tassert(freq(0) ==\
-    \ 0);\n\t\tPoly f({1}), g({1});\n\t\tfor (int i = 1; i < n; i *= 2) {\n\t\t\t\
-    g = (g * 2 - f * g * g).pre(i);\n\t\t\tPoly q = diff().pre(i - 1);\n\t\t\tPoly\
-    \ w = (q + g * (f.diff() - f * q)).pre(2 * i - 1);\n\t\t\tf = (f + f * (*this\
-    \ - w.inte()).pre(2 * i)).pre(2 * i);\n\t\t}\n\t\treturn f.pre(n);\n\t}\n\t\n\t\
-    Poly log(int n) const {\n\t\tassert(freq(0) == 1);\n\t\tauto f = pre(n);\n\t\t\
-    return (f.diff() * f.inv(n - 1)).pre(n - 1).inte();\n\t}\n\t\n\tPoly sqrt(int\
-    \ n) const {\n\t\tassert(freq(0) == 1);\n\t\tPoly f = pre(n + 1);\n\t\tPoly g({1});\n\
-    \t\tfor (int i = 1; i < n; i *= 2) {\n\t\t\tg = (g + f.pre(2 * i) * g.inv(2 *\
-    \ i)) / 2;\n\t\t}\n\t\treturn g.pre(n + 1);\n\t}\n\n\tPoly pow_mod(long long n,\
-    \ const Poly& mod) {\n\t\tPoly x = *this, r = {{1}};\n\t\twhile (n) {\n\t\t\t\
-    if (n & 1) r = r * x % mod;\n\t\t\tx = x * x % mod;\n\t\t\tn >>= 1;\n\t\t}\n\t\
-    \treturn r;\n\t}\n\n\tfriend ostream& operator<<(ostream& os, const Poly& p) {\n\
-    \t\tif (p.size() == 0) return os << \"0\";\n\t\tfor (auto i = 0; i < p.size();\
-    \ i++) {\n\t\t\tif (p.v[i]) {\n\t\t\t\tos << p.v[i] << \"x^\" << i;\n\t\t\t\t\
-    if (i != p.size() - 1) os << \"+\";\n\t\t\t}\n\t\t}\n\t\treturn os;\n\t}\n};\n"
+    return os;\n\t}\n};\n\ntemplate <class Mint> struct MultiEval {\n\tusing NP =\
+    \ MultiEval*;\n\tNP l, r;\n\tstd::vector<Mint> que;\n\tint sz;\n\tPoly<Mint> mul;\n\
+    \n\tMultiEval(const std::vector<Mint>& _que, int off, int _sz) : sz(_sz) {\n\t\
+    \tif (sz <= 100) {\n\t\t\tque = {_que.begin() + off, _que.begin() + off + sz};\n\
+    \t\t\tmul = {{1}};\n\t\t\tfor (auto x : que) mul *= {{-x, 1}};\n\t\t\treturn;\n\
+    \t\t}\n\t\tl = new MultiEval(_que, off, sz / 2);\n\t\tr = new MultiEval(_que,\
+    \ off + sz / 2, sz - sz / 2);\n\t\tmul = l->mul * r->mul;\n\t}\n\n\tMultiEval(const\
+    \ std::vector<Mint>& _que) : MultiEval(_que, 0, int(_que.size())) {}\n\n\tvoid\
+    \ query(const Poly<Mint>& _pol, std::vector<Mint>& res) const {\n\t\tif (sz <=\
+    \ 100) {\n\t\t\tfor (auto x : que) {\n\t\t\t\tMint sm = 0, base = 1;\n\t\t\t\t\
+    for (int i = 0; i < _pol.size(); i++) {\n\t\t\t\t\tsm += base * _pol.freq(i);\n\
+    \t\t\t\t\tbase *= x;\n\t\t\t\t}\n\t\t\t\tres.push_back(sm);\n\t\t\t}\n\t\t\treturn;\n\
+    \t\t}\n\t\tauto pol = _pol % mul;\n\t\tl->query(pol, res);\n\t\tr->query(pol,\
+    \ res);\n\t}\n\t\n\tstd::vector<Mint> query(const Poly<Mint>& pol) const {\n\t\
+    \tstd::vector<Mint> res;\n\t\tquery(pol, res);\n\t\treturn res;\n\t}\n};\n"
+  code: "#pragma once\n\n#include \"polynomial.hpp\"\n\ntemplate <class Mint> struct\
+    \ MultiEval {\n\tusing NP = MultiEval*;\n\tNP l, r;\n\tstd::vector<Mint> que;\n\
+    \tint sz;\n\tPoly<Mint> mul;\n\n\tMultiEval(const std::vector<Mint>& _que, int\
+    \ off, int _sz) : sz(_sz) {\n\t\tif (sz <= 100) {\n\t\t\tque = {_que.begin() +\
+    \ off, _que.begin() + off + sz};\n\t\t\tmul = {{1}};\n\t\t\tfor (auto x : que)\
+    \ mul *= {{-x, 1}};\n\t\t\treturn;\n\t\t}\n\t\tl = new MultiEval(_que, off, sz\
+    \ / 2);\n\t\tr = new MultiEval(_que, off + sz / 2, sz - sz / 2);\n\t\tmul = l->mul\
+    \ * r->mul;\n\t}\n\n\tMultiEval(const std::vector<Mint>& _que) : MultiEval(_que,\
+    \ 0, int(_que.size())) {}\n\n\tvoid query(const Poly<Mint>& _pol, std::vector<Mint>&\
+    \ res) const {\n\t\tif (sz <= 100) {\n\t\t\tfor (auto x : que) {\n\t\t\t\tMint\
+    \ sm = 0, base = 1;\n\t\t\t\tfor (int i = 0; i < _pol.size(); i++) {\n\t\t\t\t\
+    \tsm += base * _pol.freq(i);\n\t\t\t\t\tbase *= x;\n\t\t\t\t}\n\t\t\t\tres.push_back(sm);\n\
+    \t\t\t}\n\t\t\treturn;\n\t\t}\n\t\tauto pol = _pol % mul;\n\t\tl->query(pol, res);\n\
+    \t\tr->query(pol, res);\n\t}\n\t\n\tstd::vector<Mint> query(const Poly<Mint>&\
+    \ pol) const {\n\t\tstd::vector<Mint> res;\n\t\tquery(pol, res);\n\t\treturn res;\n\
+    \t}\n};\n"
   dependsOn:
+  - library/numerical/polynomial.hpp
   - library/numerical/number-theoretic-transform.hpp
   isVerificationFile: false
-  path: library/numerical/polynomial.hpp
-  requiredBy:
-  - library/numerical/berlekamp-massey.hpp
-  - library/numerical/multipoint-evaluation.hpp
+  path: library/numerical/multipoint-evaluation.hpp
+  requiredBy: []
   timestamp: '2021-07-30 22:48:36-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: library/numerical/polynomial.hpp
+documentation_of: library/numerical/multipoint-evaluation.hpp
 layout: document
 redirect_from:
-- /library/library/numerical/polynomial.hpp
-- /library/library/numerical/polynomial.hpp.html
-title: library/numerical/polynomial.hpp
+- /library/library/numerical/multipoint-evaluation.hpp
+- /library/library/numerical/multipoint-evaluation.hpp.html
+title: library/numerical/multipoint-evaluation.hpp
 ---

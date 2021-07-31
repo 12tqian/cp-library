@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
   - icon: ':heavy_check_mark:'
@@ -10,7 +10,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/data-structures/1d-range-queries/interval-union.hpp
     title: library/data-structures/1d-range-queries/interval-union.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/numerical/mod-int2.hpp
     title: library/numerical/mod-int2.hpp
   _extendedRequiredBy: []

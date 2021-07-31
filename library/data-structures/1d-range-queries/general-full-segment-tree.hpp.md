@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-point_set_range_composite.test.cpp
     title: verify/yosupo/yosupo-point_set_range_composite.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "\ntemplate <class D, class L, class OpDD, class OpDL, class OpLL>\
@@ -30,8 +30,8 @@ data:
     \tif (a <= l && r <= b) {\n\t\t\tall_add(k, x);\n\t\t\treturn;\n\t\t}\n\t\tpush(k);\n\
     \t\tint mid = (l + r) / 2;\n\t\tadd(a, b, x, l, mid, 2 * k);\n\t\tadd(a, b, x,\
     \ mid, r, 2 * k + 1);\n\t\tupdate(k);\n\t}\n\n\tvoid add(int a, int b, L x) {\n\
-    \t\ta += sz;\n\t\tb += sz + 1;\n\t\tfor (int i = lg; i >= 1; i--) {\n\t\t\tif\
-    \ (((a >> i) << i) != a) push(a >> i);\n\t\t\tif (((b >> i) << i) != b) push((b\
+    \t\t++b;\n\t\ta += sz;\n\t\tb += sz;\n\t\tfor (int i = lg; i >= 1; i--) {\n\t\t\
+    \tif (((a >> i) << i) != a) push(a >> i);\n\t\t\tif (((b >> i) << i) != b) push((b\
     \ - 1) >> i);\n\t\t}\n\t\t{\n\t\t\tint a2 = a, b2 = b;\n\t\t\twhile (a < b) {\n\
     \t\t\t\tif (a & 1) all_add(a++, x);\n\t\t\t\tif (b & 1) all_add(--b, x);\n\t\t\
     \t\ta >>= 1;\n\t\t\t\tb >>= 1;\n\t\t\t}\n\t\t\ta = a2;\n\t\t\tb = b2;\n\t\t}\n\
@@ -41,11 +41,11 @@ data:
     \ i);\n\t\treturn d[p];\n\t}\n\n\tD sum(int a, int b, int l, int r, int k) {\n\
     \t\tif (b <= l || r <= a) return e_d;\n\t\tif (a <= l && r <= b) return d[k];\n\
     \t\tpush(k);\n\t\tint mid = (l + r) / 2;\n\t\treturn op_dd(sum(a, b, l, mid, 2\
-    \ * k), sum(a, b, mid, r, 2 * k + 1));\n\t}\n\n\tD sum(int a, int b) {\n\t\tif\
-    \ (a == b) return e_d;\n\t\ta += sz;\n\t\tb += sz + 1;\n\t\tfor (int i = lg; i\
-    \ >= 1; i--) {\n\t\t\tif (((a >> i) << i) != a) push(a >> i);\n\t\t\tif (((b >>\
-    \ i) << i) != b) push((b - 1) >> i);\n\t\t}\n\t\tD sml = e_d, smr = e_d;\n\t\t\
-    while (a < b) {\n\t\t\tif (a & 1) sml = op_dd(sml, d[a++]);\n\t\t\tif (b & 1)\
+    \ * k), sum(a, b, mid, r, 2 * k + 1));\n\t}\n\n\tD sum(int a, int b) {\n\t\t++b;\n\
+    \t\tif (a == b) return e_d;\n\t\ta += sz;\n\t\tb += sz;\n\t\tfor (int i = lg;\
+    \ i >= 1; i--) {\n\t\t\tif (((a >> i) << i) != a) push(a >> i);\n\t\t\tif (((b\
+    \ >> i) << i) != b) push((b - 1) >> i);\n\t\t}\n\t\tD sml = e_d, smr = e_d;\n\t\
+    \twhile (a < b) {\n\t\t\tif (a & 1) sml = op_dd(sml, d[a++]);\n\t\t\tif (b & 1)\
     \ smr = op_dd(d[--b], smr);\n\t\t\ta >>= 1;\n\t\t\tb >>= 1;\n\t\t}\n\t\treturn\
     \ op_dd(sml, smr);\n\t}\n\n\tD all_sum() const { return d[1]; }\n};\n\ntemplate\
     \ <class D, class L, class OpDD, class OpDL, class OpLL>\nLazySegmentTree<D, L,\
@@ -72,8 +72,8 @@ data:
     \tif (a <= l && r <= b) {\n\t\t\tall_add(k, x);\n\t\t\treturn;\n\t\t}\n\t\tpush(k);\n\
     \t\tint mid = (l + r) / 2;\n\t\tadd(a, b, x, l, mid, 2 * k);\n\t\tadd(a, b, x,\
     \ mid, r, 2 * k + 1);\n\t\tupdate(k);\n\t}\n\n\tvoid add(int a, int b, L x) {\n\
-    \t\ta += sz;\n\t\tb += sz + 1;\n\t\tfor (int i = lg; i >= 1; i--) {\n\t\t\tif\
-    \ (((a >> i) << i) != a) push(a >> i);\n\t\t\tif (((b >> i) << i) != b) push((b\
+    \t\t++b;\n\t\ta += sz;\n\t\tb += sz;\n\t\tfor (int i = lg; i >= 1; i--) {\n\t\t\
+    \tif (((a >> i) << i) != a) push(a >> i);\n\t\t\tif (((b >> i) << i) != b) push((b\
     \ - 1) >> i);\n\t\t}\n\t\t{\n\t\t\tint a2 = a, b2 = b;\n\t\t\twhile (a < b) {\n\
     \t\t\t\tif (a & 1) all_add(a++, x);\n\t\t\t\tif (b & 1) all_add(--b, x);\n\t\t\
     \t\ta >>= 1;\n\t\t\t\tb >>= 1;\n\t\t\t}\n\t\t\ta = a2;\n\t\t\tb = b2;\n\t\t}\n\
@@ -83,11 +83,11 @@ data:
     \ i);\n\t\treturn d[p];\n\t}\n\n\tD sum(int a, int b, int l, int r, int k) {\n\
     \t\tif (b <= l || r <= a) return e_d;\n\t\tif (a <= l && r <= b) return d[k];\n\
     \t\tpush(k);\n\t\tint mid = (l + r) / 2;\n\t\treturn op_dd(sum(a, b, l, mid, 2\
-    \ * k), sum(a, b, mid, r, 2 * k + 1));\n\t}\n\n\tD sum(int a, int b) {\n\t\tif\
-    \ (a == b) return e_d;\n\t\ta += sz;\n\t\tb += sz + 1;\n\t\tfor (int i = lg; i\
-    \ >= 1; i--) {\n\t\t\tif (((a >> i) << i) != a) push(a >> i);\n\t\t\tif (((b >>\
-    \ i) << i) != b) push((b - 1) >> i);\n\t\t}\n\t\tD sml = e_d, smr = e_d;\n\t\t\
-    while (a < b) {\n\t\t\tif (a & 1) sml = op_dd(sml, d[a++]);\n\t\t\tif (b & 1)\
+    \ * k), sum(a, b, mid, r, 2 * k + 1));\n\t}\n\n\tD sum(int a, int b) {\n\t\t++b;\n\
+    \t\tif (a == b) return e_d;\n\t\ta += sz;\n\t\tb += sz;\n\t\tfor (int i = lg;\
+    \ i >= 1; i--) {\n\t\t\tif (((a >> i) << i) != a) push(a >> i);\n\t\t\tif (((b\
+    \ >> i) << i) != b) push((b - 1) >> i);\n\t\t}\n\t\tD sml = e_d, smr = e_d;\n\t\
+    \twhile (a < b) {\n\t\t\tif (a & 1) sml = op_dd(sml, d[a++]);\n\t\t\tif (b & 1)\
     \ smr = op_dd(d[--b], smr);\n\t\t\ta >>= 1;\n\t\t\tb >>= 1;\n\t\t}\n\t\treturn\
     \ op_dd(sml, smr);\n\t}\n\n\tD all_sum() const { return d[1]; }\n};\n\ntemplate\
     \ <class D, class L, class OpDD, class OpDL, class OpLL>\nLazySegmentTree<D, L,\
@@ -99,8 +99,8 @@ data:
   isVerificationFile: false
   path: library/data-structures/1d-range-queries/general-full-segment-tree.hpp
   requiredBy: []
-  timestamp: '2021-07-30 21:40:50-04:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2021-07-30 22:48:36-04:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/yosupo-point_set_range_composite.test.cpp
 documentation_of: library/data-structures/1d-range-queries/general-full-segment-tree.hpp

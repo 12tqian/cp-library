@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/data-structures/1d-range-queries/general-full-segment-tree.hpp
     title: library/data-structures/1d-range-queries/general-full-segment-tree.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/numerical/mod-int2.hpp
     title: library/numerical/mod-int2.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/point_set_range_composite
@@ -46,49 +46,49 @@ data:
     \ l && r <= b) {\n\t\t\tall_add(k, x);\n\t\t\treturn;\n\t\t}\n\t\tpush(k);\n\t\
     \tint mid = (l + r) / 2;\n\t\tadd(a, b, x, l, mid, 2 * k);\n\t\tadd(a, b, x, mid,\
     \ r, 2 * k + 1);\n\t\tupdate(k);\n\t}\n\n\tvoid add(int a, int b, L x) {\n\t\t\
-    a += sz;\n\t\tb += sz + 1;\n\t\tfor (int i = lg; i >= 1; i--) {\n\t\t\tif (((a\
-    \ >> i) << i) != a) push(a >> i);\n\t\t\tif (((b >> i) << i) != b) push((b - 1)\
-    \ >> i);\n\t\t}\n\t\t{\n\t\t\tint a2 = a, b2 = b;\n\t\t\twhile (a < b) {\n\t\t\
-    \t\tif (a & 1) all_add(a++, x);\n\t\t\t\tif (b & 1) all_add(--b, x);\n\t\t\t\t\
-    a >>= 1;\n\t\t\t\tb >>= 1;\n\t\t\t}\n\t\t\ta = a2;\n\t\t\tb = b2;\n\t\t}\n\t\t\
-    for (int i = 1; i <= lg; i++) {\n\t\t\tif (((a >> i) << i) != a) update(a >> i);\n\
-    \t\t\tif (((b >> i) << i) != b) update((b - 1) >> i);\n\t\t}\n\t}\n\n\tD single(int\
-    \ p) {\n\t\tp += sz;\n\t\tfor (int i = lg; i >= 1; i--) push(p >> i);\n\t\treturn\
-    \ d[p];\n\t}\n\n\tD sum(int a, int b, int l, int r, int k) {\n\t\tif (b <= l ||\
-    \ r <= a) return e_d;\n\t\tif (a <= l && r <= b) return d[k];\n\t\tpush(k);\n\t\
-    \tint mid = (l + r) / 2;\n\t\treturn op_dd(sum(a, b, l, mid, 2 * k), sum(a, b,\
-    \ mid, r, 2 * k + 1));\n\t}\n\n\tD sum(int a, int b) {\n\t\tif (a == b) return\
-    \ e_d;\n\t\ta += sz;\n\t\tb += sz + 1;\n\t\tfor (int i = lg; i >= 1; i--) {\n\t\
-    \t\tif (((a >> i) << i) != a) push(a >> i);\n\t\t\tif (((b >> i) << i) != b) push((b\
-    \ - 1) >> i);\n\t\t}\n\t\tD sml = e_d, smr = e_d;\n\t\twhile (a < b) {\n\t\t\t\
-    if (a & 1) sml = op_dd(sml, d[a++]);\n\t\t\tif (b & 1) smr = op_dd(d[--b], smr);\n\
-    \t\t\ta >>= 1;\n\t\t\tb >>= 1;\n\t\t}\n\t\treturn op_dd(sml, smr);\n\t}\n\n\t\
-    D all_sum() const { return d[1]; }\n};\n\ntemplate <class D, class L, class OpDD,\
-    \ class OpDL, class OpLL>\nLazySegmentTree<D, L, OpDD, OpDL, OpLL> get_lazy_segment_tree(std::vector<D>\
-    \ v,\n\t\t\t\t\t\t\t\t\t\tD e_d,\n\t\t\t\t\t\t\t\t\t\tL e_l,\n\t\t\t\t\t\t\t\t\
-    \t\tOpDD op_dd,\n\t\t\t\t\t\t\t\t\t\tOpDL op_dl,\n\t\t\t\t\t\t\t\t\t\tOpLL op_ll)\
-    \ {\n\treturn LazySegmentTree<D, L, OpDD, OpDL, OpLL>(v, e_d, e_l, op_dd, op_dl,\
-    \ op_ll);\n}\n\n// 5 is a root of both mods\ntemplate <int MOD, int RT> struct\
-    \ Mint {\n\tstatic const int mod = MOD;\n\tstatic constexpr Mint rt() { return\
-    \ RT; } // primitive root for FFT\n\tint v; \n\texplicit operator int() const\
-    \ { return v; } // explicit -> don't silently convert to int\n\tMint() { v = 0;\
-    \ }\n\tMint(long long _v) { v = int((-MOD <= _v && _v < MOD) ? _v : _v % MOD);\
-    \ if (v < 0) v += MOD; }\n\tfriend bool operator==(const Mint &a, const Mint &b)\
-    \ { return a.v == b.v; }\n\tfriend bool operator!=(const Mint &a, const Mint &b)\
-    \ { return !(a == b); }\n\tfriend bool operator<(const Mint &a, const Mint &b)\
-    \ { return a.v < b.v; }\n\tfriend bool operator>(const Mint &a, const Mint &b)\
-    \ { return a.v > b.v; }\n\tfriend bool operator<=(const Mint &a, const Mint &b)\
-    \ { return a.v <= b.v; }\n\tfriend bool operator>=(const Mint &a, const Mint &b)\
-    \ { return a.v >= b.v; }\n\tfriend std::istream& operator >> (std::istream &in,\
-    \ Mint &a) { \n\t\tlong long x; std::cin >> x; a = Mint(x); return in; }\n\tfriend\
-    \ std::ostream& operator << (std::ostream &os, const Mint &a) { return os << a.v;\
-    \ }\n\tMint& operator+=(const Mint &m) { \n\t\tif ((v += m.v) >= MOD) v -= MOD;\
-    \ \n\t\treturn *this; }\n\tMint& operator-=(const Mint &m) { \n\t\tif ((v -= m.v)\
-    \ < 0) v += MOD; \n\t\treturn *this; }\n\tMint& operator*=(const Mint &m) { \n\
-    \t\tv = (long long)v * m.v % MOD; return *this; }\n\tMint& operator/=(const Mint\
-    \ &m) { return (*this) *= inv(m); }\n\tfriend Mint pow(Mint a, long long p) {\n\
-    \t\tMint ans = 1; assert(p >= 0);\n\t\tfor (; p; p /= 2, a *= a) if (p & 1) ans\
-    \ *= a;\n\t\treturn ans; \n\t}\n\tfriend Mint inv(const Mint &a) { assert(a.v\
+    ++b;\n\t\ta += sz;\n\t\tb += sz;\n\t\tfor (int i = lg; i >= 1; i--) {\n\t\t\t\
+    if (((a >> i) << i) != a) push(a >> i);\n\t\t\tif (((b >> i) << i) != b) push((b\
+    \ - 1) >> i);\n\t\t}\n\t\t{\n\t\t\tint a2 = a, b2 = b;\n\t\t\twhile (a < b) {\n\
+    \t\t\t\tif (a & 1) all_add(a++, x);\n\t\t\t\tif (b & 1) all_add(--b, x);\n\t\t\
+    \t\ta >>= 1;\n\t\t\t\tb >>= 1;\n\t\t\t}\n\t\t\ta = a2;\n\t\t\tb = b2;\n\t\t}\n\
+    \t\tfor (int i = 1; i <= lg; i++) {\n\t\t\tif (((a >> i) << i) != a) update(a\
+    \ >> i);\n\t\t\tif (((b >> i) << i) != b) update((b - 1) >> i);\n\t\t}\n\t}\n\n\
+    \tD single(int p) {\n\t\tp += sz;\n\t\tfor (int i = lg; i >= 1; i--) push(p >>\
+    \ i);\n\t\treturn d[p];\n\t}\n\n\tD sum(int a, int b, int l, int r, int k) {\n\
+    \t\tif (b <= l || r <= a) return e_d;\n\t\tif (a <= l && r <= b) return d[k];\n\
+    \t\tpush(k);\n\t\tint mid = (l + r) / 2;\n\t\treturn op_dd(sum(a, b, l, mid, 2\
+    \ * k), sum(a, b, mid, r, 2 * k + 1));\n\t}\n\n\tD sum(int a, int b) {\n\t\t++b;\n\
+    \t\tif (a == b) return e_d;\n\t\ta += sz;\n\t\tb += sz;\n\t\tfor (int i = lg;\
+    \ i >= 1; i--) {\n\t\t\tif (((a >> i) << i) != a) push(a >> i);\n\t\t\tif (((b\
+    \ >> i) << i) != b) push((b - 1) >> i);\n\t\t}\n\t\tD sml = e_d, smr = e_d;\n\t\
+    \twhile (a < b) {\n\t\t\tif (a & 1) sml = op_dd(sml, d[a++]);\n\t\t\tif (b & 1)\
+    \ smr = op_dd(d[--b], smr);\n\t\t\ta >>= 1;\n\t\t\tb >>= 1;\n\t\t}\n\t\treturn\
+    \ op_dd(sml, smr);\n\t}\n\n\tD all_sum() const { return d[1]; }\n};\n\ntemplate\
+    \ <class D, class L, class OpDD, class OpDL, class OpLL>\nLazySegmentTree<D, L,\
+    \ OpDD, OpDL, OpLL> get_lazy_segment_tree(std::vector<D> v,\n\t\t\t\t\t\t\t\t\t\
+    \tD e_d,\n\t\t\t\t\t\t\t\t\t\tL e_l,\n\t\t\t\t\t\t\t\t\t\tOpDD op_dd,\n\t\t\t\t\
+    \t\t\t\t\t\tOpDL op_dl,\n\t\t\t\t\t\t\t\t\t\tOpLL op_ll) {\n\treturn LazySegmentTree<D,\
+    \ L, OpDD, OpDL, OpLL>(v, e_d, e_l, op_dd, op_dl, op_ll);\n}\n\n// 5 is a root\
+    \ of both mods\ntemplate <int MOD, int RT> struct Mint {\n\tstatic const int mod\
+    \ = MOD;\n\tstatic constexpr Mint rt() { return RT; } // primitive root for FFT\n\
+    \tint v; \n\texplicit operator int() const { return v; } // explicit -> don't\
+    \ silently convert to int\n\tMint() { v = 0; }\n\tMint(long long _v) { v = int((-MOD\
+    \ <= _v && _v < MOD) ? _v : _v % MOD); if (v < 0) v += MOD; }\n\tfriend bool operator==(const\
+    \ Mint &a, const Mint &b) { return a.v == b.v; }\n\tfriend bool operator!=(const\
+    \ Mint &a, const Mint &b) { return !(a == b); }\n\tfriend bool operator<(const\
+    \ Mint &a, const Mint &b) { return a.v < b.v; }\n\tfriend bool operator>(const\
+    \ Mint &a, const Mint &b) { return a.v > b.v; }\n\tfriend bool operator<=(const\
+    \ Mint &a, const Mint &b) { return a.v <= b.v; }\n\tfriend bool operator>=(const\
+    \ Mint &a, const Mint &b) { return a.v >= b.v; }\n\tfriend std::istream& operator\
+    \ >> (std::istream &in, Mint &a) { \n\t\tlong long x; std::cin >> x; a = Mint(x);\
+    \ return in; }\n\tfriend std::ostream& operator << (std::ostream &os, const Mint\
+    \ &a) { return os << a.v; }\n\tMint& operator+=(const Mint &m) { \n\t\tif ((v\
+    \ += m.v) >= MOD) v -= MOD; \n\t\treturn *this; }\n\tMint& operator-=(const Mint\
+    \ &m) { \n\t\tif ((v -= m.v) < 0) v += MOD; \n\t\treturn *this; }\n\tMint& operator*=(const\
+    \ Mint &m) { \n\t\tv = (long long)v * m.v % MOD; return *this; }\n\tMint& operator/=(const\
+    \ Mint &m) { return (*this) *= inv(m); }\n\tfriend Mint pow(Mint a, long long\
+    \ p) {\n\t\tMint ans = 1; assert(p >= 0);\n\t\tfor (; p; p /= 2, a *= a) if (p\
+    \ & 1) ans *= a;\n\t\treturn ans; \n\t}\n\tfriend Mint inv(const Mint &a) { assert(a.v\
     \ != 0); return pow(a, MOD - 2); }\n\tMint operator-() const { return Mint(-v);\
     \ }\n\tMint& operator++() { return *this += 1; }\n\tMint& operator--() { return\
     \ *this -= 1; }\n\tfriend Mint operator+(Mint a, const Mint &b) { return a +=\
@@ -125,8 +125,8 @@ data:
   isVerificationFile: true
   path: verify/yosupo/yosupo-point_set_range_composite.test.cpp
   requiredBy: []
-  timestamp: '2021-07-30 21:40:50-04:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2021-07-30 22:48:36-04:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/yosupo-point_set_range_composite.test.cpp
 layout: document

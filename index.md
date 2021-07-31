@@ -9,7 +9,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/contest/template-full.hpp
       title: library/contest/template-full.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/contest/template-minimal.hpp
       title: library/contest/template-minimal.hpp
     - icon: ':heavy_check_mark:'
@@ -29,7 +29,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/data-structures/1d-range-queries/fenwick-tree.hpp
       title: library/data-structures/1d-range-queries/fenwick-tree.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/data-structures/1d-range-queries/general-full-segment-tree.hpp
       title: library/data-structures/1d-range-queries/general-full-segment-tree.hpp
     - icon: ':warning:'
@@ -216,6 +216,9 @@ data:
       title: library/number-theory/sieve.hpp
   - name: library/numerical
     pages:
+    - icon: ':warning:'
+      path: library/numerical/berlekamp-massey.hpp
+      title: library/numerical/berlekamp-massey.hpp
     - icon: ':heavy_check_mark:'
       path: library/numerical/big-integer.hpp
       title: library/numerical/big-integer.hpp
@@ -234,15 +237,24 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/numerical/mod-int.hpp
       title: library/numerical/mod-int.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/numerical/mod-int2.hpp
       title: library/numerical/mod-int2.hpp
     - icon: ':heavy_check_mark:'
       path: library/numerical/mod-operations.hpp
       title: library/numerical/mod-operations.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
+      path: library/numerical/multipoint-evaluation.hpp
+      title: library/numerical/multipoint-evaluation.hpp
+    - icon: ':warning:'
+      path: library/numerical/number-theoretic-transform.hpp
+      title: library/numerical/number-theoretic-transform.hpp
+    - icon: ':warning:'
       path: library/numerical/polynomial.hpp
       title: library/numerical/polynomial.hpp
+    - icon: ':heavy_check_mark:'
+      path: library/numerical/polynomial2.hpp
+      title: library/numerical/polynomial2.hpp
     - icon: ':heavy_check_mark:'
       path: library/numerical/simplex.hpp
       title: library/numerical/simplex.hpp
@@ -445,7 +457,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-point_add_range_sum-sparse-segment-tree.test.cpp
       title: verify/yosupo/yosupo-point_add_range_sum-sparse-segment-tree.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-point_set_range_composite.test.cpp
       title: verify/yosupo/yosupo-point_set_range_composite.test.cpp
     - icon: ':heavy_check_mark:'

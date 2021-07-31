@@ -19,12 +19,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/numerical/fast-fourier-transform.hpp
     title: library/numerical/fast-fourier-transform.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/numerical/mod-int2.hpp
     title: library/numerical/mod-int2.hpp
   - icon: ':heavy_check_mark:'
-    path: library/numerical/polynomial.hpp
-    title: library/numerical/polynomial.hpp
+    path: library/numerical/polynomial2.hpp
+    title: library/numerical/polynomial2.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -351,7 +351,7 @@ data:
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/frequency_table_of_tree_distance\"\
     \n\n#include \"../../library/contest/template-full.hpp\"\n#include \"../../library/graphs/centroid-decomposition.hpp\"\
     \n#include \"../../library/graphs/lca-rmq.hpp\"\n#include \"../../library/numerical/fast-fourier-transform.hpp\"\
-    \n#include \"../../library/numerical/polynomial.hpp\"\n\nint main() {\n\tusing\
+    \n#include \"../../library/numerical/polynomial2.hpp\"\n\nint main() {\n\tusing\
     \ namespace FFT;\n\tusing namespace Polynomial;\n\tsetIO(\"\");\n\tint n;\n\t\
     re(n);\n\tCentroidDecomposition cd;\n\tcd.init(n);\n\tLCARMQ lca;\n\tlca.init(n);\n\
     \tvector<vi> g(n);\n\tf0r(i, n - 1) {\n\t\tint u, v;\n\t\tre(u, v);\n\t\tg[u].pb(v);\n\
@@ -373,11 +373,11 @@ data:
   - library/data-structures/1d-range-queries/sparse-table.hpp
   - library/numerical/fast-fourier-transform.hpp
   - library/numerical/mod-int2.hpp
-  - library/numerical/polynomial.hpp
+  - library/numerical/polynomial2.hpp
   isVerificationFile: true
   path: verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
   requiredBy: []
-  timestamp: '2021-07-29 00:53:10-04:00'
+  timestamp: '2021-07-30 22:48:36-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp

@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/numerical/mod-int2.hpp
     title: library/numerical/mod-int2.hpp
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
-    path: library/numerical/polynomial.hpp
-    title: library/numerical/polynomial.hpp
+    path: library/numerical/polynomial2.hpp
+    title: library/numerical/polynomial2.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-convolution_mod_1000000007-fast-fourier-transform.test.cpp
@@ -107,7 +107,7 @@ data:
   isVerificationFile: false
   path: library/numerical/fast-fourier-transform.hpp
   requiredBy:
-  - library/numerical/polynomial.hpp
+  - library/numerical/polynomial2.hpp
   timestamp: '2021-07-25 14:11:17-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
