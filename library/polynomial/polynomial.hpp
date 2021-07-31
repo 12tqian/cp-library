@@ -145,7 +145,7 @@ template <class D> struct Poly : std::vector<D> {
 			k >>= 1;
 		}
 		return r;
-	 }
+	}
 
 	Poly pow(long long k, int n = -1) {
 		if (n == -1) n = this->size();
