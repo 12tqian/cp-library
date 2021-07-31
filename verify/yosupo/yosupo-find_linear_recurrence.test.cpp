@@ -18,7 +18,7 @@ int main() {
 	auto b = berlekamp_massey<mi>(a);
 	cout << (int)b.size() - 1 << '\n';
 	for (int i = 1; i < (int)b.size(); ++i) {
-		cout << b[i] << ' ';
+		cout << -b[i] << ' ';
 	}
 	cout << '\n';
 	return 0;
