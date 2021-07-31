@@ -114,6 +114,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-factorize.test.cpp
     title: verify/yosupo/yosupo-factorize.test.cpp
+  - icon: ':x:'
+    path: verify/yosupo/yosupo-find_linear_recurrence.test.cpp
+    title: verify/yosupo/yosupo-find_linear_recurrence.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-inv_of_formal_power_series.test.cpp
     title: verify/yosupo/yosupo-inv_of_formal_power_series.test.cpp
@@ -341,6 +344,7 @@ data:
   - verify/yosupo/yosupo-point_add_range_sum-point-update-segment-tree.test.cpp
   - verify/yosupo/yosupo-point_add_range_sum-implicit-lazy-segment-tree.test.cpp
   - verify/yosupo/yosupo-log_of_formal_power_series.test.cpp
+  - verify/yosupo/yosupo-find_linear_recurrence.test.cpp
   - verify/yosupo/yosupo-bipartitematching.test.cpp
   - verify/yosupo/yosupo-factorize.test.cpp
   - verify/yosupo/yosupo-point_add_range_sum-fenwick-tree.test.cpp

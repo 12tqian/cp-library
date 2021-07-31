@@ -8,10 +8,13 @@ data:
     path: library/polynomial/polynomial.hpp
     title: library/polynomial/polynomial.hpp
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: verify/yosupo/yosupo-find_linear_recurrence.test.cpp
+    title: verify/yosupo/yosupo-find_linear_recurrence.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "\n\n\nnamespace NTT {\n\nint bsf(unsigned int x) { return __builtin_ctz(x);\
@@ -158,8 +161,9 @@ data:
   path: library/polynomial/berlekamp-massey.hpp
   requiredBy: []
   timestamp: '2021-07-31 02:19:05-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_WA
+  verifiedWith:
+  - verify/yosupo/yosupo-find_linear_recurrence.test.cpp
 documentation_of: library/polynomial/berlekamp-massey.hpp
 layout: document
 redirect_from:
