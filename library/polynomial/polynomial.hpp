@@ -144,7 +144,7 @@ template <class D> struct Poly : std::vector<D> {
 			x *= x;
 			k >>= 1;
 		}
-		return x;
+		return r;
 	 }
 
 	Poly pow(long long k, int n = -1) {
