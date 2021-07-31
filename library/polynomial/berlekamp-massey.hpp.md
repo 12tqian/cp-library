@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/polynomial/number-theoretic-transform.hpp
     title: library/polynomial/number-theoretic-transform.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/polynomial/polynomial.hpp
     title: library/polynomial/polynomial.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-find_linear_recurrence.test.cpp
     title: verify/yosupo/yosupo-find_linear_recurrence.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "\n\n\nnamespace NTT {\n\nint bsf(unsigned int x) { return __builtin_ctz(x);\
@@ -132,36 +132,36 @@ data:
     \ operator<<(ostream& os, const Poly& p) {\n\t\tif (p.empty()) return os << \"\
     0\";\n\t\tfor (auto i = 0; i < (int)p.size(); i++) {\n\t\t\tif (p[i]) {\n\t\t\t\
     \tos << p[i] << \"x^\" << i;\n\t\t\t\tif (i != (int)p.size() - 1) os << \"+\"\
-    ;\n\t\t\t}\n\t\t}\n\t\treturn os;\n\t}\n};\n\ntemplate <class D> Poly<D> berlekamp_massey(const\
-    \ Poly<D>& s) {\n\tint n = int(s.size());\n\tstd::vector<D> b = {D(-1)}, c = {D(-1)};\n\
-    \tD y = D(1);\n\tfor (int ed = 1; ed <= n; ed++) {\n\t\tint l = int(c.size()),\
-    \ m = int(b.size());\n\t\tD x = 0;\n\t\tfor (int i = 0; i < l; i++) {\n\t\t\t\
-    x += c[i] * s[ed - l + i];\n\t\t}\n\t\tb.push_back(0);\n\t\tm++;\n\t\tif (!x)\
-    \ continue;\n\t\tD freq = x / y;\n\t\tif (l < m) {\n\t\t\t// use b\n\t\t\tauto\
-    \ tmp = c;\n\t\t\tc.insert(begin(c), m - l, D(0));\n\t\t\tfor (int i = 0; i <\
-    \ m; i++) {\n\t\t\t\tc[m - 1 - i] -= freq * b[m - 1 - i];\n\t\t\t}\n\t\t\tb =\
-    \ tmp;\n\t\t\ty = x;\n\t\t} else {\n\t\t\t// use c\n\t\t\tfor (int i = 0; i <\
-    \ m; i++) {\n\t\t\t\tc[l - 1 - i] -= freq * b[m - 1 - i];\n\t\t\t}\n\t\t}\n\t\
-    }\n\treturn c;\n}\n"
-  code: "#pragma once \n\n#include \"polynomial.hpp\"\n\ntemplate <class D> Poly<D>\
-    \ berlekamp_massey(const Poly<D>& s) {\n\tint n = int(s.size());\n\tstd::vector<D>\
-    \ b = {D(-1)}, c = {D(-1)};\n\tD y = D(1);\n\tfor (int ed = 1; ed <= n; ed++)\
-    \ {\n\t\tint l = int(c.size()), m = int(b.size());\n\t\tD x = 0;\n\t\tfor (int\
-    \ i = 0; i < l; i++) {\n\t\t\tx += c[i] * s[ed - l + i];\n\t\t}\n\t\tb.push_back(0);\n\
-    \t\tm++;\n\t\tif (!x) continue;\n\t\tD freq = x / y;\n\t\tif (l < m) {\n\t\t\t\
-    // use b\n\t\t\tauto tmp = c;\n\t\t\tc.insert(begin(c), m - l, D(0));\n\t\t\t\
-    for (int i = 0; i < m; i++) {\n\t\t\t\tc[m - 1 - i] -= freq * b[m - 1 - i];\n\t\
-    \t\t}\n\t\t\tb = tmp;\n\t\t\ty = x;\n\t\t} else {\n\t\t\t// use c\n\t\t\tfor (int\
-    \ i = 0; i < m; i++) {\n\t\t\t\tc[l - 1 - i] -= freq * b[m - 1 - i];\n\t\t\t}\n\
-    \t\t}\n\t}\n\treturn c;\n}\n"
+    ;\n\t\t\t}\n\t\t}\n\t\treturn os;\n\t}\n};\ntemplate <typename D> Poly<D> berlekamp_massey(const\
+    \ Poly<D>& s) {\n\tconst int N = (int)s.size();\n\tPoly<D> b, c;\n\tb.reserve(N\
+    \ + 1);\n\tc.reserve(N + 1);\n\tb.push_back(1);\n\tc.push_back(1);\n\tD y = D(1);\n\
+    \tfor (int ed = 1; ed <= N; ed++) {\n\t\tint l = (int)c.size(), m = (int)b.size();\n\
+    \t\tD x = 0;\n\t\tfor (int i = 0; i < l; i++) x += c[i] * s[ed - l + i];\n\t\t\
+    b.emplace_back(D(0));\n\t\tm++;\n\t\tif (x == D(0)) continue;\n\t\tD freq = x\
+    \ / y;\n\t\tif (l < m) {\n\t\t\tauto tmp = c;\n\t\t\tc.insert(c.begin(), m - l,\
+    \ 0);\n\t\t\tfor (int i = 0; i < m; i++) c[m - 1 - i] -= freq * b[m - 1 - i];\n\
+    \t\t\tb = tmp;\n\t\t\ty = x;\n\t\t} else {\n\t\t\tfor (int i = 0; i < m; i++)\
+    \ c[l - 1 - i] -= freq * b[m - 1 - i];\n\t\t}\n\t}\n\treverse(c.begin(), c.end());\n\
+    \treturn c;\n}\n"
+  code: "#pragma once \n\n#include \"polynomial.hpp\"\ntemplate <typename D> Poly<D>\
+    \ berlekamp_massey(const Poly<D>& s) {\n\tconst int N = (int)s.size();\n\tPoly<D>\
+    \ b, c;\n\tb.reserve(N + 1);\n\tc.reserve(N + 1);\n\tb.push_back(1);\n\tc.push_back(1);\n\
+    \tD y = D(1);\n\tfor (int ed = 1; ed <= N; ed++) {\n\t\tint l = (int)c.size(),\
+    \ m = (int)b.size();\n\t\tD x = 0;\n\t\tfor (int i = 0; i < l; i++) x += c[i]\
+    \ * s[ed - l + i];\n\t\tb.emplace_back(D(0));\n\t\tm++;\n\t\tif (x == D(0)) continue;\n\
+    \t\tD freq = x / y;\n\t\tif (l < m) {\n\t\t\tauto tmp = c;\n\t\t\tc.insert(c.begin(),\
+    \ m - l, 0);\n\t\t\tfor (int i = 0; i < m; i++) c[m - 1 - i] -= freq * b[m - 1\
+    \ - i];\n\t\t\tb = tmp;\n\t\t\ty = x;\n\t\t} else {\n\t\t\tfor (int i = 0; i <\
+    \ m; i++) c[l - 1 - i] -= freq * b[m - 1 - i];\n\t\t}\n\t}\n\treverse(c.begin(),\
+    \ c.end());\n\treturn c;\n}"
   dependsOn:
   - library/polynomial/polynomial.hpp
   - library/polynomial/number-theoretic-transform.hpp
   isVerificationFile: false
   path: library/polynomial/berlekamp-massey.hpp
   requiredBy: []
-  timestamp: '2021-07-31 02:19:05-04:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2021-07-31 03:39:51-04:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/yosupo-find_linear_recurrence.test.cpp
 documentation_of: library/polynomial/berlekamp-massey.hpp

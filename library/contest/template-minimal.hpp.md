@@ -114,7 +114,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-factorize.test.cpp
     title: verify/yosupo/yosupo-factorize.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-find_linear_recurrence.test.cpp
     title: verify/yosupo/yosupo-find_linear_recurrence.test.cpp
   - icon: ':heavy_check_mark:'
@@ -210,9 +210,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-vertex_add_path_sum.test.cpp
     title: verify/yosupo/yosupo-vertex_add_path_sum.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: '
@@ -328,7 +328,7 @@ data:
   requiredBy:
   - library/graphs/enumerate-triangles.cpp
   timestamp: '2021-07-28 19:45:54-04:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/yosupo-convolution_mod_1000000007-karatsuba.test.cpp
   - verify/yosupo/yosupo-line_add_get_min.test.cpp

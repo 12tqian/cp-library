@@ -1,11 +1,11 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/polynomial/number-theoretic-transform.hpp
     title: library/polynomial/number-theoretic-transform.hpp
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/polynomial/berlekamp-massey.hpp
     title: library/polynomial/berlekamp-massey.hpp
   - icon: ':heavy_check_mark:'
@@ -18,7 +18,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-exp_of_formal_power_series.test.cpp
     title: verify/yosupo/yosupo-exp_of_formal_power_series.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-find_linear_recurrence.test.cpp
     title: verify/yosupo/yosupo-find_linear_recurrence.test.cpp
   - icon: ':heavy_check_mark:'
@@ -36,9 +36,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-sqrt_of_formal_power_series.test.cpp
     title: verify/yosupo/yosupo-sqrt_of_formal_power_series.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "\n\nnamespace NTT {\n\nint bsf(unsigned int x) { return __builtin_ctz(x);\
@@ -231,7 +231,7 @@ data:
   - library/polynomial/berlekamp-massey.hpp
   - library/polynomial/multipoint-evaluation.hpp
   timestamp: '2021-07-31 02:01:21-04:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/yosupo-sqrt_of_formal_power_series.test.cpp
   - verify/yosupo/yosupo-log_of_formal_power_series.test.cpp

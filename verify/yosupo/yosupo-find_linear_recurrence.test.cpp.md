@@ -1,26 +1,26 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/modular-arithmetic/mod-int2.hpp
     title: library/modular-arithmetic/mod-int2.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/polynomial/berlekamp-massey.hpp
     title: library/polynomial/berlekamp-massey.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/polynomial/number-theoretic-transform.hpp
     title: library/polynomial/number-theoretic-transform.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/polynomial/polynomial.hpp
     title: library/polynomial/polynomial.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/find_linear_recurrence
@@ -175,28 +175,28 @@ data:
     \ operator<<(ostream& os, const Poly& p) {\n\t\tif (p.empty()) return os << \"\
     0\";\n\t\tfor (auto i = 0; i < (int)p.size(); i++) {\n\t\t\tif (p[i]) {\n\t\t\t\
     \tos << p[i] << \"x^\" << i;\n\t\t\t\tif (i != (int)p.size() - 1) os << \"+\"\
-    ;\n\t\t\t}\n\t\t}\n\t\treturn os;\n\t}\n};\n\ntemplate <class D> Poly<D> berlekamp_massey(const\
-    \ Poly<D>& s) {\n\tint n = int(s.size());\n\tstd::vector<D> b = {D(-1)}, c = {D(-1)};\n\
-    \tD y = D(1);\n\tfor (int ed = 1; ed <= n; ed++) {\n\t\tint l = int(c.size()),\
-    \ m = int(b.size());\n\t\tD x = 0;\n\t\tfor (int i = 0; i < l; i++) {\n\t\t\t\
-    x += c[i] * s[ed - l + i];\n\t\t}\n\t\tb.push_back(0);\n\t\tm++;\n\t\tif (!x)\
-    \ continue;\n\t\tD freq = x / y;\n\t\tif (l < m) {\n\t\t\t// use b\n\t\t\tauto\
-    \ tmp = c;\n\t\t\tc.insert(begin(c), m - l, D(0));\n\t\t\tfor (int i = 0; i <\
-    \ m; i++) {\n\t\t\t\tc[m - 1 - i] -= freq * b[m - 1 - i];\n\t\t\t}\n\t\t\tb =\
-    \ tmp;\n\t\t\ty = x;\n\t\t} else {\n\t\t\t// use c\n\t\t\tfor (int i = 0; i <\
-    \ m; i++) {\n\t\t\t\tc[l - 1 - i] -= freq * b[m - 1 - i];\n\t\t\t}\n\t\t}\n\t\
-    }\n\treturn c;\n}\n\nusing mi = Mint<998244353, 5>;\n\nint main() {\n\tios::sync_with_stdio(false);\n\
+    ;\n\t\t\t}\n\t\t}\n\t\treturn os;\n\t}\n};\ntemplate <typename D> Poly<D> berlekamp_massey(const\
+    \ Poly<D>& s) {\n\tconst int N = (int)s.size();\n\tPoly<D> b, c;\n\tb.reserve(N\
+    \ + 1);\n\tc.reserve(N + 1);\n\tb.push_back(1);\n\tc.push_back(1);\n\tD y = D(1);\n\
+    \tfor (int ed = 1; ed <= N; ed++) {\n\t\tint l = (int)c.size(), m = (int)b.size();\n\
+    \t\tD x = 0;\n\t\tfor (int i = 0; i < l; i++) x += c[i] * s[ed - l + i];\n\t\t\
+    b.emplace_back(D(0));\n\t\tm++;\n\t\tif (x == D(0)) continue;\n\t\tD freq = x\
+    \ / y;\n\t\tif (l < m) {\n\t\t\tauto tmp = c;\n\t\t\tc.insert(c.begin(), m - l,\
+    \ 0);\n\t\t\tfor (int i = 0; i < m; i++) c[m - 1 - i] -= freq * b[m - 1 - i];\n\
+    \t\t\tb = tmp;\n\t\t\ty = x;\n\t\t} else {\n\t\t\tfor (int i = 0; i < m; i++)\
+    \ c[l - 1 - i] -= freq * b[m - 1 - i];\n\t\t}\n\t}\n\treverse(c.begin(), c.end());\n\
+    \treturn c;\n}\n\nusing mi = Mint<998244353, 5>;\n\nint main() {\n\tios::sync_with_stdio(false);\n\
     \tcin.tie(nullptr);\n\tint n;\n\tcin >> n;\n\tvector<mi> a(n);\n\tfor (int i =\
     \ 0; i < n; ++i) {\n\t\tcin >> a[i];\n\t}\n\tauto b = berlekamp_massey<mi>(a);\n\
     \tcout << (int)b.size() - 1 << '\\n';\n\tfor (int i = 1; i < (int)b.size(); ++i)\
-    \ {\n\t\tcout << b[i] << ' ';\n\t}\n\tcout << '\\n';\n\treturn 0;\n}\n"
+    \ {\n\t\tcout << -b[i] << ' ';\n\t}\n\tcout << '\\n';\n\treturn 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/find_linear_recurrence\"\
     \n\n#include \"../../library/contest/template-minimal.hpp\"\n#include \"../../library/modular-arithmetic/mod-int2.hpp\"\
     \n#include \"../../library/polynomial/berlekamp-massey.hpp\"\n\nusing mi = Mint<998244353,\
     \ 5>;\n\nint main() {\n\tios::sync_with_stdio(false);\n\tcin.tie(nullptr);\n\t\
     int n;\n\tcin >> n;\n\tvector<mi> a(n);\n\tfor (int i = 0; i < n; ++i) {\n\t\t\
     cin >> a[i];\n\t}\n\tauto b = berlekamp_massey<mi>(a);\n\tcout << (int)b.size()\
-    \ - 1 << '\\n';\n\tfor (int i = 1; i < (int)b.size(); ++i) {\n\t\tcout << b[i]\
+    \ - 1 << '\\n';\n\tfor (int i = 1; i < (int)b.size(); ++i) {\n\t\tcout << -b[i]\
     \ << ' ';\n\t}\n\tcout << '\\n';\n\treturn 0;\n}"
   dependsOn:
   - library/contest/template-minimal.hpp
@@ -207,8 +207,8 @@ data:
   isVerificationFile: true
   path: verify/yosupo/yosupo-find_linear_recurrence.test.cpp
   requiredBy: []
-  timestamp: '2021-07-31 02:53:01-04:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2021-07-31 03:39:51-04:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/yosupo-find_linear_recurrence.test.cpp
 layout: document
