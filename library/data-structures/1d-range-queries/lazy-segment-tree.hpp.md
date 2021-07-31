@@ -3,8 +3,8 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
-    path: library/graphs/heavy-light-decomposition.hpp
-    title: library/graphs/heavy-light-decomposition.hpp
+    path: library/graphs/heavy-light-decomposition2.hpp
+    title: library/graphs/heavy-light-decomposition2.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-point_add_range_sum-lazy-segment-tree.test.cpp
@@ -55,7 +55,7 @@ data:
   isVerificationFile: false
   path: library/data-structures/1d-range-queries/lazy-segment-tree.hpp
   requiredBy:
-  - library/graphs/heavy-light-decomposition.hpp
+  - library/graphs/heavy-light-decomposition2.hpp
   timestamp: '2021-07-24 21:20:09-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

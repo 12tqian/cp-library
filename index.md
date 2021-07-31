@@ -9,7 +9,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/contest/template-full.hpp
       title: library/contest/template-full.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/contest/template-minimal.hpp
       title: library/contest/template-minimal.hpp
     - icon: ':heavy_check_mark:'
@@ -29,7 +29,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/data-structures/1d-range-queries/fenwick-tree.hpp
       title: library/data-structures/1d-range-queries/fenwick-tree.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/data-structures/1d-range-queries/general-full-segment-tree.hpp
       title: library/data-structures/1d-range-queries/general-full-segment-tree.hpp
     - icon: ':heavy_check_mark:'
@@ -130,9 +130,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/graphs/euler-path.hpp
       title: library/graphs/euler-path.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: library/graphs/heavy-light-decomposition.hpp
       title: library/graphs/heavy-light-decomposition.hpp
+    - icon: ':heavy_check_mark:'
+      path: library/graphs/heavy-light-decomposition2.hpp
+      title: library/graphs/heavy-light-decomposition2.hpp
     - icon: ':heavy_check_mark:'
       path: library/graphs/kruskal.hpp
       title: library/graphs/kruskal.hpp
@@ -533,6 +536,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-unionfind.test.cpp
       title: verify/yosupo/yosupo-unionfind.test.cpp
+    - icon: ':x:'
+      path: verify/yosupo/yosupo-vertex_add_path_sum-new-hld.test.cpp
+      title: verify/yosupo/yosupo-vertex_add_path_sum-new-hld.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-vertex_add_path_sum.test.cpp
       title: verify/yosupo/yosupo-vertex_add_path_sum.test.cpp

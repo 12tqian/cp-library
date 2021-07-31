@@ -1,92 +1,104 @@
 ---
 data:
-  _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: library/data-structures/1d-range-queries/lazy-segment-tree.hpp
-    title: library/data-structures/1d-range-queries/lazy-segment-tree.hpp
+  _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: verify/yosupo/yosupo-vertex_add_path_sum.test.cpp
-    title: verify/yosupo/yosupo-vertex_add_path_sum.test.cpp
-  _isVerificationFailed: false
+  - icon: ':x:'
+    path: verify/yosupo/yosupo-vertex_add_path_sum-new-hld.test.cpp
+    title: verify/yosupo/yosupo-vertex_add_path_sum-new-hld.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
-  bundledCode: "\n/**\n * To support forest, just change \n * init to take in a vector\
-    \ of roots, and DFS each of them\n */\n\n\ntemplate <class T> struct LazySeg {\n\
-    \tstd::vector<T> sum, lazy;\n\tint sz;\n\n\tvoid init(int sz_) {\n\t\tsz = 1;\n\
-    \t\twhile (sz < sz_) sz *= 2;\n\t\tsum.assign(2 * sz, 0);\n\t\tlazy.assign(2 *\
-    \ sz, 0);\n\t}\n\n\tvoid push(int ind, int L, int R) {\n\t\tsum[ind] += (R - L\
-    \ + 1) * lazy[ind];\n\t\tif (L != R) {\n\t\t\tlazy[2 * ind] += lazy[ind];\n\t\t\
-    \tlazy[2 * ind + 1] += lazy[ind];\n\t\t}\n\t\tlazy[ind] = 0;\n\t}\n\n\tvoid pull(int\
-    \ ind) {\n\t\tsum[ind] = sum[2 * ind] + sum[2 * ind + 1];\n\t}\n\n\tvoid build()\
-    \ {\n\t\tfor (int i = sz - 1; i >= 1; i--) {\n\t\t\tpull(i);\n\t\t}\n\t}\n\n\t\
-    void upd(int lo, int hi, T inc, int ind = 1, int L = 0, int R = -1) {\n\t\tif\
-    \ (R == -1) R += sz;\n\t\tpush(ind, L, R);\n\t\tif (hi < L || R < lo) return;\n\
-    \t\tif (lo <= L && R <= hi) {\n\t\t\tlazy[ind] = inc;\n\t\t\tpush(ind, L, R);\n\
-    \t\t\treturn;\n\t\t}\n\t\tint M = (L + R) / 2;\n\t\tupd(lo, hi, inc, 2 * ind,\
-    \ L, M);\n\t\tupd(lo, hi, inc, 2 * ind + 1, M + 1, R);\n\t\tpull(ind);\n\t}\n\n\
-    \tT qsum(int lo, int hi, int ind = 1, int L = 0, int R = -1) {\n\t\tif (R == -1)\
-    \ R += sz;\n\t\tpush(ind, L, R);\n\t\tif (lo > R || L > hi) return 0;\n\t\tif\
-    \ (lo <= L && R <= hi) return sum[ind];\n\t\tint M = (L + R) / 2;\n\t\treturn\
-    \ qsum(lo, hi, 2 * ind, L, M) + qsum(lo, hi, 2 * ind + 1, M + 1, R);\n\t}\n};\n\
-    \nconst bool VALUES_IN_VERTICES = true;\n\ntemplate <class T> struct HeavyLight\
-    \ {\n\tstd::vector<int> parent, heavy, depth, root, tree_pos;\n\tLazySeg<T> tree;\n\
-    \n\ttemplate <class G> int dfs(const G &graph, int v) {\n\t\tint size = 1, max_subtree\
-    \ = 0;\n\t\tfor (int u : graph[v]) if (u != parent[v]) {\n\t\t\tparent[u] = v;\n\
-    \t\t\tdepth[u] = depth[v] + 1;\n\t\t\tint subtree = dfs(graph, u);\n\t\t\tif (subtree\
-    \ > max_subtree) heavy[v] = u, max_subtree = subtree;\n\t\t\tsize += subtree;\n\
-    \t\t}\n\t\treturn size;\n\t}\n\n\ttemplate <class B> void process_path(int u,\
-    \ int v, B op) {\n\t\tfor (; root[u] != root[v]; v = parent[root[v]]) {\n\t\t\t\
-    if (depth[root[u]] > depth[root[v]]) std::swap(u, v);\n\t\t\top(tree_pos[root[v]],\
-    \ tree_pos[v]);\n\t\t}\n\t\tif (depth[u] > depth[v]) std::swap(u, v);\n\t\top(tree_pos[u]\
-    \ + (VALUES_IN_VERTICES ? 0 : 1), tree_pos[v]);\n\t}\n\n\ttemplate <class G>\n\
-    \tvoid init(const G &graph, int r = 0) {\n\t\tint n = (int)graph.size();\n\t\t\
-    heavy.assign(n, -1);\n\t\tparent.assign(n, 0);\n\t\tdepth.assign(n, 0);\n\t\t\
-    root.assign(n, 0);\n\t\ttree_pos.assign(n, 0);\n\t\ttree.init(n);\n\t\tparent[r]\
-    \ = -1;\n\t\tdepth[r] = 0;\n\t\tdfs(graph, r);\n\t\tfor (int i = 0, current_pos\
-    \ = 0; i < n; ++i)\n\t\t\tif (parent[i] == -1 || heavy[parent[i]] != i)\n\t\t\t\
-    for (int j = i; j != -1; j = heavy[j]) {\n\t\t\t\troot[j] = i;\n\t\t\t\ttree_pos[j]\
-    \ = current_pos++;\n\t\t\t}\n\t}\n\n\tvoid modify_path(int u, int v, const T &value)\
-    \ {\n\t\tprocess_path(u, v, [this, &value](int l, int r) { tree.upd(l, r, value);\
-    \ });\n\t}\n\t\n\tT query_path(int u, int v) {\n\t\tT res = 0;\n\t\tprocess_path(u,\
-    \ v, [this, &res](int l, int r) { res += tree.qsum(l, r); });\n\t\treturn res;\n\
-    \t}\n};\n"
-  code: "#pragma once\n\n/**\n * To support forest, just change \n * init to take\
-    \ in a vector of roots, and DFS each of them\n */\n\n#include \"../data-structures/1d-range-queries/lazy-segment-tree.hpp\"\
-    \n\nconst bool VALUES_IN_VERTICES = true;\n\ntemplate <class T> struct HeavyLight\
-    \ {\n\tstd::vector<int> parent, heavy, depth, root, tree_pos;\n\tLazySeg<T> tree;\n\
-    \n\ttemplate <class G> int dfs(const G &graph, int v) {\n\t\tint size = 1, max_subtree\
-    \ = 0;\n\t\tfor (int u : graph[v]) if (u != parent[v]) {\n\t\t\tparent[u] = v;\n\
-    \t\t\tdepth[u] = depth[v] + 1;\n\t\t\tint subtree = dfs(graph, u);\n\t\t\tif (subtree\
-    \ > max_subtree) heavy[v] = u, max_subtree = subtree;\n\t\t\tsize += subtree;\n\
-    \t\t}\n\t\treturn size;\n\t}\n\n\ttemplate <class B> void process_path(int u,\
-    \ int v, B op) {\n\t\tfor (; root[u] != root[v]; v = parent[root[v]]) {\n\t\t\t\
-    if (depth[root[u]] > depth[root[v]]) std::swap(u, v);\n\t\t\top(tree_pos[root[v]],\
-    \ tree_pos[v]);\n\t\t}\n\t\tif (depth[u] > depth[v]) std::swap(u, v);\n\t\top(tree_pos[u]\
-    \ + (VALUES_IN_VERTICES ? 0 : 1), tree_pos[v]);\n\t}\n\n\ttemplate <class G>\n\
-    \tvoid init(const G &graph, int r = 0) {\n\t\tint n = (int)graph.size();\n\t\t\
-    heavy.assign(n, -1);\n\t\tparent.assign(n, 0);\n\t\tdepth.assign(n, 0);\n\t\t\
-    root.assign(n, 0);\n\t\ttree_pos.assign(n, 0);\n\t\ttree.init(n);\n\t\tparent[r]\
-    \ = -1;\n\t\tdepth[r] = 0;\n\t\tdfs(graph, r);\n\t\tfor (int i = 0, current_pos\
-    \ = 0; i < n; ++i)\n\t\t\tif (parent[i] == -1 || heavy[parent[i]] != i)\n\t\t\t\
-    for (int j = i; j != -1; j = heavy[j]) {\n\t\t\t\troot[j] = i;\n\t\t\t\ttree_pos[j]\
-    \ = current_pos++;\n\t\t\t}\n\t}\n\n\tvoid modify_path(int u, int v, const T &value)\
-    \ {\n\t\tprocess_path(u, v, [this, &value](int l, int r) { tree.upd(l, r, value);\
-    \ });\n\t}\n\t\n\tT query_path(int u, int v) {\n\t\tT res = 0;\n\t\tprocess_path(u,\
-    \ v, [this, &res](int l, int r) { res += tree.qsum(l, r); });\n\t\treturn res;\n\
-    \t}\n};\n"
-  dependsOn:
-  - library/data-structures/1d-range-queries/lazy-segment-tree.hpp
+  bundledCode: "template <class G> \nstruct HeavyLightDecomposition {\nprivate:\n\t\
+    void dfs_sz(int cur) {\n\t\tsize[cur] = 1;\n\t\tfor (auto& dst : g[cur]) {\n\t\
+    \t\tif (dst == par[cur]) {\n\t\t\t\tif (g[cur].size() >= 2 && int(dst) == int(g[cur][0]))\n\
+    \t\t\t\t\tswap(g[cur][0], g[cur][1]);\n\t\t\t\telse\n\t\t\t\t\tcontinue;\n\t\t\
+    \t}\n\t\t\tdepth[dst] = depth[cur] + 1;\n\t\t\tpar[dst] = cur;\n\t\t\tdfs_sz(dst);\n\
+    \t\t\tsize[cur] += size[dst];\n\t\t\tif (size[dst] > size[g[cur][0]]) {\n\t\t\t\
+    \tswap(dst, g[cur][0]);\n\t\t\t}\n\t\t}\n\t}\n\n\tvoid dfs_hld(int cur) {\n\t\t\
+    down[cur] = id++;\n\t\tfor (auto dst : g[cur]) {\n\t\t\tif (dst == par[cur]) continue;\n\
+    \t\t\tnxt[dst] = (int(dst) == int(g[cur][0]) ? nxt[cur] : int(dst));\n\t\t\tdfs_hld(dst);\n\
+    \t\t}\n\t\tup[cur] = id;\n\t}\n\n\t// [u, v)\n\tstd::vector<std::pair<int, int>>\
+    \ ascend(int u, int v) const {\n\t\tstd::vector<std::pair<int, int>> res;\n\t\t\
+    while (nxt[u] != nxt[v]) {\n\t\t\tres.emplace_back(down[u], down[nxt[u]]);\n\t\
+    \t\tu = par[nxt[u]];\n\t\t}\n\t\tif (u != v) res.emplace_back(down[u], down[v]\
+    \ + 1);\n\t\treturn res;\n\t}\n\n\t// (u, v]\n\tstd::vector<std::pair<int, int>>\
+    \ descend(int u, int v) const {\n\t\tif (u == v) return {};\n\t\tif (nxt[u] ==\
+    \ nxt[v]) return {{down[u] + 1, down[v]}};\n\t\tauto res = descend(u, par[nxt[v]]);\n\
+    \t\tres.emplace_back(down[nxt[v]], down[v]);\n\t\treturn res;\n\t}\n\npublic:\n\
+    \tG g;\n\tint id;\n\tstd::vector<int> size, depth, down, up, nxt, par;\n\t\n\t\
+    HeavyLightDecomposition(G& _g, std::vector<int> roots = {0})\n\t\t\t: g(_g),\n\
+    \t\t\t\tid(0),\n\t\t\t\tsize(g.size(), 0),\n\t\t\t\tdepth(g.size(), 0),\n\t\t\t\
+    \tdown(g.size(), -1),\n\t\t\t\tup(g.size(), -1),\n\t\t\t\tnxt(g.size(), 0), \n\
+    \t\t\t\tpar(g.size(), 0) {\n\t\tfor (int root : roots) {\n\t\t\tcout << g.size()\
+    \ << endl;\n\t\t\tpar[root] = nxt[root] = root;\n\t\t\tdfs_sz(root);\n\t\t\tdfs_hld(root);\n\
+    \t\t}\n\t}\n\n\tvoid build(std::vector<int> roots) {\n\t\tfor (int root : roots)\
+    \ {\n\t\t\tpar[root] = nxt[root] = root;\n\t\t\tdfs_sz(root);\n\t\t\tdfs_hld(root);\n\
+    \t\t}\n\t}\n\n\t// [l, r], inclusive for subtree\n\tstd::pair<int, int> idx(int\
+    \ i) const { return {down[i], up[i] - 1}; }\n\n\ttemplate <class F>\n\tvoid path_query(int\
+    \ u, int v, bool vertex, const F& f) {\n\t\tint l = lca(u, v);\n\t\tfor (auto&&\
+    \ [a, b] : ascend(u, l)) {\n\t\t\tint s = a + 1, t = b;\n\t\t\ts > t ? f(t, s\
+    \ - 1) : f(s, t - 1);\n\t\t}\n\t\tif (vertex) f(down[l], down[l]);\n\t\tfor (auto&&\
+    \ [a, b] : descend(l, v)) {\n\t\t\tint s = a, t = b + 1;\n\t\t\ts > t ? f(t, s\
+    \ - 1) : f(s, t - 1);\n\t\t}\n\t}\n\n\ttemplate <class F>\n\tvoid path_noncommutative_query(int\
+    \ u, int v, bool vertex, const F& f) {\n\t\tint l = lca(u, v);\n\t\tfor (auto&&\
+    \ [a, b] : ascend(u, l)) f(a + 1, b - 1);\n\t\tif (vertex) f(down[l], down[l]);\n\
+    \t\tfor (auto&& [a, b] : descend(l, v)) f(a, b);\n\t}\n\n\ttemplate <class F>\n\
+    \tvoid subtree_query(int u, bool vertex, const F& f) {\n\t\tf(down[u] + int(!vertex),\
+    \ up[u] - 1);\n\t}\n\n\tint lca(int a, int b) {\n\t\twhile (nxt[a] != nxt[b])\
+    \ {\n\t\t\tif (down[a] < down[b]) swap(a, b);\n\t\t\ta = par[nxt[a]];\n\t\t}\n\
+    \t\treturn depth[a] < depth[b] ? a : b;\n\t}\n\n\tint dist(int a, int b) { return\
+    \ depth[a] + depth[b] - depth[lca(a, b)] * 2; }\n};\n"
+  code: "template <class G> \nstruct HeavyLightDecomposition {\nprivate:\n\tvoid dfs_sz(int\
+    \ cur) {\n\t\tsize[cur] = 1;\n\t\tfor (auto& dst : g[cur]) {\n\t\t\tif (dst ==\
+    \ par[cur]) {\n\t\t\t\tif (g[cur].size() >= 2 && int(dst) == int(g[cur][0]))\n\
+    \t\t\t\t\tswap(g[cur][0], g[cur][1]);\n\t\t\t\telse\n\t\t\t\t\tcontinue;\n\t\t\
+    \t}\n\t\t\tdepth[dst] = depth[cur] + 1;\n\t\t\tpar[dst] = cur;\n\t\t\tdfs_sz(dst);\n\
+    \t\t\tsize[cur] += size[dst];\n\t\t\tif (size[dst] > size[g[cur][0]]) {\n\t\t\t\
+    \tswap(dst, g[cur][0]);\n\t\t\t}\n\t\t}\n\t}\n\n\tvoid dfs_hld(int cur) {\n\t\t\
+    down[cur] = id++;\n\t\tfor (auto dst : g[cur]) {\n\t\t\tif (dst == par[cur]) continue;\n\
+    \t\t\tnxt[dst] = (int(dst) == int(g[cur][0]) ? nxt[cur] : int(dst));\n\t\t\tdfs_hld(dst);\n\
+    \t\t}\n\t\tup[cur] = id;\n\t}\n\n\t// [u, v)\n\tstd::vector<std::pair<int, int>>\
+    \ ascend(int u, int v) const {\n\t\tstd::vector<std::pair<int, int>> res;\n\t\t\
+    while (nxt[u] != nxt[v]) {\n\t\t\tres.emplace_back(down[u], down[nxt[u]]);\n\t\
+    \t\tu = par[nxt[u]];\n\t\t}\n\t\tif (u != v) res.emplace_back(down[u], down[v]\
+    \ + 1);\n\t\treturn res;\n\t}\n\n\t// (u, v]\n\tstd::vector<std::pair<int, int>>\
+    \ descend(int u, int v) const {\n\t\tif (u == v) return {};\n\t\tif (nxt[u] ==\
+    \ nxt[v]) return {{down[u] + 1, down[v]}};\n\t\tauto res = descend(u, par[nxt[v]]);\n\
+    \t\tres.emplace_back(down[nxt[v]], down[v]);\n\t\treturn res;\n\t}\n\npublic:\n\
+    \tG g;\n\tint id;\n\tstd::vector<int> size, depth, down, up, nxt, par;\n\t\n\t\
+    HeavyLightDecomposition(G& _g, std::vector<int> roots = {0})\n\t\t\t: g(_g),\n\
+    \t\t\t\tid(0),\n\t\t\t\tsize(g.size(), 0),\n\t\t\t\tdepth(g.size(), 0),\n\t\t\t\
+    \tdown(g.size(), -1),\n\t\t\t\tup(g.size(), -1),\n\t\t\t\tnxt(g.size(), 0), \n\
+    \t\t\t\tpar(g.size(), 0) {\n\t\tfor (int root : roots) {\n\t\t\tcout << g.size()\
+    \ << endl;\n\t\t\tpar[root] = nxt[root] = root;\n\t\t\tdfs_sz(root);\n\t\t\tdfs_hld(root);\n\
+    \t\t}\n\t}\n\n\tvoid build(std::vector<int> roots) {\n\t\tfor (int root : roots)\
+    \ {\n\t\t\tpar[root] = nxt[root] = root;\n\t\t\tdfs_sz(root);\n\t\t\tdfs_hld(root);\n\
+    \t\t}\n\t}\n\n\t// [l, r], inclusive for subtree\n\tstd::pair<int, int> idx(int\
+    \ i) const { return {down[i], up[i] - 1}; }\n\n\ttemplate <class F>\n\tvoid path_query(int\
+    \ u, int v, bool vertex, const F& f) {\n\t\tint l = lca(u, v);\n\t\tfor (auto&&\
+    \ [a, b] : ascend(u, l)) {\n\t\t\tint s = a + 1, t = b;\n\t\t\ts > t ? f(t, s\
+    \ - 1) : f(s, t - 1);\n\t\t}\n\t\tif (vertex) f(down[l], down[l]);\n\t\tfor (auto&&\
+    \ [a, b] : descend(l, v)) {\n\t\t\tint s = a, t = b + 1;\n\t\t\ts > t ? f(t, s\
+    \ - 1) : f(s, t - 1);\n\t\t}\n\t}\n\n\ttemplate <class F>\n\tvoid path_noncommutative_query(int\
+    \ u, int v, bool vertex, const F& f) {\n\t\tint l = lca(u, v);\n\t\tfor (auto&&\
+    \ [a, b] : ascend(u, l)) f(a + 1, b - 1);\n\t\tif (vertex) f(down[l], down[l]);\n\
+    \t\tfor (auto&& [a, b] : descend(l, v)) f(a, b);\n\t}\n\n\ttemplate <class F>\n\
+    \tvoid subtree_query(int u, bool vertex, const F& f) {\n\t\tf(down[u] + int(!vertex),\
+    \ up[u] - 1);\n\t}\n\n\tint lca(int a, int b) {\n\t\twhile (nxt[a] != nxt[b])\
+    \ {\n\t\t\tif (down[a] < down[b]) swap(a, b);\n\t\t\ta = par[nxt[a]];\n\t\t}\n\
+    \t\treturn depth[a] < depth[b] ? a : b;\n\t}\n\n\tint dist(int a, int b) { return\
+    \ depth[a] + depth[b] - depth[lca(a, b)] * 2; }\n};"
+  dependsOn: []
   isVerificationFile: false
   path: library/graphs/heavy-light-decomposition.hpp
   requiredBy: []
-  timestamp: '2021-07-24 22:29:57-04:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2021-07-31 13:53:30-04:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
-  - verify/yosupo/yosupo-vertex_add_path_sum.test.cpp
+  - verify/yosupo/yosupo-vertex_add_path_sum-new-hld.test.cpp
 documentation_of: library/graphs/heavy-light-decomposition.hpp
 layout: document
 redirect_from:

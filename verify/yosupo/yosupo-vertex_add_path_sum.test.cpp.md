@@ -1,15 +1,15 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
   - icon: ':heavy_check_mark:'
     path: library/data-structures/1d-range-queries/lazy-segment-tree.hpp
     title: library/data-structures/1d-range-queries/lazy-segment-tree.hpp
   - icon: ':heavy_check_mark:'
-    path: library/graphs/heavy-light-decomposition.hpp
-    title: library/graphs/heavy-light-decomposition.hpp
+    path: library/graphs/heavy-light-decomposition2.hpp
+    title: library/graphs/heavy-light-decomposition2.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -76,7 +76,7 @@ data:
     } else {\n\t\t\tint u, v;\n\t\t\tcin >> u >> v;\n\t\t\tcout << H.query_path(u,\
     \ v) << '\\n';\n\t\t}\n\t}\n\treturn 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/vertex_add_path_sum\"\n\
-    \n#include \"../../library/contest/template-minimal.hpp\"\n#include \"../../library/graphs/heavy-light-decomposition.hpp\"\
+    \n#include \"../../library/contest/template-minimal.hpp\"\n#include \"../../library/graphs/heavy-light-decomposition2.hpp\"\
     \n\nint main() {\n\tusing namespace std;\n\tcin.tie(0)->sync_with_stdio(false);\n\
     \tHeavyLight<long long> H;\n\tint n, q; cin >> n >> q;\n\tvector<int> a(n);\n\t\
     for (int i = 0; i < n; i++) cin >> a[i];\n\tvector<vector<int>> graph(n);\n\t\
@@ -88,12 +88,12 @@ data:
     \ v) << '\\n';\n\t\t}\n\t}\n\treturn 0;\n}\n"
   dependsOn:
   - library/contest/template-minimal.hpp
-  - library/graphs/heavy-light-decomposition.hpp
+  - library/graphs/heavy-light-decomposition2.hpp
   - library/data-structures/1d-range-queries/lazy-segment-tree.hpp
   isVerificationFile: true
   path: verify/yosupo/yosupo-vertex_add_path_sum.test.cpp
   requiredBy: []
-  timestamp: '2021-07-28 19:45:54-04:00'
+  timestamp: '2021-07-31 13:51:24-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/yosupo-vertex_add_path_sum.test.cpp

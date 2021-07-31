@@ -210,12 +210,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-unionfind.test.cpp
     title: verify/yosupo/yosupo-unionfind.test.cpp
+  - icon: ':x:'
+    path: verify/yosupo/yosupo-vertex_add_path_sum-new-hld.test.cpp
+    title: verify/yosupo/yosupo-vertex_add_path_sum-new-hld.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-vertex_add_path_sum.test.cpp
     title: verify/yosupo/yosupo-vertex_add_path_sum.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: '
@@ -331,7 +334,7 @@ data:
   requiredBy:
   - library/graphs/enumerate-triangles.cpp
   timestamp: '2021-07-28 19:45:54-04:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/yosupo/yosupo-convolution_mod_1000000007-karatsuba.test.cpp
   - verify/yosupo/yosupo-line_add_get_min.test.cpp
@@ -373,6 +376,7 @@ data:
   - verify/yosupo/yosupo-suffixarray-linear.test.cpp
   - verify/yosupo/yosupo-lca-lca-jump.test.cpp
   - verify/yosupo/yosupo-sqrt_mod.test.cpp
+  - verify/yosupo/yosupo-vertex_add_path_sum-new-hld.test.cpp
   - verify/yosupo/yosupo-inv_of_formal_power_series.test.cpp
   - verify/yosupo/yosupo-point_set_range_composite.test.cpp
   - verify/aizu/aizu-GRL_6_A-2.test.cpp
