@@ -27,6 +27,13 @@ template <class D, class Op> struct SegmentTree {
 		for (int i = 1; i <= lg; i++) update(p >> i);
 	}
 
+	void add(int p, D x) {
+		assert(0 <= p && p < n);
+		p += sz;
+		d[p] = op(d[p], x);
+		for (int i = 1; i <= lg; i++) update(p >> i);
+	}
+
 	D single(int p) const {
 		assert(0 <= p && p < n);
 		return d[p + sz];
@@ -48,7 +55,6 @@ template <class D, class Op> struct SegmentTree {
 		}
 		return op(sml, smr);
 	}
-
 
 	// min i s.t. f(d[a] + d[a+1] + ... d[i]) == true (or return n + 1)
 	template <class Comp> int search_left(int a, Comp f) {
