@@ -15,7 +15,6 @@ data:
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     IGNORE: ''
-    IGNORE_IF_CLANG: ''
     IGNORE_IF_GCC: ''
     links:
     - https://judge.yosupo.jp/problem/bipartitematching

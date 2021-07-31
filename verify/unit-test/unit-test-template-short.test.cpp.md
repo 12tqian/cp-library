@@ -12,7 +12,6 @@ data:
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     IGNORE: ''
-    IGNORE_IF_CLANG: ''
     IGNORE_IF_GCC: ''
     links: []
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages/onlinejudge_verify/documentation/build.py\"\

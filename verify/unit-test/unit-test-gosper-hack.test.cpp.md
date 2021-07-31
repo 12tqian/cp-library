@@ -18,7 +18,6 @@ data:
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     IGNORE: ''
-    IGNORE_IF_CLANG: ''
     IGNORE_IF_GCC: ''
     links: []
   bundledCode: "#define IGNORE \"self tested\"\n\n\n#pragma GCC optimize (\"O3\")\n\

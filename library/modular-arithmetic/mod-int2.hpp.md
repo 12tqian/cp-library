@@ -24,7 +24,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-convolution_mod_1000000007-karatsuba.test.cpp
     title: verify/yosupo/yosupo-convolution_mod_1000000007-karatsuba.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-exp_of_formal_power_series.test.cpp
     title: verify/yosupo/yosupo-exp_of_formal_power_series.test.cpp
   - icon: ':x:'
@@ -48,7 +48,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-point_set_range_composite.test.cpp
     title: verify/yosupo/yosupo-point_set_range_composite.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-pow_of_formal_power_series.test.cpp
     title: verify/yosupo/yosupo-pow_of_formal_power_series.test.cpp
   - icon: ':heavy_check_mark:'

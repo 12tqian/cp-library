@@ -428,7 +428,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-enumerate_triangles.test.cpp
       title: verify/yosupo/yosupo-enumerate_triangles.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-exp_of_formal_power_series.test.cpp
       title: verify/yosupo/yosupo-exp_of_formal_power_series.test.cpp
     - icon: ':heavy_check_mark:'
@@ -482,7 +482,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-point_set_range_composite.test.cpp
       title: verify/yosupo/yosupo-point_set_range_composite.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-pow_of_formal_power_series.test.cpp
       title: verify/yosupo/yosupo-pow_of_formal_power_series.test.cpp
     - icon: ':heavy_check_mark:'

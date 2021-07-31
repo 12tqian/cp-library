@@ -18,7 +18,6 @@ data:
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     IGNORE: ''
-    IGNORE_IF_CLANG: ''
     IGNORE_IF_GCC: ''
     links:
     - https://codeforces.com/contest/1074/problem/F
