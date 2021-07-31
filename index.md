@@ -224,9 +224,6 @@ data:
       title: library/number-theory/sieve.hpp
   - name: library/numerical
     pages:
-    - icon: ':warning:'
-      path: library/numerical/berlekamp-massey.hpp
-      title: library/numerical/berlekamp-massey.hpp
     - icon: ':heavy_check_mark:'
       path: library/numerical/big-integer.hpp
       title: library/numerical/big-integer.hpp
@@ -247,6 +244,9 @@ data:
       title: library/numerical/xor-basis.hpp
   - name: library/polynomial
     pages:
+    - icon: ':warning:'
+      path: library/polynomial/berlekamp-massey.hpp
+      title: library/polynomial/berlekamp-massey.hpp
     - icon: ':heavy_check_mark:'
       path: library/polynomial/fast-fourier-transform.hpp
       title: library/polynomial/fast-fourier-transform.hpp

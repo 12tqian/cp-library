@@ -5,6 +5,9 @@ data:
     path: library/polynomial/number-theoretic-transform.hpp
     title: library/polynomial/number-theoretic-transform.hpp
   _extendedRequiredBy:
+  - icon: ':warning:'
+    path: library/polynomial/berlekamp-massey.hpp
+    title: library/polynomial/berlekamp-massey.hpp
   - icon: ':heavy_check_mark:'
     path: library/polynomial/multipoint-evaluation.hpp
     title: library/polynomial/multipoint-evaluation.hpp
@@ -222,6 +225,7 @@ data:
   path: library/polynomial/polynomial.hpp
   requiredBy:
   - library/polynomial/polynomial-sqrt.hpp
+  - library/polynomial/berlekamp-massey.hpp
   - library/polynomial/multipoint-evaluation.hpp
   timestamp: '2021-07-31 02:01:21-04:00'
   verificationStatus: LIBRARY_SOME_WA

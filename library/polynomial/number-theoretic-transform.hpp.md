@@ -2,6 +2,9 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
+  - icon: ':warning:'
+    path: library/polynomial/berlekamp-massey.hpp
+    title: library/polynomial/berlekamp-massey.hpp
   - icon: ':heavy_check_mark:'
     path: library/polynomial/multipoint-evaluation.hpp
     title: library/polynomial/multipoint-evaluation.hpp
@@ -147,6 +150,7 @@ data:
   requiredBy:
   - library/polynomial/polynomial-sqrt.hpp
   - library/polynomial/polynomial.hpp
+  - library/polynomial/berlekamp-massey.hpp
   - library/polynomial/multipoint-evaluation.hpp
   timestamp: '2021-07-30 23:56:29-04:00'
   verificationStatus: LIBRARY_SOME_WA
