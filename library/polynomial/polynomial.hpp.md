@@ -8,7 +8,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/polynomial/multipoint-evaluation.hpp
     title: library/polynomial/multipoint-evaluation.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/polynomial/polynomial-sqrt.hpp
     title: library/polynomial/polynomial-sqrt.hpp
   _extendedVerifiedWith:
@@ -27,7 +27,7 @@ data:
   - icon: ':x:'
     path: verify/yosupo/yosupo-pow_of_formal_power_series.test.cpp
     title: verify/yosupo/yosupo-pow_of_formal_power_series.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-sqrt_of_formal_power_series.test.cpp
     title: verify/yosupo/yosupo-sqrt_of_formal_power_series.test.cpp
   _isVerificationFailed: true
@@ -140,7 +140,7 @@ data:
     \t\tPoly x = *this, r = {{1}};\n\t\twhile (n) {\n\t\t\tif (n & 1) r = r * x %\
     \ mod;\n\t\t\tx = x * x % mod;\n\t\t\tn >>= 1;\n\t\t}\n\t\treturn r;\n\t}\n\n\t\
     D _pow(D x, long long k) { \n\t\tD r = 1;\n\t\twhile (k) {\n\t\t\tif (k & 1) {\n\
-    \t\t\t\tr *= x;\n\t\t\t}\n\t\t\tx *= x;\n\t\t\tk >>= 1;\n\t\t}\n\t\treturn x;\n\
+    \t\t\t\tr *= x;\n\t\t\t}\n\t\t\tx *= x;\n\t\t\tk >>= 1;\n\t\t}\n\t\treturn r;\n\
     \t }\n\n\tPoly pow(long long k, int n = -1) {\n\t\tif (n == -1) n = this->size();\n\
     \t\tint sz = (int)this->size();\n\t\tfor (int i = 0; i < sz; ++i) {\n\t\t\tif\
     \ (freq(i) != 0) {\n\t\t\t\tif (i * k > n) return Poly(n);\n\t\t\t\tD rev = 1\
@@ -205,7 +205,7 @@ data:
     while (n) {\n\t\t\tif (n & 1) r = r * x % mod;\n\t\t\tx = x * x % mod;\n\t\t\t\
     n >>= 1;\n\t\t}\n\t\treturn r;\n\t}\n\n\tD _pow(D x, long long k) { \n\t\tD r\
     \ = 1;\n\t\twhile (k) {\n\t\t\tif (k & 1) {\n\t\t\t\tr *= x;\n\t\t\t}\n\t\t\t\
-    x *= x;\n\t\t\tk >>= 1;\n\t\t}\n\t\treturn x;\n\t }\n\n\tPoly pow(long long k,\
+    x *= x;\n\t\t\tk >>= 1;\n\t\t}\n\t\treturn r;\n\t }\n\n\tPoly pow(long long k,\
     \ int n = -1) {\n\t\tif (n == -1) n = this->size();\n\t\tint sz = (int)this->size();\n\
     \t\tfor (int i = 0; i < sz; ++i) {\n\t\t\tif (freq(i) != 0) {\n\t\t\t\tif (i *\
     \ k > n) return Poly(n);\n\t\t\t\tD rev = 1 / (*this)[i];\n\t\t\t\tPoly ret =\
@@ -223,7 +223,7 @@ data:
   requiredBy:
   - library/polynomial/polynomial-sqrt.hpp
   - library/polynomial/multipoint-evaluation.hpp
-  timestamp: '2021-07-31 01:42:23-04:00'
+  timestamp: '2021-07-31 02:01:21-04:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/yosupo/yosupo-sqrt_of_formal_power_series.test.cpp

@@ -135,7 +135,7 @@ data:
     \t\tPoly x = *this, r = {{1}};\n\t\twhile (n) {\n\t\t\tif (n & 1) r = r * x %\
     \ mod;\n\t\t\tx = x * x % mod;\n\t\t\tn >>= 1;\n\t\t}\n\t\treturn r;\n\t}\n\n\t\
     D _pow(D x, long long k) { \n\t\tD r = 1;\n\t\twhile (k) {\n\t\t\tif (k & 1) {\n\
-    \t\t\t\tr *= x;\n\t\t\t}\n\t\t\tx *= x;\n\t\t\tk >>= 1;\n\t\t}\n\t\treturn x;\n\
+    \t\t\t\tr *= x;\n\t\t\t}\n\t\t\tx *= x;\n\t\t\tk >>= 1;\n\t\t}\n\t\treturn r;\n\
     \t }\n\n\tPoly pow(long long k, int n = -1) {\n\t\tif (n == -1) n = this->size();\n\
     \t\tint sz = (int)this->size();\n\t\tfor (int i = 0; i < sz; ++i) {\n\t\t\tif\
     \ (freq(i) != 0) {\n\t\t\t\tif (i * k > n) return Poly(n);\n\t\t\t\tD rev = 1\
@@ -176,16 +176,15 @@ data:
     \ { return a /= b; }\n};\n\nusing mi = Mint<998244353, 5>;\n\nint main() {\n\t\
     ios::sync_with_stdio(false);\n\tcin.tie(0);\n\tint n;\n\tcin >> n;\n\tvector<mi>\
     \ a(n);\n\tfor (int i = 0; i < n; ++i) {\n\t\tcin >> a[i];\n\t}\n\tPoly<mi> p(a);\n\
-    \tauto ans = p.exp(n);\n\tans.resize(n);\n\tfor (int i = 0; i < n; ++i) {\n\t\t\
-    cout << ans[i] << ' ';\n\t}\n\tcout << '\\n';\n\treturn 0;\t\n}\n"
+    \tauto ans = p.exp(n);\n\tfor (int i = 0; i < n; ++i) {\n\t\tcout << ans[i] <<\
+    \ ' ';\n\t}\n\tcout << '\\n';\n\treturn 0;\t\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/exp_of_formal_power_series\"\
     \n\n#include \"../../library/contest/template-minimal.hpp\"\n#include \"../../library/polynomial/polynomial.hpp\"\
     \n#include \"../../library/modular-arithmetic/mod-int2.hpp\"\n\nusing mi = Mint<998244353,\
     \ 5>;\n\nint main() {\n\tios::sync_with_stdio(false);\n\tcin.tie(0);\n\tint n;\n\
     \tcin >> n;\n\tvector<mi> a(n);\n\tfor (int i = 0; i < n; ++i) {\n\t\tcin >> a[i];\n\
-    \t}\n\tPoly<mi> p(a);\n\tauto ans = p.exp(n);\n\tans.resize(n);\n\tfor (int i\
-    \ = 0; i < n; ++i) {\n\t\tcout << ans[i] << ' ';\n\t}\n\tcout << '\\n';\n\treturn\
-    \ 0;\t\n}"
+    \t}\n\tPoly<mi> p(a);\n\tauto ans = p.exp(n);\n\tfor (int i = 0; i < n; ++i) {\n\
+    \t\tcout << ans[i] << ' ';\n\t}\n\tcout << '\\n';\n\treturn 0;\t\n}"
   dependsOn:
   - library/contest/template-minimal.hpp
   - library/polynomial/polynomial.hpp
@@ -194,7 +193,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/yosupo-exp_of_formal_power_series.test.cpp
   requiredBy: []
-  timestamp: '2021-07-31 01:42:23-04:00'
+  timestamp: '2021-07-31 02:01:21-04:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/yosupo/yosupo-exp_of_formal_power_series.test.cpp

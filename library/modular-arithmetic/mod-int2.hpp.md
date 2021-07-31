@@ -51,7 +51,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-range_affine_range_sum.test.cpp
     title: verify/yosupo/yosupo-range_affine_range_sum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-sqrt_of_formal_power_series.test.cpp
     title: verify/yosupo/yosupo-sqrt_of_formal_power_series.test.cpp
   _isVerificationFailed: true

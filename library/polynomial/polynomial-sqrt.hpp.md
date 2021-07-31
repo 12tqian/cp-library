@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/modular-arithmetic/mod-sqrt.hpp
     title: library/modular-arithmetic/mod-sqrt.hpp
   - icon: ':question:'
@@ -12,12 +12,12 @@ data:
     title: library/polynomial/polynomial.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-sqrt_of_formal_power_series.test.cpp
     title: verify/yosupo/yosupo-sqrt_of_formal_power_series.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "\n\n\nnamespace NTT {\n\nint bsf(unsigned int x) { return __builtin_ctz(x);\
@@ -125,7 +125,7 @@ data:
     \t\tPoly x = *this, r = {{1}};\n\t\twhile (n) {\n\t\t\tif (n & 1) r = r * x %\
     \ mod;\n\t\t\tx = x * x % mod;\n\t\t\tn >>= 1;\n\t\t}\n\t\treturn r;\n\t}\n\n\t\
     D _pow(D x, long long k) { \n\t\tD r = 1;\n\t\twhile (k) {\n\t\t\tif (k & 1) {\n\
-    \t\t\t\tr *= x;\n\t\t\t}\n\t\t\tx *= x;\n\t\t\tk >>= 1;\n\t\t}\n\t\treturn x;\n\
+    \t\t\t\tr *= x;\n\t\t\t}\n\t\t\tx *= x;\n\t\t\tk >>= 1;\n\t\t}\n\t\treturn r;\n\
     \t }\n\n\tPoly pow(long long k, int n = -1) {\n\t\tif (n == -1) n = this->size();\n\
     \t\tint sz = (int)this->size();\n\t\tfor (int i = 0; i < sz; ++i) {\n\t\t\tif\
     \ (freq(i) != 0) {\n\t\t\t\tif (i * k > n) return Poly(n);\n\t\t\t\tD rev = 1\
@@ -187,8 +187,8 @@ data:
   isVerificationFile: false
   path: library/polynomial/polynomial-sqrt.hpp
   requiredBy: []
-  timestamp: '2021-07-31 01:42:23-04:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2021-07-31 02:01:21-04:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/yosupo-sqrt_of_formal_power_series.test.cpp
 documentation_of: library/polynomial/polynomial-sqrt.hpp

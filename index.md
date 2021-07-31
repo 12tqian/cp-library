@@ -199,7 +199,7 @@ data:
     - icon: ':question:'
       path: library/modular-arithmetic/mod-int2.hpp
       title: library/modular-arithmetic/mod-int2.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/modular-arithmetic/mod-sqrt.hpp
       title: library/modular-arithmetic/mod-sqrt.hpp
   - name: library/number-theory
@@ -259,7 +259,7 @@ data:
     - icon: ':question:'
       path: library/polynomial/number-theoretic-transform.hpp
       title: library/polynomial/number-theoretic-transform.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/polynomial/polynomial-sqrt.hpp
       title: library/polynomial/polynomial-sqrt.hpp
     - icon: ':question:'
@@ -509,7 +509,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-sqrt_mod.test.cpp
       title: verify/yosupo/yosupo-sqrt_mod.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-sqrt_of_formal_power_series.test.cpp
       title: verify/yosupo/yosupo-sqrt_of_formal_power_series.test.cpp
     - icon: ':heavy_check_mark:'

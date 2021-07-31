@@ -186,7 +186,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-sqrt_mod.test.cpp
     title: verify/yosupo/yosupo-sqrt_mod.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-sqrt_of_formal_power_series.test.cpp
     title: verify/yosupo/yosupo-sqrt_of_formal_power_series.test.cpp
   - icon: ':heavy_check_mark:'
