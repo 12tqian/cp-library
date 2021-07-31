@@ -1,66 +1,121 @@
-#pragma once
-
-/**
- * To support forest, just change 
- * init to take in a vector of roots, and DFS each of them
- */
-
-#include "../data-structures/1d-range-queries/lazy-segment-tree.hpp"
-
-const bool VALUES_IN_VERTICES = true;
-
-template <class T> struct HeavyLight {
-	std::vector<int> parent, heavy, depth, root, tree_pos;
-	LazySeg<T> tree;
-
-	template <class G> int dfs(const G &graph, int v) {
-		int size = 1, max_subtree = 0;
-		for (int u : graph[v]) if (u != parent[v]) {
-			parent[u] = v;
-			depth[u] = depth[v] + 1;
-			int subtree = dfs(graph, u);
-			if (subtree > max_subtree) heavy[v] = u, max_subtree = subtree;
-			size += subtree;
-		}
-		return size;
-	}
-
-	template <class B> void process_path(int u, int v, B op) {
-		for (; root[u] != root[v]; v = parent[root[v]]) {
-			if (depth[root[u]] > depth[root[v]]) std::swap(u, v);
-			op(tree_pos[root[v]], tree_pos[v]);
-		}
-		if (depth[u] > depth[v]) std::swap(u, v);
-		op(tree_pos[u] + (VALUES_IN_VERTICES ? 0 : 1), tree_pos[v]);
-	}
-
-	template <class G>
-	void init(const G &graph, int r = 0) {
-		int n = (int)graph.size();
-		heavy.assign(n, -1);
-		parent.assign(n, 0);
-		depth.assign(n, 0);
-		root.assign(n, 0);
-		tree_pos.assign(n, 0);
-		tree.init(n);
-		parent[r] = -1;
-		depth[r] = 0;
-		dfs(graph, r);
-		for (int i = 0, current_pos = 0; i < n; ++i)
-			if (parent[i] == -1 || heavy[parent[i]] != i)
-			for (int j = i; j != -1; j = heavy[j]) {
-				root[j] = i;
-				tree_pos[j] = current_pos++;
+template <class G> 
+struct HeavyLightDecomposition {
+private:
+	void dfs_sz(int cur) {
+		size[cur] = 1;
+		for (auto& dst : g[cur]) {
+			if (dst == par[cur]) {
+				if (g[cur].size() >= 2 && int(dst) == int(g[cur][0]))
+					swap(g[cur][0], g[cur][1]);
+				else
+					continue;
 			}
+			depth[dst] = depth[cur] + 1;
+			par[dst] = cur;
+			dfs_sz(dst);
+			size[cur] += size[dst];
+			if (size[dst] > size[g[cur][0]]) {
+				swap(dst, g[cur][0]);
+			}
+		}
 	}
 
-	void modify_path(int u, int v, const T &value) {
-		process_path(u, v, [this, &value](int l, int r) { tree.upd(l, r, value); });
+	void dfs_hld(int cur) {
+		down[cur] = id++;
+		for (auto dst : g[cur]) {
+			if (dst == par[cur]) continue;
+			nxt[dst] = (int(dst) == int(g[cur][0]) ? nxt[cur] : int(dst));
+			dfs_hld(dst);
+		}
+		up[cur] = id;
 	}
-	
-	T query_path(int u, int v) {
-		T res = 0;
-		process_path(u, v, [this, &res](int l, int r) { res += tree.qsum(l, r); });
+
+	// [u, v)
+	std::vector<std::pair<int, int>> ascend(int u, int v) const {
+		std::vector<std::pair<int, int>> res;
+		while (nxt[u] != nxt[v]) {
+			res.emplace_back(down[u], down[nxt[u]]);
+			u = par[nxt[u]];
+		}
+		if (u != v) res.emplace_back(down[u], down[v] + 1);
 		return res;
 	}
+
+	// (u, v]
+	std::vector<std::pair<int, int>> descend(int u, int v) const {
+		if (u == v) return {};
+		if (nxt[u] == nxt[v]) return {{down[u] + 1, down[v]}};
+		auto res = descend(u, par[nxt[v]]);
+		res.emplace_back(down[nxt[v]], down[v]);
+		return res;
+	}
+
+public:
+	G g;
+	int id;
+	std::vector<int> size, depth, down, up, nxt, par;
+	HeavyLightDecomposition(G& _g, std::vector<int> roots = {0})
+			: g(_g),
+				id(0),
+				size(g.size(), 0),
+				depth(g.size(), 0),
+				down(g.size(), -1),
+				up(g.size(), -1),
+				nxt(g.size(), 0), 
+				par(g.size(), 0) {
+		for (int root : roots) {
+			cout << g.size() << endl;
+			par[root] = nxt[root] = root;
+			dfs_sz(root);
+			dfs_hld(root);
+		}
+	}
+
+	void build(std::vector<int> roots) {
+		for (int root : roots) {
+			par[root] = nxt[root] = root;
+			dfs_sz(root);
+			dfs_hld(root);
+		}
+	}
+
+	// [l, r], inclusive for subtree
+	std::pair<int, int> idx(int i) const { return {down[i], up[i] - 1}; }
+
+	template <class F>
+	void path_query(int u, int v, bool vertex, const F& f) {
+		int l = lca(u, v);
+		for (auto&& [a, b] : ascend(u, l)) {
+			int s = a + 1, t = b;
+			s > t ? f(t, s - 1) : f(s, t - 1);
+		}
+		if (vertex) f(down[l], down[l]);
+		for (auto&& [a, b] : descend(l, v)) {
+			int s = a, t = b + 1;
+			s > t ? f(t, s - 1) : f(s, t - 1);
+		}
+	}
+
+	template <class F>
+	void path_noncommutative_query(int u, int v, bool vertex, const F& f) {
+		int l = lca(u, v);
+		for (auto&& [a, b] : ascend(u, l)) f(a + 1, b - 1);
+		if (vertex) f(down[l], down[l] + 1);
+		for (auto&& [a, b] : descend(l, v)) f(a, b);
+	}
+
+	template <class F>
+	void subtree_query(int u, bool vertex, const F& f) {
+		f(down[u] + int(!vertex), up[u] - 1);
+	}
+
+	int lca(int a, int b) {
+		while (nxt[a] != nxt[b]) {
+			if (down[a] < down[b]) swap(a, b);
+			a = par[nxt[a]];
+		}
+		return depth[a] < depth[b] ? a : b;
+	}
+
+	int dist(int a, int b) { return depth[a] + depth[b] - depth[lca(a, b)] * 2; }
 };

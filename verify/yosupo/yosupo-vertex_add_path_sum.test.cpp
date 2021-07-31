@@ -1,7 +1,7 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/vertex_add_path_sum"
 
 #include "../../library/contest/template-minimal.hpp"
-#include "../../library/graphs/heavy-light-decomposition.hpp"
+#include "../../library/graphs/heavy-light-decomposition2.hpp"
 
 int main() {
 	using namespace std;
