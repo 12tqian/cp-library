@@ -120,9 +120,9 @@ data:
     \ }\n\tPoly& operator-=(const Poly& r) { return *this = *this - r; }\n\tPoly&\
     \ operator*=(const Poly& r) { return *this = *this * r; }\n\tPoly& operator*=(const\
     \ D& r) { return *this = *this * r; }\n\tPoly& operator/=(const Poly& r) { return\
-    \ *this = *this / r; }\n\tPoly& operator/=(const D &r) {return *this = *this /\
-    \ r;}\n\tPoly& operator%=(const Poly& r) { return *this = *this % r; }\n\tPoly&\
-    \ operator<<=(const size_t& n) { return *this = *this << n; }\n\tPoly& operator>>=(const\
+    \ *this = *this / r; }\n\tPoly& operator/=(const D &r) { return *this = *this\
+    \ / r; }\n\tPoly& operator%=(const Poly& r) { return *this = *this % r; }\n\t\
+    Poly& operator<<=(const size_t& n) { return *this = *this << n; }\n\tPoly& operator>>=(const\
     \ size_t& n) { return *this = *this >> n; }\n\n\tPoly pre(int le) const { return\
     \ Poly(this->begin(), this->begin() + min((int)this->size(), le)); }\n\t\n\tPoly\
     \ rev(int n = -1) const {\n\t\tPoly res = *this;\n\t\tif (n != -1) res.resize(n);\n\
@@ -185,7 +185,7 @@ data:
     \ return *this = *this - r; }\n\tPoly& operator*=(const Poly& r) { return *this\
     \ = *this * r; }\n\tPoly& operator*=(const D& r) { return *this = *this * r; }\n\
     \tPoly& operator/=(const Poly& r) { return *this = *this / r; }\n\tPoly& operator/=(const\
-    \ D &r) {return *this = *this / r;}\n\tPoly& operator%=(const Poly& r) { return\
+    \ D &r) { return *this = *this / r; }\n\tPoly& operator%=(const Poly& r) { return\
     \ *this = *this % r; }\n\tPoly& operator<<=(const size_t& n) { return *this =\
     \ *this << n; }\n\tPoly& operator>>=(const size_t& n) { return *this = *this >>\
     \ n; }\n\n\tPoly pre(int le) const { return Poly(this->begin(), this->begin()\
@@ -230,7 +230,7 @@ data:
   - library/polynomial/polynomial-sqrt.hpp
   - library/polynomial/berlekamp-massey.hpp
   - library/polynomial/multipoint-evaluation.hpp
-  timestamp: '2021-07-31 03:50:02-04:00'
+  timestamp: '2021-07-31 15:16:41-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/yosupo-sqrt_of_formal_power_series.test.cpp
