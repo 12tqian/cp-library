@@ -6,12 +6,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-point_set_range_composite.test.cpp
     title: verify/yosupo/yosupo-point_set_range_composite.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-vertex_add_path_sum-new-hld.test.cpp
     title: verify/yosupo/yosupo-vertex_add_path_sum-new-hld.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "\ntemplate <class D, class L, class OpDD, class OpDL, class OpLL>\
@@ -103,7 +103,7 @@ data:
   path: library/data-structures/1d-range-queries/general-full-segment-tree.hpp
   requiredBy: []
   timestamp: '2021-07-30 22:48:36-04:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/yosupo-vertex_add_path_sum-new-hld.test.cpp
   - verify/yosupo/yosupo-point_set_range_composite.test.cpp

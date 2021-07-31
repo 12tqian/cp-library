@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-vertex_add_path_sum-new-hld.test.cpp
     title: verify/yosupo/yosupo-vertex_add_path_sum-new-hld.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "template <class G> \nstruct HeavyLightDecomposition {\nprivate:\n\t\
@@ -28,25 +28,25 @@ data:
     \ descend(int u, int v) const {\n\t\tif (u == v) return {};\n\t\tif (nxt[u] ==\
     \ nxt[v]) return {{down[u] + 1, down[v]}};\n\t\tauto res = descend(u, par[nxt[v]]);\n\
     \t\tres.emplace_back(down[nxt[v]], down[v]);\n\t\treturn res;\n\t}\n\npublic:\n\
-    \tG g;\n\tint id;\n\tstd::vector<int> size, depth, down, up, nxt, par;\n\t\n\t\
-    HeavyLightDecomposition(G& _g, std::vector<int> roots = {0})\n\t\t\t: g(_g),\n\
-    \t\t\t\tid(0),\n\t\t\t\tsize(g.size(), 0),\n\t\t\t\tdepth(g.size(), 0),\n\t\t\t\
-    \tdown(g.size(), -1),\n\t\t\t\tup(g.size(), -1),\n\t\t\t\tnxt(g.size(), 0), \n\
-    \t\t\t\tpar(g.size(), 0) {\n\t\tfor (int root : roots) {\n\t\t\tcout << g.size()\
-    \ << endl;\n\t\t\tpar[root] = nxt[root] = root;\n\t\t\tdfs_sz(root);\n\t\t\tdfs_hld(root);\n\
-    \t\t}\n\t}\n\n\tvoid build(std::vector<int> roots) {\n\t\tfor (int root : roots)\
-    \ {\n\t\t\tpar[root] = nxt[root] = root;\n\t\t\tdfs_sz(root);\n\t\t\tdfs_hld(root);\n\
-    \t\t}\n\t}\n\n\t// [l, r], inclusive for subtree\n\tstd::pair<int, int> idx(int\
-    \ i) const { return {down[i], up[i] - 1}; }\n\n\ttemplate <class F>\n\tvoid path_query(int\
-    \ u, int v, bool vertex, const F& f) {\n\t\tint l = lca(u, v);\n\t\tfor (auto&&\
-    \ [a, b] : ascend(u, l)) {\n\t\t\tint s = a + 1, t = b;\n\t\t\ts > t ? f(t, s\
-    \ - 1) : f(s, t - 1);\n\t\t}\n\t\tif (vertex) f(down[l], down[l]);\n\t\tfor (auto&&\
-    \ [a, b] : descend(l, v)) {\n\t\t\tint s = a, t = b + 1;\n\t\t\ts > t ? f(t, s\
-    \ - 1) : f(s, t - 1);\n\t\t}\n\t}\n\n\ttemplate <class F>\n\tvoid path_noncommutative_query(int\
-    \ u, int v, bool vertex, const F& f) {\n\t\tint l = lca(u, v);\n\t\tfor (auto&&\
-    \ [a, b] : ascend(u, l)) f(a + 1, b - 1);\n\t\tif (vertex) f(down[l], down[l]);\n\
-    \t\tfor (auto&& [a, b] : descend(l, v)) f(a, b);\n\t}\n\n\ttemplate <class F>\n\
-    \tvoid subtree_query(int u, bool vertex, const F& f) {\n\t\tf(down[u] + int(!vertex),\
+    \tG g;\n\tint id;\n\tstd::vector<int> size, depth, down, up, nxt, par;\n\n\tHeavyLightDecomposition(G&\
+    \ _g, std::vector<int> roots = {0})\n\t\t\t: g(_g),\n\t\t\t\tid(0),\n\t\t\t\t\
+    size(g.size(), 0),\n\t\t\t\tdepth(g.size(), 0),\n\t\t\t\tdown(g.size(), -1),\n\
+    \t\t\t\tup(g.size(), -1),\n\t\t\t\tnxt(g.size(), 0), \n\t\t\t\tpar(g.size(), 0)\
+    \ {\n\t\tfor (int root : roots) {\n\t\t\tpar[root] = nxt[root] = root;\n\t\t\t\
+    dfs_sz(root);\n\t\t\tdfs_hld(root);\n\t\t}\n\t}\n\n\tvoid build(std::vector<int>\
+    \ roots) {\n\t\tfor (int root : roots) {\n\t\t\tpar[root] = nxt[root] = root;\n\
+    \t\t\tdfs_sz(root);\n\t\t\tdfs_hld(root);\n\t\t}\n\t}\n\n\t// [l, r], inclusive\
+    \ for subtree\n\tstd::pair<int, int> idx(int i) const { return {down[i], up[i]\
+    \ - 1}; }\n\n\ttemplate <class F>\n\tvoid path_query(int u, int v, bool vertex,\
+    \ const F& f) {\n\t\tint l = lca(u, v);\n\t\tfor (auto&& [a, b] : ascend(u, l))\
+    \ {\n\t\t\tint s = a + 1, t = b;\n\t\t\ts > t ? f(t, s - 1) : f(s, t - 1);\n\t\
+    \t}\n\t\tif (vertex) f(down[l], down[l]);\n\t\tfor (auto&& [a, b] : descend(l,\
+    \ v)) {\n\t\t\tint s = a, t = b + 1;\n\t\t\ts > t ? f(t, s - 1) : f(s, t - 1);\n\
+    \t\t}\n\t}\n\n\ttemplate <class F>\n\tvoid path_noncommutative_query(int u, int\
+    \ v, bool vertex, const F& f) {\n\t\tint l = lca(u, v);\n\t\tfor (auto&& [a, b]\
+    \ : ascend(u, l)) f(a + 1, b - 1);\n\t\tif (vertex) f(down[l], down[l]);\n\t\t\
+    for (auto&& [a, b] : descend(l, v)) f(a, b);\n\t}\n\n\ttemplate <class F>\n\t\
+    void subtree_query(int u, bool vertex, const F& f) {\n\t\tf(down[u] + int(!vertex),\
     \ up[u] - 1);\n\t}\n\n\tint lca(int a, int b) {\n\t\twhile (nxt[a] != nxt[b])\
     \ {\n\t\t\tif (down[a] < down[b]) swap(a, b);\n\t\t\ta = par[nxt[a]];\n\t\t}\n\
     \t\treturn depth[a] < depth[b] ? a : b;\n\t}\n\n\tint dist(int a, int b) { return\
@@ -68,25 +68,25 @@ data:
     \ descend(int u, int v) const {\n\t\tif (u == v) return {};\n\t\tif (nxt[u] ==\
     \ nxt[v]) return {{down[u] + 1, down[v]}};\n\t\tauto res = descend(u, par[nxt[v]]);\n\
     \t\tres.emplace_back(down[nxt[v]], down[v]);\n\t\treturn res;\n\t}\n\npublic:\n\
-    \tG g;\n\tint id;\n\tstd::vector<int> size, depth, down, up, nxt, par;\n\t\n\t\
-    HeavyLightDecomposition(G& _g, std::vector<int> roots = {0})\n\t\t\t: g(_g),\n\
-    \t\t\t\tid(0),\n\t\t\t\tsize(g.size(), 0),\n\t\t\t\tdepth(g.size(), 0),\n\t\t\t\
-    \tdown(g.size(), -1),\n\t\t\t\tup(g.size(), -1),\n\t\t\t\tnxt(g.size(), 0), \n\
-    \t\t\t\tpar(g.size(), 0) {\n\t\tfor (int root : roots) {\n\t\t\tcout << g.size()\
-    \ << endl;\n\t\t\tpar[root] = nxt[root] = root;\n\t\t\tdfs_sz(root);\n\t\t\tdfs_hld(root);\n\
-    \t\t}\n\t}\n\n\tvoid build(std::vector<int> roots) {\n\t\tfor (int root : roots)\
-    \ {\n\t\t\tpar[root] = nxt[root] = root;\n\t\t\tdfs_sz(root);\n\t\t\tdfs_hld(root);\n\
-    \t\t}\n\t}\n\n\t// [l, r], inclusive for subtree\n\tstd::pair<int, int> idx(int\
-    \ i) const { return {down[i], up[i] - 1}; }\n\n\ttemplate <class F>\n\tvoid path_query(int\
-    \ u, int v, bool vertex, const F& f) {\n\t\tint l = lca(u, v);\n\t\tfor (auto&&\
-    \ [a, b] : ascend(u, l)) {\n\t\t\tint s = a + 1, t = b;\n\t\t\ts > t ? f(t, s\
-    \ - 1) : f(s, t - 1);\n\t\t}\n\t\tif (vertex) f(down[l], down[l]);\n\t\tfor (auto&&\
-    \ [a, b] : descend(l, v)) {\n\t\t\tint s = a, t = b + 1;\n\t\t\ts > t ? f(t, s\
-    \ - 1) : f(s, t - 1);\n\t\t}\n\t}\n\n\ttemplate <class F>\n\tvoid path_noncommutative_query(int\
-    \ u, int v, bool vertex, const F& f) {\n\t\tint l = lca(u, v);\n\t\tfor (auto&&\
-    \ [a, b] : ascend(u, l)) f(a + 1, b - 1);\n\t\tif (vertex) f(down[l], down[l]);\n\
-    \t\tfor (auto&& [a, b] : descend(l, v)) f(a, b);\n\t}\n\n\ttemplate <class F>\n\
-    \tvoid subtree_query(int u, bool vertex, const F& f) {\n\t\tf(down[u] + int(!vertex),\
+    \tG g;\n\tint id;\n\tstd::vector<int> size, depth, down, up, nxt, par;\n\n\tHeavyLightDecomposition(G&\
+    \ _g, std::vector<int> roots = {0})\n\t\t\t: g(_g),\n\t\t\t\tid(0),\n\t\t\t\t\
+    size(g.size(), 0),\n\t\t\t\tdepth(g.size(), 0),\n\t\t\t\tdown(g.size(), -1),\n\
+    \t\t\t\tup(g.size(), -1),\n\t\t\t\tnxt(g.size(), 0), \n\t\t\t\tpar(g.size(), 0)\
+    \ {\n\t\tfor (int root : roots) {\n\t\t\tpar[root] = nxt[root] = root;\n\t\t\t\
+    dfs_sz(root);\n\t\t\tdfs_hld(root);\n\t\t}\n\t}\n\n\tvoid build(std::vector<int>\
+    \ roots) {\n\t\tfor (int root : roots) {\n\t\t\tpar[root] = nxt[root] = root;\n\
+    \t\t\tdfs_sz(root);\n\t\t\tdfs_hld(root);\n\t\t}\n\t}\n\n\t// [l, r], inclusive\
+    \ for subtree\n\tstd::pair<int, int> idx(int i) const { return {down[i], up[i]\
+    \ - 1}; }\n\n\ttemplate <class F>\n\tvoid path_query(int u, int v, bool vertex,\
+    \ const F& f) {\n\t\tint l = lca(u, v);\n\t\tfor (auto&& [a, b] : ascend(u, l))\
+    \ {\n\t\t\tint s = a + 1, t = b;\n\t\t\ts > t ? f(t, s - 1) : f(s, t - 1);\n\t\
+    \t}\n\t\tif (vertex) f(down[l], down[l]);\n\t\tfor (auto&& [a, b] : descend(l,\
+    \ v)) {\n\t\t\tint s = a, t = b + 1;\n\t\t\ts > t ? f(t, s - 1) : f(s, t - 1);\n\
+    \t\t}\n\t}\n\n\ttemplate <class F>\n\tvoid path_noncommutative_query(int u, int\
+    \ v, bool vertex, const F& f) {\n\t\tint l = lca(u, v);\n\t\tfor (auto&& [a, b]\
+    \ : ascend(u, l)) f(a + 1, b - 1);\n\t\tif (vertex) f(down[l], down[l]);\n\t\t\
+    for (auto&& [a, b] : descend(l, v)) f(a, b);\n\t}\n\n\ttemplate <class F>\n\t\
+    void subtree_query(int u, bool vertex, const F& f) {\n\t\tf(down[u] + int(!vertex),\
     \ up[u] - 1);\n\t}\n\n\tint lca(int a, int b) {\n\t\twhile (nxt[a] != nxt[b])\
     \ {\n\t\t\tif (down[a] < down[b]) swap(a, b);\n\t\t\ta = par[nxt[a]];\n\t\t}\n\
     \t\treturn depth[a] < depth[b] ? a : b;\n\t}\n\n\tint dist(int a, int b) { return\
@@ -95,8 +95,8 @@ data:
   isVerificationFile: false
   path: library/graphs/heavy-light-decomposition.hpp
   requiredBy: []
-  timestamp: '2021-07-31 13:53:30-04:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2021-07-31 14:03:05-04:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/yosupo-vertex_add_path_sum-new-hld.test.cpp
 documentation_of: library/graphs/heavy-light-decomposition.hpp
