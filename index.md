@@ -9,7 +9,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/contest/template-full.hpp
       title: library/contest/template-full.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/contest/template-minimal.hpp
       title: library/contest/template-minimal.hpp
     - icon: ':heavy_check_mark:'
@@ -199,13 +199,13 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/modular-arithmetic/mod-int.hpp
       title: library/modular-arithmetic/mod-int.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/modular-arithmetic/mod-int2.hpp
       title: library/modular-arithmetic/mod-int2.hpp
     - icon: ':heavy_check_mark:'
       path: library/modular-arithmetic/mod-operations.hpp
       title: library/modular-arithmetic/mod-operations.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/modular-arithmetic/mod-sqrt.hpp
       title: library/modular-arithmetic/mod-sqrt.hpp
   - name: library/number-theory
@@ -250,7 +250,7 @@ data:
       title: library/numerical/xor-basis.hpp
   - name: library/polynomial
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: library/polynomial/berlekamp-massey.hpp
       title: library/polynomial/berlekamp-massey.hpp
     - icon: ':heavy_check_mark:'
@@ -259,16 +259,16 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/polynomial/karatsuba.hpp
       title: library/polynomial/karatsuba.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: library/polynomial/multipoint-evaluation.hpp
       title: library/polynomial/multipoint-evaluation.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: library/polynomial/number-theoretic-transform.hpp
       title: library/polynomial/number-theoretic-transform.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: library/polynomial/polynomial-sqrt.hpp
       title: library/polynomial/polynomial-sqrt.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: library/polynomial/polynomial.hpp
       title: library/polynomial/polynomial.hpp
     - icon: ':heavy_check_mark:'
@@ -434,19 +434,19 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-enumerate_triangles.test.cpp
       title: verify/yosupo/yosupo-enumerate_triangles.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/yosupo/yosupo-exp_of_formal_power_series.test.cpp
       title: verify/yosupo/yosupo-exp_of_formal_power_series.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-factorize.test.cpp
       title: verify/yosupo/yosupo-factorize.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/yosupo/yosupo-find_linear_recurrence.test.cpp
       title: verify/yosupo/yosupo-find_linear_recurrence.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
       title: verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/yosupo/yosupo-inv_of_formal_power_series.test.cpp
       title: verify/yosupo/yosupo-inv_of_formal_power_series.test.cpp
     - icon: ':heavy_check_mark:'
@@ -461,10 +461,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-line_add_get_min.test.cpp
       title: verify/yosupo/yosupo-line_add_get_min.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/yosupo/yosupo-log_of_formal_power_series.test.cpp
       title: verify/yosupo/yosupo-log_of_formal_power_series.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/yosupo/yosupo-multipoint_evaluation.test.cpp
       title: verify/yosupo/yosupo-multipoint_evaluation.test.cpp
     - icon: ':heavy_check_mark:'
@@ -491,7 +491,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-point_set_range_composite.test.cpp
       title: verify/yosupo/yosupo-point_set_range_composite.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/yosupo/yosupo-pow_of_formal_power_series.test.cpp
       title: verify/yosupo/yosupo-pow_of_formal_power_series.test.cpp
     - icon: ':heavy_check_mark:'
@@ -521,7 +521,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-sqrt_mod.test.cpp
       title: verify/yosupo/yosupo-sqrt_mod.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/yosupo/yosupo-sqrt_of_formal_power_series.test.cpp
       title: verify/yosupo/yosupo-sqrt_of_formal_power_series.test.cpp
     - icon: ':heavy_check_mark:'

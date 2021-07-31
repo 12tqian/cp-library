@@ -1,23 +1,23 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/modular-arithmetic/mod-sqrt.hpp
     title: library/modular-arithmetic/mod-sqrt.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/polynomial/number-theoretic-transform.hpp
     title: library/polynomial/number-theoretic-transform.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/polynomial/polynomial.hpp
     title: library/polynomial/polynomial.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/yosupo-sqrt_of_formal_power_series.test.cpp
     title: verify/yosupo/yosupo-sqrt_of_formal_power_series.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "\n\n\nnamespace NTT {\n\nint bsf(unsigned int x) { return __builtin_ctz(x);\
@@ -102,70 +102,71 @@ data:
     \ *this = *this / r; }\n\tPoly& operator/=(const D &r) { return *this = *this\
     \ / r; }\n\tPoly& operator%=(const Poly& r) { return *this = *this % r; }\n\t\
     Poly& operator<<=(const size_t& n) { return *this = *this << n; }\n\tPoly& operator>>=(const\
-    \ size_t& n) { return *this = *this >> n; }\n\n\tPoly pre(int le) const { return\
-    \ Poly(this->begin(), this->begin() + min((int)this->size(), le)); }\n\t\n\tPoly\
-    \ rev(int n = -1) const {\n\t\tPoly res = *this;\n\t\tif (n != -1) res.resize(n);\n\
-    \t\treverse(res.begin(), res.end());\n\t\treturn res;\n\t}\n\t\n\tPoly diff()\
-    \ const {\n\t\tstd::vector<D> res(max(0, (int)this->size() - 1));\n\t\tfor (int\
-    \ i = 1; i < (int)this->size(); i++) res[i - 1] = freq(i) * i;\n\t\treturn res;\n\
-    \t}\n\t\n\tPoly inte() const {\n\t\tstd::vector<D> res(this->size() + 1);\n\t\t\
-    for (int i = 0; i < (int)this->size(); i++) res[i + 1] = freq(i) / (i + 1);\n\t\
-    \treturn res;\n\t}\n\n\t// f * f.inv() = 1 + g(x)x^m\n\tPoly inv(int m = -1) const\
-    \ {\n\t\tif (m == -1) m = (int)this->size();\n\t\tPoly res = Poly({D(1) / freq(0)});\n\
-    \t\tfor (int i = 1; i < m; i *= 2) {\n\t\t\tres = (res * D(2) - res * res * pre(2\
-    \ * i)).pre(2 * i);\n\t\t}\n\t\treturn res.pre(m);\n\t}\n\t\n\tPoly exp(int n\
-    \ = -1) const {\n\t\tassert(freq(0) == 0);\n\t\tif (n == -1) n = (int)this->size();\n\
-    \t\tPoly f({1}), g({1});\n\t\tfor (int i = 1; i < n; i *= 2) {\n\t\t\tg = (g *\
-    \ 2 - f * g * g).pre(i);\n\t\t\tPoly q = diff().pre(i - 1);\n\t\t\tPoly w = (q\
-    \ + g * (f.diff() - f * q)).pre(2 * i - 1);\n\t\t\tf = (f + f * (*this - w.inte()).pre(2\
-    \ * i)).pre(2 * i);\n\t\t}\n\t\treturn f.pre(n);\n\t}\n\t\n\tPoly log(int n =\
-    \ -1) const {\n\t\tif (n == -1) n = (int)this->size();\n\t\tassert(freq(0) ==\
-    \ 1);\n\t\tauto f = pre(n);\n\t\treturn (f.diff() * f.inv(n - 1)).pre(n - 1).inte();\n\
-    \t}\n\n\tPoly pow_mod(const Poly& mod, int n = -1) {\n\t\tif (n == -1) n = this->size();\n\
-    \t\tPoly x = *this, r = {{1}};\n\t\twhile (n) {\n\t\t\tif (n & 1) r = r * x %\
-    \ mod;\n\t\t\tx = x * x % mod;\n\t\t\tn >>= 1;\n\t\t}\n\t\treturn r;\n\t}\n\n\t\
-    D _pow(D x, long long k) { \n\t\tD r = 1;\n\t\twhile (k) {\n\t\t\tif (k & 1) {\n\
-    \t\t\t\tr *= x;\n\t\t\t}\n\t\t\tx *= x;\n\t\t\tk >>= 1;\n\t\t}\n\t\treturn r;\n\
-    \t}\n\n\tPoly pow(long long k, int n = -1) {\n\t\tif (n == -1) n = this->size();\n\
-    \t\tint sz = (int)this->size();\n\t\tfor (int i = 0; i < sz; ++i) {\n\t\t\tif\
-    \ (freq(i) != 0) {\n\t\t\t\tif (i * k > n) return Poly(n);\n\t\t\t\tD rev = 1\
-    \ / (*this)[i];\n\t\t\t\tPoly ret = (((*this * rev) >> i).log(n) * k).exp(n) *\
-    \ _pow((*this)[i], k);\n\t\t\t\tret = (ret << (i * k)).pre(n);\n\t\t\t\tret.resize(n);\n\
-    \t\t\t\treturn ret;\n\t\t\t}\n\t\t}\n\t\treturn Poly(n);\n\t}\n\n\tfriend ostream&\
-    \ operator<<(ostream& os, const Poly& p) {\n\t\tif (p.empty()) return os << \"\
-    0\";\n\t\tfor (auto i = 0; i < (int)p.size(); i++) {\n\t\t\tif (p[i]) {\n\t\t\t\
-    \tos << p[i] << \"x^\" << i;\n\t\t\t\tif (i != (int)p.size() - 1) os << \"+\"\
-    ;\n\t\t\t}\n\t\t}\n\t\treturn os;\n\t}\n};\n\nunsigned xrand() {\n\tstatic unsigned\
-    \ x = 314159265, y = 358979323, z = 846264338, w = 327950288;\n\tunsigned t =\
-    \ x ^ x << 11; x = y; y = z; z = w; return w = w ^ w >> 19 ^ t ^ t >> 8;\n}\n\n\
-    long long mod_inverse(long long a, long long m) {\n\tlong long b = m, x = 1, y\
-    \ = 0, t;\n\tfor (; ; ) {\n\t\tt = a / b, a -= t * b;\n\t\tif (a == 0) {\n\t\t\
-    \tassert(b == 1 || b == -1);\n\t\t\tif ( b== -1) y = -y;\n\t\t\treturn (y < 0)\
-    \ ? (y + m) : y;\n\t\t}\n\t\tx -= t * y;\n\t\tt = b / a, b -= t * a;\n\t\tif (b\
-    \ == 0) {\n\t\t\tassert (a == 1 || a == -1);\n\t\t\tif (a == -1) x = -x;\n\t\t\
-    \treturn (x < 0) ? (x + m) : x;\n\t\t}\n\t\ty -= t * x;\n\t}\n}\n\nint jacobi(long\
-    \ long a, long long m) {\n\tint s = 1;\n\tif (a < 0) a = a % m + m;\n\tfor (;\
-    \ m > 1; ) {\n\t\ta %= m;\n\t\tif (a == 0) return 0;\n\t\tconst int r = __builtin_ctz(a);\n\
-    \t\tif ((r & 1) && ((m + 2) & 4)) s = -s;\n\t\ta >>= r;\n\t\tif (a & m & 2) s\
-    \ = -s;\n\t\tstd::swap(a, m);\n\t}\n\treturn s;\n}\n\nstd::vector<long long> mod_sqrt(long\
-    \ long a, long long p) {\n\tif (p == 2) return {a & 1};\n\tconst int j = jacobi(a,\
-    \ p);\n\tif (j == 0) return {0};\n\tif (j == -1) return {};\n\tlong long b, d;\n\
-    \tfor (; ; ) {\n\t\tb = xrand() % p;\n\t\td = (b * b - a) % p;\n\t\tif (d < 0)\
-    \ d += p;\n\t\tif (jacobi(d, p) == -1) break;\n\t}\n\tlong long f0 = b, f1 = 1,\
-    \ g0 = 1, g1 = 0, tmp;\n\tfor (long long e = (p + 1) >> 1; e; e >>= 1) {\n\t\t\
-    if (e & 1) {\n\t\t\ttmp = (g0 * f0 + d * ((g1 * f1) % p)) % p;\n\t\t\tg1 = (g0\
-    \ * f1 + g1 * f0) % p;\n\t\t\tg0 = tmp;\n\t\t}\n\t\ttmp = (f0 * f0 + d * ((f1\
-    \ * f1) % p)) % p;\n\t\tf1 = (2 * f0 * f1) % p;\n\t\tf0 = tmp;\n\t}\n\treturn\
-    \ (g0 < p - g0) ? std::vector<long long>{g0, p - g0} : std::vector<long long>{p\
-    \ - g0, g0};\n}\n\n#include <bits/stdc++.h>\n\ntemplate <class D> Poly<D> sqrt(const\
-    \ Poly<D>& p, int n = -1) {\n\tif (n == -1) n = (int)p.size();\n\tif (p.empty())\
-    \ return Poly<D>(n);\n\tif (p[0] == 0) {\n\t\tfor (int i = 1; i < (int)p.size();\
-    \ ++i) {\n\t\t\tif (p[i] != 0) {\n\t\t\t\tif (i & 1) {\n\t\t\t\t\treturn {};\n\
-    \t\t\t\t}\n\t\t\t\tif (n - i / 2 <= 0) break;\n\t\t\t\tauto ret = sqrt(p >> i,\
-    \ n - i / 2);\n\t\t\t\tif (ret.empty()) return {};\n\t\t\t\tret = ret << (i /\
-    \ 2);\n\t\t\t\tif ((int)ret.size() < n) ret.resize(n);\n\t\t\t\treturn ret;\n\t\
-    \t\t}\n\t\t}\n\t\treturn Poly<D>(n);\n\t}\n\tauto v = mod_sqrt(p[0].v, D::md());\n\
-    \tif (v.empty()) return {};\n\tlong long sqr = v[0];\n\tPoly<D> ret = {D(sqr)};\n\
+    \ size_t& n) { return *this = *this >> n; }\n\tfriend Poly operator*(D const&\
+    \ l, Matrix<T> r) { return r *= l; }\n\n\tPoly pre(int le) const { return Poly(this->begin(),\
+    \ this->begin() + min((int)this->size(), le)); }\n\t\n\tPoly rev(int n = -1) const\
+    \ {\n\t\tPoly res = *this;\n\t\tif (n != -1) res.resize(n);\n\t\treverse(res.begin(),\
+    \ res.end());\n\t\treturn res;\n\t}\n\t\n\tPoly diff() const {\n\t\tstd::vector<D>\
+    \ res(max(0, (int)this->size() - 1));\n\t\tfor (int i = 1; i < (int)this->size();\
+    \ i++) res[i - 1] = freq(i) * i;\n\t\treturn res;\n\t}\n\t\n\tPoly inte() const\
+    \ {\n\t\tstd::vector<D> res(this->size() + 1);\n\t\tfor (int i = 0; i < (int)this->size();\
+    \ i++) res[i + 1] = freq(i) / (i + 1);\n\t\treturn res;\n\t}\n\n\t// f * f.inv()\
+    \ = 1 + g(x)x^m\n\tPoly inv(int m = -1) const {\n\t\tif (m == -1) m = (int)this->size();\n\
+    \t\tPoly res = Poly({D(1) / freq(0)});\n\t\tfor (int i = 1; i < m; i *= 2) {\n\
+    \t\t\tres = (res * D(2) - res * res * pre(2 * i)).pre(2 * i);\n\t\t}\n\t\treturn\
+    \ res.pre(m);\n\t}\n\t\n\tPoly exp(int n = -1) const {\n\t\tassert(freq(0) ==\
+    \ 0);\n\t\tif (n == -1) n = (int)this->size();\n\t\tPoly f({1}), g({1});\n\t\t\
+    for (int i = 1; i < n; i *= 2) {\n\t\t\tg = (g * 2 - f * g * g).pre(i);\n\t\t\t\
+    Poly q = diff().pre(i - 1);\n\t\t\tPoly w = (q + g * (f.diff() - f * q)).pre(2\
+    \ * i - 1);\n\t\t\tf = (f + f * (*this - w.inte()).pre(2 * i)).pre(2 * i);\n\t\
+    \t}\n\t\treturn f.pre(n);\n\t}\n\t\n\tPoly log(int n = -1) const {\n\t\tif (n\
+    \ == -1) n = (int)this->size();\n\t\tassert(freq(0) == 1);\n\t\tauto f = pre(n);\n\
+    \t\treturn (f.diff() * f.inv(n - 1)).pre(n - 1).inte();\n\t}\n\n\tPoly pow_mod(const\
+    \ Poly& mod, int n = -1) {\n\t\tif (n == -1) n = this->size();\n\t\tPoly x = *this,\
+    \ r = {{1}};\n\t\twhile (n) {\n\t\t\tif (n & 1) r = r * x % mod;\n\t\t\tx = x\
+    \ * x % mod;\n\t\t\tn >>= 1;\n\t\t}\n\t\treturn r;\n\t}\n\n\tD _pow(D x, long\
+    \ long k) { \n\t\tD r = 1;\n\t\twhile (k) {\n\t\t\tif (k & 1) {\n\t\t\t\tr *=\
+    \ x;\n\t\t\t}\n\t\t\tx *= x;\n\t\t\tk >>= 1;\n\t\t}\n\t\treturn r;\n\t}\n\n\t\
+    Poly pow(long long k, int n = -1) {\n\t\tif (n == -1) n = this->size();\n\t\t\
+    int sz = (int)this->size();\n\t\tfor (int i = 0; i < sz; ++i) {\n\t\t\tif (freq(i)\
+    \ != 0) {\n\t\t\t\tif (i * k > n) return Poly(n);\n\t\t\t\tD rev = 1 / (*this)[i];\n\
+    \t\t\t\tPoly ret = (((*this * rev) >> i).log(n) * k).exp(n) * _pow((*this)[i],\
+    \ k);\n\t\t\t\tret = (ret << (i * k)).pre(n);\n\t\t\t\tret.resize(n);\n\t\t\t\t\
+    return ret;\n\t\t\t}\n\t\t}\n\t\treturn Poly(n);\n\t}\n\n\tfriend ostream& operator<<(ostream&\
+    \ os, const Poly& p) {\n\t\tif (p.empty()) return os << \"0\";\n\t\tfor (auto\
+    \ i = 0; i < (int)p.size(); i++) {\n\t\t\tif (p[i]) {\n\t\t\t\tos << p[i] << \"\
+    x^\" << i;\n\t\t\t\tif (i != (int)p.size() - 1) os << \"+\";\n\t\t\t}\n\t\t}\n\
+    \t\treturn os;\n\t}\n};\n\nunsigned xrand() {\n\tstatic unsigned x = 314159265,\
+    \ y = 358979323, z = 846264338, w = 327950288;\n\tunsigned t = x ^ x << 11; x\
+    \ = y; y = z; z = w; return w = w ^ w >> 19 ^ t ^ t >> 8;\n}\n\nlong long mod_inverse(long\
+    \ long a, long long m) {\n\tlong long b = m, x = 1, y = 0, t;\n\tfor (; ; ) {\n\
+    \t\tt = a / b, a -= t * b;\n\t\tif (a == 0) {\n\t\t\tassert(b == 1 || b == -1);\n\
+    \t\t\tif ( b== -1) y = -y;\n\t\t\treturn (y < 0) ? (y + m) : y;\n\t\t}\n\t\tx\
+    \ -= t * y;\n\t\tt = b / a, b -= t * a;\n\t\tif (b == 0) {\n\t\t\tassert (a ==\
+    \ 1 || a == -1);\n\t\t\tif (a == -1) x = -x;\n\t\t\treturn (x < 0) ? (x + m) :\
+    \ x;\n\t\t}\n\t\ty -= t * x;\n\t}\n}\n\nint jacobi(long long a, long long m) {\n\
+    \tint s = 1;\n\tif (a < 0) a = a % m + m;\n\tfor (; m > 1; ) {\n\t\ta %= m;\n\t\
+    \tif (a == 0) return 0;\n\t\tconst int r = __builtin_ctz(a);\n\t\tif ((r & 1)\
+    \ && ((m + 2) & 4)) s = -s;\n\t\ta >>= r;\n\t\tif (a & m & 2) s = -s;\n\t\tstd::swap(a,\
+    \ m);\n\t}\n\treturn s;\n}\n\nstd::vector<long long> mod_sqrt(long long a, long\
+    \ long p) {\n\tif (p == 2) return {a & 1};\n\tconst int j = jacobi(a, p);\n\t\
+    if (j == 0) return {0};\n\tif (j == -1) return {};\n\tlong long b, d;\n\tfor (;\
+    \ ; ) {\n\t\tb = xrand() % p;\n\t\td = (b * b - a) % p;\n\t\tif (d < 0) d += p;\n\
+    \t\tif (jacobi(d, p) == -1) break;\n\t}\n\tlong long f0 = b, f1 = 1, g0 = 1, g1\
+    \ = 0, tmp;\n\tfor (long long e = (p + 1) >> 1; e; e >>= 1) {\n\t\tif (e & 1)\
+    \ {\n\t\t\ttmp = (g0 * f0 + d * ((g1 * f1) % p)) % p;\n\t\t\tg1 = (g0 * f1 + g1\
+    \ * f0) % p;\n\t\t\tg0 = tmp;\n\t\t}\n\t\ttmp = (f0 * f0 + d * ((f1 * f1) % p))\
+    \ % p;\n\t\tf1 = (2 * f0 * f1) % p;\n\t\tf0 = tmp;\n\t}\n\treturn (g0 < p - g0)\
+    \ ? std::vector<long long>{g0, p - g0} : std::vector<long long>{p - g0, g0};\n\
+    }\n\n#include <bits/stdc++.h>\n\ntemplate <class D> Poly<D> sqrt(const Poly<D>&\
+    \ p, int n = -1) {\n\tif (n == -1) n = (int)p.size();\n\tif (p.empty()) return\
+    \ Poly<D>(n);\n\tif (p[0] == 0) {\n\t\tfor (int i = 1; i < (int)p.size(); ++i)\
+    \ {\n\t\t\tif (p[i] != 0) {\n\t\t\t\tif (i & 1) {\n\t\t\t\t\treturn {};\n\t\t\t\
+    \t}\n\t\t\t\tif (n - i / 2 <= 0) break;\n\t\t\t\tauto ret = sqrt(p >> i, n - i\
+    \ / 2);\n\t\t\t\tif (ret.empty()) return {};\n\t\t\t\tret = ret << (i / 2);\n\t\
+    \t\t\tif ((int)ret.size() < n) ret.resize(n);\n\t\t\t\treturn ret;\n\t\t\t}\n\t\
+    \t}\n\t\treturn Poly<D>(n);\n\t}\n\tauto v = mod_sqrt(p[0].v, D::md());\n\tif\
+    \ (v.empty()) return {};\n\tlong long sqr = v[0];\n\tPoly<D> ret = {D(sqr)};\n\
     \tD i2 = 1 / D(2);\n\tfor (int i = 1; i < n; i <<= 1) {\n\t\tret = (ret + p.pre(i\
     \ << 1) * ret.inv(i << 1)) * i2;\n\t}\n\treturn ret.pre(n);\n}\n"
   code: "#pragma once\n\n#include \"polynomial.hpp\"\n#include \"../modular-arithmetic/mod-sqrt.hpp\"\
@@ -187,8 +188,8 @@ data:
   isVerificationFile: false
   path: library/polynomial/polynomial-sqrt.hpp
   requiredBy: []
-  timestamp: '2021-07-31 15:16:41-04:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2021-07-31 15:32:51-04:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - verify/yosupo/yosupo-sqrt_of_formal_power_series.test.cpp
 documentation_of: library/polynomial/polynomial-sqrt.hpp

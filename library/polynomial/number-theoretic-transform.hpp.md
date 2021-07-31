@@ -2,43 +2,43 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/polynomial/berlekamp-massey.hpp
     title: library/polynomial/berlekamp-massey.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/polynomial/multipoint-evaluation.hpp
     title: library/polynomial/multipoint-evaluation.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/polynomial/polynomial-sqrt.hpp
     title: library/polynomial/polynomial-sqrt.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/polynomial/polynomial.hpp
     title: library/polynomial/polynomial.hpp
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/yosupo-exp_of_formal_power_series.test.cpp
     title: verify/yosupo/yosupo-exp_of_formal_power_series.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/yosupo-find_linear_recurrence.test.cpp
     title: verify/yosupo/yosupo-find_linear_recurrence.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/yosupo-inv_of_formal_power_series.test.cpp
     title: verify/yosupo/yosupo-inv_of_formal_power_series.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/yosupo-log_of_formal_power_series.test.cpp
     title: verify/yosupo/yosupo-log_of_formal_power_series.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/yosupo-multipoint_evaluation.test.cpp
     title: verify/yosupo/yosupo-multipoint_evaluation.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/yosupo-pow_of_formal_power_series.test.cpp
     title: verify/yosupo/yosupo-pow_of_formal_power_series.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/yosupo-sqrt_of_formal_power_series.test.cpp
     title: verify/yosupo/yosupo-sqrt_of_formal_power_series.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "\nnamespace NTT {\n\nint bsf(unsigned int x) { return __builtin_ctz(x);\
@@ -156,7 +156,7 @@ data:
   - library/polynomial/berlekamp-massey.hpp
   - library/polynomial/multipoint-evaluation.hpp
   timestamp: '2021-07-30 23:56:29-04:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - verify/yosupo/yosupo-sqrt_of_formal_power_series.test.cpp
   - verify/yosupo/yosupo-log_of_formal_power_series.test.cpp

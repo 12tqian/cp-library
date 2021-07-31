@@ -184,28 +184,28 @@ data:
     \ Frac& r) { return Frac(l.n * r.d + r.n * l.d, l.d * r.d); }\n\tfriend Frac operator-(const\
     \ Frac& l, const Frac& r) { return Frac(l.n * r.d - r.n * l.d, l.d * r.d); }\n\
     \tfriend Frac operator*(const Frac& l, const Frac& r) { return Frac(l.n * r.n,\
-    \ l.d * r.d); }\n\tfriend Frac operator*(const Frac& l, int r) { return l * Frac(r,\
-    \ 1); }\n\tfriend Frac operator*(int r, const Frac& l) { return l * r; }\n\tfriend\
-    \ Frac operator/(const Frac& l, const Frac& r) { return l * Frac(r.d, r.n); }\n\
-    \tfriend Frac operator/(const Frac& l, const int& r) { return l / Frac(r, 1);\
-    \ }\n\tfriend Frac operator/(const int& l, const Frac& r) { return Frac(l, 1)\
-    \ / r; }\n\tfriend Frac& operator+=(Frac& l, const Frac& r) { return l = l + r;\
-    \ }\n\tfriend Frac& operator-=(Frac& l, const Frac& r) { return l = l - r; }\n\
-    \ttemplate <class T> friend Frac& operator*=(Frac& l, const T& r) { return l =\
-    \ l * r; }\n\ttemplate <class T> friend Frac& operator/=(Frac& l, const T& r)\
-    \ { return l = l / r; }\n\tfriend std::ostream& operator<<(std::ostream& os, const\
-    \ Frac& a) { return os << a.n << \"/\" << a.d; }\n};\n\nconst int L = 1e2;\n\n\
-    pi random_pair() {\n\treturn mp(rng() % L + 1, rng() % L + 1);\n}\n\nFrac frac_convert(pi\
-    \ x) {\n\treturn Frac(x.f, x.s);\n}\n\nld decimal_convert(pi x) {\n\treturn (ld)x.f\
-    \ / x.s;\n}\n\nvoid test() {\n\tconst ld EPS = 1e-9;\n\tconst int T = 100;\n\t\
-    auto check = [&](ld x, ld y) {\n\t\tassert(abs(x - y) < EPS);\n\t};\n\tf0r(t,\
-    \ T) {\n\t\tauto a = random_pair();\n\t\tauto b = random_pair();\n\t\tcheck((frac_convert(a)\
-    \ + frac_convert(b)).eval(), decimal_convert(a) + decimal_convert(b));\n\t\tcheck((frac_convert(a)\
-    \ * frac_convert(b)).eval(), decimal_convert(a) * decimal_convert(b));\n\t\tcheck((frac_convert(a)\
-    \ - frac_convert(b)).eval(), decimal_convert(a) - decimal_convert(b));\n\t\tcheck((frac_convert(a)\
-    \ / frac_convert(b)).eval(), decimal_convert(a) / decimal_convert(b));\n\t}\n\
-    }\n\nint main() {\n\tsetIO(\"\");\n\ttest();\n\tint a, b;\n\tre(a, b);\n\tps(a\
-    \ + b);\n\treturn 0;\n}\n"
+    \ l.d * r.d); }\n\tfriend Frac operator*(const Frac& l, long long r) { return\
+    \ l * Frac(r, 1); }\n\tfriend Frac operator*(long long r, const Frac& l) { return\
+    \ l * r; }\n\tfriend Frac operator/(const Frac& l, const Frac& r) { return l *\
+    \ Frac(r.d, r.n); }\n\tfriend Frac operator/(const Frac& l, const long long& r)\
+    \ { return l / Frac(r, 1); }\n\tfriend Frac operator/(const long long& l, const\
+    \ Frac& r) { return Frac(l, 1) / r; }\n\tfriend Frac& operator+=(Frac& l, const\
+    \ Frac& r) { return l = l + r; }\n\tfriend Frac& operator-=(Frac& l, const Frac&\
+    \ r) { return l = l - r; }\n\ttemplate <class T> friend Frac& operator*=(Frac&\
+    \ l, const T& r) { return l = l * r; }\n\ttemplate <class T> friend Frac& operator/=(Frac&\
+    \ l, const T& r) { return l = l / r; }\n\tfriend std::ostream& operator<<(std::ostream&\
+    \ os, const Frac& a) { return os << a.n << \"/\" << a.d; }\n};\n\nconst int L\
+    \ = 1e2;\n\npi random_pair() {\n\treturn mp(rng() % L + 1, rng() % L + 1);\n}\n\
+    \nFrac frac_convert(pi x) {\n\treturn Frac(x.f, x.s);\n}\n\nld decimal_convert(pi\
+    \ x) {\n\treturn (ld)x.f / x.s;\n}\n\nvoid test() {\n\tconst ld EPS = 1e-9;\n\t\
+    const int T = 100;\n\tauto check = [&](ld x, ld y) {\n\t\tassert(abs(x - y) <\
+    \ EPS);\n\t};\n\tf0r(t, T) {\n\t\tauto a = random_pair();\n\t\tauto b = random_pair();\n\
+    \t\tcheck((frac_convert(a) + frac_convert(b)).eval(), decimal_convert(a) + decimal_convert(b));\n\
+    \t\tcheck((frac_convert(a) * frac_convert(b)).eval(), decimal_convert(a) * decimal_convert(b));\n\
+    \t\tcheck((frac_convert(a) - frac_convert(b)).eval(), decimal_convert(a) - decimal_convert(b));\n\
+    \t\tcheck((frac_convert(a) / frac_convert(b)).eval(), decimal_convert(a) / decimal_convert(b));\n\
+    \t}\n}\n\nint main() {\n\tsetIO(\"\");\n\ttest();\n\tint a, b;\n\tre(a, b);\n\t\
+    ps(a + b);\n\treturn 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/aplusb\"\n\n#include \"\
     ../../library/contest/template-full.hpp\"\n#include \"../../library/numerical/fraction.hpp\"\
     \n\nconst int L = 1e2;\n\npi random_pair() {\n\treturn mp(rng() % L + 1, rng()\
@@ -226,7 +226,7 @@ data:
   isVerificationFile: true
   path: verify/unit-test/unit-test-fraction.test.cpp
   requiredBy: []
-  timestamp: '2021-07-29 02:04:41-04:00'
+  timestamp: '2021-07-31 15:32:51-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/unit-test/unit-test-fraction.test.cpp

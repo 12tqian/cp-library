@@ -108,16 +108,16 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-enumerate_triangles.test.cpp
     title: verify/yosupo/yosupo-enumerate_triangles.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/yosupo-exp_of_formal_power_series.test.cpp
     title: verify/yosupo/yosupo-exp_of_formal_power_series.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-factorize.test.cpp
     title: verify/yosupo/yosupo-factorize.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/yosupo-find_linear_recurrence.test.cpp
     title: verify/yosupo/yosupo-find_linear_recurrence.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/yosupo-inv_of_formal_power_series.test.cpp
     title: verify/yosupo/yosupo-inv_of_formal_power_series.test.cpp
   - icon: ':heavy_check_mark:'
@@ -132,10 +132,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-line_add_get_min.test.cpp
     title: verify/yosupo/yosupo-line_add_get_min.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/yosupo-log_of_formal_power_series.test.cpp
     title: verify/yosupo/yosupo-log_of_formal_power_series.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/yosupo-multipoint_evaluation.test.cpp
     title: verify/yosupo/yosupo-multipoint_evaluation.test.cpp
   - icon: ':heavy_check_mark:'
@@ -162,7 +162,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-point_set_range_composite.test.cpp
     title: verify/yosupo/yosupo-point_set_range_composite.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/yosupo-pow_of_formal_power_series.test.cpp
     title: verify/yosupo/yosupo-pow_of_formal_power_series.test.cpp
   - icon: ':heavy_check_mark:'
@@ -192,7 +192,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-sqrt_mod.test.cpp
     title: verify/yosupo/yosupo-sqrt_mod.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/yosupo-sqrt_of_formal_power_series.test.cpp
     title: verify/yosupo/yosupo-sqrt_of_formal_power_series.test.cpp
   - icon: ':heavy_check_mark:'
@@ -216,9 +216,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-vertex_add_path_sum.test.cpp
     title: verify/yosupo/yosupo-vertex_add_path_sum.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: '
@@ -334,7 +334,7 @@ data:
   requiredBy:
   - library/graphs/enumerate-triangles.cpp
   timestamp: '2021-07-28 19:45:54-04:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/yosupo/yosupo-convolution_mod_1000000007-karatsuba.test.cpp
   - verify/yosupo/yosupo-line_add_get_min.test.cpp

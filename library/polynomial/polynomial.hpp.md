@@ -1,44 +1,44 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/polynomial/number-theoretic-transform.hpp
     title: library/polynomial/number-theoretic-transform.hpp
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/polynomial/berlekamp-massey.hpp
     title: library/polynomial/berlekamp-massey.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/polynomial/multipoint-evaluation.hpp
     title: library/polynomial/multipoint-evaluation.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/polynomial/polynomial-sqrt.hpp
     title: library/polynomial/polynomial-sqrt.hpp
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/yosupo-exp_of_formal_power_series.test.cpp
     title: verify/yosupo/yosupo-exp_of_formal_power_series.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/yosupo-find_linear_recurrence.test.cpp
     title: verify/yosupo/yosupo-find_linear_recurrence.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/yosupo-inv_of_formal_power_series.test.cpp
     title: verify/yosupo/yosupo-inv_of_formal_power_series.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/yosupo-log_of_formal_power_series.test.cpp
     title: verify/yosupo/yosupo-log_of_formal_power_series.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/yosupo-multipoint_evaluation.test.cpp
     title: verify/yosupo/yosupo-multipoint_evaluation.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/yosupo-pow_of_formal_power_series.test.cpp
     title: verify/yosupo/yosupo-pow_of_formal_power_series.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/yosupo-sqrt_of_formal_power_series.test.cpp
     title: verify/yosupo/yosupo-sqrt_of_formal_power_series.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "\n\nnamespace NTT {\n\nint bsf(unsigned int x) { return __builtin_ctz(x);\
@@ -123,40 +123,41 @@ data:
     \ *this = *this / r; }\n\tPoly& operator/=(const D &r) { return *this = *this\
     \ / r; }\n\tPoly& operator%=(const Poly& r) { return *this = *this % r; }\n\t\
     Poly& operator<<=(const size_t& n) { return *this = *this << n; }\n\tPoly& operator>>=(const\
-    \ size_t& n) { return *this = *this >> n; }\n\n\tPoly pre(int le) const { return\
-    \ Poly(this->begin(), this->begin() + min((int)this->size(), le)); }\n\t\n\tPoly\
-    \ rev(int n = -1) const {\n\t\tPoly res = *this;\n\t\tif (n != -1) res.resize(n);\n\
-    \t\treverse(res.begin(), res.end());\n\t\treturn res;\n\t}\n\t\n\tPoly diff()\
-    \ const {\n\t\tstd::vector<D> res(max(0, (int)this->size() - 1));\n\t\tfor (int\
-    \ i = 1; i < (int)this->size(); i++) res[i - 1] = freq(i) * i;\n\t\treturn res;\n\
-    \t}\n\t\n\tPoly inte() const {\n\t\tstd::vector<D> res(this->size() + 1);\n\t\t\
-    for (int i = 0; i < (int)this->size(); i++) res[i + 1] = freq(i) / (i + 1);\n\t\
-    \treturn res;\n\t}\n\n\t// f * f.inv() = 1 + g(x)x^m\n\tPoly inv(int m = -1) const\
-    \ {\n\t\tif (m == -1) m = (int)this->size();\n\t\tPoly res = Poly({D(1) / freq(0)});\n\
-    \t\tfor (int i = 1; i < m; i *= 2) {\n\t\t\tres = (res * D(2) - res * res * pre(2\
-    \ * i)).pre(2 * i);\n\t\t}\n\t\treturn res.pre(m);\n\t}\n\t\n\tPoly exp(int n\
-    \ = -1) const {\n\t\tassert(freq(0) == 0);\n\t\tif (n == -1) n = (int)this->size();\n\
-    \t\tPoly f({1}), g({1});\n\t\tfor (int i = 1; i < n; i *= 2) {\n\t\t\tg = (g *\
-    \ 2 - f * g * g).pre(i);\n\t\t\tPoly q = diff().pre(i - 1);\n\t\t\tPoly w = (q\
-    \ + g * (f.diff() - f * q)).pre(2 * i - 1);\n\t\t\tf = (f + f * (*this - w.inte()).pre(2\
-    \ * i)).pre(2 * i);\n\t\t}\n\t\treturn f.pre(n);\n\t}\n\t\n\tPoly log(int n =\
-    \ -1) const {\n\t\tif (n == -1) n = (int)this->size();\n\t\tassert(freq(0) ==\
-    \ 1);\n\t\tauto f = pre(n);\n\t\treturn (f.diff() * f.inv(n - 1)).pre(n - 1).inte();\n\
-    \t}\n\n\tPoly pow_mod(const Poly& mod, int n = -1) {\n\t\tif (n == -1) n = this->size();\n\
-    \t\tPoly x = *this, r = {{1}};\n\t\twhile (n) {\n\t\t\tif (n & 1) r = r * x %\
-    \ mod;\n\t\t\tx = x * x % mod;\n\t\t\tn >>= 1;\n\t\t}\n\t\treturn r;\n\t}\n\n\t\
-    D _pow(D x, long long k) { \n\t\tD r = 1;\n\t\twhile (k) {\n\t\t\tif (k & 1) {\n\
-    \t\t\t\tr *= x;\n\t\t\t}\n\t\t\tx *= x;\n\t\t\tk >>= 1;\n\t\t}\n\t\treturn r;\n\
-    \t}\n\n\tPoly pow(long long k, int n = -1) {\n\t\tif (n == -1) n = this->size();\n\
-    \t\tint sz = (int)this->size();\n\t\tfor (int i = 0; i < sz; ++i) {\n\t\t\tif\
-    \ (freq(i) != 0) {\n\t\t\t\tif (i * k > n) return Poly(n);\n\t\t\t\tD rev = 1\
-    \ / (*this)[i];\n\t\t\t\tPoly ret = (((*this * rev) >> i).log(n) * k).exp(n) *\
-    \ _pow((*this)[i], k);\n\t\t\t\tret = (ret << (i * k)).pre(n);\n\t\t\t\tret.resize(n);\n\
-    \t\t\t\treturn ret;\n\t\t\t}\n\t\t}\n\t\treturn Poly(n);\n\t}\n\n\tfriend ostream&\
-    \ operator<<(ostream& os, const Poly& p) {\n\t\tif (p.empty()) return os << \"\
-    0\";\n\t\tfor (auto i = 0; i < (int)p.size(); i++) {\n\t\t\tif (p[i]) {\n\t\t\t\
-    \tos << p[i] << \"x^\" << i;\n\t\t\t\tif (i != (int)p.size() - 1) os << \"+\"\
-    ;\n\t\t\t}\n\t\t}\n\t\treturn os;\n\t}\n};\n"
+    \ size_t& n) { return *this = *this >> n; }\n\tfriend Poly operator*(D const&\
+    \ l, Matrix<T> r) { return r *= l; }\n\n\tPoly pre(int le) const { return Poly(this->begin(),\
+    \ this->begin() + min((int)this->size(), le)); }\n\t\n\tPoly rev(int n = -1) const\
+    \ {\n\t\tPoly res = *this;\n\t\tif (n != -1) res.resize(n);\n\t\treverse(res.begin(),\
+    \ res.end());\n\t\treturn res;\n\t}\n\t\n\tPoly diff() const {\n\t\tstd::vector<D>\
+    \ res(max(0, (int)this->size() - 1));\n\t\tfor (int i = 1; i < (int)this->size();\
+    \ i++) res[i - 1] = freq(i) * i;\n\t\treturn res;\n\t}\n\t\n\tPoly inte() const\
+    \ {\n\t\tstd::vector<D> res(this->size() + 1);\n\t\tfor (int i = 0; i < (int)this->size();\
+    \ i++) res[i + 1] = freq(i) / (i + 1);\n\t\treturn res;\n\t}\n\n\t// f * f.inv()\
+    \ = 1 + g(x)x^m\n\tPoly inv(int m = -1) const {\n\t\tif (m == -1) m = (int)this->size();\n\
+    \t\tPoly res = Poly({D(1) / freq(0)});\n\t\tfor (int i = 1; i < m; i *= 2) {\n\
+    \t\t\tres = (res * D(2) - res * res * pre(2 * i)).pre(2 * i);\n\t\t}\n\t\treturn\
+    \ res.pre(m);\n\t}\n\t\n\tPoly exp(int n = -1) const {\n\t\tassert(freq(0) ==\
+    \ 0);\n\t\tif (n == -1) n = (int)this->size();\n\t\tPoly f({1}), g({1});\n\t\t\
+    for (int i = 1; i < n; i *= 2) {\n\t\t\tg = (g * 2 - f * g * g).pre(i);\n\t\t\t\
+    Poly q = diff().pre(i - 1);\n\t\t\tPoly w = (q + g * (f.diff() - f * q)).pre(2\
+    \ * i - 1);\n\t\t\tf = (f + f * (*this - w.inte()).pre(2 * i)).pre(2 * i);\n\t\
+    \t}\n\t\treturn f.pre(n);\n\t}\n\t\n\tPoly log(int n = -1) const {\n\t\tif (n\
+    \ == -1) n = (int)this->size();\n\t\tassert(freq(0) == 1);\n\t\tauto f = pre(n);\n\
+    \t\treturn (f.diff() * f.inv(n - 1)).pre(n - 1).inte();\n\t}\n\n\tPoly pow_mod(const\
+    \ Poly& mod, int n = -1) {\n\t\tif (n == -1) n = this->size();\n\t\tPoly x = *this,\
+    \ r = {{1}};\n\t\twhile (n) {\n\t\t\tif (n & 1) r = r * x % mod;\n\t\t\tx = x\
+    \ * x % mod;\n\t\t\tn >>= 1;\n\t\t}\n\t\treturn r;\n\t}\n\n\tD _pow(D x, long\
+    \ long k) { \n\t\tD r = 1;\n\t\twhile (k) {\n\t\t\tif (k & 1) {\n\t\t\t\tr *=\
+    \ x;\n\t\t\t}\n\t\t\tx *= x;\n\t\t\tk >>= 1;\n\t\t}\n\t\treturn r;\n\t}\n\n\t\
+    Poly pow(long long k, int n = -1) {\n\t\tif (n == -1) n = this->size();\n\t\t\
+    int sz = (int)this->size();\n\t\tfor (int i = 0; i < sz; ++i) {\n\t\t\tif (freq(i)\
+    \ != 0) {\n\t\t\t\tif (i * k > n) return Poly(n);\n\t\t\t\tD rev = 1 / (*this)[i];\n\
+    \t\t\t\tPoly ret = (((*this * rev) >> i).log(n) * k).exp(n) * _pow((*this)[i],\
+    \ k);\n\t\t\t\tret = (ret << (i * k)).pre(n);\n\t\t\t\tret.resize(n);\n\t\t\t\t\
+    return ret;\n\t\t\t}\n\t\t}\n\t\treturn Poly(n);\n\t}\n\n\tfriend ostream& operator<<(ostream&\
+    \ os, const Poly& p) {\n\t\tif (p.empty()) return os << \"0\";\n\t\tfor (auto\
+    \ i = 0; i < (int)p.size(); i++) {\n\t\t\tif (p[i]) {\n\t\t\t\tos << p[i] << \"\
+    x^\" << i;\n\t\t\t\tif (i != (int)p.size() - 1) os << \"+\";\n\t\t\t}\n\t\t}\n\
+    \t\treturn os;\n\t}\n};\n"
   code: "#pragma once\n\n#include \"number-theoretic-transform.hpp\"\n\ntemplate <class\
     \ D> struct Poly : std::vector<D> {\n\tusing vector<D>::vector;\n\tPoly(const\
     \ std::vector<D>& _v = {}) { \n\t\tfor (int i = 0; i < (int)_v.size(); ++i) {\n\
@@ -188,20 +189,21 @@ data:
     \ D &r) { return *this = *this / r; }\n\tPoly& operator%=(const Poly& r) { return\
     \ *this = *this % r; }\n\tPoly& operator<<=(const size_t& n) { return *this =\
     \ *this << n; }\n\tPoly& operator>>=(const size_t& n) { return *this = *this >>\
-    \ n; }\n\n\tPoly pre(int le) const { return Poly(this->begin(), this->begin()\
-    \ + min((int)this->size(), le)); }\n\t\n\tPoly rev(int n = -1) const {\n\t\tPoly\
-    \ res = *this;\n\t\tif (n != -1) res.resize(n);\n\t\treverse(res.begin(), res.end());\n\
-    \t\treturn res;\n\t}\n\t\n\tPoly diff() const {\n\t\tstd::vector<D> res(max(0,\
-    \ (int)this->size() - 1));\n\t\tfor (int i = 1; i < (int)this->size(); i++) res[i\
-    \ - 1] = freq(i) * i;\n\t\treturn res;\n\t}\n\t\n\tPoly inte() const {\n\t\tstd::vector<D>\
-    \ res(this->size() + 1);\n\t\tfor (int i = 0; i < (int)this->size(); i++) res[i\
-    \ + 1] = freq(i) / (i + 1);\n\t\treturn res;\n\t}\n\n\t// f * f.inv() = 1 + g(x)x^m\n\
-    \tPoly inv(int m = -1) const {\n\t\tif (m == -1) m = (int)this->size();\n\t\t\
-    Poly res = Poly({D(1) / freq(0)});\n\t\tfor (int i = 1; i < m; i *= 2) {\n\t\t\
-    \tres = (res * D(2) - res * res * pre(2 * i)).pre(2 * i);\n\t\t}\n\t\treturn res.pre(m);\n\
-    \t}\n\t\n\tPoly exp(int n = -1) const {\n\t\tassert(freq(0) == 0);\n\t\tif (n\
-    \ == -1) n = (int)this->size();\n\t\tPoly f({1}), g({1});\n\t\tfor (int i = 1;\
-    \ i < n; i *= 2) {\n\t\t\tg = (g * 2 - f * g * g).pre(i);\n\t\t\tPoly q = diff().pre(i\
+    \ n; }\n\tfriend Poly operator*(D const& l, Matrix<T> r) { return r *= l; }\n\n\
+    \tPoly pre(int le) const { return Poly(this->begin(), this->begin() + min((int)this->size(),\
+    \ le)); }\n\t\n\tPoly rev(int n = -1) const {\n\t\tPoly res = *this;\n\t\tif (n\
+    \ != -1) res.resize(n);\n\t\treverse(res.begin(), res.end());\n\t\treturn res;\n\
+    \t}\n\t\n\tPoly diff() const {\n\t\tstd::vector<D> res(max(0, (int)this->size()\
+    \ - 1));\n\t\tfor (int i = 1; i < (int)this->size(); i++) res[i - 1] = freq(i)\
+    \ * i;\n\t\treturn res;\n\t}\n\t\n\tPoly inte() const {\n\t\tstd::vector<D> res(this->size()\
+    \ + 1);\n\t\tfor (int i = 0; i < (int)this->size(); i++) res[i + 1] = freq(i)\
+    \ / (i + 1);\n\t\treturn res;\n\t}\n\n\t// f * f.inv() = 1 + g(x)x^m\n\tPoly inv(int\
+    \ m = -1) const {\n\t\tif (m == -1) m = (int)this->size();\n\t\tPoly res = Poly({D(1)\
+    \ / freq(0)});\n\t\tfor (int i = 1; i < m; i *= 2) {\n\t\t\tres = (res * D(2)\
+    \ - res * res * pre(2 * i)).pre(2 * i);\n\t\t}\n\t\treturn res.pre(m);\n\t}\n\t\
+    \n\tPoly exp(int n = -1) const {\n\t\tassert(freq(0) == 0);\n\t\tif (n == -1)\
+    \ n = (int)this->size();\n\t\tPoly f({1}), g({1});\n\t\tfor (int i = 1; i < n;\
+    \ i *= 2) {\n\t\t\tg = (g * 2 - f * g * g).pre(i);\n\t\t\tPoly q = diff().pre(i\
     \ - 1);\n\t\t\tPoly w = (q + g * (f.diff() - f * q)).pre(2 * i - 1);\n\t\t\tf\
     \ = (f + f * (*this - w.inte()).pre(2 * i)).pre(2 * i);\n\t\t}\n\t\treturn f.pre(n);\n\
     \t}\n\t\n\tPoly log(int n = -1) const {\n\t\tif (n == -1) n = (int)this->size();\n\
@@ -230,8 +232,8 @@ data:
   - library/polynomial/polynomial-sqrt.hpp
   - library/polynomial/berlekamp-massey.hpp
   - library/polynomial/multipoint-evaluation.hpp
-  timestamp: '2021-07-31 15:16:41-04:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2021-07-31 15:32:51-04:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - verify/yosupo/yosupo-sqrt_of_formal_power_series.test.cpp
   - verify/yosupo/yosupo-log_of_formal_power_series.test.cpp
