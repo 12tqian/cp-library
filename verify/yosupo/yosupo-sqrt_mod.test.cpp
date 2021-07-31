@@ -1,7 +1,7 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/sqrt_mod"
 
 #include "../../library/contest/template-minimal.hpp"
-#include "../../library/number-theory/mod-sqrt.hpp"
+#include "../../library/modular-arithmetic/mod-sqrt.hpp"
 
 int main() {
 	using namespace std;

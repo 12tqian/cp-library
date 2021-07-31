@@ -4,6 +4,7 @@
 template <int MOD, int RT> struct Mint {
 	static const int mod = MOD;
 	static constexpr Mint rt() { return RT; } // primitive root for FFT
+	static constexpr int md() { return MOD; } // primitive root for FFT
 	int v; 
 	explicit operator int() const { return v; } // explicit -> don't silently convert to int
 	explicit operator bool() const { return v != 0; }
