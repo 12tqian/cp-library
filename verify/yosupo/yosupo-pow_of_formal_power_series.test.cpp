@@ -15,7 +15,7 @@ int main() {
 	for (int i = 0; i < n; ++i) {
 		cin >> a[i];
 	}
-	Poly<mi> p(a);
+	Poly<mi> p(a); 
 	Poly<mi> ans = p.pow(m, n);
 	ans.resize(n);
 	for (int i = 0; i < n; ++i) {
