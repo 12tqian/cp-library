@@ -83,7 +83,7 @@ template <class D> std::vector<D> solve_linear(Matrix<D> a, std::vector<D> b, D 
 			if (abs(d) <= eps) continue;
 			D c = a[r][x] / d, s = a[y][x] / d;
 			auto rot = [&](D& u, D& v) {
-				tie(u, v) = make_pair(c * u + s * v, c * v - s * u);
+				tie(u, v) = std::make_pair(c * u + s * v, c * v - s * u);
 			};
 			rot(b[r], b[y]);
 			for (int k = x; k < w; k++) rot(a[r][k], a[y][k]);
