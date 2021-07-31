@@ -12,8 +12,8 @@ int main() {
 	Dinic<int> D;
 	D.init(L + R + 2);
 	for (int i = 0; i < M; i++) {
-		int u, v; cin >> u >> v;
-		u--, v--;
+		int u, v; 
+		cin >> u >> v;
 		int x = u + 1;
 		int y = L + v + 1;
 		D.ae(x, y, 1);
