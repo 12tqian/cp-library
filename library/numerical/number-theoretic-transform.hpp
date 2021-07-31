@@ -92,7 +92,7 @@ template <class Mint> void butterfly(bool type, std::vector<Mint>& a) {
 					a[i + offset] = l + r;
 					a[i + offset + p] = l - r;
 				}
-				int u = bsf(~unsigned int(s));
+				int u = bsf(~(unsigned int)(s));
 				now *= snow[u];
 			}
 		}
@@ -109,7 +109,7 @@ template <class Mint> void butterfly(bool type, std::vector<Mint>& a) {
 					a[i + offset] = l + r;
 					a[i + offset + p] = (l - r) * inow;
 				}
-				int u = bsf(~unsigned int(s));
+				int u = bsf(~(unsigned int)(s));
 				inow *= sinow[u];
 			}
 		}

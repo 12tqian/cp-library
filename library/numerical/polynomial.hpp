@@ -43,7 +43,7 @@ template <class D> struct Poly {
 		return res;
 	}
 
-	Poly operator/(const D &r) const{  *this * r.inv(); }
+	Poly operator/(const D &r) const{ *this * r.inv(); }
 	
 	Poly operator/(const Poly& r) const {
 		if (size() < r.size()) return {{}};

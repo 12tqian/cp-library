@@ -6,6 +6,7 @@ typedef std::decay<decltype(MOD)>::type mod_t;
 struct mi {
 	mod_t val;
 	explicit operator mod_t() const { return val; }
+	explicit operator bool() const { return v != 0; }
 	mi() { val = 0; }
 	mi(const long long &v) {
 		val = (-MOD <= v && v < MOD) ? v : v % MOD;
