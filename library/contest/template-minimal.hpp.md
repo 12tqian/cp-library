@@ -108,9 +108,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-enumerate_triangles.test.cpp
     title: verify/yosupo/yosupo-enumerate_triangles.test.cpp
-  - icon: ':x:'
-    path: verify/yosupo/yosupo-exp_of_formal_power_series.test.cpp
-    title: verify/yosupo/yosupo-exp_of_formal_power_series.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-factorize.test.cpp
     title: verify/yosupo/yosupo-factorize.test.cpp
@@ -156,9 +153,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-point_set_range_composite.test.cpp
     title: verify/yosupo/yosupo-point_set_range_composite.test.cpp
-  - icon: ':x:'
-    path: verify/yosupo/yosupo-pow_of_formal_power_series.test.cpp
-    title: verify/yosupo/yosupo-pow_of_formal_power_series.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-range_affine_range_sum.test.cpp
     title: verify/yosupo/yosupo-range_affine_range_sum.test.cpp
@@ -207,9 +201,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-vertex_add_path_sum.test.cpp
     title: verify/yosupo/yosupo-vertex_add_path_sum.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: '
@@ -325,7 +319,7 @@ data:
   requiredBy:
   - library/graphs/enumerate-triangles.cpp
   timestamp: '2021-07-28 19:45:54-04:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/yosupo-convolution_mod_1000000007-karatsuba.test.cpp
   - verify/yosupo/yosupo-line_add_get_min.test.cpp
@@ -348,7 +342,6 @@ data:
   - verify/yosupo/yosupo-segment_add_get_min-li-chao-tree-online.test.cpp
   - verify/yosupo/yosupo-static_range_sum.test.cpp
   - verify/yosupo/yosupo-multipoint_evaluation.test.cpp
-  - verify/yosupo/yosupo-pow_of_formal_power_series.test.cpp
   - verify/yosupo/yosupo-unionfind.test.cpp
   - verify/yosupo/yosupo-range_chmin_chmax_add_range_sum.test.cpp
   - verify/yosupo/yosupo-suffixarray-logarithmic.test.cpp
@@ -356,7 +349,6 @@ data:
   - verify/yosupo/yosupo-sort_points_by_argument.test.cpp
   - verify/yosupo/yosupo-counting_primes.test.cpp
   - verify/yosupo/yosupo-lca-lca-rmq.test.cpp
-  - verify/yosupo/yosupo-exp_of_formal_power_series.test.cpp
   - verify/yosupo/yosupo-segment_add_get_min-li-chao-tree-offline.test.cpp
   - verify/yosupo/yosupo-range_affine_range_sum.test.cpp
   - verify/yosupo/yosupo-scc-kosaraju.test.cpp

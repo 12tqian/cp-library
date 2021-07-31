@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
   - icon: ':heavy_check_mark:'
     path: library/data-structures/2d-range-queries/quadtree.hpp
     title: library/data-structures/2d-range-queries/quadtree.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/modular-arithmetic/mod-int2.hpp
     title: library/modular-arithmetic/mod-int2.hpp
   _extendedRequiredBy: []
