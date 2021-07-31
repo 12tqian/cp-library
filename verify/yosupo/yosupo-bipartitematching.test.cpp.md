@@ -49,34 +49,33 @@ data:
     \ t, std::numeric_limits<F>::max())) \n\t\t\t\ttot += df;\n\t\treturn tot;\n\t\
     }\n};\n\nint main() {\n\tusing namespace std;\n\tios_base::sync_with_stdio(0);\n\
     \tint L, R; cin >> L >> R;\n\tint M; cin >> M;\n\tDinic<int> D;\n\tD.init(L +\
-    \ R + 2);\n\tfor (int i = 0; i < M; i++) {\n\t\tint u, v; cin >> u >> v;\n\t\t\
-    u--, v--;\n\t\tint x = u + 1;\n\t\tint y = L + v + 1;\n\t\tD.ae(x, y, 1);\n\t\
-    }\n\tfor (int i = 1; i <= L; i++) \n\t\tD.ae(0, i, 1);\n\tfor (int i = L + 1;\
-    \ i <= L + R; i++) \n\t\tD.ae(i, L + R + 1, 1);\n\tcout << D.max_flow(0, L + R\
-    \ + 1) << '\\n';\n\tfor (int i = 1; i <= L; i++) {\n\t\tfor (auto& eid : D.adj[i])\
-    \ {\n\t\t\tif (eid & 1)\n\t\t\t\tcontinue;\n\t\t\tauto& e = D.edges[eid];\n\t\t\
-    \tif (e.cap == e.flow) {\n\t\t\t\tint u = i - 1;\n\t\t\t\tint v = e.to - L - 1;\n\
-    \t\t\t\tcout << u << \" \" << v << '\\n';\n\t\t\t}\n\t\t}\n\t}\n\treturn 0;\n\
-    }\n"
+    \ R + 2);\n\tfor (int i = 0; i < M; i++) {\n\t\tint u, v; \n\t\tcin >> u >> v;\n\
+    \t\tint x = u + 1;\n\t\tint y = L + v + 1;\n\t\tD.ae(x, y, 1);\n\t}\n\tfor (int\
+    \ i = 1; i <= L; i++) \n\t\tD.ae(0, i, 1);\n\tfor (int i = L + 1; i <= L + R;\
+    \ i++) \n\t\tD.ae(i, L + R + 1, 1);\n\tcout << D.max_flow(0, L + R + 1) << '\\\
+    n';\n\tfor (int i = 1; i <= L; i++) {\n\t\tfor (auto& eid : D.adj[i]) {\n\t\t\t\
+    if (eid & 1)\n\t\t\t\tcontinue;\n\t\t\tauto& e = D.edges[eid];\n\t\t\tif (e.cap\
+    \ == e.flow) {\n\t\t\t\tint u = i - 1;\n\t\t\t\tint v = e.to - L - 1;\n\t\t\t\t\
+    cout << u << \" \" << v << '\\n';\n\t\t\t}\n\t\t}\n\t}\n\treturn 0;\n}\n"
   code: "#define IGNORE\n#define PROBLEM \"https://judge.yosupo.jp/problem/bipartitematching\"\
     \n\n#include \"../../library/contest/template-minimal.hpp\"\n#include \"../../library/graphs/flows/dinic.hpp\"\
     \n\nint main() {\n\tusing namespace std;\n\tios_base::sync_with_stdio(0);\n\t\
     int L, R; cin >> L >> R;\n\tint M; cin >> M;\n\tDinic<int> D;\n\tD.init(L + R\
-    \ + 2);\n\tfor (int i = 0; i < M; i++) {\n\t\tint u, v; cin >> u >> v;\n\t\tu--,\
-    \ v--;\n\t\tint x = u + 1;\n\t\tint y = L + v + 1;\n\t\tD.ae(x, y, 1);\n\t}\n\t\
-    for (int i = 1; i <= L; i++) \n\t\tD.ae(0, i, 1);\n\tfor (int i = L + 1; i <=\
-    \ L + R; i++) \n\t\tD.ae(i, L + R + 1, 1);\n\tcout << D.max_flow(0, L + R + 1)\
-    \ << '\\n';\n\tfor (int i = 1; i <= L; i++) {\n\t\tfor (auto& eid : D.adj[i])\
-    \ {\n\t\t\tif (eid & 1)\n\t\t\t\tcontinue;\n\t\t\tauto& e = D.edges[eid];\n\t\t\
-    \tif (e.cap == e.flow) {\n\t\t\t\tint u = i - 1;\n\t\t\t\tint v = e.to - L - 1;\n\
-    \t\t\t\tcout << u << \" \" << v << '\\n';\n\t\t\t}\n\t\t}\n\t}\n\treturn 0;\n}"
+    \ + 2);\n\tfor (int i = 0; i < M; i++) {\n\t\tint u, v; \n\t\tcin >> u >> v;\n\
+    \t\tint x = u + 1;\n\t\tint y = L + v + 1;\n\t\tD.ae(x, y, 1);\n\t}\n\tfor (int\
+    \ i = 1; i <= L; i++) \n\t\tD.ae(0, i, 1);\n\tfor (int i = L + 1; i <= L + R;\
+    \ i++) \n\t\tD.ae(i, L + R + 1, 1);\n\tcout << D.max_flow(0, L + R + 1) << '\\\
+    n';\n\tfor (int i = 1; i <= L; i++) {\n\t\tfor (auto& eid : D.adj[i]) {\n\t\t\t\
+    if (eid & 1)\n\t\t\t\tcontinue;\n\t\t\tauto& e = D.edges[eid];\n\t\t\tif (e.cap\
+    \ == e.flow) {\n\t\t\t\tint u = i - 1;\n\t\t\t\tint v = e.to - L - 1;\n\t\t\t\t\
+    cout << u << \" \" << v << '\\n';\n\t\t\t}\n\t\t}\n\t}\n\treturn 0;\n}"
   dependsOn:
   - library/contest/template-minimal.hpp
   - library/graphs/flows/dinic.hpp
   isVerificationFile: true
   path: verify/yosupo/yosupo-bipartitematching.test.cpp
   requiredBy: []
-  timestamp: '2021-07-28 19:45:54-04:00'
+  timestamp: '2021-07-31 12:55:16-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/yosupo-bipartitematching.test.cpp
