@@ -54,6 +54,7 @@ public:
 	G g;
 	int id;
 	std::vector<int> size, depth, down, up, nxt, par;
+	
 	HeavyLightDecomposition(G& _g, std::vector<int> roots = {0})
 			: g(_g),
 				id(0),
