@@ -9,7 +9,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/contest/template-full.hpp
       title: library/contest/template-full.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/contest/template-minimal.hpp
       title: library/contest/template-minimal.hpp
     - icon: ':heavy_check_mark:'
@@ -29,6 +29,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/data-structures/1d-range-queries/fenwick-tree.hpp
       title: library/data-structures/1d-range-queries/fenwick-tree.hpp
+    - icon: ':x:'
+      path: library/data-structures/1d-range-queries/general-full-segment-tree.hpp
+      title: library/data-structures/1d-range-queries/general-full-segment-tree.hpp
+    - icon: ':warning:'
+      path: library/data-structures/1d-range-queries/general-simple-segment-tree.hpp
+      title: library/data-structures/1d-range-queries/general-simple-segment-tree.hpp
     - icon: ':heavy_check_mark:'
       path: library/data-structures/1d-range-queries/implicit-lazy-segment-tree.hpp
       title: library/data-structures/1d-range-queries/implicit-lazy-segment-tree.hpp
@@ -228,7 +234,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/numerical/mod-int.hpp
       title: library/numerical/mod-int.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/numerical/mod-int2.hpp
       title: library/numerical/mod-int2.hpp
     - icon: ':heavy_check_mark:'
@@ -439,6 +445,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-point_add_range_sum-sparse-segment-tree.test.cpp
       title: verify/yosupo/yosupo-point_add_range_sum-sparse-segment-tree.test.cpp
+    - icon: ':x:'
+      path: verify/yosupo/yosupo-point_set_range_composite.test.cpp
+      title: verify/yosupo/yosupo-point_set_range_composite.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-range_affine_range_sum.test.cpp
       title: verify/yosupo/yosupo-range_affine_range_sum.test.cpp
