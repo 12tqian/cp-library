@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':question:'
     path: library/numerical/number-theoretic-transform.hpp
     title: library/numerical/number-theoretic-transform.hpp
   _extendedRequiredBy:
@@ -11,10 +11,22 @@ data:
   - icon: ':warning:'
     path: library/numerical/multipoint-evaluation.hpp
     title: library/numerical/multipoint-evaluation.hpp
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: verify/yosupo/yosupo-exp_of_formal_power_series.test.cpp
+    title: verify/yosupo/yosupo-exp_of_formal_power_series.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/yosupo/yosupo-inv_of_formal_power_series.test.cpp
+    title: verify/yosupo/yosupo-inv_of_formal_power_series.test.cpp
+  - icon: ':x:'
+    path: verify/yosupo/yosupo-log_of_formal_power_series.test.cpp
+    title: verify/yosupo/yosupo-log_of_formal_power_series.test.cpp
+  - icon: ':x:'
+    path: verify/yosupo/yosupo-pow_of_formal_power_series.test.cpp
+    title: verify/yosupo/yosupo-pow_of_formal_power_series.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "\n\nnamespace NTT {\n\nint bsf(unsigned int x) { return __builtin_ctz(x);\
@@ -51,42 +63,42 @@ data:
     \ s++) {\n\t\t\t\tint offset = s << (h - ph + 1);\n\t\t\t\tfor (int i = 0; i <\
     \ p; i++) {\n\t\t\t\t\tauto l = a[i + offset];\n\t\t\t\t\tauto r = a[i + offset\
     \ + p] * now;\n\t\t\t\t\ta[i + offset] = l + r;\n\t\t\t\t\ta[i + offset + p] =\
-    \ l - r;\n\t\t\t\t}\n\t\t\t\tint u = bsf(~unsigned int(s));\n\t\t\t\tnow *= snow[u];\n\
-    \t\t\t}\n\t\t}\n\t} else {\n\t\t// ifft\n\t\tfor (int ph = h; ph >= 1; ph--) {\n\
-    \t\t\tint w = 1 << (ph - 1), p = 1 << (h - ph);\n\t\t\tMint inow = Mint(1);\n\t\
-    \t\tfor (int s = 0; s < w; s++) {\n\t\t\t\tint offset = s << (h - ph + 1);\n\t\
-    \t\t\tfor (int i = 0; i < p; i++) {\n\t\t\t\t\tauto l = a[i + offset];\n\t\t\t\
-    \t\tauto r = a[i + offset + p];\n\t\t\t\t\ta[i + offset] = l + r;\n\t\t\t\t\t\
-    a[i + offset + p] = (l - r) * inow;\n\t\t\t\t}\n\t\t\t\tint u = bsf(~unsigned\
-    \ int(s));\n\t\t\t\tinow *= sinow[u];\n\t\t\t}\n\t\t}\n\t}\n}\n\ntemplate <class\
-    \ Mint> std::vector<Mint> multiply(const std::vector<Mint>& a, const std::vector<Mint>&\
-    \ b) {\n\tint n = int(a.size()), m = int(b.size());\n\tif (!n || !m) return {};\n\
-    \tif (min(n, m) < 8) {\n\t\tstd::vector<Mint> ans(n + m - 1);\n\t\tfor (int i\
-    \ = 0; i < n; i++)\n\t\t\tfor (int j = 0; j < m; j++) ans[i + j] += a[i] * b[j];\n\
-    \t\treturn ans;\n\t}\n\tint lg = 0;\n\twhile ((1 << lg) < n + m - 1) lg++;\n\t\
-    int z = 1 << lg;\n\tauto a2 = a;\n\ta2.resize(z);\n\tbutterfly(false, a2);\n\t\
-    if (a == b) {\n\t\tfor (int i = 0; i < z; i++) a2[i] *= a2[i];\n\t} else {\n\t\
-    \tauto b2 = b;\n\t\tb2.resize(z);\n\t\tbutterfly(false, b2);\n\t\tfor (int i =\
-    \ 0; i < z; i++) a2[i] *= b2[i];\n\t}\n\tbutterfly(true, a2);\n\ta2.resize(n +\
-    \ m - 1);\n\tMint iz = 1 / Mint(z);\n\tfor (int i = 0; i < n + m - 1; i++) a2[i]\
-    \ *= iz;\n\treturn a2;\n}\n\n}\n\ntemplate <class D> struct Poly {\n\tstd::vector<D>\
-    \ v;\n\tPoly(const std::vector<D>& _v = {}) : v(_v) { shrink(); }\n\n\tvoid shrink()\
-    \ {\n\t\twhile (v.size() && !v.back()) v.pop_back();\n\t}\n\n\tvoid resize(int\
-    \ n) { v.resize(n); }\n\tvoid assign(int n, D& x) { v.assign(n, x); }\n\tvoid\
-    \ push_back(const D& x) { v.push_back(x); }\n\tvoid pop_back() { v.pop_back();\
-    \ }\n\t\n\tint size() const { return int(v.size()); }\n\n\tD freq(int p) const\
-    \ { return (p < size()) ? v[p] : D(0); }\n\tD& operator[] (int index) { return\
-    \ v[index]; }\n\t\n\tPoly operator+(const Poly& r) const {\n\t\tauto n = max(size(),\
-    \ r.size());\n\t\tstd::vector<D> res(n);\n\t\tfor (int i = 0; i < n; i++) res[i]\
-    \ = freq(i) + r.freq(i);\n\t\treturn res;\n\t}\n\t\n\tPoly operator-(const Poly&\
-    \ r) const {\n\t\tint n = max(size(), r.size());\n\t\tstd::vector<D> res(n);\n\
-    \t\tfor (int i = 0; i < n; i++) res[i] = freq(i) - r.freq(i);\n\t\treturn res;\n\
-    \t}\n\t\n\tPoly operator*(const Poly& r) const { return {NTT::multiply(v, r.v)};\
-    \ }\n\t\n\tPoly operator*(const D& r) const {\n\t\tint n = size();\n\t\tstd::vector<D>\
-    \ res(n);\n\t\tfor (int i = 0; i < n; i++) res[i] = v[i] * r;\n\t\treturn res;\n\
-    \t}\n\n\tPoly operator/(const D &r) const{  *this * r.inv(); }\n\t\n\tPoly operator/(const\
-    \ Poly& r) const {\n\t\tif (size() < r.size()) return {{}};\n\t\tint n = size()\
-    \ - r.size() + 1;\n\t\treturn (rev().pre(n) * r.rev().inv(n)).pre(n).rev(n);\n\
+    \ l - r;\n\t\t\t\t}\n\t\t\t\tint u = bsf(~(unsigned int)(s));\n\t\t\t\tnow *=\
+    \ snow[u];\n\t\t\t}\n\t\t}\n\t} else {\n\t\t// ifft\n\t\tfor (int ph = h; ph >=\
+    \ 1; ph--) {\n\t\t\tint w = 1 << (ph - 1), p = 1 << (h - ph);\n\t\t\tMint inow\
+    \ = Mint(1);\n\t\t\tfor (int s = 0; s < w; s++) {\n\t\t\t\tint offset = s << (h\
+    \ - ph + 1);\n\t\t\t\tfor (int i = 0; i < p; i++) {\n\t\t\t\t\tauto l = a[i +\
+    \ offset];\n\t\t\t\t\tauto r = a[i + offset + p];\n\t\t\t\t\ta[i + offset] = l\
+    \ + r;\n\t\t\t\t\ta[i + offset + p] = (l - r) * inow;\n\t\t\t\t}\n\t\t\t\tint\
+    \ u = bsf(~(unsigned int)(s));\n\t\t\t\tinow *= sinow[u];\n\t\t\t}\n\t\t}\n\t\
+    }\n}\n\ntemplate <class Mint> std::vector<Mint> multiply(const std::vector<Mint>&\
+    \ a, const std::vector<Mint>& b) {\n\tint n = int(a.size()), m = int(b.size());\n\
+    \tif (!n || !m) return {};\n\tif (min(n, m) < 8) {\n\t\tstd::vector<Mint> ans(n\
+    \ + m - 1);\n\t\tfor (int i = 0; i < n; i++)\n\t\t\tfor (int j = 0; j < m; j++)\
+    \ ans[i + j] += a[i] * b[j];\n\t\treturn ans;\n\t}\n\tint lg = 0;\n\twhile ((1\
+    \ << lg) < n + m - 1) lg++;\n\tint z = 1 << lg;\n\tauto a2 = a;\n\ta2.resize(z);\n\
+    \tbutterfly(false, a2);\n\tif (a == b) {\n\t\tfor (int i = 0; i < z; i++) a2[i]\
+    \ *= a2[i];\n\t} else {\n\t\tauto b2 = b;\n\t\tb2.resize(z);\n\t\tbutterfly(false,\
+    \ b2);\n\t\tfor (int i = 0; i < z; i++) a2[i] *= b2[i];\n\t}\n\tbutterfly(true,\
+    \ a2);\n\ta2.resize(n + m - 1);\n\tMint iz = 1 / Mint(z);\n\tfor (int i = 0; i\
+    \ < n + m - 1; i++) a2[i] *= iz;\n\treturn a2;\n}\n\n}\n\ntemplate <class D> struct\
+    \ Poly {\n\tstd::vector<D> v;\n\tPoly(const std::vector<D>& _v = {}) : v(_v) {\
+    \ shrink(); }\n\n\tvoid shrink() {\n\t\twhile (v.size() && !v.back()) v.pop_back();\n\
+    \t}\n\n\tvoid resize(int n) { v.resize(n); }\n\tvoid assign(int n, D& x) { v.assign(n,\
+    \ x); }\n\tvoid push_back(const D& x) { v.push_back(x); }\n\tvoid pop_back() {\
+    \ v.pop_back(); }\n\t\n\tint size() const { return int(v.size()); }\n\n\tD freq(int\
+    \ p) const { return (p < size()) ? v[p] : D(0); }\n\tD& operator[] (int index)\
+    \ { return v[index]; }\n\t\n\tPoly operator+(const Poly& r) const {\n\t\tauto\
+    \ n = max(size(), r.size());\n\t\tstd::vector<D> res(n);\n\t\tfor (int i = 0;\
+    \ i < n; i++) res[i] = freq(i) + r.freq(i);\n\t\treturn res;\n\t}\n\t\n\tPoly\
+    \ operator-(const Poly& r) const {\n\t\tint n = max(size(), r.size());\n\t\tstd::vector<D>\
+    \ res(n);\n\t\tfor (int i = 0; i < n; i++) res[i] = freq(i) - r.freq(i);\n\t\t\
+    return res;\n\t}\n\t\n\tPoly operator*(const Poly& r) const { return {NTT::multiply(v,\
+    \ r.v)}; }\n\t\n\tPoly operator*(const D& r) const {\n\t\tint n = size();\n\t\t\
+    std::vector<D> res(n);\n\t\tfor (int i = 0; i < n; i++) res[i] = v[i] * r;\n\t\
+    \treturn res;\n\t}\n\n\tPoly operator/(const D &r) const{ *this * r.inv(); }\n\
+    \t\n\tPoly operator/(const Poly& r) const {\n\t\tif (size() < r.size()) return\
+    \ {{}};\n\t\tint n = size() - r.size() + 1;\n\t\treturn (rev().pre(n) * r.rev().inv(n)).pre(n).rev(n);\n\
     \t}\n\t\n\tPoly operator%(const Poly& r) const { return *this - *this / r * r;\
     \ }\n\t\n\tPoly operator<<(int s) const {\n\t\tstd::vector<D> res(size() + s);\n\
     \t\tfor (int i = 0; i < size(); i++) res[i + s] = v[i];\n\t\treturn res;\n\t}\n\
@@ -142,7 +154,7 @@ data:
     \ { return {NTT::multiply(v, r.v)}; }\n\t\n\tPoly operator*(const D& r) const\
     \ {\n\t\tint n = size();\n\t\tstd::vector<D> res(n);\n\t\tfor (int i = 0; i <\
     \ n; i++) res[i] = v[i] * r;\n\t\treturn res;\n\t}\n\n\tPoly operator/(const D\
-    \ &r) const{  *this * r.inv(); }\n\t\n\tPoly operator/(const Poly& r) const {\n\
+    \ &r) const{ *this * r.inv(); }\n\t\n\tPoly operator/(const Poly& r) const {\n\
     \t\tif (size() < r.size()) return {{}};\n\t\tint n = size() - r.size() + 1;\n\t\
     \treturn (rev().pre(n) * r.rev().inv(n)).pre(n).rev(n);\n\t}\n\t\n\tPoly operator%(const\
     \ Poly& r) const { return *this - *this / r * r; }\n\t\n\tPoly operator<<(int\
@@ -190,9 +202,13 @@ data:
   requiredBy:
   - library/numerical/berlekamp-massey.hpp
   - library/numerical/multipoint-evaluation.hpp
-  timestamp: '2021-07-30 22:48:36-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  timestamp: '2021-07-30 23:07:00-04:00'
+  verificationStatus: LIBRARY_SOME_WA
+  verifiedWith:
+  - verify/yosupo/yosupo-log_of_formal_power_series.test.cpp
+  - verify/yosupo/yosupo-pow_of_formal_power_series.test.cpp
+  - verify/yosupo/yosupo-exp_of_formal_power_series.test.cpp
+  - verify/yosupo/yosupo-inv_of_formal_power_series.test.cpp
 documentation_of: library/numerical/polynomial.hpp
 layout: document
 redirect_from:

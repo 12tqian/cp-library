@@ -2,6 +2,12 @@
 data:
   _extendedDependsOn:
   - icon: ':question:'
+    path: library/contest/template-minimal.hpp
+    title: library/contest/template-minimal.hpp
+  - icon: ':question:'
+    path: library/numerical/mod-int2.hpp
+    title: library/numerical/mod-int2.hpp
+  - icon: ':question:'
     path: library/numerical/number-theoretic-transform.hpp
     title: library/numerical/number-theoretic-transform.hpp
   - icon: ':question:'
@@ -9,14 +15,24 @@ data:
     title: library/numerical/polynomial.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
-  _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _isVerificationFailed: true
+  _pathExtension: cpp
+  _verificationStatusIcon: ':x:'
   attributes:
-    links: []
-  bundledCode: "\n\n\nnamespace NTT {\n\nint bsf(unsigned int x) { return __builtin_ctz(x);\
-    \ }\nint bsf(unsigned long long x) { return __builtin_ctzll(x); }\n\ntemplate\
-    \ <class Mint> void nft(bool type, std::vector<Mint>& a) {\n\tint n = int(a.size()),\
+    '*NOT_SPECIAL_COMMENTS*': ''
+    PROBLEM: https://judge.yosupo.jp/problem/log_of_formal_power_series
+    links:
+    - https://judge.yosupo.jp/problem/log_of_formal_power_series
+  bundledCode: "#define PROBLEM \"https://judge.yosupo.jp/problem/log_of_formal_power_series\"\
+    \n\n\n#include <algorithm>\n#include <array>\n#include <bitset>\n#include <cassert>\n\
+    #include <chrono>\n#include <cmath>\n#include <complex>\n#include <cstdio>\n#include\
+    \ <cstdlib>\n#include <cstring>\n#include <ctime>\n#include <deque>\n#include\
+    \ <iostream>\n#include <iomanip>\n#include <list>\n#include <map>\n#include <numeric>\n\
+    #include <queue>\n#include <random>\n#include <set>\n#include <stack>\n#include\
+    \ <string>\n#include <unordered_map>\n#include <vector>\n\nusing namespace std;\n\
+    \n\nnamespace NTT {\n\nint bsf(unsigned int x) { return __builtin_ctz(x); }\n\
+    int bsf(unsigned long long x) { return __builtin_ctzll(x); }\n\ntemplate <class\
+    \ Mint> void nft(bool type, std::vector<Mint>& a) {\n\tint n = int(a.size()),\
     \ s = 0;\n\twhile ((1 << s) < n) s++;\n\tassert(1 << s == n);\n\tstatic std::vector<Mint>\
     \ ep, iep;\n\twhile (int(ep.size()) <= s) {\n\t\tep.push_back(pow(Mint::rt(),\
     \ Mint(-1).v / (1 << ep.size())));\n\t\tiep.push_back(1 / ep.back());\n\t}\n\t\
@@ -122,41 +138,64 @@ data:
     \ os, const Poly& p) {\n\t\tif (p.size() == 0) return os << \"0\";\n\t\tfor (auto\
     \ i = 0; i < p.size(); i++) {\n\t\t\tif (p.v[i]) {\n\t\t\t\tos << p.v[i] << \"\
     x^\" << i;\n\t\t\t\tif (i != p.size() - 1) os << \"+\";\n\t\t\t}\n\t\t}\n\t\t\
-    return os;\n\t}\n};\n\ntemplate <class Mint> Poly<Mint> berlekamp_massey(const\
-    \ Poly<Mint>& s) {\n\tint n = int(s.size());\n\tstd::vector<Mint> b = {Mint(-1)},\
-    \ c = {Mint(-1)};\n\tMint y = Mint(1);\n\tfor (int ed = 1; ed <= n; ed++) {\n\t\
-    \tint l = int(c.size()), m = int(b.size());\n\t\tMint x = 0;\n\t\tfor (int i =\
-    \ 0; i < l; i++) {\n\t\t\tx += c[i] * s[ed - l + i];\n\t\t}\n\t\tb.push_back(0);\n\
-    \t\tm++;\n\t\tif (!x) continue;\n\t\tMint freq = x / y;\n\t\tif (l < m) {\n\t\t\
-    \t// use b\n\t\t\tauto tmp = c;\n\t\t\tc.insert(begin(c), m - l, Mint(0));\n\t\
-    \t\tfor (int i = 0; i < m; i++) {\n\t\t\t\tc[m - 1 - i] -= freq * b[m - 1 - i];\n\
-    \t\t\t}\n\t\t\tb = tmp;\n\t\t\ty = x;\n\t\t} else {\n\t\t\t// use c\n\t\t\tfor\
-    \ (int i = 0; i < m; i++) {\n\t\t\t\tc[l - 1 - i] -= freq * b[m - 1 - i];\n\t\t\
-    \t}\n\t\t}\n\t}\n\treturn c;\n}\n"
-  code: "#pragma once \n\n#include \"polynomial.hpp\"\n\ntemplate <class Mint> Poly<Mint>\
-    \ berlekamp_massey(const Poly<Mint>& s) {\n\tint n = int(s.size());\n\tstd::vector<Mint>\
-    \ b = {Mint(-1)}, c = {Mint(-1)};\n\tMint y = Mint(1);\n\tfor (int ed = 1; ed\
-    \ <= n; ed++) {\n\t\tint l = int(c.size()), m = int(b.size());\n\t\tMint x = 0;\n\
-    \t\tfor (int i = 0; i < l; i++) {\n\t\t\tx += c[i] * s[ed - l + i];\n\t\t}\n\t\
-    \tb.push_back(0);\n\t\tm++;\n\t\tif (!x) continue;\n\t\tMint freq = x / y;\n\t\
-    \tif (l < m) {\n\t\t\t// use b\n\t\t\tauto tmp = c;\n\t\t\tc.insert(begin(c),\
-    \ m - l, Mint(0));\n\t\t\tfor (int i = 0; i < m; i++) {\n\t\t\t\tc[m - 1 - i]\
-    \ -= freq * b[m - 1 - i];\n\t\t\t}\n\t\t\tb = tmp;\n\t\t\ty = x;\n\t\t} else {\n\
-    \t\t\t// use c\n\t\t\tfor (int i = 0; i < m; i++) {\n\t\t\t\tc[l - 1 - i] -= freq\
-    \ * b[m - 1 - i];\n\t\t\t}\n\t\t}\n\t}\n\treturn c;\n}\n"
+    return os;\n\t}\n};\n\n// 5 is a root of both mods\ntemplate <int MOD, int RT>\
+    \ struct Mint {\n\tstatic const int mod = MOD;\n\tstatic constexpr Mint rt() {\
+    \ return RT; } // primitive root for FFT\n\tint v; \n\texplicit operator int()\
+    \ const { return v; } // explicit -> don't silently convert to int\n\texplicit\
+    \ operator bool() const { return v != 0; }\n\tMint() { v = 0; }\n\tMint(long long\
+    \ _v) { v = int((-MOD <= _v && _v < MOD) ? _v : _v % MOD); if (v < 0) v += MOD;\
+    \ }\n\tfriend bool operator==(const Mint &a, const Mint &b) { return a.v == b.v;\
+    \ }\n\tfriend bool operator!=(const Mint &a, const Mint &b) { return !(a == b);\
+    \ }\n\tfriend bool operator<(const Mint &a, const Mint &b) { return a.v < b.v;\
+    \ }\n\tfriend bool operator>(const Mint &a, const Mint &b) { return a.v > b.v;\
+    \ }\n\tfriend bool operator<=(const Mint &a, const Mint &b) { return a.v <= b.v;\
+    \ }\n\tfriend bool operator>=(const Mint &a, const Mint &b) { return a.v >= b.v;\
+    \ }\n\tfriend std::istream& operator >> (std::istream &in, Mint &a) { \n\t\tlong\
+    \ long x; std::cin >> x; a = Mint(x); return in; }\n\tfriend std::ostream& operator\
+    \ << (std::ostream &os, const Mint &a) { return os << a.v; }\n\tMint& operator+=(const\
+    \ Mint &m) { \n\t\tif ((v += m.v) >= MOD) v -= MOD; \n\t\treturn *this; }\n\t\
+    Mint& operator-=(const Mint &m) { \n\t\tif ((v -= m.v) < 0) v += MOD; \n\t\treturn\
+    \ *this; }\n\tMint& operator*=(const Mint &m) { \n\t\tv = (long long)v * m.v %\
+    \ MOD; return *this; }\n\tMint& operator/=(const Mint &m) { return (*this) *=\
+    \ inv(m); }\n\tfriend Mint pow(Mint a, long long p) {\n\t\tMint ans = 1; assert(p\
+    \ >= 0);\n\t\tfor (; p; p /= 2, a *= a) if (p & 1) ans *= a;\n\t\treturn ans;\
+    \ \n\t}\n\tfriend Mint inv(const Mint &a) { assert(a.v != 0); return pow(a, MOD\
+    \ - 2); }\n\tMint operator-() const { return Mint(-v); }\n\tMint& operator++()\
+    \ { return *this += 1; }\n\tMint& operator--() { return *this -= 1; }\n\tfriend\
+    \ Mint operator+(Mint a, const Mint &b) { return a += b; }\n\tfriend Mint operator-(Mint\
+    \ a, const Mint &b) { return a -= b; }\n\tfriend Mint operator*(Mint a, const\
+    \ Mint &b) { return a *= b; }\n\tfriend Mint operator/(Mint a, const Mint &b)\
+    \ { return a /= b; }\n};\n\nusing mi = Mint<998244353, 5>;\n\nint main() {\n\t\
+    ios::sync_with_stdio(false);\n\tcin.tie(0);\n\tint n;\n\tlong long m;\n\tcin >>\
+    \ n >> m;\n\tvector<mi> a(n);\n\tfor (int i = 0; i < n; ++i) {\n\t\tcin >> a[i];\n\
+    \t}\n\tPoly<mi> p(a);\n\tauto b = p;\n\tPoly<mi> ans({1});\n\twhile (m) {\n\t\t\
+    if (m & 1) {\n\t\t\tans *= b;\n\t\t\tans.resize(n);\n\t\t}\n\t\tb *= b;\n\t\t\
+    b.resize(n);\n\t\tm >>= 1;\n\t}\n\tfor (int i = 0; i < n; ++i) {\n\t\tcout <<\
+    \ ans[i] << ' ';\n\t}\n\tcout << '\\n';\n\treturn 0;\t\n}\n"
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/log_of_formal_power_series\"\
+    \n\n#include \"../../library/contest/template-minimal.hpp\"\n#include \"../../library/numerical/polynomial.hpp\"\
+    \n#include \"../../library/numerical/mod-int2.hpp\"\n\nusing mi = Mint<998244353,\
+    \ 5>;\n\nint main() {\n\tios::sync_with_stdio(false);\n\tcin.tie(0);\n\tint n;\n\
+    \tlong long m;\n\tcin >> n >> m;\n\tvector<mi> a(n);\n\tfor (int i = 0; i < n;\
+    \ ++i) {\n\t\tcin >> a[i];\n\t}\n\tPoly<mi> p(a);\n\tauto b = p;\n\tPoly<mi> ans({1});\n\
+    \twhile (m) {\n\t\tif (m & 1) {\n\t\t\tans *= b;\n\t\t\tans.resize(n);\n\t\t}\n\
+    \t\tb *= b;\n\t\tb.resize(n);\n\t\tm >>= 1;\n\t}\n\tfor (int i = 0; i < n; ++i)\
+    \ {\n\t\tcout << ans[i] << ' ';\n\t}\n\tcout << '\\n';\n\treturn 0;\t\n}"
   dependsOn:
+  - library/contest/template-minimal.hpp
   - library/numerical/polynomial.hpp
   - library/numerical/number-theoretic-transform.hpp
-  isVerificationFile: false
-  path: library/numerical/berlekamp-massey.hpp
+  - library/numerical/mod-int2.hpp
+  isVerificationFile: true
+  path: verify/yosupo/yosupo-pow_of_formal_power_series.test.cpp
   requiredBy: []
   timestamp: '2021-07-30 23:07:00-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
-documentation_of: library/numerical/berlekamp-massey.hpp
+documentation_of: verify/yosupo/yosupo-pow_of_formal_power_series.test.cpp
 layout: document
 redirect_from:
-- /library/library/numerical/berlekamp-massey.hpp
-- /library/library/numerical/berlekamp-massey.hpp.html
-title: library/numerical/berlekamp-massey.hpp
+- /verify/verify/yosupo/yosupo-pow_of_formal_power_series.test.cpp
+- /verify/verify/yosupo/yosupo-pow_of_formal_power_series.test.cpp.html
+title: verify/yosupo/yosupo-pow_of_formal_power_series.test.cpp
 ---

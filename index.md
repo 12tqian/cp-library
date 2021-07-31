@@ -9,7 +9,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/contest/template-full.hpp
       title: library/contest/template-full.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/contest/template-minimal.hpp
       title: library/contest/template-minimal.hpp
     - icon: ':heavy_check_mark:'
@@ -234,10 +234,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/numerical/matrix.hpp
       title: library/numerical/matrix.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: library/numerical/mod-int.hpp
       title: library/numerical/mod-int.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/numerical/mod-int2.hpp
       title: library/numerical/mod-int2.hpp
     - icon: ':heavy_check_mark:'
@@ -246,10 +246,10 @@ data:
     - icon: ':warning:'
       path: library/numerical/multipoint-evaluation.hpp
       title: library/numerical/multipoint-evaluation.hpp
-    - icon: ':warning:'
+    - icon: ':question:'
       path: library/numerical/number-theoretic-transform.hpp
       title: library/numerical/number-theoretic-transform.hpp
-    - icon: ':warning:'
+    - icon: ':question:'
       path: library/numerical/polynomial.hpp
       title: library/numerical/polynomial.hpp
     - icon: ':heavy_check_mark:'
@@ -321,7 +321,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/codeforces/codeforces-1542E2.test.cpp
       title: verify/codeforces/codeforces-1542E2.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/codeforces/codeforces-1551F.test.cpp
       title: verify/codeforces/codeforces-1551F.test.cpp
     - icon: ':heavy_check_mark:'
@@ -421,12 +421,18 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-enumerate_triangles.test.cpp
       title: verify/yosupo/yosupo-enumerate_triangles.test.cpp
+    - icon: ':x:'
+      path: verify/yosupo/yosupo-exp_of_formal_power_series.test.cpp
+      title: verify/yosupo/yosupo-exp_of_formal_power_series.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-factorize.test.cpp
       title: verify/yosupo/yosupo-factorize.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
       title: verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/yosupo/yosupo-inv_of_formal_power_series.test.cpp
+      title: verify/yosupo/yosupo-inv_of_formal_power_series.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-inverse_matrix.test.cpp
       title: verify/yosupo/yosupo-inverse_matrix.test.cpp
@@ -439,6 +445,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-line_add_get_min.test.cpp
       title: verify/yosupo/yosupo-line_add_get_min.test.cpp
+    - icon: ':x:'
+      path: verify/yosupo/yosupo-log_of_formal_power_series.test.cpp
+      title: verify/yosupo/yosupo-log_of_formal_power_series.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-point_add_range_sum-fenwick-tree.test.cpp
       title: verify/yosupo/yosupo-point_add_range_sum-fenwick-tree.test.cpp
@@ -460,6 +469,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-point_set_range_composite.test.cpp
       title: verify/yosupo/yosupo-point_set_range_composite.test.cpp
+    - icon: ':x:'
+      path: verify/yosupo/yosupo-pow_of_formal_power_series.test.cpp
+      title: verify/yosupo/yosupo-pow_of_formal_power_series.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-range_affine_range_sum.test.cpp
       title: verify/yosupo/yosupo-range_affine_range_sum.test.cpp

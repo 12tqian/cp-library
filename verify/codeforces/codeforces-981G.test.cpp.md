@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
   - icon: ':heavy_check_mark:'
@@ -10,7 +10,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/data-structures/1d-range-queries/interval-union.hpp
     title: library/data-structures/1d-range-queries/interval-union.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/numerical/mod-int2.hpp
     title: library/numerical/mod-int2.hpp
   _extendedRequiredBy: []
@@ -52,33 +52,34 @@ data:
     \ + 1, M + 1, R);\n\t}\n};\n\n// 5 is a root of both mods\ntemplate <int MOD,\
     \ int RT> struct Mint {\n\tstatic const int mod = MOD;\n\tstatic constexpr Mint\
     \ rt() { return RT; } // primitive root for FFT\n\tint v; \n\texplicit operator\
-    \ int() const { return v; } // explicit -> don't silently convert to int\n\tMint()\
-    \ { v = 0; }\n\tMint(long long _v) { v = int((-MOD <= _v && _v < MOD) ? _v : _v\
-    \ % MOD); if (v < 0) v += MOD; }\n\tfriend bool operator==(const Mint &a, const\
-    \ Mint &b) { return a.v == b.v; }\n\tfriend bool operator!=(const Mint &a, const\
-    \ Mint &b) { return !(a == b); }\n\tfriend bool operator<(const Mint &a, const\
-    \ Mint &b) { return a.v < b.v; }\n\tfriend bool operator>(const Mint &a, const\
-    \ Mint &b) { return a.v > b.v; }\n\tfriend bool operator<=(const Mint &a, const\
-    \ Mint &b) { return a.v <= b.v; }\n\tfriend bool operator>=(const Mint &a, const\
-    \ Mint &b) { return a.v >= b.v; }\n\tfriend std::istream& operator >> (std::istream\
-    \ &in, Mint &a) { \n\t\tlong long x; std::cin >> x; a = Mint(x); return in; }\n\
-    \tfriend std::ostream& operator << (std::ostream &os, const Mint &a) { return\
-    \ os << a.v; }\n\tMint& operator+=(const Mint &m) { \n\t\tif ((v += m.v) >= MOD)\
-    \ v -= MOD; \n\t\treturn *this; }\n\tMint& operator-=(const Mint &m) { \n\t\t\
-    if ((v -= m.v) < 0) v += MOD; \n\t\treturn *this; }\n\tMint& operator*=(const\
-    \ Mint &m) { \n\t\tv = (long long)v * m.v % MOD; return *this; }\n\tMint& operator/=(const\
-    \ Mint &m) { return (*this) *= inv(m); }\n\tfriend Mint pow(Mint a, long long\
-    \ p) {\n\t\tMint ans = 1; assert(p >= 0);\n\t\tfor (; p; p /= 2, a *= a) if (p\
-    \ & 1) ans *= a;\n\t\treturn ans; \n\t}\n\tfriend Mint inv(const Mint &a) { assert(a.v\
-    \ != 0); return pow(a, MOD - 2); }\n\tMint operator-() const { return Mint(-v);\
-    \ }\n\tMint& operator++() { return *this += 1; }\n\tMint& operator--() { return\
-    \ *this -= 1; }\n\tfriend Mint operator+(Mint a, const Mint &b) { return a +=\
-    \ b; }\n\tfriend Mint operator-(Mint a, const Mint &b) { return a -= b; }\n\t\
-    friend Mint operator*(Mint a, const Mint &b) { return a *= b; }\n\tfriend Mint\
-    \ operator/(Mint a, const Mint &b) { return a /= b; }\n};\n\ntemplate <class T>\
-    \ struct IntervalUnion {\n\tconst T INF = std::numeric_limits<T>::max();\n\tstd::set<std::pair<T,\
-    \ T>> le, ri;\n\n\tvoid reset() {\n\t\tle.clear();\n\t\tri.clear();\n\t}\n\n\t\
-    // inserts an interval while returning the intervals it intersected with\n\tstd::vector<std::pair<T,\
+    \ int() const { return v; } // explicit -> don't silently convert to int\n\texplicit\
+    \ operator bool() const { return v != 0; }\n\tMint() { v = 0; }\n\tMint(long long\
+    \ _v) { v = int((-MOD <= _v && _v < MOD) ? _v : _v % MOD); if (v < 0) v += MOD;\
+    \ }\n\tfriend bool operator==(const Mint &a, const Mint &b) { return a.v == b.v;\
+    \ }\n\tfriend bool operator!=(const Mint &a, const Mint &b) { return !(a == b);\
+    \ }\n\tfriend bool operator<(const Mint &a, const Mint &b) { return a.v < b.v;\
+    \ }\n\tfriend bool operator>(const Mint &a, const Mint &b) { return a.v > b.v;\
+    \ }\n\tfriend bool operator<=(const Mint &a, const Mint &b) { return a.v <= b.v;\
+    \ }\n\tfriend bool operator>=(const Mint &a, const Mint &b) { return a.v >= b.v;\
+    \ }\n\tfriend std::istream& operator >> (std::istream &in, Mint &a) { \n\t\tlong\
+    \ long x; std::cin >> x; a = Mint(x); return in; }\n\tfriend std::ostream& operator\
+    \ << (std::ostream &os, const Mint &a) { return os << a.v; }\n\tMint& operator+=(const\
+    \ Mint &m) { \n\t\tif ((v += m.v) >= MOD) v -= MOD; \n\t\treturn *this; }\n\t\
+    Mint& operator-=(const Mint &m) { \n\t\tif ((v -= m.v) < 0) v += MOD; \n\t\treturn\
+    \ *this; }\n\tMint& operator*=(const Mint &m) { \n\t\tv = (long long)v * m.v %\
+    \ MOD; return *this; }\n\tMint& operator/=(const Mint &m) { return (*this) *=\
+    \ inv(m); }\n\tfriend Mint pow(Mint a, long long p) {\n\t\tMint ans = 1; assert(p\
+    \ >= 0);\n\t\tfor (; p; p /= 2, a *= a) if (p & 1) ans *= a;\n\t\treturn ans;\
+    \ \n\t}\n\tfriend Mint inv(const Mint &a) { assert(a.v != 0); return pow(a, MOD\
+    \ - 2); }\n\tMint operator-() const { return Mint(-v); }\n\tMint& operator++()\
+    \ { return *this += 1; }\n\tMint& operator--() { return *this -= 1; }\n\tfriend\
+    \ Mint operator+(Mint a, const Mint &b) { return a += b; }\n\tfriend Mint operator-(Mint\
+    \ a, const Mint &b) { return a -= b; }\n\tfriend Mint operator*(Mint a, const\
+    \ Mint &b) { return a *= b; }\n\tfriend Mint operator/(Mint a, const Mint &b)\
+    \ { return a /= b; }\n};\n\ntemplate <class T> struct IntervalUnion {\n\tconst\
+    \ T INF = std::numeric_limits<T>::max();\n\tstd::set<std::pair<T, T>> le, ri;\n\
+    \n\tvoid reset() {\n\t\tle.clear();\n\t\tri.clear();\n\t}\n\n\t// inserts an interval\
+    \ while returning the intervals it intersected with\n\tstd::vector<std::pair<T,\
     \ T>> insert(std::pair<T, T> x) {\n\t\tstd::set<std::pair<T, T>> bad;\n\t\tstd::vector<std::pair<T,\
     \ T>> ret;\n\t\tstd::pair<T, T> use1 = {x.first, -INF}, use2 = {x.second, INF};\n\
     \t\tauto it1 = le.lower_bound(use1);\n\t\tauto it2 = ri.lower_bound(use2);\n\t\
@@ -136,7 +137,7 @@ data:
   isVerificationFile: true
   path: verify/codeforces/codeforces-981G.test.cpp
   requiredBy: []
-  timestamp: '2021-07-29 02:02:30-04:00'
+  timestamp: '2021-07-30 23:07:00-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/codeforces/codeforces-981G.test.cpp
