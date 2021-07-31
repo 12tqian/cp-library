@@ -4,14 +4,14 @@ data:
   - icon: ':question:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
-  - icon: ':x:'
-    path: library/numerical/mod-int.hpp
-    title: library/numerical/mod-int.hpp
+  - icon: ':heavy_check_mark:'
+    path: library/modular-arithmetic/mod-int.hpp
+    title: library/modular-arithmetic/mod-int.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://codeforces.com/contest/1551/problem/F
@@ -26,25 +26,25 @@ data:
     \ <string>\n#include <unordered_map>\n#include <vector>\n\nusing namespace std;\n\
     \nconst int MOD = 1e9 + 7;\n\ntypedef std::decay<decltype(MOD)>::type mod_t; \n\
     struct mi {\n\tmod_t val;\n\texplicit operator mod_t() const { return val; }\n\
-    \texplicit operator bool() const { return v != 0; }\n\tmi() { val = 0; }\n\tmi(const\
-    \ long long &v) {\n\t\tval = (-MOD <= v && v < MOD) ? v : v % MOD;\n\t\tif (val\
-    \ < 0) val += MOD; }\n\tfriend std::istream& operator>>(std::istream &in, mi &a)\
-    \ { \n\t\tlong long x; std::cin >> x; a = mi(x); return in; }\n\tfriend std::ostream&\
-    \ operator<<(std::ostream &os, const mi &a) { return os << a.val; }\n\tfriend\
-    \ bool operator==(const mi &a, const mi &b) { return a.val == b.val; }\n\tfriend\
-    \ bool operator!=(const mi &a, const mi &b) { return !(a == b); }    \n\tfriend\
-    \ bool operator<(const mi &a, const mi &b) { return a.val < b.val; }\n\tfriend\
-    \ bool operator>(const mi &a, const mi &b) { return a.val > b.val; }\n\tfriend\
-    \ bool operator<=(const mi &a, const mi &b) { return a.val <= b.val; }\n\tfriend\
-    \ bool operator>=(const mi &a, const mi &b) { return a.val >= b.val; }\n\tmi operator-()\
-    \ const { return mi(-val); }\n\tmi& operator+=(const mi &m) {\n\t\tif ((val +=\
-    \ m.val) >= MOD) val -= MOD;\n\t\treturn *this; }\n\tmi& operator-=(const mi &m)\
-    \ {\n\t\tif ((val -= m.val) < 0) val += MOD;\n\t\treturn *this; }\n\tmi& operator*=(const\
-    \ mi &m) { val = (long long)val * m.val % MOD;\n\t\treturn *this; }\n\tfriend\
-    \ mi pow(mi a, long long p) {\n\t\tmi ans = 1; assert(p >= 0);\n\t\tfor (; p;\
-    \ p /= 2, a *= a) if (p & 1) ans *= a;\n\t\treturn ans; }\n\tfriend mi inv(const\
-    \ mi &a) { assert(a != 0); return pow(a, MOD - 2); }\n\tmi& operator/=(const mi\
-    \ &m) { return (*this) *= inv(m); }\n\tfriend mi operator+(mi a, const mi &b)\
+    \texplicit operator bool() const { return val != 0; }\n\tmi() { val = 0; }\n\t\
+    mi(const long long &v) {\n\t\tval = (-MOD <= v && v < MOD) ? v : v % MOD;\n\t\t\
+    if (val < 0) val += MOD; }\n\tfriend std::istream& operator>>(std::istream &in,\
+    \ mi &a) { \n\t\tlong long x; std::cin >> x; a = mi(x); return in; }\n\tfriend\
+    \ std::ostream& operator<<(std::ostream &os, const mi &a) { return os << a.val;\
+    \ }\n\tfriend bool operator==(const mi &a, const mi &b) { return a.val == b.val;\
+    \ }\n\tfriend bool operator!=(const mi &a, const mi &b) { return !(a == b); }\
+    \    \n\tfriend bool operator<(const mi &a, const mi &b) { return a.val < b.val;\
+    \ }\n\tfriend bool operator>(const mi &a, const mi &b) { return a.val > b.val;\
+    \ }\n\tfriend bool operator<=(const mi &a, const mi &b) { return a.val <= b.val;\
+    \ }\n\tfriend bool operator>=(const mi &a, const mi &b) { return a.val >= b.val;\
+    \ }\n\tmi operator-() const { return mi(-val); }\n\tmi& operator+=(const mi &m)\
+    \ {\n\t\tif ((val += m.val) >= MOD) val -= MOD;\n\t\treturn *this; }\n\tmi& operator-=(const\
+    \ mi &m) {\n\t\tif ((val -= m.val) < 0) val += MOD;\n\t\treturn *this; }\n\tmi&\
+    \ operator*=(const mi &m) { val = (long long)val * m.val % MOD;\n\t\treturn *this;\
+    \ }\n\tfriend mi pow(mi a, long long p) {\n\t\tmi ans = 1; assert(p >= 0);\n\t\
+    \tfor (; p; p /= 2, a *= a) if (p & 1) ans *= a;\n\t\treturn ans; }\n\tfriend\
+    \ mi inv(const mi &a) { assert(a != 0); return pow(a, MOD - 2); }\n\tmi& operator/=(const\
+    \ mi &m) { return (*this) *= inv(m); }\n\tfriend mi operator+(mi a, const mi &b)\
     \ { return a += b; }\n\tfriend mi operator-(mi a, const mi &b) { return a -= b;\
     \ }\n\tfriend mi operator*(mi a, const mi &b) { return a *= b; }\n\tfriend mi\
     \ operator/(mi a, const mi &b) { return a /= b; }\n};\n\nint main() {\n\tios::sync_with_stdio(false);\n\
@@ -72,7 +72,7 @@ data:
     \ x});\n\t\t\t\t}\n\t\t\t\tif (res.size() > k) {\n\t\t\t\t\tans += res[k];\n\t\
     \t\t\t}\n\t\t\t}\n\t\t}\n\t\tcout << ans << '\\n';\n\t}\n\treturn 0;\n}\n"
   code: "#define PROBLEM \"https://codeforces.com/contest/1551/problem/F\"\n\n#include\
-    \ \"../../library/contest/template-minimal.hpp\"\n#include \"../../library/numerical/mod-int.hpp\"\
+    \ \"../../library/contest/template-minimal.hpp\"\n#include \"../../library/modular-arithmetic/mod-int.hpp\"\
     \n\nint main() {\n\tios::sync_with_stdio(false);\n\tcin.tie(nullptr);\n\tint tt;\n\
     \tcin >> tt;\n\tfor (int tc = 1; tc <= tt; ++tc) {\n\t\tint n, k;\n\t\tcin >>\
     \ n >> k;\n\t\tvector<mi> fact(n + 1);\n\t\tvector<mi> ifact(n + 1);\n\t\tfact[0]\
@@ -99,12 +99,12 @@ data:
     }\n\t\t}\n\t\tcout << ans << '\\n';\n\t}\n\treturn 0;\n}"
   dependsOn:
   - library/contest/template-minimal.hpp
-  - library/numerical/mod-int.hpp
+  - library/modular-arithmetic/mod-int.hpp
   isVerificationFile: true
   path: verify/codeforces/codeforces-1551F.test.cpp
   requiredBy: []
-  timestamp: '2021-07-30 23:07:00-04:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2021-07-30 23:56:29-04:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/codeforces/codeforces-1551F.test.cpp
 layout: document

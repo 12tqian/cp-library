@@ -67,7 +67,7 @@ data:
       title: library/data-structures/1d-range-queries/sparse-table.hpp
   - name: library/data-structures/2d-range-queries
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
       path: library/data-structures/2d-range-queries/general-fenwick-tree.hpp
       title: library/data-structures/2d-range-queries/general-fenwick-tree.hpp
     - icon: ':heavy_check_mark:'
@@ -191,6 +191,17 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/misc/range-vector.hpp
       title: library/misc/range-vector.hpp
+  - name: library/modular-arithmetic
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: library/modular-arithmetic/mod-int.hpp
+      title: library/modular-arithmetic/mod-int.hpp
+    - icon: ':question:'
+      path: library/modular-arithmetic/mod-int2.hpp
+      title: library/modular-arithmetic/mod-int2.hpp
+    - icon: ':warning:'
+      path: library/modular-arithmetic/mod-sqrt.hpp
+      title: library/modular-arithmetic/mod-sqrt.hpp
   - name: library/number-theory
     pages:
     - icon: ':heavy_check_mark:'
@@ -209,9 +220,6 @@ data:
       path: library/number-theory/fast-factor-sieve.hpp
       title: library/number-theory/fast-factor-sieve.hpp
     - icon: ':heavy_check_mark:'
-      path: library/number-theory/mod-sqrt.hpp
-      title: library/number-theory/mod-sqrt.hpp
-    - icon: ':heavy_check_mark:'
       path: library/number-theory/sieve.hpp
       title: library/number-theory/sieve.hpp
   - name: library/numerical
@@ -223,44 +231,40 @@ data:
       path: library/numerical/big-integer.hpp
       title: library/numerical/big-integer.hpp
     - icon: ':heavy_check_mark:'
-      path: library/numerical/fast-fourier-transform.hpp
-      title: library/numerical/fast-fourier-transform.hpp
-    - icon: ':heavy_check_mark:'
       path: library/numerical/fraction.hpp
       title: library/numerical/fraction.hpp
     - icon: ':heavy_check_mark:'
-      path: library/numerical/karatsuba.hpp
-      title: library/numerical/karatsuba.hpp
-    - icon: ':heavy_check_mark:'
       path: library/numerical/matrix.hpp
       title: library/numerical/matrix.hpp
-    - icon: ':x:'
-      path: library/numerical/mod-int.hpp
-      title: library/numerical/mod-int.hpp
-    - icon: ':question:'
-      path: library/numerical/mod-int2.hpp
-      title: library/numerical/mod-int2.hpp
     - icon: ':heavy_check_mark:'
       path: library/numerical/mod-operations.hpp
       title: library/numerical/mod-operations.hpp
-    - icon: ':warning:'
-      path: library/numerical/multipoint-evaluation.hpp
-      title: library/numerical/multipoint-evaluation.hpp
-    - icon: ':question:'
-      path: library/numerical/number-theoretic-transform.hpp
-      title: library/numerical/number-theoretic-transform.hpp
-    - icon: ':question:'
-      path: library/numerical/polynomial.hpp
-      title: library/numerical/polynomial.hpp
-    - icon: ':heavy_check_mark:'
-      path: library/numerical/polynomial2.hpp
-      title: library/numerical/polynomial2.hpp
     - icon: ':heavy_check_mark:'
       path: library/numerical/simplex.hpp
       title: library/numerical/simplex.hpp
     - icon: ':heavy_check_mark:'
       path: library/numerical/xor-basis.hpp
       title: library/numerical/xor-basis.hpp
+  - name: library/polynomial
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: library/polynomial/fast-fourier-transform.hpp
+      title: library/polynomial/fast-fourier-transform.hpp
+    - icon: ':heavy_check_mark:'
+      path: library/polynomial/karatsuba.hpp
+      title: library/polynomial/karatsuba.hpp
+    - icon: ':warning:'
+      path: library/polynomial/multipoint-evaluation.hpp
+      title: library/polynomial/multipoint-evaluation.hpp
+    - icon: ':question:'
+      path: library/polynomial/number-theoretic-transform.hpp
+      title: library/polynomial/number-theoretic-transform.hpp
+    - icon: ':question:'
+      path: library/polynomial/polynomial.hpp
+      title: library/polynomial/polynomial.hpp
+    - icon: ':heavy_check_mark:'
+      path: library/polynomial/polynomial2.hpp
+      title: library/polynomial/polynomial2.hpp
   - name: library/string
     pages:
     - icon: ':heavy_check_mark:'
@@ -321,7 +325,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/codeforces/codeforces-1542E2.test.cpp
       title: verify/codeforces/codeforces-1542E2.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/codeforces/codeforces-1551F.test.cpp
       title: verify/codeforces/codeforces-1551F.test.cpp
     - icon: ':heavy_check_mark:'
@@ -330,7 +334,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/codeforces/codeforces-319C.test.cpp
       title: verify/codeforces/codeforces-319C.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/codeforces/codeforces-869E-general-fwt.test.cpp
       title: verify/codeforces/codeforces-869E-general-fwt.test.cpp
     - icon: ':heavy_check_mark:'
@@ -421,7 +425,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-enumerate_triangles.test.cpp
       title: verify/yosupo/yosupo-enumerate_triangles.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-exp_of_formal_power_series.test.cpp
       title: verify/yosupo/yosupo-exp_of_formal_power_series.test.cpp
     - icon: ':heavy_check_mark:'
@@ -445,9 +449,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-line_add_get_min.test.cpp
       title: verify/yosupo/yosupo-line_add_get_min.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-log_of_formal_power_series.test.cpp
       title: verify/yosupo/yosupo-log_of_formal_power_series.test.cpp
+    - icon: ':x:'
+      path: verify/yosupo/yosupo-multipoint_evaluation.test.cpp
+      title: verify/yosupo/yosupo-multipoint_evaluation.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-point_add_range_sum-fenwick-tree.test.cpp
       title: verify/yosupo/yosupo-point_add_range_sum-fenwick-tree.test.cpp
@@ -496,7 +503,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-sort_points_by_argument.test.cpp
       title: verify/yosupo/yosupo-sort_points_by_argument.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/yosupo/yosupo-sqrt_mod.test.cpp
       title: verify/yosupo/yosupo-sqrt_mod.test.cpp
     - icon: ':heavy_check_mark:'

@@ -3,15 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
-    path: library/numerical/fast-fourier-transform.hpp
-    title: library/numerical/fast-fourier-transform.hpp
+    path: library/polynomial/fast-fourier-transform.hpp
+    title: library/polynomial/fast-fourier-transform.hpp
   - icon: ':heavy_check_mark:'
-    path: library/numerical/polynomial2.hpp
-    title: library/numerical/polynomial2.hpp
+    path: library/polynomial/polynomial2.hpp
+    title: library/polynomial/polynomial2.hpp
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: verify/codeforces/codeforces-869E-general-fwt.test.cpp
-    title: verify/codeforces/codeforces-869E-general-fwt.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/codeforces/codeforces-869E-quadtree.test.cpp
     title: verify/codeforces/codeforces-869E-quadtree.test.cpp
@@ -24,7 +21,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-convolution_mod_1000000007-karatsuba.test.cpp
     title: verify/yosupo/yosupo-convolution_mod_1000000007-karatsuba.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-exp_of_formal_power_series.test.cpp
     title: verify/yosupo/yosupo-exp_of_formal_power_series.test.cpp
   - icon: ':heavy_check_mark:'
@@ -36,7 +33,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-inverse_matrix.test.cpp
     title: verify/yosupo/yosupo-inverse_matrix.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-log_of_formal_power_series.test.cpp
     title: verify/yosupo/yosupo-log_of_formal_power_series.test.cpp
   - icon: ':heavy_check_mark:'
@@ -110,11 +107,11 @@ data:
     \ { return a /= b; }\n};\n"
   dependsOn: []
   isVerificationFile: false
-  path: library/numerical/mod-int2.hpp
+  path: library/modular-arithmetic/mod-int2.hpp
   requiredBy:
-  - library/numerical/polynomial2.hpp
-  - library/numerical/fast-fourier-transform.hpp
-  timestamp: '2021-07-30 23:07:00-04:00'
+  - library/polynomial/polynomial2.hpp
+  - library/polynomial/fast-fourier-transform.hpp
+  timestamp: '2021-07-30 23:56:29-04:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/yosupo/yosupo-convolution_mod_1000000007-karatsuba.test.cpp
@@ -128,12 +125,11 @@ data:
   - verify/yosupo/yosupo-inv_of_formal_power_series.test.cpp
   - verify/yosupo/yosupo-point_set_range_composite.test.cpp
   - verify/codeforces/codeforces-981G.test.cpp
-  - verify/codeforces/codeforces-869E-general-fwt.test.cpp
   - verify/codeforces/codeforces-869E-quadtree.test.cpp
-documentation_of: library/numerical/mod-int2.hpp
+documentation_of: library/modular-arithmetic/mod-int2.hpp
 layout: document
 redirect_from:
-- /library/library/numerical/mod-int2.hpp
-- /library/library/numerical/mod-int2.hpp.html
-title: library/numerical/mod-int2.hpp
+- /library/library/modular-arithmetic/mod-int2.hpp
+- /library/library/modular-arithmetic/mod-int2.hpp.html
+title: library/modular-arithmetic/mod-int2.hpp
 ---

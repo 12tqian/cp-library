@@ -3,19 +3,19 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/codeforces/codeforces-1551F.test.cpp
     title: verify/codeforces/codeforces-1551F.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "\nconst int MOD = 1e9 + 7;\n\ntypedef std::decay<decltype(MOD)>::type\
     \ mod_t; \nstruct mi {\n\tmod_t val;\n\texplicit operator mod_t() const { return\
-    \ val; }\n\texplicit operator bool() const { return v != 0; }\n\tmi() { val =\
-    \ 0; }\n\tmi(const long long &v) {\n\t\tval = (-MOD <= v && v < MOD) ? v : v %\
-    \ MOD;\n\t\tif (val < 0) val += MOD; }\n\tfriend std::istream& operator>>(std::istream\
+    \ val; }\n\texplicit operator bool() const { return val != 0; }\n\tmi() { val\
+    \ = 0; }\n\tmi(const long long &v) {\n\t\tval = (-MOD <= v && v < MOD) ? v : v\
+    \ % MOD;\n\t\tif (val < 0) val += MOD; }\n\tfriend std::istream& operator>>(std::istream\
     \ &in, mi &a) { \n\t\tlong long x; std::cin >> x; a = mi(x); return in; }\n\t\
     friend std::ostream& operator<<(std::ostream &os, const mi &a) { return os <<\
     \ a.val; }\n\tfriend bool operator==(const mi &a, const mi &b) { return a.val\
@@ -37,9 +37,9 @@ data:
     \ }\n\tfriend mi operator/(mi a, const mi &b) { return a /= b; }\n};\n"
   code: "#pragma once\n\nconst int MOD = 1e9 + 7;\n\ntypedef std::decay<decltype(MOD)>::type\
     \ mod_t; \nstruct mi {\n\tmod_t val;\n\texplicit operator mod_t() const { return\
-    \ val; }\n\texplicit operator bool() const { return v != 0; }\n\tmi() { val =\
-    \ 0; }\n\tmi(const long long &v) {\n\t\tval = (-MOD <= v && v < MOD) ? v : v %\
-    \ MOD;\n\t\tif (val < 0) val += MOD; }\n\tfriend std::istream& operator>>(std::istream\
+    \ val; }\n\texplicit operator bool() const { return val != 0; }\n\tmi() { val\
+    \ = 0; }\n\tmi(const long long &v) {\n\t\tval = (-MOD <= v && v < MOD) ? v : v\
+    \ % MOD;\n\t\tif (val < 0) val += MOD; }\n\tfriend std::istream& operator>>(std::istream\
     \ &in, mi &a) { \n\t\tlong long x; std::cin >> x; a = mi(x); return in; }\n\t\
     friend std::ostream& operator<<(std::ostream &os, const mi &a) { return os <<\
     \ a.val; }\n\tfriend bool operator==(const mi &a, const mi &b) { return a.val\
@@ -61,16 +61,16 @@ data:
     \ }\n\tfriend mi operator/(mi a, const mi &b) { return a /= b; }\n};"
   dependsOn: []
   isVerificationFile: false
-  path: library/numerical/mod-int.hpp
+  path: library/modular-arithmetic/mod-int.hpp
   requiredBy: []
-  timestamp: '2021-07-30 23:07:00-04:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2021-07-30 23:56:29-04:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/codeforces/codeforces-1551F.test.cpp
-documentation_of: library/numerical/mod-int.hpp
+documentation_of: library/modular-arithmetic/mod-int.hpp
 layout: document
 redirect_from:
-- /library/library/numerical/mod-int.hpp
-- /library/library/numerical/mod-int.hpp.html
-title: library/numerical/mod-int.hpp
+- /library/library/modular-arithmetic/mod-int.hpp
+- /library/library/modular-arithmetic/mod-int.hpp.html
+title: library/modular-arithmetic/mod-int.hpp
 ---

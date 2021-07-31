@@ -1,12 +1,12 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: library/numerical/fast-fourier-transform.hpp
-    title: library/numerical/fast-fourier-transform.hpp
   - icon: ':question:'
-    path: library/numerical/mod-int2.hpp
-    title: library/numerical/mod-int2.hpp
+    path: library/modular-arithmetic/mod-int2.hpp
+    title: library/modular-arithmetic/mod-int2.hpp
+  - icon: ':heavy_check_mark:'
+    path: library/polynomial/fast-fourier-transform.hpp
+    title: library/polynomial/fast-fourier-transform.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
@@ -97,13 +97,13 @@ data:
     \tfor (int i = invs.size(); i <= (int)p.size(); ++i ){\n\t\tinvs.push_back(1 /\
     \ T(i));\n\t}\n\tPoly res((int)p.size() + 1);\n\tfor (int i = 0; i < (int)p.size();\
     \ ++i) {\n\t\tres[i + 1] = p[i] * invs[i + 1];\n\t}\n\treturn res;\n}\n\n}\n"
-  code: "#pragma once\n\n#include \"../../library/numerical/fast-fourier-transform.hpp\"\
-    \n\nnamespace Polynomial {\n\nusing T = long long;\nusing Poly = std::vector<T>;\n\
-    \nT eval(const Poly &p, const T &x) {\n\tT res = 0;\n\tfor (int i = (int)p.size()\
-    \ - 1; i >= 0; --i) {\n\t\tres = x * res + p[i];\n\t}\n\treturn res;\n}\n\nPoly&\
-    \ operator+=(Poly &l, const Poly &r) {\n\tl.resize(std::max((int)l.size(), (int)r.size()));\n\
-    \tfor (int i = 0; i < (int)r.size(); ++i) {\n\t\tl[i] += r[i];\n\t}\n\treturn\
-    \ l;\n}\n\nPoly& operator-=(Poly &l, const Poly &r) {\n\tl.resize(std::max((int)l.size(),\
+  code: "#pragma once\n\n#include \"fast-fourier-transform.hpp\"\n\nnamespace Polynomial\
+    \ {\n\nusing T = long long;\nusing Poly = std::vector<T>;\n\nT eval(const Poly\
+    \ &p, const T &x) {\n\tT res = 0;\n\tfor (int i = (int)p.size() - 1; i >= 0; --i)\
+    \ {\n\t\tres = x * res + p[i];\n\t}\n\treturn res;\n}\n\nPoly& operator+=(Poly\
+    \ &l, const Poly &r) {\n\tl.resize(std::max((int)l.size(), (int)r.size()));\n\t\
+    for (int i = 0; i < (int)r.size(); ++i) {\n\t\tl[i] += r[i];\n\t}\n\treturn l;\n\
+    }\n\nPoly& operator-=(Poly &l, const Poly &r) {\n\tl.resize(std::max((int)l.size(),\
     \ (int)r.size()));\n\tfor (int i = 0; i < (int)r.size(); ++i) {\n\t\tl[i] -= r[i];\n\
     \t}\n\treturn l;\n}\n\nPoly& operator*=(Poly &l, const T& r) {\n\tfor (int i =\
     \ 0; i < (int)l.size(); ++i) {\n\t\tl[i] *= r;\n\t}\n\treturn l;\n}\n\nPoly& operator/=(Poly\
@@ -125,19 +125,19 @@ data:
     \ T(i));\n\t}\n\tPoly res((int)p.size() + 1);\n\tfor (int i = 0; i < (int)p.size();\
     \ ++i) {\n\t\tres[i + 1] = p[i] * invs[i + 1];\n\t}\n\treturn res;\n}\n\n}"
   dependsOn:
-  - library/numerical/fast-fourier-transform.hpp
-  - library/numerical/mod-int2.hpp
+  - library/polynomial/fast-fourier-transform.hpp
+  - library/modular-arithmetic/mod-int2.hpp
   isVerificationFile: false
-  path: library/numerical/polynomial2.hpp
+  path: library/polynomial/polynomial2.hpp
   requiredBy: []
-  timestamp: '2021-07-30 23:07:00-04:00'
+  timestamp: '2021-07-30 23:56:29-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
-documentation_of: library/numerical/polynomial2.hpp
+documentation_of: library/polynomial/polynomial2.hpp
 layout: document
 redirect_from:
-- /library/library/numerical/polynomial2.hpp
-- /library/library/numerical/polynomial2.hpp.html
-title: library/numerical/polynomial2.hpp
+- /library/library/polynomial/polynomial2.hpp
+- /library/library/polynomial/polynomial2.hpp.html
+title: library/polynomial/polynomial2.hpp
 ---

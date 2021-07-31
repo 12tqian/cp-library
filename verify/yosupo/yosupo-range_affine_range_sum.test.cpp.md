@@ -8,8 +8,8 @@ data:
     path: library/data-structures/1d-range-queries/affine-segment-tree.hpp
     title: library/data-structures/1d-range-queries/affine-segment-tree.hpp
   - icon: ':question:'
-    path: library/numerical/mod-int2.hpp
-    title: library/numerical/mod-int2.hpp
+    path: library/modular-arithmetic/mod-int2.hpp
+    title: library/modular-arithmetic/mod-int2.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -82,7 +82,7 @@ data:
     \t\t\tcin >> l >> r;\n\t\t\tcout << seg.qsum(l, r - 1) << '\\n';\n\t\t}\n\t}\n\
     \treturn 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/range_affine_range_sum\"\
-    \n\n#include \"../../library/contest/template-minimal.hpp\"\n#include \"../../library/numerical/mod-int2.hpp\"\
+    \n\n#include \"../../library/contest/template-minimal.hpp\"\n#include \"../../library/modular-arithmetic/mod-int2.hpp\"\
     \n#include \"../../library/data-structures/1d-range-queries/affine-segment-tree.hpp\"\
     \n\nusing mi = Mint<998244353, 5>;\n\nint main() {\n\tcin.tie(0)->sync_with_stdio(false);\n\
     \tint n, q;\n\tAffineSegmentTree<mi> seg;\n\tcin >> n >> q;\n\tseg.init(n);\n\t\
@@ -94,12 +94,12 @@ data:
     \treturn 0;\n}"
   dependsOn:
   - library/contest/template-minimal.hpp
-  - library/numerical/mod-int2.hpp
+  - library/modular-arithmetic/mod-int2.hpp
   - library/data-structures/1d-range-queries/affine-segment-tree.hpp
   isVerificationFile: true
   path: verify/yosupo/yosupo-range_affine_range_sum.test.cpp
   requiredBy: []
-  timestamp: '2021-07-30 23:07:00-04:00'
+  timestamp: '2021-07-30 23:56:29-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/yosupo-range_affine_range_sum.test.cpp

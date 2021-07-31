@@ -8,8 +8,8 @@ data:
     path: library/data-structures/2d-range-queries/quadtree.hpp
     title: library/data-structures/2d-range-queries/quadtree.hpp
   - icon: ':question:'
-    path: library/numerical/mod-int2.hpp
-    title: library/numerical/mod-int2.hpp
+    path: library/modular-arithmetic/mod-int2.hpp
+    title: library/modular-arithmetic/mod-int2.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -90,10 +90,10 @@ data:
     \ {\n\t\t\t\tcout << \"No\" << '\\n';\n\t\t\t}\n\t\t}\n\t}\n\treturn 0;\n}\n"
   code: "#define IGNORE \"this will TLE, but it works\"\n#define PROBLEM \"https://codeforces.com/contest/1074/problem/F\"\
     \n\n#include \"../../library/contest/template-minimal.hpp\"\n#include \"../../library/data-structures/2d-range-queries/quadtree.hpp\"\
-    \n#include \"../../library/numerical/mod-int2.hpp\"\n\nconst int N = 2505;\n\n\
-    const int P = 998244353;\nconst int B = 2;\n\nusing mi = Mint<998244353, 5>;\n\
-    \nQuadTree<mi, N, N> bit;\n\nint main() {\n\tios::sync_with_stdio(false);\n\t\
-    cin.tie(nullptr);\n\tint n, m, q;\n\tcin >> m >> m >> q;\n\tmap<array<int, 4>,\
+    \n#include \"../../library/modular-arithmetic/mod-int2.hpp\"\n\nconst int N =\
+    \ 2505;\n\nconst int P = 998244353;\nconst int B = 2;\n\nusing mi = Mint<998244353,\
+    \ 5>;\n\nQuadTree<mi, N, N> bit;\n\nint main() {\n\tios::sync_with_stdio(false);\n\
+    \tcin.tie(nullptr);\n\tint n, m, q;\n\tcin >> m >> m >> q;\n\tmap<array<int, 4>,\
     \ mi> rects;\n\tmi run = 1;\n\twhile (q--) {\n\t\tint t, xl, xr, yl, yr;\n\t\t\
     cin >> t >> xl >> yl >> xr >> yr;\n\t\tauto rect = [&]() {\n\t\t\tmi v;\n\t\t\t\
     if (t == 1) {\n\t\t\t\trects[{xl, xr, yl, yr}] = run;\n\t\t\t\tv = run;\n\t\t\t\
@@ -106,11 +106,11 @@ data:
   dependsOn:
   - library/contest/template-minimal.hpp
   - library/data-structures/2d-range-queries/quadtree.hpp
-  - library/numerical/mod-int2.hpp
+  - library/modular-arithmetic/mod-int2.hpp
   isVerificationFile: true
   path: verify/codeforces/codeforces-869E-quadtree.test.cpp
   requiredBy: []
-  timestamp: '2021-07-30 23:07:00-04:00'
+  timestamp: '2021-07-30 23:56:29-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/codeforces/codeforces-869E-quadtree.test.cpp

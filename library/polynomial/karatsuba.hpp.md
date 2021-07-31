@@ -49,16 +49,16 @@ data:
     \ n);\n\tc.resize(sa + sb - 1);\n\treturn c;\n}\n\n}"
   dependsOn: []
   isVerificationFile: false
-  path: library/numerical/karatsuba.hpp
+  path: library/polynomial/karatsuba.hpp
   requiredBy: []
-  timestamp: '2021-07-24 22:46:46-04:00'
+  timestamp: '2021-07-30 23:56:29-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/yosupo-convolution_mod_1000000007-karatsuba.test.cpp
-documentation_of: library/numerical/karatsuba.hpp
+documentation_of: library/polynomial/karatsuba.hpp
 layout: document
 redirect_from:
-- /library/library/numerical/karatsuba.hpp
-- /library/library/numerical/karatsuba.hpp.html
-title: library/numerical/karatsuba.hpp
+- /library/library/polynomial/karatsuba.hpp
+- /library/library/polynomial/karatsuba.hpp.html
+title: library/polynomial/karatsuba.hpp
 ---

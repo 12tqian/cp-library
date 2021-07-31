@@ -3,22 +3,19 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy:
   - icon: ':warning:'
-    path: library/numerical/berlekamp-massey.hpp
-    title: library/numerical/berlekamp-massey.hpp
-  - icon: ':warning:'
-    path: library/numerical/multipoint-evaluation.hpp
-    title: library/numerical/multipoint-evaluation.hpp
+    path: library/polynomial/multipoint-evaluation.hpp
+    title: library/polynomial/multipoint-evaluation.hpp
   - icon: ':question:'
-    path: library/numerical/polynomial.hpp
-    title: library/numerical/polynomial.hpp
+    path: library/polynomial/polynomial.hpp
+    title: library/polynomial/polynomial.hpp
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-exp_of_formal_power_series.test.cpp
     title: verify/yosupo/yosupo-exp_of_formal_power_series.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-inv_of_formal_power_series.test.cpp
     title: verify/yosupo/yosupo-inv_of_formal_power_series.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-log_of_formal_power_series.test.cpp
     title: verify/yosupo/yosupo-log_of_formal_power_series.test.cpp
   - icon: ':x:'
@@ -137,22 +134,21 @@ data:
     \ < n + m - 1; i++) a2[i] *= iz;\n\treturn a2;\n}\n\n}"
   dependsOn: []
   isVerificationFile: false
-  path: library/numerical/number-theoretic-transform.hpp
+  path: library/polynomial/number-theoretic-transform.hpp
   requiredBy:
-  - library/numerical/polynomial.hpp
-  - library/numerical/berlekamp-massey.hpp
-  - library/numerical/multipoint-evaluation.hpp
-  timestamp: '2021-07-30 23:07:00-04:00'
+  - library/polynomial/polynomial.hpp
+  - library/polynomial/multipoint-evaluation.hpp
+  timestamp: '2021-07-30 23:56:29-04:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/yosupo/yosupo-log_of_formal_power_series.test.cpp
   - verify/yosupo/yosupo-pow_of_formal_power_series.test.cpp
   - verify/yosupo/yosupo-exp_of_formal_power_series.test.cpp
   - verify/yosupo/yosupo-inv_of_formal_power_series.test.cpp
-documentation_of: library/numerical/number-theoretic-transform.hpp
+documentation_of: library/polynomial/number-theoretic-transform.hpp
 layout: document
 redirect_from:
-- /library/library/numerical/number-theoretic-transform.hpp
-- /library/library/numerical/number-theoretic-transform.hpp.html
-title: library/numerical/number-theoretic-transform.hpp
+- /library/library/polynomial/number-theoretic-transform.hpp
+- /library/library/polynomial/number-theoretic-transform.hpp.html
+title: library/polynomial/number-theoretic-transform.hpp
 ---

@@ -16,15 +16,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/misc/easy-io.hpp
     title: library/misc/easy-io.hpp
-  - icon: ':heavy_check_mark:'
-    path: library/numerical/fast-fourier-transform.hpp
-    title: library/numerical/fast-fourier-transform.hpp
   - icon: ':question:'
-    path: library/numerical/mod-int2.hpp
-    title: library/numerical/mod-int2.hpp
+    path: library/modular-arithmetic/mod-int2.hpp
+    title: library/modular-arithmetic/mod-int2.hpp
   - icon: ':heavy_check_mark:'
-    path: library/numerical/polynomial2.hpp
-    title: library/numerical/polynomial2.hpp
+    path: library/polynomial/fast-fourier-transform.hpp
+    title: library/polynomial/fast-fourier-transform.hpp
+  - icon: ':heavy_check_mark:'
+    path: library/polynomial/polynomial2.hpp
+    title: library/polynomial/polynomial2.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -350,8 +350,8 @@ data:
     \t}\n\tps();\n\treturn 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/frequency_table_of_tree_distance\"\
     \n\n#include \"../../library/contest/template-full.hpp\"\n#include \"../../library/graphs/centroid-decomposition.hpp\"\
-    \n#include \"../../library/graphs/lca-rmq.hpp\"\n#include \"../../library/numerical/fast-fourier-transform.hpp\"\
-    \n#include \"../../library/numerical/polynomial2.hpp\"\n\nint main() {\n\tusing\
+    \n#include \"../../library/graphs/lca-rmq.hpp\"\n#include \"../../library/polynomial/fast-fourier-transform.hpp\"\
+    \n#include \"../../library/polynomial/polynomial2.hpp\"\n\nint main() {\n\tusing\
     \ namespace FFT;\n\tusing namespace Polynomial;\n\tsetIO(\"\");\n\tint n;\n\t\
     re(n);\n\tCentroidDecomposition cd;\n\tcd.init(n);\n\tLCARMQ lca;\n\tlca.init(n);\n\
     \tvector<vi> g(n);\n\tf0r(i, n - 1) {\n\t\tint u, v;\n\t\tre(u, v);\n\t\tg[u].pb(v);\n\
@@ -371,13 +371,13 @@ data:
   - library/graphs/centroid-decomposition.hpp
   - library/graphs/lca-rmq.hpp
   - library/data-structures/1d-range-queries/sparse-table.hpp
-  - library/numerical/fast-fourier-transform.hpp
-  - library/numerical/mod-int2.hpp
-  - library/numerical/polynomial2.hpp
+  - library/polynomial/fast-fourier-transform.hpp
+  - library/modular-arithmetic/mod-int2.hpp
+  - library/polynomial/polynomial2.hpp
   isVerificationFile: true
   path: verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
   requiredBy: []
-  timestamp: '2021-07-30 23:07:00-04:00'
+  timestamp: '2021-07-30 23:56:29-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp

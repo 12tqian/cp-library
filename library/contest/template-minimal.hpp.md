@@ -39,7 +39,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/codeforces/codeforces-1542E2.test.cpp
     title: verify/codeforces/codeforces-1542E2.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/codeforces/codeforces-1551F.test.cpp
     title: verify/codeforces/codeforces-1551F.test.cpp
   - icon: ':heavy_check_mark:'
@@ -48,9 +48,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/codeforces/codeforces-319C.test.cpp
     title: verify/codeforces/codeforces-319C.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/codeforces/codeforces-869E-general-fwt.test.cpp
-    title: verify/codeforces/codeforces-869E-general-fwt.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/codeforces/codeforces-869E-quadtree.test.cpp
     title: verify/codeforces/codeforces-869E-quadtree.test.cpp
@@ -108,7 +105,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-enumerate_triangles.test.cpp
     title: verify/yosupo/yosupo-enumerate_triangles.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-exp_of_formal_power_series.test.cpp
     title: verify/yosupo/yosupo-exp_of_formal_power_series.test.cpp
   - icon: ':heavy_check_mark:'
@@ -129,7 +126,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-line_add_get_min.test.cpp
     title: verify/yosupo/yosupo-line_add_get_min.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-log_of_formal_power_series.test.cpp
     title: verify/yosupo/yosupo-log_of_formal_power_series.test.cpp
   - icon: ':heavy_check_mark:'
@@ -180,9 +177,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-sort_points_by_argument.test.cpp
     title: verify/yosupo/yosupo-sort_points_by_argument.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/yosupo/yosupo-sqrt_mod.test.cpp
-    title: verify/yosupo/yosupo-sqrt_mod.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-static_range_sum.test.cpp
     title: verify/yosupo/yosupo-static_range_sum.test.cpp
@@ -356,7 +350,6 @@ data:
   - verify/yosupo/yosupo-inverse_matrix.test.cpp
   - verify/yosupo/yosupo-suffixarray-linear.test.cpp
   - verify/yosupo/yosupo-lca-lca-jump.test.cpp
-  - verify/yosupo/yosupo-sqrt_mod.test.cpp
   - verify/yosupo/yosupo-inv_of_formal_power_series.test.cpp
   - verify/yosupo/yosupo-point_set_range_composite.test.cpp
   - verify/aizu/aizu-GRL_6_A-2.test.cpp
@@ -368,7 +361,6 @@ data:
   - verify/codeforces/codeforces-981G.test.cpp
   - verify/codeforces/codeforces-1553G.test.cpp
   - verify/codeforces/codeforces-1551F.test.cpp
-  - verify/codeforces/codeforces-869E-general-fwt.test.cpp
   - verify/codeforces/codeforces-1463E.test.cpp
   - verify/codeforces/codeforces-319C.test.cpp
   - verify/codeforces/codeforces-869E-quadtree.test.cpp

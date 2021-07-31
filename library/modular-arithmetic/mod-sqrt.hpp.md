@@ -2,13 +2,10 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: verify/yosupo/yosupo-sqrt_mod.test.cpp
-    title: verify/yosupo/yosupo-sqrt_mod.test.cpp
+  _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     links: []
   bundledCode: "\nunsigned xrand() {\n\tstatic unsigned x = 314159265, y = 358979323,\
@@ -59,16 +56,15 @@ data:
     }"
   dependsOn: []
   isVerificationFile: false
-  path: library/number-theory/mod-sqrt.hpp
+  path: library/modular-arithmetic/mod-sqrt.hpp
   requiredBy: []
-  timestamp: '2021-07-24 22:46:46-04:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - verify/yosupo/yosupo-sqrt_mod.test.cpp
-documentation_of: library/number-theory/mod-sqrt.hpp
+  timestamp: '2021-07-30 23:56:29-04:00'
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
+documentation_of: library/modular-arithmetic/mod-sqrt.hpp
 layout: document
 redirect_from:
-- /library/library/number-theory/mod-sqrt.hpp
-- /library/library/number-theory/mod-sqrt.hpp.html
-title: library/number-theory/mod-sqrt.hpp
+- /library/library/modular-arithmetic/mod-sqrt.hpp
+- /library/library/modular-arithmetic/mod-sqrt.hpp.html
+title: library/modular-arithmetic/mod-sqrt.hpp
 ---

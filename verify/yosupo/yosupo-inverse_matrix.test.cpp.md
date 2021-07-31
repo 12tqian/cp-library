@@ -4,12 +4,12 @@ data:
   - icon: ':question:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
+  - icon: ':question:'
+    path: library/modular-arithmetic/mod-int2.hpp
+    title: library/modular-arithmetic/mod-int2.hpp
   - icon: ':heavy_check_mark:'
     path: library/numerical/matrix.hpp
     title: library/numerical/matrix.hpp
-  - icon: ':question:'
-    path: library/numerical/mod-int2.hpp
-    title: library/numerical/mod-int2.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -108,7 +108,7 @@ data:
     \ 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/inverse_matrix\"\n\n#include\
     \ \"../../library/contest/template-minimal.hpp\"\n#include \"../../library/numerical/matrix.hpp\"\
-    \n#include \"../../library/numerical/mod-int2.hpp\"\n\nusing mi = Mint<998244353,\
+    \n#include \"../../library/modular-arithmetic/mod-int2.hpp\"\n\nusing mi = Mint<998244353,\
     \ 5>;\n\nint main() {\n\tusing namespace MatrixOperations;\n\tios::sync_with_stdio(false);\n\
     \tcin.tie(nullptr);\n\tint n;\n\tcin >> n;\n\tauto a = make_matrix<mi>(n, n);\n\
     \tfor (int i = 0; i < n; ++i) {\n\t\tfor (int j = 0; j < n; ++j) {\n\t\t\tcin\
@@ -120,11 +120,11 @@ data:
   dependsOn:
   - library/contest/template-minimal.hpp
   - library/numerical/matrix.hpp
-  - library/numerical/mod-int2.hpp
+  - library/modular-arithmetic/mod-int2.hpp
   isVerificationFile: true
   path: verify/yosupo/yosupo-inverse_matrix.test.cpp
   requiredBy: []
-  timestamp: '2021-07-30 23:07:00-04:00'
+  timestamp: '2021-07-30 23:56:29-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/yosupo-inverse_matrix.test.cpp

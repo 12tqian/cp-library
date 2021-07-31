@@ -4,12 +4,12 @@ data:
   - icon: ':question:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
-  - icon: ':heavy_check_mark:'
-    path: library/numerical/fast-fourier-transform.hpp
-    title: library/numerical/fast-fourier-transform.hpp
   - icon: ':question:'
-    path: library/numerical/mod-int2.hpp
-    title: library/numerical/mod-int2.hpp
+    path: library/modular-arithmetic/mod-int2.hpp
+    title: library/modular-arithmetic/mod-int2.hpp
+  - icon: ':heavy_check_mark:'
+    path: library/polynomial/fast-fourier-transform.hpp
+    title: library/polynomial/fast-fourier-transform.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -87,7 +87,7 @@ data:
     \ >> b[i];\n\tvector<mi> c = general_multiply(a, b);\n\tfor (int i = 0; i < (int)c.size();\
     \ i++)\n\t\tcout << c[i] << \" \";\n\tcout << '\\n';\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/convolution_mod_1000000007\"\
-    \n\n#include \"../../library/contest/template-minimal.hpp\"\n#include \"../../library/numerical/fast-fourier-transform.hpp\"\
+    \n\n#include \"../../library/contest/template-minimal.hpp\"\n#include \"../../library/polynomial/fast-fourier-transform.hpp\"\
     \n\nint main() {\n\tusing namespace std;\n\tusing namespace FFT;\n\tios_base::sync_with_stdio(0);\n\
     \tint n, m; \n\tcin >> n >> m;\n\tconst int MOD = 1e9 + 7;\n\tusing mi = Mint<MOD,\
     \ 5>;\n\tvector<mi> a(n), b(m);\n\tfor (int i = 0; i < n; i++)\n\t\tcin >> a[i];\n\
@@ -96,12 +96,12 @@ data:
     \tcout << '\\n';\n}"
   dependsOn:
   - library/contest/template-minimal.hpp
-  - library/numerical/fast-fourier-transform.hpp
-  - library/numerical/mod-int2.hpp
+  - library/polynomial/fast-fourier-transform.hpp
+  - library/modular-arithmetic/mod-int2.hpp
   isVerificationFile: true
   path: verify/yosupo/yosupo-convolution_mod_1000000007-fast-fourier-transform.test.cpp
   requiredBy: []
-  timestamp: '2021-07-30 23:07:00-04:00'
+  timestamp: '2021-07-30 23:56:29-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/yosupo-convolution_mod_1000000007-fast-fourier-transform.test.cpp
