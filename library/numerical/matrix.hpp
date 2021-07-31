@@ -1,10 +1,8 @@
 #pragma once
 
-#include <bits/stdc++.h>
-
-template <class D> struct Matrix : std::vector<std::vector<D> {
-	using std::vector<std::vector<D>::std::vector<std::vector;
-	using std::vector<std::vector<D>::size;
+template <class D> struct Matrix : std::vector<std::vector<D>> {
+	using std::vector<std::vector<D>>::std::vector<std::vector>;
+	using std::vector<std::vector<D>>::size;
 
 	int h() const { return int(size()); }
 	int w() const { return int((*this)[0].size()); }
@@ -22,7 +20,7 @@ template <class D> struct Matrix : std::vector<std::vector<D> {
 		return res;
 	}
 
-	Matrix<T>& operator+=(const Matrix& r) {
+	Matrix<D>& operator+=(const Matrix& r) {
 		assert(h() == r.h() && w == r.w());
 		for (int i = 0; i < h(); i++) {
 			for (int j = 0; j < h(); j++) {
@@ -58,6 +56,7 @@ template <class D> struct Matrix : std::vector<std::vector<D> {
 	Matrix operator-(Matrix a, const Matrix& b) { return a -= b; }
 	Matrix& operator*=(const D& r) { return *this = *this * r; }
 	Matrix& operator/=(const D &r) { return *this = *this / r; }
+	friend Matrix operator*(const D& r, Matrix m) { return m *= r; }
 
 	Matrix pow(long long n) const {
 		assert(h() == w());
@@ -71,6 +70,8 @@ template <class D> struct Matrix : std::vector<std::vector<D> {
 		return r;
 	}
 };
+
+namespace MatrixOperations {
 
 template <class D> std::vector<D> solve_linear(Matrix<D> a, std::vector<D> b, D eps) {
 	int h = a.h(), w = a.w();
@@ -233,3 +234,51 @@ template <class Mint> Matrix<Mint> inverse(Matrix<Mint> a) {
 }
 
 template <class D> Matrix<D> make_matrix(int r, int c) { return Matrix<D>(r, std::vector<D>(c)); }
+
+const long double EPS = 1e-12;
+
+int get_row(Matrix<long double>& m, int r, int i, int nxt) {
+	std::pair<long double, int> best = {0, -1};
+	for (int j = nxt; j < r; j++) {
+		m[j][i];
+		best = std::max(best, std::make_pair(std::abs(m[j][i]), j));
+	}
+	return best.first < EPS ? -1 : best.second;
+}
+
+// returns a pair of determinant, rank, while doing Gaussian elimination to m
+template <class D> std::pair<D, int> gauss(Matrix<D>& m) {
+	int r = (int)m.size();
+	int c = (int)m[0].size();
+	int rank = 0, nxt = 0;
+	D prod = 1;
+	for (int i = 0; i < r; i++) {
+		int row = get_row(m, r, i, nxt);
+		if (row == -1) {
+			prod = 0;
+			continue;
+		}
+		if (row != nxt) {
+			prod *= -1;
+			m[row].swap(m[nxt]);
+		}
+		prod *= m[nxt][i];
+		rank++;
+		D x = 1 / m[nxt][i];
+		for (int k = i; k < c; k++) 
+			m[nxt][k] *= x;
+		for (int j = 0; j < r; j++) {
+			if (j != nxt) {
+				D v = m[j][i];
+				if (v == 0) continue;
+				for (int k = i; k < c; k++) {
+					m[j][k] -= v * m[nxt][k];
+				}
+			}
+		}
+		nxt++;
+	}
+	return {prod, rank};
+}
+
+} // MatrixOperations

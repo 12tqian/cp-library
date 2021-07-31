@@ -72,6 +72,7 @@ template <class D> struct Poly : std::vector<D> {
 	Poly& operator%=(const Poly& r) { return *this = *this % r; }
 	Poly& operator<<=(const size_t& n) { return *this = *this << n; }
 	Poly& operator>>=(const size_t& n) { return *this = *this >> n; }
+	friend Poly operator*(D const& l, Matrix<T> r) { return r *= l; }
 
 	Poly pre(int le) const { return Poly(this->begin(), this->begin() + min((int)this->size(), le)); }
 	

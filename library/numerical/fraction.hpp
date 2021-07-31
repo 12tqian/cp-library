@@ -21,11 +21,11 @@ struct Frac {
 	friend Frac operator+(const Frac& l, const Frac& r) { return Frac(l.n * r.d + r.n * l.d, l.d * r.d); }
 	friend Frac operator-(const Frac& l, const Frac& r) { return Frac(l.n * r.d - r.n * l.d, l.d * r.d); }
 	friend Frac operator*(const Frac& l, const Frac& r) { return Frac(l.n * r.n, l.d * r.d); }
-	friend Frac operator*(const Frac& l, int r) { return l * Frac(r, 1); }
-	friend Frac operator*(int r, const Frac& l) { return l * r; }
+	friend Frac operator*(const Frac& l, long long r) { return l * Frac(r, 1); }
+	friend Frac operator*(long long r, const Frac& l) { return l * r; }
 	friend Frac operator/(const Frac& l, const Frac& r) { return l * Frac(r.d, r.n); }
-	friend Frac operator/(const Frac& l, const int& r) { return l / Frac(r, 1); }
-	friend Frac operator/(const int& l, const Frac& r) { return Frac(l, 1) / r; }
+	friend Frac operator/(const Frac& l, const long long& r) { return l / Frac(r, 1); }
+	friend Frac operator/(const long long& l, const Frac& r) { return Frac(l, 1) / r; }
 	friend Frac& operator+=(Frac& l, const Frac& r) { return l = l + r; }
 	friend Frac& operator-=(Frac& l, const Frac& r) { return l = l - r; }
 	template <class T> friend Frac& operator*=(Frac& l, const T& r) { return l = l * r; }
