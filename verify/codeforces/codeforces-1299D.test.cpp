@@ -1,7 +1,7 @@
 #define PROBLEM "https://codeforces.com/contest/1299/problem/D"
 
 #include "../../library/contest/template-short.hpp"
-#include "../../library/numerical/mod-operations.hpp"
+#include "../../library/modular-arithmetic/mod-operations.hpp"
 #include "../../library/numerical/xor-basis.hpp"
 
 using namespace ModOperations;

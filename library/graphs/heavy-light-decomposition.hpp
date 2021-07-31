@@ -6,7 +6,7 @@ private:
 		for (auto& dst : g[cur]) {
 			if (dst == par[cur]) {
 				if (g[cur].size() >= 2 && int(dst) == int(g[cur][0]))
-					swap(g[cur][0], g[cur][1]);
+					std::swap(g[cur][0], g[cur][1]);
 				else
 					continue;
 			}
@@ -15,7 +15,7 @@ private:
 			dfs_sz(dst);
 			size[cur] += size[dst];
 			if (size[dst] > size[g[cur][0]]) {
-				swap(dst, g[cur][0]);
+				std::swap(dst, g[cur][0]);
 			}
 		}
 	}
@@ -111,7 +111,7 @@ public:
 
 	int lca(int a, int b) {
 		while (nxt[a] != nxt[b]) {
-			if (down[a] < down[b]) swap(a, b);
+			if (down[a] < down[b]) std::swap(a, b);
 			a = par[nxt[a]];
 		}
 		return depth[a] < depth[b] ? a : b;

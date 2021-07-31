@@ -1,7 +1,7 @@
 #define PROBLEM "https://open.kattis.com/problems/equationsolver"
 
 #include "../../library/contest/template-minimal.hpp"
-#include "../../library/numerical/matrix.hpp"
+#include "../../library/numerical/matrix2.hpp"
 
 // kattis
 int main() {

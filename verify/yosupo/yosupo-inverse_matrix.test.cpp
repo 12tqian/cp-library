@@ -1,7 +1,7 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/inverse_matrix"
 
 #include "../../library/contest/template-minimal.hpp"
-#include "../../library/numerical/matrix.hpp"
+#include "../../library/numerical/matrix2.hpp"
 #include "../../library/modular-arithmetic/mod-int2.hpp"
 
 using mi = Mint<998244353, 5>;

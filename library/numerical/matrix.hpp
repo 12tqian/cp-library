@@ -1,135 +1,194 @@
 #pragma once
 
-namespace MatrixOperations {
-
-template <class T> using Matrix = std::vector<std::vector<T>>;
-
-template <class T> Matrix<T> make_matrix(int r, int c) { return Matrix<T>(r, std::vector<T>(c)); }
-
-template <class T> Matrix<T>& operator+=(Matrix<T>& a, const Matrix<T>& b) {
-	for (int i = 0; i < (int)a.size(); i++) {
-		for (int j = 0; j < (int)a[0].size(); j++) {
-			a[i][j] += b[i][j];
-		}
-	}
-	return a;
-}
-
-template <class T> Matrix<T>& operator-=(Matrix<T>& a, const Matrix<T>& b) {
-	for (int i = 0; i < (int)a.size(); i++) {
-		for (int j = 0; j < (int)a[0].size(); j++) {
-			a[i][j] -= b[i][j];
-		}
-	}
-	return a;
-}
-
-template <class T> Matrix<T> operator*(const Matrix<T>& a, const Matrix<T>& b) {
-	assert(a[0].size() == b.size());
-	int x = (int)a.size();
-	int y = (int)a[0].size();
-	int z = (int)b[0].size();
-	Matrix<T> c = make_matrix<T>(x, z);
-	for (int i = 0; i < x; i++) {
-		for (int j = 0; j < y; j++) {
-			for (int k = 0; k < z; k++) {
-				c[i][k] += a[i][j] * b[j][k];
-			}
-		}
-	}
-	return c;
-}
-
-template <class T> Matrix<T> operator+(Matrix<T> a, const Matrix<T>& b) { return a += b; }
-template <class T> Matrix<T> operator-(Matrix<T> a, const Matrix<T>& b) { return a -= b; }
-template <class T> Matrix<T>& operator*=(Matrix<T>& a, const Matrix<T>& b) { return a = a * b; }
-
-template <class T> Matrix<T> pow(Matrix<T> m, long long p) {
-	int n = (int)m.size();
-	assert(n == (int)m[0].size() && p >= 0);
-	Matrix<T> res = make_matrix<T>(n, n);
-	for (int i = 0; i < n; i++) 
-		res[i][i] = 1;
-	for (; p; p >>= 1, m *= m) {
-		if (p & 1) {
-			res *= m;
-		}
-	}
-	return res;
-}
-
-template <class T> int get_row(Matrix<T>& m, int r, int i, int nxt) {
-	for (int j = nxt; j < r; j++) {
-		if (m[j][i] != 0) {
-			return j;
-		}
-	}
-	return -1;
-}
-
-const long double EPS = 1e-12;
-
-template <> int get_row<long double>(Matrix<long double>& m, int r, int i, int nxt) {
-	std::pair<long double, int> best = {0, -1};
-	for (int j = nxt; j < r; j++) {
-		best = std::max(best, {abs(m[j][i]), j});
-	}
-	return best.first < EPS ? -1 : best.second;
-}
-
-// returns a pair of determinant, rank, while doing Gaussian elimination to m
-template <class T> std::pair<T, int> gauss(Matrix<T>& m) {
-	int r = (int)m.size();
-	int c = (int)m[0].size();
-	int rank = 0, nxt = 0;
-	T prod = 1;
-	for (int i = 0; i < r; i++) {
-		int row = get_row(m, r, i, nxt);
-		if (row == -1) {
-			prod = 0;
-			continue;
-		}
-		if (row != nxt) {
-			prod *= -1;
-			m[row].swap(m[nxt]);
-		}
-		prod *= m[nxt][i];
-		rank++;
-		T x = 1 / m[nxt][i];
-		for (int k = i; k < c; k++) 
-			m[nxt][k] *= x;
-		for (int j = 0; j < r; j++) {
-			if (j != nxt) {
-				T v = m[j][i];
-				if (v == 0) continue;
-				for (int k = i; k < c; k++) {
-					m[j][k] -= v * m[nxt][k];
+template <class D> struct Matrix : std::vector<std::vector<D> {
+	using std::vector<std::vector<D>::std::vector<std::vector;
+	using std::vector<std::vector<D>::size;
+	int h() const { return int(size()); }
+	int w() const { return int((*this)[0].size()); }
+	Matrix operator*(const Matrix& r) const {
+		assert(w() == r.h());
+		Matrix res(h(), std::vector<D>(r.w()));
+		for (int i = 0; i < h(); i++) {
+			for (int j = 0; j < r.w(); j++) {
+				for (int k = 0; k < w(); k++) {
+					res[i][j] += (*this)[i][k] * r[k][j];
 				}
 			}
 		}
-		nxt++;
+		return res;
 	}
-	return {prod, rank};
+	Matrix& operator*=(const Matrix& r) { return *this = *this * r; }
+	Matrix pow(ll n) const {
+		assert(h() == w());
+		Matrix x = *this, r(h(), std::vector<D>(w()));
+		for (int i = 0; i < h(); i++) r[i][i] = D(1);
+		while (n) {
+			if (n & 1) r *= x;
+			x *= x;
+			n >>= 1;
+		}
+		return r;
+	}
+};
+
+template <class D> std::vector<D> solve_linear(Matrix<D> a, std::vector<D> b, D eps) {
+	int h = a.h(), w = a.w();
+	int r = 0;
+	std::vector<int> idxs;
+	for (int x = 0; x < w; x++) {
+		for (int y = r + 1; y < h; y++) {
+			D d = hypot(a[r][x], a[y][x]);
+			if (abs(d) <= eps) continue;
+			D c = a[r][x] / d, s = a[y][x] / d;
+			auto rot = [&](D& u, D& v) {
+				tie(u, v) = make_pair(c * u + s * v, c * v - s * u);
+			};
+			rot(b[r], b[y]);
+			for (int k = x; k < w; k++) rot(a[r][k], a[y][k]);
+		}
+		if (a[r][x] <= eps) continue;
+		r++;
+		idxs.push_back(x);
+		if (r == h) break;
+	}
+	std::vector<D> v(w);
+	for (int y = r - 1; y >= 0; y--) {
+		int f = idxs[y];
+		v[f] = b[y];
+		for (int x = f + 1; x < w; x++) {
+			v[f] -= a[y][x] * v[x];
+		}
+		v[f] /= a[y][f];
+	}
+	return v;
 }
 
-template <class T> Matrix<T> inv(Matrix<T> m) {
-	int r = (int)m.size();
-	assert(r == (int)m[0].size());
-	Matrix<T> x = make_matrix<T>(r, 2 * r);
-	for (int i = 0; i < r; i++) {
-		x[i][i + r] = 1;
-		for (int j = 0; j < r; j++) {
-			x[i][j] = m[i][j];
+template <class Mint> std::vector<Mint> solve_linear(Matrix<Mint> a, std::vector<Mint> b) {
+	int h = a.h(), w = a.w();
+	int r = 0;
+	std::vector<int> idxs;
+	for (int x = 0; x < w; x++) {
+		int my = -1;
+		for (int y = r; y < h; y++) {
+			if (a[y][x]) {
+				my = y;
+				break;
+			}
 		}
-	}
-	if (gauss(x).second != r) return Matrix<T>();
-	Matrix<T> res = make_matrix<T>(r, r);
-	for (int i = 0; i < r; i++) {
-		for (int j = 0; j < r; j++) {
-			res[i][j] = x[i][j + r];
+		if (my == -1) continue;
+		if (r != my) std::swap(a[r], a[my]);
+		std::swap(b[r], b[my]);
+		for (int y = r + 1; y < h; y++) {
+			if (!a[y][x]) continue;
+			auto freq = a[y][x] / a[r][x];
+			for (int k = x; k < w; k++) a[y][k] -= freq * a[r][k];
+			b[y] -= freq * b[r];
 		}
+		r++;
+		idxs.push_back(x);
+		if (r == h) break;
 	}
-	return res;
+	std::vector<Mint> v(w);
+	for (int y = r - 1; y >= 0; y--) {
+		int f = idxs[y];
+		v[f] = b[y];
+		for (int x = f + 1; x < w; x++) {
+			v[f] -= a[y][x] * v[x];
+		}
+		v[f] /= a[y][f];
+	}
+	return v;
 }
 
-} // namespace MatrixOperations
+template <class Mint> int calc_rank(Matrix<Mint> a) {
+	int h = a.h(), w = a.w();
+	int r = 0;
+	std::vector<int> idxs;
+	for (int x = 0; x < w; x++) {
+		int my = -1;
+		for (int y = r; y < h; y++) {
+			if (a[y][x]) {
+				my = y;
+				break;
+			}
+		}
+		if (my == -1) continue;
+		if (r != my) std::swap(a[r], a[my]);
+		for (int y = r + 1; y < h; y++) {
+			if (!a[y][x]) continue;
+			auto freq = a[y][x] / a[r][x];
+			for (int k = x; k < w; k++) a[y][k] -= freq * a[r][k];
+		}
+		r++;
+		idxs.push_back(x);
+		if (r == h) break;
+	}
+	return r;
+}
+
+template <class Mint> Mint calc_det(Matrix<Mint> a) {
+	assert(a.h() == a.w());
+	int n = a.h();
+
+	bool flip = false;
+	for (int x = 0; x < n; x++) {
+		int my = -1;
+		for (int y = x; y < n; y++) {
+			if (a[y][x]) {
+				my = y;
+				break;
+			}
+		}
+		if (my == -1) return 0;
+		if (x != my) {
+			std::swap(a[x], a[my]);
+			if ((x - my) % 2) flip = !flip;
+		}
+		for (int y = x + 1; y < n; y++) {
+			if (!a[y][x]) continue;
+			auto freq = a[y][x] / a[x][x];
+			for (int k = x; k < n; k++) a[y][k] -= freq * a[x][k];
+		}
+	}
+	Mint det = (!flip ? 1 : -1);
+	for (int i = 0; i < n; i++) {
+		det *= a[i][i];
+	}
+	return det;
+}
+
+template <class Mint> Matrix<Mint> inverse(Matrix<Mint> a) {
+	assert(a.h() == a.w());
+	int n = a.h();
+
+	Matrix<Mint> b(n, std::vector<Mint>(n));
+	for (int i = 0; i < n; i++) b[i][i] = 1;
+
+	for (int x = 0; x < n; x++) {
+		int my = -1;
+		for (int y = x; y < n; y++) {
+			if (a[y][x]) {
+				my = y;
+				break;
+			}
+		}
+		if (my == -1) return {};
+		if (x != my) {
+			std::swap(a[x], a[my]);
+			std::swap(b[x], b[my]);
+		}
+		auto freq = a[x][x];
+		for (int j = 0; j < n; j++) {
+			a[x][j] /= freq;
+			b[x][j] /= freq;
+		}
+		for (int y = 0; y < n; y++) {
+			if (x == y) continue;
+			if (!a[y][x]) continue;
+			freq = a[y][x];
+			for (int k = 0; k < n; k++) a[y][k] -= freq * a[x][k];
+			for (int k = 0; k < n; k++) b[y][k] -= freq * b[x][k];
+		}
+	}
+	return b;
+}
