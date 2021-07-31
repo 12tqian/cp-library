@@ -100,7 +100,7 @@ public:
 	void path_noncommutative_query(int u, int v, bool vertex, const F& f) {
 		int l = lca(u, v);
 		for (auto&& [a, b] : ascend(u, l)) f(a + 1, b - 1);
-		if (vertex) f(down[l], down[l] + 1);
+		if (vertex) f(down[l], down[l]);
 		for (auto&& [a, b] : descend(l, v)) f(a, b);
 	}
 
