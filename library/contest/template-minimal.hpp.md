@@ -49,6 +49,9 @@ data:
     path: verify/codeforces/codeforces-319C.test.cpp
     title: verify/codeforces/codeforces-319C.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/codeforces/codeforces-869E-general-fwt.test.cpp
+    title: verify/codeforces/codeforces-869E-general-fwt.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/codeforces/codeforces-869E-quadtree.test.cpp
     title: verify/codeforces/codeforces-869E-quadtree.test.cpp
   - icon: ':heavy_check_mark:'
@@ -105,7 +108,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-enumerate_triangles.test.cpp
     title: verify/yosupo/yosupo-enumerate_triangles.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/yosupo-exp_of_formal_power_series.test.cpp
     title: verify/yosupo/yosupo-exp_of_formal_power_series.test.cpp
   - icon: ':heavy_check_mark:'
@@ -129,6 +132,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-log_of_formal_power_series.test.cpp
     title: verify/yosupo/yosupo-log_of_formal_power_series.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/yosupo/yosupo-multipoint_evaluation.test.cpp
+    title: verify/yosupo/yosupo-multipoint_evaluation.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-point_add_range_sum-fenwick-tree.test.cpp
     title: verify/yosupo/yosupo-point_add_range_sum-fenwick-tree.test.cpp
@@ -334,6 +340,7 @@ data:
   - verify/yosupo/yosupo-point_add_range_sum-lazy-segment-tree.test.cpp
   - verify/yosupo/yosupo-segment_add_get_min-li-chao-tree-online.test.cpp
   - verify/yosupo/yosupo-static_range_sum.test.cpp
+  - verify/yosupo/yosupo-multipoint_evaluation.test.cpp
   - verify/yosupo/yosupo-pow_of_formal_power_series.test.cpp
   - verify/yosupo/yosupo-unionfind.test.cpp
   - verify/yosupo/yosupo-range_chmin_chmax_add_range_sum.test.cpp
@@ -361,6 +368,7 @@ data:
   - verify/codeforces/codeforces-981G.test.cpp
   - verify/codeforces/codeforces-1553G.test.cpp
   - verify/codeforces/codeforces-1551F.test.cpp
+  - verify/codeforces/codeforces-869E-general-fwt.test.cpp
   - verify/codeforces/codeforces-1463E.test.cpp
   - verify/codeforces/codeforces-319C.test.cpp
   - verify/codeforces/codeforces-869E-quadtree.test.cpp

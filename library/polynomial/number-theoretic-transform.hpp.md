@@ -2,14 +2,14 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: library/polynomial/multipoint-evaluation.hpp
     title: library/polynomial/multipoint-evaluation.hpp
   - icon: ':question:'
     path: library/polynomial/polynomial.hpp
     title: library/polynomial/polynomial.hpp
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/yosupo-exp_of_formal_power_series.test.cpp
     title: verify/yosupo/yosupo-exp_of_formal_power_series.test.cpp
   - icon: ':heavy_check_mark:'
@@ -18,6 +18,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-log_of_formal_power_series.test.cpp
     title: verify/yosupo/yosupo-log_of_formal_power_series.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/yosupo/yosupo-multipoint_evaluation.test.cpp
+    title: verify/yosupo/yosupo-multipoint_evaluation.test.cpp
   - icon: ':x:'
     path: verify/yosupo/yosupo-pow_of_formal_power_series.test.cpp
     title: verify/yosupo/yosupo-pow_of_formal_power_series.test.cpp
@@ -142,6 +145,7 @@ data:
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/yosupo/yosupo-log_of_formal_power_series.test.cpp
+  - verify/yosupo/yosupo-multipoint_evaluation.test.cpp
   - verify/yosupo/yosupo-pow_of_formal_power_series.test.cpp
   - verify/yosupo/yosupo-exp_of_formal_power_series.test.cpp
   - verify/yosupo/yosupo-inv_of_formal_power_series.test.cpp

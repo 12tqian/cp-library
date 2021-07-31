@@ -10,6 +10,9 @@ data:
     title: library/polynomial/polynomial2.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: verify/codeforces/codeforces-869E-general-fwt.test.cpp
+    title: verify/codeforces/codeforces-869E-general-fwt.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/codeforces/codeforces-869E-quadtree.test.cpp
     title: verify/codeforces/codeforces-869E-quadtree.test.cpp
   - icon: ':heavy_check_mark:'
@@ -21,7 +24,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-convolution_mod_1000000007-karatsuba.test.cpp
     title: verify/yosupo/yosupo-convolution_mod_1000000007-karatsuba.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/yosupo-exp_of_formal_power_series.test.cpp
     title: verify/yosupo/yosupo-exp_of_formal_power_series.test.cpp
   - icon: ':heavy_check_mark:'
@@ -36,6 +39,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-log_of_formal_power_series.test.cpp
     title: verify/yosupo/yosupo-log_of_formal_power_series.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/yosupo/yosupo-multipoint_evaluation.test.cpp
+    title: verify/yosupo/yosupo-multipoint_evaluation.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-point_set_range_composite.test.cpp
     title: verify/yosupo/yosupo-point_set_range_composite.test.cpp
@@ -117,6 +123,7 @@ data:
   - verify/yosupo/yosupo-convolution_mod_1000000007-karatsuba.test.cpp
   - verify/yosupo/yosupo-convolution_mod_1000000007-fast-fourier-transform.test.cpp
   - verify/yosupo/yosupo-log_of_formal_power_series.test.cpp
+  - verify/yosupo/yosupo-multipoint_evaluation.test.cpp
   - verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
   - verify/yosupo/yosupo-pow_of_formal_power_series.test.cpp
   - verify/yosupo/yosupo-exp_of_formal_power_series.test.cpp
@@ -125,6 +132,7 @@ data:
   - verify/yosupo/yosupo-inv_of_formal_power_series.test.cpp
   - verify/yosupo/yosupo-point_set_range_composite.test.cpp
   - verify/codeforces/codeforces-981G.test.cpp
+  - verify/codeforces/codeforces-869E-general-fwt.test.cpp
   - verify/codeforces/codeforces-869E-quadtree.test.cpp
 documentation_of: library/modular-arithmetic/mod-int2.hpp
 layout: document

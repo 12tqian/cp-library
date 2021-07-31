@@ -67,7 +67,7 @@ data:
       title: library/data-structures/1d-range-queries/sparse-table.hpp
   - name: library/data-structures/2d-range-queries
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/data-structures/2d-range-queries/general-fenwick-tree.hpp
       title: library/data-structures/2d-range-queries/general-fenwick-tree.hpp
     - icon: ':heavy_check_mark:'
@@ -253,7 +253,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/polynomial/karatsuba.hpp
       title: library/polynomial/karatsuba.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/polynomial/multipoint-evaluation.hpp
       title: library/polynomial/multipoint-evaluation.hpp
     - icon: ':question:'
@@ -334,7 +334,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/codeforces/codeforces-319C.test.cpp
       title: verify/codeforces/codeforces-319C.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/codeforces/codeforces-869E-general-fwt.test.cpp
       title: verify/codeforces/codeforces-869E-general-fwt.test.cpp
     - icon: ':heavy_check_mark:'
@@ -425,7 +425,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-enumerate_triangles.test.cpp
       title: verify/yosupo/yosupo-enumerate_triangles.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/yosupo/yosupo-exp_of_formal_power_series.test.cpp
       title: verify/yosupo/yosupo-exp_of_formal_power_series.test.cpp
     - icon: ':heavy_check_mark:'
@@ -452,7 +452,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-log_of_formal_power_series.test.cpp
       title: verify/yosupo/yosupo-log_of_formal_power_series.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-multipoint_evaluation.test.cpp
       title: verify/yosupo/yosupo-multipoint_evaluation.test.cpp
     - icon: ':heavy_check_mark:'

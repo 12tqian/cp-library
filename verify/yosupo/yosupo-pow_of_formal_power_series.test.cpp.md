@@ -83,95 +83,94 @@ data:
     \ b2);\n\t\tfor (int i = 0; i < z; i++) a2[i] *= b2[i];\n\t}\n\tbutterfly(true,\
     \ a2);\n\ta2.resize(n + m - 1);\n\tMint iz = 1 / Mint(z);\n\tfor (int i = 0; i\
     \ < n + m - 1; i++) a2[i] *= iz;\n\treturn a2;\n}\n\n}\n\ntemplate <class D> struct\
-    \ Poly {\n\tstd::vector<D> v;\n\tPoly(const std::vector<D>& _v = {}) : v(_v) {\
-    \ shrink(); }\n\n\tvoid shrink() {\n\t\twhile (v.size() && !v.back()) v.pop_back();\n\
-    \t}\n\n\tvoid resize(int n) { v.resize(n); }\n\tvoid assign(int n, D& x) { v.assign(n,\
-    \ x); }\n\tvoid push_back(const D& x) { v.push_back(x); }\n\tvoid pop_back() {\
-    \ v.pop_back(); }\n\t\n\tint size() const { return int(v.size()); }\n\n\tD freq(int\
-    \ p) const { return (p < size()) ? v[p] : D(0); }\n\tD& operator[] (int index)\
-    \ { return v[index]; }\n\t\n\tPoly operator+(const Poly& r) const {\n\t\tauto\
-    \ n = max(size(), r.size());\n\t\tstd::vector<D> res(n);\n\t\tfor (int i = 0;\
-    \ i < n; i++) res[i] = freq(i) + r.freq(i);\n\t\treturn res;\n\t}\n\t\n\tPoly\
-    \ operator-(const Poly& r) const {\n\t\tint n = max(size(), r.size());\n\t\tstd::vector<D>\
-    \ res(n);\n\t\tfor (int i = 0; i < n; i++) res[i] = freq(i) - r.freq(i);\n\t\t\
-    return res;\n\t}\n\t\n\tPoly operator*(const Poly& r) const { return {NTT::multiply(v,\
-    \ r.v)}; }\n\t\n\tPoly operator*(const D& r) const {\n\t\tint n = size();\n\t\t\
-    std::vector<D> res(n);\n\t\tfor (int i = 0; i < n; i++) res[i] = v[i] * r;\n\t\
-    \treturn res;\n\t}\n\n\tPoly operator/(const D &r) const{ return *this * (1 /\
-    \ r); }\n\t\n\tPoly operator/(const Poly& r) const {\n\t\tif (size() < r.size())\
-    \ return {{}};\n\t\tint n = size() - r.size() + 1;\n\t\treturn (rev().pre(n) *\
-    \ r.rev().inv(n)).pre(n).rev(n);\n\t}\n\t\n\tPoly operator%(const Poly& r) const\
-    \ { return *this - *this / r * r; }\n\t\n\tPoly operator<<(int s) const {\n\t\t\
-    std::vector<D> res(size() + s);\n\t\tfor (int i = 0; i < size(); i++) res[i +\
-    \ s] = v[i];\n\t\treturn res;\n\t}\n\t\n\tPoly operator>>(int s) const {\n\t\t\
-    if (size() <= s) return Poly();\n\t\tstd::vector<D> res(size() - s);\n\t\tfor\
-    \ (int i = 0; i < size() - s; i++) res[i] = v[i + s];\n\t\treturn res;\n\t}\n\t\
-    \n\tPoly& operator+=(const Poly& r) { return *this = *this + r; }\n\tPoly& operator-=(const\
-    \ Poly& r) { return *this = *this - r; }\n\tPoly& operator*=(const Poly& r) {\
-    \ return *this = *this * r; }\n\tPoly& operator*=(const D& r) { return *this =\
-    \ *this * r; }\n\tPoly& operator/=(const Poly& r) { return *this = *this / r;\
-    \ }\n\tPoly& operator/=(const D &r) {return *this = *this/r;}\n\tPoly& operator%=(const\
-    \ Poly& r) { return *this = *this % r; }\n\tPoly& operator<<=(const size_t& n)\
-    \ { return *this = *this << n; }\n\tPoly& operator>>=(const size_t& n) { return\
-    \ *this = *this >> n; }\n\n\tPoly pre(int le) const { return {{v.begin(), v.begin()\
-    \ + min(size(), le)}}; }\n\t\n\tPoly rev(int n = -1) const {\n\t\tstd::vector<D>\
-    \ res = v;\n\t\tif (n != -1) res.resize(n);\n\t\treverse(res.begin(), res.end());\n\
-    \t\treturn res;\n\t}\n\t\n\tPoly diff() const {\n\t\tstd::vector<D> res(max(0,\
-    \ size() - 1));\n\t\tfor (int i = 1; i < size(); i++) res[i - 1] = freq(i) * i;\n\
-    \t\treturn res;\n\t}\n\t\n\tPoly inte() const {\n\t\tstd::vector<D> res(size()\
-    \ + 1);\n\t\tfor (int i = 0; i < size(); i++) res[i + 1] = freq(i) / (i + 1);\n\
-    \t\treturn res;\n\t}\n\n\t// f * f.inv() = 1 + g(x)x^m\n\tPoly inv(int m) const\
-    \ {\n\t\tPoly res = Poly({D(1) / freq(0)});\n\t\tfor (int i = 1; i < m; i *= 2)\
-    \ {\n\t\t\tres = (res * D(2) - res * res * pre(2 * i)).pre(2 * i);\n\t\t}\n\t\t\
-    return res.pre(m);\n\t}\n\t\n\tPoly exp(int n) const {\n\t\tassert(freq(0) ==\
-    \ 0);\n\t\tPoly f({1}), g({1});\n\t\tfor (int i = 1; i < n; i *= 2) {\n\t\t\t\
-    g = (g * 2 - f * g * g).pre(i);\n\t\t\tPoly q = diff().pre(i - 1);\n\t\t\tPoly\
-    \ w = (q + g * (f.diff() - f * q)).pre(2 * i - 1);\n\t\t\tf = (f + f * (*this\
-    \ - w.inte()).pre(2 * i)).pre(2 * i);\n\t\t}\n\t\treturn f.pre(n);\n\t}\n\t\n\t\
-    Poly log(int n) const {\n\t\tassert(freq(0) == 1);\n\t\tauto f = pre(n);\n\t\t\
-    return (f.diff() * f.inv(n - 1)).pre(n - 1).inte();\n\t}\n\n\tPoly pow_mod(long\
-    \ long n, const Poly& mod) {\n\t\tPoly x = *this, r = {{1}};\n\t\twhile (n) {\n\
-    \t\t\tif (n & 1) r = r * x % mod;\n\t\t\tx = x * x % mod;\n\t\t\tn >>= 1;\n\t\t\
-    }\n\t\treturn r;\n\t}\n\n\tPoly pow(int n, long long e) {\n\t\tPoly b = pre(n\
-    \ + 1);\n\t\tPoly r({1});\n\t\twhile (e) {\n\t\t\tif (e & 1) {\n\t\t\t\tr *= b;\n\
-    \t\t\t\tr.pre(n + 1);\n\t\t\t}\n\t\t\tb *= b;\n\t\t\tr.pre(n + 1);\n\t\t\te >>=\
-    \ 1;\n\t\t}\n\t\treturn r;\n\t}\n\n\tfriend ostream& operator<<(ostream& os, const\
-    \ Poly& p) {\n\t\tif (p.size() == 0) return os << \"0\";\n\t\tfor (auto i = 0;\
-    \ i < p.size(); i++) {\n\t\t\tif (p.v[i]) {\n\t\t\t\tos << p.v[i] << \"x^\" <<\
-    \ i;\n\t\t\t\tif (i != p.size() - 1) os << \"+\";\n\t\t\t}\n\t\t}\n\t\treturn\
-    \ os;\n\t}\n};\n\n// 5 is a root of both mods\ntemplate <int MOD, int RT> struct\
-    \ Mint {\n\tstatic const int mod = MOD;\n\tstatic constexpr Mint rt() { return\
-    \ RT; } // primitive root for FFT\n\tint v; \n\texplicit operator int() const\
-    \ { return v; } // explicit -> don't silently convert to int\n\texplicit operator\
-    \ bool() const { return v != 0; }\n\tMint() { v = 0; }\n\tMint(long long _v) {\
-    \ v = int((-MOD <= _v && _v < MOD) ? _v : _v % MOD); if (v < 0) v += MOD; }\n\t\
-    friend bool operator==(const Mint &a, const Mint &b) { return a.v == b.v; }\n\t\
-    friend bool operator!=(const Mint &a, const Mint &b) { return !(a == b); }\n\t\
-    friend bool operator<(const Mint &a, const Mint &b) { return a.v < b.v; }\n\t\
-    friend bool operator>(const Mint &a, const Mint &b) { return a.v > b.v; }\n\t\
-    friend bool operator<=(const Mint &a, const Mint &b) { return a.v <= b.v; }\n\t\
-    friend bool operator>=(const Mint &a, const Mint &b) { return a.v >= b.v; }\n\t\
-    friend std::istream& operator >> (std::istream &in, Mint &a) { \n\t\tlong long\
-    \ x; std::cin >> x; a = Mint(x); return in; }\n\tfriend std::ostream& operator\
-    \ << (std::ostream &os, const Mint &a) { return os << a.v; }\n\tMint& operator+=(const\
-    \ Mint &m) { \n\t\tif ((v += m.v) >= MOD) v -= MOD; \n\t\treturn *this; }\n\t\
-    Mint& operator-=(const Mint &m) { \n\t\tif ((v -= m.v) < 0) v += MOD; \n\t\treturn\
-    \ *this; }\n\tMint& operator*=(const Mint &m) { \n\t\tv = (long long)v * m.v %\
-    \ MOD; return *this; }\n\tMint& operator/=(const Mint &m) { return (*this) *=\
-    \ inv(m); }\n\tfriend Mint pow(Mint a, long long p) {\n\t\tMint ans = 1; assert(p\
-    \ >= 0);\n\t\tfor (; p; p /= 2, a *= a) if (p & 1) ans *= a;\n\t\treturn ans;\
-    \ \n\t}\n\tfriend Mint inv(const Mint &a) { assert(a.v != 0); return pow(a, MOD\
-    \ - 2); }\n\tMint operator-() const { return Mint(-v); }\n\tMint& operator++()\
-    \ { return *this += 1; }\n\tMint& operator--() { return *this -= 1; }\n\tfriend\
-    \ Mint operator+(Mint a, const Mint &b) { return a += b; }\n\tfriend Mint operator-(Mint\
-    \ a, const Mint &b) { return a -= b; }\n\tfriend Mint operator*(Mint a, const\
-    \ Mint &b) { return a *= b; }\n\tfriend Mint operator/(Mint a, const Mint &b)\
-    \ { return a /= b; }\n};\n\nusing mi = Mint<998244353, 5>;\n\nint main() {\n\t\
-    ios::sync_with_stdio(false);\n\tcin.tie(0);\n\tint n, m;\n\tcin >> n >> m;\n\t\
-    vector<mi> a(n);\n\tfor (int i = 0; i < n; ++i) {\n\t\tcin >> a[i];\n\t}\n\tPoly<mi>\
-    \ p(a);\n\tPoly<mi> ans = p.pow(n, m);\n\tans.resize(n);\n\tfor (int i = 0; i\
-    \ < n; ++i) {\n\t\tcout << ans[i] << ' ';\n\t}\n\tcout << '\\n';\n\treturn 0;\t\
-    \n}\n"
+    \ Poly : std::vector<D> {\n\tusing vector<D>::vector;\n\tPoly(const std::vector<D>&\
+    \ _v = {}) { \n\t\tfor (int i = 0; i < (int)_v.size(); ++i) {\n\t\t\tthis->push_back(_v[i]);\n\
+    \t\t}\n\t\tshrink(); \n\t}\n\n\tvoid shrink() {\n\t\twhile (this->size() && !this->back())\
+    \ this->pop_back();\n\t}\n\n\tD freq(int p) const { return (p < this->size())\
+    \ ? (*this)[p] : D(0); }\n\t\n\tPoly operator+(const Poly& r) const {\n\t\tauto\
+    \ n = max(this->size(), r.size());\n\t\tstd::vector<D> res(n);\n\t\tfor (int i\
+    \ = 0; i < n; i++) res[i] = freq(i) + r.freq(i);\n\t\treturn res;\n\t}\n\t\n\t\
+    Poly operator-(const Poly& r) const {\n\t\tint n = max(this->size(), r.size());\n\
+    \t\tstd::vector<D> res(n);\n\t\tfor (int i = 0; i < n; i++) res[i] = freq(i) -\
+    \ r.freq(i);\n\t\treturn res;\n\t}\n\t\n\tPoly operator*(const Poly& r) const\
+    \ { return {NTT::multiply((*this), r)}; }\n\t\n\tPoly operator*(const D& r) const\
+    \ {\n\t\tint n = this->size();\n\t\tstd::vector<D> res(n);\n\t\tfor (int i = 0;\
+    \ i < n; i++) res[i] = (*this)[i] * r;\n\t\treturn res;\n\t}\n\n\tPoly operator/(const\
+    \ D &r) const{ return *this * (1 / r); }\n\t\n\tPoly operator/(const Poly& r)\
+    \ const {\n\t\tif (this->size() < r.size()) return {{}};\n\t\tint n = (int)this->size()\
+    \ - r.size() + 1;\n\t\treturn (rev().pre(n) * r.rev().inv(n)).pre(n).rev(n);\n\
+    \t}\n\t\n\tPoly operator%(const Poly& r) const { return *this - *this / r * r;\
+    \ }\n\t\n\tPoly operator<<(int s) const {\n\t\tstd::vector<D> res(this->size()\
+    \ + s);\n\t\tfor (int i = 0; i < this->size(); i++) res[i + s] = (*this)[i];\n\
+    \t\treturn res;\n\t}\n\n\tPoly operator>>(int s) const {\n\t\tif (this->size()\
+    \ <= s) return Poly();\n\t\tstd::vector<D> res(this->size() - s);\n\t\tfor (int\
+    \ i = 0; i < this->size() - s; i++) res[i] = (*this)[i + s];\n\t\treturn res;\n\
+    \t}\n\t\n\tPoly& operator+=(const Poly& r) { return *this = *this + r; }\n\tPoly&\
+    \ operator-=(const Poly& r) { return *this = *this - r; }\n\tPoly& operator*=(const\
+    \ Poly& r) { return *this = *this * r; }\n\tPoly& operator*=(const D& r) { return\
+    \ *this = *this * r; }\n\tPoly& operator/=(const Poly& r) { return *this = *this\
+    \ / r; }\n\tPoly& operator/=(const D &r) {return *this = *this / r;}\n\tPoly&\
+    \ operator%=(const Poly& r) { return *this = *this % r; }\n\tPoly& operator<<=(const\
+    \ size_t& n) { return *this = *this << n; }\n\tPoly& operator>>=(const size_t&\
+    \ n) { return *this = *this >> n; }\n\n\tPoly pre(int le) const { return Poly(this->begin(),\
+    \ this->begin() + min((int)this->size(), le)); }\n\t\n\tPoly rev(int n = -1) const\
+    \ {\n\t\tPoly res = *this;\n\t\tif (n != -1) res.resize(n);\n\t\treverse(res.begin(),\
+    \ res.end());\n\t\treturn res;\n\t}\n\t\n\tPoly diff() const {\n\t\tstd::vector<D>\
+    \ res(max(0, (int)this->size() - 1));\n\t\tfor (int i = 1; i < this->size(); i++)\
+    \ res[i - 1] = freq(i) * i;\n\t\treturn res;\n\t}\n\t\n\tPoly inte() const {\n\
+    \t\tstd::vector<D> res(this->size() + 1);\n\t\tfor (int i = 0; i < this->size();\
+    \ i++) res[i + 1] = freq(i) / (i + 1);\n\t\treturn res;\n\t}\n\n\t// f * f.inv()\
+    \ = 1 + g(x)x^m\n\tPoly inv(int m) const {\n\t\tPoly res = Poly({D(1) / freq(0)});\n\
+    \t\tfor (int i = 1; i < m; i *= 2) {\n\t\t\tres = (res * D(2) - res * res * pre(2\
+    \ * i)).pre(2 * i);\n\t\t}\n\t\treturn res.pre(m);\n\t}\n\t\n\tPoly exp(int n)\
+    \ const {\n\t\tassert(freq(0) == 0);\n\t\tPoly f({1}), g({1});\n\t\tfor (int i\
+    \ = 1; i < n; i *= 2) {\n\t\t\tg = (g * 2 - f * g * g).pre(i);\n\t\t\tPoly q =\
+    \ diff().pre(i - 1);\n\t\t\tPoly w = (q + g * (f.diff() - f * q)).pre(2 * i -\
+    \ 1);\n\t\t\tf = (f + f * (*this - w.inte()).pre(2 * i)).pre(2 * i);\n\t\t}\n\t\
+    \treturn f.pre(n);\n\t}\n\t\n\tPoly log(int n) const {\n\t\tassert(freq(0) ==\
+    \ 1);\n\t\tauto f = pre(n);\n\t\treturn (f.diff() * f.inv(n - 1)).pre(n - 1).inte();\n\
+    \t}\n\n\tPoly pow_mod(long long n, const Poly& mod) {\n\t\tPoly x = *this, r =\
+    \ {{1}};\n\t\twhile (n) {\n\t\t\tif (n & 1) r = r * x % mod;\n\t\t\tx = x * x\
+    \ % mod;\n\t\t\tn >>= 1;\n\t\t}\n\t\treturn r;\n\t}\n\n\tPoly pow(int n, long\
+    \ long e) {\n\t\tPoly b = pre(n + 1);\n\t\tPoly r({1});\n\t\twhile (e) {\n\t\t\
+    \tif (e & 1) {\n\t\t\t\tr *= b;\n\t\t\t\tr.resize(n + 1);\n\t\t\t}\n\t\t\tb *=\
+    \ b;\n\t\t\tb.resize(n + 1);\n\t\t\te >>= 1;\n\t\t}\n\t\treturn r;\n\t}\n\n\t\
+    friend ostream& operator<<(ostream& os, const Poly& p) {\n\t\tif (p.size() ==\
+    \ 0) return os << \"0\";\n\t\tfor (auto i = 0; i < p.size(); i++) {\n\t\t\tif\
+    \ (p[i]) {\n\t\t\t\tos << p[i] << \"x^\" << i;\n\t\t\t\tif (i != p.size() - 1)\
+    \ os << \"+\";\n\t\t\t}\n\t\t}\n\t\treturn os;\n\t}\n};\n\n// 5 is a root of both\
+    \ mods\ntemplate <int MOD, int RT> struct Mint {\n\tstatic const int mod = MOD;\n\
+    \tstatic constexpr Mint rt() { return RT; } // primitive root for FFT\n\tint v;\
+    \ \n\texplicit operator int() const { return v; } // explicit -> don't silently\
+    \ convert to int\n\texplicit operator bool() const { return v != 0; }\n\tMint()\
+    \ { v = 0; }\n\tMint(long long _v) { v = int((-MOD <= _v && _v < MOD) ? _v : _v\
+    \ % MOD); if (v < 0) v += MOD; }\n\tfriend bool operator==(const Mint &a, const\
+    \ Mint &b) { return a.v == b.v; }\n\tfriend bool operator!=(const Mint &a, const\
+    \ Mint &b) { return !(a == b); }\n\tfriend bool operator<(const Mint &a, const\
+    \ Mint &b) { return a.v < b.v; }\n\tfriend bool operator>(const Mint &a, const\
+    \ Mint &b) { return a.v > b.v; }\n\tfriend bool operator<=(const Mint &a, const\
+    \ Mint &b) { return a.v <= b.v; }\n\tfriend bool operator>=(const Mint &a, const\
+    \ Mint &b) { return a.v >= b.v; }\n\tfriend std::istream& operator >> (std::istream\
+    \ &in, Mint &a) { \n\t\tlong long x; std::cin >> x; a = Mint(x); return in; }\n\
+    \tfriend std::ostream& operator << (std::ostream &os, const Mint &a) { return\
+    \ os << a.v; }\n\tMint& operator+=(const Mint &m) { \n\t\tif ((v += m.v) >= MOD)\
+    \ v -= MOD; \n\t\treturn *this; }\n\tMint& operator-=(const Mint &m) { \n\t\t\
+    if ((v -= m.v) < 0) v += MOD; \n\t\treturn *this; }\n\tMint& operator*=(const\
+    \ Mint &m) { \n\t\tv = (long long)v * m.v % MOD; return *this; }\n\tMint& operator/=(const\
+    \ Mint &m) { return (*this) *= inv(m); }\n\tfriend Mint pow(Mint a, long long\
+    \ p) {\n\t\tMint ans = 1; assert(p >= 0);\n\t\tfor (; p; p /= 2, a *= a) if (p\
+    \ & 1) ans *= a;\n\t\treturn ans; \n\t}\n\tfriend Mint inv(const Mint &a) { assert(a.v\
+    \ != 0); return pow(a, MOD - 2); }\n\tMint operator-() const { return Mint(-v);\
+    \ }\n\tMint& operator++() { return *this += 1; }\n\tMint& operator--() { return\
+    \ *this -= 1; }\n\tfriend Mint operator+(Mint a, const Mint &b) { return a +=\
+    \ b; }\n\tfriend Mint operator-(Mint a, const Mint &b) { return a -= b; }\n\t\
+    friend Mint operator*(Mint a, const Mint &b) { return a *= b; }\n\tfriend Mint\
+    \ operator/(Mint a, const Mint &b) { return a /= b; }\n};\n\nusing mi = Mint<998244353,\
+    \ 5>;\n\nint main() {\n\tios::sync_with_stdio(false);\n\tcin.tie(0);\n\tint n,\
+    \ m;\n\tcin >> n >> m;\n\tvector<mi> a(n);\n\tfor (int i = 0; i < n; ++i) {\n\t\
+    \tcin >> a[i];\n\t}\n\tPoly<mi> p(a);\n\tPoly<mi> ans = p.pow(n, m);\n\tans.resize(n);\n\
+    \tfor (int i = 0; i < n; ++i) {\n\t\tcout << ans[i] << ' ';\n\t}\n\tcout << '\\\
+    n';\n\treturn 0;\t\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/pow_of_formal_power_series\"\
     \n\n#include \"../../library/contest/template-minimal.hpp\"\n#include \"../../library/polynomial/polynomial.hpp\"\
     \n#include \"../../library/modular-arithmetic/mod-int2.hpp\"\n\nusing mi = Mint<998244353,\
@@ -188,7 +187,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/yosupo-pow_of_formal_power_series.test.cpp
   requiredBy: []
-  timestamp: '2021-07-30 23:56:29-04:00'
+  timestamp: '2021-07-31 00:54:37-04:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/yosupo/yosupo-pow_of_formal_power_series.test.cpp
