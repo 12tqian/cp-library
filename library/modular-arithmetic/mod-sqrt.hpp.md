@@ -1,11 +1,20 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedRequiredBy:
+  - icon: ':x:'
+    path: library/polynomial/polynomial-sqrt.hpp
+    title: library/polynomial/polynomial-sqrt.hpp
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/yosupo/yosupo-sqrt_mod.test.cpp
+    title: verify/yosupo/yosupo-sqrt_mod.test.cpp
+  - icon: ':x:'
+    path: verify/yosupo/yosupo-sqrt_of_formal_power_series.test.cpp
+    title: verify/yosupo/yosupo-sqrt_of_formal_power_series.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "\nunsigned xrand() {\n\tstatic unsigned x = 314159265, y = 358979323,\
@@ -57,10 +66,13 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: library/modular-arithmetic/mod-sqrt.hpp
-  requiredBy: []
+  requiredBy:
+  - library/polynomial/polynomial-sqrt.hpp
   timestamp: '2021-07-30 23:56:29-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_SOME_WA
+  verifiedWith:
+  - verify/yosupo/yosupo-sqrt_of_formal_power_series.test.cpp
+  - verify/yosupo/yosupo-sqrt_mod.test.cpp
 documentation_of: library/modular-arithmetic/mod-sqrt.hpp
 layout: document
 redirect_from:

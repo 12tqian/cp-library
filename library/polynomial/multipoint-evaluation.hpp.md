@@ -73,8 +73,8 @@ data:
     \ Poly : std::vector<D> {\n\tusing vector<D>::vector;\n\tPoly(const std::vector<D>&\
     \ _v = {}) { \n\t\tfor (int i = 0; i < (int)_v.size(); ++i) {\n\t\t\tthis->push_back(_v[i]);\n\
     \t\t}\n\t\tshrink(); \n\t}\n\n\tvoid shrink() {\n\t\twhile (this->size() && !this->back())\
-    \ this->pop_back();\n\t}\n\n\tD freq(int p) const { return (p < this->size())\
-    \ ? (*this)[p] : D(0); }\n\t\n\tPoly operator+(const Poly& r) const {\n\t\tauto\
+    \ this->pop_back();\n\t}\n\n\tD freq(int p) const { return (p < (int)this->size())\
+    \ ? (*this)[p] : D(0); }\n\t\n\tPoly operator+(const Poly& r) const {\n\t\tint\
     \ n = max(this->size(), r.size());\n\t\tstd::vector<D> res(n);\n\t\tfor (int i\
     \ = 0; i < n; i++) res[i] = freq(i) + r.freq(i);\n\t\treturn res;\n\t}\n\t\n\t\
     Poly operator-(const Poly& r) const {\n\t\tint n = max(this->size(), r.size());\n\
@@ -88,59 +88,65 @@ data:
     \ - r.size() + 1;\n\t\treturn (rev().pre(n) * r.rev().inv(n)).pre(n).rev(n);\n\
     \t}\n\t\n\tPoly operator%(const Poly& r) const { return *this - *this / r * r;\
     \ }\n\t\n\tPoly operator<<(int s) const {\n\t\tstd::vector<D> res(this->size()\
-    \ + s);\n\t\tfor (int i = 0; i < this->size(); i++) res[i + s] = (*this)[i];\n\
-    \t\treturn res;\n\t}\n\n\tPoly operator>>(int s) const {\n\t\tif (this->size()\
+    \ + s);\n\t\tfor (int i = 0; i < (int)this->size(); i++) res[i + s] = (*this)[i];\n\
+    \t\treturn res;\n\t}\n\n\tPoly operator>>(int s) const {\n\t\tif ((int)this->size()\
     \ <= s) return Poly();\n\t\tstd::vector<D> res(this->size() - s);\n\t\tfor (int\
-    \ i = 0; i < this->size() - s; i++) res[i] = (*this)[i + s];\n\t\treturn res;\n\
-    \t}\n\t\n\tPoly& operator+=(const Poly& r) { return *this = *this + r; }\n\tPoly&\
-    \ operator-=(const Poly& r) { return *this = *this - r; }\n\tPoly& operator*=(const\
-    \ Poly& r) { return *this = *this * r; }\n\tPoly& operator*=(const D& r) { return\
-    \ *this = *this * r; }\n\tPoly& operator/=(const Poly& r) { return *this = *this\
-    \ / r; }\n\tPoly& operator/=(const D &r) {return *this = *this / r;}\n\tPoly&\
-    \ operator%=(const Poly& r) { return *this = *this % r; }\n\tPoly& operator<<=(const\
-    \ size_t& n) { return *this = *this << n; }\n\tPoly& operator>>=(const size_t&\
-    \ n) { return *this = *this >> n; }\n\n\tPoly pre(int le) const { return Poly(this->begin(),\
-    \ this->begin() + min((int)this->size(), le)); }\n\t\n\tPoly rev(int n = -1) const\
-    \ {\n\t\tPoly res = *this;\n\t\tif (n != -1) res.resize(n);\n\t\treverse(res.begin(),\
-    \ res.end());\n\t\treturn res;\n\t}\n\t\n\tPoly diff() const {\n\t\tstd::vector<D>\
-    \ res(max(0, (int)this->size() - 1));\n\t\tfor (int i = 1; i < this->size(); i++)\
-    \ res[i - 1] = freq(i) * i;\n\t\treturn res;\n\t}\n\t\n\tPoly inte() const {\n\
-    \t\tstd::vector<D> res(this->size() + 1);\n\t\tfor (int i = 0; i < this->size();\
-    \ i++) res[i + 1] = freq(i) / (i + 1);\n\t\treturn res;\n\t}\n\n\t// f * f.inv()\
-    \ = 1 + g(x)x^m\n\tPoly inv(int m) const {\n\t\tPoly res = Poly({D(1) / freq(0)});\n\
+    \ i = 0; i < (int)this->size() - s; i++) res[i] = (*this)[i + s];\n\t\treturn\
+    \ res;\n\t}\n\t\n\tPoly& operator+=(const Poly& r) { return *this = *this + r;\
+    \ }\n\tPoly& operator-=(const Poly& r) { return *this = *this - r; }\n\tPoly&\
+    \ operator*=(const Poly& r) { return *this = *this * r; }\n\tPoly& operator*=(const\
+    \ D& r) { return *this = *this * r; }\n\tPoly& operator/=(const Poly& r) { return\
+    \ *this = *this / r; }\n\tPoly& operator/=(const D &r) {return *this = *this /\
+    \ r;}\n\tPoly& operator%=(const Poly& r) { return *this = *this % r; }\n\tPoly&\
+    \ operator<<=(const size_t& n) { return *this = *this << n; }\n\tPoly& operator>>=(const\
+    \ size_t& n) { return *this = *this >> n; }\n\n\tPoly pre(int le) const { return\
+    \ Poly(this->begin(), this->begin() + min((int)this->size(), le)); }\n\t\n\tPoly\
+    \ rev(int n = -1) const {\n\t\tPoly res = *this;\n\t\tif (n != -1) res.resize(n);\n\
+    \t\treverse(res.begin(), res.end());\n\t\treturn res;\n\t}\n\t\n\tPoly diff()\
+    \ const {\n\t\tstd::vector<D> res(max(0, (int)this->size() - 1));\n\t\tfor (int\
+    \ i = 1; i < (int)this->size(); i++) res[i - 1] = freq(i) * i;\n\t\treturn res;\n\
+    \t}\n\t\n\tPoly inte() const {\n\t\tstd::vector<D> res(this->size() + 1);\n\t\t\
+    for (int i = 0; i < (int)this->size(); i++) res[i + 1] = freq(i) / (i + 1);\n\t\
+    \treturn res;\n\t}\n\n\t// f * f.inv() = 1 + g(x)x^m\n\tPoly inv(int m = -1) const\
+    \ {\n\t\tif (m == -1) m = (int)this->size();\n\t\tPoly res = Poly({D(1) / freq(0)});\n\
     \t\tfor (int i = 1; i < m; i *= 2) {\n\t\t\tres = (res * D(2) - res * res * pre(2\
-    \ * i)).pre(2 * i);\n\t\t}\n\t\treturn res.pre(m);\n\t}\n\t\n\tPoly exp(int n)\
-    \ const {\n\t\tassert(freq(0) == 0);\n\t\tPoly f({1}), g({1});\n\t\tfor (int i\
-    \ = 1; i < n; i *= 2) {\n\t\t\tg = (g * 2 - f * g * g).pre(i);\n\t\t\tPoly q =\
-    \ diff().pre(i - 1);\n\t\t\tPoly w = (q + g * (f.diff() - f * q)).pre(2 * i -\
-    \ 1);\n\t\t\tf = (f + f * (*this - w.inte()).pre(2 * i)).pre(2 * i);\n\t\t}\n\t\
-    \treturn f.pre(n);\n\t}\n\t\n\tPoly log(int n) const {\n\t\tassert(freq(0) ==\
+    \ * i)).pre(2 * i);\n\t\t}\n\t\treturn res.pre(m);\n\t}\n\t\n\tPoly exp(int n\
+    \ = -1) const {\n\t\tassert(freq(0) == 0);\n\t\tif (n == -1) n = (int)this->size();\n\
+    \t\tPoly f({1}), g({1});\n\t\tfor (int i = 1; i < n; i *= 2) {\n\t\t\tg = (g *\
+    \ 2 - f * g * g).pre(i);\n\t\t\tPoly q = diff().pre(i - 1);\n\t\t\tPoly w = (q\
+    \ + g * (f.diff() - f * q)).pre(2 * i - 1);\n\t\t\tf = (f + f * (*this - w.inte()).pre(2\
+    \ * i)).pre(2 * i);\n\t\t}\n\t\treturn f.pre(n);\n\t}\n\t\n\tPoly log(int n =\
+    \ -1) const {\n\t\tif (n == -1) n = (int)this->size();\n\t\tassert(freq(0) ==\
     \ 1);\n\t\tauto f = pre(n);\n\t\treturn (f.diff() * f.inv(n - 1)).pre(n - 1).inte();\n\
-    \t}\n\n\tPoly pow_mod(long long n, const Poly& mod) {\n\t\tPoly x = *this, r =\
-    \ {{1}};\n\t\twhile (n) {\n\t\t\tif (n & 1) r = r * x % mod;\n\t\t\tx = x * x\
-    \ % mod;\n\t\t\tn >>= 1;\n\t\t}\n\t\treturn r;\n\t}\n\n\tPoly pow(int n, long\
-    \ long e) {\n\t\tPoly b = pre(n + 1);\n\t\tPoly r({1});\n\t\twhile (e) {\n\t\t\
-    \tif (e & 1) {\n\t\t\t\tr *= b;\n\t\t\t\tr.resize(n + 1);\n\t\t\t}\n\t\t\tb *=\
-    \ b;\n\t\t\tb.resize(n + 1);\n\t\t\te >>= 1;\n\t\t}\n\t\treturn r;\n\t}\n\n\t\
-    friend ostream& operator<<(ostream& os, const Poly& p) {\n\t\tif (p.size() ==\
-    \ 0) return os << \"0\";\n\t\tfor (auto i = 0; i < p.size(); i++) {\n\t\t\tif\
-    \ (p[i]) {\n\t\t\t\tos << p[i] << \"x^\" << i;\n\t\t\t\tif (i != p.size() - 1)\
-    \ os << \"+\";\n\t\t\t}\n\t\t}\n\t\treturn os;\n\t}\n};\n\ntemplate <class Mint>\
-    \ struct MultiEval {\n\tusing NP = MultiEval*;\n\tNP l, r;\n\tstd::vector<Mint>\
-    \ que;\n\tint sz;\n\tPoly<Mint> mul;\n\n\tMultiEval(const std::vector<Mint>& _que,\
-    \ int off, int _sz) : sz(_sz) {\n\t\tif (sz <= 100) {\n\t\t\tque = {_que.begin()\
-    \ + off, _que.begin() + off + sz};\n\t\t\tmul = {{1}};\n\t\t\tfor (auto x : que)\
-    \ mul *= {{-x, 1}};\n\t\t\treturn;\n\t\t}\n\t\tl = new MultiEval(_que, off, sz\
-    \ / 2);\n\t\tr = new MultiEval(_que, off + sz / 2, sz - sz / 2);\n\t\tmul = l->mul\
-    \ * r->mul;\n\t}\n\n\tMultiEval(const std::vector<Mint>& _que) : MultiEval(_que,\
-    \ 0, int(_que.size())) {}\n\n\tvoid query(const Poly<Mint>& _pol, std::vector<Mint>&\
-    \ res) const {\n\t\tif (sz <= 100) {\n\t\t\tfor (auto x : que) {\n\t\t\t\tMint\
-    \ sm = 0, base = 1;\n\t\t\t\tfor (int i = 0; i < _pol.size(); i++) {\n\t\t\t\t\
-    \tsm += base * _pol.freq(i);\n\t\t\t\t\tbase *= x;\n\t\t\t\t}\n\t\t\t\tres.push_back(sm);\n\
-    \t\t\t}\n\t\t\treturn;\n\t\t}\n\t\tauto pol = _pol % mul;\n\t\tl->query(pol, res);\n\
-    \t\tr->query(pol, res);\n\t}\n\t\n\tstd::vector<Mint> query(const Poly<Mint>&\
-    \ pol) const {\n\t\tstd::vector<Mint> res;\n\t\tquery(pol, res);\n\t\treturn res;\n\
-    \t}\n};\n"
+    \t}\n\n\tPoly pow_mod(const Poly& mod, int n = -1) {\n\t\tif (n == -1) n = this->size();\n\
+    \t\tPoly x = *this, r = {{1}};\n\t\twhile (n) {\n\t\t\tif (n & 1) r = r * x %\
+    \ mod;\n\t\t\tx = x * x % mod;\n\t\t\tn >>= 1;\n\t\t}\n\t\treturn r;\n\t}\n\n\t\
+    D _pow(D x, long long k) { \n\t\tD r = 1;\n\t\twhile (k) {\n\t\t\tif (k & 1) {\n\
+    \t\t\t\tr *= x;\n\t\t\t}\n\t\t\tx *= x;\n\t\t\tk >>= 1;\n\t\t}\n\t\treturn x;\n\
+    \t }\n\n\tPoly pow(long long k, int n = -1) {\n\t\tif (n == -1) n = this->size();\n\
+    \t\tint sz = (int)this->size();\n\t\tfor (int i = 0; i < sz; ++i) {\n\t\t\tif\
+    \ (freq(i) != 0) {\n\t\t\t\tif (i * k > n) return Poly(n);\n\t\t\t\tD rev = 1\
+    \ / (*this)[i];\n\t\t\t\tPoly ret = (((*this * rev) >> i).log(n) * k).exp(n) *\
+    \ _pow((*this)[i], k);\n\t\t\t\tret = (ret << (i * k)).pre(n);\n\t\t\t\tret.resize(n);\n\
+    \t\t\t\treturn ret;\n\t\t\t}\n\t\t}\n\t\treturn Poly(n);\n\t}\n\n\tfriend ostream&\
+    \ operator<<(ostream& os, const Poly& p) {\n\t\tif (p.empty()) return os << \"\
+    0\";\n\t\tfor (auto i = 0; i < (int)p.size(); i++) {\n\t\t\tif (p[i]) {\n\t\t\t\
+    \tos << p[i] << \"x^\" << i;\n\t\t\t\tif (i != (int)p.size() - 1) os << \"+\"\
+    ;\n\t\t\t}\n\t\t}\n\t\treturn os;\n\t}\n};\n\ntemplate <class Mint> struct MultiEval\
+    \ {\n\tusing NP = MultiEval*;\n\tNP l, r;\n\tstd::vector<Mint> que;\n\tint sz;\n\
+    \tPoly<Mint> mul;\n\n\tMultiEval(const std::vector<Mint>& _que, int off, int _sz)\
+    \ : sz(_sz) {\n\t\tif (sz <= 100) {\n\t\t\tque = {_que.begin() + off, _que.begin()\
+    \ + off + sz};\n\t\t\tmul = {{1}};\n\t\t\tfor (auto x : que) mul *= {{-x, 1}};\n\
+    \t\t\treturn;\n\t\t}\n\t\tl = new MultiEval(_que, off, sz / 2);\n\t\tr = new MultiEval(_que,\
+    \ off + sz / 2, sz - sz / 2);\n\t\tmul = l->mul * r->mul;\n\t}\n\n\tMultiEval(const\
+    \ std::vector<Mint>& _que) : MultiEval(_que, 0, int(_que.size())) {}\n\n\tvoid\
+    \ query(const Poly<Mint>& _pol, std::vector<Mint>& res) const {\n\t\tif (sz <=\
+    \ 100) {\n\t\t\tfor (auto x : que) {\n\t\t\t\tMint sm = 0, base = 1;\n\t\t\t\t\
+    for (int i = 0; i < _pol.size(); i++) {\n\t\t\t\t\tsm += base * _pol.freq(i);\n\
+    \t\t\t\t\tbase *= x;\n\t\t\t\t}\n\t\t\t\tres.push_back(sm);\n\t\t\t}\n\t\t\treturn;\n\
+    \t\t}\n\t\tauto pol = _pol % mul;\n\t\tl->query(pol, res);\n\t\tr->query(pol,\
+    \ res);\n\t}\n\t\n\tstd::vector<Mint> query(const Poly<Mint>& pol) const {\n\t\
+    \tstd::vector<Mint> res;\n\t\tquery(pol, res);\n\t\treturn res;\n\t}\n};\n"
   code: "#pragma once\n\n#include \"polynomial.hpp\"\n\ntemplate <class Mint> struct\
     \ MultiEval {\n\tusing NP = MultiEval*;\n\tNP l, r;\n\tstd::vector<Mint> que;\n\
     \tint sz;\n\tPoly<Mint> mul;\n\n\tMultiEval(const std::vector<Mint>& _que, int\
@@ -163,7 +169,7 @@ data:
   isVerificationFile: false
   path: library/polynomial/multipoint-evaluation.hpp
   requiredBy: []
-  timestamp: '2021-07-31 00:54:37-04:00'
+  timestamp: '2021-07-31 01:42:23-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/yosupo-multipoint_evaluation.test.cpp

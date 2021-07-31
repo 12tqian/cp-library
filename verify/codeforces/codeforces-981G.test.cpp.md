@@ -51,8 +51,9 @@ data:
     \ (L + R) / 2;\n\t\treturn qsum(lo, hi, 2 * ind, L, M) + qsum(lo, hi, 2 * ind\
     \ + 1, M + 1, R);\n\t}\n};\n\n// 5 is a root of both mods\ntemplate <int MOD,\
     \ int RT> struct Mint {\n\tstatic const int mod = MOD;\n\tstatic constexpr Mint\
-    \ rt() { return RT; } // primitive root for FFT\n\tint v; \n\texplicit operator\
-    \ int() const { return v; } // explicit -> don't silently convert to int\n\texplicit\
+    \ rt() { return RT; } // primitive root for FFT\n\tstatic constexpr int md() {\
+    \ return MOD; } // primitive root for FFT\n\tint v; \n\texplicit operator int()\
+    \ const { return v; } // explicit -> don't silently convert to int\n\texplicit\
     \ operator bool() const { return v != 0; }\n\tMint() { v = 0; }\n\tMint(long long\
     \ _v) { v = int((-MOD <= _v && _v < MOD) ? _v : _v % MOD); if (v < 0) v += MOD;\
     \ }\n\tfriend bool operator==(const Mint &a, const Mint &b) { return a.v == b.v;\
@@ -137,7 +138,7 @@ data:
   isVerificationFile: true
   path: verify/codeforces/codeforces-981G.test.cpp
   requiredBy: []
-  timestamp: '2021-07-30 23:56:29-04:00'
+  timestamp: '2021-07-31 01:42:23-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/codeforces/codeforces-981G.test.cpp

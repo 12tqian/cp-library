@@ -199,7 +199,7 @@ data:
     - icon: ':question:'
       path: library/modular-arithmetic/mod-int2.hpp
       title: library/modular-arithmetic/mod-int2.hpp
-    - icon: ':warning:'
+    - icon: ':question:'
       path: library/modular-arithmetic/mod-sqrt.hpp
       title: library/modular-arithmetic/mod-sqrt.hpp
   - name: library/number-theory
@@ -259,6 +259,9 @@ data:
     - icon: ':question:'
       path: library/polynomial/number-theoretic-transform.hpp
       title: library/polynomial/number-theoretic-transform.hpp
+    - icon: ':x:'
+      path: library/polynomial/polynomial-sqrt.hpp
+      title: library/polynomial/polynomial-sqrt.hpp
     - icon: ':question:'
       path: library/polynomial/polynomial.hpp
       title: library/polynomial/polynomial.hpp
@@ -503,9 +506,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-sort_points_by_argument.test.cpp
       title: verify/yosupo/yosupo-sort_points_by_argument.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-sqrt_mod.test.cpp
       title: verify/yosupo/yosupo-sqrt_mod.test.cpp
+    - icon: ':x:'
+      path: verify/yosupo/yosupo-sqrt_of_formal_power_series.test.cpp
+      title: verify/yosupo/yosupo-sqrt_of_formal_power_series.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-static_range_sum.test.cpp
       title: verify/yosupo/yosupo-static_range_sum.test.cpp

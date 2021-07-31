@@ -184,6 +184,12 @@ data:
     path: verify/yosupo/yosupo-sort_points_by_argument.test.cpp
     title: verify/yosupo/yosupo-sort_points_by_argument.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/yosupo/yosupo-sqrt_mod.test.cpp
+    title: verify/yosupo/yosupo-sqrt_mod.test.cpp
+  - icon: ':x:'
+    path: verify/yosupo/yosupo-sqrt_of_formal_power_series.test.cpp
+    title: verify/yosupo/yosupo-sqrt_of_formal_power_series.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-static_range_sum.test.cpp
     title: verify/yosupo/yosupo-static_range_sum.test.cpp
   - icon: ':heavy_check_mark:'
@@ -325,6 +331,7 @@ data:
   - verify/yosupo/yosupo-line_add_get_min.test.cpp
   - verify/yosupo/yosupo-enumerate_triangles.test.cpp
   - verify/yosupo/yosupo-point_add_range_sum-range-set-segment-tree.test.cpp
+  - verify/yosupo/yosupo-sqrt_of_formal_power_series.test.cpp
   - verify/yosupo/yosupo-assignment.test.cpp
   - verify/yosupo/yosupo-convolution_mod_1000000007-fast-fourier-transform.test.cpp
   - verify/yosupo/yosupo-point_add_range_sum-sparse-segment-tree.test.cpp
@@ -357,6 +364,7 @@ data:
   - verify/yosupo/yosupo-inverse_matrix.test.cpp
   - verify/yosupo/yosupo-suffixarray-linear.test.cpp
   - verify/yosupo/yosupo-lca-lca-jump.test.cpp
+  - verify/yosupo/yosupo-sqrt_mod.test.cpp
   - verify/yosupo/yosupo-inv_of_formal_power_series.test.cpp
   - verify/yosupo/yosupo-point_set_range_composite.test.cpp
   - verify/aizu/aizu-GRL_6_A-2.test.cpp

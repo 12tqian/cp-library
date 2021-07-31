@@ -8,8 +8,14 @@ data:
     path: library/modular-arithmetic/mod-int2.hpp
     title: library/modular-arithmetic/mod-int2.hpp
   - icon: ':question:'
+    path: library/modular-arithmetic/mod-sqrt.hpp
+    title: library/modular-arithmetic/mod-sqrt.hpp
+  - icon: ':question:'
     path: library/polynomial/number-theoretic-transform.hpp
     title: library/polynomial/number-theoretic-transform.hpp
+  - icon: ':x:'
+    path: library/polynomial/polynomial-sqrt.hpp
+    title: library/polynomial/polynomial-sqrt.hpp
   - icon: ':question:'
     path: library/polynomial/polynomial.hpp
     title: library/polynomial/polynomial.hpp
@@ -20,10 +26,10 @@ data:
   _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.yosupo.jp/problem/pow_of_formal_power_series
+    PROBLEM: https://judge.yosupo.jp/problem/exp_of_formal_power_series
     links:
-    - https://judge.yosupo.jp/problem/pow_of_formal_power_series
-  bundledCode: "#define PROBLEM \"https://judge.yosupo.jp/problem/pow_of_formal_power_series\"\
+    - https://judge.yosupo.jp/problem/exp_of_formal_power_series
+  bundledCode: "#define PROBLEM \"https://judge.yosupo.jp/problem/exp_of_formal_power_series\"\
     \n\n\n#include <algorithm>\n#include <array>\n#include <bitset>\n#include <cassert>\n\
     #include <chrono>\n#include <cmath>\n#include <complex>\n#include <cstdio>\n#include\
     \ <cstdlib>\n#include <cstring>\n#include <ctime>\n#include <deque>\n#include\
@@ -145,63 +151,99 @@ data:
     \ operator<<(ostream& os, const Poly& p) {\n\t\tif (p.empty()) return os << \"\
     0\";\n\t\tfor (auto i = 0; i < (int)p.size(); i++) {\n\t\t\tif (p[i]) {\n\t\t\t\
     \tos << p[i] << \"x^\" << i;\n\t\t\t\tif (i != (int)p.size() - 1) os << \"+\"\
-    ;\n\t\t\t}\n\t\t}\n\t\treturn os;\n\t}\n};\n\n// 5 is a root of both mods\ntemplate\
-    \ <int MOD, int RT> struct Mint {\n\tstatic const int mod = MOD;\n\tstatic constexpr\
-    \ Mint rt() { return RT; } // primitive root for FFT\n\tstatic constexpr int md()\
-    \ { return MOD; } // primitive root for FFT\n\tint v; \n\texplicit operator int()\
-    \ const { return v; } // explicit -> don't silently convert to int\n\texplicit\
-    \ operator bool() const { return v != 0; }\n\tMint() { v = 0; }\n\tMint(long long\
-    \ _v) { v = int((-MOD <= _v && _v < MOD) ? _v : _v % MOD); if (v < 0) v += MOD;\
-    \ }\n\tfriend bool operator==(const Mint &a, const Mint &b) { return a.v == b.v;\
-    \ }\n\tfriend bool operator!=(const Mint &a, const Mint &b) { return !(a == b);\
-    \ }\n\tfriend bool operator<(const Mint &a, const Mint &b) { return a.v < b.v;\
-    \ }\n\tfriend bool operator>(const Mint &a, const Mint &b) { return a.v > b.v;\
-    \ }\n\tfriend bool operator<=(const Mint &a, const Mint &b) { return a.v <= b.v;\
-    \ }\n\tfriend bool operator>=(const Mint &a, const Mint &b) { return a.v >= b.v;\
-    \ }\n\tfriend std::istream& operator >> (std::istream &in, Mint &a) { \n\t\tlong\
-    \ long x; std::cin >> x; a = Mint(x); return in; }\n\tfriend std::ostream& operator\
-    \ << (std::ostream &os, const Mint &a) { return os << a.v; }\n\tMint& operator+=(const\
-    \ Mint &m) { \n\t\tif ((v += m.v) >= MOD) v -= MOD; \n\t\treturn *this; }\n\t\
-    Mint& operator-=(const Mint &m) { \n\t\tif ((v -= m.v) < 0) v += MOD; \n\t\treturn\
-    \ *this; }\n\tMint& operator*=(const Mint &m) { \n\t\tv = (long long)v * m.v %\
-    \ MOD; return *this; }\n\tMint& operator/=(const Mint &m) { return (*this) *=\
-    \ inv(m); }\n\tfriend Mint pow(Mint a, long long p) {\n\t\tMint ans = 1; assert(p\
-    \ >= 0);\n\t\tfor (; p; p /= 2, a *= a) if (p & 1) ans *= a;\n\t\treturn ans;\
-    \ \n\t}\n\tfriend Mint inv(const Mint &a) { assert(a.v != 0); return pow(a, MOD\
-    \ - 2); }\n\tMint operator-() const { return Mint(-v); }\n\tMint& operator++()\
-    \ { return *this += 1; }\n\tMint& operator--() { return *this -= 1; }\n\tfriend\
-    \ Mint operator+(Mint a, const Mint &b) { return a += b; }\n\tfriend Mint operator-(Mint\
-    \ a, const Mint &b) { return a -= b; }\n\tfriend Mint operator*(Mint a, const\
-    \ Mint &b) { return a *= b; }\n\tfriend Mint operator/(Mint a, const Mint &b)\
-    \ { return a /= b; }\n};\n\nusing mi = Mint<998244353, 5>;\n\nint main() {\n\t\
-    ios::sync_with_stdio(false);\n\tcin.tie(0);\n\tint n, m;\n\tcin >> n >> m;\n\t\
-    vector<mi> a(n);\n\tfor (int i = 0; i < n; ++i) {\n\t\tcin >> a[i];\n\t}\n\tPoly<mi>\
-    \ p(a);\n\tPoly<mi> ans = p.pow(m, n);\n\tans.resize(n);\n\tfor (int i = 0; i\
-    \ < n; ++i) {\n\t\tcout << ans[i] << ' ';\n\t}\n\tcout << '\\n';\n\treturn 0;\t\
-    \n}\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/pow_of_formal_power_series\"\
+    ;\n\t\t\t}\n\t\t}\n\t\treturn os;\n\t}\n};\n\n\nunsigned xrand() {\n\tstatic unsigned\
+    \ x = 314159265, y = 358979323, z = 846264338, w = 327950288;\n\tunsigned t =\
+    \ x ^ x << 11; x = y; y = z; z = w; return w = w ^ w >> 19 ^ t ^ t >> 8;\n}\n\n\
+    long long mod_inverse(long long a, long long m) {\n\tlong long b = m, x = 1, y\
+    \ = 0, t;\n\tfor (; ; ) {\n\t\tt = a / b, a -= t * b;\n\t\tif (a == 0) {\n\t\t\
+    \tassert(b == 1 || b == -1);\n\t\t\tif ( b== -1) y = -y;\n\t\t\treturn (y < 0)\
+    \ ? (y + m) : y;\n\t\t}\n\t\tx -= t * y;\n\t\tt = b / a, b -= t * a;\n\t\tif (b\
+    \ == 0) {\n\t\t\tassert (a == 1 || a == -1);\n\t\t\tif (a == -1) x = -x;\n\t\t\
+    \treturn (x < 0) ? (x + m) : x;\n\t\t}\n\t\ty -= t * x;\n\t}\n}\n\nint jacobi(long\
+    \ long a, long long m) {\n\tint s = 1;\n\tif (a < 0) a = a % m + m;\n\tfor (;\
+    \ m > 1; ) {\n\t\ta %= m;\n\t\tif (a == 0) return 0;\n\t\tconst int r = __builtin_ctz(a);\n\
+    \t\tif ((r & 1) && ((m + 2) & 4)) s = -s;\n\t\ta >>= r;\n\t\tif (a & m & 2) s\
+    \ = -s;\n\t\tstd::swap(a, m);\n\t}\n\treturn s;\n}\n\nstd::vector<long long> mod_sqrt(long\
+    \ long a, long long p) {\n\tif (p == 2) return {a & 1};\n\tconst int j = jacobi(a,\
+    \ p);\n\tif (j == 0) return {0};\n\tif (j == -1) return {};\n\tlong long b, d;\n\
+    \tfor (; ; ) {\n\t\tb = xrand() % p;\n\t\td = (b * b - a) % p;\n\t\tif (d < 0)\
+    \ d += p;\n\t\tif (jacobi(d, p) == -1) break;\n\t}\n\tlong long f0 = b, f1 = 1,\
+    \ g0 = 1, g1 = 0, tmp;\n\tfor (long long e = (p + 1) >> 1; e; e >>= 1) {\n\t\t\
+    if (e & 1) {\n\t\t\ttmp = (g0 * f0 + d * ((g1 * f1) % p)) % p;\n\t\t\tg1 = (g0\
+    \ * f1 + g1 * f0) % p;\n\t\t\tg0 = tmp;\n\t\t}\n\t\ttmp = (f0 * f0 + d * ((f1\
+    \ * f1) % p)) % p;\n\t\tf1 = (2 * f0 * f1) % p;\n\t\tf0 = tmp;\n\t}\n\treturn\
+    \ (g0 < p - g0) ? std::vector<long long>{g0, p - g0} : std::vector<long long>{p\
+    \ - g0, g0};\n}\n\n#include <bits/stdc++.h>\n\ntemplate <class D> Poly<D> sqrt(const\
+    \ Poly<D>& p, int n = -1) {\n\tif (n == -1) n = (int)p.size();\n\tif (p.empty())\
+    \ return Poly<D>(n);\n\tif (p[0] == 0) {\n\t\tfor (int i = 1; i < (int)p.size();\
+    \ ++i) {\n\t\t\tif (p[i] != 0) {\n\t\t\t\tif (i & 1) {\n\t\t\t\t\treturn {};\n\
+    \t\t\t\t}\n\t\t\t\tif (n - i / 2 <= 0) break;\n\t\t\t\tauto ret = sqrt(p >> i,\
+    \ n - i / 2);\n\t\t\t\tif (ret.empty()) return {};\n\t\t\t\tret = ret << (i /\
+    \ 2);\n\t\t\t\tif ((int)ret.size() < n) ret.resize(n);\n\t\t\t\treturn ret;\n\t\
+    \t\t}\n\t\t}\n\t\treturn Poly<D>(n);\n\t}\n\tauto v = mod_sqrt(p[0].v, D::md());\n\
+    \tif (v.empty()) return {};\n\tlong long sqr = v[0];\n\tPoly<D> ret = {D(sqr)};\n\
+    \tD i2 = 1 / D(2);\n\tfor (int i = 1; i < n; i <<= 1) {\n\t\tret = (ret + p.pre(i\
+    \ << 1) * ret.inv(i << 1)) * i2;\n\t}\n\treturn ret.pre(n);\n}\n\n// 5 is a root\
+    \ of both mods\ntemplate <int MOD, int RT> struct Mint {\n\tstatic const int mod\
+    \ = MOD;\n\tstatic constexpr Mint rt() { return RT; } // primitive root for FFT\n\
+    \tstatic constexpr int md() { return MOD; } // primitive root for FFT\n\tint v;\
+    \ \n\texplicit operator int() const { return v; } // explicit -> don't silently\
+    \ convert to int\n\texplicit operator bool() const { return v != 0; }\n\tMint()\
+    \ { v = 0; }\n\tMint(long long _v) { v = int((-MOD <= _v && _v < MOD) ? _v : _v\
+    \ % MOD); if (v < 0) v += MOD; }\n\tfriend bool operator==(const Mint &a, const\
+    \ Mint &b) { return a.v == b.v; }\n\tfriend bool operator!=(const Mint &a, const\
+    \ Mint &b) { return !(a == b); }\n\tfriend bool operator<(const Mint &a, const\
+    \ Mint &b) { return a.v < b.v; }\n\tfriend bool operator>(const Mint &a, const\
+    \ Mint &b) { return a.v > b.v; }\n\tfriend bool operator<=(const Mint &a, const\
+    \ Mint &b) { return a.v <= b.v; }\n\tfriend bool operator>=(const Mint &a, const\
+    \ Mint &b) { return a.v >= b.v; }\n\tfriend std::istream& operator >> (std::istream\
+    \ &in, Mint &a) { \n\t\tlong long x; std::cin >> x; a = Mint(x); return in; }\n\
+    \tfriend std::ostream& operator << (std::ostream &os, const Mint &a) { return\
+    \ os << a.v; }\n\tMint& operator+=(const Mint &m) { \n\t\tif ((v += m.v) >= MOD)\
+    \ v -= MOD; \n\t\treturn *this; }\n\tMint& operator-=(const Mint &m) { \n\t\t\
+    if ((v -= m.v) < 0) v += MOD; \n\t\treturn *this; }\n\tMint& operator*=(const\
+    \ Mint &m) { \n\t\tv = (long long)v * m.v % MOD; return *this; }\n\tMint& operator/=(const\
+    \ Mint &m) { return (*this) *= inv(m); }\n\tfriend Mint pow(Mint a, long long\
+    \ p) {\n\t\tMint ans = 1; assert(p >= 0);\n\t\tfor (; p; p /= 2, a *= a) if (p\
+    \ & 1) ans *= a;\n\t\treturn ans; \n\t}\n\tfriend Mint inv(const Mint &a) { assert(a.v\
+    \ != 0); return pow(a, MOD - 2); }\n\tMint operator-() const { return Mint(-v);\
+    \ }\n\tMint& operator++() { return *this += 1; }\n\tMint& operator--() { return\
+    \ *this -= 1; }\n\tfriend Mint operator+(Mint a, const Mint &b) { return a +=\
+    \ b; }\n\tfriend Mint operator-(Mint a, const Mint &b) { return a -= b; }\n\t\
+    friend Mint operator*(Mint a, const Mint &b) { return a *= b; }\n\tfriend Mint\
+    \ operator/(Mint a, const Mint &b) { return a /= b; }\n};\n\nusing mi = Mint<998244353,\
+    \ 5>;\n\nint main() {\n\tios::sync_with_stdio(false);\n\tcin.tie(0);\n\tint n;\n\
+    \tcin >> n;\n\tvector<mi> a(n);\n\tfor (int i = 0; i < n; ++i) {\n\t\tcin >> a[i];\n\
+    \t}\n\tPoly<mi> p(a);\n\tauto ans = sqrt(p, n);\n\tif (ans.empty()) {\n\t\tcout\
+    \ << -1 << '\\n';\n\t\treturn 0;\n\t}\n\tans.resize(n);\n\tfor (int i = 0; i <\
+    \ n; ++i) {\n\t\tcout << ans[i] << ' ';\n\t}\n\tcout << '\\n';\n\treturn 0;\t\n\
+    }\n"
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/exp_of_formal_power_series\"\
     \n\n#include \"../../library/contest/template-minimal.hpp\"\n#include \"../../library/polynomial/polynomial.hpp\"\
-    \n#include \"../../library/modular-arithmetic/mod-int2.hpp\"\n\nusing mi = Mint<998244353,\
-    \ 5>;\n\nint main() {\n\tios::sync_with_stdio(false);\n\tcin.tie(0);\n\tint n,\
-    \ m;\n\tcin >> n >> m;\n\tvector<mi> a(n);\n\tfor (int i = 0; i < n; ++i) {\n\t\
-    \tcin >> a[i];\n\t}\n\tPoly<mi> p(a);\n\tPoly<mi> ans = p.pow(m, n);\n\tans.resize(n);\n\
+    \n#include \"../../library/polynomial/polynomial-sqrt.hpp\"\n#include \"../../library/modular-arithmetic/mod-int2.hpp\"\
+    \n\nusing mi = Mint<998244353, 5>;\n\nint main() {\n\tios::sync_with_stdio(false);\n\
+    \tcin.tie(0);\n\tint n;\n\tcin >> n;\n\tvector<mi> a(n);\n\tfor (int i = 0; i\
+    \ < n; ++i) {\n\t\tcin >> a[i];\n\t}\n\tPoly<mi> p(a);\n\tauto ans = sqrt(p, n);\n\
+    \tif (ans.empty()) {\n\t\tcout << -1 << '\\n';\n\t\treturn 0;\n\t}\n\tans.resize(n);\n\
     \tfor (int i = 0; i < n; ++i) {\n\t\tcout << ans[i] << ' ';\n\t}\n\tcout << '\\\
     n';\n\treturn 0;\t\n}"
   dependsOn:
   - library/contest/template-minimal.hpp
   - library/polynomial/polynomial.hpp
   - library/polynomial/number-theoretic-transform.hpp
+  - library/polynomial/polynomial-sqrt.hpp
+  - library/modular-arithmetic/mod-sqrt.hpp
   - library/modular-arithmetic/mod-int2.hpp
   isVerificationFile: true
-  path: verify/yosupo/yosupo-pow_of_formal_power_series.test.cpp
+  path: verify/yosupo/yosupo-sqrt_of_formal_power_series.test.cpp
   requiredBy: []
   timestamp: '2021-07-31 01:42:23-04:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
-documentation_of: verify/yosupo/yosupo-pow_of_formal_power_series.test.cpp
+documentation_of: verify/yosupo/yosupo-sqrt_of_formal_power_series.test.cpp
 layout: document
 redirect_from:
-- /verify/verify/yosupo/yosupo-pow_of_formal_power_series.test.cpp
-- /verify/verify/yosupo/yosupo-pow_of_formal_power_series.test.cpp.html
-title: verify/yosupo/yosupo-pow_of_formal_power_series.test.cpp
+- /verify/verify/yosupo/yosupo-sqrt_of_formal_power_series.test.cpp
+- /verify/verify/yosupo/yosupo-sqrt_of_formal_power_series.test.cpp.html
+title: verify/yosupo/yosupo-sqrt_of_formal_power_series.test.cpp
 ---

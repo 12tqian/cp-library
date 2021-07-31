@@ -5,6 +5,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/polynomial/multipoint-evaluation.hpp
     title: library/polynomial/multipoint-evaluation.hpp
+  - icon: ':x:'
+    path: library/polynomial/polynomial-sqrt.hpp
+    title: library/polynomial/polynomial-sqrt.hpp
   - icon: ':question:'
     path: library/polynomial/polynomial.hpp
     title: library/polynomial/polynomial.hpp
@@ -24,6 +27,9 @@ data:
   - icon: ':x:'
     path: verify/yosupo/yosupo-pow_of_formal_power_series.test.cpp
     title: verify/yosupo/yosupo-pow_of_formal_power_series.test.cpp
+  - icon: ':x:'
+    path: verify/yosupo/yosupo-sqrt_of_formal_power_series.test.cpp
+    title: verify/yosupo/yosupo-sqrt_of_formal_power_series.test.cpp
   _isVerificationFailed: true
   _pathExtension: hpp
   _verificationStatusIcon: ':question:'
@@ -139,11 +145,13 @@ data:
   isVerificationFile: false
   path: library/polynomial/number-theoretic-transform.hpp
   requiredBy:
+  - library/polynomial/polynomial-sqrt.hpp
   - library/polynomial/polynomial.hpp
   - library/polynomial/multipoint-evaluation.hpp
   timestamp: '2021-07-30 23:56:29-04:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
+  - verify/yosupo/yosupo-sqrt_of_formal_power_series.test.cpp
   - verify/yosupo/yosupo-log_of_formal_power_series.test.cpp
   - verify/yosupo/yosupo-multipoint_evaluation.test.cpp
   - verify/yosupo/yosupo-pow_of_formal_power_series.test.cpp
