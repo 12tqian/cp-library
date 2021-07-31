@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../library/numerical/fast-fourier-transform.hpp"
+#include "fast-fourier-transform.hpp"
 
 namespace Polynomial {
 

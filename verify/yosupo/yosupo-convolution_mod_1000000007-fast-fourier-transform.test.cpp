@@ -1,7 +1,7 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/convolution_mod_1000000007"
 
 #include "../../library/contest/template-minimal.hpp"
-#include "../../library/numerical/fast-fourier-transform.hpp"
+#include "../../library/polynomial/fast-fourier-transform.hpp"
 
 int main() {
 	using namespace std;

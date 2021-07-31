@@ -1,8 +1,8 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/inv_of_formal_power_series"
 
 #include "../../library/contest/template-minimal.hpp"
-#include "../../library/numerical/polynomial.hpp"
-#include "../../library/numerical/mod-int2.hpp"
+#include "../../library/polynomial/polynomial.hpp"
+#include "../../library/modular-arithmetic/mod-int2.hpp"
 
 using mi = Mint<998244353, 5>;
 

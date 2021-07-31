@@ -3,8 +3,8 @@
 #include "../../library/contest/template-full.hpp"
 #include "../../library/graphs/centroid-decomposition.hpp"
 #include "../../library/graphs/lca-rmq.hpp"
-#include "../../library/numerical/fast-fourier-transform.hpp"
-#include "../../library/numerical/polynomial2.hpp"
+#include "../../library/polynomial/fast-fourier-transform.hpp"
+#include "../../library/polynomial/polynomial2.hpp"
 
 int main() {
 	using namespace FFT;

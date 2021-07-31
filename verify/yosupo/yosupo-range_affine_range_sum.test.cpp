@@ -1,7 +1,7 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/range_affine_range_sum"
 
 #include "../../library/contest/template-minimal.hpp"
-#include "../../library/numerical/mod-int2.hpp"
+#include "../../library/modular-arithmetic/mod-int2.hpp"
 #include "../../library/data-structures/1d-range-queries/affine-segment-tree.hpp"
 
 using mi = Mint<998244353, 5>;

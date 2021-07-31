@@ -1,8 +1,8 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/convolution_mod_1000000007"
 
 #include "../../library/contest/template-minimal.hpp"
-#include "../../library/numerical/karatsuba.hpp"
-#include "../../library/numerical/mod-int2.hpp"
+#include "../../library/polynomial/karatsuba.hpp"
+#include "../../library/modular-arithmetic/mod-int2.hpp"
 
 int main() {
 	const int MOD = 1e9 + 7;

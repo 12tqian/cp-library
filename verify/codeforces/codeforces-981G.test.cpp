@@ -2,7 +2,7 @@
 
 #include "../../library/contest/template-minimal.hpp"
 #include "../../library/data-structures/1d-range-queries/affine-segment-tree.hpp"
-#include "../../library/numerical/mod-int2.hpp"
+#include "../../library/modular-arithmetic/mod-int2.hpp"
 #include "../../library/data-structures/1d-range-queries/interval-union.hpp"
 
 using mi = Mint<998244353, 5>;

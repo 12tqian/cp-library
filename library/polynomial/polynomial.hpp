@@ -43,7 +43,7 @@ template <class D> struct Poly {
 		return res;
 	}
 
-	Poly operator/(const D &r) const{ *this * r.inv(); }
+	Poly operator/(const D &r) const{ return *this * (1 / r); }
 	
 	Poly operator/(const Poly& r) const {
 		if (size() < r.size()) return {{}};
@@ -123,16 +123,6 @@ template <class D> struct Poly {
 		auto f = pre(n);
 		return (f.diff() * f.inv(n - 1)).pre(n - 1).inte();
 	}
-	
-	Poly sqrt(int n) const {
-		assert(freq(0) == 1);
-		Poly f = pre(n + 1);
-		Poly g({1});
-		for (int i = 1; i < n; i *= 2) {
-			g = (g + f.pre(2 * i) * g.inv(2 * i)) / 2;
-		}
-		return g.pre(n + 1);
-	}
 
 	Poly pow_mod(long long n, const Poly& mod) {
 		Poly x = *this, r = {{1}};
@@ -140,6 +130,21 @@ template <class D> struct Poly {
 			if (n & 1) r = r * x % mod;
 			x = x * x % mod;
 			n >>= 1;
+		}
+		return r;
+	}
+
+	Poly pow(int n, long long e) {
+		Poly b = pre(n + 1);
+		Poly r({1});
+		while (e) {
+			if (e & 1) {
+				r *= b;
+				r.pre(n + 1);
+			}
+			b *= b;
+			r.pre(n + 1);
+			e >>= 1;
 		}
 		return r;
 	}

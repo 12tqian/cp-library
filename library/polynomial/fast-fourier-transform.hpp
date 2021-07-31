@@ -1,6 +1,6 @@
 #pragma once
 
-#include "mod-int2.hpp"
+#include "../modular-arithmetic/mod-int2.hpp"
 
 namespace FFT {
 

@@ -1,7 +1,7 @@
 #define PROBLEM "https://codeforces.com/contest/1551/problem/F"
 
 #include "../../library/contest/template-minimal.hpp"
-#include "../../library/numerical/mod-int.hpp"
+#include "../../library/modular-arithmetic/mod-int.hpp"
 
 int main() {
 	ios::sync_with_stdio(false);
