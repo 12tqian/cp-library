@@ -2,7 +2,7 @@
 
 #include "../../library/contest/template-minimal.hpp"
 #include "../../library/data-structures/2d-range-queries/general-fenwick-tree.hpp"
-#include "../../library/numerical/mod-int2.hpp"
+#include "../../library/modular-arithmetic/mod-int2.hpp"
 
 const int N = 2505;
 

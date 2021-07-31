@@ -1,8 +1,8 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/multipoint_evaluation"
 
 #include "../../library/contest/template-minimal.hpp"
-#include "../../library/numerical/mod-int2.hpp"
-#include "../../library/numerical/multipoint-evaluation.hpp"
+#include "../../library/modular-arithmetic/mod-int2.hpp"
+#include "../../library/polynomial/multipoint-evaluation.hpp"
 
 
 using mi = Mint<998244353, 5>;
