@@ -203,6 +203,9 @@ data:
       path: library/modular-arithmetic/mod-int2.hpp
       title: library/modular-arithmetic/mod-int2.hpp
     - icon: ':heavy_check_mark:'
+      path: library/modular-arithmetic/mod-operations.hpp
+      title: library/modular-arithmetic/mod-operations.hpp
+    - icon: ':heavy_check_mark:'
       path: library/modular-arithmetic/mod-sqrt.hpp
       title: library/modular-arithmetic/mod-sqrt.hpp
   - name: library/number-theory
@@ -233,12 +236,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/numerical/fraction.hpp
       title: library/numerical/fraction.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
       path: library/numerical/matrix.hpp
       title: library/numerical/matrix.hpp
     - icon: ':heavy_check_mark:'
-      path: library/numerical/mod-operations.hpp
-      title: library/numerical/mod-operations.hpp
+      path: library/numerical/matrix2.hpp
+      title: library/numerical/matrix2.hpp
     - icon: ':heavy_check_mark:'
       path: library/numerical/simplex.hpp
       title: library/numerical/simplex.hpp

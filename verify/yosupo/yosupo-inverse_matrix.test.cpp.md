@@ -8,8 +8,8 @@ data:
     path: library/modular-arithmetic/mod-int2.hpp
     title: library/modular-arithmetic/mod-int2.hpp
   - icon: ':heavy_check_mark:'
-    path: library/numerical/matrix.hpp
-    title: library/numerical/matrix.hpp
+    path: library/numerical/matrix2.hpp
+    title: library/numerical/matrix2.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -108,7 +108,7 @@ data:
     \tcout << ans[i][j] << ' ';\n\t\t\t}\n\t\t\tcout << '\\n';\n\t\t}\n\t}\n\treturn\
     \ 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/inverse_matrix\"\n\n#include\
-    \ \"../../library/contest/template-minimal.hpp\"\n#include \"../../library/numerical/matrix.hpp\"\
+    \ \"../../library/contest/template-minimal.hpp\"\n#include \"../../library/numerical/matrix2.hpp\"\
     \n#include \"../../library/modular-arithmetic/mod-int2.hpp\"\n\nusing mi = Mint<998244353,\
     \ 5>;\n\nint main() {\n\tusing namespace MatrixOperations;\n\tios::sync_with_stdio(false);\n\
     \tcin.tie(nullptr);\n\tint n;\n\tcin >> n;\n\tauto a = make_matrix<mi>(n, n);\n\
@@ -120,12 +120,12 @@ data:
     \ 0;\n}"
   dependsOn:
   - library/contest/template-minimal.hpp
-  - library/numerical/matrix.hpp
+  - library/numerical/matrix2.hpp
   - library/modular-arithmetic/mod-int2.hpp
   isVerificationFile: true
   path: verify/yosupo/yosupo-inverse_matrix.test.cpp
   requiredBy: []
-  timestamp: '2021-07-31 01:42:23-04:00'
+  timestamp: '2021-07-31 14:30:12-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/yosupo-inverse_matrix.test.cpp

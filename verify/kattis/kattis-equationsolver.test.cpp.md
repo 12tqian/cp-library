@@ -5,8 +5,8 @@ data:
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
   - icon: ':heavy_check_mark:'
-    path: library/numerical/matrix.hpp
-    title: library/numerical/matrix.hpp
+    path: library/numerical/matrix2.hpp
+    title: library/numerical/matrix2.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -84,7 +84,7 @@ data:
     \t\t} else {\n\t\t\tfor (auto& t : ans) \n\t\t\t\tcout << t << \" \";\n\t\t\t\
     cout << '\\n';\n\t\t}\n\t}\n\treturn 0;\n}\n"
   code: "#define PROBLEM \"https://open.kattis.com/problems/equationsolver\"\n\n#include\
-    \ \"../../library/contest/template-minimal.hpp\"\n#include \"../../library/numerical/matrix.hpp\"\
+    \ \"../../library/contest/template-minimal.hpp\"\n#include \"../../library/numerical/matrix2.hpp\"\
     \n\n// kattis\nint main() {\n\tusing namespace std;\n\tusing namespace MatrixOperations;\n\
     \tusing Mat = Matrix<long double>;\n\twhile (true) {\n\t\tint n; cin >> n;\n\t\
     \tif (n == 0) break;\n\t\tMat a = make_matrix<long double>(n, n + 1);\n\t\tfor\
@@ -102,11 +102,11 @@ data:
     \t\t\t\tcout << t << \" \";\n\t\t\tcout << '\\n';\n\t\t}\n\t}\n\treturn 0;\n}"
   dependsOn:
   - library/contest/template-minimal.hpp
-  - library/numerical/matrix.hpp
+  - library/numerical/matrix2.hpp
   isVerificationFile: true
   path: verify/kattis/kattis-equationsolver.test.cpp
   requiredBy: []
-  timestamp: '2021-07-28 19:45:54-04:00'
+  timestamp: '2021-07-31 14:30:12-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/kattis/kattis-equationsolver.test.cpp

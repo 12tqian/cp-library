@@ -38,16 +38,16 @@ data:
     \ ModOperations"
   dependsOn: []
   isVerificationFile: false
-  path: library/numerical/mod-operations.hpp
+  path: library/modular-arithmetic/mod-operations.hpp
   requiredBy: []
-  timestamp: '2021-07-24 22:46:46-04:00'
+  timestamp: '2021-07-31 14:30:12-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/codeforces/codeforces-1299D.test.cpp
-documentation_of: library/numerical/mod-operations.hpp
+documentation_of: library/modular-arithmetic/mod-operations.hpp
 layout: document
 redirect_from:
-- /library/library/numerical/mod-operations.hpp
-- /library/library/numerical/mod-operations.hpp.html
-title: library/numerical/mod-operations.hpp
+- /library/library/modular-arithmetic/mod-operations.hpp
+- /library/library/modular-arithmetic/mod-operations.hpp.html
+title: library/modular-arithmetic/mod-operations.hpp
 ---

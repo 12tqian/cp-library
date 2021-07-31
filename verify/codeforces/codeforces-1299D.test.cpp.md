@@ -5,8 +5,8 @@ data:
     path: library/contest/template-short.hpp
     title: library/contest/template-short.hpp
   - icon: ':heavy_check_mark:'
-    path: library/numerical/mod-operations.hpp
-    title: library/numerical/mod-operations.hpp
+    path: library/modular-arithmetic/mod-operations.hpp
+    title: library/modular-arithmetic/mod-operations.hpp
   - icon: ':heavy_check_mark:'
     path: library/numerical/xor-basis.hpp
     title: library/numerical/xor-basis.hpp
@@ -111,7 +111,7 @@ data:
     \        ndp.assign(spaces, 0);\n    }\n    int ans = 0;\n    each(t, dp) madd(ans,\
     \ t);\n    cout << ans << '\\n';\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://codeforces.com/contest/1299/problem/D\"\n\n#include\
-    \ \"../../library/contest/template-short.hpp\"\n#include \"../../library/numerical/mod-operations.hpp\"\
+    \ \"../../library/contest/template-short.hpp\"\n#include \"../../library/modular-arithmetic/mod-operations.hpp\"\
     \n#include \"../../library/numerical/xor-basis.hpp\"\n\nusing namespace ModOperations;\n\
     \nconst int N = 1e5 + 5;\nconst int B = 400;\n \nint n, m;\n \nvector<vi> store;\n\
     \ \nint comb[B][B];\n \nvi add_basis(vi &a, vi &b) {\n    vi res;\n    each(t,\
@@ -174,12 +174,12 @@ data:
     \ t);\n    cout << ans << '\\n';\n    return 0;\n}"
   dependsOn:
   - library/contest/template-short.hpp
-  - library/numerical/mod-operations.hpp
+  - library/modular-arithmetic/mod-operations.hpp
   - library/numerical/xor-basis.hpp
   isVerificationFile: true
   path: verify/codeforces/codeforces-1299D.test.cpp
   requiredBy: []
-  timestamp: '2021-07-28 20:07:55-04:00'
+  timestamp: '2021-07-31 14:30:12-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/codeforces/codeforces-1299D.test.cpp

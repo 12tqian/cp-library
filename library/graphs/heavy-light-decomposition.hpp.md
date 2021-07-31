@@ -14,16 +14,16 @@ data:
   bundledCode: "template <class G> \nstruct HeavyLightDecomposition {\nprivate:\n\t\
     void dfs_sz(int cur) {\n\t\tsize[cur] = 1;\n\t\tfor (auto& dst : g[cur]) {\n\t\
     \t\tif (dst == par[cur]) {\n\t\t\t\tif (g[cur].size() >= 2 && int(dst) == int(g[cur][0]))\n\
-    \t\t\t\t\tswap(g[cur][0], g[cur][1]);\n\t\t\t\telse\n\t\t\t\t\tcontinue;\n\t\t\
-    \t}\n\t\t\tdepth[dst] = depth[cur] + 1;\n\t\t\tpar[dst] = cur;\n\t\t\tdfs_sz(dst);\n\
+    \t\t\t\t\tstd::swap(g[cur][0], g[cur][1]);\n\t\t\t\telse\n\t\t\t\t\tcontinue;\n\
+    \t\t\t}\n\t\t\tdepth[dst] = depth[cur] + 1;\n\t\t\tpar[dst] = cur;\n\t\t\tdfs_sz(dst);\n\
     \t\t\tsize[cur] += size[dst];\n\t\t\tif (size[dst] > size[g[cur][0]]) {\n\t\t\t\
-    \tswap(dst, g[cur][0]);\n\t\t\t}\n\t\t}\n\t}\n\n\tvoid dfs_hld(int cur) {\n\t\t\
-    down[cur] = id++;\n\t\tfor (auto dst : g[cur]) {\n\t\t\tif (dst == par[cur]) continue;\n\
-    \t\t\tnxt[dst] = (int(dst) == int(g[cur][0]) ? nxt[cur] : int(dst));\n\t\t\tdfs_hld(dst);\n\
-    \t\t}\n\t\tup[cur] = id;\n\t}\n\n\t// [u, v)\n\tstd::vector<std::pair<int, int>>\
-    \ ascend(int u, int v) const {\n\t\tstd::vector<std::pair<int, int>> res;\n\t\t\
-    while (nxt[u] != nxt[v]) {\n\t\t\tres.emplace_back(down[u], down[nxt[u]]);\n\t\
-    \t\tu = par[nxt[u]];\n\t\t}\n\t\tif (u != v) res.emplace_back(down[u], down[v]\
+    \tstd::swap(dst, g[cur][0]);\n\t\t\t}\n\t\t}\n\t}\n\n\tvoid dfs_hld(int cur) {\n\
+    \t\tdown[cur] = id++;\n\t\tfor (auto dst : g[cur]) {\n\t\t\tif (dst == par[cur])\
+    \ continue;\n\t\t\tnxt[dst] = (int(dst) == int(g[cur][0]) ? nxt[cur] : int(dst));\n\
+    \t\t\tdfs_hld(dst);\n\t\t}\n\t\tup[cur] = id;\n\t}\n\n\t// [u, v)\n\tstd::vector<std::pair<int,\
+    \ int>> ascend(int u, int v) const {\n\t\tstd::vector<std::pair<int, int>> res;\n\
+    \t\twhile (nxt[u] != nxt[v]) {\n\t\t\tres.emplace_back(down[u], down[nxt[u]]);\n\
+    \t\t\tu = par[nxt[u]];\n\t\t}\n\t\tif (u != v) res.emplace_back(down[u], down[v]\
     \ + 1);\n\t\treturn res;\n\t}\n\n\t// (u, v]\n\tstd::vector<std::pair<int, int>>\
     \ descend(int u, int v) const {\n\t\tif (u == v) return {};\n\t\tif (nxt[u] ==\
     \ nxt[v]) return {{down[u] + 1, down[v]}};\n\t\tauto res = descend(u, par[nxt[v]]);\n\
@@ -48,22 +48,22 @@ data:
     for (auto&& [a, b] : descend(l, v)) f(a, b);\n\t}\n\n\ttemplate <class F>\n\t\
     void subtree_query(int u, bool vertex, const F& f) {\n\t\tf(down[u] + int(!vertex),\
     \ up[u] - 1);\n\t}\n\n\tint lca(int a, int b) {\n\t\twhile (nxt[a] != nxt[b])\
-    \ {\n\t\t\tif (down[a] < down[b]) swap(a, b);\n\t\t\ta = par[nxt[a]];\n\t\t}\n\
-    \t\treturn depth[a] < depth[b] ? a : b;\n\t}\n\n\tint dist(int a, int b) { return\
-    \ depth[a] + depth[b] - depth[lca(a, b)] * 2; }\n};\n"
+    \ {\n\t\t\tif (down[a] < down[b]) std::swap(a, b);\n\t\t\ta = par[nxt[a]];\n\t\
+    \t}\n\t\treturn depth[a] < depth[b] ? a : b;\n\t}\n\n\tint dist(int a, int b)\
+    \ { return depth[a] + depth[b] - depth[lca(a, b)] * 2; }\n};\n"
   code: "template <class G> \nstruct HeavyLightDecomposition {\nprivate:\n\tvoid dfs_sz(int\
     \ cur) {\n\t\tsize[cur] = 1;\n\t\tfor (auto& dst : g[cur]) {\n\t\t\tif (dst ==\
     \ par[cur]) {\n\t\t\t\tif (g[cur].size() >= 2 && int(dst) == int(g[cur][0]))\n\
-    \t\t\t\t\tswap(g[cur][0], g[cur][1]);\n\t\t\t\telse\n\t\t\t\t\tcontinue;\n\t\t\
-    \t}\n\t\t\tdepth[dst] = depth[cur] + 1;\n\t\t\tpar[dst] = cur;\n\t\t\tdfs_sz(dst);\n\
+    \t\t\t\t\tstd::swap(g[cur][0], g[cur][1]);\n\t\t\t\telse\n\t\t\t\t\tcontinue;\n\
+    \t\t\t}\n\t\t\tdepth[dst] = depth[cur] + 1;\n\t\t\tpar[dst] = cur;\n\t\t\tdfs_sz(dst);\n\
     \t\t\tsize[cur] += size[dst];\n\t\t\tif (size[dst] > size[g[cur][0]]) {\n\t\t\t\
-    \tswap(dst, g[cur][0]);\n\t\t\t}\n\t\t}\n\t}\n\n\tvoid dfs_hld(int cur) {\n\t\t\
-    down[cur] = id++;\n\t\tfor (auto dst : g[cur]) {\n\t\t\tif (dst == par[cur]) continue;\n\
-    \t\t\tnxt[dst] = (int(dst) == int(g[cur][0]) ? nxt[cur] : int(dst));\n\t\t\tdfs_hld(dst);\n\
-    \t\t}\n\t\tup[cur] = id;\n\t}\n\n\t// [u, v)\n\tstd::vector<std::pair<int, int>>\
-    \ ascend(int u, int v) const {\n\t\tstd::vector<std::pair<int, int>> res;\n\t\t\
-    while (nxt[u] != nxt[v]) {\n\t\t\tres.emplace_back(down[u], down[nxt[u]]);\n\t\
-    \t\tu = par[nxt[u]];\n\t\t}\n\t\tif (u != v) res.emplace_back(down[u], down[v]\
+    \tstd::swap(dst, g[cur][0]);\n\t\t\t}\n\t\t}\n\t}\n\n\tvoid dfs_hld(int cur) {\n\
+    \t\tdown[cur] = id++;\n\t\tfor (auto dst : g[cur]) {\n\t\t\tif (dst == par[cur])\
+    \ continue;\n\t\t\tnxt[dst] = (int(dst) == int(g[cur][0]) ? nxt[cur] : int(dst));\n\
+    \t\t\tdfs_hld(dst);\n\t\t}\n\t\tup[cur] = id;\n\t}\n\n\t// [u, v)\n\tstd::vector<std::pair<int,\
+    \ int>> ascend(int u, int v) const {\n\t\tstd::vector<std::pair<int, int>> res;\n\
+    \t\twhile (nxt[u] != nxt[v]) {\n\t\t\tres.emplace_back(down[u], down[nxt[u]]);\n\
+    \t\t\tu = par[nxt[u]];\n\t\t}\n\t\tif (u != v) res.emplace_back(down[u], down[v]\
     \ + 1);\n\t\treturn res;\n\t}\n\n\t// (u, v]\n\tstd::vector<std::pair<int, int>>\
     \ descend(int u, int v) const {\n\t\tif (u == v) return {};\n\t\tif (nxt[u] ==\
     \ nxt[v]) return {{down[u] + 1, down[v]}};\n\t\tauto res = descend(u, par[nxt[v]]);\n\
@@ -88,14 +88,14 @@ data:
     for (auto&& [a, b] : descend(l, v)) f(a, b);\n\t}\n\n\ttemplate <class F>\n\t\
     void subtree_query(int u, bool vertex, const F& f) {\n\t\tf(down[u] + int(!vertex),\
     \ up[u] - 1);\n\t}\n\n\tint lca(int a, int b) {\n\t\twhile (nxt[a] != nxt[b])\
-    \ {\n\t\t\tif (down[a] < down[b]) swap(a, b);\n\t\t\ta = par[nxt[a]];\n\t\t}\n\
-    \t\treturn depth[a] < depth[b] ? a : b;\n\t}\n\n\tint dist(int a, int b) { return\
-    \ depth[a] + depth[b] - depth[lca(a, b)] * 2; }\n};"
+    \ {\n\t\t\tif (down[a] < down[b]) std::swap(a, b);\n\t\t\ta = par[nxt[a]];\n\t\
+    \t}\n\t\treturn depth[a] < depth[b] ? a : b;\n\t}\n\n\tint dist(int a, int b)\
+    \ { return depth[a] + depth[b] - depth[lca(a, b)] * 2; }\n};"
   dependsOn: []
   isVerificationFile: false
   path: library/graphs/heavy-light-decomposition.hpp
   requiredBy: []
-  timestamp: '2021-07-31 14:03:05-04:00'
+  timestamp: '2021-07-31 14:30:12-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/yosupo-vertex_add_path_sum-new-hld.test.cpp
