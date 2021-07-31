@@ -15,15 +15,15 @@ data:
     title: library/polynomial/polynomial.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.yosupo.jp/problem/log_of_formal_power_series
+    PROBLEM: https://judge.yosupo.jp/problem/exp_of_formal_power_series
     links:
-    - https://judge.yosupo.jp/problem/log_of_formal_power_series
-  bundledCode: "#define PROBLEM \"https://judge.yosupo.jp/problem/log_of_formal_power_series\"\
+    - https://judge.yosupo.jp/problem/exp_of_formal_power_series
+  bundledCode: "#define PROBLEM \"https://judge.yosupo.jp/problem/exp_of_formal_power_series\"\
     \n\n\n#include <algorithm>\n#include <array>\n#include <bitset>\n#include <cassert>\n\
     #include <chrono>\n#include <cmath>\n#include <complex>\n#include <cstdio>\n#include\
     \ <cstdlib>\n#include <cstring>\n#include <ctime>\n#include <deque>\n#include\
@@ -176,14 +176,14 @@ data:
     \ { return a /= b; }\n};\n\nusing mi = Mint<998244353, 5>;\n\nint main() {\n\t\
     ios::sync_with_stdio(false);\n\tcin.tie(0);\n\tint n;\n\tcin >> n;\n\tvector<mi>\
     \ a(n);\n\tfor (int i = 0; i < n; ++i) {\n\t\tcin >> a[i];\n\t}\n\tPoly<mi> p(a);\n\
-    \tauto ans = p.log(n);\n\tans.resize(n);\n\tfor (int i = 0; i < n; ++i) {\n\t\t\
+    \tauto ans = p.exp(n);\n\tans.resize(n);\n\tfor (int i = 0; i < n; ++i) {\n\t\t\
     cout << ans[i] << ' ';\n\t}\n\tcout << '\\n';\n\treturn 0;\t\n}\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/log_of_formal_power_series\"\
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/exp_of_formal_power_series\"\
     \n\n#include \"../../library/contest/template-minimal.hpp\"\n#include \"../../library/polynomial/polynomial.hpp\"\
     \n#include \"../../library/modular-arithmetic/mod-int2.hpp\"\n\nusing mi = Mint<998244353,\
     \ 5>;\n\nint main() {\n\tios::sync_with_stdio(false);\n\tcin.tie(0);\n\tint n;\n\
     \tcin >> n;\n\tvector<mi> a(n);\n\tfor (int i = 0; i < n; ++i) {\n\t\tcin >> a[i];\n\
-    \t}\n\tPoly<mi> p(a);\n\tauto ans = p.log(n);\n\tans.resize(n);\n\tfor (int i\
+    \t}\n\tPoly<mi> p(a);\n\tauto ans = p.exp(n);\n\tans.resize(n);\n\tfor (int i\
     \ = 0; i < n; ++i) {\n\t\tcout << ans[i] << ' ';\n\t}\n\tcout << '\\n';\n\treturn\
     \ 0;\t\n}"
   dependsOn:
@@ -192,15 +192,15 @@ data:
   - library/polynomial/number-theoretic-transform.hpp
   - library/modular-arithmetic/mod-int2.hpp
   isVerificationFile: true
-  path: verify/yosupo/yosupo-log_of_formal_power_series.test.cpp
+  path: verify/yosupo/yosupo-exp_of_formal_power_series.test.cpp
   requiredBy: []
-  timestamp: '2021-07-31 02:01:21-04:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2021-07-31 02:37:52-04:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
-documentation_of: verify/yosupo/yosupo-log_of_formal_power_series.test.cpp
+documentation_of: verify/yosupo/yosupo-exp_of_formal_power_series.test.cpp
 layout: document
 redirect_from:
-- /verify/verify/yosupo/yosupo-log_of_formal_power_series.test.cpp
-- /verify/verify/yosupo/yosupo-log_of_formal_power_series.test.cpp.html
-title: verify/yosupo/yosupo-log_of_formal_power_series.test.cpp
+- /verify/verify/yosupo/yosupo-exp_of_formal_power_series.test.cpp
+- /verify/verify/yosupo/yosupo-exp_of_formal_power_series.test.cpp.html
+title: verify/yosupo/yosupo-exp_of_formal_power_series.test.cpp
 ---

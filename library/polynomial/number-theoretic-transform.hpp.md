@@ -11,10 +11,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/polynomial/polynomial-sqrt.hpp
     title: library/polynomial/polynomial-sqrt.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/polynomial/polynomial.hpp
     title: library/polynomial/polynomial.hpp
   _extendedVerifiedWith:
+  - icon: ':x:'
+    path: verify/yosupo/yosupo-exp_of_formal_power_series.test.cpp
+    title: verify/yosupo/yosupo-exp_of_formal_power_series.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-inv_of_formal_power_series.test.cpp
     title: verify/yosupo/yosupo-inv_of_formal_power_series.test.cpp
@@ -24,12 +27,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-multipoint_evaluation.test.cpp
     title: verify/yosupo/yosupo-multipoint_evaluation.test.cpp
+  - icon: ':x:'
+    path: verify/yosupo/yosupo-pow_of_formal_power_series.test.cpp
+    title: verify/yosupo/yosupo-pow_of_formal_power_series.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-sqrt_of_formal_power_series.test.cpp
     title: verify/yosupo/yosupo-sqrt_of_formal_power_series.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "\nnamespace NTT {\n\nint bsf(unsigned int x) { return __builtin_ctz(x);\
@@ -147,11 +153,13 @@ data:
   - library/polynomial/berlekamp-massey.hpp
   - library/polynomial/multipoint-evaluation.hpp
   timestamp: '2021-07-30 23:56:29-04:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/yosupo/yosupo-sqrt_of_formal_power_series.test.cpp
   - verify/yosupo/yosupo-log_of_formal_power_series.test.cpp
   - verify/yosupo/yosupo-multipoint_evaluation.test.cpp
+  - verify/yosupo/yosupo-pow_of_formal_power_series.test.cpp
+  - verify/yosupo/yosupo-exp_of_formal_power_series.test.cpp
   - verify/yosupo/yosupo-inv_of_formal_power_series.test.cpp
 documentation_of: library/polynomial/number-theoretic-transform.hpp
 layout: document

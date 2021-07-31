@@ -9,7 +9,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/contest/template-full.hpp
       title: library/contest/template-full.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/contest/template-minimal.hpp
       title: library/contest/template-minimal.hpp
     - icon: ':heavy_check_mark:'
@@ -196,7 +196,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/modular-arithmetic/mod-int.hpp
       title: library/modular-arithmetic/mod-int.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/modular-arithmetic/mod-int2.hpp
       title: library/modular-arithmetic/mod-int2.hpp
     - icon: ':heavy_check_mark:'
@@ -256,13 +256,13 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/polynomial/multipoint-evaluation.hpp
       title: library/polynomial/multipoint-evaluation.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/polynomial/number-theoretic-transform.hpp
       title: library/polynomial/number-theoretic-transform.hpp
     - icon: ':heavy_check_mark:'
       path: library/polynomial/polynomial-sqrt.hpp
       title: library/polynomial/polynomial-sqrt.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/polynomial/polynomial.hpp
       title: library/polynomial/polynomial.hpp
     - icon: ':heavy_check_mark:'
@@ -428,6 +428,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-enumerate_triangles.test.cpp
       title: verify/yosupo/yosupo-enumerate_triangles.test.cpp
+    - icon: ':x:'
+      path: verify/yosupo/yosupo-exp_of_formal_power_series.test.cpp
+      title: verify/yosupo/yosupo-exp_of_formal_power_series.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-factorize.test.cpp
       title: verify/yosupo/yosupo-factorize.test.cpp
@@ -476,6 +479,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-point_set_range_composite.test.cpp
       title: verify/yosupo/yosupo-point_set_range_composite.test.cpp
+    - icon: ':x:'
+      path: verify/yosupo/yosupo-pow_of_formal_power_series.test.cpp
+      title: verify/yosupo/yosupo-pow_of_formal_power_series.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-range_affine_range_sum.test.cpp
       title: verify/yosupo/yosupo-range_affine_range_sum.test.cpp
