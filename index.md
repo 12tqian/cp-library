@@ -32,7 +32,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/data-structures/1d-range-queries/general-full-segment-tree.hpp
       title: library/data-structures/1d-range-queries/general-full-segment-tree.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/data-structures/1d-range-queries/general-simple-segment-tree.hpp
       title: library/data-structures/1d-range-queries/general-simple-segment-tree.hpp
     - icon: ':heavy_check_mark:'
@@ -461,6 +461,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-multipoint_evaluation.test.cpp
       title: verify/yosupo/yosupo-multipoint_evaluation.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/yosupo/yosupo-point_add_range_general-simple-segment-tree.test.cpp
+      title: verify/yosupo/yosupo-point_add_range_general-simple-segment-tree.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-point_add_range_sum-fenwick-tree.test.cpp
       title: verify/yosupo/yosupo-point_add_range_sum-fenwick-tree.test.cpp

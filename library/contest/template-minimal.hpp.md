@@ -139,6 +139,9 @@ data:
     path: verify/yosupo/yosupo-multipoint_evaluation.test.cpp
     title: verify/yosupo/yosupo-multipoint_evaluation.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/yosupo/yosupo-point_add_range_general-simple-segment-tree.test.cpp
+    title: verify/yosupo/yosupo-point_add_range_general-simple-segment-tree.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-point_add_range_sum-fenwick-tree.test.cpp
     title: verify/yosupo/yosupo-point_add_range_sum-fenwick-tree.test.cpp
   - icon: ':heavy_check_mark:'
@@ -357,6 +360,7 @@ data:
   - verify/yosupo/yosupo-range_chmin_chmax_add_range_sum.test.cpp
   - verify/yosupo/yosupo-suffixarray-logarithmic.test.cpp
   - verify/yosupo/yosupo-rectangle_sum-offline-2d-bit.test.cpp
+  - verify/yosupo/yosupo-point_add_range_general-simple-segment-tree.test.cpp
   - verify/yosupo/yosupo-sort_points_by_argument.test.cpp
   - verify/yosupo/yosupo-counting_primes.test.cpp
   - verify/yosupo/yosupo-lca-lca-rmq.test.cpp
