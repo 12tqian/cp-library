@@ -1,90 +1,157 @@
 #pragma once
 
-#include "../../library/numerical/fast-fourier-transform.hpp"
+#include "number-theoretic-transform.hpp"
 
-namespace Polynomial {
+template <class D> struct Poly {
+	std::vector<D> v;
+	Poly(const std::vector<D>& _v = {}) : v(_v) { shrink(); }
 
-using T = long long;
-using Poly = std::vector<T>;
-
-T eval(const Poly &p, const T &x) {
-	T res = 0;
-	for (int i = (int)p.size() - 1; i >= 0; --i) {
-		res = x * res + p[i];
+	void shrink() {
+		while (v.size() && !v.back()) v.pop_back();
 	}
-	return res;
-}
 
-Poly& operator+=(Poly &l, const Poly &r) {
-	l.resize(std::max((int)l.size(), (int)r.size()));
-	for (int i = 0; i < (int)r.size(); ++i) {
-		l[i] += r[i];
-	}
-	return l;
-}
+	void resize(int n) { v.resize(n); }
+	void assign(int n, D& x) { v.assign(n, x); }
+	void push_back(const D& x) { v.push_back(x); }
+	void pop_back() { v.pop_back(); }
+	
+	int size() const { return int(v.size()); }
 
-Poly& operator-=(Poly &l, const Poly &r) {
-	l.resize(std::max((int)l.size(), (int)r.size()));
-	for (int i = 0; i < (int)r.size(); ++i) {
-		l[i] -= r[i];
+	D freq(int p) const { return (p < size()) ? v[p] : D(0); }
+	D& operator[] (int index) { return v[index]; }
+	
+	Poly operator+(const Poly& r) const {
+		auto n = max(size(), r.size());
+		std::vector<D> res(n);
+		for (int i = 0; i < n; i++) res[i] = freq(i) + r.freq(i);
+		return res;
 	}
-	return l;
-}
+	
+	Poly operator-(const Poly& r) const {
+		int n = max(size(), r.size());
+		std::vector<D> res(n);
+		for (int i = 0; i < n; i++) res[i] = freq(i) - r.freq(i);
+		return res;
+	}
+	
+	Poly operator*(const Poly& r) const { return {NTT::multiply(v, r.v)}; }
+	
+	Poly operator*(const D& r) const {
+		int n = size();
+		std::vector<D> res(n);
+		for (int i = 0; i < n; i++) res[i] = v[i] * r;
+		return res;
+	}
 
-Poly& operator*=(Poly &l, const T& r) {
-	for (int i = 0; i < (int)l.size(); ++i) {
-		l[i] *= r;
+	Poly operator/(const D &r) const{  *this * r.inv(); }
+	
+	Poly operator/(const Poly& r) const {
+		if (size() < r.size()) return {{}};
+		int n = size() - r.size() + 1;
+		return (rev().pre(n) * r.rev().inv(n)).pre(n).rev(n);
 	}
-	return l;
-}
+	
+	Poly operator%(const Poly& r) const { return *this - *this / r * r; }
+	
+	Poly operator<<(int s) const {
+		std::vector<D> res(size() + s);
+		for (int i = 0; i < size(); i++) res[i + s] = v[i];
+		return res;
+	}
+	
+	Poly operator>>(int s) const {
+		if (size() <= s) return Poly();
+		std::vector<D> res(size() - s);
+		for (int i = 0; i < size() - s; i++) res[i] = v[i + s];
+		return res;
+	}
+	
+	Poly& operator+=(const Poly& r) { return *this = *this + r; }
+	Poly& operator-=(const Poly& r) { return *this = *this - r; }
+	Poly& operator*=(const Poly& r) { return *this = *this * r; }
+	Poly& operator*=(const D& r) { return *this = *this * r; }
+	Poly& operator/=(const Poly& r) { return *this = *this / r; }
+	Poly& operator/=(const D &r) {return *this = *this/r;}
+	Poly& operator%=(const Poly& r) { return *this = *this % r; }
+	Poly& operator<<=(const size_t& n) { return *this = *this << n; }
+	Poly& operator>>=(const size_t& n) { return *this = *this >> n; }
 
-Poly& operator/=(Poly &l, const T& r) {
-	for (int i = 0; i < (int)l.size(); ++i) {
-		l[i] /= r;
+	Poly pre(int le) const { return {{v.begin(), v.begin() + min(size(), le)}}; }
+	
+	Poly rev(int n = -1) const {
+		std::vector<D> res = v;
+		if (n != -1) res.resize(n);
+		reverse(res.begin(), res.end());
+		return res;
 	}
-	return l;
-}
+	
+	Poly diff() const {
+		std::vector<D> res(max(0, size() - 1));
+		for (int i = 1; i < size(); i++) res[i - 1] = freq(i) * i;
+		return res;
+	}
+	
+	Poly inte() const {
+		std::vector<D> res(size() + 1);
+		for (int i = 0; i < size(); i++) res[i + 1] = freq(i) / (i + 1);
+		return res;
+	}
 
-Poly operator*(const Poly &l, const Poly &r) {
-	if (!std::min((int)l.size(), (int)r.size())) {
-		return {};
-	}
-	return FFT::general_multiply(l, r);
-	Poly res((int)l.size() + (int)r.size() - 1);
-	for (int i = 0; i < (int)l.size(); ++i) {
-		for (int j = 0; j < (int)r.size(); ++j) {
-			res[i + j] += l[i] * r[j];
+	// f * f.inv() = 1 + g(x)x^m
+	Poly inv(int m) const {
+		Poly res = Poly({D(1) / freq(0)});
+		for (int i = 1; i < m; i *= 2) {
+			res = (res * D(2) - res * res * pre(2 * i)).pre(2 * i);
 		}
+		return res.pre(m);
 	}
-	return res;
-}
-
-Poly operator+(Poly l, const Poly &r) { return l += r; }
-Poly operator-(Poly l, const Poly &r) { return l -= r; }
-Poly operator-(Poly l) { for (auto &t : l) t *= -1; return l; }
-Poly operator*(Poly l, const T &r) { return l *= r; }
-Poly operator*(const T& r, const Poly &l) { return l * r; }
-Poly operator/(Poly l, const T &r) { return l /= r;	}
-Poly& operator*=(Poly &l, const Poly &r) { return l = l * r; }
-
-Poly derivative(const Poly &p) {
-	Poly res;
-	for (int i = 1; i < (int)p.size(); ++i) {
-		res.push_back(T(i) * p[i]);
+	
+	Poly exp(int n) const {
+		assert(freq(0) == 0);
+		Poly f({1}), g({1});
+		for (int i = 1; i < n; i *= 2) {
+			g = (g * 2 - f * g * g).pre(i);
+			Poly q = diff().pre(i - 1);
+			Poly w = (q + g * (f.diff() - f * q)).pre(2 * i - 1);
+			f = (f + f * (*this - w.inte()).pre(2 * i)).pre(2 * i);
+		}
+		return f.pre(n);
 	}
-	return res;
-}
-
-Poly integral(const Poly &p) {
-	static Poly invs{0, 1};
-	for (int i = invs.size(); i <= (int)p.size(); ++i ){
-		invs.push_back(1 / T(i));
+	
+	Poly log(int n) const {
+		assert(freq(0) == 1);
+		auto f = pre(n);
+		return (f.diff() * f.inv(n - 1)).pre(n - 1).inte();
 	}
-	Poly res((int)p.size() + 1);
-	for (int i = 0; i < (int)p.size(); ++i) {
-		res[i + 1] = p[i] * invs[i + 1];
+	
+	Poly sqrt(int n) const {
+		assert(freq(0) == 1);
+		Poly f = pre(n + 1);
+		Poly g({1});
+		for (int i = 1; i < n; i *= 2) {
+			g = (g + f.pre(2 * i) * g.inv(2 * i)) / 2;
+		}
+		return g.pre(n + 1);
 	}
-	return res;
-}
 
-}
+	Poly pow_mod(long long n, const Poly& mod) {
+		Poly x = *this, r = {{1}};
+		while (n) {
+			if (n & 1) r = r * x % mod;
+			x = x * x % mod;
+			n >>= 1;
+		}
+		return r;
+	}
+
+	friend ostream& operator<<(ostream& os, const Poly& p) {
+		if (p.size() == 0) return os << "0";
+		for (auto i = 0; i < p.size(); i++) {
+			if (p.v[i]) {
+				os << p.v[i] << "x^" << i;
+				if (i != p.size() - 1) os << "+";
+			}
+		}
+		return os;
+	}
+};

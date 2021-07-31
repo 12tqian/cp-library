@@ -35,10 +35,11 @@ template <class D, class Op> struct SegmentTree {
 	D all_sum() const { return d[1]; }
 	
 	D sum(int a, int b) const {
+		++b;
 		assert(a <= b);
 		D sml = e, smr = e;
 		a += sz;
-		b += sz + 1;
+		b += sz;
 		while (a < b) {
 			if (a & 1) sml = op(sml, d[a++]);
 			if (b & 1) smr = op(d[--b], smr);

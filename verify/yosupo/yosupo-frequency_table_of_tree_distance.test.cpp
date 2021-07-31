@@ -4,7 +4,7 @@
 #include "../../library/graphs/centroid-decomposition.hpp"
 #include "../../library/graphs/lca-rmq.hpp"
 #include "../../library/numerical/fast-fourier-transform.hpp"
-#include "../../library/numerical/polynomial.hpp"
+#include "../../library/numerical/polynomial2.hpp"
 
 int main() {
 	using namespace FFT;

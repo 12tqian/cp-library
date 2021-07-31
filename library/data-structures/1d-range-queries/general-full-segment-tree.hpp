@@ -63,8 +63,9 @@ template <class D, class L, class OpDD, class OpDL, class OpLL> struct LazySegme
 	}
 
 	void add(int a, int b, L x) {
+		++b;
 		a += sz;
-		b += sz + 1;
+		b += sz;
 		for (int i = lg; i >= 1; i--) {
 			if (((a >> i) << i) != a) push(a >> i);
 			if (((b >> i) << i) != b) push((b - 1) >> i);
@@ -101,9 +102,10 @@ template <class D, class L, class OpDD, class OpDL, class OpLL> struct LazySegme
 	}
 
 	D sum(int a, int b) {
+		++b;
 		if (a == b) return e_d;
 		a += sz;
-		b += sz + 1;
+		b += sz;
 		for (int i = lg; i >= 1; i--) {
 			if (((a >> i) << i) != a) push(a >> i);
 			if (((b >> i) << i) != b) push((b - 1) >> i);
