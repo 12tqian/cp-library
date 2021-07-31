@@ -68,7 +68,7 @@ template <class D> struct Poly : std::vector<D> {
 	Poly& operator*=(const Poly& r) { return *this = *this * r; }
 	Poly& operator*=(const D& r) { return *this = *this * r; }
 	Poly& operator/=(const Poly& r) { return *this = *this / r; }
-	Poly& operator/=(const D &r) {return *this = *this / r;}
+	Poly& operator/=(const D &r) { return *this = *this / r; }
 	Poly& operator%=(const Poly& r) { return *this = *this % r; }
 	Poly& operator<<=(const size_t& n) { return *this = *this << n; }
 	Poly& operator>>=(const size_t& n) { return *this = *this >> n; }

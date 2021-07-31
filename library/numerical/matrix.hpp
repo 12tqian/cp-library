@@ -1,10 +1,14 @@
 #pragma once
 
+#include <bits/stdc++.h>
+
 template <class D> struct Matrix : std::vector<std::vector<D> {
 	using std::vector<std::vector<D>::std::vector<std::vector;
 	using std::vector<std::vector<D>::size;
+
 	int h() const { return int(size()); }
 	int w() const { return int((*this)[0].size()); }
+
 	Matrix operator*(const Matrix& r) const {
 		assert(w() == r.h());
 		Matrix res(h(), std::vector<D>(r.w()));
@@ -17,8 +21,45 @@ template <class D> struct Matrix : std::vector<std::vector<D> {
 		}
 		return res;
 	}
+
+	Matrix<T>& operator+=(const Matrix& r) {
+		assert(h() == r.h() && w == r.w());
+		for (int i = 0; i < h(); i++) {
+			for (int j = 0; j < h(); j++) {
+				(*this)[i][j] += r[i][j];
+			}
+		}
+		return *this;
+	}
+
+	Matrix& operator-=(const Matrix& r) {
+		assert(h() == r.h() && w == r.w());
+		for (int i = 0; i < h(); i++) {
+			for (int j = 0; j < h(); j++) {
+				(*this)[i][j] -= r[i][j];
+			}
+		}
+		return *this;
+	}
+
+	Matrix operator*(const D& r) const {
+		Matrix res = (*this);
+		for (int i = 0; i < h(); ++i) {
+			for (int j = 0; j < w(); ++j) {
+				res[i][j] *= r;
+			}
+		}
+		return res;
+	}
+
+	Matrix operator/(const D &r) const{ return *this * (1 / r); }
 	Matrix& operator*=(const Matrix& r) { return *this = *this * r; }
-	Matrix pow(ll n) const {
+	Matrix operator+(Matrix a, const Matrix& b) { return a += b; }
+	Matrix operator-(Matrix a, const Matrix& b) { return a -= b; }
+	Matrix& operator*=(const D& r) { return *this = *this * r; }
+	Matrix& operator/=(const D &r) { return *this = *this / r; }
+
+	Matrix pow(long long n) const {
 		assert(h() == w());
 		Matrix x = *this, r(h(), std::vector<D>(w()));
 		for (int i = 0; i < h(); i++) r[i][i] = D(1);
@@ -160,10 +201,8 @@ template <class Mint> Mint calc_det(Matrix<Mint> a) {
 template <class Mint> Matrix<Mint> inverse(Matrix<Mint> a) {
 	assert(a.h() == a.w());
 	int n = a.h();
-
 	Matrix<Mint> b(n, std::vector<Mint>(n));
 	for (int i = 0; i < n; i++) b[i][i] = 1;
-
 	for (int x = 0; x < n; x++) {
 		int my = -1;
 		for (int y = x; y < n; y++) {
@@ -192,3 +231,5 @@ template <class Mint> Matrix<Mint> inverse(Matrix<Mint> a) {
 	}
 	return b;
 }
+
+template <class D> Matrix<D> make_matrix(int r, int c) { return Matrix<D>(r, std::vector<D>(c)); }
