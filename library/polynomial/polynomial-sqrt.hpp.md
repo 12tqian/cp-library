@@ -1,23 +1,23 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/modular-arithmetic/mod-sqrt.hpp
     title: library/modular-arithmetic/mod-sqrt.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/polynomial/number-theoretic-transform.hpp
     title: library/polynomial/number-theoretic-transform.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/polynomial/polynomial.hpp
     title: library/polynomial/polynomial.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-sqrt_of_formal_power_series.test.cpp
     title: verify/yosupo/yosupo-sqrt_of_formal_power_series.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "\n\n\nnamespace NTT {\n\nint bsf(unsigned int x) { return __builtin_ctz(x);\
@@ -103,7 +103,7 @@ data:
     \ / r; }\n\tPoly& operator%=(const Poly& r) { return *this = *this % r; }\n\t\
     Poly& operator<<=(const size_t& n) { return *this = *this << n; }\n\tPoly& operator>>=(const\
     \ size_t& n) { return *this = *this >> n; }\n\tfriend Poly operator*(D const&\
-    \ l, Matrix<T> r) { return r *= l; }\n\n\tPoly pre(int le) const { return Poly(this->begin(),\
+    \ l, Poly r) { return r *= l; }\n\n\tPoly pre(int le) const { return Poly(this->begin(),\
     \ this->begin() + min((int)this->size(), le)); }\n\t\n\tPoly rev(int n = -1) const\
     \ {\n\t\tPoly res = *this;\n\t\tif (n != -1) res.resize(n);\n\t\treverse(res.begin(),\
     \ res.end());\n\t\treturn res;\n\t}\n\t\n\tPoly diff() const {\n\t\tstd::vector<D>\
@@ -188,8 +188,8 @@ data:
   isVerificationFile: false
   path: library/polynomial/polynomial-sqrt.hpp
   requiredBy: []
-  timestamp: '2021-07-31 15:32:51-04:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2021-07-31 15:51:45-04:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/yosupo-sqrt_of_formal_power_series.test.cpp
 documentation_of: library/polynomial/polynomial-sqrt.hpp

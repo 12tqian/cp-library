@@ -1,26 +1,26 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/modular-arithmetic/mod-int2.hpp
     title: library/modular-arithmetic/mod-int2.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/polynomial/multipoint-evaluation.hpp
     title: library/polynomial/multipoint-evaluation.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/polynomial/number-theoretic-transform.hpp
     title: library/polynomial/number-theoretic-transform.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/polynomial/polynomial.hpp
     title: library/polynomial/polynomial.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/multipoint_evaluation
@@ -143,7 +143,7 @@ data:
     \ / r; }\n\tPoly& operator%=(const Poly& r) { return *this = *this % r; }\n\t\
     Poly& operator<<=(const size_t& n) { return *this = *this << n; }\n\tPoly& operator>>=(const\
     \ size_t& n) { return *this = *this >> n; }\n\tfriend Poly operator*(D const&\
-    \ l, Matrix<T> r) { return r *= l; }\n\n\tPoly pre(int le) const { return Poly(this->begin(),\
+    \ l, Poly r) { return r *= l; }\n\n\tPoly pre(int le) const { return Poly(this->begin(),\
     \ this->begin() + min((int)this->size(), le)); }\n\t\n\tPoly rev(int n = -1) const\
     \ {\n\t\tPoly res = *this;\n\t\tif (n != -1) res.resize(n);\n\t\treverse(res.begin(),\
     \ res.end());\n\t\treturn res;\n\t}\n\t\n\tPoly diff() const {\n\t\tstd::vector<D>\
@@ -215,8 +215,8 @@ data:
   isVerificationFile: true
   path: verify/yosupo/yosupo-multipoint_evaluation.test.cpp
   requiredBy: []
-  timestamp: '2021-07-31 15:32:51-04:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2021-07-31 15:51:45-04:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/yosupo-multipoint_evaluation.test.cpp
 layout: document
