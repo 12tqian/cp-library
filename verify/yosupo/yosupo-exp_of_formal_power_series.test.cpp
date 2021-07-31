@@ -17,6 +17,7 @@ int main() {
 	}
 	Poly<mi> p(a);
 	auto ans = p.exp(n);
+	ans.resize(n);
 	for (int i = 0; i < n; ++i) {
 		cout << ans[i] << ' ';
 	}
