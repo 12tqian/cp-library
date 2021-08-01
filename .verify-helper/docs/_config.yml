@@ -1,6 +1,12 @@
 exclude: ['ahc.py', 'bundle.py', 'compress.py']
-title: 12tqian's Library
+title: 12tqian's Competitive Programming Library
 theme: minima
+
+author:
+  name: Timothy Qian
+  email: 12tqian@gmail.com
+
+show_excerpts: false
 
 plugins:
  # - jekyll-feed
