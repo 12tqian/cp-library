@@ -1,6 +1,6 @@
 exclude: ['ahc.py', 'bundle.py', 'compress.py']
 title: 12tqian's Competitive Programming Library
-theme: hacker
+theme: jekyll-theme-hacker
 
 author:
   name: Timothy Qian
