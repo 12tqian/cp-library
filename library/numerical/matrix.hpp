@@ -148,60 +148,60 @@ template <class D> int calc_rank(Matrix<D> a, const D& EPS = -1) { return gauss(
 template <class D> D calc_det(Matrix<D> a, const D& EPS = -1) { return gauss(a, EPS).first; }
 
 template <class D> std::vector<std::vector<D>> solve_linear(Matrix<D> a, std::vector<D> b, const D& EPS = -1) {
-    int h = a.h(), w = a.w();
-    assert(int(b.size()) == h);
-    int r = 0;
-    std::vector<bool> used(w);
-    std::vector<int> idxs;
-    for (int x = 0; x < w; x++) {
-        int my = get_row(a, h, x, r, EPS);
-        if (my == -1) continue;
-        if (r != my) std::swap(a[r], a[my]);
-        swap(b[r], b[my]);
-        for (int y = r + 1; y < h; y++) {
-            if (!a[y][x]) continue;
-            auto freq = a[y][x] / a[r][x];
-            for (int k = x; k < w; k++) a[y][k] -= freq * a[r][k];
-            b[y] -= freq * b[r];
-        }
-        r++;
-        used[x] = true;
-        idxs.push_back(x);
-        if (r == h) break;
-    }
+	int h = a.h(), w = a.w();
+	assert(int(b.size()) == h);
+	int r = 0;
+	std::vector<bool> used(w);
+	std::vector<int> idxs;
+	for (int x = 0; x < w; x++) {
+		int my = get_row(a, h, x, r, EPS);
+		if (my == -1) continue;
+		if (r != my) std::swap(a[r], a[my]);
+		swap(b[r], b[my]);
+		for (int y = r + 1; y < h; y++) {
+			if (!a[y][x]) continue;
+			auto freq = a[y][x] / a[r][x];
+			for (int k = x; k < w; k++) a[y][k] -= freq * a[r][k];
+			b[y] -= freq * b[r];
+		}
+		r++;
+		used[x] = true;
+		idxs.push_back(x);
+		if (r == h) break;
+	}
 	auto zero = [&](const D& x) {
 		return EPS == D(-1) ? x != 0 : -EPS < x && x < EPS;
 	};
-    for (int y = r; y < h; y++) {
-        if (!zero(b[y])) return {};
-    }
-    std::vector<std::vector<D>> sols;
-    { // initial solution
-        std::vector<D> v(w);
-        for (int y = r - 1; y >= 0; y--) {
-            int f = idxs[y];
-            v[f] = b[y];
-            for (int x = f + 1; x < w; x++) {
-                v[f] -= a[y][x] * v[x];
-            }
-            v[f] /= a[y][f];
-        }
-        sols.push_back(v);
-    }
-    for (int s = 0; s < w; s++) {
-        if (used[s]) continue;
-        std::vector<D> v(w);
-        v[s] = D(1);
-        for (int y = r - 1; y >= 0; y--) {
-            int f = idxs[y];
-            for (int x = f + 1; x < w; x++) {
-                v[f] -= a[y][x] * v[x];
-            }
-            v[f] /= a[y][f];
-        }
-        sols.push_back(v);
-    }
-    return sols;
+	for (int y = r; y < h; y++) {
+		if (!zero(b[y])) return {};
+	}
+	std::vector<std::vector<D>> sols;
+	{ // initial solution
+		std::vector<D> v(w);
+		for (int y = r - 1; y >= 0; y--) {
+			int f = idxs[y];
+			v[f] = b[y];
+			for (int x = f + 1; x < w; x++) {
+				v[f] -= a[y][x] * v[x];
+			}
+			v[f] /= a[y][f];
+		}
+		sols.push_back(v);
+	}
+	for (int s = 0; s < w; s++) {
+		if (used[s]) continue;
+		std::vector<D> v(w);
+		v[s] = D(1);
+		for (int y = r - 1; y >= 0; y--) {
+			int f = idxs[y];
+			for (int x = f + 1; x < w; x++) {
+				v[f] -= a[y][x] * v[x];
+			}
+			v[f] /= a[y][f];
+		}
+		sols.push_back(v);
+	}
+	return sols;
 }
 
 } // MatrixOperations
