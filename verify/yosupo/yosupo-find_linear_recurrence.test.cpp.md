@@ -191,7 +191,7 @@ data:
     \ os, const Poly& p) {\n\t\tif (p.empty()) return os << \"0\";\n\t\tfor (auto\
     \ i = 0; i < (int)p.size(); i++) {\n\t\t\tif (p[i]) {\n\t\t\t\tos << p[i] << \"\
     x^\" << i;\n\t\t\t\tif (i != (int)p.size() - 1) os << \"+\";\n\t\t\t}\n\t\t}\n\
-    \t\treturn os;\n\t}\n};\ntemplate <typename D> Poly<D> berlekamp_massey(const\
+    \t\treturn os;\n\t}\n};\n\ntemplate <typename D> Poly<D> berlekamp_massey(const\
     \ Poly<D>& s) {\n\tconst int N = (int)s.size();\n\tPoly<D> b, c;\n\tb.reserve(N\
     \ + 1);\n\tc.reserve(N + 1);\n\tb.push_back(1);\n\tc.push_back(1);\n\tD y = D(1);\n\
     \tfor (int ed = 1; ed <= N; ed++) {\n\t\tint l = (int)c.size(), m = (int)b.size();\n\
@@ -223,7 +223,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/yosupo-find_linear_recurrence.test.cpp
   requiredBy: []
-  timestamp: '2021-08-01 14:39:05-04:00'
+  timestamp: '2021-08-01 15:42:25-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/yosupo-find_linear_recurrence.test.cpp

@@ -192,6 +192,9 @@ data:
       path: library/misc/fast-input.hpp
       title: library/misc/fast-input.hpp
     - icon: ':heavy_check_mark:'
+      path: library/misc/fast-io.hpp
+      title: library/misc/fast-io.hpp
+    - icon: ':heavy_check_mark:'
       path: library/misc/range-vector.hpp
       title: library/misc/range-vector.hpp
   - name: library/modular-arithmetic
@@ -399,6 +402,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/unit-test/unit-test-big-integer.test.cpp
       title: verify/unit-test/unit-test-big-integer.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/unit-test/unit-test-fast-io.test.cpp
+      title: verify/unit-test/unit-test-fast-io.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/unit-test/unit-test-fraction.test.cpp
       title: verify/unit-test/unit-test-fraction.test.cpp
