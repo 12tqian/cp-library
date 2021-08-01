@@ -11,11 +11,11 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/polynomial/polynomial-sqrt.hpp
     title: library/polynomial/polynomial-sqrt.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/polynomial/polynomial.hpp
     title: library/polynomial/polynomial.hpp
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-division_of_polynomials.test.cpp
     title: verify/yosupo/yosupo-division_of_polynomials.test.cpp
   - icon: ':heavy_check_mark:'
@@ -39,9 +39,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-sqrt_of_formal_power_series.test.cpp
     title: verify/yosupo/yosupo-sqrt_of_formal_power_series.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "\nnamespace NTT {\n\nint bsf(unsigned int x) { return __builtin_ctz(x);\
@@ -57,10 +57,10 @@ data:
     \ = l + r;\n\t\t\t\tb[y | x | n >> 1] = l - r;\n\t\t\t}\n\t\t\tnow *= base;\n\t\
     \t}\n\t\tswap(a, b);\n\t}\n}\n\ntemplate <class Mint> std::vector<Mint> multiply_nft(const\
     \ std::vector<Mint>& a, const std::vector<Mint>& b) {\n\tint n = int(a.size()),\
-    \ m = int(b.size());\n\tif (!n || !m) return {};\n\tif (min(n, m) <= 8) {\n\t\t\
-    std::vector<Mint> ans(n + m - 1);\n\t\tfor (int i = 0; i < n; i++)\n\t\t\tfor\
-    \ (int j = 0; j < m; j++) ans[i + j] += a[i] * b[j];\n\t\treturn ans;\n\t}\n\t\
-    int lg = 0;\n\twhile ((1 << lg) < n + m - 1) lg++;\n\tint z = 1 << lg;\n\tauto\
+    \ m = int(b.size());\n\tif (!n || !m) return {};\n\tif (std::min(n, m) <= 8) {\n\
+    \t\tstd::vector<Mint> ans(n + m - 1);\n\t\tfor (int i = 0; i < n; i++)\n\t\t\t\
+    for (int j = 0; j < m; j++) ans[i + j] += a[i] * b[j];\n\t\treturn ans;\n\t}\n\
+    \tint lg = 0;\n\twhile ((1 << lg) < n + m - 1) lg++;\n\tint z = 1 << lg;\n\tauto\
     \ a2 = a, b2 = b;\n\ta2.resize(z);\n\tb2.resize(z);\n\tnft(false, a2);\n\tnft(false,\
     \ b2);\n\tfor (int i = 0; i < z; i++) a2[i] *= b2[i];\n\tnft(true, a2);\n\ta2.resize(n\
     \ + m - 1);\n\tMint iz = 1 / Mint(z);\n\tfor (int i = 0; i < n + m - 1; i++) a2[i]\
@@ -88,10 +88,10 @@ data:
     \ u = bsf(~(unsigned int)(s));\n\t\t\t\tinow *= sinow[u];\n\t\t\t}\n\t\t}\n\t\
     }\n}\n\ntemplate <class Mint> std::vector<Mint> multiply(const std::vector<Mint>&\
     \ a, const std::vector<Mint>& b) {\n\tint n = int(a.size()), m = int(b.size());\n\
-    \tif (!n || !m) return {};\n\tif (min(n, m) < 8) {\n\t\tstd::vector<Mint> ans(n\
-    \ + m - 1);\n\t\tfor (int i = 0; i < n; i++)\n\t\t\tfor (int j = 0; j < m; j++)\
-    \ ans[i + j] += a[i] * b[j];\n\t\treturn ans;\n\t}\n\tint lg = 0;\n\twhile ((1\
-    \ << lg) < n + m - 1) lg++;\n\tint z = 1 << lg;\n\tauto a2 = a;\n\ta2.resize(z);\n\
+    \tif (!n || !m) return {};\n\tif (std::min(n, m) < 8) {\n\t\tstd::vector<Mint>\
+    \ ans(n + m - 1);\n\t\tfor (int i = 0; i < n; i++)\n\t\t\tfor (int j = 0; j <\
+    \ m; j++) ans[i + j] += a[i] * b[j];\n\t\treturn ans;\n\t}\n\tint lg = 0;\n\t\
+    while ((1 << lg) < n + m - 1) lg++;\n\tint z = 1 << lg;\n\tauto a2 = a;\n\ta2.resize(z);\n\
     \tbutterfly(false, a2);\n\tif (a == b) {\n\t\tfor (int i = 0; i < z; i++) a2[i]\
     \ *= a2[i];\n\t} else {\n\t\tauto b2 = b;\n\t\tb2.resize(z);\n\t\tbutterfly(false,\
     \ b2);\n\t\tfor (int i = 0; i < z; i++) a2[i] *= b2[i];\n\t}\n\tbutterfly(true,\
@@ -110,10 +110,10 @@ data:
     \ = l + r;\n\t\t\t\tb[y | x | n >> 1] = l - r;\n\t\t\t}\n\t\t\tnow *= base;\n\t\
     \t}\n\t\tswap(a, b);\n\t}\n}\n\ntemplate <class Mint> std::vector<Mint> multiply_nft(const\
     \ std::vector<Mint>& a, const std::vector<Mint>& b) {\n\tint n = int(a.size()),\
-    \ m = int(b.size());\n\tif (!n || !m) return {};\n\tif (min(n, m) <= 8) {\n\t\t\
-    std::vector<Mint> ans(n + m - 1);\n\t\tfor (int i = 0; i < n; i++)\n\t\t\tfor\
-    \ (int j = 0; j < m; j++) ans[i + j] += a[i] * b[j];\n\t\treturn ans;\n\t}\n\t\
-    int lg = 0;\n\twhile ((1 << lg) < n + m - 1) lg++;\n\tint z = 1 << lg;\n\tauto\
+    \ m = int(b.size());\n\tif (!n || !m) return {};\n\tif (std::min(n, m) <= 8) {\n\
+    \t\tstd::vector<Mint> ans(n + m - 1);\n\t\tfor (int i = 0; i < n; i++)\n\t\t\t\
+    for (int j = 0; j < m; j++) ans[i + j] += a[i] * b[j];\n\t\treturn ans;\n\t}\n\
+    \tint lg = 0;\n\twhile ((1 << lg) < n + m - 1) lg++;\n\tint z = 1 << lg;\n\tauto\
     \ a2 = a, b2 = b;\n\ta2.resize(z);\n\tb2.resize(z);\n\tnft(false, a2);\n\tnft(false,\
     \ b2);\n\tfor (int i = 0; i < z; i++) a2[i] *= b2[i];\n\tnft(true, a2);\n\ta2.resize(n\
     \ + m - 1);\n\tMint iz = 1 / Mint(z);\n\tfor (int i = 0; i < n + m - 1; i++) a2[i]\
@@ -141,10 +141,10 @@ data:
     \ u = bsf(~(unsigned int)(s));\n\t\t\t\tinow *= sinow[u];\n\t\t\t}\n\t\t}\n\t\
     }\n}\n\ntemplate <class Mint> std::vector<Mint> multiply(const std::vector<Mint>&\
     \ a, const std::vector<Mint>& b) {\n\tint n = int(a.size()), m = int(b.size());\n\
-    \tif (!n || !m) return {};\n\tif (min(n, m) < 8) {\n\t\tstd::vector<Mint> ans(n\
-    \ + m - 1);\n\t\tfor (int i = 0; i < n; i++)\n\t\t\tfor (int j = 0; j < m; j++)\
-    \ ans[i + j] += a[i] * b[j];\n\t\treturn ans;\n\t}\n\tint lg = 0;\n\twhile ((1\
-    \ << lg) < n + m - 1) lg++;\n\tint z = 1 << lg;\n\tauto a2 = a;\n\ta2.resize(z);\n\
+    \tif (!n || !m) return {};\n\tif (std::min(n, m) < 8) {\n\t\tstd::vector<Mint>\
+    \ ans(n + m - 1);\n\t\tfor (int i = 0; i < n; i++)\n\t\t\tfor (int j = 0; j <\
+    \ m; j++) ans[i + j] += a[i] * b[j];\n\t\treturn ans;\n\t}\n\tint lg = 0;\n\t\
+    while ((1 << lg) < n + m - 1) lg++;\n\tint z = 1 << lg;\n\tauto a2 = a;\n\ta2.resize(z);\n\
     \tbutterfly(false, a2);\n\tif (a == b) {\n\t\tfor (int i = 0; i < z; i++) a2[i]\
     \ *= a2[i];\n\t} else {\n\t\tauto b2 = b;\n\t\tb2.resize(z);\n\t\tbutterfly(false,\
     \ b2);\n\t\tfor (int i = 0; i < z; i++) a2[i] *= b2[i];\n\t}\n\tbutterfly(true,\
@@ -158,8 +158,8 @@ data:
   - library/polynomial/polynomial.hpp
   - library/polynomial/berlekamp-massey.hpp
   - library/polynomial/multipoint-evaluation.hpp
-  timestamp: '2021-07-30 23:56:29-04:00'
-  verificationStatus: LIBRARY_SOME_WA
+  timestamp: '2021-08-01 14:39:05-04:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/yosupo-sqrt_of_formal_power_series.test.cpp
   - verify/yosupo/yosupo-log_of_formal_power_series.test.cpp

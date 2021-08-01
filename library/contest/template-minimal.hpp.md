@@ -105,9 +105,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-counting_primes.test.cpp
     title: verify/yosupo/yosupo-counting_primes.test.cpp
-  - icon: ':x:'
-    path: verify/yosupo/yosupo-division_of_polynomials.test.cpp
-    title: verify/yosupo/yosupo-division_of_polynomials.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-enumerate_palindromes.test.cpp
     title: verify/yosupo/yosupo-enumerate_palindromes.test.cpp
@@ -211,9 +208,6 @@ data:
     path: verify/yosupo/yosupo-suffixarray-logarithmic.test.cpp
     title: verify/yosupo/yosupo-suffixarray-logarithmic.test.cpp
   - icon: ':heavy_check_mark:'
-    path: verify/yosupo/yosupo-system_of_linear_equations.test.cpp
-    title: verify/yosupo/yosupo-system_of_linear_equations.test.cpp
-  - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-two_edge_connected_components.test.cpp
     title: verify/yosupo/yosupo-two_edge_connected_components.test.cpp
   - icon: ':heavy_check_mark:'
@@ -225,9 +219,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-vertex_add_path_sum.test.cpp
     title: verify/yosupo/yosupo-vertex_add_path_sum.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: '
@@ -343,7 +337,7 @@ data:
   requiredBy:
   - library/graphs/enumerate-triangles.cpp
   timestamp: '2021-07-28 19:45:54-04:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/yosupo-convolution_mod_1000000007-karatsuba.test.cpp
   - verify/yosupo/yosupo-line_add_get_min.test.cpp
@@ -364,9 +358,7 @@ data:
   - verify/yosupo/yosupo-factorize.test.cpp
   - verify/yosupo/yosupo-point_add_range_sum-fenwick-tree.test.cpp
   - verify/yosupo/yosupo-point_add_range_sum-lazy-segment-tree.test.cpp
-  - verify/yosupo/yosupo-division_of_polynomials.test.cpp
   - verify/yosupo/yosupo-segment_add_get_min-li-chao-tree-online.test.cpp
-  - verify/yosupo/yosupo-system_of_linear_equations.test.cpp
   - verify/yosupo/yosupo-static_range_sum.test.cpp
   - verify/yosupo/yosupo-multipoint_evaluation.test.cpp
   - verify/yosupo/yosupo-pow_of_formal_power_series.test.cpp

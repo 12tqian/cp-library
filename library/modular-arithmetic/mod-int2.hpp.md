@@ -24,7 +24,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-convolution_mod_1000000007-karatsuba.test.cpp
     title: verify/yosupo/yosupo-convolution_mod_1000000007-karatsuba.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-division_of_polynomials.test.cpp
     title: verify/yosupo/yosupo-division_of_polynomials.test.cpp
   - icon: ':heavy_check_mark:'
@@ -63,9 +63,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-system_of_linear_equations.test.cpp
     title: verify/yosupo/yosupo-system_of_linear_equations.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "\n// 5 is a root of both mods\ntemplate <int MOD, int RT> struct Mint\
@@ -131,7 +131,7 @@ data:
   - library/polynomial/polynomial2.hpp
   - library/polynomial/fast-fourier-transform.hpp
   timestamp: '2021-07-31 01:42:23-04:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/yosupo-convolution_mod_1000000007-karatsuba.test.cpp
   - verify/yosupo/yosupo-sqrt_of_formal_power_series.test.cpp
