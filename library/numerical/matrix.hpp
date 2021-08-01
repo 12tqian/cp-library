@@ -169,8 +169,11 @@ template <class D> std::vector<std::vector<D>> solve_linear(Matrix<D> a, std::ve
         idxs.push_back(x);
         if (r == h) break;
     }
+	auto zero = [&](const D& x) {
+		return EPS == D(-1) ? x != 0 : -EPS < x && x < EPS;
+	}
     for (int y = r; y < h; y++) {
-        if (b[y]) return {};
+        if (!zero(b[y])) return {};
     }
     std::vector<std::vector<D>> sols;
     { // initial solution
