@@ -9,7 +9,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/contest/template-full.hpp
       title: library/contest/template-full.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/contest/template-minimal.hpp
       title: library/contest/template-minimal.hpp
     - icon: ':heavy_check_mark:'
@@ -199,7 +199,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/modular-arithmetic/mod-int.hpp
       title: library/modular-arithmetic/mod-int.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/modular-arithmetic/mod-int2.hpp
       title: library/modular-arithmetic/mod-int2.hpp
     - icon: ':heavy_check_mark:'
@@ -262,13 +262,13 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/polynomial/multipoint-evaluation.hpp
       title: library/polynomial/multipoint-evaluation.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/polynomial/number-theoretic-transform.hpp
       title: library/polynomial/number-theoretic-transform.hpp
     - icon: ':heavy_check_mark:'
       path: library/polynomial/polynomial-sqrt.hpp
       title: library/polynomial/polynomial-sqrt.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/polynomial/polynomial.hpp
       title: library/polynomial/polynomial.hpp
     - icon: ':heavy_check_mark:'
@@ -431,6 +431,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-counting_primes.test.cpp
       title: verify/yosupo/yosupo-counting_primes.test.cpp
+    - icon: ':x:'
+      path: verify/yosupo/yosupo-division_of_polynomials.test.cpp
+      title: verify/yosupo/yosupo-division_of_polynomials.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-enumerate_palindromes.test.cpp
       title: verify/yosupo/yosupo-enumerate_palindromes.test.cpp

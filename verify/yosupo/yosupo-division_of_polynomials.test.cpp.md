@@ -7,9 +7,6 @@ data:
   - icon: ':question:'
     path: library/modular-arithmetic/mod-int2.hpp
     title: library/modular-arithmetic/mod-int2.hpp
-  - icon: ':heavy_check_mark:'
-    path: library/polynomial/multipoint-evaluation.hpp
-    title: library/polynomial/multipoint-evaluation.hpp
   - icon: ':question:'
     path: library/polynomial/number-theoretic-transform.hpp
     title: library/polynomial/number-theoretic-transform.hpp
@@ -18,15 +15,15 @@ data:
     title: library/polynomial/polynomial.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.yosupo.jp/problem/multipoint_evaluation
+    PROBLEM: https://judge.yosupo.jp/problem/division_of_polynomials
     links:
-    - https://judge.yosupo.jp/problem/multipoint_evaluation
-  bundledCode: "#define PROBLEM \"https://judge.yosupo.jp/problem/multipoint_evaluation\"\
+    - https://judge.yosupo.jp/problem/division_of_polynomials
+  bundledCode: "#define PROBLEM \"https://judge.yosupo.jp/problem/division_of_polynomials\"\
     \n\n\n#include <algorithm>\n#include <array>\n#include <bitset>\n#include <cassert>\n\
     #include <chrono>\n#include <cmath>\n#include <complex>\n#include <cstdio>\n#include\
     \ <cstdlib>\n#include <cstring>\n#include <ctime>\n#include <deque>\n#include\
@@ -60,9 +57,9 @@ data:
     \ *this -= 1; }\n\tfriend Mint operator+(Mint a, const Mint &b) { return a +=\
     \ b; }\n\tfriend Mint operator-(Mint a, const Mint &b) { return a -= b; }\n\t\
     friend Mint operator*(Mint a, const Mint &b) { return a *= b; }\n\tfriend Mint\
-    \ operator/(Mint a, const Mint &b) { return a /= b; }\n};\n\n\n\nnamespace NTT\
-    \ {\n\nint bsf(unsigned int x) { return __builtin_ctz(x); }\nint bsf(unsigned\
-    \ long long x) { return __builtin_ctzll(x); }\n\ntemplate <class Mint> void nft(bool\
+    \ operator/(Mint a, const Mint &b) { return a /= b; }\n};\n\n\nnamespace NTT {\n\
+    \nint bsf(unsigned int x) { return __builtin_ctz(x); }\nint bsf(unsigned long\
+    \ long x) { return __builtin_ctzll(x); }\n\ntemplate <class Mint> void nft(bool\
     \ type, std::vector<Mint>& a) {\n\tint n = int(a.size()), s = 0;\n\twhile ((1\
     \ << s) < n) s++;\n\tassert(1 << s == n);\n\tstatic std::vector<Mint> ep, iep;\n\
     \twhile (int(ep.size()) <= s) {\n\t\tep.push_back(pow(Mint::rt(), Mint(-1).v /\
@@ -189,52 +186,37 @@ data:
     \ os, const Poly& p) {\n\t\tif (p.empty()) return os << \"0\";\n\t\tfor (auto\
     \ i = 0; i < (int)p.size(); i++) {\n\t\t\tif (p[i]) {\n\t\t\t\tos << p[i] << \"\
     x^\" << i;\n\t\t\t\tif (i != (int)p.size() - 1) os << \"+\";\n\t\t\t}\n\t\t}\n\
-    \t\treturn os;\n\t}\n};\n\ntemplate <class Mint> struct MultiEval {\n\tusing NP\
-    \ = MultiEval*;\n\tNP l, r;\n\tstd::vector<Mint> que;\n\tint sz;\n\tPoly<Mint>\
-    \ mul;\n\n\tMultiEval(const std::vector<Mint>& _que, int off, int _sz) : sz(_sz)\
-    \ {\n\t\tif (sz <= 100) {\n\t\t\tque = {_que.begin() + off, _que.begin() + off\
-    \ + sz};\n\t\t\tmul = {{1}};\n\t\t\tfor (auto x : que) mul *= {{-x, 1}};\n\t\t\
-    \treturn;\n\t\t}\n\t\tl = new MultiEval(_que, off, sz / 2);\n\t\tr = new MultiEval(_que,\
-    \ off + sz / 2, sz - sz / 2);\n\t\tmul = l->mul * r->mul;\n\t}\n\n\tMultiEval(const\
-    \ std::vector<Mint>& _que) : MultiEval(_que, 0, int(_que.size())) {}\n\n\tvoid\
-    \ query(const Poly<Mint>& _pol, std::vector<Mint>& res) const {\n\t\tif (sz <=\
-    \ 100) {\n\t\t\tfor (auto x : que) {\n\t\t\t\tMint sm = 0, base = 1;\n\t\t\t\t\
-    for (int i = 0; i < _pol.size(); i++) {\n\t\t\t\t\tsm += base * _pol.freq(i);\n\
-    \t\t\t\t\tbase *= x;\n\t\t\t\t}\n\t\t\t\tres.push_back(sm);\n\t\t\t}\n\t\t\treturn;\n\
-    \t\t}\n\t\tauto pol = _pol % mul;\n\t\tl->query(pol, res);\n\t\tr->query(pol,\
-    \ res);\n\t}\n\t\n\tstd::vector<Mint> query(const Poly<Mint>& pol) const {\n\t\
-    \tstd::vector<Mint> res;\n\t\tquery(pol, res);\n\t\treturn res;\n\t}\n};\n\n\n\
-    using mi = Mint<998244353, 5>;\n\nint main() {\n\tios::sync_with_stdio(false);\n\
-    \tcin.tie(0);\n\tint n, m;\n\tcin >> n >> m;\n\tvector<mi> c(n);\n\tfor (int i\
-    \ = 0; i < n; ++i) {\n\t\tcin >> c[i];\n\t}\n\tvector<mi> p(m);\n\tfor (int i\
-    \ = 0; i < m; ++i) {\n\t\tcin >> p[i];\n\t}\n\tPoly<mi> poly(c);\n\tMultiEval<mi>\
-    \ multi(p);\n\tauto ans = multi.query(c);\n\tfor (int i = 0; i < m; ++i) {\n\t\
-    \tcout << ans[i] << ' ';\n\t}\n\tcout << '\\n';\n\treturn 0;\t\n}\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/multipoint_evaluation\"\
+    \t\treturn os;\n\t}\n};\n\nusing mi = Mint<998244353, 5>;\n\nint main() {\n\t\
+    int n, m;\n\tcin >> n >> m;\n\tPoly<mi> f(n), g(m);\n\tfor (int i = 0; i < n;\
+    \ ++i) {\n\t\tcin >> f[i];\n\t}\n\tfor (int i = 0; i < m; ++i) {\n\t\tcin >> g[i];\n\
+    \t}\n\tauto q = f / g;\n\tauto r = f - q * g;\n\tcout << q.size() << ' ' << r.size()\
+    \ << '\\n';\n\tfor (auto t : q) {\n\t\tcout << t << ' ';\n\t}\n\tcout << '\\n';\n\
+    \tfor (auto t : r) {\n\t\tcout << t << ' ';\n\t}\n\tcout << '\\n';\n\treturn 0;\n\
+    }\n"
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/division_of_polynomials\"\
     \n\n#include \"../../library/contest/template-minimal.hpp\"\n#include \"../../library/modular-arithmetic/mod-int2.hpp\"\
-    \n#include \"../../library/polynomial/multipoint-evaluation.hpp\"\n\n\nusing mi\
-    \ = Mint<998244353, 5>;\n\nint main() {\n\tios::sync_with_stdio(false);\n\tcin.tie(0);\n\
-    \tint n, m;\n\tcin >> n >> m;\n\tvector<mi> c(n);\n\tfor (int i = 0; i < n; ++i)\
-    \ {\n\t\tcin >> c[i];\n\t}\n\tvector<mi> p(m);\n\tfor (int i = 0; i < m; ++i)\
-    \ {\n\t\tcin >> p[i];\n\t}\n\tPoly<mi> poly(c);\n\tMultiEval<mi> multi(p);\n\t\
-    auto ans = multi.query(c);\n\tfor (int i = 0; i < m; ++i) {\n\t\tcout << ans[i]\
-    \ << ' ';\n\t}\n\tcout << '\\n';\n\treturn 0;\t\n}"
+    \n#include \"../../library/polynomial/polynomial.hpp\"\n\nusing mi = Mint<998244353,\
+    \ 5>;\n\nint main() {\n\tint n, m;\n\tcin >> n >> m;\n\tPoly<mi> f(n), g(m);\n\
+    \tfor (int i = 0; i < n; ++i) {\n\t\tcin >> f[i];\n\t}\n\tfor (int i = 0; i <\
+    \ m; ++i) {\n\t\tcin >> g[i];\n\t}\n\tauto q = f / g;\n\tauto r = f - q * g;\n\
+    \tcout << q.size() << ' ' << r.size() << '\\n';\n\tfor (auto t : q) {\n\t\tcout\
+    \ << t << ' ';\n\t}\n\tcout << '\\n';\n\tfor (auto t : r) {\n\t\tcout << t <<\
+    \ ' ';\n\t}\n\tcout << '\\n';\n\treturn 0;\n}"
   dependsOn:
   - library/contest/template-minimal.hpp
   - library/modular-arithmetic/mod-int2.hpp
-  - library/polynomial/multipoint-evaluation.hpp
   - library/polynomial/polynomial.hpp
   - library/polynomial/number-theoretic-transform.hpp
   isVerificationFile: true
-  path: verify/yosupo/yosupo-multipoint_evaluation.test.cpp
+  path: verify/yosupo/yosupo-division_of_polynomials.test.cpp
   requiredBy: []
   timestamp: '2021-08-01 14:26:47-04:00'
-  verificationStatus: TEST_ACCEPTED
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
-documentation_of: verify/yosupo/yosupo-multipoint_evaluation.test.cpp
+documentation_of: verify/yosupo/yosupo-division_of_polynomials.test.cpp
 layout: document
 redirect_from:
-- /verify/verify/yosupo/yosupo-multipoint_evaluation.test.cpp
-- /verify/verify/yosupo/yosupo-multipoint_evaluation.test.cpp.html
-title: verify/yosupo/yosupo-multipoint_evaluation.test.cpp
+- /verify/verify/yosupo/yosupo-division_of_polynomials.test.cpp
+- /verify/verify/yosupo/yosupo-division_of_polynomials.test.cpp.html
+title: verify/yosupo/yosupo-division_of_polynomials.test.cpp
 ---

@@ -105,6 +105,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-counting_primes.test.cpp
     title: verify/yosupo/yosupo-counting_primes.test.cpp
+  - icon: ':x:'
+    path: verify/yosupo/yosupo-division_of_polynomials.test.cpp
+    title: verify/yosupo/yosupo-division_of_polynomials.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-enumerate_palindromes.test.cpp
     title: verify/yosupo/yosupo-enumerate_palindromes.test.cpp
@@ -222,9 +225,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-vertex_add_path_sum.test.cpp
     title: verify/yosupo/yosupo-vertex_add_path_sum.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: '
@@ -340,7 +343,7 @@ data:
   requiredBy:
   - library/graphs/enumerate-triangles.cpp
   timestamp: '2021-07-28 19:45:54-04:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/yosupo/yosupo-convolution_mod_1000000007-karatsuba.test.cpp
   - verify/yosupo/yosupo-line_add_get_min.test.cpp
@@ -361,6 +364,7 @@ data:
   - verify/yosupo/yosupo-factorize.test.cpp
   - verify/yosupo/yosupo-point_add_range_sum-fenwick-tree.test.cpp
   - verify/yosupo/yosupo-point_add_range_sum-lazy-segment-tree.test.cpp
+  - verify/yosupo/yosupo-division_of_polynomials.test.cpp
   - verify/yosupo/yosupo-segment_add_get_min-li-chao-tree-online.test.cpp
   - verify/yosupo/yosupo-system_of_linear_equations.test.cpp
   - verify/yosupo/yosupo-static_range_sum.test.cpp

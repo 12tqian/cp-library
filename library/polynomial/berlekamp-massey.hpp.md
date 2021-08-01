@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/polynomial/number-theoretic-transform.hpp
     title: library/polynomial/number-theoretic-transform.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/polynomial/polynomial.hpp
     title: library/polynomial/polynomial.hpp
   _extendedRequiredBy: []
@@ -70,26 +70,39 @@ data:
     \ b2);\n\t\tfor (int i = 0; i < z; i++) a2[i] *= b2[i];\n\t}\n\tbutterfly(true,\
     \ a2);\n\ta2.resize(n + m - 1);\n\tMint iz = 1 / Mint(z);\n\tfor (int i = 0; i\
     \ < n + m - 1; i++) a2[i] *= iz;\n\treturn a2;\n}\n\n}\n\ntemplate <class D> struct\
-    \ Poly : std::vector<D> {\n\tusing vector<D>::vector;\n\tPoly(const std::vector<D>&\
-    \ _v = {}) { \n\t\tfor (int i = 0; i < (int)_v.size(); ++i) {\n\t\t\tthis->push_back(_v[i]);\n\
-    \t\t}\n\t\tshrink(); \n\t}\n\n\tvoid shrink() {\n\t\twhile (this->size() && !this->back())\
-    \ this->pop_back();\n\t}\n\n\tD freq(int p) const { return (p < (int)this->size())\
-    \ ? (*this)[p] : D(0); }\n\t\n\tPoly operator+(const Poly& r) const {\n\t\tint\
-    \ n = max(this->size(), r.size());\n\t\tstd::vector<D> res(n);\n\t\tfor (int i\
-    \ = 0; i < n; i++) res[i] = freq(i) + r.freq(i);\n\t\treturn res;\n\t}\n\t\n\t\
-    Poly operator-(const Poly& r) const {\n\t\tint n = max(this->size(), r.size());\n\
-    \t\tstd::vector<D> res(n);\n\t\tfor (int i = 0; i < n; i++) res[i] = freq(i) -\
-    \ r.freq(i);\n\t\treturn res;\n\t}\n\t\n\tPoly operator*(const Poly& r) const\
-    \ { return {NTT::multiply((*this), r)}; }\n\t\n\tPoly operator*(const D& r) const\
-    \ {\n\t\tint n = this->size();\n\t\tstd::vector<D> res(n);\n\t\tfor (int i = 0;\
-    \ i < n; i++) res[i] = (*this)[i] * r;\n\t\treturn res;\n\t}\n\n\tPoly operator/(const\
-    \ D &r) const{ return *this * (1 / r); }\n\t\n\tPoly operator/(const Poly& r)\
-    \ const {\n\t\tif (this->size() < r.size()) return {{}};\n\t\tint n = (int)this->size()\
-    \ - r.size() + 1;\n\t\treturn (rev().pre(n) * r.rev().inv(n)).pre(n).rev(n);\n\
-    \t}\n\t\n\tPoly operator%(const Poly& r) const { return *this - *this / r * r;\
-    \ }\n\t\n\tPoly operator<<(int s) const {\n\t\tstd::vector<D> res(this->size()\
-    \ + s);\n\t\tfor (int i = 0; i < (int)this->size(); i++) res[i + s] = (*this)[i];\n\
-    \t\treturn res;\n\t}\n\n\tPoly operator>>(int s) const {\n\t\tif ((int)this->size()\
+    \ Poly : std::vector<D> {\n\tusing vector<D>::vector;\n\n\tstatic const int SMALL_DEGREE\
+    \ = 60;\n\n\tPoly(const std::vector<D>& _v = {}) { \n\t\tfor (int i = 0; i < (int)_v.size();\
+    \ ++i) {\n\t\t\tthis->push_back(_v[i]);\n\t\t}\n\t\tshrink(); \n\t}\n\n\tvoid\
+    \ shrink() {\n\t\twhile (this->size() && !this->back()) this->pop_back();\n\t\
+    }\n\n\tD freq(int p) const { return (p < (int)this->size()) ? (*this)[p] : D(0);\
+    \ }\n\t\n\tPoly operator+(const Poly& r) const {\n\t\tint n = max(this->size(),\
+    \ r.size());\n\t\tstd::vector<D> res(n);\n\t\tfor (int i = 0; i < n; i++) res[i]\
+    \ = freq(i) + r.freq(i);\n\t\treturn res;\n\t}\n\t\n\tPoly operator-(const Poly&\
+    \ r) const {\n\t\tint n = max(this->size(), r.size());\n\t\tstd::vector<D> res(n);\n\
+    \t\tfor (int i = 0; i < n; i++) res[i] = freq(i) - r.freq(i);\n\t\treturn res;\n\
+    \t}\n\n\tbool small(const Poly& r) const { return min((int)this->size(), (int)r.size())\
+    \ <= SMALL_DEGREE; }\n\n\tPoly operator*(const Poly& r) const { \n\t\tif (!min((int)this->size(),\
+    \ (int)r.size())) return {};\n\t\tif (small(r)){\n\t\t\tPoly res((int)this->size()\
+    \ + (int)r.size() - 1);\n\t\t\tfor (int i = 0; i < (int)this->size(); ++i) {\n\
+    \t\t\t\tfor (int j = 0; j < (int)r.size(); ++j) {\n\t\t\t\t\tres[i + j] += (*this)[i]\
+    \ * r[j];\n\t\t\t\t}\n\t\t\t}\n\t\t\treturn res;\n\t\t} else {\n\t\t\treturn {NTT::multiply((*this),\
+    \ r)}; \n\t\t}\n\t}\n\t\n\tPoly operator*(const D& r) const {\n\t\tint n = this->size();\n\
+    \t\tstd::vector<D> res(n);\n\t\tfor (int i = 0; i < n; i++) res[i] = (*this)[i]\
+    \ * r;\n\t\treturn res;\n\t}\n\n\tPoly operator/(const D &r) const{ return *this\
+    \ * (1 / r); }\n\t\n\tPoly operator/(const Poly& r) const {\n\t\tif (this->size()\
+    \ < r.size()) return {};\n\t\tif (small(r)) {\n\t\t\tPoly a = (*this);\n\t\t\t\
+    Poly b = r;\n\t\t\ta.shrink(), b.shrink();\n\t\t\tD lst = b.back();\n\t\t\tD ilst\
+    \ = 1 / lst;\n\t\t\tfor (auto& t : a) t *= ilst;\n\t\t\tfor (auto& t : b) t *=\
+    \ ilst;\n\t\t\tcout << lst << ' ' << ilst << endl;\n\t\t\tPoly q(max((int)a.size()\
+    \ - (int)b.size() + 1, 0));\n\t\t\tfor (int diff; (diff = (int)a.size() - (int)b.size())\
+    \ >= 0; a.shrink()) {\n\t\t\t\tq[diff] = a.back();\n\t\t\t\tfor (int i = 0; i\
+    \ < (int)b.size(); ++i) {\n\t\t\t\t\ta[i + diff] -= q[diff] * b[i];\n\t\t\t\t\
+    }\n\t\t\t}\n\t\t\treturn q;\n\t\t} else {\n\t\t\tint n = (int)this->size() - r.size()\
+    \ + 1;\n\t\t\treturn (rev().pre(n) * r.rev().inv(n)).pre(n).rev(n);\n\t\t}\n\t\
+    }\n\t\n\tPoly operator%(const Poly& r) const { return *this - *this / r * r; }\n\
+    \t\n\tPoly operator<<(int s) const {\n\t\tstd::vector<D> res(this->size() + s);\n\
+    \t\tfor (int i = 0; i < (int)this->size(); i++) res[i + s] = (*this)[i];\n\t\t\
+    return res;\n\t}\n\n\tPoly operator>>(int s) const {\n\t\tif ((int)this->size()\
     \ <= s) return Poly();\n\t\tstd::vector<D> res(this->size() - s);\n\t\tfor (int\
     \ i = 0; i < (int)this->size() - s; i++) res[i] = (*this)[i + s];\n\t\treturn\
     \ res;\n\t}\n\t\n\tPoly& operator+=(const Poly& r) { return *this = *this + r;\
@@ -161,7 +174,7 @@ data:
   isVerificationFile: false
   path: library/polynomial/berlekamp-massey.hpp
   requiredBy: []
-  timestamp: '2021-07-31 15:51:45-04:00'
+  timestamp: '2021-08-01 14:26:47-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/yosupo-find_linear_recurrence.test.cpp
