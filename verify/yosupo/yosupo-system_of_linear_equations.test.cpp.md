@@ -4,22 +4,23 @@ data:
   - icon: ':question:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/modular-arithmetic/mod-int2.hpp
     title: library/modular-arithmetic/mod-int2.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/numerical/matrix.hpp
     title: library/numerical/matrix.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
+    PROBLEM: https://judge.yosupo.jp/problem/system_of_linear_equations
     links:
     - https://judge.yosupo.jp/problem/system_of_linear_equations
-  bundledCode: "#define PROBELM \"https://judge.yosupo.jp/problem/system_of_linear_equations\"\
+  bundledCode: "#define PROBLEM \"https://judge.yosupo.jp/problem/system_of_linear_equations\"\
     \n\n\n#include <algorithm>\n#include <array>\n#include <bitset>\n#include <cassert>\n\
     #include <chrono>\n#include <cmath>\n#include <complex>\n#include <cstdio>\n#include\
     \ <cstdlib>\n#include <cstring>\n#include <ctime>\n#include <deque>\n#include\
@@ -134,7 +135,7 @@ data:
     \ b);\n\tif (ans.empty()) {\n\t\tcout << -1 << '\\n';\n\t} else {\n\t\tcout <<\
     \ (int)ans.size() - 1 << '\\n';\t\n\t\tfor (auto x : ans) {\n\t\t\tfor (auto y\
     \ : x) cout << y << ' ';\n\t\t\tcout << '\\n';\n\t\t}\n\t}\n\treturn 0;\n}\n"
-  code: "#define PROBELM \"https://judge.yosupo.jp/problem/system_of_linear_equations\"\
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/system_of_linear_equations\"\
     \n\n#include \"../../library/contest/template-minimal.hpp\"\n#include \"../../library/numerical/matrix.hpp\"\
     \n#include \"../../library/modular-arithmetic/mod-int2.hpp\"\n\nusing mi = Mint<998244353,\
     \ 5>;\n\nint main() {\n\tios::sync_with_stdio(false);\n\tcin.tie(nullptr);\n\t\
@@ -152,8 +153,8 @@ data:
   isVerificationFile: true
   path: verify/yosupo/yosupo-system_of_linear_equations.test.cpp
   requiredBy: []
-  timestamp: '2021-07-31 22:31:54-04:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2021-07-31 22:37:45-04:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/yosupo-system_of_linear_equations.test.cpp
 layout: document

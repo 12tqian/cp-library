@@ -207,7 +207,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-suffixarray-logarithmic.test.cpp
     title: verify/yosupo/yosupo-suffixarray-logarithmic.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-system_of_linear_equations.test.cpp
     title: verify/yosupo/yosupo-system_of_linear_equations.test.cpp
   - icon: ':heavy_check_mark:'

@@ -4,7 +4,7 @@ data:
   - icon: ':question:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/numerical/matrix.hpp
     title: library/numerical/matrix.hpp
   _extendedRequiredBy: []
