@@ -1,6 +1,7 @@
 #pragma once 
 
 #include "polynomial.hpp"
+
 template <typename D> Poly<D> berlekamp_massey(const Poly<D>& s) {
 	const int N = (int)s.size();
 	Poly<D> b, c;
