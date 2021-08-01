@@ -1,4 +1,5 @@
 #pragma once
+
 template <class D> struct Matrix : std::vector<std::vector<D>> {
 	template <class T> using V = std::vector<T>;
 	template <class T> using VV = V<V<T>>;
