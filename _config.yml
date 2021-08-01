@@ -6,5 +6,5 @@ exclude:
 plugins:
 - jemoji
 - jekyll-redirect-from
-theme: jekyll-theme-architect
+theme: jekyll-theme-hacker
 title: 12tqian's Library
