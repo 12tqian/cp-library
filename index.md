@@ -365,6 +365,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/kattis/kattis-convexhull.test.cpp
       title: verify/kattis/kattis-convexhull.test.cpp
+    - icon: ':x:'
+      path: verify/kattis/kattis-equationsolver-matrix.test.cpp
+      title: verify/kattis/kattis-equationsolver-matrix.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/kattis/kattis-equationsolver.test.cpp
       title: verify/kattis/kattis-equationsolver.test.cpp

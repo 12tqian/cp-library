@@ -66,6 +66,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/kattis/kattis-convexhull.test.cpp
     title: verify/kattis/kattis-convexhull.test.cpp
+  - icon: ':x:'
+    path: verify/kattis/kattis-equationsolver-matrix.test.cpp
+    title: verify/kattis/kattis-equationsolver-matrix.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/kattis/kattis-equationsolver.test.cpp
     title: verify/kattis/kattis-equationsolver.test.cpp
@@ -408,6 +411,7 @@ data:
   - verify/kattis/kattis-convexhull.test.cpp
   - verify/kattis/kattis-generalchineseremainder.test.cpp
   - verify/kattis/kattis-pointinpolygon.test.cpp
+  - verify/kattis/kattis-equationsolver-matrix.test.cpp
   - verify/kattis/kattis-cheeseifyouplease.test.cpp
   - verify/kattis/kattis-mincostmaxflow.test.cpp
 documentation_of: library/contest/template-minimal.hpp

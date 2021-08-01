@@ -4,6 +4,9 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':x:'
+    path: verify/kattis/kattis-equationsolver-matrix.test.cpp
+    title: verify/kattis/kattis-equationsolver-matrix.test.cpp
+  - icon: ':x:'
     path: verify/yosupo/yosupo-system_of_linear_equations.test.cpp
     title: verify/yosupo/yosupo-system_of_linear_equations.test.cpp
   _isVerificationFailed: true
@@ -163,6 +166,7 @@ data:
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - verify/yosupo/yosupo-system_of_linear_equations.test.cpp
+  - verify/kattis/kattis-equationsolver-matrix.test.cpp
 documentation_of: library/numerical/matrix.hpp
 layout: document
 redirect_from:
