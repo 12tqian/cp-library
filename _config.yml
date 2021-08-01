@@ -9,5 +9,5 @@ exclude:
 plugins:
 - jemoji
 - jekyll-redirect-from
-theme: jekyll-theme-hacker
+theme: minima
 title: 12tqian's Competitive Programming Library
