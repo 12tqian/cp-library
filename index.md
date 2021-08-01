@@ -9,7 +9,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/contest/template-full.hpp
       title: library/contest/template-full.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/contest/template-minimal.hpp
       title: library/contest/template-minimal.hpp
     - icon: ':heavy_check_mark:'
@@ -199,7 +199,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/modular-arithmetic/mod-int.hpp
       title: library/modular-arithmetic/mod-int.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/modular-arithmetic/mod-int2.hpp
       title: library/modular-arithmetic/mod-int2.hpp
     - icon: ':heavy_check_mark:'
@@ -236,7 +236,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/numerical/fraction.hpp
       title: library/numerical/fraction.hpp
-    - icon: ':warning:'
+    - icon: ':x:'
       path: library/numerical/matrix.hpp
       title: library/numerical/matrix.hpp
     - icon: ':heavy_check_mark:'
@@ -533,6 +533,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-suffixarray-logarithmic.test.cpp
       title: verify/yosupo/yosupo-suffixarray-logarithmic.test.cpp
+    - icon: ':x:'
+      path: verify/yosupo/yosupo-system_of_linear_equations.test.cpp
+      title: verify/yosupo/yosupo-system_of_linear_equations.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-two_edge_connected_components.test.cpp
       title: verify/yosupo/yosupo-two_edge_connected_components.test.cpp
