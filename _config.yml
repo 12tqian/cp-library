@@ -7,7 +7,7 @@ exclude:
 - bundle.py
 - compress.py
 plugins:
-- jekyll-seo-tag
+- jekyll-feed
 show_excerpts: false
 theme: minima
 title: 12tqian's Competitive Programming Library
