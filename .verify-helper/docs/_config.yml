@@ -1,3 +1,7 @@
 exclude: ['ahc.py', 'bundle.py', 'compress.py']
 title: 12tqian's Library
 theme: minima
+
+plugins:
+ - jekyll-feed
+ - jekyll-seo-tag
