@@ -171,7 +171,7 @@ template <class D> std::vector<std::vector<D>> solve_linear(Matrix<D> a, std::ve
     }
 	auto zero = [&](const D& x) {
 		return EPS == D(-1) ? x != 0 : -EPS < x && x < EPS;
-	}
+	};
     for (int y = r; y < h; y++) {
         if (!zero(b[y])) return {};
     }
