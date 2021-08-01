@@ -4,7 +4,7 @@ exclude:
 - bundle.py
 - compress.py
 plugins:
-- jemoji
-- jekyll-redirect-from
+- jekyll-feed
+- jekyll-seo-tag
 theme: minima
 title: 12tqian's Library
