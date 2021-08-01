@@ -1,4 +1,4 @@
-#define PROBELM "https://judge.yosupo.jp/problem/system_of_linear_equations"
+#define PROBLEM "https://judge.yosupo.jp/problem/system_of_linear_equations"
 
 #include "../../library/contest/template-minimal.hpp"
 #include "../../library/numerical/matrix.hpp"
