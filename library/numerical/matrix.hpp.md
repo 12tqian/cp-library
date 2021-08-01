@@ -3,10 +3,10 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/kattis/kattis-equationsolver-matrix.test.cpp
     title: verify/kattis/kattis-equationsolver-matrix.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/yosupo-system_of_linear_equations.test.cpp
     title: verify/yosupo/yosupo-system_of_linear_equations.test.cpp
   _isVerificationFailed: true
@@ -75,17 +75,19 @@ data:
     \ freq = a[y][x] / a[r][x];\n            for (int k = x; k < w; k++) a[y][k] -=\
     \ freq * a[r][k];\n            b[y] -= freq * b[r];\n        }\n        r++;\n\
     \        used[x] = true;\n        idxs.push_back(x);\n        if (r == h) break;\n\
-    \    }\n    for (int y = r; y < h; y++) {\n        if (b[y]) return {};\n    }\n\
-    \    std::vector<std::vector<D>> sols;\n    { // initial solution\n        std::vector<D>\
-    \ v(w);\n        for (int y = r - 1; y >= 0; y--) {\n            int f = idxs[y];\n\
-    \            v[f] = b[y];\n            for (int x = f + 1; x < w; x++) {\n   \
-    \             v[f] -= a[y][x] * v[x];\n            }\n            v[f] /= a[y][f];\n\
-    \        }\n        sols.push_back(v);\n    }\n    for (int s = 0; s < w; s++)\
-    \ {\n        if (used[s]) continue;\n        std::vector<D> v(w);\n        v[s]\
-    \ = D(1);\n        for (int y = r - 1; y >= 0; y--) {\n            int f = idxs[y];\n\
-    \            for (int x = f + 1; x < w; x++) {\n                v[f] -= a[y][x]\
-    \ * v[x];\n            }\n            v[f] /= a[y][f];\n        }\n        sols.push_back(v);\n\
-    \    }\n    return sols;\n}\n\n} // MatrixOperations\n"
+    \    }\n\tauto zero = [&](const D& x) {\n\t\treturn EPS == D(-1) ? x != 0 : -EPS\
+    \ < x && x < EPS;\n\t};\n    for (int y = r; y < h; y++) {\n        if (!zero(b[y]))\
+    \ return {};\n    }\n    std::vector<std::vector<D>> sols;\n    { // initial solution\n\
+    \        std::vector<D> v(w);\n        for (int y = r - 1; y >= 0; y--) {\n  \
+    \          int f = idxs[y];\n            v[f] = b[y];\n            for (int x\
+    \ = f + 1; x < w; x++) {\n                v[f] -= a[y][x] * v[x];\n          \
+    \  }\n            v[f] /= a[y][f];\n        }\n        sols.push_back(v);\n  \
+    \  }\n    for (int s = 0; s < w; s++) {\n        if (used[s]) continue;\n    \
+    \    std::vector<D> v(w);\n        v[s] = D(1);\n        for (int y = r - 1; y\
+    \ >= 0; y--) {\n            int f = idxs[y];\n            for (int x = f + 1;\
+    \ x < w; x++) {\n                v[f] -= a[y][x] * v[x];\n            }\n    \
+    \        v[f] /= a[y][f];\n        }\n        sols.push_back(v);\n    }\n    return\
+    \ sols;\n}\n\n} // MatrixOperations\n"
   code: "#pragma once\ntemplate <class D> struct Matrix : std::vector<std::vector<D>>\
     \ {\n\ttemplate <class T> using V = std::vector<T>;\n\ttemplate <class T> using\
     \ VV = V<V<T>>;\n\tusing VV<D>::VV;\n\n\tint h() const { return int(this->size());\
@@ -147,22 +149,24 @@ data:
     \ freq = a[y][x] / a[r][x];\n            for (int k = x; k < w; k++) a[y][k] -=\
     \ freq * a[r][k];\n            b[y] -= freq * b[r];\n        }\n        r++;\n\
     \        used[x] = true;\n        idxs.push_back(x);\n        if (r == h) break;\n\
-    \    }\n    for (int y = r; y < h; y++) {\n        if (b[y]) return {};\n    }\n\
-    \    std::vector<std::vector<D>> sols;\n    { // initial solution\n        std::vector<D>\
-    \ v(w);\n        for (int y = r - 1; y >= 0; y--) {\n            int f = idxs[y];\n\
-    \            v[f] = b[y];\n            for (int x = f + 1; x < w; x++) {\n   \
-    \             v[f] -= a[y][x] * v[x];\n            }\n            v[f] /= a[y][f];\n\
-    \        }\n        sols.push_back(v);\n    }\n    for (int s = 0; s < w; s++)\
-    \ {\n        if (used[s]) continue;\n        std::vector<D> v(w);\n        v[s]\
-    \ = D(1);\n        for (int y = r - 1; y >= 0; y--) {\n            int f = idxs[y];\n\
-    \            for (int x = f + 1; x < w; x++) {\n                v[f] -= a[y][x]\
-    \ * v[x];\n            }\n            v[f] /= a[y][f];\n        }\n        sols.push_back(v);\n\
-    \    }\n    return sols;\n}\n\n} // MatrixOperations"
+    \    }\n\tauto zero = [&](const D& x) {\n\t\treturn EPS == D(-1) ? x != 0 : -EPS\
+    \ < x && x < EPS;\n\t};\n    for (int y = r; y < h; y++) {\n        if (!zero(b[y]))\
+    \ return {};\n    }\n    std::vector<std::vector<D>> sols;\n    { // initial solution\n\
+    \        std::vector<D> v(w);\n        for (int y = r - 1; y >= 0; y--) {\n  \
+    \          int f = idxs[y];\n            v[f] = b[y];\n            for (int x\
+    \ = f + 1; x < w; x++) {\n                v[f] -= a[y][x] * v[x];\n          \
+    \  }\n            v[f] /= a[y][f];\n        }\n        sols.push_back(v);\n  \
+    \  }\n    for (int s = 0; s < w; s++) {\n        if (used[s]) continue;\n    \
+    \    std::vector<D> v(w);\n        v[s] = D(1);\n        for (int y = r - 1; y\
+    \ >= 0; y--) {\n            int f = idxs[y];\n            for (int x = f + 1;\
+    \ x < w; x++) {\n                v[f] -= a[y][x] * v[x];\n            }\n    \
+    \        v[f] /= a[y][f];\n        }\n        sols.push_back(v);\n    }\n    return\
+    \ sols;\n}\n\n} // MatrixOperations"
   dependsOn: []
   isVerificationFile: false
   path: library/numerical/matrix.hpp
   requiredBy: []
-  timestamp: '2021-07-31 22:31:54-04:00'
+  timestamp: '2021-07-31 22:47:04-04:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/yosupo/yosupo-system_of_linear_equations.test.cpp

@@ -7,7 +7,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/data-structures/2d-range-queries/quadtree.hpp
     title: library/data-structures/2d-range-queries/quadtree.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/modular-arithmetic/mod-int2.hpp
     title: library/modular-arithmetic/mod-int2.hpp
   _extendedRequiredBy: []

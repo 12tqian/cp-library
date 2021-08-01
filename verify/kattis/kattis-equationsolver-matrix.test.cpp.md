@@ -9,9 +9,9 @@ data:
     title: library/numerical/matrix.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://open.kattis.com/problems/equationsolver
@@ -85,24 +85,26 @@ data:
     \ freq = a[y][x] / a[r][x];\n            for (int k = x; k < w; k++) a[y][k] -=\
     \ freq * a[r][k];\n            b[y] -= freq * b[r];\n        }\n        r++;\n\
     \        used[x] = true;\n        idxs.push_back(x);\n        if (r == h) break;\n\
-    \    }\n    for (int y = r; y < h; y++) {\n        if (b[y]) return {};\n    }\n\
-    \    std::vector<std::vector<D>> sols;\n    { // initial solution\n        std::vector<D>\
-    \ v(w);\n        for (int y = r - 1; y >= 0; y--) {\n            int f = idxs[y];\n\
-    \            v[f] = b[y];\n            for (int x = f + 1; x < w; x++) {\n   \
-    \             v[f] -= a[y][x] * v[x];\n            }\n            v[f] /= a[y][f];\n\
-    \        }\n        sols.push_back(v);\n    }\n    for (int s = 0; s < w; s++)\
-    \ {\n        if (used[s]) continue;\n        std::vector<D> v(w);\n        v[s]\
-    \ = D(1);\n        for (int y = r - 1; y >= 0; y--) {\n            int f = idxs[y];\n\
-    \            for (int x = f + 1; x < w; x++) {\n                v[f] -= a[y][x]\
-    \ * v[x];\n            }\n            v[f] /= a[y][f];\n        }\n        sols.push_back(v);\n\
-    \    }\n    return sols;\n}\n\n} // MatrixOperations\n\n// kattis\nint main()\
-    \ {\n\tusing namespace std;\n\tusing namespace MatrixOperations;\n\tusing Mat\
-    \ = Matrix<long double>;\n\tios::sync_with_stdio(false);\n\tcin.tie(nullptr);\n\
-    \twhile (true) {\n\t\tint n; cin >> n;\n\t\tif (n == 0) break;\n\t\tMat a = make_matrix<long\
-    \ double>(n, n);\n\t\tfor (int i = 0; i < n; i++) {\n\t\t\tfor (int j = 0; j <\
-    \ n; j++) {\n\t\t\t\tcin >> a[i][j];\n\t\t\t}\n\t\t}\n\t\tvector<long double>\
-    \ b(n);\n\t\tfor (int i = 0; i < n; i++) {\n\t\t\tcin >> b[i];\n\t\t}\n\t\tconst\
-    \ long double EPS = 1e-12;\n\t\tauto res = solve_linear(a, b, EPS);\n\t\tif (res.empty())\
+    \    }\n\tauto zero = [&](const D& x) {\n\t\treturn EPS == D(-1) ? x != 0 : -EPS\
+    \ < x && x < EPS;\n\t};\n    for (int y = r; y < h; y++) {\n        if (!zero(b[y]))\
+    \ return {};\n    }\n    std::vector<std::vector<D>> sols;\n    { // initial solution\n\
+    \        std::vector<D> v(w);\n        for (int y = r - 1; y >= 0; y--) {\n  \
+    \          int f = idxs[y];\n            v[f] = b[y];\n            for (int x\
+    \ = f + 1; x < w; x++) {\n                v[f] -= a[y][x] * v[x];\n          \
+    \  }\n            v[f] /= a[y][f];\n        }\n        sols.push_back(v);\n  \
+    \  }\n    for (int s = 0; s < w; s++) {\n        if (used[s]) continue;\n    \
+    \    std::vector<D> v(w);\n        v[s] = D(1);\n        for (int y = r - 1; y\
+    \ >= 0; y--) {\n            int f = idxs[y];\n            for (int x = f + 1;\
+    \ x < w; x++) {\n                v[f] -= a[y][x] * v[x];\n            }\n    \
+    \        v[f] /= a[y][f];\n        }\n        sols.push_back(v);\n    }\n    return\
+    \ sols;\n}\n\n} // MatrixOperations\n\n// kattis\nint main() {\n\tusing namespace\
+    \ std;\n\tusing namespace MatrixOperations;\n\tusing Mat = Matrix<long double>;\n\
+    \tios::sync_with_stdio(false);\n\tcin.tie(nullptr);\n\twhile (true) {\n\t\tint\
+    \ n; cin >> n;\n\t\tif (n == 0) break;\n\t\tMat a = make_matrix<long double>(n,\
+    \ n);\n\t\tfor (int i = 0; i < n; i++) {\n\t\t\tfor (int j = 0; j < n; j++) {\n\
+    \t\t\t\tcin >> a[i][j];\n\t\t\t}\n\t\t}\n\t\tvector<long double> b(n);\n\t\tfor\
+    \ (int i = 0; i < n; i++) {\n\t\t\tcin >> b[i];\n\t\t}\n\t\tconst long double\
+    \ EPS = 1e-12;\n\t\tauto res = solve_linear(a, b, EPS);\n\t\tif (res.empty())\
     \ {\n\t\t\tcout << \"inconsistent\\n\";\n\t\t} else if ((int)res.size() > 1) {\n\
     \t\t\tcout << \"multiple\\n\";\n\t\t} else {\n\t\t\tfor (auto& t : res[0]) \n\t\
     \t\t\tcout << t << \" \";\n\t\t\tcout << '\\n';\n\t\t}\n\t}\n\treturn 0;\n}\n"
@@ -124,8 +126,8 @@ data:
   isVerificationFile: true
   path: verify/kattis/kattis-equationsolver-matrix.test.cpp
   requiredBy: []
-  timestamp: '2021-07-31 22:34:50-04:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2021-07-31 22:47:04-04:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/kattis/kattis-equationsolver-matrix.test.cpp
 layout: document

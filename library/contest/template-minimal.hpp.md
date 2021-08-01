@@ -66,7 +66,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/kattis/kattis-convexhull.test.cpp
     title: verify/kattis/kattis-convexhull.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/kattis/kattis-equationsolver-matrix.test.cpp
     title: verify/kattis/kattis-equationsolver-matrix.test.cpp
   - icon: ':heavy_check_mark:'
@@ -207,7 +207,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-suffixarray-logarithmic.test.cpp
     title: verify/yosupo/yosupo-suffixarray-logarithmic.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/yosupo-system_of_linear_equations.test.cpp
     title: verify/yosupo/yosupo-system_of_linear_equations.test.cpp
   - icon: ':heavy_check_mark:'
