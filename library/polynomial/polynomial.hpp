@@ -4,6 +4,9 @@
 
 template <class D> struct Poly : std::vector<D> {
 	using vector<D>::vector;
+
+	static const int SMALL_DEGREE = 60;
+
 	Poly(const std::vector<D>& _v = {}) { 
 		for (int i = 0; i < (int)_v.size(); ++i) {
 			this->push_back(_v[i]);
@@ -30,8 +33,23 @@ template <class D> struct Poly : std::vector<D> {
 		for (int i = 0; i < n; i++) res[i] = freq(i) - r.freq(i);
 		return res;
 	}
-	
-	Poly operator*(const Poly& r) const { return {NTT::multiply((*this), r)}; }
+
+	bool small(const Poly& r) const { return min((int)this->size(), (int)r.size()) <= SMALL_DEGREE; }
+
+	Poly operator*(const Poly& r) const { 
+		if (!min((int)this->size(), (int)r.size())) return {};
+		if (small(r)){
+			Poly res((int)this->size() + (int)r.size() - 1);
+			for (int i = 0; i < (int)this->size(); ++i) {
+				for (int j = 0; j < (int)r.size(); ++j) {
+					res[i + j] += (*this)[i] * r[j];
+				}
+			}
+			return res;
+		} else {
+			return {NTT::multiply((*this), r)}; 
+		}
+	}
 	
 	Poly operator*(const D& r) const {
 		int n = this->size();
@@ -43,9 +61,28 @@ template <class D> struct Poly : std::vector<D> {
 	Poly operator/(const D &r) const{ return *this * (1 / r); }
 	
 	Poly operator/(const Poly& r) const {
-		if (this->size() < r.size()) return {{}};
-		int n = (int)this->size() - r.size() + 1;
-		return (rev().pre(n) * r.rev().inv(n)).pre(n).rev(n);
+		if (this->size() < r.size()) return {};
+		if (small(r)) {
+			Poly a = (*this);
+			Poly b = r;
+			a.shrink(), b.shrink();
+			D lst = b.back();
+			D ilst = 1 / lst;
+			for (auto& t : a) t *= ilst;
+			for (auto& t : b) t *= ilst;
+			cout << lst << ' ' << ilst << endl;
+			Poly q(max((int)a.size() - (int)b.size() + 1, 0));
+			for (int diff; (diff = (int)a.size() - (int)b.size()) >= 0; a.shrink()) {
+				q[diff] = a.back();
+				for (int i = 0; i < (int)b.size(); ++i) {
+					a[i + diff] -= q[diff] * b[i];
+				}
+			}
+			return q;
+		} else {
+			int n = (int)this->size() - r.size() + 1;
+			return (rev().pre(n) * r.rev().inv(n)).pre(n).rev(n);
+		}
 	}
 	
 	Poly operator%(const Poly& r) const { return *this - *this / r * r; }
