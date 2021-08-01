@@ -79,32 +79,29 @@ data:
     \ <class D> int calc_rank(Matrix<D> a, const D& EPS = -1) { return gauss(a, EPS).second;\
     \ }\ntemplate <class D> D calc_det(Matrix<D> a, const D& EPS = -1) { return gauss(a,\
     \ EPS).first; }\n\ntemplate <class D> std::vector<std::vector<D>> solve_linear(Matrix<D>\
-    \ a, std::vector<D> b, const D& EPS = -1) {\n    int h = a.h(), w = a.w();\n \
-    \   assert(int(b.size()) == h);\n    int r = 0;\n    std::vector<bool> used(w);\n\
-    \    std::vector<int> idxs;\n    for (int x = 0; x < w; x++) {\n        int my\
-    \ = get_row(a, h, x, r, EPS);\n        if (my == -1) continue;\n        if (r\
-    \ != my) std::swap(a[r], a[my]);\n        swap(b[r], b[my]);\n        for (int\
-    \ y = r + 1; y < h; y++) {\n            if (!a[y][x]) continue;\n            auto\
-    \ freq = a[y][x] / a[r][x];\n            for (int k = x; k < w; k++) a[y][k] -=\
-    \ freq * a[r][k];\n            b[y] -= freq * b[r];\n        }\n        r++;\n\
-    \        used[x] = true;\n        idxs.push_back(x);\n        if (r == h) break;\n\
-    \    }\n\tauto zero = [&](const D& x) {\n\t\treturn EPS == D(-1) ? x != 0 : -EPS\
-    \ < x && x < EPS;\n\t};\n    for (int y = r; y < h; y++) {\n        if (!zero(b[y]))\
-    \ return {};\n    }\n    std::vector<std::vector<D>> sols;\n    { // initial solution\n\
-    \        std::vector<D> v(w);\n        for (int y = r - 1; y >= 0; y--) {\n  \
-    \          int f = idxs[y];\n            v[f] = b[y];\n            for (int x\
-    \ = f + 1; x < w; x++) {\n                v[f] -= a[y][x] * v[x];\n          \
-    \  }\n            v[f] /= a[y][f];\n        }\n        sols.push_back(v);\n  \
-    \  }\n    for (int s = 0; s < w; s++) {\n        if (used[s]) continue;\n    \
-    \    std::vector<D> v(w);\n        v[s] = D(1);\n        for (int y = r - 1; y\
-    \ >= 0; y--) {\n            int f = idxs[y];\n            for (int x = f + 1;\
-    \ x < w; x++) {\n                v[f] -= a[y][x] * v[x];\n            }\n    \
-    \        v[f] /= a[y][f];\n        }\n        sols.push_back(v);\n    }\n    return\
-    \ sols;\n}\n\n} // MatrixOperations\n\n// 5 is a root of both mods\ntemplate <int\
-    \ MOD, int RT> struct Mint {\n\tstatic const int mod = MOD;\n\tstatic constexpr\
-    \ Mint rt() { return RT; } // primitive root for FFT\n\tstatic constexpr int md()\
-    \ { return MOD; } // primitive root for FFT\n\tint v; \n\texplicit operator int()\
-    \ const { return v; } // explicit -> don't silently convert to int\n\texplicit\
+    \ a, std::vector<D> b, const D& EPS = -1) {\n\tint h = a.h(), w = a.w();\n\tassert(int(b.size())\
+    \ == h);\n\tint r = 0;\n\tstd::vector<bool> used(w);\n\tstd::vector<int> idxs;\n\
+    \tfor (int x = 0; x < w; x++) {\n\t\tint my = get_row(a, h, x, r, EPS);\n\t\t\
+    if (my == -1) continue;\n\t\tif (r != my) std::swap(a[r], a[my]);\n\t\tswap(b[r],\
+    \ b[my]);\n\t\tfor (int y = r + 1; y < h; y++) {\n\t\t\tif (!a[y][x]) continue;\n\
+    \t\t\tauto freq = a[y][x] / a[r][x];\n\t\t\tfor (int k = x; k < w; k++) a[y][k]\
+    \ -= freq * a[r][k];\n\t\t\tb[y] -= freq * b[r];\n\t\t}\n\t\tr++;\n\t\tused[x]\
+    \ = true;\n\t\tidxs.push_back(x);\n\t\tif (r == h) break;\n\t}\n\tauto zero =\
+    \ [&](const D& x) {\n\t\treturn EPS == D(-1) ? x != 0 : -EPS < x && x < EPS;\n\
+    \t};\n\tfor (int y = r; y < h; y++) {\n\t\tif (!zero(b[y])) return {};\n\t}\n\t\
+    std::vector<std::vector<D>> sols;\n\t{ // initial solution\n\t\tstd::vector<D>\
+    \ v(w);\n\t\tfor (int y = r - 1; y >= 0; y--) {\n\t\t\tint f = idxs[y];\n\t\t\t\
+    v[f] = b[y];\n\t\t\tfor (int x = f + 1; x < w; x++) {\n\t\t\t\tv[f] -= a[y][x]\
+    \ * v[x];\n\t\t\t}\n\t\t\tv[f] /= a[y][f];\n\t\t}\n\t\tsols.push_back(v);\n\t\
+    }\n\tfor (int s = 0; s < w; s++) {\n\t\tif (used[s]) continue;\n\t\tstd::vector<D>\
+    \ v(w);\n\t\tv[s] = D(1);\n\t\tfor (int y = r - 1; y >= 0; y--) {\n\t\t\tint f\
+    \ = idxs[y];\n\t\t\tfor (int x = f + 1; x < w; x++) {\n\t\t\t\tv[f] -= a[y][x]\
+    \ * v[x];\n\t\t\t}\n\t\t\tv[f] /= a[y][f];\n\t\t}\n\t\tsols.push_back(v);\n\t\
+    }\n\treturn sols;\n}\n\n} // MatrixOperations\n\n// 5 is a root of both mods\n\
+    template <int MOD, int RT> struct Mint {\n\tstatic const int mod = MOD;\n\tstatic\
+    \ constexpr Mint rt() { return RT; } // primitive root for FFT\n\tstatic constexpr\
+    \ int md() { return MOD; } // primitive root for FFT\n\tint v; \n\texplicit operator\
+    \ int() const { return v; } // explicit -> don't silently convert to int\n\texplicit\
     \ operator bool() const { return v != 0; }\n\tMint() { v = 0; }\n\tMint(long long\
     \ _v) { v = int((-MOD <= _v && _v < MOD) ? _v : _v % MOD); if (v < 0) v += MOD;\
     \ }\n\tfriend bool operator==(const Mint &a, const Mint &b) { return a.v == b.v;\
@@ -155,7 +152,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/yosupo-system_of_linear_equations.test.cpp
   requiredBy: []
-  timestamp: '2021-07-31 22:47:04-04:00'
+  timestamp: '2021-07-31 22:49:25-04:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/yosupo/yosupo-system_of_linear_equations.test.cpp
