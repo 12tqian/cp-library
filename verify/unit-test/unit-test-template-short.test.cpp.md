@@ -14,25 +14,27 @@ data:
     IGNORE: ''
     IGNORE_IF_GCC: ''
     links: []
-  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages/onlinejudge_verify/documentation/build.py\"\
-    , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
-    \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
-    , line 187, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
-    , line 401, in update\n    self.update(self._resolve(pathlib.Path(included), included_from=path))\n\
-    \  File \"/opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
-    , line 260, in _resolve\n    raise BundleErrorAt(path, -1, \"no such header\"\
-    )\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: ../../library/contest/template-short.cpp\"\
-    : line -1: no such header\n"
+  bundledCode: "#define IGNORE \"just testing compilation\"\n\n#include <bits/stdc++.h>\n\
+    \nusing namespace std;\n\n#define f1r(i, a, b) for (int i = (a); i < (b); ++i)\n\
+    #define f0r(i, a) f1r(i, 0, a)\n#define each(t, a) for (auto &t : a)\n\n#define\
+    \ mp make_pair\n#define f first\n#define s second\n#define pb push_back\n#define\
+    \ eb emplace_back\n#define sz(x) (int)(x).size()\n#define all(x) begin(x), end(x)\n\
+    \ntypedef long long ll;\ntypedef vector<int> vi;\ntypedef vector<ll> vl;\ntypedef\
+    \ pair<int, int> pi;\ntypedef pair<ll, ll> pl;\ntypedef vector<pi> vpi;\ntypedef\
+    \ vector<pl> vpl;\n\ntemplate <class T> bool ckmin(T &a, const T &b) { return\
+    \ b < a ? a = b, 1 : 0; }\ntemplate <class T> bool ckmax(T &a, const T &b) { return\
+    \ a < b ? a = b, 1 : 0; }\n\nint main() {\n\tios::sync_with_stdio(false);\n\t\
+    cin.tie(nullptr);\n\treturn 0;\n}\n"
   code: '#define IGNORE "just testing compilation"
 
 
-    #include "../../library/contest/template-short.cpp""'
+    #include "../../library/contest/template-short.cpp"'
   dependsOn:
   - library/contest/template-short.cpp
   isVerificationFile: true
   path: verify/unit-test/unit-test-template-short.test.cpp
   requiredBy: []
-  timestamp: '2021-07-29 01:07:52-04:00'
+  timestamp: '2021-08-01 01:05:39-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/unit-test/unit-test-template-short.test.cpp

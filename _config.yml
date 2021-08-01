@@ -7,7 +7,7 @@ exclude:
 - bundle.py
 - compress.py
 plugins:
-- jekyll-feed
-show_excerpts: false
-theme: minima
+- jemoji
+- jekyll-redirect-from
+theme: hacker
 title: 12tqian's Competitive Programming Library
