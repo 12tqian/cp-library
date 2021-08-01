@@ -6,15 +6,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/kattis/kattis-equationsolver-matrix.test.cpp
     title: verify/kattis/kattis-equationsolver-matrix.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-system_of_linear_equations.test.cpp
     title: verify/yosupo/yosupo-system_of_linear_equations.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "template <class D> struct Matrix : std::vector<std::vector<D>> {\n\
+  bundledCode: "\ntemplate <class D> struct Matrix : std::vector<std::vector<D>> {\n\
     \ttemplate <class T> using V = std::vector<T>;\n\ttemplate <class T> using VV\
     \ = V<V<T>>;\n\tusing VV<D>::VV;\n\n\tint h() const { return int(this->size());\
     \ }\n\tint w() const { return int((*this)[0].size()); }\n\n\tMatrix operator*(const\
@@ -74,7 +74,7 @@ data:
     \t\t\tauto freq = a[y][x] / a[r][x];\n\t\t\tfor (int k = x; k < w; k++) a[y][k]\
     \ -= freq * a[r][k];\n\t\t\tb[y] -= freq * b[r];\n\t\t}\n\t\tr++;\n\t\tused[x]\
     \ = true;\n\t\tidxs.push_back(x);\n\t\tif (r == h) break;\n\t}\n\tauto zero =\
-    \ [&](const D& x) {\n\t\treturn EPS == D(-1) ? x != 0 : -EPS < x && x < EPS;\n\
+    \ [&](const D& x) {\n\t\treturn EPS == D(-1) ? x == 0 : -EPS < x && x < EPS;\n\
     \t};\n\tfor (int y = r; y < h; y++) {\n\t\tif (!zero(b[y])) return {};\n\t}\n\t\
     std::vector<std::vector<D>> sols;\n\t{ // initial solution\n\t\tstd::vector<D>\
     \ v(w);\n\t\tfor (int y = r - 1; y >= 0; y--) {\n\t\t\tint f = idxs[y];\n\t\t\t\
@@ -85,7 +85,7 @@ data:
     \ = idxs[y];\n\t\t\tfor (int x = f + 1; x < w; x++) {\n\t\t\t\tv[f] -= a[y][x]\
     \ * v[x];\n\t\t\t}\n\t\t\tv[f] /= a[y][f];\n\t\t}\n\t\tsols.push_back(v);\n\t\
     }\n\treturn sols;\n}\n\n} // MatrixOperations\n"
-  code: "#pragma once\ntemplate <class D> struct Matrix : std::vector<std::vector<D>>\
+  code: "#pragma once\n\ntemplate <class D> struct Matrix : std::vector<std::vector<D>>\
     \ {\n\ttemplate <class T> using V = std::vector<T>;\n\ttemplate <class T> using\
     \ VV = V<V<T>>;\n\tusing VV<D>::VV;\n\n\tint h() const { return int(this->size());\
     \ }\n\tint w() const { return int((*this)[0].size()); }\n\n\tMatrix operator*(const\
@@ -145,7 +145,7 @@ data:
     \t\t\tauto freq = a[y][x] / a[r][x];\n\t\t\tfor (int k = x; k < w; k++) a[y][k]\
     \ -= freq * a[r][k];\n\t\t\tb[y] -= freq * b[r];\n\t\t}\n\t\tr++;\n\t\tused[x]\
     \ = true;\n\t\tidxs.push_back(x);\n\t\tif (r == h) break;\n\t}\n\tauto zero =\
-    \ [&](const D& x) {\n\t\treturn EPS == D(-1) ? x != 0 : -EPS < x && x < EPS;\n\
+    \ [&](const D& x) {\n\t\treturn EPS == D(-1) ? x == 0 : -EPS < x && x < EPS;\n\
     \t};\n\tfor (int y = r; y < h; y++) {\n\t\tif (!zero(b[y])) return {};\n\t}\n\t\
     std::vector<std::vector<D>> sols;\n\t{ // initial solution\n\t\tstd::vector<D>\
     \ v(w);\n\t\tfor (int y = r - 1; y >= 0; y--) {\n\t\t\tint f = idxs[y];\n\t\t\t\
@@ -160,8 +160,8 @@ data:
   isVerificationFile: false
   path: library/numerical/matrix.hpp
   requiredBy: []
-  timestamp: '2021-07-31 22:49:25-04:00'
-  verificationStatus: LIBRARY_SOME_WA
+  timestamp: '2021-07-31 22:56:30-04:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/yosupo-system_of_linear_equations.test.cpp
   - verify/kattis/kattis-equationsolver-matrix.test.cpp

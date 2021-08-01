@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/numerical/matrix.hpp
     title: library/numerical/matrix.hpp
   _extendedRequiredBy: []
@@ -24,33 +24,33 @@ data:
     \ <iostream>\n#include <iomanip>\n#include <list>\n#include <map>\n#include <numeric>\n\
     #include <queue>\n#include <random>\n#include <set>\n#include <stack>\n#include\
     \ <string>\n#include <unordered_map>\n#include <vector>\n\nusing namespace std;\n\
-    template <class D> struct Matrix : std::vector<std::vector<D>> {\n\ttemplate <class\
-    \ T> using V = std::vector<T>;\n\ttemplate <class T> using VV = V<V<T>>;\n\tusing\
-    \ VV<D>::VV;\n\n\tint h() const { return int(this->size()); }\n\tint w() const\
-    \ { return int((*this)[0].size()); }\n\n\tMatrix operator*(const Matrix& r) const\
-    \ {\n\t\tassert(w() == r.h());\n\t\tMatrix res(h(), std::vector<D>(r.w()));\n\t\
-    \tfor (int i = 0; i < h(); i++) {\n\t\t\tfor (int j = 0; j < r.w(); j++) {\n\t\
-    \t\t\tfor (int k = 0; k < w(); k++) {\n\t\t\t\t\tres[i][j] += (*this)[i][k] *\
-    \ r[k][j];\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\treturn res;\n\t}\n\n\tMatrix<D>& operator+=(const\
-    \ Matrix& r) {\n\t\tassert(h() == r.h() && w == r.w());\n\t\tfor (int i = 0; i\
-    \ < h(); i++) {\n\t\t\tfor (int j = 0; j < h(); j++) {\n\t\t\t\t(*this)[i][j]\
-    \ += r[i][j];\n\t\t\t}\n\t\t}\n\t\treturn *this;\n\t}\n\n\tMatrix& operator-=(const\
-    \ Matrix& r) {\n\t\tassert(h() == r.h() && w == r.w());\n\t\tfor (int i = 0; i\
-    \ < h(); i++) {\n\t\t\tfor (int j = 0; j < h(); j++) {\n\t\t\t\t(*this)[i][j]\
-    \ -= r[i][j];\n\t\t\t}\n\t\t}\n\t\treturn *this;\n\t}\n\n\tMatrix operator*(const\
-    \ D& r) const {\n\t\tMatrix res = (*this);\n\t\tfor (int i = 0; i < h(); ++i)\
-    \ {\n\t\t\tfor (int j = 0; j < w(); ++j) {\n\t\t\t\tres[i][j] *= r;\n\t\t\t}\n\
-    \t\t}\n\t\treturn res;\n\t}\n\n\tMatrix operator/(const D &r) const{ return *this\
-    \ * (1 / r); }\n\tMatrix& operator*=(const Matrix& r) { return *this = *this *\
-    \ r; }\n\tMatrix operator+(const Matrix& r) { return *this += r; }\n\tMatrix operator-(const\
-    \ Matrix& r) { return *this -= r; }\n\tMatrix& operator*=(const D& r) { return\
-    \ *this = *this * r; }\n\tMatrix& operator/=(const D &r) { return *this = *this\
-    \ / r; }\n\tfriend Matrix operator*(const D& r, Matrix m) { return m *= r; }\n\
-    \n\tMatrix pow(long long n) const {\n\t\tassert(h() == w());\n\t\tMatrix x = *this,\
-    \ r(h(), std::vector<D>(w()));\n\t\tfor (int i = 0; i < h(); i++) r[i][i] = D(1);\n\
-    \t\twhile (n) {\n\t\t\tif (n & 1) r *= x;\n\t\t\tx *= x;\n\t\t\tn >>= 1;\n\t\t\
-    }\n\t\treturn r;\n\t}\n};\n\nnamespace MatrixOperations {\n\ntemplate <class T>\
-    \ Matrix<T> make_matrix(int r, int c) { return Matrix<T>(r, std::vector<T>(c));\
+    \ntemplate <class D> struct Matrix : std::vector<std::vector<D>> {\n\ttemplate\
+    \ <class T> using V = std::vector<T>;\n\ttemplate <class T> using VV = V<V<T>>;\n\
+    \tusing VV<D>::VV;\n\n\tint h() const { return int(this->size()); }\n\tint w()\
+    \ const { return int((*this)[0].size()); }\n\n\tMatrix operator*(const Matrix&\
+    \ r) const {\n\t\tassert(w() == r.h());\n\t\tMatrix res(h(), std::vector<D>(r.w()));\n\
+    \t\tfor (int i = 0; i < h(); i++) {\n\t\t\tfor (int j = 0; j < r.w(); j++) {\n\
+    \t\t\t\tfor (int k = 0; k < w(); k++) {\n\t\t\t\t\tres[i][j] += (*this)[i][k]\
+    \ * r[k][j];\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\treturn res;\n\t}\n\n\tMatrix<D>&\
+    \ operator+=(const Matrix& r) {\n\t\tassert(h() == r.h() && w == r.w());\n\t\t\
+    for (int i = 0; i < h(); i++) {\n\t\t\tfor (int j = 0; j < h(); j++) {\n\t\t\t\
+    \t(*this)[i][j] += r[i][j];\n\t\t\t}\n\t\t}\n\t\treturn *this;\n\t}\n\n\tMatrix&\
+    \ operator-=(const Matrix& r) {\n\t\tassert(h() == r.h() && w == r.w());\n\t\t\
+    for (int i = 0; i < h(); i++) {\n\t\t\tfor (int j = 0; j < h(); j++) {\n\t\t\t\
+    \t(*this)[i][j] -= r[i][j];\n\t\t\t}\n\t\t}\n\t\treturn *this;\n\t}\n\n\tMatrix\
+    \ operator*(const D& r) const {\n\t\tMatrix res = (*this);\n\t\tfor (int i = 0;\
+    \ i < h(); ++i) {\n\t\t\tfor (int j = 0; j < w(); ++j) {\n\t\t\t\tres[i][j] *=\
+    \ r;\n\t\t\t}\n\t\t}\n\t\treturn res;\n\t}\n\n\tMatrix operator/(const D &r) const{\
+    \ return *this * (1 / r); }\n\tMatrix& operator*=(const Matrix& r) { return *this\
+    \ = *this * r; }\n\tMatrix operator+(const Matrix& r) { return *this += r; }\n\
+    \tMatrix operator-(const Matrix& r) { return *this -= r; }\n\tMatrix& operator*=(const\
+    \ D& r) { return *this = *this * r; }\n\tMatrix& operator/=(const D &r) { return\
+    \ *this = *this / r; }\n\tfriend Matrix operator*(const D& r, Matrix m) { return\
+    \ m *= r; }\n\n\tMatrix pow(long long n) const {\n\t\tassert(h() == w());\n\t\t\
+    Matrix x = *this, r(h(), std::vector<D>(w()));\n\t\tfor (int i = 0; i < h(); i++)\
+    \ r[i][i] = D(1);\n\t\twhile (n) {\n\t\t\tif (n & 1) r *= x;\n\t\t\tx *= x;\n\t\
+    \t\tn >>= 1;\n\t\t}\n\t\treturn r;\n\t}\n};\n\nnamespace MatrixOperations {\n\n\
+    template <class T> Matrix<T> make_matrix(int r, int c) { return Matrix<T>(r, std::vector<T>(c));\
     \ }\n\n\ntemplate <class D> Matrix<D> inv(Matrix<D> m, const D& EPS = -1) {\n\t\
     int r = m.h();\n\tassert(m.h() == m.w());\n\tMatrix<D> x = make_matrix<D>(r, 2\
     \ * r);\n\tfor (int i = 0; i < r; i++) {\n\t\tx[i][i + r] = 1;\n\t\tfor (int j\
@@ -84,7 +84,7 @@ data:
     \t\t\tauto freq = a[y][x] / a[r][x];\n\t\t\tfor (int k = x; k < w; k++) a[y][k]\
     \ -= freq * a[r][k];\n\t\t\tb[y] -= freq * b[r];\n\t\t}\n\t\tr++;\n\t\tused[x]\
     \ = true;\n\t\tidxs.push_back(x);\n\t\tif (r == h) break;\n\t}\n\tauto zero =\
-    \ [&](const D& x) {\n\t\treturn EPS == D(-1) ? x != 0 : -EPS < x && x < EPS;\n\
+    \ [&](const D& x) {\n\t\treturn EPS == D(-1) ? x == 0 : -EPS < x && x < EPS;\n\
     \t};\n\tfor (int y = r; y < h; y++) {\n\t\tif (!zero(b[y])) return {};\n\t}\n\t\
     std::vector<std::vector<D>> sols;\n\t{ // initial solution\n\t\tstd::vector<D>\
     \ v(w);\n\t\tfor (int y = r - 1; y >= 0; y--) {\n\t\t\tint f = idxs[y];\n\t\t\t\
@@ -123,7 +123,7 @@ data:
   isVerificationFile: true
   path: verify/kattis/kattis-equationsolver-matrix.test.cpp
   requiredBy: []
-  timestamp: '2021-07-31 22:49:25-04:00'
+  timestamp: '2021-07-31 22:56:30-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/kattis/kattis-equationsolver-matrix.test.cpp
