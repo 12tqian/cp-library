@@ -1,12 +1,13 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/system_of_linear_equations"
 
-#include "../../library/contest/template-minimal.hpp"
+#include <bits/stdc++.h>
 #include "../../library/numerical/matrix.hpp"
 #include "../../library/modular-arithmetic/mod-int2.hpp"
 
 using mi = Mint<998244353, 5>;
 
 int main() {
+	using namespace std;
 	ios::sync_with_stdio(false);
 	cin.tie(nullptr);
 	using namespace MatrixOperations;

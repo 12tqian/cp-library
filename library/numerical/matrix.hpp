@@ -1,9 +1,7 @@
 #pragma once
 
 template <class D> struct Matrix : std::vector<std::vector<D>> {
-	template <class T> using V = std::vector<T>;
-	template <class T> using VV = V<V<T>>;
-	using VV<D>::VV;
+	using std::vector<std::vector<D>>::vector;
 
 	int h() const { return int(this->size()); }
 	int w() const { return int((*this)[0].size()); }
@@ -158,7 +156,7 @@ template <class D> std::vector<std::vector<D>> solve_linear(Matrix<D> a, std::ve
 		int my = get_row(a, h, x, r, EPS);
 		if (my == -1) continue;
 		if (r != my) std::swap(a[r], a[my]);
-		swap(b[r], b[my]);
+		std::swap(b[r], b[my]);
 		for (int y = r + 1; y < h; y++) {
 			if (!a[y][x]) continue;
 			auto freq = a[y][x] / a[r][x];
