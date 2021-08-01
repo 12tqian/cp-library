@@ -3,7 +3,7 @@
 #include "number-theoretic-transform.hpp"
 
 template <class D> struct Poly : std::vector<D> {
-	using vector<D>::vector;
+	using std::vector<D>::vector;
 
 	static const int SMALL_DEGREE = 60;
 
@@ -21,23 +21,23 @@ template <class D> struct Poly : std::vector<D> {
 	D freq(int p) const { return (p < (int)this->size()) ? (*this)[p] : D(0); }
 	
 	Poly operator+(const Poly& r) const {
-		int n = max(this->size(), r.size());
+		int n = std::max(this->size(), r.size());
 		std::vector<D> res(n);
 		for (int i = 0; i < n; i++) res[i] = freq(i) + r.freq(i);
 		return res;
 	}
 	
 	Poly operator-(const Poly& r) const {
-		int n = max(this->size(), r.size());
+		int n = std::max(this->size(), r.size());
 		std::vector<D> res(n);
 		for (int i = 0; i < n; i++) res[i] = freq(i) - r.freq(i);
 		return res;
 	}
 
-	bool small(const Poly& r) const { return min((int)this->size(), (int)r.size()) <= SMALL_DEGREE; }
+	bool small(const Poly& r) const { return std::min((int)this->size(), (int)r.size()) <= SMALL_DEGREE; }
 
 	Poly operator*(const Poly& r) const { 
-		if (!min((int)this->size(), (int)r.size())) return {};
+		if (!std::min((int)this->size(), (int)r.size())) return {};
 		if (small(r)){
 			Poly res((int)this->size() + (int)r.size() - 1);
 			for (int i = 0; i < (int)this->size(); ++i) {
@@ -70,8 +70,7 @@ template <class D> struct Poly : std::vector<D> {
 			D ilst = 1 / lst;
 			for (auto& t : a) t *= ilst;
 			for (auto& t : b) t *= ilst;
-			cout << lst << ' ' << ilst << endl;
-			Poly q(max((int)a.size() - (int)b.size() + 1, 0));
+			Poly q(std::max((int)a.size() - (int)b.size() + 1, 0));
 			for (int diff; (diff = (int)a.size() - (int)b.size()) >= 0; a.shrink()) {
 				q[diff] = a.back();
 				for (int i = 0; i < (int)b.size(); ++i) {
@@ -111,7 +110,7 @@ template <class D> struct Poly : std::vector<D> {
 	Poly& operator>>=(const size_t& n) { return *this = *this >> n; }
 	friend Poly operator*(D const& l, Poly r) { return r *= l; }
 
-	Poly pre(int le) const { return Poly(this->begin(), this->begin() + min((int)this->size(), le)); }
+	Poly pre(int le) const { return Poly(this->begin(), this->begin() + std::min((int)this->size(), le)); }
 	
 	Poly rev(int n = -1) const {
 		Poly res = *this;
@@ -121,7 +120,7 @@ template <class D> struct Poly : std::vector<D> {
 	}
 	
 	Poly diff() const {
-		std::vector<D> res(max(0, (int)this->size() - 1));
+		std::vector<D> res(std::max(0, (int)this->size() - 1));
 		for (int i = 1; i < (int)this->size(); i++) res[i - 1] = freq(i) * i;
 		return res;
 	}
@@ -201,7 +200,7 @@ template <class D> struct Poly : std::vector<D> {
 		return Poly(n);
 	}
 
-	friend ostream& operator<<(ostream& os, const Poly& p) {
+	friend std::ostream& operator<<(std::ostream& os, const Poly& p) {
 		if (p.empty()) return os << "0";
 		for (auto i = 0; i < (int)p.size(); i++) {
 			if (p[i]) {

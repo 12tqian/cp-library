@@ -34,7 +34,7 @@ template <class Mint> void nft(bool type, std::vector<Mint>& a) {
 template <class Mint> std::vector<Mint> multiply_nft(const std::vector<Mint>& a, const std::vector<Mint>& b) {
 	int n = int(a.size()), m = int(b.size());
 	if (!n || !m) return {};
-	if (min(n, m) <= 8) {
+	if (std::min(n, m) <= 8) {
 		std::vector<Mint> ans(n + m - 1);
 		for (int i = 0; i < n; i++)
 			for (int j = 0; j < m; j++) ans[i + j] += a[i] * b[j];
@@ -119,7 +119,7 @@ template <class Mint> void butterfly(bool type, std::vector<Mint>& a) {
 template <class Mint> std::vector<Mint> multiply(const std::vector<Mint>& a, const std::vector<Mint>& b) {
 	int n = int(a.size()), m = int(b.size());
 	if (!n || !m) return {};
-	if (min(n, m) < 8) {
+	if (std::min(n, m) < 8) {
 		std::vector<Mint> ans(n + m - 1);
 		for (int i = 0; i < n; i++)
 			for (int j = 0; j < m; j++) ans[i + j] += a[i] * b[j];

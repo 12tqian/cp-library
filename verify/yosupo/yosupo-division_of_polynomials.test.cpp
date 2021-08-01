@@ -1,12 +1,14 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/division_of_polynomials"
 
-#include "../../library/contest/template-minimal.hpp"
+#include <bits/stdc++.h>
+// #include "../../library/contest/template-minimal.hpp"
 #include "../../library/modular-arithmetic/mod-int2.hpp"
 #include "../../library/polynomial/polynomial.hpp"
 
 using mi = Mint<998244353, 5>;
 
 int main() {
+	using namespace std;
 	int n, m;
 	cin >> n >> m;
 	Poly<mi> f(n), g(m);
