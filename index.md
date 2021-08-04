@@ -277,6 +277,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/polynomial/polynomial2.hpp
       title: library/polynomial/polynomial2.hpp
+  - name: library/set-function
+    pages:
+    - icon: ':warning:'
+      path: library/set-function/walsh-hadamard-transform.hpp
+      title: library/set-function/walsh-hadamard-transform.hpp
   - name: library/string
     pages:
     - icon: ':heavy_check_mark:'
