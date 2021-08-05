@@ -10,13 +10,7 @@ template <class D, class L, class OpDD, class OpDL, class OpLL> struct LazySegme
 	std::vector<D> d;
 	std::vector<L> lz;
 
-	LazySegmentTree(const std::vector<D>& v,
-			D _e_d,
-			L _e_l,
-			OpDD _op_dd,
-			OpDL _op_dl,
-			OpLL _op_ll)
-		: e_d(_e_d), e_l(_e_l), op_dd(_op_dd), op_dl(_op_dl), op_ll(_op_ll) {
+	void init(const std::vector<D>& v) {
 		int n = int(v.size());
 		lg = 1;
 		while ((1 << lg) < n) lg++;
@@ -27,6 +21,16 @@ template <class D, class L, class OpDD, class OpDL, class OpLL> struct LazySegme
 		for (int i = sz - 1; i >= 0; i--) {
 			update(i);
 		}
+	}
+
+	LazySegmentTree(const std::vector<D>& v,
+			D _e_d,
+			L _e_l,
+			OpDD _op_dd,
+			OpDL _op_dl,
+			OpLL _op_ll)
+		: e_d(_e_d), e_l(_e_l), op_dd(_op_dd), op_dl(_op_dl), op_ll(_op_ll) {
+		init(v);
 	}
 
 	void all_add(int k, L x) {

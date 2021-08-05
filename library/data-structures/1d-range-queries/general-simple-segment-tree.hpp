@@ -6,7 +6,7 @@ template <class D, class Op> struct SegmentTree {
 	int n, sz, lg;  
 	std::vector<D> d;
 
-	SegmentTree(const std::vector<D>& v, D _e, Op _op) : e(_e), op(_op) {
+	void init(const std::vector<D>& v) {
 		n = int(v.size());
 		lg = 1;
 		while ((1 << lg) < n) lg++;
@@ -17,6 +17,8 @@ template <class D, class Op> struct SegmentTree {
 			update(i);
 		}
 	}
+
+	SegmentTree(const std::vector<D>& v, D _e, Op _op) : e(_e), op(_op) { init(v); }
 
 	void update(int k) { d[k] = op(d[2 * k], d[2 * k + 1]); }
 
