@@ -13,7 +13,7 @@ void walsh_hadamard_transformation(std::vector<T>& f, bool inverse = false) {
 		}
 	}
 	if (inverse) {
-		if constextpr(std::is_integral<T>::value) {
+		if constexpr(std::is_integral<T>::value) {
 			for (auto& x : f) x /= n;
 		} else {
 			T divide = T(1) / T(f.size());
