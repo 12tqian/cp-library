@@ -1,7 +1,7 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/suffixarray"
 
 #include "../../library/contest/template-minimal.hpp"
-#include "../../library/string/suffix-array.hpp"
+#include "../../library/string/suffix-array-lcp.hpp"
 
 int main() {
 	using namespace std;
