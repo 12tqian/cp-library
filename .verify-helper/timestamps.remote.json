@@ -10,7 +10,7 @@
 "verify/codeforces/codeforces-1195E.test.cpp": "2021-07-28 19:45:54 -0400",
 "verify/codeforces/codeforces-1299D.test.cpp": "2021-07-31 14:30:12 -0400",
 "verify/codeforces/codeforces-1463E.test.cpp": "2021-07-28 19:45:54 -0400",
-"verify/codeforces/codeforces-1494F.test.cpp": "2021-07-28 19:45:54 -0400",
+"verify/codeforces/codeforces-1494F.test.cpp": "2021-08-13 00:54:25 -0400",
 "verify/codeforces/codeforces-1542E2.test.cpp": "2021-07-28 19:45:54 -0400",
 "verify/codeforces/codeforces-1551F.test.cpp": "2021-07-30 23:56:29 -0400",
 "verify/codeforces/codeforces-1553G.test.cpp": "2021-07-29 01:03:11 -0400",
@@ -81,6 +81,6 @@
 "verify/yosupo/yosupo-system_of_linear_equations.test.cpp": "2021-08-01 14:43:25 -0400",
 "verify/yosupo/yosupo-two_edge_connected_components.test.cpp": "2021-07-28 19:45:54 -0400",
 "verify/yosupo/yosupo-unionfind.test.cpp": "2021-07-28 19:45:54 -0400",
-"verify/yosupo/yosupo-vertex_add_path_sum-new-hld.test.cpp": "2021-08-05 19:19:10 -0400",
+"verify/yosupo/yosupo-vertex_add_path_sum-new-hld.test.cpp": "2021-08-13 00:54:49 -0400",
 "verify/yosupo/yosupo-vertex_add_path_sum.test.cpp": "2021-07-31 13:51:24 -0400"
 }
