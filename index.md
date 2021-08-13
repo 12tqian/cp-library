@@ -279,7 +279,7 @@ data:
       title: library/polynomial/polynomial2.hpp
   - name: library/set-function
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/set-function/walsh-hadamard-transform.hpp
       title: library/set-function/walsh-hadamard-transform.hpp
   - name: library/string
@@ -430,6 +430,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-bipartitematching.test.cpp
       title: verify/yosupo/yosupo-bipartitematching.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/yosupo/yosupo-bitwise_xor_convolution.test.cpp
+      title: verify/yosupo/yosupo-bitwise_xor_convolution.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-convolution_mod_1000000007-fast-fourier-transform.test.cpp
       title: verify/yosupo/yosupo-convolution_mod_1000000007-fast-fourier-transform.test.cpp

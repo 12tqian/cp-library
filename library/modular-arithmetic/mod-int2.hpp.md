@@ -19,6 +19,9 @@ data:
     path: verify/codeforces/codeforces-981G.test.cpp
     title: verify/codeforces/codeforces-981G.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/yosupo/yosupo-bitwise_xor_convolution.test.cpp
+    title: verify/yosupo/yosupo-bitwise_xor_convolution.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-convolution_mod_1000000007-fast-fourier-transform.test.cpp
     title: verify/yosupo/yosupo-convolution_mod_1000000007-fast-fourier-transform.test.cpp
   - icon: ':heavy_check_mark:'
@@ -138,6 +141,7 @@ data:
   - verify/yosupo/yosupo-convolution_mod_1000000007-fast-fourier-transform.test.cpp
   - verify/yosupo/yosupo-log_of_formal_power_series.test.cpp
   - verify/yosupo/yosupo-find_linear_recurrence.test.cpp
+  - verify/yosupo/yosupo-bitwise_xor_convolution.test.cpp
   - verify/yosupo/yosupo-division_of_polynomials.test.cpp
   - verify/yosupo/yosupo-system_of_linear_equations.test.cpp
   - verify/yosupo/yosupo-multipoint_evaluation.test.cpp
