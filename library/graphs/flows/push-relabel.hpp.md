@@ -101,7 +101,7 @@ title: Push Relabel
 ## Push Relabel
 
 ### Functions
-- `max_flow(s, t)`: Calculates maximum flow form $s$ to $t$. 
+- `max_flow(s, t)`: Calculates maximum flow form `s` to `t`. 
 
 ### Variables
 - `adj`: Stores amount of flow through each edge after calling `max_flow`. 

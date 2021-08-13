@@ -88,9 +88,9 @@ This works decently fast, requires you to know locations of all updates first th
 - $x, y \in [0, sz)$
 
 ### Functions
-- `update(x, y, t)`: Updates at location $(x, y)$ with $t$. Call first to store locations, and again later for actual updates. 
+- `update(x, y, t)`: Updates at location `(x, y)` with `t`. Call first to store locations, and again later for actual updates. 
 - `init(sz)`: Needs to be called after all updates have been called. 
-- `query(xl, xr, yl, yr)`: Queries in bounds $x \in [xl, xr], y \in [yl, yr]$. 
+- `query(xl, xr, yl, yr)`: Queries sum in rectangle with corners `(xl, yl), (xr, yr)`. 
 
 
 ### Resources
