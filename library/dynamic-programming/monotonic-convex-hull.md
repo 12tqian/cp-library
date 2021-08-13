@@ -13,8 +13,8 @@ I should make this general for not just `long long`.
 - Assumes you add lines in monotonic slope order. 
 
 ### Functions
-- `add(a, b)`: Adds line to hull with slope $a$ and $y$-intercept $b$ in $\mathcal O(1)$. 
-- `query(x)`: Finds minimum at $x$ in $\mathcal O(1)$. 
+- `add(a, b)`: Adds line to hull with slope `a` and $y$-intercept `b` in $\mathcal O(1)$. 
+- `query(x)`: Finds minimum at `x` in $\mathcal O(1)$. 
 
 ### Variables
 - `ord`: determines whether queries are in increasing or decreasing order. 
