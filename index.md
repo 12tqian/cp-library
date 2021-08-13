@@ -247,10 +247,10 @@ data:
       title: library/numerical/matrix2.hpp
     - icon: ':heavy_check_mark:'
       path: library/numerical/simplex.hpp
-      title: library/numerical/simplex.hpp
+      title: Simplex LP Solver
     - icon: ':heavy_check_mark:'
       path: library/numerical/xor-basis.hpp
-      title: library/numerical/xor-basis.hpp
+      title: XOR Basis
   - name: library/polynomial
     pages:
     - icon: ':heavy_check_mark:'

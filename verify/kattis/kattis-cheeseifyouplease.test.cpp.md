@@ -6,7 +6,7 @@ data:
     title: library/contest/template-minimal.hpp
   - icon: ':heavy_check_mark:'
     path: library/numerical/simplex.hpp
-    title: library/numerical/simplex.hpp
+    title: Simplex LP Solver
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -24,11 +24,9 @@ data:
     \ <iostream>\n#include <iomanip>\n#include <list>\n#include <map>\n#include <numeric>\n\
     #include <queue>\n#include <random>\n#include <set>\n#include <stack>\n#include\
     \ <string>\n#include <unordered_map>\n#include <vector>\n\nusing namespace std;\n\
-    \n/**\n * Maximizes c^Tx given Ax <= b, x >= 0\n * Returns -INF if no solution\n\
-    \ * INF if there are many good solutions\n * Maximum value of c^Tx otherwise\n\
-    \ */\n\ntemplate <class T> struct Simplex {\n\tconst T EPS = 1e-8;\n\tconst T\
-    \ INF = 1 / .0;\n\t\n\tint m, n; // constraints, variables\n\n\tstd::vector<int>\
-    \ N, B;\n\n\tstd::vector<std::vector<T>> D;\n\n\tSimplex(const std::vector<std::vector<T>>\
+    \ntemplate <class T> struct Simplex {\n\tconst T EPS = 1e-8;\n\tconst T INF =\
+    \ 1 / .0;\n\t\n\tint m, n; // constraints, variables\n\n\tstd::vector<int> N,\
+    \ B;\n\n\tstd::vector<std::vector<T>> D;\n\n\tSimplex(const std::vector<std::vector<T>>\
     \ &A, const std::vector<T> &b, const std::vector<T> &c) : \n\tm(b.size()), n(c.size()),\
     \ N(n + 1), B(m), D(m + 2, std::vector<T>(n + 2)) {\n\t\tfor (int i = 0; i < m;\
     \ ++i) {\n\t\t\tfor (int j = 0; j < n; ++j) {\n\t\t\t\tD[i][j] = A[i][j];\n\t\t\
@@ -87,7 +85,7 @@ data:
   isVerificationFile: true
   path: verify/kattis/kattis-cheeseifyouplease.test.cpp
   requiredBy: []
-  timestamp: '2021-07-28 19:45:54-04:00'
+  timestamp: '2021-08-13 01:26:19-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/kattis/kattis-cheeseifyouplease.test.cpp
