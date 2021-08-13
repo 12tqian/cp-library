@@ -6,7 +6,7 @@ data:
     title: library/contest/template-minimal.hpp
   - icon: ':heavy_check_mark:'
     path: library/graphs/lca-jump.hpp
-    title: library/graphs/lca-jump.hpp
+    title: LCA Jump
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -24,8 +24,7 @@ data:
     \ <iostream>\n#include <iomanip>\n#include <list>\n#include <map>\n#include <numeric>\n\
     #include <queue>\n#include <random>\n#include <set>\n#include <stack>\n#include\
     \ <string>\n#include <unordered_map>\n#include <vector>\n\nusing namespace std;\n\
-    \n/**\n * To support forest, call gen for each roots\n */\nstruct LCAJump {\n\t\
-    int n;\n\tstd::vector<std::vector<int>> par;\n\tstd::vector<std::vector<int>>\
+    \nstruct LCAJump {\n\tint n;\n\tstd::vector<std::vector<int>> par;\n\tstd::vector<std::vector<int>>\
     \ adj;\n\tstd::vector<int> depth;\n\n\tvoid init(int _n) {\n\t\tn = _n;\n\t\t\
     int d = 1;\n\t\twhile ((1 << d) < n) d++;\n\t\tpar.assign(d, std::vector<int>(n));\n\
     \t\tadj.resize(n);\n\t\tdepth.resize(n);\n\t}\n\n\tvoid ae(int x, int y) {\n\t\
@@ -57,7 +56,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/yosupo-lca-lca-jump.test.cpp
   requiredBy: []
-  timestamp: '2021-07-28 19:45:54-04:00'
+  timestamp: '2021-08-13 01:03:57-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/yosupo-lca-lca-jump.test.cpp

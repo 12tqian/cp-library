@@ -144,7 +144,7 @@ data:
       title: library/graphs/lca-jump-distance.hpp
     - icon: ':heavy_check_mark:'
       path: library/graphs/lca-jump.hpp
-      title: library/graphs/lca-jump.hpp
+      title: LCA Jump
     - icon: ':heavy_check_mark:'
       path: library/graphs/lca-rmq.hpp
       title: library/graphs/lca-rmq.hpp
