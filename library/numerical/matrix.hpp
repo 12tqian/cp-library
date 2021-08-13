@@ -74,26 +74,6 @@ namespace MatrixOperations {
 
 template <class T> Matrix<T> make_matrix(int r, int c) { return Matrix<T>(r, std::vector<T>(c)); }
 
-template <class D> Matrix<D> inv(Matrix<D> m, const D& EPS = -1) {
-	int r = m.h();
-	assert(m.h() == m.w());
-	Matrix<D> x = make_matrix<D>(r, 2 * r);
-	for (int i = 0; i < r; i++) {
-		x[i][i + r] = 1;
-		for (int j = 0; j < r; j++) {
-			x[i][j] = m[i][j];
-		}
-	}
-	if (gauss(x, EPS).second != r) return Matrix<D>();
-	Matrix<D> res = make_matrix<D>(r, r);
-	for (int i = 0; i < r; i++) {
-		for (int j = 0; j < r; j++) {
-			res[i][j] = x[i][j + r];
-		}
-	}
-	return res;
-}
-
 template <class D> int get_row(Matrix<D>& m, int r, int i, int nxt, const D& EPS = -1) {
 	std::pair<D, int> best = {0, -1};
 	for (int j = nxt; j < r; j++) {
@@ -140,6 +120,26 @@ template <class D> std::pair<D, int> gauss(Matrix<D>& m, const D& EPS = -1) {
 		nxt++;
 	}
 	return {prod, rank};
+}
+
+template <class D> Matrix<D> inv(Matrix<D> m, const D& EPS = -1) {
+	int r = m.h();
+	assert(m.h() == m.w());
+	Matrix<D> x = make_matrix<D>(r, 2 * r);
+	for (int i = 0; i < r; i++) {
+		x[i][i + r] = 1;
+		for (int j = 0; j < r; j++) {
+			x[i][j] = m[i][j];
+		}
+	}
+	if (gauss(x, EPS).second != r) return Matrix<D>();
+	Matrix<D> res = make_matrix<D>(r, r);
+	for (int i = 0; i < r; i++) {
+		for (int j = 0; j < r; j++) {
+			res[i][j] = x[i][j + r];
+		}
+	}
+	return res;
 }
 
 template <class D> int calc_rank(Matrix<D> a, const D& EPS = -1) { return gauss(a, EPS).second; }
