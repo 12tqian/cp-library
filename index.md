@@ -75,7 +75,7 @@ data:
       title: Offline 2D BIT
     - icon: ':heavy_check_mark:'
       path: library/data-structures/2d-range-queries/quadtree.hpp
-      title: library/data-structures/2d-range-queries/quadtree.hpp
+      title: Quadtree
   - name: library/dynamic-programming
     pages:
     - icon: ':heavy_check_mark:'
