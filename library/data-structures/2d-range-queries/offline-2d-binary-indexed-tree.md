@@ -1,6 +1,6 @@
 ---
 title: Offline 2D BIT
-documentation_of: offline-2d-binary-index-tree.hpp
+documentation_of: offline-2d-binary-indexed-tree.hpp
 ---
 
 ## Offline 2D BIT
