@@ -62,7 +62,7 @@ data:
     \ true);\n\tfor (int i = 0; i < 1 << n; ++i) {\n\t\tcout << c[i] << ' ';\n\t}\n\
     \tcout << '\\n';\n\treturn 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/bitwise_xor_convolution\"\
-    \n\n#include <bits/stdc++.h>\n#include \"../../library/set-function/walsh-hadamard-transform.hpp\"\
+    \n\n#include <bits/stdc++.h>\n#include <vector>\n#include \"../../library/set-function/walsh-hadamard-transform.hpp\"\
     \n#include \"../../library/modular-arithmetic/mod-int2.hpp\"\n\nusing mi = Mint<998244353,\
     \ 5>;\n\nusing namespace std;\n\nint main() {\n\tios::sync_with_stdio(false);\n\
     \tcin.tie(nullptr);\n\tint n;\n\tcin >> n;\n\tvector<mi> a(1 << n);\n\tvector<mi>\
@@ -78,7 +78,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/yosupo-bitwise_xor_convolution.test.cpp
   requiredBy: []
-  timestamp: '2021-08-12 23:40:44-04:00'
+  timestamp: '2021-08-13 14:03:20-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/yosupo-bitwise_xor_convolution.test.cpp
