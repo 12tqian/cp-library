@@ -4,7 +4,7 @@ data:
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
     path: library/graphs/lca-rmq.hpp
-    title: library/graphs/lca-rmq.hpp
+    title: LCA RMQ
   - icon: ':heavy_check_mark:'
     path: library/string/suffix-array-lcp.hpp
     title: Suffix Array with Longest Common Prefix

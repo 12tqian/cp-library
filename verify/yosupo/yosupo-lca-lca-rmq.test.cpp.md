@@ -9,7 +9,7 @@ data:
     title: Sparse Table
   - icon: ':heavy_check_mark:'
     path: library/graphs/lca-rmq.hpp
-    title: library/graphs/lca-rmq.hpp
+    title: LCA RMQ
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false

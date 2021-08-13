@@ -12,7 +12,7 @@ data:
     title: library/graphs/centroid-decomposition.hpp
   - icon: ':heavy_check_mark:'
     path: library/graphs/lca-rmq.hpp
-    title: library/graphs/lca-rmq.hpp
+    title: LCA RMQ
   - icon: ':heavy_check_mark:'
     path: library/misc/easy-io.hpp
     title: library/misc/easy-io.hpp

@@ -147,7 +147,7 @@ data:
       title: LCA Jump
     - icon: ':heavy_check_mark:'
       path: library/graphs/lca-rmq.hpp
-      title: library/graphs/lca-rmq.hpp
+      title: LCA RMQ
     - icon: ':heavy_check_mark:'
       path: library/graphs/link-cut-tree.hpp
       title: library/graphs/link-cut-tree.hpp
