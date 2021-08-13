@@ -129,7 +129,7 @@ data:
       title: library/graphs/enumerate-triangles.cpp
     - icon: ':heavy_check_mark:'
       path: library/graphs/euler-path.hpp
-      title: library/graphs/euler-path.hpp
+      title: Euler Path
     - icon: ':heavy_check_mark:'
       path: library/graphs/heavy-light-decomposition.hpp
       title: library/graphs/heavy-light-decomposition.hpp

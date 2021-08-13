@@ -9,7 +9,7 @@ data:
     title: library/graphs/dsu.hpp
   - icon: ':heavy_check_mark:'
     path: library/graphs/euler-path.hpp
-    title: library/graphs/euler-path.hpp
+    title: Euler Path
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -36,38 +36,36 @@ data:
     int size(int x) {\n\t\treturn -e[get(x)];\n\t}\n\n\tbool unite(int x, int y) {\n\
     \t\tx = get(x), y = get(y);\n\t\tif (x == y) return false;\n\t\tif (e[x] > e[y])\
     \ std::swap(x, y);\n\t\te[x] += e[y]; e[y] = x;\n\t\treturn true;\n\t}\n};\n\n\
-    \n/**\n * Finds Euler path in O(N + M) from a starting vertex\n * To find which\
-    \ vertex to start, use parities\n */\n\ntemplate <bool directed> struct Euler\
-    \ {\n\tint n;\n\tstd::vector<std::vector<std::pair<int, int>>> adj;\n\tstd::vector<std::vector<std::pair<int,\
-    \ int>>::iterator> its;\n\tstd::vector<bool> used;\n\n\tvoid init(int _n) {\n\t\
-    \tn = _n;\n\t\tadj.resize(n);\n\t}\n\n\tvoid ae(int u, int v) {\n\t\tint m = (int)used.size();\n\
-    \t\tused.push_back(false);\n\t\tadj[u].emplace_back(v, m);\n\t\tif (!directed)\
-    \ {\n\t\t\tadj[v].emplace_back(u, m);\n\t\t}\n\t}\n\n\tstd::vector<std::pair<int,\
-    \ int>> euler_path() {\n\t\tint cnt = 0;\n\t\tfor (int i = 0; i < n; i++) \n\t\
-    \t\tcnt += (int)adj[i].size() % 2;\n\t\tif (cnt == 2) {\n\t\t\tfor (int i = 0;\
-    \ i < n; i++) \n\t\t\t\tif ((int)adj[i].size() % 2) \n\t\t\t\t\treturn get_path(i);\n\
-    \t\t} else if (cnt == 0) {\n\t\t\treturn get_path(0);\n\t\t}\n\t\treturn {};\n\
-    \t}\n\t\n\tstd::vector<std::pair<int, int>> get_path(int src = 0) {\n\t\tits.resize(n);\n\
-    \t\tstd::vector<std::pair<int, int>> ans, s{{src, -1}};\n\t\tfor (int i = 0; i\
-    \ < n; i++) {\n\t\t\tits[i] = adj[i].begin();\n\t\t}\n\t\tint lst = -1;\n\t\t\
-    while ((int)s.size()) {\n\t\t\tint x = s.back().first;\n\t\t\tauto &it = its[x];\n\
-    \t\t\tauto en = adj[x].end();\n\t\t\twhile (it != en && used[it->second]) {\n\t\
-    \t\t\t++it;\n\t\t\t}\n\t\t\tif (it == en) {\n\t\t\t\tif (lst != -1 && lst != x)\
-    \ {\n\t\t\t\t\treturn {};\n\t\t\t\t}\n\t\t\t\tans.push_back(s.back());\n\t\t\t\
-    \ts.pop_back();\n\t\t\t\tif ((int)s.size()) {\n\t\t\t\t\tlst = s.back().first;\n\
-    \t\t\t\t}\n\t\t\t} else {\n\t\t\t\ts.push_back(*it);\n\t\t\t\tused[it->second]\
-    \ = 1;\n\t\t\t}\n\t\t}\n\t\tif ((int)ans.size() != (int)used.size() + 1) {\n\t\
-    \t\treturn {};\n\t\t}\n\t\treverse(ans.begin(), ans.end());\n\t\treturn ans;\n\
-    \t}\n};\n\nint main() {\n\tcin.tie(0)->sync_with_stdio(0);\n\tint n, m; cin >>\
-    \ n >> m;\n\tvector<vi> g(n);\n\tvpi ed;\n\tf0r(i, m) {\n\t\tint u, v; cin >>\
-    \ u >> v;\n\t\tu--, v--;\n\t\tg[u].pb(v);\n\t\tg[v].pb(u);\n\t\ted.eb(u, v);\n\
-    \t}\n\tint odd = 0;\n\tf0r(i, n) odd += (sz(g[i]) % 2 == 1);\n\tDSU D; \n\tauto\
-    \ finish = [&](int c, vi bad) {\n\t\tvi mark(n);\n\t\teach(x, bad) mark[x] = 1;\n\
-    \t\tvector<vi> ng(n);\n\t\tEuler<false> E; E.init(n);\n\t\tf0r(i, n) {\n\t\t\t\
-    each(j, g[i]) {\n\t\t\t\tif (i == c && mark[j]) continue;\n\t\t\t\tif (mark[i]\
-    \ && j == c) continue;\n\t\t\t\tif (i < j) E.ae(i, j);\n\t\t\t}\n\t\t}\n\t\tauto\
-    \ path = E.get_path(c);\n\t\tvi res;\n\t\teach(x, bad) {\n\t\t\tres.pb(c);\n\t\
-    \t\tres.pb(x);\n\t\t}\n\t\tres.pb(-1);\n\t\teach(e, path) {\n\t\t\tres.pb(e.f);\n\
+    \ntemplate <bool directed> struct Euler {\n\tint n;\n\tstd::vector<std::vector<std::pair<int,\
+    \ int>>> adj;\n\tstd::vector<std::vector<std::pair<int, int>>::iterator> its;\n\
+    \tstd::vector<bool> used;\n\n\tvoid init(int _n) {\n\t\tn = _n;\n\t\tadj.resize(n);\n\
+    \t}\n\n\tvoid ae(int u, int v) {\n\t\tint m = (int)used.size();\n\t\tused.push_back(false);\n\
+    \t\tadj[u].emplace_back(v, m);\n\t\tif (!directed) {\n\t\t\tadj[v].emplace_back(u,\
+    \ m);\n\t\t}\n\t}\n\n\tstd::vector<std::pair<int, int>> euler_path() {\n\t\tint\
+    \ cnt = 0;\n\t\tfor (int i = 0; i < n; i++) \n\t\t\tcnt += (int)adj[i].size()\
+    \ % 2;\n\t\tif (cnt == 2) {\n\t\t\tfor (int i = 0; i < n; i++) \n\t\t\t\tif ((int)adj[i].size()\
+    \ % 2) \n\t\t\t\t\treturn get_path(i);\n\t\t} else if (cnt == 0) {\n\t\t\treturn\
+    \ get_path(0);\n\t\t}\n\t\treturn {};\n\t}\n\t\n\tstd::vector<std::pair<int, int>>\
+    \ get_path(int src = 0) {\n\t\tits.resize(n);\n\t\tstd::vector<std::pair<int,\
+    \ int>> ans, s{{src, -1}};\n\t\tfor (int i = 0; i < n; i++) {\n\t\t\tits[i] =\
+    \ adj[i].begin();\n\t\t}\n\t\tint lst = -1;\n\t\twhile ((int)s.size()) {\n\t\t\
+    \tint x = s.back().first;\n\t\t\tauto &it = its[x];\n\t\t\tauto en = adj[x].end();\n\
+    \t\t\twhile (it != en && used[it->second]) {\n\t\t\t\t++it;\n\t\t\t}\n\t\t\tif\
+    \ (it == en) {\n\t\t\t\tif (lst != -1 && lst != x) {\n\t\t\t\t\treturn {};\n\t\
+    \t\t\t}\n\t\t\t\tans.push_back(s.back());\n\t\t\t\ts.pop_back();\n\t\t\t\tif ((int)s.size())\
+    \ {\n\t\t\t\t\tlst = s.back().first;\n\t\t\t\t}\n\t\t\t} else {\n\t\t\t\ts.push_back(*it);\n\
+    \t\t\t\tused[it->second] = 1;\n\t\t\t}\n\t\t}\n\t\tif ((int)ans.size() != (int)used.size()\
+    \ + 1) {\n\t\t\treturn {};\n\t\t}\n\t\treverse(ans.begin(), ans.end());\n\t\t\
+    return ans;\n\t}\n};\n\nint main() {\n\tcin.tie(0)->sync_with_stdio(0);\n\tint\
+    \ n, m; cin >> n >> m;\n\tvector<vi> g(n);\n\tvpi ed;\n\tf0r(i, m) {\n\t\tint\
+    \ u, v; cin >> u >> v;\n\t\tu--, v--;\n\t\tg[u].pb(v);\n\t\tg[v].pb(u);\n\t\t\
+    ed.eb(u, v);\n\t}\n\tint odd = 0;\n\tf0r(i, n) odd += (sz(g[i]) % 2 == 1);\n\t\
+    DSU D; \n\tauto finish = [&](int c, vi bad) {\n\t\tvi mark(n);\n\t\teach(x, bad)\
+    \ mark[x] = 1;\n\t\tvector<vi> ng(n);\n\t\tEuler<false> E; E.init(n);\n\t\tf0r(i,\
+    \ n) {\n\t\t\teach(j, g[i]) {\n\t\t\t\tif (i == c && mark[j]) continue;\n\t\t\t\
+    \tif (mark[i] && j == c) continue;\n\t\t\t\tif (i < j) E.ae(i, j);\n\t\t\t}\n\t\
+    \t}\n\t\tauto path = E.get_path(c);\n\t\tvi res;\n\t\teach(x, bad) {\n\t\t\tres.pb(c);\n\
+    \t\t\tres.pb(x);\n\t\t}\n\t\tres.pb(-1);\n\t\teach(e, path) {\n\t\t\tres.pb(e.f);\n\
     \t\t}\n\t\treverse(all(res));\n\t\tcout << sz(res) << '\\n';\n\t\teach(x, res)\
     \ {\n\t\t\tif (x < 0) cout << x << \" \";\n\t\t\telse cout << x + 1 << \" \";\n\
     \t\t}\n\t\tcout << '\\n';\n\t\texit(0);\n\t};\n\tauto check = [&](int c) {\n\t\

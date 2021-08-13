@@ -11,12 +11,10 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "\n/**\n * Finds Euler path in O(N + M) from a starting vertex\n *\
-    \ To find which vertex to start, use parities\n */\n\ntemplate <bool directed>\
-    \ struct Euler {\n\tint n;\n\tstd::vector<std::vector<std::pair<int, int>>> adj;\n\
-    \tstd::vector<std::vector<std::pair<int, int>>::iterator> its;\n\tstd::vector<bool>\
-    \ used;\n\n\tvoid init(int _n) {\n\t\tn = _n;\n\t\tadj.resize(n);\n\t}\n\n\tvoid\
-    \ ae(int u, int v) {\n\t\tint m = (int)used.size();\n\t\tused.push_back(false);\n\
+  bundledCode: "\ntemplate <bool directed> struct Euler {\n\tint n;\n\tstd::vector<std::vector<std::pair<int,\
+    \ int>>> adj;\n\tstd::vector<std::vector<std::pair<int, int>>::iterator> its;\n\
+    \tstd::vector<bool> used;\n\n\tvoid init(int _n) {\n\t\tn = _n;\n\t\tadj.resize(n);\n\
+    \t}\n\n\tvoid ae(int u, int v) {\n\t\tint m = (int)used.size();\n\t\tused.push_back(false);\n\
     \t\tadj[u].emplace_back(v, m);\n\t\tif (!directed) {\n\t\t\tadj[v].emplace_back(u,\
     \ m);\n\t\t}\n\t}\n\n\tstd::vector<std::pair<int, int>> euler_path() {\n\t\tint\
     \ cnt = 0;\n\t\tfor (int i = 0; i < n; i++) \n\t\t\tcnt += (int)adj[i].size()\
@@ -34,12 +32,10 @@ data:
     \t\t\t\tused[it->second] = 1;\n\t\t\t}\n\t\t}\n\t\tif ((int)ans.size() != (int)used.size()\
     \ + 1) {\n\t\t\treturn {};\n\t\t}\n\t\treverse(ans.begin(), ans.end());\n\t\t\
     return ans;\n\t}\n};\n"
-  code: "#pragma once\n\n/**\n * Finds Euler path in O(N + M) from a starting vertex\n\
-    \ * To find which vertex to start, use parities\n */\n\ntemplate <bool directed>\
-    \ struct Euler {\n\tint n;\n\tstd::vector<std::vector<std::pair<int, int>>> adj;\n\
-    \tstd::vector<std::vector<std::pair<int, int>>::iterator> its;\n\tstd::vector<bool>\
-    \ used;\n\n\tvoid init(int _n) {\n\t\tn = _n;\n\t\tadj.resize(n);\n\t}\n\n\tvoid\
-    \ ae(int u, int v) {\n\t\tint m = (int)used.size();\n\t\tused.push_back(false);\n\
+  code: "#pragma once\n\ntemplate <bool directed> struct Euler {\n\tint n;\n\tstd::vector<std::vector<std::pair<int,\
+    \ int>>> adj;\n\tstd::vector<std::vector<std::pair<int, int>>::iterator> its;\n\
+    \tstd::vector<bool> used;\n\n\tvoid init(int _n) {\n\t\tn = _n;\n\t\tadj.resize(n);\n\
+    \t}\n\n\tvoid ae(int u, int v) {\n\t\tint m = (int)used.size();\n\t\tused.push_back(false);\n\
     \t\tadj[u].emplace_back(v, m);\n\t\tif (!directed) {\n\t\t\tadj[v].emplace_back(u,\
     \ m);\n\t\t}\n\t}\n\n\tstd::vector<std::pair<int, int>> euler_path() {\n\t\tint\
     \ cnt = 0;\n\t\tfor (int i = 0; i < n; i++) \n\t\t\tcnt += (int)adj[i].size()\
@@ -61,14 +57,20 @@ data:
   isVerificationFile: false
   path: library/graphs/euler-path.hpp
   requiredBy: []
-  timestamp: '2021-07-28 03:57:46-04:00'
+  timestamp: '2021-08-13 00:54:25-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/codeforces/codeforces-1494F.test.cpp
 documentation_of: library/graphs/euler-path.hpp
 layout: document
-redirect_from:
-- /library/library/graphs/euler-path.hpp
-- /library/library/graphs/euler-path.hpp.html
-title: library/graphs/euler-path.hpp
+title: Euler Path
 ---
+
+## Euler Path 
+
+### Functions
+- `get_path`: Finds an Euler path in $\mathcal O(N + M)$ starting from $src$ if it exists. Returns empty list if there is none, otherwise returns a list of edges. 
+
+### Resources
+- [Benq](https://github.com/bqi343/USACO/blob/4aa96cd195a770c3a7f8977441020036d84b4f24/Implementations/content/graphs%20(12)/DFS/EulerPath%20(12.2).h)
+
