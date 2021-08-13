@@ -6,7 +6,7 @@ data:
     title: library/contest/template-minimal.hpp
   - icon: ':heavy_check_mark:'
     path: library/graphs/flows/push-relabel.hpp
-    title: library/graphs/flows/push-relabel.hpp
+    title: Push Relabel
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -24,11 +24,9 @@ data:
     \ <iostream>\n#include <iomanip>\n#include <list>\n#include <map>\n#include <numeric>\n\
     #include <queue>\n#include <random>\n#include <set>\n#include <stack>\n#include\
     \ <string>\n#include <unordered_map>\n#include <vector>\n\nusing namespace std;\n\
-    \n/**\n * Treat this as a black box xD\n * Calculates max flow\n * You can probably\
-    \ add stuff to recover it\n * Most cases, Dinic is better since you understand\
-    \ it\n */\n\ntemplate <class F> struct PushRelabel {\n\n\tstruct Edge { int to,\
-    \ rev; F flow; };\n\n\tconst F INF = std::numeric_limits<F>::max();  \n\n\tint\
-    \ n, s, t, highest, work;\n\tstd::vector<std::vector<Edge>> adj;\n\tstd::vector<std::vector<int>>\
+    \ntemplate <class F> struct PushRelabel {\n\n\tstruct Edge { int to, rev; F flow;\
+    \ };\n\n\tconst F INF = std::numeric_limits<F>::max();  \n\n\tint n, s, t, highest,\
+    \ work;\n\tstd::vector<std::vector<Edge>> adj;\n\tstd::vector<std::vector<int>>\
     \ lst, gap;\n\tstd::vector<int> height, cnt;\n\tstd::vector<F> excess;\n\n\tvoid\
     \ init(int n_) {\n\t\tn = n_;\n\t\tadj.clear(); adj.resize(2 * n);\n\t\tlst.clear();\
     \ lst.resize(2 * n);\n\t\tgap.clear(); gap.resize(2 * n);\n\t\theight.assign(2\
@@ -80,7 +78,7 @@ data:
   isVerificationFile: true
   path: verify/aizu/aizu-GRL_6_A-2.test.cpp
   requiredBy: []
-  timestamp: '2021-07-28 19:45:54-04:00'
+  timestamp: '2021-08-13 01:40:26-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aizu/aizu-GRL_6_A-2.test.cpp

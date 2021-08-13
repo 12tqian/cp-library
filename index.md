@@ -179,7 +179,7 @@ data:
       title: Minimum Cost Maximum Flow
     - icon: ':heavy_check_mark:'
       path: library/graphs/flows/push-relabel.hpp
-      title: library/graphs/flows/push-relabel.hpp
+      title: Push Relabel
   - name: library/misc
     pages:
     - icon: ':heavy_check_mark:'
