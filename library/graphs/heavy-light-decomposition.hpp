@@ -1,3 +1,5 @@
+#pragma once
+
 template <class G> 
 struct HeavyLightDecomposition {
 private:
