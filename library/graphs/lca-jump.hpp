@@ -1,8 +1,5 @@
 #pragma once
 
-/**
- * To support forest, call gen for each roots
- */
 struct LCAJump {
 	int n;
 	std::vector<std::vector<int>> par;

@@ -13,5 +13,5 @@ This uses my old lazy segment tree implementation, but it's still worth keeping 
 - `query_path(u, v)`: Queries path from $u$ to $v$. 
 
 ### Variables
-- `VALUES_IN_VERTICES`: Set true if you want values in vertices, false if in edges. 
+- `VALUES_IN_VERTICES`: Set `true` if you want values in vertices, `false` if in edges. 
 
