@@ -1,16 +1,23 @@
 ---
-title: Quadtree
-documentation_of: quadtree.hpp
+title: Suffix Array with Longest Common Prefix
+documentation_of: suffix-array-lcp.hpp
 ---
 
-## Quadtree
-
-This is a pretty scuffed data structure, it sometimes works in time (like [here](http://www.usaco.org/index.php?page=viewproblem2&cpid=1094)). 
+## Suffix Array with Longest Common Prefix
 
 ### Assumptions
-- $x, y \in [0, N)
+- We assume that we only use latin letters from `'a'` to `'z'`. This can be modified in `generate_suffix_array`. 
+- We $0$-index things. 
 
 ### Functions
-- `upd(x, y, inc)`: Updates at location $(x, y)$ with $inc$ in $\mathcal O(\log(n))$. 
+- `generate_suffix_array(s)`: Generates suffix array of string $s$ in $\mathcal O(n)$.
+- `generate_lcp_array`: Generates longest common prefix array in $\mathcal O(n \log n)$, must be called after `generate_suffix_array`.
+- `get_lcp(int a, int b)`: Gets the longest common prefix between the suffixes starting at $a$ and $b$, assuming lcp array is already generated.
 
-- `query(qx1, qy1, qx2, qy2)`: Queries in rectangle with corners $(qx1, qy1), (qx2, qy2)$ in $\mathcal O(N)$ in worst case.  
+### Variables
+- `sa`: Stores the indices of the sorted suffixes.
+- `isa`: Inverse of `sa`. 
+- `lcp`: Longest commmon prefix between consecutive elements. 
+
+### Resources
+- [Benq](https://github.com/bqi343/USACO/blob/master/Implementations/content/strings%20(14)/Light/SuffixArrayLinear.h)

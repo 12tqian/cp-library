@@ -1,7 +1,5 @@
 #pragma once
 
-// modified for minimums
-
 template <class T> struct Line {
 	mutable T k, m, p;
 	
