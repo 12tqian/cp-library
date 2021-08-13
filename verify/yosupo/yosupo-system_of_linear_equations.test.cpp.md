@@ -26,10 +26,10 @@ data:
     for (int j = 0; j < r.w(); j++) {\n\t\t\t\tfor (int k = 0; k < w(); k++) {\n\t\
     \t\t\t\tres[i][j] += (*this)[i][k] * r[k][j];\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\t\
     return res;\n\t}\n\n\tMatrix<D>& operator+=(const Matrix& r) {\n\t\tassert(h()\
-    \ == r.h() && w == r.w());\n\t\tfor (int i = 0; i < h(); i++) {\n\t\t\tfor (int\
+    \ == r.h() && w() == r.w());\n\t\tfor (int i = 0; i < h(); i++) {\n\t\t\tfor (int\
     \ j = 0; j < h(); j++) {\n\t\t\t\t(*this)[i][j] += r[i][j];\n\t\t\t}\n\t\t}\n\t\
     \treturn *this;\n\t}\n\n\tMatrix& operator-=(const Matrix& r) {\n\t\tassert(h()\
-    \ == r.h() && w == r.w());\n\t\tfor (int i = 0; i < h(); i++) {\n\t\t\tfor (int\
+    \ == r.h() && w() == r.w());\n\t\tfor (int i = 0; i < h(); i++) {\n\t\t\tfor (int\
     \ j = 0; j < h(); j++) {\n\t\t\t\t(*this)[i][j] -= r[i][j];\n\t\t\t}\n\t\t}\n\t\
     \treturn *this;\n\t}\n\n\tMatrix operator*(const D& r) const {\n\t\tMatrix res\
     \ = (*this);\n\t\tfor (int i = 0; i < h(); ++i) {\n\t\t\tfor (int j = 0; j < w();\
@@ -143,7 +143,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/yosupo-system_of_linear_equations.test.cpp
   requiredBy: []
-  timestamp: '2021-08-01 14:43:25-04:00'
+  timestamp: '2021-08-13 10:21:59-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/yosupo-system_of_linear_equations.test.cpp
