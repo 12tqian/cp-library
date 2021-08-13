@@ -9,7 +9,7 @@ data:
     title: library/data-structures/1d-range-queries/sparse-table.hpp
   - icon: ':heavy_check_mark:'
     path: library/string/suffix-array-lcp.hpp
-    title: Suffix Array
+    title: Suffix Array with Longest Common Prefix
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false

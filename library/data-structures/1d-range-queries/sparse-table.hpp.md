@@ -7,7 +7,7 @@ data:
     title: library/graphs/lca-rmq.hpp
   - icon: ':heavy_check_mark:'
     path: library/string/suffix-array-lcp.hpp
-    title: Suffix Array
+    title: Suffix Array with Longest Common Prefix
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/codeforces/codeforces-1074F.test.cpp
