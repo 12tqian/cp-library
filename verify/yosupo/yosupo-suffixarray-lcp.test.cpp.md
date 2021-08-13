@@ -6,7 +6,7 @@ data:
     title: library/contest/template-minimal.hpp
   - icon: ':heavy_check_mark:'
     path: library/data-structures/1d-range-queries/sparse-table.hpp
-    title: library/data-structures/1d-range-queries/sparse-table.hpp
+    title: Sparse Table
   - icon: ':heavy_check_mark:'
     path: library/string/suffix-array-lcp.hpp
     title: Suffix Array with Longest Common Prefix

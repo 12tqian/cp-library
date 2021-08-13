@@ -64,7 +64,7 @@ data:
       title: library/data-structures/1d-range-queries/sparse-segment-tree.hpp
     - icon: ':heavy_check_mark:'
       path: library/data-structures/1d-range-queries/sparse-table.hpp
-      title: library/data-structures/1d-range-queries/sparse-table.hpp
+      title: Sparse Table
   - name: library/data-structures/2d-range-queries
     pages:
     - icon: ':heavy_check_mark:'
