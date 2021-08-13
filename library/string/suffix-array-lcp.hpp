@@ -1,12 +1,5 @@
 #pragma once
 
-/**
- * sa stores sorted suffixes
- * isa is inverse of sa
- * lcp is longest common prefix between consecutive elements
- * Indexing has been fixed so that everything is 0-indexed by the end
- */
-
 #include "../data-structures/1d-range-queries/sparse-table.hpp"
 
 struct SuffixArray {
