@@ -215,7 +215,7 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: library/number-theory/basic-factor.hpp
-      title: library/number-theory/basic-factor.hpp
+      title: Basic Factoring
     - icon: ':heavy_check_mark:'
       path: library/number-theory/basic-number-theory.hpp
       title: library/number-theory/basic-number-theory.hpp
