@@ -1,10 +1,4 @@
 #pragma once
-/**
- * Description: Big Integer
- * Source: https://github.com/indy256/codelibrary/
-			blob/master/cpp/numbertheory/BigInt.cpp
- * Verification: https://oj.uz/problem/view/IOI11_parrots
- */
 
 // base and base_digits must be consistent
 constexpr int base = 1000000000;
