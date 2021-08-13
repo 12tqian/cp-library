@@ -10,9 +10,9 @@ documentation_of: suffix-array-lcp.hpp
 - We $0$-index things. 
 
 ### Functions
-- `generate_suffix_array(s)`: Generates suffix array of string `s` in $\mathcal O(n)$.
+- `generate_suffix_array(s)`: Generates suffix array of string $s$ in $\mathcal O(n)$.
 - `generate_lcp_array`: Generates longest common prefix array in $\mathcal O(n \log n)$, must be called after `generate_suffix_array`.
-- `get_lcp(int a, int b)`: Gets the longest common prefix between the suffixes starting at `a` and `b`, assuming lcp array is already generated.
+- `get_lcp(int a, int b)`: Gets the longest common prefix between the suffixes starting at $a$ and $b$, assuming lcp array is already generated.
 
 ### Variables
 - `sa`: Stores the indices of the sorted suffixes.
