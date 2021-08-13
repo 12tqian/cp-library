@@ -27,13 +27,10 @@ data:
     \ <iostream>\n#include <iomanip>\n#include <list>\n#include <map>\n#include <numeric>\n\
     #include <queue>\n#include <random>\n#include <set>\n#include <stack>\n#include\
     \ <string>\n#include <unordered_map>\n#include <vector>\n\nusing namespace std;\n\
-    \n\n/**\n * This Sparse Table stores indices of things\n * For destructive combinations\
-    \ like gcd, use associative_range_query.cpp\n * Use this for min, max, and when\
-    \ you need the indices of things\n */\n\ntemplate <class T> struct SparseTable\
-    \ {\n\tstd::vector<T> v;\n\tstd::vector<std::vector<int>> jump;\n\n\tint level(int\
-    \ x) { return 31 - __builtin_clz(x); }\n\n\tint comb(int a, int b) {\n\t\treturn\
-    \ v[a] == v[b] ? std::min(a, b) : (v[a] < v[b] ? a : b);\n\t}\n\n\tvoid init(const\
-    \ std::vector<T> &_v) {\n\t\tv = _v;\n\t\tjump = {std::vector<int>((int)v.size())};\n\
+    \n\ntemplate <class T> struct SparseTable {\n\tstd::vector<T> v;\n\tstd::vector<std::vector<int>>\
+    \ jump;\n\n\tint level(int x) { return 31 - __builtin_clz(x); }\n\n\tint comb(int\
+    \ a, int b) {\n\t\treturn v[a] == v[b] ? std::min(a, b) : (v[a] < v[b] ? a : b);\n\
+    \t}\n\n\tvoid init(const std::vector<T> &_v) {\n\t\tv = _v;\n\t\tjump = {std::vector<int>((int)v.size())};\n\
     \t\tiota(jump[0].begin(), jump[0].end(), 0);\n\t\tfor (int j = 1; (1 << j) <=\
     \ (int)v.size(); j++) {\n\t\t\tjump.push_back(std::vector<int>((int)v.size() -\
     \ (1 << j) + 1));\n\t\t\tfor (int i = 0; i < (int)jump[j].size(); i++) {\n\t\t\
@@ -100,7 +97,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/yosupo-suffixarray-lcp.test.cpp
   requiredBy: []
-  timestamp: '2021-08-12 23:59:03-04:00'
+  timestamp: '2021-08-13 00:05:32-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/yosupo-suffixarray-lcp.test.cpp

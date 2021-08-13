@@ -58,7 +58,7 @@ data:
       title: library/data-structures/1d-range-queries/range-set-segment-tree.hpp
     - icon: ':heavy_check_mark:'
       path: library/data-structures/1d-range-queries/segment-tree-beats.hpp
-      title: library/data-structures/1d-range-queries/segment-tree-beats.hpp
+      title: Segment Tree Beats
     - icon: ':heavy_check_mark:'
       path: library/data-structures/1d-range-queries/sparse-segment-tree.hpp
       title: library/data-structures/1d-range-queries/sparse-segment-tree.hpp
