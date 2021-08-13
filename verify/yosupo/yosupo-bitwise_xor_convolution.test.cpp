@@ -1,6 +1,7 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/bitwise_xor_convolution"
 
 #include <bits/stdc++.h>
+#include <vector>
 #include "../../library/set-function/walsh-hadamard-transform.hpp"
 #include "../../library/modular-arithmetic/mod-int2.hpp"
 
