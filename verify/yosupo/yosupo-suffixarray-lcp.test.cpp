@@ -9,7 +9,7 @@ int main() {
 	string s; cin >> s;
 	int n = (int)s.size();
 	SuffixArray S;
-	S.init(s);
+	S.generate_suffix_array(s);
 	for (int i = 0; i < n; i++)
 		cout << S.sa[i] << " ";
 	cout << '\n';

@@ -83,14 +83,17 @@ struct SuffixArray {
 		induce(sorted_lms);
 		return res;
 	}
- 
-	void init(string _s) {
+	
+	void generate_suffix_array(string _s) {
 		n = (int)(s = _s).size() + 1;
 		vector<int> tmp;
 		for (int i = 0; i < (int)s.size(); ++i) {
 			tmp.push_back(s[i] - 'a');
 		}
 		sa = suffix_array(tmp, 26);
+	}
+
+	void generate_lcp_array() {
 		sa.insert(sa.begin(), -1);
 		isa.resize(sa.size());
 		for (int i = 1; i < (int)sa.size(); ++i) {
