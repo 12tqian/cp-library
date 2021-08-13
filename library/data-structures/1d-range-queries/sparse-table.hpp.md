@@ -6,8 +6,8 @@ data:
     path: library/graphs/lca-rmq.hpp
     title: library/graphs/lca-rmq.hpp
   - icon: ':heavy_check_mark:'
-    path: library/string/suffix-array.hpp
-    title: library/string/suffix-array.hpp
+    path: library/string/suffix-array-lcp.hpp
+    title: library/string/suffix-array-lcp.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/codeforces/codeforces-1074F.test.cpp
@@ -19,8 +19,8 @@ data:
     path: verify/yosupo/yosupo-lca-lca-rmq.test.cpp
     title: verify/yosupo/yosupo-lca-lca-rmq.test.cpp
   - icon: ':heavy_check_mark:'
-    path: verify/yosupo/yosupo-suffixarray-logarithmic.test.cpp
-    title: verify/yosupo/yosupo-suffixarray-logarithmic.test.cpp
+    path: verify/yosupo/yosupo-suffixarray-lcp.test.cpp
+    title: verify/yosupo/yosupo-suffixarray-lcp.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -58,13 +58,13 @@ data:
   isVerificationFile: false
   path: library/data-structures/1d-range-queries/sparse-table.hpp
   requiredBy:
-  - library/string/suffix-array.hpp
+  - library/string/suffix-array-lcp.hpp
   - library/graphs/lca-rmq.hpp
   timestamp: '2021-07-24 21:49:44-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - verify/yosupo/yosupo-suffixarray-lcp.test.cpp
   - verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
-  - verify/yosupo/yosupo-suffixarray-logarithmic.test.cpp
   - verify/yosupo/yosupo-lca-lca-rmq.test.cpp
   - verify/codeforces/codeforces-1074F.test.cpp
 documentation_of: library/data-structures/1d-range-queries/sparse-table.hpp

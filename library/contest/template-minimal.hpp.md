@@ -202,11 +202,8 @@ data:
     path: verify/yosupo/yosupo-static_range_sum.test.cpp
     title: verify/yosupo/yosupo-static_range_sum.test.cpp
   - icon: ':heavy_check_mark:'
-    path: verify/yosupo/yosupo-suffixarray-linear.test.cpp
-    title: verify/yosupo/yosupo-suffixarray-linear.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/yosupo/yosupo-suffixarray-logarithmic.test.cpp
-    title: verify/yosupo/yosupo-suffixarray-logarithmic.test.cpp
+    path: verify/yosupo/yosupo-suffixarray-lcp.test.cpp
+    title: verify/yosupo/yosupo-suffixarray-lcp.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-two_edge_connected_components.test.cpp
     title: verify/yosupo/yosupo-two_edge_connected_components.test.cpp
@@ -361,10 +358,10 @@ data:
   - verify/yosupo/yosupo-segment_add_get_min-li-chao-tree-online.test.cpp
   - verify/yosupo/yosupo-static_range_sum.test.cpp
   - verify/yosupo/yosupo-multipoint_evaluation.test.cpp
+  - verify/yosupo/yosupo-suffixarray-lcp.test.cpp
   - verify/yosupo/yosupo-pow_of_formal_power_series.test.cpp
   - verify/yosupo/yosupo-unionfind.test.cpp
   - verify/yosupo/yosupo-range_chmin_chmax_add_range_sum.test.cpp
-  - verify/yosupo/yosupo-suffixarray-logarithmic.test.cpp
   - verify/yosupo/yosupo-rectangle_sum-offline-2d-bit.test.cpp
   - verify/yosupo/yosupo-point_add_range_general-simple-segment-tree.test.cpp
   - verify/yosupo/yosupo-sort_points_by_argument.test.cpp
@@ -376,7 +373,6 @@ data:
   - verify/yosupo/yosupo-scc-kosaraju.test.cpp
   - verify/yosupo/yosupo-enumerate_palindromes.test.cpp
   - verify/yosupo/yosupo-inverse_matrix.test.cpp
-  - verify/yosupo/yosupo-suffixarray-linear.test.cpp
   - verify/yosupo/yosupo-lca-lca-jump.test.cpp
   - verify/yosupo/yosupo-sqrt_mod.test.cpp
   - verify/yosupo/yosupo-vertex_add_path_sum-new-hld.test.cpp

@@ -291,11 +291,8 @@ data:
       path: library/string/manacher.hpp
       title: library/string/manacher.hpp
     - icon: ':heavy_check_mark:'
-      path: library/string/suffix-array-linear.hpp
-      title: library/string/suffix-array-linear.hpp
-    - icon: ':heavy_check_mark:'
-      path: library/string/suffix-array.hpp
-      title: library/string/suffix-array.hpp
+      path: library/string/suffix-array-lcp.hpp
+      title: library/string/suffix-array-lcp.hpp
   verificationCategories:
   - name: verify/aizu
     pages:
@@ -545,11 +542,8 @@ data:
       path: verify/yosupo/yosupo-static_range_sum.test.cpp
       title: verify/yosupo/yosupo-static_range_sum.test.cpp
     - icon: ':heavy_check_mark:'
-      path: verify/yosupo/yosupo-suffixarray-linear.test.cpp
-      title: verify/yosupo/yosupo-suffixarray-linear.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: verify/yosupo/yosupo-suffixarray-logarithmic.test.cpp
-      title: verify/yosupo/yosupo-suffixarray-logarithmic.test.cpp
+      path: verify/yosupo/yosupo-suffixarray-lcp.test.cpp
+      title: verify/yosupo/yosupo-suffixarray-lcp.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-system_of_linear_equations.test.cpp
       title: verify/yosupo/yosupo-system_of_linear_equations.test.cpp
