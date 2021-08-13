@@ -39,6 +39,7 @@
 "verify/unit-test/unit-test-template-short.test.cpp": "2021-08-01 01:05:39 -0400",
 "verify/yosupo/yosupo-assignment.test.cpp": "2021-07-29 10:25:16 -0400",
 "verify/yosupo/yosupo-bipartitematching.test.cpp": "2021-07-31 12:55:16 -0400",
+"verify/yosupo/yosupo-bitwise_xor_convolution.test.cpp": "2021-08-12 23:40:44 -0400",
 "verify/yosupo/yosupo-convolution_mod_1000000007-fast-fourier-transform.test.cpp": "2021-07-31 01:42:23 -0400",
 "verify/yosupo/yosupo-convolution_mod_1000000007-karatsuba.test.cpp": "2021-07-31 01:42:23 -0400",
 "verify/yosupo/yosupo-counting_primes.test.cpp": "2021-07-28 19:45:54 -0400",
