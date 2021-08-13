@@ -292,7 +292,7 @@ data:
       title: library/string/manacher.hpp
     - icon: ':heavy_check_mark:'
       path: library/string/suffix-array-lcp.hpp
-      title: library/string/suffix-array-lcp.hpp
+      title: Suffix Array
   verificationCategories:
   - name: verify/aizu
     pages:
