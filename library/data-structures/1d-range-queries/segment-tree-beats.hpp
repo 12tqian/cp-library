@@ -1,8 +1,5 @@
 #pragma once
 
-/**
- * 0 is ckmin, 1 is ckmax, 2 is range add
- */
 template <class C> struct SegmentTreeBeats {
 	using T = std::pair<std::pair<C, C>, int>;
 	const C INF = std::numeric_limits<C>::max();

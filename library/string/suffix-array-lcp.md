@@ -18,3 +18,6 @@ documentation_of: suffix-array-lcp.hpp
 - `sa`: Stores the indices of the sorted suffixes.
 - `isa`: Inverse of `sa`. 
 - `lcp`: Longest commmon prefix between consecutive elements. 
+
+### Resources
+- [Benq](https://github.com/bqi343/USACO/blob/master/Implementations/content/strings%20(14)/Light/SuffixArrayLinear.h)
