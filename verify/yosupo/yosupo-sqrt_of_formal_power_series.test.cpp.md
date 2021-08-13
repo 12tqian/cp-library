@@ -59,7 +59,7 @@ data:
     \ *= iz;\n\treturn a2;\n}\n\n// Cooley-Tukey: input -> butterfly -> bit reversing\
     \ -> output \n// bit reversing\ntemplate <class Mint> void butterfly(bool type,\
     \ std::vector<Mint>& a) {\n\tint n = int(a.size()), h = 0;\n\twhile ((1 << h)\
-    \ < n) h++;\n\tassert(1 << h == n);\n\tif (n == 1) return;\n\n\tstatic std::vector<Mint>\
+    \ < n) h++;\n\tassert(1 << h == n);\n\tif (n == 1) return;\n\tstatic std::vector<Mint>\
     \ snow, sinow;\n\tif (snow.empty()) {\n\t\tMint sep = Mint(1), siep = Mint(1);\n\
     \t\tunsigned int mod = Mint(-1).v;\n\t\tunsigned int di = 4;\n\t\twhile (mod %\
     \ di == 0) {\n\t\t\tMint ep = pow(Mint::rt(), mod / di);\n\t\t\tMint iep = 1 /\
@@ -252,7 +252,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/yosupo-sqrt_of_formal_power_series.test.cpp
   requiredBy: []
-  timestamp: '2021-08-01 14:39:05-04:00'
+  timestamp: '2021-08-13 10:39:25-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/yosupo-sqrt_of_formal_power_series.test.cpp
