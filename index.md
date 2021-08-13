@@ -173,7 +173,7 @@ data:
       title: library/graphs/flows/dinic.hpp
     - icon: ':heavy_check_mark:'
       path: library/graphs/flows/hungarian.hpp
-      title: library/graphs/flows/hungarian.hpp
+      title: Hungarian Algorithm
     - icon: ':heavy_check_mark:'
       path: library/graphs/flows/min-cost-max-flow.hpp
       title: library/graphs/flows/min-cost-max-flow.hpp
