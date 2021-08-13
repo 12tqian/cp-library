@@ -44,29 +44,29 @@ data:
     for (int i = 0; i < h(); i++) r[i][i] = D(1);\n\t\twhile (n) {\n\t\t\tif (n &\
     \ 1) r *= x;\n\t\t\tx *= x;\n\t\t\tn >>= 1;\n\t\t}\n\t\treturn r;\n\t}\n};\n\n\
     namespace MatrixOperations {\n\ntemplate <class T> Matrix<T> make_matrix(int r,\
-    \ int c) { return Matrix<T>(r, std::vector<T>(c)); }\n\ntemplate <class D> Matrix<D>\
-    \ inv(Matrix<D> m, const D& EPS = -1) {\n\tint r = m.h();\n\tassert(m.h() == m.w());\n\
-    \tMatrix<D> x = make_matrix<D>(r, 2 * r);\n\tfor (int i = 0; i < r; i++) {\n\t\
-    \tx[i][i + r] = 1;\n\t\tfor (int j = 0; j < r; j++) {\n\t\t\tx[i][j] = m[i][j];\n\
-    \t\t}\n\t}\n\tif (gauss(x, EPS).second != r) return Matrix<D>();\n\tMatrix<D>\
-    \ res = make_matrix<D>(r, r);\n\tfor (int i = 0; i < r; i++) {\n\t\tfor (int j\
-    \ = 0; j < r; j++) {\n\t\t\tres[i][j] = x[i][j + r];\n\t\t}\n\t}\n\treturn res;\n\
-    }\n\ntemplate <class D> int get_row(Matrix<D>& m, int r, int i, int nxt, const\
-    \ D& EPS = -1) {\n\tstd::pair<D, int> best = {0, -1};\n\tfor (int j = nxt; j <\
-    \ r; j++) {\n\t\tif (EPS == D(-1) && m[j][i] != 0) {\n\t\t\treturn j;\n\t\t}\n\
-    \t\tauto v = m[j][i];\n\t\tif (v < 0) v = -v;\n\t\tbest = std::max(best, std::make_pair(v,\
-    \ j));\n\t}\n\treturn best.first < EPS ? -1 : best.second;\n}\n\n// returns a\
-    \ pair of determinant, rank, while doing Gaussian elimination to m\ntemplate <class\
-    \ D> std::pair<D, int> gauss(Matrix<D>& m, const D& EPS = -1) {\n\tint r = m.h();\n\
-    \tint c = m.w();\n\tint rank = 0, nxt = 0;\n\tD prod = 1;\n\tfor (int i = 0; i\
-    \ < r; i++) {\n\t\tint row = get_row(m, r, i, nxt, EPS);\n\t\tif (row == -1) {\n\
-    \t\t\tprod = 0;\n\t\t\tcontinue;\n\t\t}\n\t\tif (row != nxt) {\n\t\t\tprod *=\
-    \ -1;\n\t\t\tm[row].swap(m[nxt]);\n\t\t}\n\t\tprod *= m[nxt][i];\n\t\trank++;\n\
-    \t\tD x = 1 / m[nxt][i];\n\t\tfor (int k = i; k < c; k++) \n\t\t\tm[nxt][k] *=\
-    \ x;\n\t\tfor (int j = 0; j < r; j++) {\n\t\t\tif (j != nxt) {\n\t\t\t\tD v =\
-    \ m[j][i];\n\t\t\t\tif (v == 0) continue;\n\t\t\t\tfor (int k = i; k < c; k++)\
-    \ {\n\t\t\t\t\tm[j][k] -= v * m[nxt][k];\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\tnxt++;\n\
-    \t}\n\treturn {prod, rank};\n}\n\ntemplate <class D> int calc_rank(Matrix<D> a,\
+    \ int c) { return Matrix<T>(r, std::vector<T>(c)); }\n\ntemplate <class D> int\
+    \ get_row(Matrix<D>& m, int r, int i, int nxt, const D& EPS = -1) {\n\tstd::pair<D,\
+    \ int> best = {0, -1};\n\tfor (int j = nxt; j < r; j++) {\n\t\tif (EPS == D(-1)\
+    \ && m[j][i] != 0) {\n\t\t\treturn j;\n\t\t}\n\t\tauto v = m[j][i];\n\t\tif (v\
+    \ < 0) v = -v;\n\t\tbest = std::max(best, std::make_pair(v, j));\n\t}\n\treturn\
+    \ best.first < EPS ? -1 : best.second;\n}\n\n// returns a pair of determinant,\
+    \ rank, while doing Gaussian elimination to m\ntemplate <class D> std::pair<D,\
+    \ int> gauss(Matrix<D>& m, const D& EPS = -1) {\n\tint r = m.h();\n\tint c = m.w();\n\
+    \tint rank = 0, nxt = 0;\n\tD prod = 1;\n\tfor (int i = 0; i < r; i++) {\n\t\t\
+    int row = get_row(m, r, i, nxt, EPS);\n\t\tif (row == -1) {\n\t\t\tprod = 0;\n\
+    \t\t\tcontinue;\n\t\t}\n\t\tif (row != nxt) {\n\t\t\tprod *= -1;\n\t\t\tm[row].swap(m[nxt]);\n\
+    \t\t}\n\t\tprod *= m[nxt][i];\n\t\trank++;\n\t\tD x = 1 / m[nxt][i];\n\t\tfor\
+    \ (int k = i; k < c; k++) \n\t\t\tm[nxt][k] *= x;\n\t\tfor (int j = 0; j < r;\
+    \ j++) {\n\t\t\tif (j != nxt) {\n\t\t\t\tD v = m[j][i];\n\t\t\t\tif (v == 0) continue;\n\
+    \t\t\t\tfor (int k = i; k < c; k++) {\n\t\t\t\t\tm[j][k] -= v * m[nxt][k];\n\t\
+    \t\t\t}\n\t\t\t}\n\t\t}\n\t\tnxt++;\n\t}\n\treturn {prod, rank};\n}\n\ntemplate\
+    \ <class D> Matrix<D> inv(Matrix<D> m, const D& EPS = -1) {\n\tint r = m.h();\n\
+    \tassert(m.h() == m.w());\n\tMatrix<D> x = make_matrix<D>(r, 2 * r);\n\tfor (int\
+    \ i = 0; i < r; i++) {\n\t\tx[i][i + r] = 1;\n\t\tfor (int j = 0; j < r; j++)\
+    \ {\n\t\t\tx[i][j] = m[i][j];\n\t\t}\n\t}\n\tif (gauss(x, EPS).second != r) return\
+    \ Matrix<D>();\n\tMatrix<D> res = make_matrix<D>(r, r);\n\tfor (int i = 0; i <\
+    \ r; i++) {\n\t\tfor (int j = 0; j < r; j++) {\n\t\t\tres[i][j] = x[i][j + r];\n\
+    \t\t}\n\t}\n\treturn res;\n}\n\ntemplate <class D> int calc_rank(Matrix<D> a,\
     \ const D& EPS = -1) { return gauss(a, EPS).second; }\ntemplate <class D> D calc_det(Matrix<D>\
     \ a, const D& EPS = -1) { return gauss(a, EPS).first; }\n\ntemplate <class D>\
     \ std::vector<std::vector<D>> solve_linear(Matrix<D> a, std::vector<D> b, const\
@@ -143,7 +143,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/yosupo-system_of_linear_equations.test.cpp
   requiredBy: []
-  timestamp: '2021-08-13 10:52:43-04:00'
+  timestamp: '2021-08-13 11:09:58-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/yosupo-system_of_linear_equations.test.cpp
