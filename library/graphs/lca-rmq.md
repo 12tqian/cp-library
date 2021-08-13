@@ -7,7 +7,7 @@ documentation_of: lca-rmq.hpp
 
 ### Functions
 - `init(n)`: Initializes variables
-- `gen(root)`: Generates from $root$, can easily change to vector for forests. Just repeat `gen`$ for each root in $\mathcal O(n \log (n)$. 
+- `gen(root)`: Generates from $root$, can easily change to vector for forests. Just repeat `gen`$ for each root in $\mathcal O(n \log (n))$. 
 - `is_ancestor(anc, src)`: Checks if $anc$ is ancestor of $src$ in $\mathcal O(1)$. 
 - `lca(x, y)`: Lowest common ancestor of $x, y$ in $\mathcal O(1)$. 
 - `compress(nodes)`: Tree compression of nodes. 
