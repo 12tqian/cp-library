@@ -1,6 +1,6 @@
 ---
 title: Line Container
-documentation_of: line-container.md
+documentation_of: line-container.hpp
 ---
 
 ## Line Container
