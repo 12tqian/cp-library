@@ -1,12 +1,5 @@
 #pragma once
 
-/**
- * Maximizes c^Tx given Ax <= b, x >= 0
- * Returns -INF if no solution
- * INF if there are many good solutions
- * Maximum value of c^Tx otherwise
- */
-
 template <class T> struct Simplex {
 	const T EPS = 1e-8;
 	const T INF = 1 / .0;
