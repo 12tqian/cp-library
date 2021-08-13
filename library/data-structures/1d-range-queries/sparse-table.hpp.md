@@ -77,7 +77,7 @@ Unfortunately, I'm not sure how to template this to do $\max$ also since you hav
 
 ### Functions
 - `comb(a, b)`: You can modify this for different combinations, right now it's set to get the $min$ of elements at indices $a, b$ with tie broken by the minimum index. 
-- `index(l, r)`: Gets index of `min` element in range $[l, r]$ in $\mathcal O(1)$. 
+- `index(l, r)`: Gets index of $\min$ element in range $[l, r]$ in $\mathcal O(1)$. 
 - `query(l, r)`: Gets minimum element in range $[l, r]$ in $\mathcal O(1)$. 
 - `init(v)`: Initializes for array $v$ in $\mathcal O(n \log(n))$. 
 
