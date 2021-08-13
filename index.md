@@ -162,7 +162,7 @@ data:
       title: library/graphs/strongly-connected-components-tarjan.hpp
     - icon: ':heavy_check_mark:'
       path: library/graphs/topological-sort.hpp
-      title: library/graphs/topological-sort.hpp
+      title: Topological Sort
     - icon: ':heavy_check_mark:'
       path: library/graphs/two-sat.hpp
       title: library/graphs/two-sat.hpp

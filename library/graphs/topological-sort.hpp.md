@@ -11,17 +11,15 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "\n/**\n * If size of std::vector is n, then it is a DAG, if it's not\
-    \ n, then there is no topological sorting\n */\n\nstd::vector<int> topo_sort(std::vector<std::vector<int>>\
-    \ adj) {\n\tint n = (int)adj.size();\n\tstd::vector<int> in(n);\n\tstd::vector<int>\
-    \ res;\n\tstd::list<int> todo;\n\tfor (int i = 0; i < n; i++) {\n\t\tfor (int\
-    \ j : adj[i]) {\n\t\t\t++in[j];\n\t\t}\n\t}\n\tfor (int i = 0; i < n; i++) {\n\
-    \t\tif (!in[i]) {\n\t\t\ttodo.push_back(i);\n\t\t}\n\t}\n\twhile (!todo.empty())\
-    \ {\n\t\tint x = todo.front();\n\t\ttodo.pop_front();\n\t\tres.push_back(x);\n\
-    \t\tfor (int nxt : adj[x]) {\n\t\t\tif (!(--in[nxt])) {\n\t\t\t\ttodo.push_back(nxt);\n\
-    \t\t\t}\n\t\t}\n\t}\n\treturn res;\n}\n"
-  code: "#pragma once\n\n/**\n * If size of std::vector is n, then it is a DAG, if\
-    \ it's not n, then there is no topological sorting\n */\n\nstd::vector<int> topo_sort(std::vector<std::vector<int>>\
+  bundledCode: "\nstd::vector<int> topo_sort(std::vector<std::vector<int>> adj) {\n\
+    \tint n = (int)adj.size();\n\tstd::vector<int> in(n);\n\tstd::vector<int> res;\n\
+    \tstd::list<int> todo;\n\tfor (int i = 0; i < n; i++) {\n\t\tfor (int j : adj[i])\
+    \ {\n\t\t\t++in[j];\n\t\t}\n\t}\n\tfor (int i = 0; i < n; i++) {\n\t\tif (!in[i])\
+    \ {\n\t\t\ttodo.push_back(i);\n\t\t}\n\t}\n\twhile (!todo.empty()) {\n\t\tint\
+    \ x = todo.front();\n\t\ttodo.pop_front();\n\t\tres.push_back(x);\n\t\tfor (int\
+    \ nxt : adj[x]) {\n\t\t\tif (!(--in[nxt])) {\n\t\t\t\ttodo.push_back(nxt);\n\t\
+    \t\t}\n\t\t}\n\t}\n\treturn res;\n}\n"
+  code: "#pragma once\n\nstd::vector<int> topo_sort(std::vector<std::vector<int>>\
     \ adj) {\n\tint n = (int)adj.size();\n\tstd::vector<int> in(n);\n\tstd::vector<int>\
     \ res;\n\tstd::list<int> todo;\n\tfor (int i = 0; i < n; i++) {\n\t\tfor (int\
     \ j : adj[i]) {\n\t\t\t++in[j];\n\t\t}\n\t}\n\tfor (int i = 0; i < n; i++) {\n\
@@ -33,14 +31,20 @@ data:
   isVerificationFile: false
   path: library/graphs/topological-sort.hpp
   requiredBy: []
-  timestamp: '2021-07-24 22:29:57-04:00'
+  timestamp: '2021-08-13 01:11:50-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/codeforces/codeforces-1463E.test.cpp
 documentation_of: library/graphs/topological-sort.hpp
 layout: document
-redirect_from:
-- /library/library/graphs/topological-sort.hpp
-- /library/library/graphs/topological-sort.hpp.html
-title: library/graphs/topological-sort.hpp
+title: Topological Sort
 ---
+
+## Topological Sort
+
+### Functions
+- `topo_sort(adj)`: Returns topological ordering given adjacency lists. It will return a list of size less than $n$ if there is no topological ordering. 
+
+### Resources
+- [Benq](https://github.com/bqi343/USACO/blob/4aa96cd195a770c3a7f8977441020036d84b4f24/Implementations/content/graphs%20(12)/Basics/TopoSort%20(7.4).h)
+

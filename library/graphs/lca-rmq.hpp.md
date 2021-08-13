@@ -20,17 +20,11 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "\n/**\n * O(n log n) preprocessing with O(1) query\n * Compress compute\
-    \ sthe minimal subtree containing\n * all node LCAs and comrpesses edges\n * O(S\
-    \ log S) compression\n * Returns list of (parent, original index)\n * Parent is\
-    \ the parent of node in compressed tree\n * Original index is the node it represents\n\
-    \ * get_child also returns the subtree child of node and -1 if it doesn't exist\
-    \ in O(1)\n * To support forest, gen on all the roots, initialize tmp and sparse\
-    \ at the end\n */\n\n\ntemplate <class T> struct SparseTable {\n\tstd::vector<T>\
-    \ v;\n\tstd::vector<std::vector<int>> jump;\n\n\tint level(int x) { return 31\
-    \ - __builtin_clz(x); }\n\n\tint comb(int a, int b) {\n\t\treturn v[a] == v[b]\
-    \ ? std::min(a, b) : (v[a] < v[b] ? a : b);\n\t}\n\n\tvoid init(const std::vector<T>\
-    \ &_v) {\n\t\tv = _v;\n\t\tjump = {std::vector<int>((int)v.size())};\n\t\tiota(jump[0].begin(),\
+  bundledCode: "\n\ntemplate <class T> struct SparseTable {\n\tstd::vector<T> v;\n\
+    \tstd::vector<std::vector<int>> jump;\n\n\tint level(int x) { return 31 - __builtin_clz(x);\
+    \ }\n\n\tint comb(int a, int b) {\n\t\treturn v[a] == v[b] ? std::min(a, b) :\
+    \ (v[a] < v[b] ? a : b);\n\t}\n\n\tvoid init(const std::vector<T> &_v) {\n\t\t\
+    v = _v;\n\t\tjump = {std::vector<int>((int)v.size())};\n\t\tiota(jump[0].begin(),\
     \ jump[0].end(), 0);\n\t\tfor (int j = 1; (1 << j) <= (int)v.size(); j++) {\n\t\
     \t\tjump.push_back(std::vector<int>((int)v.size() - (1 << j) + 1));\n\t\t\tfor\
     \ (int i = 0; i < (int)jump[j].size(); i++) {\n\t\t\t\tjump[j][i] = comb(jump[j\
@@ -70,13 +64,7 @@ data:
     \ i < (int)nodes.size(); i++) {\n\t\t\trev[nodes[i]] = i;\n\t\t}\n\t\tfor (int\
     \ i = 1; i < (int)nodes.size(); i++) {\n\t\t\tret.emplace_back(rev[lca(nodes[i\
     \ - 1], nodes[i])], nodes[i]);\n\t\t}\n\t\treturn ret;\n\t}\n};\n"
-  code: "#pragma once\n\n/**\n * O(n log n) preprocessing with O(1) query\n * Compress\
-    \ compute sthe minimal subtree containing\n * all node LCAs and comrpesses edges\n\
-    \ * O(S log S) compression\n * Returns list of (parent, original index)\n * Parent\
-    \ is the parent of node in compressed tree\n * Original index is the node it represents\n\
-    \ * get_child also returns the subtree child of node and -1 if it doesn't exist\
-    \ in O(1)\n * To support forest, gen on all the roots, initialize tmp and sparse\
-    \ at the end\n */\n\n#include \"../data-structures/1d-range-queries/sparse-table.hpp\"\
+  code: "#pragma once\n\n#include \"../data-structures/1d-range-queries/sparse-table.hpp\"\
     \n\nstruct LCARMQ {\n\tint n; \n\tstd::vector<std::vector<int>> adj;\n\tstd::vector<int>\
     \ dep, in, par, rev, out, pos;\n\tstd::vector<std::pair<int, int>> tmp;\n\tSparseTable<std::pair<int,\
     \ int>> S;\n\tstd::vector<std::vector<int>> sparse;\n\tint ti = 0;\n\n\tvoid init(int\
@@ -115,7 +103,7 @@ data:
   isVerificationFile: false
   path: library/graphs/lca-rmq.hpp
   requiredBy: []
-  timestamp: '2021-08-13 00:05:32-04:00'
+  timestamp: '2021-08-13 01:09:08-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
@@ -130,7 +118,7 @@ title: LCA RMQ
 
 ### Functions
 - `init(n)`: Initializes variables
-- `gen(root)`: Generates from $root$, can easily change to vector for forests. Just repeat `gen`$ for each root in $\mathcal O(n \log (n)$. 
+- `gen(root)`: Generates from $root$, can easily change to vector for forests. Just repeat `gen` for each root in $\mathcal O(n \log (n))$. 
 - `is_ancestor(anc, src)`: Checks if $anc$ is ancestor of $src$ in $\mathcal O(1)$. 
 - `lca(x, y)`: Lowest common ancestor of $x, y$ in $\mathcal O(1)$. 
 - `compress(nodes)`: Tree compression of nodes. 
