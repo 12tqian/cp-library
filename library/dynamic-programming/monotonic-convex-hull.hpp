@@ -1,9 +1,7 @@
 #pragma once
 
-// answers min queries currently
-// don't forget to change ord
-
 const long long INF = 1e18;
+
 struct Line {
 	mutable long long a, b, lst;
 
