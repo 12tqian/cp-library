@@ -1,7 +1,4 @@
 #pragma once
-/**
- * to get back the original edges, assign ID's in ae
- */
 
 template <class F, class C> struct MCMF {
 	struct Edge { int to; F flow, cap; C cost; };
