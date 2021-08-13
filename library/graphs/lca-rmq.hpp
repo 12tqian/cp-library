@@ -1,17 +1,5 @@
 #pragma once
 
-/**
- * O(n log n) preprocessing with O(1) query
- * Compress compute sthe minimal subtree containing
- * all node LCAs and comrpesses edges
- * O(S log S) compression
- * Returns list of (parent, original index)
- * Parent is the parent of node in compressed tree
- * Original index is the node it represents
- * get_child also returns the subtree child of node and -1 if it doesn't exist in O(1)
- * To support forest, gen on all the roots, initialize tmp and sparse at the end
- */
-
 #include "../data-structures/1d-range-queries/sparse-table.hpp"
 
 struct LCARMQ {
