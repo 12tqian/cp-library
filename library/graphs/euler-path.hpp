@@ -1,10 +1,5 @@
 #pragma once
 
-/**
- * Finds Euler path in O(N + M) from a starting vertex
- * To find which vertex to start, use parities
- */
-
 template <bool directed> struct Euler {
 	int n;
 	std::vector<std::vector<std::pair<int, int>>> adj;
