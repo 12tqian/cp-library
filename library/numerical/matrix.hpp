@@ -20,7 +20,7 @@ template <class D> struct Matrix : std::vector<std::vector<D>> {
 	}
 
 	Matrix<D>& operator+=(const Matrix& r) {
-		assert(h() == r.h() && w == r.w());
+		assert(h() == r.h() && w() == r.w());
 		for (int i = 0; i < h(); i++) {
 			for (int j = 0; j < h(); j++) {
 				(*this)[i][j] += r[i][j];
@@ -30,7 +30,7 @@ template <class D> struct Matrix : std::vector<std::vector<D>> {
 	}
 
 	Matrix& operator-=(const Matrix& r) {
-		assert(h() == r.h() && w == r.w());
+		assert(h() == r.h() && w() == r.w());
 		for (int i = 0; i < h(); i++) {
 			for (int j = 0; j < h(); j++) {
 				(*this)[i][j] -= r[i][j];
