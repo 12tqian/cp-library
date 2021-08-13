@@ -6,7 +6,7 @@ data:
     title: library/contest/template-minimal.hpp
   - icon: ':heavy_check_mark:'
     path: library/data-structures/2d-range-queries/general-fenwick-tree.hpp
-    title: library/data-structures/2d-range-queries/general-fenwick-tree.hpp
+    title: General Fenwick Tree
   - icon: ':heavy_check_mark:'
     path: library/modular-arithmetic/mod-int2.hpp
     title: library/modular-arithmetic/mod-int2.hpp

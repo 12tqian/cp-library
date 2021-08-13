@@ -172,6 +172,7 @@ Works by some spooky tag magic, no clue about the details.
 - $0$-indexed. 
 
 ### Functions
+All functions work in $\mathcal O(\log(n))$. 
 - `upd(t, lo, hi, b)`: If $t = 0$, the update is `ckmin`, $t = 1$, it's `ckmax`, $t = 2$, it's `range_add`. 
 - `qsum(l, r)`: Sum of elements in $[l, r]$. 
 - `qmin(l, r)`: Min of elements in $[l, r]$. 
