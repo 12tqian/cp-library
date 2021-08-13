@@ -9,7 +9,7 @@ Works in $\mathcal O(VE)$ for $V$ vertices and $E$ edges. Note that `negative_cy
 
 ### Functions
 - `init(n)`: Initializes the variables. 
-- `gen(src)`: Generates distances from $src$. 
+- `gen(src)`: Generates distances from `src`. 
 - `negative_cycle(src)`$: Finds a negative cycle if it exists. If it doesn't, this returns an empty list. 
 
 ### Variables

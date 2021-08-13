@@ -9,7 +9,7 @@ documentation_of: hungarian.hpp
 - $0$-indexed
 
 ### Functions
-- `hungarian(a)`: Solves the problem if $a[i][j]$ indicates the $i$th job's cost for the $j$th worker. Returns the cost and the assignment. 
+- `hungarian(a)`: Solves the problem if `a[i][j]` indicates the `i`th job's cost for the `j`th worker. Returns the cost and the assignment. 
 	- `job` ends up storing the job each worker gets assign. 
 	- Works in $\mathcal O(N^2 M)$. 
 
