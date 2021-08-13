@@ -1,12 +1,5 @@
 #pragma once
 
-/**
- * Treat this as a black box xD
- * Calculates max flow
- * You can probably add stuff to recover it
- * Most cases, Dinic is better since you understand it
- */
-
 template <class F> struct PushRelabel {
 
 	struct Edge { int to, rev; F flow; };
