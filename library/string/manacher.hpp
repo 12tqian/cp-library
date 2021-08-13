@@ -1,11 +1,5 @@
 #pragma once
 
-/**
- * Example use:
- * Call: manacher("abacaba")
- * Return: {1 0 3 0 1 0 7 0 1 0 3 0 1}
- */
-
 std::vector<int> manacher(std::string s) {
 	std::string t = "@";
 	for (auto &c : s) 

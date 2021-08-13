@@ -1,15 +1,5 @@
 #pragma once
 
-/**
- * Another black box algorithm I don't understand
- * But I can use 
- * O(N^2M) for N jobs and M workers 
- * 0-indexed
- * Returns the cost, and the assignment
- * job stores the job each worker gets assigned to
- * In the example below, they wanted the worker each job got assigned to, so I inverted it
- */
-
 template <class C> std::pair<C, std::vector<int>> hungarian(const std::vector<std::vector<C>>& a_) {
 	const C INF = std::numeric_limits<C>::max();
 	int n = (int)a_.size();
