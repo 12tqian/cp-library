@@ -74,7 +74,6 @@ namespace MatrixOperations {
 
 template <class T> Matrix<T> make_matrix(int r, int c) { return Matrix<T>(r, std::vector<T>(c)); }
 
-
 template <class D> Matrix<D> inv(Matrix<D> m, const D& EPS = -1) {
 	int r = m.h();
 	assert(m.h() == m.w());
