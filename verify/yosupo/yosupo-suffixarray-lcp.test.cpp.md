@@ -71,13 +71,14 @@ data:
     }\n\t\t\trec_s[lms_map[sorted_lms[i]]] = (rec_upper += !same);\n\t\t}\n\t\tvector<int>\
     \ rec_sa = suffix_array(rec_s, rec_upper\n\t\t\t + 1);\n\t\tfor (int i = 0; i\
     \ < m; i++)\n\t\t\tsorted_lms[i] = lms[rec_sa[i]];\n\t\tinduce(sorted_lms);\n\t\
-    \treturn res;\n\t}\n \n\tvoid init(string _s) {\n\t\tn = (int)(s = _s).size()\
-    \ + 1;\n\t\tvector<int> tmp;\n\t\tfor (int i = 0; i < (int)s.size(); ++i) {\n\t\
-    \t\ttmp.push_back(s[i] - 'a');\n\t\t}\n\t\tsa = suffix_array(tmp, 26);\n\t\tsa.insert(sa.begin(),\
-    \ -1);\n\t\tisa.resize(sa.size());\n\t\tfor (int i = 1; i < (int)sa.size(); ++i)\
-    \ {\n\t\t\tisa[sa[i]] = i;\n\t\t}\t\n\t\tgen_lcp_array();\n\t\tgen_finish();\n\
-    \t}\n \n\tvoid gen_lcp_array() {\n\t\tlcp = vector<int>(n - 1);\n\t\tint h = 0;\n\
-    \t\tfor (int b = 0; b < n - 1; b++) {\n\t\t\tint a = sa[isa[b] - 1];\n\t\t\twhile\
+    \treturn res;\n\t}\n\t\n\tvoid generate_suffix_array(string _s) {\n\t\tn = (int)(s\
+    \ = _s).size() + 1;\n\t\tvector<int> tmp;\n\t\tfor (int i = 0; i < (int)s.size();\
+    \ ++i) {\n\t\t\ttmp.push_back(s[i] - 'a');\n\t\t}\n\t\tsa = suffix_array(tmp,\
+    \ 26);\n\t}\n\n\tvoid generate_lcp_array() {\n\t\tsa.insert(sa.begin(), -1);\n\
+    \t\tisa.resize(sa.size());\n\t\tfor (int i = 1; i < (int)sa.size(); ++i) {\n\t\
+    \t\tisa[sa[i]] = i;\n\t\t}\t\n\t\tgen_lcp_array();\n\t\tgen_finish();\n\t}\n \n\
+    \tvoid gen_lcp_array() {\n\t\tlcp = vector<int>(n - 1);\n\t\tint h = 0;\n\t\t\
+    for (int b = 0; b < n - 1; b++) {\n\t\t\tint a = sa[isa[b] - 1];\n\t\t\twhile\
     \ (a + h < (int)s.size() && s[a + h] == s[b + h]) \n\t\t\t\th++;\n\t\t\tlcp[isa[b]\
     \ - 1] = h;\n\t\t\tif (h) h--;\n\t\t}\n\t}\n \n\tvoid gen_finish() {\n\t\tlcp.erase(lcp.begin());\n\
     \t\tsa.erase(sa.begin());\n\t\tfor (int i = 0; i < (int)isa.size(); i++) \n\t\t\
@@ -85,13 +86,13 @@ data:
     \ get_lcp(int a, int b) {\n\t\tif (a == b) {\n\t\t\treturn (int)s.size() - a;\n\
     \t\t}\n\t\tint l = isa[a], r = isa[b]; \n\t\tif (l > r) swap(l, r);\n\t\treturn\
     \ spr.query(l, r - 1);\n\t}\n};\n\nint main() {\n\tusing namespace std;\n\tios_base::sync_with_stdio(0);\n\
-    \tstring s; cin >> s;\n\tint n = (int)s.size();\n\tSuffixArray S;\n\tS.init(s);\n\
+    \tstring s; cin >> s;\n\tint n = (int)s.size();\n\tSuffixArray S;\n\tS.generate_suffix_array(s);\n\
     \tfor (int i = 0; i < n; i++)\n\t\tcout << S.sa[i] << \" \";\n\tcout << '\\n';\n\
     \treturn 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/suffixarray\"\n\n#include\
     \ \"../../library/contest/template-minimal.hpp\"\n#include \"../../library/string/suffix-array-lcp.hpp\"\
     \n\nint main() {\n\tusing namespace std;\n\tios_base::sync_with_stdio(0);\n\t\
-    string s; cin >> s;\n\tint n = (int)s.size();\n\tSuffixArray S;\n\tS.init(s);\n\
+    string s; cin >> s;\n\tint n = (int)s.size();\n\tSuffixArray S;\n\tS.generate_suffix_array(s);\n\
     \tfor (int i = 0; i < n; i++)\n\t\tcout << S.sa[i] << \" \";\n\tcout << '\\n';\n\
     \treturn 0;\n}\n"
   dependsOn:
@@ -101,7 +102,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/yosupo-suffixarray-lcp.test.cpp
   requiredBy: []
-  timestamp: '2021-08-12 23:27:05-04:00'
+  timestamp: '2021-08-12 23:30:38-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/yosupo-suffixarray-lcp.test.cpp
