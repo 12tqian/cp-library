@@ -1,4 +1,4 @@
-#define PROBELM "https://judge.yosupo.jp/problem/bitwise_xor_convolution"
+#define PROBLEM "https://judge.yosupo.jp/problem/bitwise_xor_convolution"
 
 #include <bits/stdc++.h>
 #include "../../library/set-function/walsh-hadamard-transform.hpp"
