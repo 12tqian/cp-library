@@ -63,7 +63,6 @@ template <class Mint> void butterfly(bool type, std::vector<Mint>& a) {
 	while ((1 << h) < n) h++;
 	assert(1 << h == n);
 	if (n == 1) return;
-
 	static std::vector<Mint> snow, sinow;
 	if (snow.empty()) {
 		Mint sep = Mint(1), siep = Mint(1);
