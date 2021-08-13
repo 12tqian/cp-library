@@ -235,7 +235,7 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: library/numerical/big-integer.hpp
-      title: library/numerical/big-integer.hpp
+      title: Big Integer
     - icon: ':heavy_check_mark:'
       path: library/numerical/fraction.hpp
       title: library/numerical/fraction.hpp
