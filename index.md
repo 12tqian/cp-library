@@ -83,7 +83,7 @@ data:
       title: library/dynamic-programming/gosper-hack.hpp
     - icon: ':heavy_check_mark:'
       path: library/dynamic-programming/line-container.hpp
-      title: library/dynamic-programming/line-container.hpp
+      title: Line Container
     - icon: ':heavy_check_mark:'
       path: library/dynamic-programming/max-deque.hpp
       title: library/dynamic-programming/max-deque.hpp
@@ -92,7 +92,7 @@ data:
       title: library/dynamic-programming/min-deque.hpp
     - icon: ':heavy_check_mark:'
       path: library/dynamic-programming/monotonic-convex-hull.hpp
-      title: library/dynamic-programming/monotonic-convex-hull.hpp
+      title: Monotonic Convex Hull Trick
   - name: library/geometry
     pages:
     - icon: ':heavy_check_mark:'
@@ -108,7 +108,7 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: library/graphs/bellman-ford.hpp
-      title: library/graphs/bellman-ford.hpp
+      title: Bellman Ford
     - icon: ':heavy_check_mark:'
       path: library/graphs/biconnected-components.hpp
       title: library/graphs/biconnected-components.hpp
