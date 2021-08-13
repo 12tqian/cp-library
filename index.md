@@ -176,7 +176,7 @@ data:
       title: Hungarian Algorithm
     - icon: ':heavy_check_mark:'
       path: library/graphs/flows/min-cost-max-flow.hpp
-      title: library/graphs/flows/min-cost-max-flow.hpp
+      title: Minimum Cost Maximum Flow
     - icon: ':heavy_check_mark:'
       path: library/graphs/flows/push-relabel.hpp
       title: library/graphs/flows/push-relabel.hpp

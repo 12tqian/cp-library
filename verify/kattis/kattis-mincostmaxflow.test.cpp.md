@@ -6,7 +6,7 @@ data:
     title: library/contest/template-minimal.hpp
   - icon: ':heavy_check_mark:'
     path: library/graphs/flows/min-cost-max-flow.hpp
-    title: library/graphs/flows/min-cost-max-flow.hpp
+    title: Minimum Cost Maximum Flow
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -24,14 +24,14 @@ data:
     \ <iostream>\n#include <iomanip>\n#include <list>\n#include <map>\n#include <numeric>\n\
     #include <queue>\n#include <random>\n#include <set>\n#include <stack>\n#include\
     \ <string>\n#include <unordered_map>\n#include <vector>\n\nusing namespace std;\n\
-    /**\n * to get back the original edges, assign ID's in ae\n */\n\ntemplate <class\
-    \ F, class C> struct MCMF {\n\tstruct Edge { int to; F flow, cap; C cost; };\n\
-    \n\tint n;\n\tstd::vector<C> p, dist;\n\tstd::vector<int> pre;\n\tstd::vector<Edge>\
-    \ edges;\n\tstd::vector<std::vector<int>> adj;\n\n\tconst C INF  = std::numeric_limits<C>::max();\n\
-    \n\tvoid init(int n_) {\n\t\tn = n_;\n\t\tp.assign(n, 0);\n\t\tdist.assign(n,\
-    \ 0);\n\t\tpre.assign(n, 0);\n\t\tadj.clear(); adj.resize(n);\n\t\tedges.clear();\n\
-    \t}\n\n\tvoid ae(int u, int v, F cap, C cost) {\n\t\tassert(cap >= 0);\n\t\tadj[u].push_back((int)edges.size());\n\
-    \t\tedges.push_back({v, 0, cap, cost});\n\t\tadj[v].push_back((int)edges.size());\n\
+    \ntemplate <class F, class C> struct MCMF {\n\tstruct Edge { int to; F flow, cap;\
+    \ C cost; };\n\n\tint n;\n\tstd::vector<C> p, dist;\n\tstd::vector<int> pre;\n\
+    \tstd::vector<Edge> edges;\n\tstd::vector<std::vector<int>> adj;\n\n\tconst C\
+    \ INF  = std::numeric_limits<C>::max();\n\n\tvoid init(int n_) {\n\t\tn = n_;\n\
+    \t\tp.assign(n, 0);\n\t\tdist.assign(n, 0);\n\t\tpre.assign(n, 0);\n\t\tadj.clear();\
+    \ adj.resize(n);\n\t\tedges.clear();\n\t}\n\n\tvoid ae(int u, int v, F cap, C\
+    \ cost) {\n\t\tassert(cap >= 0);\n\t\tadj[u].push_back((int)edges.size());\n\t\
+    \tedges.push_back({v, 0, cap, cost});\n\t\tadj[v].push_back((int)edges.size());\n\
     \t\tedges.push_back({u, 0, 0, -cost});\n\t}\n\n\tbool path(int s, int t) {\n\t\
     \tfor (int i = 0; i < n; i++) \n\t\t\tdist[i] = INF;\n\t\tusing T = std::pair<C,\
     \ int>;\n\t\tstd::priority_queue<T, std::vector<T>, std::greater<T>> todo;\n\t\
@@ -70,7 +70,7 @@ data:
   isVerificationFile: true
   path: verify/kattis/kattis-mincostmaxflow.test.cpp
   requiredBy: []
-  timestamp: '2021-07-28 19:45:54-04:00'
+  timestamp: '2021-08-13 01:38:25-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/kattis/kattis-mincostmaxflow.test.cpp
