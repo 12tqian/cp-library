@@ -135,7 +135,7 @@ data:
       title: library/graphs/heavy-light-decomposition.hpp
     - icon: ':heavy_check_mark:'
       path: library/graphs/heavy-light-decomposition2.hpp
-      title: library/graphs/heavy-light-decomposition2.hpp
+      title: Old Heavy Light Decomposition
     - icon: ':heavy_check_mark:'
       path: library/graphs/kruskal.hpp
       title: library/graphs/kruskal.hpp

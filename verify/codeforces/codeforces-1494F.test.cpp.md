@@ -153,7 +153,7 @@ data:
   isVerificationFile: true
   path: verify/codeforces/codeforces-1494F.test.cpp
   requiredBy: []
-  timestamp: '2021-07-28 19:45:54-04:00'
+  timestamp: '2021-08-13 00:54:25-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/codeforces/codeforces-1494F.test.cpp

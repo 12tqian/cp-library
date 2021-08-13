@@ -11,9 +11,9 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "template <class G> \nstruct HeavyLightDecomposition {\nprivate:\n\t\
-    void dfs_sz(int cur) {\n\t\tsize[cur] = 1;\n\t\tfor (auto& dst : g[cur]) {\n\t\
-    \t\tif (dst == par[cur]) {\n\t\t\t\tif (g[cur].size() >= 2 && int(dst) == int(g[cur][0]))\n\
+  bundledCode: "\ntemplate <class G> \nstruct HeavyLightDecomposition {\nprivate:\n\
+    \tvoid dfs_sz(int cur) {\n\t\tsize[cur] = 1;\n\t\tfor (auto& dst : g[cur]) {\n\
+    \t\t\tif (dst == par[cur]) {\n\t\t\t\tif (g[cur].size() >= 2 && int(dst) == int(g[cur][0]))\n\
     \t\t\t\t\tstd::swap(g[cur][0], g[cur][1]);\n\t\t\t\telse\n\t\t\t\t\tcontinue;\n\
     \t\t\t}\n\t\t\tdepth[dst] = depth[cur] + 1;\n\t\t\tpar[dst] = cur;\n\t\t\tdfs_sz(dst);\n\
     \t\t\tsize[cur] += size[dst];\n\t\t\tif (size[dst] > size[g[cur][0]]) {\n\t\t\t\
@@ -51,9 +51,9 @@ data:
     \ {\n\t\t\tif (down[a] < down[b]) std::swap(a, b);\n\t\t\ta = par[nxt[a]];\n\t\
     \t}\n\t\treturn depth[a] < depth[b] ? a : b;\n\t}\n\n\tint dist(int a, int b)\
     \ { return depth[a] + depth[b] - depth[lca(a, b)] * 2; }\n};\n"
-  code: "template <class G> \nstruct HeavyLightDecomposition {\nprivate:\n\tvoid dfs_sz(int\
-    \ cur) {\n\t\tsize[cur] = 1;\n\t\tfor (auto& dst : g[cur]) {\n\t\t\tif (dst ==\
-    \ par[cur]) {\n\t\t\t\tif (g[cur].size() >= 2 && int(dst) == int(g[cur][0]))\n\
+  code: "#pragma once\n\ntemplate <class G> \nstruct HeavyLightDecomposition {\nprivate:\n\
+    \tvoid dfs_sz(int cur) {\n\t\tsize[cur] = 1;\n\t\tfor (auto& dst : g[cur]) {\n\
+    \t\t\tif (dst == par[cur]) {\n\t\t\t\tif (g[cur].size() >= 2 && int(dst) == int(g[cur][0]))\n\
     \t\t\t\t\tstd::swap(g[cur][0], g[cur][1]);\n\t\t\t\telse\n\t\t\t\t\tcontinue;\n\
     \t\t\t}\n\t\t\tdepth[dst] = depth[cur] + 1;\n\t\t\tpar[dst] = cur;\n\t\t\tdfs_sz(dst);\n\
     \t\t\tsize[cur] += size[dst];\n\t\t\tif (size[dst] > size[g[cur][0]]) {\n\t\t\t\
@@ -95,7 +95,7 @@ data:
   isVerificationFile: false
   path: library/graphs/heavy-light-decomposition.hpp
   requiredBy: []
-  timestamp: '2021-07-31 14:30:12-04:00'
+  timestamp: '2021-08-13 00:54:49-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/yosupo-vertex_add_path_sum-new-hld.test.cpp

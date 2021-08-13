@@ -27,7 +27,7 @@ data:
     \ <iostream>\n#include <iomanip>\n#include <list>\n#include <map>\n#include <numeric>\n\
     #include <queue>\n#include <random>\n#include <set>\n#include <stack>\n#include\
     \ <string>\n#include <unordered_map>\n#include <vector>\n\nusing namespace std;\n\
-    template <class G> \nstruct HeavyLightDecomposition {\nprivate:\n\tvoid dfs_sz(int\
+    \ntemplate <class G> \nstruct HeavyLightDecomposition {\nprivate:\n\tvoid dfs_sz(int\
     \ cur) {\n\t\tsize[cur] = 1;\n\t\tfor (auto& dst : g[cur]) {\n\t\t\tif (dst ==\
     \ par[cur]) {\n\t\t\t\tif (g[cur].size() >= 2 && int(dst) == int(g[cur][0]))\n\
     \t\t\t\t\tstd::swap(g[cur][0], g[cur][1]);\n\t\t\t\telse\n\t\t\t\t\tcontinue;\n\
@@ -155,7 +155,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/yosupo-vertex_add_path_sum-new-hld.test.cpp
   requiredBy: []
-  timestamp: '2021-08-05 19:19:10-04:00'
+  timestamp: '2021-08-13 00:54:49-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/yosupo-vertex_add_path_sum-new-hld.test.cpp

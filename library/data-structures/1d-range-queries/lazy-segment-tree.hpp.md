@@ -4,7 +4,7 @@ data:
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
     path: library/graphs/heavy-light-decomposition2.hpp
-    title: library/graphs/heavy-light-decomposition2.hpp
+    title: Old Heavy Light Decomposition
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-point_add_range_sum-lazy-segment-tree.test.cpp
