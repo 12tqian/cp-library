@@ -1,11 +1,5 @@
 #pragma once
 
-/**
- * Factors in O(sqrt(n))
- * Divisors in O(sqrt(n))
- * phi in O(sqrt(n))
- */
-
 namespace FactorBasic {
 
 template <class T> std::vector<std::pair<T, int>> factor(T x) {
