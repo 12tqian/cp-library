@@ -77,8 +77,21 @@ data:
   - verify/yosupo/yosupo-rectangle_sum-offline-2d-bit.test.cpp
 documentation_of: library/data-structures/2d-range-queries/offline-2d-binary-indexed-tree.hpp
 layout: document
-redirect_from:
-- /library/library/data-structures/2d-range-queries/offline-2d-binary-indexed-tree.hpp
-- /library/library/data-structures/2d-range-queries/offline-2d-binary-indexed-tree.hpp.html
-title: library/data-structures/2d-range-queries/offline-2d-binary-indexed-tree.hpp
+title: Offline 2D BIT
 ---
+
+## Offline 2D BIT
+
+This works decently fast, requires you to know locations of all updates first though. 
+
+### Assumptions
+- $x, y \in [0, sz)$
+
+### Functions
+- `update(x, y, t)`: Updates at location $(x, y)$ with $t$. Call first to store locations, and again later for actual updates. 
+- `init(sz)`: Needs to be called after all updates have been called. 
+- `query(xl, xr, yl, yr)`: Queries in bounds $x \in [xl, xr], y \in [yl, yr]$. 
+
+
+### Resources
+- [Benq](https://github.com/bqi343/USACO/blob/master/Implementations/content/data-structures/2D%20Range%20Queries%20(15.2)/BIT2DOff%20(15.2).h)

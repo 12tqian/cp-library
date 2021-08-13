@@ -6,7 +6,7 @@ data:
     title: library/contest/template-minimal.hpp
   - icon: ':heavy_check_mark:'
     path: library/data-structures/2d-range-queries/offline-2d-binary-indexed-tree.hpp
-    title: library/data-structures/2d-range-queries/offline-2d-binary-indexed-tree.hpp
+    title: Offline 2D BIT
   - icon: ':heavy_check_mark:'
     path: library/misc/easy-io.hpp
     title: library/misc/easy-io.hpp
