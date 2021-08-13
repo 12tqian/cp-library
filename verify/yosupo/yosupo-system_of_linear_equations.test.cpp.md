@@ -44,7 +44,7 @@ data:
     for (int i = 0; i < h(); i++) r[i][i] = D(1);\n\t\twhile (n) {\n\t\t\tif (n &\
     \ 1) r *= x;\n\t\t\tx *= x;\n\t\t\tn >>= 1;\n\t\t}\n\t\treturn r;\n\t}\n};\n\n\
     namespace MatrixOperations {\n\ntemplate <class T> Matrix<T> make_matrix(int r,\
-    \ int c) { return Matrix<T>(r, std::vector<T>(c)); }\n\n\ntemplate <class D> Matrix<D>\
+    \ int c) { return Matrix<T>(r, std::vector<T>(c)); }\n\ntemplate <class D> Matrix<D>\
     \ inv(Matrix<D> m, const D& EPS = -1) {\n\tint r = m.h();\n\tassert(m.h() == m.w());\n\
     \tMatrix<D> x = make_matrix<D>(r, 2 * r);\n\tfor (int i = 0; i < r; i++) {\n\t\
     \tx[i][i + r] = 1;\n\t\tfor (int j = 0; j < r; j++) {\n\t\t\tx[i][j] = m[i][j];\n\
@@ -143,7 +143,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/yosupo-system_of_linear_equations.test.cpp
   requiredBy: []
-  timestamp: '2021-08-13 10:21:59-04:00'
+  timestamp: '2021-08-13 10:52:43-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/yosupo-system_of_linear_equations.test.cpp
