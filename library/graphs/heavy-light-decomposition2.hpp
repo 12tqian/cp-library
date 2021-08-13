@@ -1,10 +1,5 @@
 #pragma once
 
-/**
- * To support forest, just change 
- * init to take in a vector of roots, and DFS each of them
- */
-
 #include "../data-structures/1d-range-queries/lazy-segment-tree.hpp"
 
 const bool VALUES_IN_VERTICES = true;
