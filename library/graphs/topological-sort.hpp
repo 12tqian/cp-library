@@ -1,9 +1,5 @@
 #pragma once
 
-/**
- * If size of std::vector is n, then it is a DAG, if it's not n, then there is no topological sorting
- */
-
 std::vector<int> topo_sort(std::vector<std::vector<int>> adj) {
 	int n = (int)adj.size();
 	std::vector<int> in(n);
