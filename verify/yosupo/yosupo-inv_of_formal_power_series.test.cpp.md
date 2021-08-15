@@ -167,27 +167,27 @@ data:
     \ { return v; } // explicit -> don't silently convert to int\n\texplicit operator\
     \ bool() const { return v != 0; }\n\tMint() { v = 0; }\n\tMint(long long _v) {\
     \ v = int((-MOD <= _v && _v < MOD) ? _v : _v % MOD); if (v < 0) v += MOD; }\n\t\
-    friend bool operator==(const Mint &a, const Mint &b) { return a.v == b.v; }\n\t\
-    friend bool operator!=(const Mint &a, const Mint &b) { return !(a == b); }\n\t\
-    friend bool operator<(const Mint &a, const Mint &b) { return a.v < b.v; }\n\t\
-    friend bool operator>(const Mint &a, const Mint &b) { return a.v > b.v; }\n\t\
-    friend bool operator<=(const Mint &a, const Mint &b) { return a.v <= b.v; }\n\t\
-    friend bool operator>=(const Mint &a, const Mint &b) { return a.v >= b.v; }\n\t\
-    friend std::istream& operator >> (std::istream &in, Mint &a) { \n\t\tlong long\
+    friend bool operator==(const Mint& a, const Mint& b) { return a.v == b.v; }\n\t\
+    friend bool operator!=(const Mint& a, const Mint& b) { return !(a == b); }\n\t\
+    friend bool operator<(const Mint& a, const Mint& b) { return a.v < b.v; }\n\t\
+    friend bool operator>(const Mint& a, const Mint& b) { return a.v > b.v; }\n\t\
+    friend bool operator<=(const Mint& a, const Mint& b) { return a.v <= b.v; }\n\t\
+    friend bool operator>=(const Mint& a, const Mint& b) { return a.v >= b.v; }\n\t\
+    friend std::istream& operator >> (std::istream& in, Mint& a) { \n\t\tlong long\
     \ x; std::cin >> x; a = Mint(x); return in; }\n\tfriend std::ostream& operator\
-    \ << (std::ostream &os, const Mint &a) { return os << a.v; }\n\tMint& operator+=(const\
-    \ Mint &m) { \n\t\tif ((v += m.v) >= MOD) v -= MOD; \n\t\treturn *this; }\n\t\
-    Mint& operator-=(const Mint &m) { \n\t\tif ((v -= m.v) < 0) v += MOD; \n\t\treturn\
-    \ *this; }\n\tMint& operator*=(const Mint &m) { \n\t\tv = (long long)v * m.v %\
-    \ MOD; return *this; }\n\tMint& operator/=(const Mint &m) { return (*this) *=\
+    \ << (std::ostream& os, const Mint& a) { return os << a.v; }\n\tMint& operator+=(const\
+    \ Mint& m) { \n\t\tif ((v += m.v) >= MOD) v -= MOD; \n\t\treturn *this; }\n\t\
+    Mint& operator-=(const Mint& m) { \n\t\tif ((v -= m.v) < 0) v += MOD; \n\t\treturn\
+    \ *this; }\n\tMint& operator*=(const Mint& m) { \n\t\tv = (long long)v * m.v %\
+    \ MOD; return *this; }\n\tMint& operator/=(const Mint& m) { return (*this) *=\
     \ inv(m); }\n\tfriend Mint pow(Mint a, long long p) {\n\t\tMint ans = 1; assert(p\
     \ >= 0);\n\t\tfor (; p; p /= 2, a *= a) if (p & 1) ans *= a;\n\t\treturn ans;\
-    \ \n\t}\n\tfriend Mint inv(const Mint &a) { assert(a.v != 0); return pow(a, MOD\
+    \ \n\t}\n\tfriend Mint inv(const Mint& a) { assert(a.v != 0); return pow(a, MOD\
     \ - 2); }\n\tMint operator-() const { return Mint(-v); }\n\tMint& operator++()\
     \ { return *this += 1; }\n\tMint& operator--() { return *this -= 1; }\n\tfriend\
-    \ Mint operator+(Mint a, const Mint &b) { return a += b; }\n\tfriend Mint operator-(Mint\
-    \ a, const Mint &b) { return a -= b; }\n\tfriend Mint operator*(Mint a, const\
-    \ Mint &b) { return a *= b; }\n\tfriend Mint operator/(Mint a, const Mint &b)\
+    \ Mint operator+(Mint a, const Mint& b) { return a += b; }\n\tfriend Mint operator-(Mint\
+    \ a, const Mint& b) { return a -= b; }\n\tfriend Mint operator*(Mint a, const\
+    \ Mint& b) { return a *= b; }\n\tfriend Mint operator/(Mint a, const Mint& b)\
     \ { return a /= b; }\n};\n\nusing mi = Mint<998244353, 5>;\n\nint main() {\n\t\
     ios::sync_with_stdio(false);\n\tcin.tie(0);\n\tint n;\n\tcin >> n;\n\tvector<mi>\
     \ a(n);\n\tfor (int i = 0; i < n; ++i) {\n\t\tcin >> a[i];\n\t}\n\tPoly<mi> p(a);\n\
@@ -208,7 +208,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/yosupo-inv_of_formal_power_series.test.cpp
   requiredBy: []
-  timestamp: '2021-08-13 10:39:25-04:00'
+  timestamp: '2021-08-15 17:58:43-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/yosupo-inv_of_formal_power_series.test.cpp

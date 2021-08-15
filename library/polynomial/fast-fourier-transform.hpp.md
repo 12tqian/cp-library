@@ -27,27 +27,27 @@ data:
     \ v; } // explicit -> don't silently convert to int\n\texplicit operator bool()\
     \ const { return v != 0; }\n\tMint() { v = 0; }\n\tMint(long long _v) { v = int((-MOD\
     \ <= _v && _v < MOD) ? _v : _v % MOD); if (v < 0) v += MOD; }\n\tfriend bool operator==(const\
-    \ Mint &a, const Mint &b) { return a.v == b.v; }\n\tfriend bool operator!=(const\
-    \ Mint &a, const Mint &b) { return !(a == b); }\n\tfriend bool operator<(const\
-    \ Mint &a, const Mint &b) { return a.v < b.v; }\n\tfriend bool operator>(const\
-    \ Mint &a, const Mint &b) { return a.v > b.v; }\n\tfriend bool operator<=(const\
-    \ Mint &a, const Mint &b) { return a.v <= b.v; }\n\tfriend bool operator>=(const\
-    \ Mint &a, const Mint &b) { return a.v >= b.v; }\n\tfriend std::istream& operator\
-    \ >> (std::istream &in, Mint &a) { \n\t\tlong long x; std::cin >> x; a = Mint(x);\
-    \ return in; }\n\tfriend std::ostream& operator << (std::ostream &os, const Mint\
-    \ &a) { return os << a.v; }\n\tMint& operator+=(const Mint &m) { \n\t\tif ((v\
-    \ += m.v) >= MOD) v -= MOD; \n\t\treturn *this; }\n\tMint& operator-=(const Mint\
-    \ &m) { \n\t\tif ((v -= m.v) < 0) v += MOD; \n\t\treturn *this; }\n\tMint& operator*=(const\
-    \ Mint &m) { \n\t\tv = (long long)v * m.v % MOD; return *this; }\n\tMint& operator/=(const\
-    \ Mint &m) { return (*this) *= inv(m); }\n\tfriend Mint pow(Mint a, long long\
+    \ Mint& a, const Mint& b) { return a.v == b.v; }\n\tfriend bool operator!=(const\
+    \ Mint& a, const Mint& b) { return !(a == b); }\n\tfriend bool operator<(const\
+    \ Mint& a, const Mint& b) { return a.v < b.v; }\n\tfriend bool operator>(const\
+    \ Mint& a, const Mint& b) { return a.v > b.v; }\n\tfriend bool operator<=(const\
+    \ Mint& a, const Mint& b) { return a.v <= b.v; }\n\tfriend bool operator>=(const\
+    \ Mint& a, const Mint& b) { return a.v >= b.v; }\n\tfriend std::istream& operator\
+    \ >> (std::istream& in, Mint& a) { \n\t\tlong long x; std::cin >> x; a = Mint(x);\
+    \ return in; }\n\tfriend std::ostream& operator << (std::ostream& os, const Mint&\
+    \ a) { return os << a.v; }\n\tMint& operator+=(const Mint& m) { \n\t\tif ((v +=\
+    \ m.v) >= MOD) v -= MOD; \n\t\treturn *this; }\n\tMint& operator-=(const Mint&\
+    \ m) { \n\t\tif ((v -= m.v) < 0) v += MOD; \n\t\treturn *this; }\n\tMint& operator*=(const\
+    \ Mint& m) { \n\t\tv = (long long)v * m.v % MOD; return *this; }\n\tMint& operator/=(const\
+    \ Mint& m) { return (*this) *= inv(m); }\n\tfriend Mint pow(Mint a, long long\
     \ p) {\n\t\tMint ans = 1; assert(p >= 0);\n\t\tfor (; p; p /= 2, a *= a) if (p\
-    \ & 1) ans *= a;\n\t\treturn ans; \n\t}\n\tfriend Mint inv(const Mint &a) { assert(a.v\
+    \ & 1) ans *= a;\n\t\treturn ans; \n\t}\n\tfriend Mint inv(const Mint& a) { assert(a.v\
     \ != 0); return pow(a, MOD - 2); }\n\tMint operator-() const { return Mint(-v);\
     \ }\n\tMint& operator++() { return *this += 1; }\n\tMint& operator--() { return\
-    \ *this -= 1; }\n\tfriend Mint operator+(Mint a, const Mint &b) { return a +=\
-    \ b; }\n\tfriend Mint operator-(Mint a, const Mint &b) { return a -= b; }\n\t\
-    friend Mint operator*(Mint a, const Mint &b) { return a *= b; }\n\tfriend Mint\
-    \ operator/(Mint a, const Mint &b) { return a /= b; }\n};\n\nnamespace FFT {\n\
+    \ *this -= 1; }\n\tfriend Mint operator+(Mint a, const Mint& b) { return a +=\
+    \ b; }\n\tfriend Mint operator-(Mint a, const Mint& b) { return a -= b; }\n\t\
+    friend Mint operator*(Mint a, const Mint& b) { return a *= b; }\n\tfriend Mint\
+    \ operator/(Mint a, const Mint& b) { return a /= b; }\n};\n\nnamespace FFT {\n\
     \ntemplate <class T> void fft(std::vector<T> &A, bool inv = 0) {\n\tint n = (int)A.size();\n\
     \tassert((T::mod - 1) % n == 0);\n\tstd::vector<T> B(n);\n\tfor (int b = n / 2;\
     \ b; b /= 2, A.swap(B)) {\n\t\tT w = pow(T::rt(), (T::mod - 1) / n * b);\n\t\t\
@@ -109,7 +109,7 @@ data:
   path: library/polynomial/fast-fourier-transform.hpp
   requiredBy:
   - library/polynomial/polynomial2.hpp
-  timestamp: '2021-07-31 01:42:23-04:00'
+  timestamp: '2021-08-15 17:58:43-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/yosupo-convolution_mod_1000000007-fast-fourier-transform.test.cpp

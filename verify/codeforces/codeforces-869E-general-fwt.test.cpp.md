@@ -47,27 +47,27 @@ data:
     \ int() const { return v; } // explicit -> don't silently convert to int\n\texplicit\
     \ operator bool() const { return v != 0; }\n\tMint() { v = 0; }\n\tMint(long long\
     \ _v) { v = int((-MOD <= _v && _v < MOD) ? _v : _v % MOD); if (v < 0) v += MOD;\
-    \ }\n\tfriend bool operator==(const Mint &a, const Mint &b) { return a.v == b.v;\
-    \ }\n\tfriend bool operator!=(const Mint &a, const Mint &b) { return !(a == b);\
-    \ }\n\tfriend bool operator<(const Mint &a, const Mint &b) { return a.v < b.v;\
-    \ }\n\tfriend bool operator>(const Mint &a, const Mint &b) { return a.v > b.v;\
-    \ }\n\tfriend bool operator<=(const Mint &a, const Mint &b) { return a.v <= b.v;\
-    \ }\n\tfriend bool operator>=(const Mint &a, const Mint &b) { return a.v >= b.v;\
-    \ }\n\tfriend std::istream& operator >> (std::istream &in, Mint &a) { \n\t\tlong\
+    \ }\n\tfriend bool operator==(const Mint& a, const Mint& b) { return a.v == b.v;\
+    \ }\n\tfriend bool operator!=(const Mint& a, const Mint& b) { return !(a == b);\
+    \ }\n\tfriend bool operator<(const Mint& a, const Mint& b) { return a.v < b.v;\
+    \ }\n\tfriend bool operator>(const Mint& a, const Mint& b) { return a.v > b.v;\
+    \ }\n\tfriend bool operator<=(const Mint& a, const Mint& b) { return a.v <= b.v;\
+    \ }\n\tfriend bool operator>=(const Mint& a, const Mint& b) { return a.v >= b.v;\
+    \ }\n\tfriend std::istream& operator >> (std::istream& in, Mint& a) { \n\t\tlong\
     \ long x; std::cin >> x; a = Mint(x); return in; }\n\tfriend std::ostream& operator\
-    \ << (std::ostream &os, const Mint &a) { return os << a.v; }\n\tMint& operator+=(const\
-    \ Mint &m) { \n\t\tif ((v += m.v) >= MOD) v -= MOD; \n\t\treturn *this; }\n\t\
-    Mint& operator-=(const Mint &m) { \n\t\tif ((v -= m.v) < 0) v += MOD; \n\t\treturn\
-    \ *this; }\n\tMint& operator*=(const Mint &m) { \n\t\tv = (long long)v * m.v %\
-    \ MOD; return *this; }\n\tMint& operator/=(const Mint &m) { return (*this) *=\
+    \ << (std::ostream& os, const Mint& a) { return os << a.v; }\n\tMint& operator+=(const\
+    \ Mint& m) { \n\t\tif ((v += m.v) >= MOD) v -= MOD; \n\t\treturn *this; }\n\t\
+    Mint& operator-=(const Mint& m) { \n\t\tif ((v -= m.v) < 0) v += MOD; \n\t\treturn\
+    \ *this; }\n\tMint& operator*=(const Mint& m) { \n\t\tv = (long long)v * m.v %\
+    \ MOD; return *this; }\n\tMint& operator/=(const Mint& m) { return (*this) *=\
     \ inv(m); }\n\tfriend Mint pow(Mint a, long long p) {\n\t\tMint ans = 1; assert(p\
     \ >= 0);\n\t\tfor (; p; p /= 2, a *= a) if (p & 1) ans *= a;\n\t\treturn ans;\
-    \ \n\t}\n\tfriend Mint inv(const Mint &a) { assert(a.v != 0); return pow(a, MOD\
+    \ \n\t}\n\tfriend Mint inv(const Mint& a) { assert(a.v != 0); return pow(a, MOD\
     \ - 2); }\n\tMint operator-() const { return Mint(-v); }\n\tMint& operator++()\
     \ { return *this += 1; }\n\tMint& operator--() { return *this -= 1; }\n\tfriend\
-    \ Mint operator+(Mint a, const Mint &b) { return a += b; }\n\tfriend Mint operator-(Mint\
-    \ a, const Mint &b) { return a -= b; }\n\tfriend Mint operator*(Mint a, const\
-    \ Mint &b) { return a *= b; }\n\tfriend Mint operator/(Mint a, const Mint &b)\
+    \ Mint operator+(Mint a, const Mint& b) { return a += b; }\n\tfriend Mint operator-(Mint\
+    \ a, const Mint& b) { return a -= b; }\n\tfriend Mint operator*(Mint a, const\
+    \ Mint& b) { return a *= b; }\n\tfriend Mint operator/(Mint a, const Mint& b)\
     \ { return a /= b; }\n};\n\nconst int N = 2505;\n\nconst int P = 998244353;\n\
     const int B = 2;\n\nusing mi = Mint<998244353, 5>;\n\nBIT<mi, N, N> bit;\n\nint\
     \ main() {\n\tios::sync_with_stdio(false);\n\tcin.tie(nullptr);\n\tint n, m, q;\n\
@@ -103,7 +103,7 @@ data:
   isVerificationFile: true
   path: verify/codeforces/codeforces-869E-general-fwt.test.cpp
   requiredBy: []
-  timestamp: '2021-07-31 01:42:23-04:00'
+  timestamp: '2021-08-15 17:58:43-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/codeforces/codeforces-869E-general-fwt.test.cpp
