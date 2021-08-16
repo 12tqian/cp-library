@@ -105,9 +105,6 @@ constexpr int bits(int x) { return 31 - __builtin_clz(x); } // floor(log2(x))
 #include "../misc/easy-io.hpp"
 #include "../modular-arithmetic/mod-int.hpp"
 
-void pr(const mi& a) { pr(a.val); }
-void re(mi& a) { long long x; cin >> x; a = mi(x); }
-
 const ld PI = acos((ld) -1);
 
 typedef pair<mi, mi> pmi;
