@@ -33,7 +33,7 @@ data:
     \t\tid[src] = num_comps++;\n\t\tcomps.emplace_back();\n\t\tfill_component(src);\n\
     \t}\n\t\n\tint build() {\n\t\tfor (int i = 0; i < n; i++) \n\t\t\tif (ord[i] ==\
     \ -1)\n\t\t\t\tdfs(i, -1);\n\t\tfor (int i = 0; i < n; i++) \n\t\t\tadd_component(i);\n\
-    \t\ttree.resize(num_comps);\n\t\tfor (auto &b : bridge) {\n\t\t\tint u = id[b.first];\n\
+    \t\ttree.resize(num_comps);\n\t\tfor (auto& b : bridge) {\n\t\t\tint u = id[b.first];\n\
     \t\t\tint v = id[b.second];\n\t\t\ttree[u].push_back(v);\n\t\t\ttree[v].push_back(u);\
     \            \n\t\t}\n\t\treturn num_comps;\n\t}\n};\n"
   code: "#pragma once\n\nstruct BCC {\n\tint n, time, num_comps; \n\tstd::vector<int>\
@@ -58,14 +58,14 @@ data:
     \t\tid[src] = num_comps++;\n\t\tcomps.emplace_back();\n\t\tfill_component(src);\n\
     \t}\n\t\n\tint build() {\n\t\tfor (int i = 0; i < n; i++) \n\t\t\tif (ord[i] ==\
     \ -1)\n\t\t\t\tdfs(i, -1);\n\t\tfor (int i = 0; i < n; i++) \n\t\t\tadd_component(i);\n\
-    \t\ttree.resize(num_comps);\n\t\tfor (auto &b : bridge) {\n\t\t\tint u = id[b.first];\n\
+    \t\ttree.resize(num_comps);\n\t\tfor (auto& b : bridge) {\n\t\t\tint u = id[b.first];\n\
     \t\t\tint v = id[b.second];\n\t\t\ttree[u].push_back(v);\n\t\t\ttree[v].push_back(u);\
     \            \n\t\t}\n\t\treturn num_comps;\n\t}\n};"
   dependsOn: []
   isVerificationFile: false
   path: library/graphs/biconnected-components.hpp
   requiredBy: []
-  timestamp: '2021-07-24 21:57:36-04:00'
+  timestamp: '2021-08-16 13:31:52-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/yosupo-two_edge_connected_components.test.cpp

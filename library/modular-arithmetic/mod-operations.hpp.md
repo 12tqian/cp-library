@@ -20,9 +20,9 @@ data:
     \ a, int b) { return 1LL * a * b % MOD; }\nint divi(int a, int b) { return mul(a,\
     \ minv(b)); }\nint neg(int a) { return a == 0 ? 0 : MOD - a; }\nint mod(long long\
     \ v) { \n\tv = int((-MOD < v && v < MOD) ? v : v % MOD); if (v < 0) v += MOD;\
-    \ return v; }\n\t\nint madd(int &a, int b) { return a = add(a, b); }\nint msub(int\
-    \ &a, int b) { return a = sub(a, b); }\nint mmul(int &a, int b) { return a = mul(a,\
-    \ b); }\nint mdivi(int &a, int b) { return a = divi(a, b); }\n\n} // ModOperations\n"
+    \ return v; }\n\t\nint madd(int& a, int b) { return a = add(a, b); }\nint msub(int&\
+    \ a, int b) { return a = sub(a, b); }\nint mmul(int& a, int b) { return a = mul(a,\
+    \ b); }\nint mdivi(int& a, int b) { return a = divi(a, b); }\n\n} // ModOperations\n"
   code: "#pragma once\n\nnamespace ModOperations {\n\nconst int MOD = 1e9 + 7;\n\n\
     int mpow(long long b, long long e) {\n\tlong long r = 1;\n\twhile (e) {\n\t\t\
     if (e & 1) {\n\t\t\tr *= b; \n\t\t\tr %= MOD;\n\t\t}\n\t\tb *= b; \n\t\tb %= MOD;\n\
@@ -32,15 +32,15 @@ data:
     \ mul(int a, int b) { return 1LL * a * b % MOD; }\nint divi(int a, int b) { return\
     \ mul(a, minv(b)); }\nint neg(int a) { return a == 0 ? 0 : MOD - a; }\nint mod(long\
     \ long v) { \n\tv = int((-MOD < v && v < MOD) ? v : v % MOD); if (v < 0) v +=\
-    \ MOD; return v; }\n\t\nint madd(int &a, int b) { return a = add(a, b); }\nint\
-    \ msub(int &a, int b) { return a = sub(a, b); }\nint mmul(int &a, int b) { return\
-    \ a = mul(a, b); }\nint mdivi(int &a, int b) { return a = divi(a, b); }\n\n} //\
+    \ MOD; return v; }\n\t\nint madd(int& a, int b) { return a = add(a, b); }\nint\
+    \ msub(int& a, int b) { return a = sub(a, b); }\nint mmul(int& a, int b) { return\
+    \ a = mul(a, b); }\nint mdivi(int& a, int b) { return a = divi(a, b); }\n\n} //\
     \ ModOperations"
   dependsOn: []
   isVerificationFile: false
   path: library/modular-arithmetic/mod-operations.hpp
   requiredBy: []
-  timestamp: '2021-07-31 14:30:12-04:00'
+  timestamp: '2021-08-16 13:31:52-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/codeforces/codeforces-1299D.test.cpp

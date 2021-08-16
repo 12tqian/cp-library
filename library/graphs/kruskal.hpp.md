@@ -21,22 +21,22 @@ data:
     \n\tbool unite(int x, int y) {\n\t\tx = get(x), y = get(y);\n\t\tif (x == y) return\
     \ false;\n\t\tif (e[x] > e[y]) std::swap(x, y);\n\t\te[x] += e[y]; e[y] = x;\n\
     \t\treturn true;\n\t}\n};\n\n\n// weight, start, end\nlong long kruskal(std::vector<std::array<int,\
-    \ 3>> edge) {\n\tDSU D;\n\tint n = 0;\n\tfor (auto &a : edge) {\n\t\tn = std::max(n,\
+    \ 3>> edge) {\n\tDSU D;\n\tint n = 0;\n\tfor (auto& a : edge) {\n\t\tn = std::max(n,\
     \ a[1]);\n\t\tn = std::max(n, a[2]);\n\t}\n\t++n;\n\tD.init(n);\n\tsort(edge.begin(),\
-    \ edge.end());\n\tlong long ans = 0;\n\tfor (auto &a : edge) {\n\t\tif (D.unite(a[1],\
+    \ edge.end());\n\tlong long ans = 0;\n\tfor (auto& a : edge) {\n\t\tif (D.unite(a[1],\
     \ a[2])) {\n\t\t\tans += a[0];\n\t\t}\n\t}\n\treturn ans;\n}\n"
   code: "#pragma once\n\n#include \"dsu.hpp\"\n\n// weight, start, end\nlong long\
     \ kruskal(std::vector<std::array<int, 3>> edge) {\n\tDSU D;\n\tint n = 0;\n\t\
-    for (auto &a : edge) {\n\t\tn = std::max(n, a[1]);\n\t\tn = std::max(n, a[2]);\n\
+    for (auto& a : edge) {\n\t\tn = std::max(n, a[1]);\n\t\tn = std::max(n, a[2]);\n\
     \t}\n\t++n;\n\tD.init(n);\n\tsort(edge.begin(), edge.end());\n\tlong long ans\
-    \ = 0;\n\tfor (auto &a : edge) {\n\t\tif (D.unite(a[1], a[2])) {\n\t\t\tans +=\
+    \ = 0;\n\tfor (auto& a : edge) {\n\t\tif (D.unite(a[1], a[2])) {\n\t\t\tans +=\
     \ a[0];\n\t\t}\n\t}\n\treturn ans;\n}\n"
   dependsOn:
   - library/graphs/dsu.hpp
   isVerificationFile: false
   path: library/graphs/kruskal.hpp
   requiredBy: []
-  timestamp: '2021-07-25 00:45:08-04:00'
+  timestamp: '2021-08-16 13:31:52-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/aizu/aizu-GRL_2_A.test.cpp

@@ -13,8 +13,8 @@ data:
     links: []
   bundledCode: "\ntemplate <class T> struct Simplex {\n\tconst T EPS = 1e-8;\n\tconst\
     \ T INF = 1 / .0;\n\t\n\tint m, n; // constraints, variables\n\n\tstd::vector<int>\
-    \ N, B;\n\n\tstd::vector<std::vector<T>> D;\n\n\tSimplex(const std::vector<std::vector<T>>\
-    \ &A, const std::vector<T> &b, const std::vector<T> &c) : \n\tm(b.size()), n(c.size()),\
+    \ N, B;\n\n\tstd::vector<std::vector<T>> D;\n\n\tSimplex(const std::vector<std::vector<T>>&\
+    \ A, const std::vector<T>& b, const std::vector<T>& c) : \n\tm(b.size()), n(c.size()),\
     \ N(n + 1), B(m), D(m + 2, std::vector<T>(n + 2)) {\n\t\tfor (int i = 0; i < m;\
     \ ++i) {\n\t\t\tfor (int j = 0; j < n; ++j) {\n\t\t\t\tD[i][j] = A[i][j];\n\t\t\
     \t}\n\t\t}\n\t\tfor (int i = 0; i < m; ++i) {\n\t\t\tB[i] = n + i;\n\t\t\tD[i][n]\
@@ -37,7 +37,7 @@ data:
     \t\t}\n\t\t\t\tif (r == -1 || std::make_pair(D[i][n + 1] / D[i][s], B[i]) \n\t\
     \t\t\t\t< std::make_pair(D[r][n + 1] / D[r][s], B[r])) {\n\t\t\t\t\tr = i;\n\t\
     \t\t\t}\n\t\t\t}\n\t\t\tif (r == -1) {\n\t\t\t\treturn false;\n\t\t\t}\n\t\t\t\
-    pivot(r, s);\n\t\t}\n\t}\n\n\tT solve(std::vector<T> &x) {\n\t\tint r = 0;\n\t\
+    pivot(r, s);\n\t\t}\n\t}\n\n\tT solve(std::vector<T>& x) {\n\t\tint r = 0;\n\t\
     \tfor (int i = 1; i < m; ++i) {\n\t\t\tif (D[i][n + 1] < D[r][n + 1]) {\n\t\t\t\
     \tr = i;\n\t\t\t}\n\t\t}\n\t\tif (D[r][n + 1] < -EPS) {\n\t\t\tpivot(r, n);\n\t\
     \t\tif (!simplex(2) || D[m + 1][n + 1] < -EPS) {\n\t\t\t\treturn -INF;\n\t\t\t\
@@ -50,8 +50,8 @@ data:
     \t\t\t}\n\t\t}\n\t\treturn ok ? D[m][n + 1] : INF;\n\t}\n};\n"
   code: "#pragma once\n\ntemplate <class T> struct Simplex {\n\tconst T EPS = 1e-8;\n\
     \tconst T INF = 1 / .0;\n\t\n\tint m, n; // constraints, variables\n\n\tstd::vector<int>\
-    \ N, B;\n\n\tstd::vector<std::vector<T>> D;\n\n\tSimplex(const std::vector<std::vector<T>>\
-    \ &A, const std::vector<T> &b, const std::vector<T> &c) : \n\tm(b.size()), n(c.size()),\
+    \ N, B;\n\n\tstd::vector<std::vector<T>> D;\n\n\tSimplex(const std::vector<std::vector<T>>&\
+    \ A, const std::vector<T>& b, const std::vector<T>& c) : \n\tm(b.size()), n(c.size()),\
     \ N(n + 1), B(m), D(m + 2, std::vector<T>(n + 2)) {\n\t\tfor (int i = 0; i < m;\
     \ ++i) {\n\t\t\tfor (int j = 0; j < n; ++j) {\n\t\t\t\tD[i][j] = A[i][j];\n\t\t\
     \t}\n\t\t}\n\t\tfor (int i = 0; i < m; ++i) {\n\t\t\tB[i] = n + i;\n\t\t\tD[i][n]\
@@ -74,7 +74,7 @@ data:
     \t\t}\n\t\t\t\tif (r == -1 || std::make_pair(D[i][n + 1] / D[i][s], B[i]) \n\t\
     \t\t\t\t< std::make_pair(D[r][n + 1] / D[r][s], B[r])) {\n\t\t\t\t\tr = i;\n\t\
     \t\t\t}\n\t\t\t}\n\t\t\tif (r == -1) {\n\t\t\t\treturn false;\n\t\t\t}\n\t\t\t\
-    pivot(r, s);\n\t\t}\n\t}\n\n\tT solve(std::vector<T> &x) {\n\t\tint r = 0;\n\t\
+    pivot(r, s);\n\t\t}\n\t}\n\n\tT solve(std::vector<T>& x) {\n\t\tint r = 0;\n\t\
     \tfor (int i = 1; i < m; ++i) {\n\t\t\tif (D[i][n + 1] < D[r][n + 1]) {\n\t\t\t\
     \tr = i;\n\t\t\t}\n\t\t}\n\t\tif (D[r][n + 1] < -EPS) {\n\t\t\tpivot(r, n);\n\t\
     \t\tif (!simplex(2) || D[m + 1][n + 1] < -EPS) {\n\t\t\t\treturn -INF;\n\t\t\t\
@@ -89,7 +89,7 @@ data:
   isVerificationFile: false
   path: library/numerical/simplex.hpp
   requiredBy: []
-  timestamp: '2021-08-13 01:26:19-04:00'
+  timestamp: '2021-08-16 13:31:52-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/kattis/kattis-cheeseifyouplease.test.cpp

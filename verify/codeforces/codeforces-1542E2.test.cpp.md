@@ -26,11 +26,11 @@ data:
     \ <string>\n#include <unordered_map>\n#include <vector>\n\nusing namespace std;\n\
     \ntemplate <class T> class range_vector : public std::vector<T> {\npublic:\n\t\
     int min_index;\n\n\trange_vector() : min_index(0) {}\n\n\trange_vector(int _min_index,\
-    \ int _max_index, T &&values = T())\n\t\t: std::vector<T>(_max_index - _min_index\
+    \ int _max_index, T&& values = T())\n\t\t: std::vector<T>(_max_index - _min_index\
     \ + 1, values), min_index(_min_index) {\n\t\tassert(_min_index <= _max_index +\
-    \ 1);\n\t}\n\t\n\trange_vector(int _max_index, T &&values = T())\n\t\t: std::vector<T>(_max_index\
+    \ 1);\n\t}\n\t\n\trange_vector(int _max_index, T&& values = T())\n\t\t: std::vector<T>(_max_index\
     \ + 1, values), min_index(0) {\n\t\tassert(0 <= _max_index + 1);\n\t}\n\t\n\t\
-    T& operator[](int i) { std::vector<T> &self = *this; return self[i - min_index];\
+    T& operator[](int i) { std::vector<T>& self = *this; return self[i - min_index];\
     \ }\n};\n\nstruct FastMod {\n\tunsigned long long b, m;\n\tFastMod(unsigned long\
     \ long b) : b(b), m((unsigned long long)((__uint128_t(1) << 64) / b)) {}\n\tunsigned\
     \ long long reduce(unsigned long long a) {\n\t\tunsigned long long q = (unsigned\
@@ -161,7 +161,7 @@ data:
   isVerificationFile: true
   path: verify/codeforces/codeforces-1542E2.test.cpp
   requiredBy: []
-  timestamp: '2021-07-28 19:45:54-04:00'
+  timestamp: '2021-08-16 13:31:52-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/codeforces/codeforces-1542E2.test.cpp

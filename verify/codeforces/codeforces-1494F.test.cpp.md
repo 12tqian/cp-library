@@ -49,7 +49,7 @@ data:
     \ get_path(int src = 0) {\n\t\tits.resize(n);\n\t\tstd::vector<std::pair<int,\
     \ int>> ans, s{{src, -1}};\n\t\tfor (int i = 0; i < n; i++) {\n\t\t\tits[i] =\
     \ adj[i].begin();\n\t\t}\n\t\tint lst = -1;\n\t\twhile ((int)s.size()) {\n\t\t\
-    \tint x = s.back().first;\n\t\t\tauto &it = its[x];\n\t\t\tauto en = adj[x].end();\n\
+    \tint x = s.back().first;\n\t\t\tauto& it = its[x];\n\t\t\tauto en = adj[x].end();\n\
     \t\t\twhile (it != en && used[it->second]) {\n\t\t\t\t++it;\n\t\t\t}\n\t\t\tif\
     \ (it == en) {\n\t\t\t\tif (lst != -1 && lst != x) {\n\t\t\t\t\treturn {};\n\t\
     \t\t\t}\n\t\t\t\tans.push_back(s.back());\n\t\t\t\ts.pop_back();\n\t\t\t\tif ((int)s.size())\
@@ -153,7 +153,7 @@ data:
   isVerificationFile: true
   path: verify/codeforces/codeforces-1494F.test.cpp
   requiredBy: []
-  timestamp: '2021-08-13 00:54:25-04:00'
+  timestamp: '2021-08-16 13:31:52-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/codeforces/codeforces-1494F.test.cpp

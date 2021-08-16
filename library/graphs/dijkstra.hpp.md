@@ -20,7 +20,7 @@ data:
     \ std::vector<T>, std::greater<T>> pq;\n\t\tauto ad = [&](int a, C b) {\n\t\t\t\
     if (dist[a] <= b) return;\n\t\t\tpq.push({dist[a] = b, a});\n\t\t};\n\t\tad(st,\
     \ 0);\n\t\twhile (!pq.empty()) {\n\t\t\tauto x = pq.top();\n\t\t\tpq.pop();\n\t\
-    \t\tif (dist[x.second] < x.first) continue;\n\t\t\tfor (auto &y: adj[x.second])\
+    \t\tif (dist[x.second] < x.first) continue;\n\t\t\tfor (auto& y: adj[x.second])\
     \ {\n\t\t\t\tad(y.first, x.first + y.second);\n\t\t\t}\n\t\t}\n\t}\n};\n"
   code: "#pragma once\n\ntemplate <class C, bool directed> struct Dijkstra {\n\tint\
     \ SZ; std::vector<C> dist;\n\tstd::vector<std::vector<std::pair<int, C>>> adj;\n\
@@ -32,13 +32,13 @@ data:
     \tauto ad = [&](int a, C b) {\n\t\t\tif (dist[a] <= b) return;\n\t\t\tpq.push({dist[a]\
     \ = b, a});\n\t\t};\n\t\tad(st, 0);\n\t\twhile (!pq.empty()) {\n\t\t\tauto x =\
     \ pq.top();\n\t\t\tpq.pop();\n\t\t\tif (dist[x.second] < x.first) continue;\n\t\
-    \t\tfor (auto &y: adj[x.second]) {\n\t\t\t\tad(y.first, x.first + y.second);\n\
+    \t\tfor (auto& y: adj[x.second]) {\n\t\t\t\tad(y.first, x.first + y.second);\n\
     \t\t\t}\n\t\t}\n\t}\n};\n"
   dependsOn: []
   isVerificationFile: false
   path: library/graphs/dijkstra.hpp
   requiredBy: []
-  timestamp: '2021-07-24 19:40:07-04:00'
+  timestamp: '2021-08-16 13:31:52-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/aizu/aizu-GRL_1_A.test.cpp

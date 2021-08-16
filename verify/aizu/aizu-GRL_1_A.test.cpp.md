@@ -33,7 +33,7 @@ data:
     \ std::vector<T>, std::greater<T>> pq;\n\t\tauto ad = [&](int a, C b) {\n\t\t\t\
     if (dist[a] <= b) return;\n\t\t\tpq.push({dist[a] = b, a});\n\t\t};\n\t\tad(st,\
     \ 0);\n\t\twhile (!pq.empty()) {\n\t\t\tauto x = pq.top();\n\t\t\tpq.pop();\n\t\
-    \t\tif (dist[x.second] < x.first) continue;\n\t\t\tfor (auto &y: adj[x.second])\
+    \t\tif (dist[x.second] < x.first) continue;\n\t\t\tfor (auto& y: adj[x.second])\
     \ {\n\t\t\t\tad(y.first, x.first + y.second);\n\t\t\t}\n\t\t}\n\t}\n};\n\nint\
     \ main() {\n\tusing namespace std;\n\tcin.tie(0)->sync_with_stdio(0);\n\tint n,\
     \ m, r;\n\tcin >> n >> m >> r;\n\tDijkstra<long long, true> D;\n\tD.init(n);\n\
@@ -55,7 +55,7 @@ data:
   isVerificationFile: true
   path: verify/aizu/aizu-GRL_1_A.test.cpp
   requiredBy: []
-  timestamp: '2021-07-28 19:45:54-04:00'
+  timestamp: '2021-08-16 13:31:52-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aizu/aizu-GRL_1_A.test.cpp

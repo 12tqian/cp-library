@@ -16,8 +16,8 @@ data:
     \ i * i <= x; ++i) {\n\t\tif (x % i == 0) {\n\t\t\tint t = 0;\n\t\t\twhile (x\
     \ % i == 0) x /= i, t++;\n\t\t\tpri.push_back({i, t});\n\t\t}\n\t}\n\tif (x >\
     \ 1) pri.push_back({x, 1});\n\treturn pri;\n}\n\ntemplate <class T> T phi(T x)\
-    \ {\n\tfor (auto &a : factor(x)) x -= x / a.first;\n\treturn x;\n}\n\ntemplate\
-    \ <class T> void tour(std::vector<std::pair<T, int>> &v, std::vector<T> &res,\
+    \ {\n\tfor (auto& a : factor(x)) x -= x / a.first;\n\treturn x;\n}\n\ntemplate\
+    \ <class T> void tour(std::vector<std::pair<T, int>>& v, std::vector<T>& res,\
     \ int ind, T cur) {\n\tif (ind == (int)v.size()) res.push_back(cur);\n\telse {\n\
     \t\tT mul = 1;\n\t\tfor (int i = 0; i < v[ind].second + 1; i++) {\n\t\t\ttour(v,\
     \ res, ind + 1, cur * mul);\n\t\t\tmul *= v[ind].first;\n\t\t}\n\t}\n}\n\ntemplate\
@@ -29,8 +29,8 @@ data:
     \ i * i <= x; ++i) {\n\t\tif (x % i == 0) {\n\t\t\tint t = 0;\n\t\t\twhile (x\
     \ % i == 0) x /= i, t++;\n\t\t\tpri.push_back({i, t});\n\t\t}\n\t}\n\tif (x >\
     \ 1) pri.push_back({x, 1});\n\treturn pri;\n}\n\ntemplate <class T> T phi(T x)\
-    \ {\n\tfor (auto &a : factor(x)) x -= x / a.first;\n\treturn x;\n}\n\ntemplate\
-    \ <class T> void tour(std::vector<std::pair<T, int>> &v, std::vector<T> &res,\
+    \ {\n\tfor (auto& a : factor(x)) x -= x / a.first;\n\treturn x;\n}\n\ntemplate\
+    \ <class T> void tour(std::vector<std::pair<T, int>>& v, std::vector<T>& res,\
     \ int ind, T cur) {\n\tif (ind == (int)v.size()) res.push_back(cur);\n\telse {\n\
     \t\tT mul = 1;\n\t\tfor (int i = 0; i < v[ind].second + 1; i++) {\n\t\t\ttour(v,\
     \ res, ind + 1, cur * mul);\n\t\t\tmul *= v[ind].first;\n\t\t}\n\t}\n}\n\ntemplate\
@@ -41,7 +41,7 @@ data:
   isVerificationFile: false
   path: library/number-theory/basic-factor.hpp
   requiredBy: []
-  timestamp: '2021-08-13 01:20:42-04:00'
+  timestamp: '2021-08-16 13:31:52-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/spoj/spoj-FACT0.test.cpp

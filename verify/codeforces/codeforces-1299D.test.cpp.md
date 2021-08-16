@@ -39,9 +39,9 @@ data:
     \ 1LL * a * b % MOD; }\nint divi(int a, int b) { return mul(a, minv(b)); }\nint\
     \ neg(int a) { return a == 0 ? 0 : MOD - a; }\nint mod(long long v) { \n\tv =\
     \ int((-MOD < v && v < MOD) ? v : v % MOD); if (v < 0) v += MOD; return v; }\n\
-    \t\nint madd(int &a, int b) { return a = add(a, b); }\nint msub(int &a, int b)\
-    \ { return a = sub(a, b); }\nint mmul(int &a, int b) { return a = mul(a, b); }\n\
-    int mdivi(int &a, int b) { return a = divi(a, b); }\n\n} // ModOperations\n\n\
+    \t\nint madd(int& a, int b) { return a = add(a, b); }\nint msub(int& a, int b)\
+    \ { return a = sub(a, b); }\nint mmul(int& a, int b) { return a = mul(a, b); }\n\
+    int mdivi(int& a, int b) { return a = divi(a, b); }\n\n} // ModOperations\n\n\
     void full_reduce(std::vector<int>& b) {\n\tint n = (int)b.size();\n\tfor (int\
     \ i = n - 1; i >= 0; i--) {\n\t\tfor (int j = i - 1; j >= 0; j--) {\n\t\t\tb[j]\
     \ = std::min(b[j], b[j] ^ b[i]);\n\t\t}\n\t}\n}\n\ntemplate <class T> T reduce(std::vector<T>&\
@@ -178,7 +178,7 @@ data:
   isVerificationFile: true
   path: verify/codeforces/codeforces-1299D.test.cpp
   requiredBy: []
-  timestamp: '2021-08-13 01:29:17-04:00'
+  timestamp: '2021-08-16 13:31:52-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/codeforces/codeforces-1299D.test.cpp

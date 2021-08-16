@@ -31,22 +31,22 @@ data:
     \ std::vector<int>());\n\t\tvis.assign(n, false);\n\t\tid.assign(n, -1);\n\t\t\
     ord.clear();\n\t\troots.clear();     \n\t\ttopo_ord.clear();  \n\t}\n\n\tvoid\
     \ ae(int u, int v) {\n\t\tg[u].push_back(v);\n\t\trg[v].push_back(u);\n\t}\n\n\
-    \tvoid dfs_order(int u) {\n\t\tvis[u] = true;\n\t\tfor (auto &v : g[u]) {\n\t\t\
+    \tvoid dfs_order(int u) {\n\t\tvis[u] = true;\n\t\tfor (auto& v : g[u]) {\n\t\t\
     \tif (vis[v]) \n\t\t\t\tcontinue;\n\t\t\tdfs_order(v);\n\t\t}\n\t\tord.push_back(u);\n\
-    \t}\n\n\tvoid dfs_color(int u, int c) {\n\t\tid[u] = c;\n\t\tfor (int &v : rg[u])\
+    \t}\n\n\tvoid dfs_color(int u, int c) {\n\t\tid[u] = c;\n\t\tfor (int& v : rg[u])\
     \ \n\t\t\tif (id[v] == -1) \n\t\t\t\tdfs_color(v, c);\n\t}\n\n\tvoid topological_sort()\
     \ {\n\t\tstd::vector<int> in(n);\n\t\tstd::list<int> todo;\n\t\tfor (int i = 0;\
-    \ i < n; ++i) \n\t\t\tfor (auto &j : scc_graph[i])\n\t\t\t\t++in[j];\n\t\tfor\
+    \ i < n; ++i) \n\t\t\tfor (auto& j : scc_graph[i])\n\t\t\t\t++in[j];\n\t\tfor\
     \ (int i = 0; i < n; ++i)\n\t\t\tif (!in[i] && id[i] == i)\n\t\t\t\ttodo.push_back(i);\n\
     \t\twhile (!todo.empty()) {\n\t\t\tint u = todo.front();\n\t\t\ttodo.pop_front();\n\
-    \t\t\ttopo_ord.push_back(u);\n\t\t\tfor (auto &v : scc_graph[u]) \n\t\t\t\tif\
+    \t\t\ttopo_ord.push_back(u);\n\t\t\tfor (auto& v : scc_graph[u]) \n\t\t\t\tif\
     \ (!(--in[v])) \n\t\t\t\t\ttodo.push_back(v);\n\t\t}\n\t}\n\n\tvoid build_scc_graph()\
     \ {\n\t\tfor (int i = 0; i < n; ++i) {\n\t\t\tcomps[id[i]].push_back(i);\n\t\t\
-    \tfor (auto &j : g[i]) {\n\t\t\t\tif (id[i] == id[j]) \n\t\t\t\t\tcontinue;\n\t\
+    \tfor (auto& j : g[i]) {\n\t\t\t\tif (id[i] == id[j]) \n\t\t\t\t\tcontinue;\n\t\
     \t\t\tscc_graph[id[i]].push_back(id[j]);\n\t\t\t}\n\t\t}\n\t\ttopological_sort();\n\
     \t}\n\n\tvoid gen() {\n\t\tfor (int i = 0; i < n; ++i) {\n\t\t\tif (!vis[i])\n\
-    \t\t\t\tdfs_order(i);\n\t\t}\n\t\treverse(ord.begin(), ord.end());\n\t\tfor (auto\
-    \ &x : ord) \n\t\t\tif (id[x] == -1) \n\t\t\t\tdfs_color(x, x), roots.push_back(x);\n\
+    \t\t\t\tdfs_order(i);\n\t\t}\n\t\treverse(ord.begin(), ord.end());\n\t\tfor (auto&\
+    \ x : ord) \n\t\t\tif (id[x] == -1) \n\t\t\t\tdfs_color(x, x), roots.push_back(x);\n\
     \t}\n};\n\nint main() {\n\tusing namespace std;\n\tcin.tie(0)->sync_with_stdio(0);\n\
     \tint n, m; \n\tcin >> n >> m;\n\tSCC S; S.init(n);\n\tfor (int i = 0; i < m;\
     \ ++i) {\n\t\tint u, v;\n\t\tcin >> u >> v;\n\t\tS.ae(u, v);\n\t}\n\tS.gen();\n\
@@ -67,7 +67,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/yosupo-scc-kosaraju.test.cpp
   requiredBy: []
-  timestamp: '2021-07-28 19:45:54-04:00'
+  timestamp: '2021-08-16 13:31:52-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/yosupo-scc-kosaraju.test.cpp

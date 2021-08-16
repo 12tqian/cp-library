@@ -29,12 +29,12 @@ data:
     \ ans;\n\n\tvoid upd(int l, int r, std::pair<int, int> p) {\n\t\t// add edge p\
     \ from time [l, r]\n\t\tfor (l += sz, r += sz + 1; l < r; l /= 2, r /= 2) {\n\t\
     \t\tif (l & 1) seg[l++].push_back(p);\n\t\t\tif (r & 1) seg[--r].push_back(p);\n\
-    \t\t}\n\t}\n\n\tvoid process(int ind) {\n\t\tfor (auto &t : seg[ind]) {\n\t\t\t\
+    \t\t}\n\t}\n\n\tvoid process(int ind) {\n\t\tfor (auto& t : seg[ind]) {\n\t\t\t\
     dsu.unite(t.first, t.second);\n\t\t}\n\t\tif (ind >= sz) {\n\t\t\t// Process the\
     \ queries at time ti\n\t\t\t// Do stuff with D\n\t\t\tint ti = ind - sz; \n\t\t\
-    \tfor (auto &qq : queries[ti]) {\n\t\t\t\tans.push_back(dsu.same_set(qq.first,\
+    \tfor (auto& qq : queries[ti]) {\n\t\t\t\tans.push_back(dsu.same_set(qq.first,\
     \ qq.second));\n\t\t\t}\n\t\t} else {\n\t\t\tprocess(2 * ind); process(2 * ind\
-    \ + 1);\n\t\t}\n\t\tfor (auto &t : seg[ind]) {\n\t\t\tdsu.rollback();\n\t\t}\n\
+    \ + 1);\n\t\t}\n\t\tfor (auto& t : seg[ind]) {\n\t\t\tdsu.rollback();\n\t\t}\n\
     \t}\n\n\tvoid init(int n, int max_time) {\n\t\tsz = 1;\n\t\twhile (sz < max_time)\
     \ sz *= 2;\n\t\tseg.assign(2 * sz, {});\n\t\tqueries.assign(sz, {});\n\t\tdsu.init(n);\n\
     \t}\n\n\tvoid add_query(int ti, int u, int v) {\n\t\tqueries[ti].emplace_back(u,\
@@ -46,12 +46,12 @@ data:
     \ ans;\n\n\tvoid upd(int l, int r, std::pair<int, int> p) {\n\t\t// add edge p\
     \ from time [l, r]\n\t\tfor (l += sz, r += sz + 1; l < r; l /= 2, r /= 2) {\n\t\
     \t\tif (l & 1) seg[l++].push_back(p);\n\t\t\tif (r & 1) seg[--r].push_back(p);\n\
-    \t\t}\n\t}\n\n\tvoid process(int ind) {\n\t\tfor (auto &t : seg[ind]) {\n\t\t\t\
+    \t\t}\n\t}\n\n\tvoid process(int ind) {\n\t\tfor (auto& t : seg[ind]) {\n\t\t\t\
     dsu.unite(t.first, t.second);\n\t\t}\n\t\tif (ind >= sz) {\n\t\t\t// Process the\
     \ queries at time ti\n\t\t\t// Do stuff with D\n\t\t\tint ti = ind - sz; \n\t\t\
-    \tfor (auto &qq : queries[ti]) {\n\t\t\t\tans.push_back(dsu.same_set(qq.first,\
+    \tfor (auto& qq : queries[ti]) {\n\t\t\t\tans.push_back(dsu.same_set(qq.first,\
     \ qq.second));\n\t\t\t}\n\t\t} else {\n\t\t\tprocess(2 * ind); process(2 * ind\
-    \ + 1);\n\t\t}\n\t\tfor (auto &t : seg[ind]) {\n\t\t\tdsu.rollback();\n\t\t}\n\
+    \ + 1);\n\t\t}\n\t\tfor (auto& t : seg[ind]) {\n\t\t\tdsu.rollback();\n\t\t}\n\
     \t}\n\n\tvoid init(int n, int max_time) {\n\t\tsz = 1;\n\t\twhile (sz < max_time)\
     \ sz *= 2;\n\t\tseg.assign(2 * sz, {});\n\t\tqueries.assign(sz, {});\n\t\tdsu.init(n);\n\
     \t}\n\n\tvoid add_query(int ti, int u, int v) {\n\t\tqueries[ti].emplace_back(u,\
@@ -62,7 +62,7 @@ data:
   isVerificationFile: false
   path: library/graphs/offline-dynamic-connectivity.hpp
   requiredBy: []
-  timestamp: '2021-07-28 18:32:54-04:00'
+  timestamp: '2021-08-16 13:31:52-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/spoj/spoj-DYNACON2.test.cpp
