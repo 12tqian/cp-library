@@ -1,11 +1,5 @@
 #pragma once
 
-/**
- * 1-indexed 
- * log(n)^2 query, update
- * O(n^2) space
- */
-
 constexpr int bits(int x) { return x == 0 ? 0 : 31 - __builtin_clz(x); } 
 
 template <class T, int ...Ns> struct BIT {

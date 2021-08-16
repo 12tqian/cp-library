@@ -10,7 +10,7 @@ template <class T> struct SparseTable {
 		return v[a] == v[b] ? std::min(a, b) : (v[a] < v[b] ? a : b);
 	}
 
-	void init(const std::vector<T> &_v) {
+	void init(const std::vector<T>& _v) {
 		v = _v;
 		jump = {std::vector<int>((int)v.size())};
 		iota(jump[0].begin(), jump[0].end(), 0);

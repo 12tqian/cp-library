@@ -14,7 +14,7 @@ const int SZ = 1 << 30;
 
 template <class T> struct Node {
 	T val = 0; 
-	Node<T> *c[2];
+	Node<T>* c[2];
 	Node() { c[0] = c[1] = NULL; }
 
 	void upd(int ind, T v, int L = 0, int R = SZ - 1) { // add v
@@ -42,7 +42,7 @@ template <class T> struct Node {
 		return res;
 	}
 
-	void update_2d(int ind, Node *c0, Node *c1, int L = 0, int R = SZ - 1) { // for 2D segtree
+	void update_2d(int ind, Node* c0, Node* c1, int L = 0, int R = SZ - 1) { // for 2D segtree
 		if (L != R)	 {
 			int M = (L + R) / 2;
 			if (ind <= M) {

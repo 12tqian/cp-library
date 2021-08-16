@@ -60,7 +60,7 @@ template <class C> struct SegmentTreeBeats {
 	}
 
 	void push(int ind, int L, int R) {
-		auto chk = [](C &a, C b, C c) {
+		auto chk = [](C& a, C b, C c) {
 			if (a == b)
 				a = c;
 		};
@@ -98,7 +98,7 @@ template <class C> struct SegmentTreeBeats {
 		}
 		if (mod[ind] != 0) {
 			sum[ind] += mod[ind] * (R - L + 1);
-			auto inc = [&](T &a, C b) {
+			auto inc = [&](T& a, C b) {
 				if (std::abs(a.first.first) != INF) 
 					a.first.first += b;
 				if (std::abs(a.first.second) != INF)

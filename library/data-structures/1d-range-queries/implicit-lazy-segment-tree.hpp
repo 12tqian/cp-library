@@ -1,7 +1,7 @@
 #pragma once
 
 template <class T> struct SegmentTree {
-	SegmentTree<T> *left, *right;
+	SegmentTree<T>* left, * right;
 	T sum, lazy;
 
 	SegmentTree(int l, int r) {

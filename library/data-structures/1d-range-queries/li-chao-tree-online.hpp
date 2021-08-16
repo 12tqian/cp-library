@@ -16,7 +16,7 @@ struct Line {
 };
 
 struct Node {
-	Node *c[2]; Line S;
+	Node* c[2]; Line S;
 
 	Node() { c[0] = c[1] = NULL; S = Line(); }
 	~Node() { for (int i = 0; i < 2; i++) delete c[i]; }
