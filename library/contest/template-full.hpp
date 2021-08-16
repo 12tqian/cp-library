@@ -1,36 +1,13 @@
 #pragma once
 
-#pragma GCC optimize ("O3")
-#pragma GCC target ("sse4")
+#include "../misc/pragma-short.hpp"
+#include "template-minimal.hpp"
 
-#include <algorithm>
-#include <array>
-#include <bitset>
-#include <cassert>
-#include <chrono>
-#include <cmath>
-#include <complex>
-#include <cstdio>
-#include <cstdlib>
-#include <cstring>
-#include <ctime>
-#include <deque>
-#include <iostream>
-#include <iomanip>
-#include <map>
-#include <numeric>
-#include <queue>
-#include <random>
-#include <set>
-#include <stack>
-#include <string>
-#include <unordered_map>
-#include <vector>
 #include <ext/pb_ds/tree_policy.hpp>
 #include <ext/pb_ds/assoc_container.hpp>
 
-using namespace std;
 using namespace __gnu_pbds;
+
 template <class T> using Tree = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
 
 typedef long long ll;

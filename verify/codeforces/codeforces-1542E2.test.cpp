@@ -1,7 +1,7 @@
 #define PROBLEM "https://codeforces.com/contest/1542/problem/E2"
 
 #include "../../library/contest/template-minimal.hpp"
-#include "../../library/misc/range-vector.hpp"
+#include "../../library/data-structures/range-vector.hpp"
 
 struct FastMod {
 	unsigned long long b, m;
