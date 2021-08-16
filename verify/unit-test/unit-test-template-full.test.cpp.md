@@ -69,8 +69,8 @@ data:
     \ T, typename... Args> void debug(string s, T x, Args... args) { cerr << s.substr(0,\
     \ s.find(',')) << \" = \" << x << \" | \"; debug(s.substr(s.find(',') + 2), args...);\
     \ }\n\nconstexpr int pct(int x) { return __builtin_popcount(x); }\nconstexpr int\
-    \ bits(int x) { return 31 - __builtin_clz(x); } // floor(log2(x))\n\n\ninline\
-    \ namespace Helpers {\n\t//////////// is_iterable\n\t// https://stackoverflow.com/questions/13830158/check-if-a-variable-type-is-iterable\n\
+    \ bits(int x) { return 31 - __builtin_clz(x); } // floor(log2(x))\n\ninline namespace\
+    \ Helpers {\n\t//////////// is_iterable\n\t// https://stackoverflow.com/questions/13830158/check-if-a-variable-type-is-iterable\n\
     \t// this gets used only when we can call begin() and end() on that type\n\ttemplate\
     \ <class T, class = void> struct is_iterable : false_type {};\n\ttemplate <class\
     \ T> struct is_iterable<T, void_t<decltype(begin(declval<T>())),\n\t\t\t\t\t\t\
@@ -191,7 +191,7 @@ data:
   isVerificationFile: true
   path: verify/unit-test/unit-test-template-full.test.cpp
   requiredBy: []
-  timestamp: '2021-08-16 13:59:27-04:00'
+  timestamp: '2021-08-16 14:17:33-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/unit-test/unit-test-template-full.test.cpp
