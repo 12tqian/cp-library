@@ -235,7 +235,7 @@ data:
       title: library/number-theory/fast-factor-sieve.hpp
     - icon: ':heavy_check_mark:'
       path: library/number-theory/linear-sieve.hpp
-      title: library/number-theory/linear-sieve.hpp
+      title: Linear Sieve
     - icon: ':heavy_check_mark:'
       path: library/number-theory/sieve.hpp
       title: library/number-theory/sieve.hpp

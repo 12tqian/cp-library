@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: library/number-theory/linear-sieve.hpp
-    title: library/number-theory/linear-sieve.hpp
+    title: Linear Sieve
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
