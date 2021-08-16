@@ -3,6 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
+    path: library/contest/template-full.cpp
+    title: library/contest/template-full.cpp
+  - icon: ':heavy_check_mark:'
+    path: library/contest/template-full.hpp
+    title: library/contest/template-full.hpp
+  - icon: ':heavy_check_mark:'
     path: library/graphs/enumerate-triangles.cpp
     title: library/graphs/enumerate-triangles.cpp
   _extendedVerifiedWith:
@@ -91,6 +97,21 @@ data:
     path: verify/spoj/spoj-MMFSUNDARAM.test.cpp
     title: verify/spoj/spoj-MMFSUNDARAM.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/unit-test/unit-test-big-integer.test.cpp
+    title: verify/unit-test/unit-test-big-integer.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/unit-test/unit-test-fraction.test.cpp
+    title: verify/unit-test/unit-test-fraction.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/unit-test/unit-test-gosper-hack.test.cpp
+    title: verify/unit-test/unit-test-gosper-hack.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/unit-test/unit-test-hashing.test.cpp
+    title: verify/unit-test/unit-test-hashing.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/unit-test/unit-test-template-full.test.cpp
+    title: verify/unit-test/unit-test-template-full.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-assignment.test.cpp
     title: verify/yosupo/yosupo-assignment.test.cpp
   - icon: ':heavy_check_mark:'
@@ -120,6 +141,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-find_linear_recurrence.test.cpp
     title: verify/yosupo/yosupo-find_linear_recurrence.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
+    title: verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-inv_of_formal_power_series.test.cpp
     title: verify/yosupo/yosupo-inv_of_formal_power_series.test.cpp
@@ -332,6 +356,8 @@ data:
   isVerificationFile: false
   path: library/contest/template-minimal.hpp
   requiredBy:
+  - library/contest/template-full.hpp
+  - library/contest/template-full.cpp
   - library/graphs/enumerate-triangles.cpp
   timestamp: '2021-07-28 19:45:54-04:00'
   verificationStatus: LIBRARY_ALL_AC
@@ -359,6 +385,7 @@ data:
   - verify/yosupo/yosupo-static_range_sum.test.cpp
   - verify/yosupo/yosupo-multipoint_evaluation.test.cpp
   - verify/yosupo/yosupo-suffixarray-lcp.test.cpp
+  - verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
   - verify/yosupo/yosupo-pow_of_formal_power_series.test.cpp
   - verify/yosupo/yosupo-unionfind.test.cpp
   - verify/yosupo/yosupo-range_chmin_chmax_add_range_sum.test.cpp
@@ -406,6 +433,11 @@ data:
   - verify/kattis/kattis-equationsolver-matrix.test.cpp
   - verify/kattis/kattis-cheeseifyouplease.test.cpp
   - verify/kattis/kattis-mincostmaxflow.test.cpp
+  - verify/unit-test/unit-test-template-full.test.cpp
+  - verify/unit-test/unit-test-hashing.test.cpp
+  - verify/unit-test/unit-test-fraction.test.cpp
+  - verify/unit-test/unit-test-big-integer.test.cpp
+  - verify/unit-test/unit-test-gosper-hack.test.cpp
 documentation_of: library/contest/template-minimal.hpp
 layout: document
 redirect_from:

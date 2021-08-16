@@ -5,6 +5,9 @@ data:
     path: library/contest/template-full.hpp
     title: library/contest/template-full.hpp
   - icon: ':heavy_check_mark:'
+    path: library/contest/template-minimal.hpp
+    title: library/contest/template-minimal.hpp
+  - icon: ':heavy_check_mark:'
     path: library/data-structures/1d-range-queries/sparse-table.hpp
     title: Sparse Table
   - icon: ':heavy_check_mark:'
@@ -16,6 +19,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/misc/easy-io.hpp
     title: library/misc/easy-io.hpp
+  - icon: ':heavy_check_mark:'
+    path: library/misc/pragma-short.hpp
+    title: library/misc/pragma-short.hpp
+  - icon: ':heavy_check_mark:'
+    path: library/modular-arithmetic/mod-int.hpp
+    title: library/modular-arithmetic/mod-int.hpp
   - icon: ':heavy_check_mark:'
     path: library/modular-arithmetic/mod-int2.hpp
     title: library/modular-arithmetic/mod-int2.hpp
@@ -36,48 +45,48 @@ data:
     links:
     - https://judge.yosupo.jp/problem/frequency_table_of_tree_distance
   bundledCode: "#define PROBLEM \"https://judge.yosupo.jp/problem/frequency_table_of_tree_distance\"\
-    \n\n\n#pragma GCC optimize (\"O3\")\n#pragma GCC target (\"sse4\")\n\n#include\
+    \n\n\n\n#pragma GCC optimize (\"O3\")\n#pragma GCC target (\"sse4\")\n\n#include\
     \ <algorithm>\n#include <array>\n#include <bitset>\n#include <cassert>\n#include\
     \ <chrono>\n#include <cmath>\n#include <complex>\n#include <cstdio>\n#include\
     \ <cstdlib>\n#include <cstring>\n#include <ctime>\n#include <deque>\n#include\
-    \ <iostream>\n#include <iomanip>\n#include <map>\n#include <numeric>\n#include\
-    \ <queue>\n#include <random>\n#include <set>\n#include <stack>\n#include <string>\n\
-    #include <unordered_map>\n#include <vector>\n#include <ext/pb_ds/tree_policy.hpp>\n\
-    #include <ext/pb_ds/assoc_container.hpp>\n\nusing namespace std;\nusing namespace\
-    \ __gnu_pbds;\ntemplate <class T> using Tree = tree<T, null_type, less<T>, rb_tree_tag,\
-    \ tree_order_statistics_node_update>;\n\ntypedef long long ll;\ntypedef long double\
-    \ ld;\ntypedef double db;\ntypedef string str;\n\ntypedef pair<int, int> pi;\n\
-    typedef pair<ll, ll> pl;\ntypedef pair<db, db> pd;\n\ntypedef vector<int> vi;\n\
-    typedef vector<bool> vb;\ntypedef vector<ll> vl;\ntypedef vector<db> vd;\ntypedef\
-    \ vector<str> vs;\ntypedef vector<pi> vpi;\ntypedef vector<pl> vpl;\ntypedef vector<pd>\
-    \ vpd;\n\n#define mp make_pair\n#define f first\n#define s second\n#define sz(x)\
-    \ (int)(x).size()\n#define all(x) begin(x), end(x)\n#define rall(x) (x).rbegin(),\
-    \ (x).rend()\n#define sor(x) sort(all(x))\n#define rsz resize\n#define resz resize\n\
-    #define ins insert\n#define ft front()\n#define bk back()\n#define pf push_front\n\
-    #define pb push_back\n#define eb emplace_back\n#define lb lower_bound\n#define\
-    \ ub upper_bound\n\n#define f1r(i, a, b) for (int i = (a); i < (b); ++i)\n#define\
-    \ f0r(i, a) f1r(i, 0, a)\n#define FOR(i, a, b) for (int i = (a); i < (b); ++i)\n\
-    #define F0R(i, a) FOR(i, 0, a)\n#define ROF(i, a, b) for (int i = (b) - 1; i >=\
-    \ (a); --i)\n#define R0F(i, a) ROF(i, 0, a)\n#define each(a, x) for (auto &a :\
-    \ x)\n\nmt19937 rng((uint32_t)chrono::steady_clock::now().time_since_epoch().count());\n\
-    \ntemplate <class T> bool ckmin(T &a, const T &b) { return b < a ? a = b, 1 :\
-    \ 0; }\ntemplate <class T> bool ckmax(T &a, const T &b) { return a < b ? a = b,\
+    \ <iostream>\n#include <iomanip>\n#include <list>\n#include <map>\n#include <numeric>\n\
+    #include <queue>\n#include <random>\n#include <set>\n#include <stack>\n#include\
+    \ <string>\n#include <unordered_map>\n#include <vector>\n\nusing namespace std;\n\
+    \n#include <ext/pb_ds/tree_policy.hpp>\n#include <ext/pb_ds/assoc_container.hpp>\n\
+    \nusing namespace __gnu_pbds;\n\ntemplate <class T> using Tree = tree<T, null_type,\
+    \ less<T>, rb_tree_tag, tree_order_statistics_node_update>;\n\ntypedef long long\
+    \ ll;\ntypedef long double ld;\ntypedef double db;\ntypedef string str;\n\ntypedef\
+    \ pair<int, int> pi;\ntypedef pair<ll, ll> pl;\ntypedef pair<db, db> pd;\n\ntypedef\
+    \ vector<int> vi;\ntypedef vector<bool> vb;\ntypedef vector<ll> vl;\ntypedef vector<db>\
+    \ vd;\ntypedef vector<str> vs;\ntypedef vector<pi> vpi;\ntypedef vector<pl> vpl;\n\
+    typedef vector<pd> vpd;\n\n#define mp make_pair\n#define f first\n#define s second\n\
+    #define sz(x) (int)(x).size()\n#define all(x) begin(x), end(x)\n#define rall(x)\
+    \ (x).rbegin(), (x).rend()\n#define sor(x) sort(all(x))\n#define rsz resize\n\
+    #define resz resize\n#define ins insert\n#define ft front()\n#define bk back()\n\
+    #define pf push_front\n#define pb push_back\n#define eb emplace_back\n#define\
+    \ lb lower_bound\n#define ub upper_bound\n\n#define f1r(i, a, b) for (int i =\
+    \ (a); i < (b); ++i)\n#define f0r(i, a) f1r(i, 0, a)\n#define FOR(i, a, b) for\
+    \ (int i = (a); i < (b); ++i)\n#define F0R(i, a) FOR(i, 0, a)\n#define ROF(i,\
+    \ a, b) for (int i = (b) - 1; i >= (a); --i)\n#define R0F(i, a) ROF(i, 0, a)\n\
+    #define each(a, x) for (auto& a : x)\n\nmt19937 rng((uint32_t)chrono::steady_clock::now().time_since_epoch().count());\n\
+    \ntemplate <class T> bool ckmin(T& a, const T& b) { return b < a ? a = b, 1 :\
+    \ 0; }\ntemplate <class T> bool ckmax(T& a, const T& b) { return a < b ? a = b,\
     \ 1 : 0; }\n\ntemplate <class T> using V = vector<T>;\ntemplate <class T> using\
     \ VV = V<V<T>>;\ntemplate <class T> using VVV = V<V<V<T>>>;\ntemplate <class T>\
     \ using VVVV = V<V<V<V<T>>>>;\n\n#ifdef LOCAL\n#define dbg(...) debug(#__VA_ARGS__,\
     \ __VA_ARGS__);\n#else\n#define dbg(...) 17;\n#endif\n\ntemplate <typename T,\
-    \ typename S> ostream& operator << (ostream &os, const pair<T, S> &p) { return\
+    \ typename S> ostream& operator << (ostream& os, const pair<T, S>& p) { return\
     \ os << \"(\" << p.first << \", \" << p.second << \")\"; }\ntemplate <typename\
     \ C, typename T = decay<decltype(*begin(declval<C>()))>, typename enable_if<!is_same<C,\
-    \ string>::value>::type* = nullptr>\nostream& operator << (ostream &os, const\
-    \ C &c) { bool f = true; os << \"{\"; for (const auto &x : c) { if (!f) os <<\
+    \ string>::value>::type* = nullptr>\nostream& operator << (ostream& os, const\
+    \ C& c) { bool f = true; os << \"{\"; for (const auto& x : c) { if (!f) os <<\
     \ \", \"; f = false; os << x; } return os << \"}\"; }\ntemplate <typename T> void\
     \ debug(string s, T x) { cerr << s << \" = \" << x << \"\\n\"; }\ntemplate <typename\
     \ T, typename... Args> void debug(string s, T x, Args... args) { cerr << s.substr(0,\
     \ s.find(',')) << \" = \" << x << \" | \"; debug(s.substr(s.find(',') + 2), args...);\
     \ }\n\nconstexpr int pct(int x) { return __builtin_popcount(x); }\nconstexpr int\
-    \ bits(int x) { return 31 - __builtin_clz(x); } // floor(log2(x))\n\n\nusing namespace\
-    \ std;\n\ninline namespace Helpers {\n\t//////////// is_iterable\n\t// https://stackoverflow.com/questions/13830158/check-if-a-variable-type-is-iterable\n\
+    \ bits(int x) { return 31 - __builtin_clz(x); } // floor(log2(x))\n\n\ninline\
+    \ namespace Helpers {\n\t//////////// is_iterable\n\t// https://stackoverflow.com/questions/13830158/check-if-a-variable-type-is-iterable\n\
     \t// this gets used only when we can call begin() and end() on that type\n\ttemplate\
     \ <class T, class = void> struct is_iterable : false_type {};\n\ttemplate <class\
     \ T> struct is_iterable<T, void_t<decltype(begin(declval<T>())),\n\t\t\t\t\t\t\
@@ -93,23 +102,23 @@ data:
     is_same_v<decltype(cout << declval<T>()), ostream&>\n\t\t\t>\n\t\t> : true_type\
     \ {};\n\ttemplate <class T> constexpr bool is_printable_v = is_printable<T>::value;\n\
     }\n\ninline namespace Input {\n\ttemplate <class T> constexpr bool needs_input_v\
-    \ = !is_readable_v<T> && is_iterable_v<T>;\n\ttemplate <class T, class ...U> void\
-    \ re(T& t, U& ...u);\n\ttemplate <class T, class U> void re(pair<T, U>& p); //\
+    \ = !is_readable_v<T> && is_iterable_v<T>;\n\ttemplate <class T, class... U> void\
+    \ re(T& t, U&... u);\n\ttemplate <class T, class U> void re(pair<T, U>& p); //\
     \ pairs\n\n\t// re: read\n\ttemplate <class T> typename enable_if<is_readable_v<T>,\
     \ void>::type re(T& x) { cin >> x; } // default\n\ttemplate <class T> void re(complex<T>&\
     \ c) { T a, b; re(a, b); c = {a, b}; } // complex\n\ttemplate <class T> typename\
     \ enable_if<needs_input_v<T>, void>::type re(T& i); // ex. vectors, arrays\n\t\
     template <class T, class U> void re(pair<T, U>& p) { re(p.first, p.second); }\n\
     \ttemplate <class T> typename enable_if<needs_input_v<T>, void>::type re(T& i)\
-    \ {\n\t\tfor (auto& x : i) re(x); }\n\ttemplate <class T, class ...U> void re(T&\
-    \ t, U& ...u) { re(t); re(u...); } // read multiple\n\n\t// rv: resize and read\
-    \ vectors\n\tvoid rv(std::size_t) {}\n\ttemplate <class T, class ...U> void rv(std::size_t\
-    \ N, vector<T>& t, U& ...u);\n\ttemplate <class...U> void rv(std::size_t, std::size_t\
-    \ N2, U& ...u);\n\ttemplate <class T, class ...U> void rv(std::size_t N, vector<T>&\
-    \ t, U& ...u) {\n\t\tt.resize(N); re(t);\n\t\trv(N, u...); }\n\ttemplate <class...U>\
-    \ void rv(std::size_t, std::size_t N2, U& ...u) {\n\t\trv(N2, u...); }\n\n\t//\
+    \ {\n\t\tfor (auto& x : i) re(x); }\n\ttemplate <class T, class... U> void re(T&\
+    \ t, U&... u) { re(t); re(u...); } // read multiple\n\n\t// rv: resize and read\
+    \ vectors\n\tvoid rv(std::size_t) {}\n\ttemplate <class T, class... U> void rv(std::size_t\
+    \ N, vector<T>& t, U&... u);\n\ttemplate <class...U> void rv(std::size_t, std::size_t\
+    \ N2, U&... u);\n\ttemplate <class T, class... U> void rv(std::size_t N, vector<T>&\
+    \ t, U&... u) {\n\t\tt.resize(N); re(t);\n\t\trv(N, u...); }\n\ttemplate <class...U>\
+    \ void rv(std::size_t, std::size_t N2, U&... u) {\n\t\trv(N2, u...); }\n\n\t//\
     \ dumb shortcuts to read in ints\n\tvoid decrement() {} // subtract one from each\n\
-    \ttemplate <class T, class ...U> void decrement(T &t, U &...u) { --t; decrement(u...);\
+    \ttemplate <class T, class... U> void decrement(T& t, U&... u) { --t; decrement(u...);\
     \ }\n\t#define ints(...) int __VA_ARGS__; re(__VA_ARGS__);\n\t#define int1(...)\
     \ ints(__VA_ARGS__); decrement(__VA_ARGS__);\n}\n\ninline namespace ToString {\n\
     \ttemplate <class T> constexpr bool needs_output_v = !is_printable_v<T> && is_iterable_v<T>;\n\
@@ -140,12 +149,12 @@ data:
     \ res[i];\n\t\t}\n\t\tres.back() += \"}\";\n\t\treturn res;\n\t}\n}\n\ninline\
     \ namespace Output {\n\ttemplate <class T> void pr_sep(ostream& os, string, const\
     \ T& t) { os << ts(t); }\n\ttemplate <class T, class... U> void pr_sep(ostream&\
-    \ os, string sep, const T& t, const U& ...u) {\n\t\tpr_sep(os, sep, t); os <<\
-    \ sep; pr_sep(os, sep, u...); }\n\t// print w/ no spaces\n\ttemplate <class ...T>\
-    \ void pr(const T& ...t) { pr_sep(cout, \"\", t...); } \n\t// print w/ spaces,\
-    \ end with newline\n\tvoid ps() { cout << \"\\n\"; }\n\ttemplate <class ...T>\
-    \ void ps(const T& ...t) { pr_sep(cout, \" \", t...); ps(); } \n\t// debug to\
-    \ cerr\n\ttemplate <class ...T> void dbg_out(const T& ...t) {\n\t\tpr_sep(cerr,\
+    \ os, string sep, const T& t, const U&... u) {\n\t\tpr_sep(os, sep, t); os <<\
+    \ sep; pr_sep(os, sep, u...); }\n\t// print w/ no spaces\n\ttemplate <class...\
+    \ T> void pr(const T&... t) { pr_sep(cout, \"\", t...); } \n\t// print w/ spaces,\
+    \ end with newline\n\tvoid ps() { cout << \"\\n\"; }\n\ttemplate <class... T>\
+    \ void ps(const T&... t) { pr_sep(cout, \" \", t...); ps(); } \n\t// debug to\
+    \ cerr\n\ttemplate <class... T> void dbg_out(const T&... t) {\n\t\tpr_sep(cerr,\
     \ \" | \", t...); cerr << endl; }\n\tvoid loc_info(int line, string names) {\n\
     \t\tcerr << \"Line(\" << line << \") -> [\" << names << \"]: \"; }\n\ttemplate\
     \ <int lev, class T> void dbgl_out(const T& t) {\n\t\tcerr << \"\\n\\n\" << ts_sep(ts_lev<lev>(t),\
@@ -158,33 +167,32 @@ data:
     \t\tcin.tie(0)->sync_with_stdio(0); // unsync C / C++ I/O streams\n\t\t// cin.exceptions(cin.failbit);\n\
     \t\t// throws exception when do smth illegal\n\t\t// ex. try to read letter into\
     \ int\n\t\tif (!s.empty()) set_in(s + \".in\"), set_out(s + \".out\"); // for\
-    \ old USACO\n\t}\n}\n\nconst int MOD = 1e9 + 7; // 998244353;\nconst ld PI = acos((ld)\
-    \ -1);\n\ntypedef std::decay<decltype(MOD)>::type mod_t; \nstruct mi {\n\tmod_t\
-    \ val;\n\texplicit operator mod_t() const { return val; }\n\tmi() { val = 0; }\n\
-    \tmi(const long long &v) {\n\t\tval = (-MOD <= v && v < MOD) ? v : v % MOD;\n\t\
-    \tif (val < 0) val += MOD; }\n\tfriend std::istream& operator>>(std::istream &in,\
-    \ mi &a) { \n\t\tlong long x; std::cin >> x; a = mi(x); return in; }\n\tfriend\
-    \ std::ostream& operator<<(std::ostream &os, const mi &a) { return os << a.val;\
-    \ }\n\tfriend void pr(const mi &a) { pr(a.val); }\n\tfriend void re(mi &a) { long\
-    \ long x; cin >> x; a = mi(x); }\n\tfriend bool operator==(const mi &a, const\
-    \ mi &b) { return a.val == b.val; }\n\tfriend bool operator!=(const mi &a, const\
-    \ mi &b) { return !(a == b); }    \n\tfriend bool operator<(const mi &a, const\
-    \ mi &b) { return a.val < b.val; }\n\tfriend bool operator>(const mi &a, const\
-    \ mi &b) { return a.val > b.val; }\n\tfriend bool operator<=(const mi &a, const\
-    \ mi &b) { return a.val <= b.val; }\n\tfriend bool operator>=(const mi &a, const\
-    \ mi &b) { return a.val >= b.val; }\n\tmi operator-() const { return mi(-val);\
-    \ }\n\tmi& operator+=(const mi &m) {\n\t\tif ((val += m.val) >= MOD) val -= MOD;\n\
-    \t\treturn *this; }\n\tmi& operator-=(const mi &m) {\n\t\tif ((val -= m.val) <\
-    \ 0) val += MOD;\n\t\treturn *this; }\n\tmi& operator*=(const mi &m) { val = (long\
-    \ long)val * m.val % MOD;\n\t\treturn *this; }\n\tfriend mi pow(mi a, long long\
-    \ p) {\n\t\tmi ans = 1; assert(p >= 0);\n\t\tfor (; p; p /= 2, a *= a) if (p &\
-    \ 1) ans *= a;\n\t\treturn ans; }\n\tfriend mi inv(const mi &a) { assert(a !=\
-    \ 0); return pow(a, MOD - 2); }\n\tmi& operator/=(const mi &m) { return (*this)\
-    \ *= inv(m); }\n\tfriend mi operator+(mi a, const mi &b) { return a += b; }\n\t\
-    friend mi operator-(mi a, const mi &b) { return a -= b; }\n\tfriend mi operator*(mi\
-    \ a, const mi &b) { return a *= b; }\n\tfriend mi operator/(mi a, const mi &b)\
-    \ { return a /= b; }\n};\n\ntypedef pair<mi, mi> pmi;\ntypedef vector<mi> vmi;\n\
-    typedef vector<pmi> vpmi;\n\nstruct CentroidDecomposition {\n\tint n;\n\tstd::vector<std::vector<int>>\
+    \ old USACO\n\t}\n}\n\nconst int MOD = 1e9 + 7; // 998244353\n\ntypedef std::decay<decltype(MOD)>::type\
+    \ mod_t; \nstruct mi {\n\tmod_t val;\n\texplicit operator mod_t() const { return\
+    \ val; }\n\texplicit operator bool() const { return val != 0; }\n\tmi() { val\
+    \ = 0; }\n\tmi(const long long& v) {\n\t\tval = (-MOD <= v && v < MOD) ? v : v\
+    \ % MOD;\n\t\tif (val < 0) val += MOD; }\n\tfriend std::istream& operator>>(std::istream&\
+    \ in, mi& a) { \n\t\tlong long x; std::cin >> x; a = mi(x); return in; }\n\tfriend\
+    \ std::ostream& operator<<(std::ostream& os, const mi& a) { return os << a.val;\
+    \ }\n\tfriend bool operator==(const mi& a, const mi& b) { return a.val == b.val;\
+    \ }\n\tfriend bool operator!=(const mi& a, const mi& b) { return !(a == b); }\
+    \    \n\tfriend bool operator<(const mi& a, const mi& b) { return a.val < b.val;\
+    \ }\n\tfriend bool operator>(const mi& a, const mi& b) { return a.val > b.val;\
+    \ }\n\tfriend bool operator<=(const mi& a, const mi& b) { return a.val <= b.val;\
+    \ }\n\tfriend bool operator>=(const mi& a, const mi& b) { return a.val >= b.val;\
+    \ }\n\tmi operator-() const { return mi(-val); }\n\tmi& operator+=(const mi& m)\
+    \ {\n\t\tif ((val += m.val) >= MOD) val -= MOD;\n\t\treturn *this; }\n\tmi& operator-=(const\
+    \ mi& m) {\n\t\tif ((val -= m.val) < 0) val += MOD;\n\t\treturn *this; }\n\tmi&\
+    \ operator*=(const mi& m) { val = (long long)val * m.val % MOD;\n\t\treturn *this;\
+    \ }\n\tfriend mi pow(mi a, long long p) {\n\t\tmi ans = 1; assert(p >= 0);\n\t\
+    \tfor (; p; p /= 2, a *= a) if (p & 1) ans *= a;\n\t\treturn ans; }\n\tfriend\
+    \ mi inv(const mi& a) { assert(a != 0); return pow(a, MOD - 2); }\n\tmi& operator/=(const\
+    \ mi& m) { return (*this) *= inv(m); }\n\tfriend mi operator+(mi a, const mi&\
+    \ b) { return a += b; }\n\tfriend mi operator-(mi a, const mi& b) { return a -=\
+    \ b; }\n\tfriend mi operator*(mi a, const mi& b) { return a *= b; }\n\tfriend\
+    \ mi operator/(mi a, const mi& b) { return a /= b; }\n};\n\nconst ld PI = acos((ld)\
+    \ -1);\n\ntypedef pair<mi, mi> pmi;\ntypedef vector<mi> vmi;\ntypedef vector<pmi>\
+    \ vpmi;\n\nstruct CentroidDecomposition {\n\tint n;\n\tstd::vector<std::vector<int>>\
     \ g, cg; // cg is directed tree for centroids\n\tstd::vector<bool> vis;\n\tstd::vector<int>\
     \ size;\n\tstd::vector<int> parent;\n\tint root;\n\n\tvoid init(int n_) {\n\t\t\
     n = n_;\n\t\tg.assign(n, std::vector<int>());\n\t\tcg.assign(n, std::vector<int>());\n\
@@ -274,25 +282,25 @@ data:
     \ b; }\n\tfriend Mint operator-(Mint a, const Mint& b) { return a -= b; }\n\t\
     friend Mint operator*(Mint a, const Mint& b) { return a *= b; }\n\tfriend Mint\
     \ operator/(Mint a, const Mint& b) { return a /= b; }\n};\n\nnamespace FFT {\n\
-    \ntemplate <class T> void fft(std::vector<T> &A, bool inv = 0) {\n\tint n = (int)A.size();\n\
+    \ntemplate <class T> void fft(std::vector<T>& A, bool inv = 0) {\n\tint n = (int)A.size();\n\
     \tassert((T::mod - 1) % n == 0);\n\tstd::vector<T> B(n);\n\tfor (int b = n / 2;\
     \ b; b /= 2, A.swap(B)) {\n\t\tT w = pow(T::rt(), (T::mod - 1) / n * b);\n\t\t\
     T m = 1;\n\t\tfor (int i = 0; i < n; i += b * 2, m *= w)\n\t\t\tfor (int j = 0;\
     \ j < b; j++) {\n\t\t\t\tT u = A[i + j];\n\t\t\t\tT v = A[i + j + b] * m;\n\t\t\
     \t\tB[i / 2 + j] = u + v;\n\t\t\t\tB[i / 2 + j + n / 2] = u - v;\n\t\t\t}\n\t\
     }\n\tif (inv) {\n\t\tstd::reverse(1 + A.begin(), A.end());\n\t\tT z = T(1) / T(n);\n\
-    \t\tfor (auto &t : A) \n\t\t\tt *= z;\n\t}\n}\n\ntemplate <class T> std::vector<T>\
+    \t\tfor (auto& t : A) \n\t\t\tt *= z;\n\t}\n}\n\ntemplate <class T> std::vector<T>\
     \ multiply(std::vector<T> A, std::vector<T> B) {\n\tint sa = (int)A.size();\n\t\
     int sb = (int)B.size();\n\tif (!std::min(sa, sb))\n\t\treturn {};\n\tint s = sa\
     \ + sb - 1;\n\tint n = 1;\n\tfor (; n < s; n *= 2);\n\tbool eq = A == B;\n\tA.resize(n);\n\
     \tfft(A);\n\tif (eq) \n\t\tB = A;\n\telse \n\t\tB.resize(n), fft(B);\n\tfor (int\
     \ i = 0; i < n; i++)\n\t\tA[i] *= B[i];\n\tfft(A, 1);\n\tA.resize(s);\n\treturn\
     \ A;\n}\n\ntemplate <class M, class T> std::vector<M> multiply_mod(std::vector<T>\
-    \ x, std::vector<T> y) {\n\tauto convert = [](const std::vector<T> &v) {\n\t\t\
+    \ x, std::vector<T> y) {\n\tauto convert = [](const std::vector<T>& v) {\n\t\t\
     std::vector<M> w((int)v.size());\n\t\tfor (int i =  0; i < (int)v.size(); i++)\n\
     \t\t\tw[i] = (int) v[i];\n\t\treturn w;\n\t};\n\treturn multiply(convert(x), convert(y));\n\
-    }\n\ntemplate <class T> std::vector<T> general_multiply(const std::vector<T> &A,\
-    \ const std::vector<T> &B) { \n\t// arbitrary modulus\n\tusing m0 = Mint<(119\
+    }\n\ntemplate <class T> std::vector<T> general_multiply(const std::vector<T>&\
+    \ A, const std::vector<T>& B) { \n\t// arbitrary modulus\n\tusing m0 = Mint<(119\
     \ << 23) + 1, 62>; \n\tusing m1 = Mint<(5 << 25) + 1, 62>;\n\tusing m2 = Mint<(7\
     \ << 26) + 1, 62>;\n\tauto c0 = multiply_mod<m0>(A, B);\n\tauto c1 = multiply_mod<m1>(A,\
     \ B);\n\tauto c2 = multiply_mod<m2>(A, B);\n\tint n = (int)c0.size();\n\tstd::vector<T>\
@@ -301,45 +309,44 @@ data:
     \tint b = ((c1[i] - a) * r01).v;\n\t\tint c = (((c2[i] - a) * r02 - b) * r12).v;\n\
     \t\tres[i] = (T(c) * m1::mod + b) * m0::mod + a;\n\t}\n\treturn res;\n}\n\n} //\
     \ namespace FFT\n\n\nnamespace Polynomial {\n\nusing T = long long;\nusing Poly\
-    \ = std::vector<T>;\n\nT eval(const Poly &p, const T &x) {\n\tT res = 0;\n\tfor\
+    \ = std::vector<T>;\n\nT eval(const Poly& p, const T& x) {\n\tT res = 0;\n\tfor\
     \ (int i = (int)p.size() - 1; i >= 0; --i) {\n\t\tres = x * res + p[i];\n\t}\n\
-    \treturn res;\n}\n\nPoly& operator+=(Poly &l, const Poly &r) {\n\tl.resize(std::max((int)l.size(),\
+    \treturn res;\n}\n\nPoly& operator+=(Poly& l, const Poly& r) {\n\tl.resize(std::max((int)l.size(),\
     \ (int)r.size()));\n\tfor (int i = 0; i < (int)r.size(); ++i) {\n\t\tl[i] += r[i];\n\
-    \t}\n\treturn l;\n}\n\nPoly& operator-=(Poly &l, const Poly &r) {\n\tl.resize(std::max((int)l.size(),\
+    \t}\n\treturn l;\n}\n\nPoly& operator-=(Poly& l, const Poly& r) {\n\tl.resize(std::max((int)l.size(),\
     \ (int)r.size()));\n\tfor (int i = 0; i < (int)r.size(); ++i) {\n\t\tl[i] -= r[i];\n\
-    \t}\n\treturn l;\n}\n\nPoly& operator*=(Poly &l, const T& r) {\n\tfor (int i =\
-    \ 0; i < (int)l.size(); ++i) {\n\t\tl[i] *= r;\n\t}\n\treturn l;\n}\n\nPoly& operator/=(Poly\
-    \ &l, const T& r) {\n\tfor (int i = 0; i < (int)l.size(); ++i) {\n\t\tl[i] /=\
-    \ r;\n\t}\n\treturn l;\n}\n\nPoly operator*(const Poly &l, const Poly &r) {\n\t\
-    if (!std::min((int)l.size(), (int)r.size())) {\n\t\treturn {};\n\t}\n\treturn\
-    \ FFT::general_multiply(l, r);\n\tPoly res((int)l.size() + (int)r.size() - 1);\n\
-    \tfor (int i = 0; i < (int)l.size(); ++i) {\n\t\tfor (int j = 0; j < (int)r.size();\
-    \ ++j) {\n\t\t\tres[i + j] += l[i] * r[j];\n\t\t}\n\t}\n\treturn res;\n}\n\nPoly\
-    \ operator+(Poly l, const Poly &r) { return l += r; }\nPoly operator-(Poly l,\
-    \ const Poly &r) { return l -= r; }\nPoly operator-(Poly l) { for (auto &t : l)\
-    \ t *= -1; return l; }\nPoly operator*(Poly l, const T &r) { return l *= r; }\n\
-    Poly operator*(const T& r, const Poly &l) { return l * r; }\nPoly operator/(Poly\
-    \ l, const T &r) { return l /= r;\t}\nPoly& operator*=(Poly &l, const Poly &r)\
-    \ { return l = l * r; }\n\nPoly derivative(const Poly &p) {\n\tPoly res;\n\tfor\
-    \ (int i = 1; i < (int)p.size(); ++i) {\n\t\tres.push_back(T(i) * p[i]);\n\t}\n\
-    \treturn res;\n}\n\nPoly integral(const Poly &p) {\n\tstatic Poly invs{0, 1};\n\
-    \tfor (int i = invs.size(); i <= (int)p.size(); ++i ){\n\t\tinvs.push_back(1 /\
-    \ T(i));\n\t}\n\tPoly res((int)p.size() + 1);\n\tfor (int i = 0; i < (int)p.size();\
-    \ ++i) {\n\t\tres[i + 1] = p[i] * invs[i + 1];\n\t}\n\treturn res;\n}\n\n}\n\n\
-    int main() {\n\tusing namespace FFT;\n\tusing namespace Polynomial;\n\tsetIO(\"\
-    \");\n\tint n;\n\tre(n);\n\tCentroidDecomposition cd;\n\tcd.init(n);\n\tLCARMQ\
-    \ lca;\n\tlca.init(n);\n\tvector<vi> g(n);\n\tf0r(i, n - 1) {\n\t\tint u, v;\n\
-    \t\tre(u, v);\n\t\tg[u].pb(v);\n\t\tg[v].pb(u);\n\t\tlca.ae(u, v);\n\t\tcd.ae(u,\
-    \ v);\n\t}\n\tlca.gen();\n\tcd.build();\n\tvl ans(n);\n\tfunction<vi(int)> dfs\
-    \ = [&](int u) { // return how many at dist x\n\t\tvi verts;\n\t\tvector<vl> polys;\n\
-    \t\tpolys.pb({1});\n\t\tvl tmp;\n\t\teach(v, cd.cg[u]) {\t\n\t\t\tauto res = dfs(v);\n\
-    \t\t\teach(x, res) verts.pb(x);\n\t\t\ttmp.assign(res.size() + 1, 0);\n\t\t\t\
-    each(x, res) {\n\t\t\t\t++tmp[lca.dist(x, u)];\n\t\t\t}\n\t\t\twhile (tmp.back()\
-    \ == 0) tmp.pop_back();\n\t\t\tpolys.pb(tmp);\n\t\t}\t\n\t\tvl sum;\n\t\teach(x,\
-    \ polys) sum += x;\n\t\tvl res = sum * sum;\n\t\teach(x, polys) res -= x * x;\n\
-    \t\tres /= 2;\n\t\tf0r(i, sz(res)) {\n\t\t\tans[i] += res[i];\n\t\t}\n\t\tverts.pb(u);\n\
-    \t\treturn verts;\n\t};\n\tdfs(cd.root);\n\tf1r(i, 1, n) {\n\t\tpr(ans[i], ' ');\n\
-    \t}\n\tps();\n\treturn 0;\n}\n"
+    \t}\n\treturn l;\n}\n\nPoly& operator*=(Poly& l, const T& r) {\n\tfor (int i =\
+    \ 0; i < (int)l.size(); ++i) {\n\t\tl[i] *= r;\n\t}\n\treturn l;\n}\n\nPoly& operator/=(Poly&\
+    \ l, const T& r) {\n\tfor (int i = 0; i < (int)l.size(); ++i) {\n\t\tl[i] /= r;\n\
+    \t}\n\treturn l;\n}\n\nPoly operator*(const Poly& l, const Poly& r) {\n\tif (!std::min((int)l.size(),\
+    \ (int)r.size())) {\n\t\treturn {};\n\t}\n\treturn FFT::general_multiply(l, r);\n\
+    \tPoly res((int)l.size() + (int)r.size() - 1);\n\tfor (int i = 0; i < (int)l.size();\
+    \ ++i) {\n\t\tfor (int j = 0; j < (int)r.size(); ++j) {\n\t\t\tres[i + j] += l[i]\
+    \ * r[j];\n\t\t}\n\t}\n\treturn res;\n}\n\nPoly operator+(Poly l, const Poly&\
+    \ r) { return l += r; }\nPoly operator-(Poly l, const Poly& r) { return l -= r;\
+    \ }\nPoly operator-(Poly l) { for (auto &t : l) t *= -1; return l; }\nPoly operator*(Poly\
+    \ l, const T& r) { return l *= r; }\nPoly operator*(const T& r, const Poly& l)\
+    \ { return l * r; }\nPoly operator/(Poly l, const T& r) { return l /= r;\t}\n\
+    Poly& operator*=(Poly& l, const Poly& r) { return l = l * r; }\n\nPoly derivative(const\
+    \ Poly& p) {\n\tPoly res;\n\tfor (int i = 1; i < (int)p.size(); ++i) {\n\t\tres.push_back(T(i)\
+    \ * p[i]);\n\t}\n\treturn res;\n}\n\nPoly integral(const Poly& p) {\n\tstatic\
+    \ Poly invs{0, 1};\n\tfor (int i = invs.size(); i <= (int)p.size(); ++i ){\n\t\
+    \tinvs.push_back(1 / T(i));\n\t}\n\tPoly res((int)p.size() + 1);\n\tfor (int i\
+    \ = 0; i < (int)p.size(); ++i) {\n\t\tres[i + 1] = p[i] * invs[i + 1];\n\t}\n\t\
+    return res;\n}\n\n}\n\nint main() {\n\tusing namespace FFT;\n\tusing namespace\
+    \ Polynomial;\n\tsetIO(\"\");\n\tint n;\n\tre(n);\n\tCentroidDecomposition cd;\n\
+    \tcd.init(n);\n\tLCARMQ lca;\n\tlca.init(n);\n\tvector<vi> g(n);\n\tf0r(i, n -\
+    \ 1) {\n\t\tint u, v;\n\t\tre(u, v);\n\t\tg[u].pb(v);\n\t\tg[v].pb(u);\n\t\tlca.ae(u,\
+    \ v);\n\t\tcd.ae(u, v);\n\t}\n\tlca.gen();\n\tcd.build();\n\tvl ans(n);\n\tfunction<vi(int)>\
+    \ dfs = [&](int u) { // return how many at dist x\n\t\tvi verts;\n\t\tvector<vl>\
+    \ polys;\n\t\tpolys.pb({1});\n\t\tvl tmp;\n\t\teach(v, cd.cg[u]) {\t\n\t\t\tauto\
+    \ res = dfs(v);\n\t\t\teach(x, res) verts.pb(x);\n\t\t\ttmp.assign(res.size()\
+    \ + 1, 0);\n\t\t\teach(x, res) {\n\t\t\t\t++tmp[lca.dist(x, u)];\n\t\t\t}\n\t\t\
+    \twhile (tmp.back() == 0) tmp.pop_back();\n\t\t\tpolys.pb(tmp);\n\t\t}\t\n\t\t\
+    vl sum;\n\t\teach(x, polys) sum += x;\n\t\tvl res = sum * sum;\n\t\teach(x, polys)\
+    \ res -= x * x;\n\t\tres /= 2;\n\t\tf0r(i, sz(res)) {\n\t\t\tans[i] += res[i];\n\
+    \t\t}\n\t\tverts.pb(u);\n\t\treturn verts;\n\t};\n\tdfs(cd.root);\n\tf1r(i, 1,\
+    \ n) {\n\t\tpr(ans[i], ' ');\n\t}\n\tps();\n\treturn 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/frequency_table_of_tree_distance\"\
     \n\n#include \"../../library/contest/template-full.hpp\"\n#include \"../../library/graphs/centroid-decomposition.hpp\"\
     \n#include \"../../library/graphs/lca-rmq.hpp\"\n#include \"../../library/polynomial/fast-fourier-transform.hpp\"\
@@ -359,7 +366,10 @@ data:
     \tf1r(i, 1, n) {\n\t\tpr(ans[i], ' ');\n\t}\n\tps();\n\treturn 0;\n}"
   dependsOn:
   - library/contest/template-full.hpp
+  - library/misc/pragma-short.hpp
+  - library/contest/template-minimal.hpp
   - library/misc/easy-io.hpp
+  - library/modular-arithmetic/mod-int.hpp
   - library/graphs/centroid-decomposition.hpp
   - library/graphs/lca-rmq.hpp
   - library/data-structures/1d-range-queries/sparse-table.hpp
@@ -369,7 +379,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
   requiredBy: []
-  timestamp: '2021-08-16 13:31:52-04:00'
+  timestamp: '2021-08-16 13:59:27-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp

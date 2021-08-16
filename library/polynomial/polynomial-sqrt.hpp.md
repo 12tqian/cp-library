@@ -172,29 +172,29 @@ data:
     \ * f0) % p;\n\t\t\tg0 = tmp;\n\t\t}\n\t\ttmp = (f0 * f0 + d * ((f1 * f1) % p))\
     \ % p;\n\t\tf1 = (2 * f0 * f1) % p;\n\t\tf0 = tmp;\n\t}\n\treturn (g0 < p - g0)\
     \ ? std::vector<long long>{g0, p - g0} : std::vector<long long>{p - g0, g0};\n\
-    }\n\n#include <bits/stdc++.h>\n\ntemplate <class D> Poly<D> sqrt(const Poly<D>&\
-    \ p, int n = -1) {\n\tif (n == -1) n = (int)p.size();\n\tif (p.empty()) return\
-    \ Poly<D>(n);\n\tif (p[0] == 0) {\n\t\tfor (int i = 1; i < (int)p.size(); ++i)\
-    \ {\n\t\t\tif (p[i] != 0) {\n\t\t\t\tif (i & 1) {\n\t\t\t\t\treturn {};\n\t\t\t\
-    \t}\n\t\t\t\tif (n - i / 2 <= 0) break;\n\t\t\t\tauto ret = sqrt(p >> i, n - i\
-    \ / 2);\n\t\t\t\tif (ret.empty()) return {};\n\t\t\t\tret = ret << (i / 2);\n\t\
-    \t\t\tif ((int)ret.size() < n) ret.resize(n);\n\t\t\t\treturn ret;\n\t\t\t}\n\t\
-    \t}\n\t\treturn Poly<D>(n);\n\t}\n\tauto v = mod_sqrt(p[0].v, D::md());\n\tif\
-    \ (v.empty()) return {};\n\tlong long sqr = v[0];\n\tPoly<D> ret = {D(sqr)};\n\
-    \tD i2 = 1 / D(2);\n\tfor (int i = 1; i < n; i <<= 1) {\n\t\tret = (ret + p.pre(i\
-    \ << 1) * ret.inv(i << 1)) * i2;\n\t}\n\treturn ret.pre(n);\n}\n"
+    }\n\ntemplate <class D> Poly<D> sqrt(const Poly<D>& p, int n = -1) {\n\tif (n\
+    \ == -1) n = (int)p.size();\n\tif (p.empty()) return Poly<D>(n);\n\tif (p[0] ==\
+    \ 0) {\n\t\tfor (int i = 1; i < (int)p.size(); ++i) {\n\t\t\tif (p[i] != 0) {\n\
+    \t\t\t\tif (i & 1) {\n\t\t\t\t\treturn {};\n\t\t\t\t}\n\t\t\t\tif (n - i / 2 <=\
+    \ 0) break;\n\t\t\t\tauto ret = sqrt(p >> i, n - i / 2);\n\t\t\t\tif (ret.empty())\
+    \ return {};\n\t\t\t\tret = ret << (i / 2);\n\t\t\t\tif ((int)ret.size() < n)\
+    \ ret.resize(n);\n\t\t\t\treturn ret;\n\t\t\t}\n\t\t}\n\t\treturn Poly<D>(n);\n\
+    \t}\n\tauto v = mod_sqrt(p[0].v, D::md());\n\tif (v.empty()) return {};\n\tlong\
+    \ long sqr = v[0];\n\tPoly<D> ret = {D(sqr)};\n\tD i2 = 1 / D(2);\n\tfor (int\
+    \ i = 1; i < n; i <<= 1) {\n\t\tret = (ret + p.pre(i << 1) * ret.inv(i << 1))\
+    \ * i2;\n\t}\n\treturn ret.pre(n);\n}\n"
   code: "#pragma once\n\n#include \"polynomial.hpp\"\n#include \"../modular-arithmetic/mod-sqrt.hpp\"\
-    \n\n#include <bits/stdc++.h>\n\ntemplate <class D> Poly<D> sqrt(const Poly<D>&\
-    \ p, int n = -1) {\n\tif (n == -1) n = (int)p.size();\n\tif (p.empty()) return\
-    \ Poly<D>(n);\n\tif (p[0] == 0) {\n\t\tfor (int i = 1; i < (int)p.size(); ++i)\
-    \ {\n\t\t\tif (p[i] != 0) {\n\t\t\t\tif (i & 1) {\n\t\t\t\t\treturn {};\n\t\t\t\
-    \t}\n\t\t\t\tif (n - i / 2 <= 0) break;\n\t\t\t\tauto ret = sqrt(p >> i, n - i\
-    \ / 2);\n\t\t\t\tif (ret.empty()) return {};\n\t\t\t\tret = ret << (i / 2);\n\t\
-    \t\t\tif ((int)ret.size() < n) ret.resize(n);\n\t\t\t\treturn ret;\n\t\t\t}\n\t\
-    \t}\n\t\treturn Poly<D>(n);\n\t}\n\tauto v = mod_sqrt(p[0].v, D::md());\n\tif\
-    \ (v.empty()) return {};\n\tlong long sqr = v[0];\n\tPoly<D> ret = {D(sqr)};\n\
-    \tD i2 = 1 / D(2);\n\tfor (int i = 1; i < n; i <<= 1) {\n\t\tret = (ret + p.pre(i\
-    \ << 1) * ret.inv(i << 1)) * i2;\n\t}\n\treturn ret.pre(n);\n}"
+    \n\ntemplate <class D> Poly<D> sqrt(const Poly<D>& p, int n = -1) {\n\tif (n ==\
+    \ -1) n = (int)p.size();\n\tif (p.empty()) return Poly<D>(n);\n\tif (p[0] == 0)\
+    \ {\n\t\tfor (int i = 1; i < (int)p.size(); ++i) {\n\t\t\tif (p[i] != 0) {\n\t\
+    \t\t\tif (i & 1) {\n\t\t\t\t\treturn {};\n\t\t\t\t}\n\t\t\t\tif (n - i / 2 <=\
+    \ 0) break;\n\t\t\t\tauto ret = sqrt(p >> i, n - i / 2);\n\t\t\t\tif (ret.empty())\
+    \ return {};\n\t\t\t\tret = ret << (i / 2);\n\t\t\t\tif ((int)ret.size() < n)\
+    \ ret.resize(n);\n\t\t\t\treturn ret;\n\t\t\t}\n\t\t}\n\t\treturn Poly<D>(n);\n\
+    \t}\n\tauto v = mod_sqrt(p[0].v, D::md());\n\tif (v.empty()) return {};\n\tlong\
+    \ long sqr = v[0];\n\tPoly<D> ret = {D(sqr)};\n\tD i2 = 1 / D(2);\n\tfor (int\
+    \ i = 1; i < n; i <<= 1) {\n\t\tret = (ret + p.pre(i << 1) * ret.inv(i << 1))\
+    \ * i2;\n\t}\n\treturn ret.pre(n);\n}"
   dependsOn:
   - library/polynomial/polynomial.hpp
   - library/polynomial/number-theoretic-transform.hpp
@@ -202,7 +202,7 @@ data:
   isVerificationFile: false
   path: library/polynomial/polynomial-sqrt.hpp
   requiredBy: []
-  timestamp: '2021-08-13 10:39:25-04:00'
+  timestamp: '2021-08-16 13:46:51-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/yosupo-sqrt_of_formal_power_series.test.cpp

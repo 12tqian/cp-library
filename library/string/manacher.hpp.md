@@ -12,7 +12,7 @@ data:
   attributes:
     links: []
   bundledCode: "\nstd::vector<int> manacher(std::string s) {\n\tstd::string t = \"\
-    @\";\n\tfor (auto &c : s) \n\t\tt += c, t += '#';\n\tt.back() = '&';\n\tstd::vector<int>\
+    @\";\n\tfor (auto& c : s) \n\t\tt += c, t += '#';\n\tt.back() = '&';\n\tstd::vector<int>\
     \ res((int)t.size() - 1);\n\tint lo = 0, hi = 0;\n\tfor (int i = 1; i < (int)t.size()\
     \ - 1; i++) {\n\t\tif (i != 1)\n\t\t\tres[i] = std::min(hi - i, res[hi - i + lo]);\n\
     \t\twhile (t[i - res[i] - 1] == t[i + res[i] + 1])\n\t\t\tres[i]++;\n\t\tif (i\
@@ -20,7 +20,7 @@ data:
     \tfor (int i = 0; i < (int)res.size(); i++)\n\t\tif ((i & 1) == (res[i] & 1))\n\
     \t\t\tres[i]++;\n\treturn res;\n}\n"
   code: "#pragma once\n\nstd::vector<int> manacher(std::string s) {\n\tstd::string\
-    \ t = \"@\";\n\tfor (auto &c : s) \n\t\tt += c, t += '#';\n\tt.back() = '&';\n\
+    \ t = \"@\";\n\tfor (auto& c : s) \n\t\tt += c, t += '#';\n\tt.back() = '&';\n\
     \tstd::vector<int> res((int)t.size() - 1);\n\tint lo = 0, hi = 0;\n\tfor (int\
     \ i = 1; i < (int)t.size() - 1; i++) {\n\t\tif (i != 1)\n\t\t\tres[i] = std::min(hi\
     \ - i, res[hi - i + lo]);\n\t\twhile (t[i - res[i] - 1] == t[i + res[i] + 1])\n\
@@ -31,7 +31,7 @@ data:
   isVerificationFile: false
   path: library/string/manacher.hpp
   requiredBy: []
-  timestamp: '2021-08-13 01:34:54-04:00'
+  timestamp: '2021-08-16 13:46:51-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/yosupo-enumerate_palindromes.test.cpp

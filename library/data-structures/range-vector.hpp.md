@@ -29,16 +29,16 @@ data:
     \ return self[i - min_index]; }\n};\n"
   dependsOn: []
   isVerificationFile: false
-  path: library/misc/range-vector.hpp
+  path: library/data-structures/range-vector.hpp
   requiredBy: []
-  timestamp: '2021-08-16 13:31:52-04:00'
+  timestamp: '2021-08-16 13:59:27-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/codeforces/codeforces-1542E2.test.cpp
-documentation_of: library/misc/range-vector.hpp
+documentation_of: library/data-structures/range-vector.hpp
 layout: document
 redirect_from:
-- /library/library/misc/range-vector.hpp
-- /library/library/misc/range-vector.hpp.html
-title: library/misc/range-vector.hpp
+- /library/library/data-structures/range-vector.hpp
+- /library/library/data-structures/range-vector.hpp.html
+title: library/data-structures/range-vector.hpp
 ---

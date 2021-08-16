@@ -48,25 +48,25 @@ data:
     \ b; }\n\tfriend Mint operator-(Mint a, const Mint& b) { return a -= b; }\n\t\
     friend Mint operator*(Mint a, const Mint& b) { return a *= b; }\n\tfriend Mint\
     \ operator/(Mint a, const Mint& b) { return a /= b; }\n};\n\nnamespace FFT {\n\
-    \ntemplate <class T> void fft(std::vector<T> &A, bool inv = 0) {\n\tint n = (int)A.size();\n\
+    \ntemplate <class T> void fft(std::vector<T>& A, bool inv = 0) {\n\tint n = (int)A.size();\n\
     \tassert((T::mod - 1) % n == 0);\n\tstd::vector<T> B(n);\n\tfor (int b = n / 2;\
     \ b; b /= 2, A.swap(B)) {\n\t\tT w = pow(T::rt(), (T::mod - 1) / n * b);\n\t\t\
     T m = 1;\n\t\tfor (int i = 0; i < n; i += b * 2, m *= w)\n\t\t\tfor (int j = 0;\
     \ j < b; j++) {\n\t\t\t\tT u = A[i + j];\n\t\t\t\tT v = A[i + j + b] * m;\n\t\t\
     \t\tB[i / 2 + j] = u + v;\n\t\t\t\tB[i / 2 + j + n / 2] = u - v;\n\t\t\t}\n\t\
     }\n\tif (inv) {\n\t\tstd::reverse(1 + A.begin(), A.end());\n\t\tT z = T(1) / T(n);\n\
-    \t\tfor (auto &t : A) \n\t\t\tt *= z;\n\t}\n}\n\ntemplate <class T> std::vector<T>\
+    \t\tfor (auto& t : A) \n\t\t\tt *= z;\n\t}\n}\n\ntemplate <class T> std::vector<T>\
     \ multiply(std::vector<T> A, std::vector<T> B) {\n\tint sa = (int)A.size();\n\t\
     int sb = (int)B.size();\n\tif (!std::min(sa, sb))\n\t\treturn {};\n\tint s = sa\
     \ + sb - 1;\n\tint n = 1;\n\tfor (; n < s; n *= 2);\n\tbool eq = A == B;\n\tA.resize(n);\n\
     \tfft(A);\n\tif (eq) \n\t\tB = A;\n\telse \n\t\tB.resize(n), fft(B);\n\tfor (int\
     \ i = 0; i < n; i++)\n\t\tA[i] *= B[i];\n\tfft(A, 1);\n\tA.resize(s);\n\treturn\
     \ A;\n}\n\ntemplate <class M, class T> std::vector<M> multiply_mod(std::vector<T>\
-    \ x, std::vector<T> y) {\n\tauto convert = [](const std::vector<T> &v) {\n\t\t\
+    \ x, std::vector<T> y) {\n\tauto convert = [](const std::vector<T>& v) {\n\t\t\
     std::vector<M> w((int)v.size());\n\t\tfor (int i =  0; i < (int)v.size(); i++)\n\
     \t\t\tw[i] = (int) v[i];\n\t\treturn w;\n\t};\n\treturn multiply(convert(x), convert(y));\n\
-    }\n\ntemplate <class T> std::vector<T> general_multiply(const std::vector<T> &A,\
-    \ const std::vector<T> &B) { \n\t// arbitrary modulus\n\tusing m0 = Mint<(119\
+    }\n\ntemplate <class T> std::vector<T> general_multiply(const std::vector<T>&\
+    \ A, const std::vector<T>& B) { \n\t// arbitrary modulus\n\tusing m0 = Mint<(119\
     \ << 23) + 1, 62>; \n\tusing m1 = Mint<(5 << 25) + 1, 62>;\n\tusing m2 = Mint<(7\
     \ << 26) + 1, 62>;\n\tauto c0 = multiply_mod<m0>(A, B);\n\tauto c1 = multiply_mod<m1>(A,\
     \ B);\n\tauto c2 = multiply_mod<m2>(A, B);\n\tint n = (int)c0.size();\n\tstd::vector<T>\
@@ -76,14 +76,14 @@ data:
     \t\tres[i] = (T(c) * m1::mod + b) * m0::mod + a;\n\t}\n\treturn res;\n}\n\n} //\
     \ namespace FFT\n"
   code: "#pragma once\n\n#include \"../modular-arithmetic/mod-int2.hpp\"\n\nnamespace\
-    \ FFT {\n\ntemplate <class T> void fft(std::vector<T> &A, bool inv = 0) {\n\t\
+    \ FFT {\n\ntemplate <class T> void fft(std::vector<T>& A, bool inv = 0) {\n\t\
     int n = (int)A.size();\n\tassert((T::mod - 1) % n == 0);\n\tstd::vector<T> B(n);\n\
     \tfor (int b = n / 2; b; b /= 2, A.swap(B)) {\n\t\tT w = pow(T::rt(), (T::mod\
     \ - 1) / n * b);\n\t\tT m = 1;\n\t\tfor (int i = 0; i < n; i += b * 2, m *= w)\n\
     \t\t\tfor (int j = 0; j < b; j++) {\n\t\t\t\tT u = A[i + j];\n\t\t\t\tT v = A[i\
     \ + j + b] * m;\n\t\t\t\tB[i / 2 + j] = u + v;\n\t\t\t\tB[i / 2 + j + n / 2] =\
     \ u - v;\n\t\t\t}\n\t}\n\tif (inv) {\n\t\tstd::reverse(1 + A.begin(), A.end());\n\
-    \t\tT z = T(1) / T(n);\n\t\tfor (auto &t : A) \n\t\t\tt *= z;\n\t}\n}\n\ntemplate\
+    \t\tT z = T(1) / T(n);\n\t\tfor (auto& t : A) \n\t\t\tt *= z;\n\t}\n}\n\ntemplate\
     \ <class T> std::vector<T> multiply(std::vector<T> A, std::vector<T> B) {\n\t\
     int sa = (int)A.size();\n\tint sb = (int)B.size();\n\tif (!std::min(sa, sb))\n\
     \t\treturn {};\n\tint s = sa + sb - 1;\n\tint n = 1;\n\tfor (; n < s; n *= 2);\n\
@@ -91,10 +91,10 @@ data:
     \ \n\t\tB.resize(n), fft(B);\n\tfor (int i = 0; i < n; i++)\n\t\tA[i] *= B[i];\n\
     \tfft(A, 1);\n\tA.resize(s);\n\treturn A;\n}\n\ntemplate <class M, class T> std::vector<M>\
     \ multiply_mod(std::vector<T> x, std::vector<T> y) {\n\tauto convert = [](const\
-    \ std::vector<T> &v) {\n\t\tstd::vector<M> w((int)v.size());\n\t\tfor (int i =\
+    \ std::vector<T>& v) {\n\t\tstd::vector<M> w((int)v.size());\n\t\tfor (int i =\
     \  0; i < (int)v.size(); i++)\n\t\t\tw[i] = (int) v[i];\n\t\treturn w;\n\t};\n\
     \treturn multiply(convert(x), convert(y));\n}\n\ntemplate <class T> std::vector<T>\
-    \ general_multiply(const std::vector<T> &A, const std::vector<T> &B) { \n\t//\
+    \ general_multiply(const std::vector<T>& A, const std::vector<T>& B) { \n\t//\
     \ arbitrary modulus\n\tusing m0 = Mint<(119 << 23) + 1, 62>; \n\tusing m1 = Mint<(5\
     \ << 25) + 1, 62>;\n\tusing m2 = Mint<(7 << 26) + 1, 62>;\n\tauto c0 = multiply_mod<m0>(A,\
     \ B);\n\tauto c1 = multiply_mod<m1>(A, B);\n\tauto c2 = multiply_mod<m2>(A, B);\n\
@@ -109,7 +109,7 @@ data:
   path: library/polynomial/fast-fourier-transform.hpp
   requiredBy:
   - library/polynomial/polynomial2.hpp
-  timestamp: '2021-08-15 17:58:43-04:00'
+  timestamp: '2021-08-16 13:46:51-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/yosupo-convolution_mod_1000000007-fast-fourier-transform.test.cpp

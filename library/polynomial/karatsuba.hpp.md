@@ -12,8 +12,8 @@ data:
   attributes:
     links: []
   bundledCode: "\nnamespace Karatsuba {\n\nint size(int s) {\n\treturn s > 1 ? 32\
-    \ - __builtin_clz(s - 1) : 0;\n}\n\ntemplate <class T> void karatsuba(T *a, T\
-    \ *b, T *c, T *t, int n) {\n\tint ca = 0, cb = 0;\n\tfor (int i = 0; i < n; i++)\n\
+    \ - __builtin_clz(s - 1) : 0;\n}\n\ntemplate <class T> void karatsuba(T* a, T*\
+    \ b, T* c, T* t, int n) {\n\tint ca = 0, cb = 0;\n\tfor (int i = 0; i < n; i++)\n\
     \t\tca += (a[i] != 0), cb += (b[i] != 0);\n\tif (std::min(ca, cb) <= 1500 / n)\
     \ { // not many multiplications\n\t\tif (ca > cb) \n\t\t\tstd::swap(ca, cb);\n\
     \t\tfor (int i = 0; i < n; i++) \n\t\t\tif (a[i] != 0)\n\t\t\t\tfor (int j = 0;\
@@ -30,8 +30,8 @@ data:
     \tstd::vector<T> c(2 * n), t(2 * n);\n\tkaratsuba(&a[0], &b[0], &c[0], &t[0],\
     \ n);\n\tc.resize(sa + sb - 1);\n\treturn c;\n}\n\n}\n"
   code: "#pragma once\n\nnamespace Karatsuba {\n\nint size(int s) {\n\treturn s >\
-    \ 1 ? 32 - __builtin_clz(s - 1) : 0;\n}\n\ntemplate <class T> void karatsuba(T\
-    \ *a, T *b, T *c, T *t, int n) {\n\tint ca = 0, cb = 0;\n\tfor (int i = 0; i <\
+    \ 1 ? 32 - __builtin_clz(s - 1) : 0;\n}\n\ntemplate <class T> void karatsuba(T*\
+    \ a, T* b, T* c, T* t, int n) {\n\tint ca = 0, cb = 0;\n\tfor (int i = 0; i <\
     \ n; i++)\n\t\tca += (a[i] != 0), cb += (b[i] != 0);\n\tif (std::min(ca, cb) <=\
     \ 1500 / n) { // not many multiplications\n\t\tif (ca > cb) \n\t\t\tstd::swap(ca,\
     \ cb);\n\t\tfor (int i = 0; i < n; i++) \n\t\t\tif (a[i] != 0)\n\t\t\t\tfor (int\
@@ -51,7 +51,7 @@ data:
   isVerificationFile: false
   path: library/polynomial/karatsuba.hpp
   requiredBy: []
-  timestamp: '2021-07-30 23:56:29-04:00'
+  timestamp: '2021-08-16 13:46:51-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/yosupo-convolution_mod_1000000007-karatsuba.test.cpp

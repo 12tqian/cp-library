@@ -25,7 +25,7 @@ data:
     #include <queue>\n#include <random>\n#include <set>\n#include <stack>\n#include\
     \ <string>\n#include <unordered_map>\n#include <vector>\n\nusing namespace std;\n\
     \nstd::vector<int> manacher(std::string s) {\n\tstd::string t = \"@\";\n\tfor\
-    \ (auto &c : s) \n\t\tt += c, t += '#';\n\tt.back() = '&';\n\tstd::vector<int>\
+    \ (auto& c : s) \n\t\tt += c, t += '#';\n\tt.back() = '&';\n\tstd::vector<int>\
     \ res((int)t.size() - 1);\n\tint lo = 0, hi = 0;\n\tfor (int i = 1; i < (int)t.size()\
     \ - 1; i++) {\n\t\tif (i != 1)\n\t\t\tres[i] = std::min(hi - i, res[hi - i + lo]);\n\
     \t\twhile (t[i - res[i] - 1] == t[i + res[i] + 1])\n\t\t\tres[i]++;\n\t\tif (i\
@@ -46,7 +46,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/yosupo-enumerate_palindromes.test.cpp
   requiredBy: []
-  timestamp: '2021-08-13 01:34:54-04:00'
+  timestamp: '2021-08-16 13:46:51-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/yosupo-enumerate_palindromes.test.cpp

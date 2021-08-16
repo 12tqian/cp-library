@@ -33,8 +33,8 @@ data:
     \ + 1] : st[i] < st[i + 1];\n\t\tvector<int> sum_l(upper), sum_s(upper);\n\t\t\
     for (int i = 0; i < sz; i++)\n\t\t\t(ls[i] ? sum_l[st[i] + 1] : sum_s[st[i]])++;\n\
     \t\tfor (int i = 0; i < upper; i++) {\n\t\t\tif (i)\n\t\t\t\tsum_l[i] += sum_s[i\
-    \ - 1];\n\t\t\tsum_s[i] += sum_l[i];\n\t\t}\n\t\tauto induce = [&](const vector<int>\
-    \ &lms) {\n\t\t\tfill(res.begin(), res.end(), -1);\n\t\t\tvector<int> buf = sum_s;\n\
+    \ - 1];\n\t\t\tsum_s[i] += sum_l[i];\n\t\t}\n\t\tauto induce = [&](const vector<int>&\
+    \ lms) {\n\t\t\tfill(res.begin(), res.end(), -1);\n\t\t\tvector<int> buf = sum_s;\n\
     \t\t\tfor (int d : lms) \n\t\t\t\tif (d != sz)\n\t\t\t\t\tres[buf[st[d]]++] =\
     \ d;\n\t\t\tbuf = sum_l;\n\t\t\tres[buf[st[sz - 1]]++] = sz - 1;\n\t\t\tfor (int\
     \ i = 0; i < sz; i++) {\n\t\t\t\tint v = res[i] - 1;\n\t\t\t\tif (v >= 0 && !ls[v])\n\
@@ -77,7 +77,7 @@ data:
     \ sum_l(upper), sum_s(upper);\n\t\tfor (int i = 0; i < sz; i++)\n\t\t\t(ls[i]\
     \ ? sum_l[st[i] + 1] : sum_s[st[i]])++;\n\t\tfor (int i = 0; i < upper; i++) {\n\
     \t\t\tif (i)\n\t\t\t\tsum_l[i] += sum_s[i - 1];\n\t\t\tsum_s[i] += sum_l[i];\n\
-    \t\t}\n\t\tauto induce = [&](const vector<int> &lms) {\n\t\t\tfill(res.begin(),\
+    \t\t}\n\t\tauto induce = [&](const vector<int>& lms) {\n\t\t\tfill(res.begin(),\
     \ res.end(), -1);\n\t\t\tvector<int> buf = sum_s;\n\t\t\tfor (int d : lms) \n\t\
     \t\t\tif (d != sz)\n\t\t\t\t\tres[buf[st[d]]++] = d;\n\t\t\tbuf = sum_l;\n\t\t\
     \tres[buf[st[sz - 1]]++] = sz - 1;\n\t\t\tfor (int i = 0; i < sz; i++) {\n\t\t\
@@ -117,7 +117,7 @@ data:
   isVerificationFile: false
   path: library/string/suffix-array-lcp.hpp
   requiredBy: []
-  timestamp: '2021-08-16 13:21:48-04:00'
+  timestamp: '2021-08-16 13:46:51-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/yosupo-suffixarray-lcp.test.cpp

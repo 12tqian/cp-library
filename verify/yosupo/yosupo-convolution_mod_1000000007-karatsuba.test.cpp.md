@@ -28,7 +28,7 @@ data:
     #include <queue>\n#include <random>\n#include <set>\n#include <stack>\n#include\
     \ <string>\n#include <unordered_map>\n#include <vector>\n\nusing namespace std;\n\
     \nnamespace Karatsuba {\n\nint size(int s) {\n\treturn s > 1 ? 32 - __builtin_clz(s\
-    \ - 1) : 0;\n}\n\ntemplate <class T> void karatsuba(T *a, T *b, T *c, T *t, int\
+    \ - 1) : 0;\n}\n\ntemplate <class T> void karatsuba(T* a, T* b, T* c, T* t, int\
     \ n) {\n\tint ca = 0, cb = 0;\n\tfor (int i = 0; i < n; i++)\n\t\tca += (a[i]\
     \ != 0), cb += (b[i] != 0);\n\tif (std::min(ca, cb) <= 1500 / n) { // not many\
     \ multiplications\n\t\tif (ca > cb) \n\t\t\tstd::swap(ca, cb);\n\t\tfor (int i\
@@ -94,7 +94,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/yosupo-convolution_mod_1000000007-karatsuba.test.cpp
   requiredBy: []
-  timestamp: '2021-08-15 17:58:43-04:00'
+  timestamp: '2021-08-16 13:46:51-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/yosupo-convolution_mod_1000000007-karatsuba.test.cpp

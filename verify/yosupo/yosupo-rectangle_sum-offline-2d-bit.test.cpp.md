@@ -27,8 +27,7 @@ data:
     \ <iostream>\n#include <iomanip>\n#include <list>\n#include <map>\n#include <numeric>\n\
     #include <queue>\n#include <random>\n#include <set>\n#include <stack>\n#include\
     \ <string>\n#include <unordered_map>\n#include <vector>\n\nusing namespace std;\n\
-    \nusing namespace std;\n\ninline namespace Helpers {\n\t//////////// is_iterable\n\
-    \t// https://stackoverflow.com/questions/13830158/check-if-a-variable-type-is-iterable\n\
+    \ninline namespace Helpers {\n\t//////////// is_iterable\n\t// https://stackoverflow.com/questions/13830158/check-if-a-variable-type-is-iterable\n\
     \t// this gets used only when we can call begin() and end() on that type\n\ttemplate\
     \ <class T, class = void> struct is_iterable : false_type {};\n\ttemplate <class\
     \ T> struct is_iterable<T, void_t<decltype(begin(declval<T>())),\n\t\t\t\t\t\t\
@@ -44,23 +43,23 @@ data:
     is_same_v<decltype(cout << declval<T>()), ostream&>\n\t\t\t>\n\t\t> : true_type\
     \ {};\n\ttemplate <class T> constexpr bool is_printable_v = is_printable<T>::value;\n\
     }\n\ninline namespace Input {\n\ttemplate <class T> constexpr bool needs_input_v\
-    \ = !is_readable_v<T> && is_iterable_v<T>;\n\ttemplate <class T, class ...U> void\
-    \ re(T& t, U& ...u);\n\ttemplate <class T, class U> void re(pair<T, U>& p); //\
+    \ = !is_readable_v<T> && is_iterable_v<T>;\n\ttemplate <class T, class... U> void\
+    \ re(T& t, U&... u);\n\ttemplate <class T, class U> void re(pair<T, U>& p); //\
     \ pairs\n\n\t// re: read\n\ttemplate <class T> typename enable_if<is_readable_v<T>,\
     \ void>::type re(T& x) { cin >> x; } // default\n\ttemplate <class T> void re(complex<T>&\
     \ c) { T a, b; re(a, b); c = {a, b}; } // complex\n\ttemplate <class T> typename\
     \ enable_if<needs_input_v<T>, void>::type re(T& i); // ex. vectors, arrays\n\t\
     template <class T, class U> void re(pair<T, U>& p) { re(p.first, p.second); }\n\
     \ttemplate <class T> typename enable_if<needs_input_v<T>, void>::type re(T& i)\
-    \ {\n\t\tfor (auto& x : i) re(x); }\n\ttemplate <class T, class ...U> void re(T&\
-    \ t, U& ...u) { re(t); re(u...); } // read multiple\n\n\t// rv: resize and read\
-    \ vectors\n\tvoid rv(std::size_t) {}\n\ttemplate <class T, class ...U> void rv(std::size_t\
-    \ N, vector<T>& t, U& ...u);\n\ttemplate <class...U> void rv(std::size_t, std::size_t\
-    \ N2, U& ...u);\n\ttemplate <class T, class ...U> void rv(std::size_t N, vector<T>&\
-    \ t, U& ...u) {\n\t\tt.resize(N); re(t);\n\t\trv(N, u...); }\n\ttemplate <class...U>\
-    \ void rv(std::size_t, std::size_t N2, U& ...u) {\n\t\trv(N2, u...); }\n\n\t//\
+    \ {\n\t\tfor (auto& x : i) re(x); }\n\ttemplate <class T, class... U> void re(T&\
+    \ t, U&... u) { re(t); re(u...); } // read multiple\n\n\t// rv: resize and read\
+    \ vectors\n\tvoid rv(std::size_t) {}\n\ttemplate <class T, class... U> void rv(std::size_t\
+    \ N, vector<T>& t, U&... u);\n\ttemplate <class...U> void rv(std::size_t, std::size_t\
+    \ N2, U&... u);\n\ttemplate <class T, class... U> void rv(std::size_t N, vector<T>&\
+    \ t, U&... u) {\n\t\tt.resize(N); re(t);\n\t\trv(N, u...); }\n\ttemplate <class...U>\
+    \ void rv(std::size_t, std::size_t N2, U&... u) {\n\t\trv(N2, u...); }\n\n\t//\
     \ dumb shortcuts to read in ints\n\tvoid decrement() {} // subtract one from each\n\
-    \ttemplate <class T, class ...U> void decrement(T &t, U &...u) { --t; decrement(u...);\
+    \ttemplate <class T, class... U> void decrement(T& t, U&... u) { --t; decrement(u...);\
     \ }\n\t#define ints(...) int __VA_ARGS__; re(__VA_ARGS__);\n\t#define int1(...)\
     \ ints(__VA_ARGS__); decrement(__VA_ARGS__);\n}\n\ninline namespace ToString {\n\
     \ttemplate <class T> constexpr bool needs_output_v = !is_printable_v<T> && is_iterable_v<T>;\n\
@@ -91,12 +90,12 @@ data:
     \ res[i];\n\t\t}\n\t\tres.back() += \"}\";\n\t\treturn res;\n\t}\n}\n\ninline\
     \ namespace Output {\n\ttemplate <class T> void pr_sep(ostream& os, string, const\
     \ T& t) { os << ts(t); }\n\ttemplate <class T, class... U> void pr_sep(ostream&\
-    \ os, string sep, const T& t, const U& ...u) {\n\t\tpr_sep(os, sep, t); os <<\
-    \ sep; pr_sep(os, sep, u...); }\n\t// print w/ no spaces\n\ttemplate <class ...T>\
-    \ void pr(const T& ...t) { pr_sep(cout, \"\", t...); } \n\t// print w/ spaces,\
-    \ end with newline\n\tvoid ps() { cout << \"\\n\"; }\n\ttemplate <class ...T>\
-    \ void ps(const T& ...t) { pr_sep(cout, \" \", t...); ps(); } \n\t// debug to\
-    \ cerr\n\ttemplate <class ...T> void dbg_out(const T& ...t) {\n\t\tpr_sep(cerr,\
+    \ os, string sep, const T& t, const U&... u) {\n\t\tpr_sep(os, sep, t); os <<\
+    \ sep; pr_sep(os, sep, u...); }\n\t// print w/ no spaces\n\ttemplate <class...\
+    \ T> void pr(const T&... t) { pr_sep(cout, \"\", t...); } \n\t// print w/ spaces,\
+    \ end with newline\n\tvoid ps() { cout << \"\\n\"; }\n\ttemplate <class... T>\
+    \ void ps(const T&... t) { pr_sep(cout, \" \", t...); ps(); } \n\t// debug to\
+    \ cerr\n\ttemplate <class... T> void dbg_out(const T&... t) {\n\t\tpr_sep(cerr,\
     \ \" | \", t...); cerr << endl; }\n\tvoid loc_info(int line, string names) {\n\
     \t\tcerr << \"Line(\" << line << \") -> [\" << names << \"]: \"; }\n\ttemplate\
     \ <int lev, class T> void dbgl_out(const T& t) {\n\t\tcerr << \"\\n\\n\" << ts_sep(ts_lev<lev>(t),\
@@ -180,7 +179,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/yosupo-rectangle_sum-offline-2d-bit.test.cpp
   requiredBy: []
-  timestamp: '2021-08-16 13:31:52-04:00'
+  timestamp: '2021-08-16 13:46:51-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/yosupo-rectangle_sum-offline-2d-bit.test.cpp

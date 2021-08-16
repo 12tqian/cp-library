@@ -1,7 +1,10 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: library/contest/template-short.cpp
+    title: library/contest/template-short.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/codeforces/codeforces-1299D.test.cpp
@@ -12,6 +15,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/spoj/spoj-QTREE2.test.cpp
     title: verify/spoj/spoj-QTREE2.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/unit-test/unit-test-template-short.test.cpp
+    title: verify/unit-test/unit-test-template-short.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -29,7 +35,7 @@ data:
 
     #define f0r(i, a) f1r(i, 0, a)
 
-    #define each(t, a) for (auto &t : a)
+    #define each(t, a) for (auto& t : a)
 
 
     #define mp make_pair
@@ -62,10 +68,10 @@ data:
     typedef vector<pl> vpl;
 
 
-    template <class T> bool ckmin(T &a, const T &b) { return b < a ? a = b, 1 : 0;
+    template <class T> bool ckmin(T& a, const T& b) { return b < a ? a = b, 1 : 0;
     }
 
-    template <class T> bool ckmax(T &a, const T &b) { return a < b ? a = b, 1 : 0;
+    template <class T> bool ckmax(T& a, const T& b) { return a < b ? a = b, 1 : 0;
     }
 
     '
@@ -82,7 +88,7 @@ data:
 
     #define f0r(i, a) f1r(i, 0, a)
 
-    #define each(t, a) for (auto &t : a)
+    #define each(t, a) for (auto& t : a)
 
 
     #define mp make_pair
@@ -115,21 +121,23 @@ data:
     typedef vector<pl> vpl;
 
 
-    template <class T> bool ckmin(T &a, const T &b) { return b < a ? a = b, 1 : 0;
+    template <class T> bool ckmin(T& a, const T& b) { return b < a ? a = b, 1 : 0;
     }
 
-    template <class T> bool ckmax(T &a, const T &b) { return a < b ? a = b, 1 : 0;
+    template <class T> bool ckmax(T& a, const T& b) { return a < b ? a = b, 1 : 0;
     }'
   dependsOn: []
   isVerificationFile: false
   path: library/contest/template-short.hpp
-  requiredBy: []
-  timestamp: '2021-07-28 19:45:54-04:00'
+  requiredBy:
+  - library/contest/template-short.cpp
+  timestamp: '2021-08-16 13:46:51-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/codeforces/codeforces-1494F.test.cpp
   - verify/codeforces/codeforces-1299D.test.cpp
   - verify/spoj/spoj-QTREE2.test.cpp
+  - verify/unit-test/unit-test-template-short.test.cpp
 documentation_of: library/contest/template-short.hpp
 layout: document
 redirect_from:

@@ -19,14 +19,14 @@ data:
     - https://www.spoj.com/problems/QTREE2/
   bundledCode: "#define PROBLEM \"https://www.spoj.com/problems/QTREE2/\"\n\n\n#include\
     \ <bits/stdc++.h>\n\nusing namespace std;\n\n#define f1r(i, a, b) for (int i =\
-    \ (a); i < (b); ++i)\n#define f0r(i, a) f1r(i, 0, a)\n#define each(t, a) for (auto\
-    \ &t : a)\n\n#define mp make_pair\n#define f first\n#define s second\n#define\
-    \ pb push_back\n#define eb emplace_back\n#define sz(x) (int)(x).size()\n#define\
-    \ all(x) begin(x), end(x)\n\ntypedef long long ll;\ntypedef vector<int> vi;\n\
-    typedef vector<ll> vl;\ntypedef pair<int, int> pi;\ntypedef pair<ll, ll> pl;\n\
-    typedef vector<pi> vpi;\ntypedef vector<pl> vpl;\n\ntemplate <class T> bool ckmin(T\
-    \ &a, const T &b) { return b < a ? a = b, 1 : 0; }\ntemplate <class T> bool ckmax(T\
-    \ &a, const T &b) { return a < b ? a = b, 1 : 0; }\n\ntemplate<class T> struct\
+    \ (a); i < (b); ++i)\n#define f0r(i, a) f1r(i, 0, a)\n#define each(t, a) for (auto&\
+    \ t : a)\n\n#define mp make_pair\n#define f first\n#define s second\n#define pb\
+    \ push_back\n#define eb emplace_back\n#define sz(x) (int)(x).size()\n#define all(x)\
+    \ begin(x), end(x)\n\ntypedef long long ll;\ntypedef vector<int> vi;\ntypedef\
+    \ vector<ll> vl;\ntypedef pair<int, int> pi;\ntypedef pair<ll, ll> pl;\ntypedef\
+    \ vector<pi> vpi;\ntypedef vector<pl> vpl;\n\ntemplate <class T> bool ckmin(T&\
+    \ a, const T& b) { return b < a ? a = b, 1 : 0; }\ntemplate <class T> bool ckmax(T&\
+    \ a, const T& b) { return a < b ? a = b, 1 : 0; }\n\ntemplate<class T> struct\
     \ LCAJumpDistance {\n\tint n;\n\tstd::vector<std::vector<int>> par;\n\tstd::vector<std::vector<std::pair<int,\
     \ T>>> adj;\n\tstd::vector<int> depth;\n\tstd::vector<T> depth_dist;\n\n\tvoid\
     \ init(int _n) {\n\t\tn = _n;\n\t\tint d = 1;\n\t\twhile ((1 << d) < n) d++;\n\
@@ -82,7 +82,7 @@ data:
   isVerificationFile: true
   path: verify/spoj/spoj-QTREE2.test.cpp
   requiredBy: []
-  timestamp: '2021-07-28 22:23:54-04:00'
+  timestamp: '2021-08-16 13:46:51-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/spoj/spoj-QTREE2.test.cpp

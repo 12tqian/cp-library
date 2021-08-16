@@ -76,6 +76,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/data-structures/2d-range-queries/quadtree.hpp
       title: Quadtree
+  - name: library/data-structures
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: library/data-structures/range-vector.hpp
+      title: library/data-structures/range-vector.hpp
   - name: library/dynamic-programming
     pages:
     - icon: ':heavy_check_mark:'
@@ -195,8 +200,8 @@ data:
       path: library/misc/fast-io.hpp
       title: library/misc/fast-io.hpp
     - icon: ':heavy_check_mark:'
-      path: library/misc/range-vector.hpp
-      title: library/misc/range-vector.hpp
+      path: library/misc/pragma-short.hpp
+      title: library/misc/pragma-short.hpp
   - name: library/modular-arithmetic
     pages:
     - icon: ':heavy_check_mark:'

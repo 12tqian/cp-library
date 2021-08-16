@@ -24,12 +24,12 @@ data:
     \ <iostream>\n#include <iomanip>\n#include <list>\n#include <map>\n#include <numeric>\n\
     #include <queue>\n#include <random>\n#include <set>\n#include <stack>\n#include\
     \ <string>\n#include <unordered_map>\n#include <vector>\n\nusing namespace std;\n\
-    \nconst int MOD = 1e9 + 7;\n\ntypedef std::decay<decltype(MOD)>::type mod_t; \n\
-    struct mi {\n\tmod_t val;\n\texplicit operator mod_t() const { return val; }\n\
-    \texplicit operator bool() const { return val != 0; }\n\tmi() { val = 0; }\n\t\
-    mi(const long long &v) {\n\t\tval = (-MOD <= v && v < MOD) ? v : v % MOD;\n\t\t\
-    if (val < 0) val += MOD; }\n\tfriend std::istream& operator>>(std::istream& in,\
-    \ mi& a) { \n\t\tlong long x; std::cin >> x; a = mi(x); return in; }\n\tfriend\
+    \nconst int MOD = 1e9 + 7; // 998244353\n\ntypedef std::decay<decltype(MOD)>::type\
+    \ mod_t; \nstruct mi {\n\tmod_t val;\n\texplicit operator mod_t() const { return\
+    \ val; }\n\texplicit operator bool() const { return val != 0; }\n\tmi() { val\
+    \ = 0; }\n\tmi(const long long& v) {\n\t\tval = (-MOD <= v && v < MOD) ? v : v\
+    \ % MOD;\n\t\tif (val < 0) val += MOD; }\n\tfriend std::istream& operator>>(std::istream&\
+    \ in, mi& a) { \n\t\tlong long x; std::cin >> x; a = mi(x); return in; }\n\tfriend\
     \ std::ostream& operator<<(std::ostream& os, const mi& a) { return os << a.val;\
     \ }\n\tfriend bool operator==(const mi& a, const mi& b) { return a.val == b.val;\
     \ }\n\tfriend bool operator!=(const mi& a, const mi& b) { return !(a == b); }\
@@ -103,7 +103,7 @@ data:
   isVerificationFile: true
   path: verify/codeforces/codeforces-1551F.test.cpp
   requiredBy: []
-  timestamp: '2021-08-15 17:58:43-04:00'
+  timestamp: '2021-08-16 13:47:16-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/codeforces/codeforces-1551F.test.cpp

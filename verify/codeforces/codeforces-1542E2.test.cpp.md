@@ -5,8 +5,8 @@ data:
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
   - icon: ':heavy_check_mark:'
-    path: library/misc/range-vector.hpp
-    title: library/misc/range-vector.hpp
+    path: library/data-structures/range-vector.hpp
+    title: library/data-structures/range-vector.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -93,7 +93,7 @@ data:
     \t\t\t\tans += res;\n\t\t\t}\n\t\t}\n\t}\n\tcout << ans << '\\n';\n\treturn 0;\n\
     }\n"
   code: "#define PROBLEM \"https://codeforces.com/contest/1542/problem/E2\"\n\n#include\
-    \ \"../../library/contest/template-minimal.hpp\"\n#include \"../../library/misc/range-vector.hpp\"\
+    \ \"../../library/contest/template-minimal.hpp\"\n#include \"../../library/data-structures/range-vector.hpp\"\
     \n\nstruct FastMod {\n\tunsigned long long b, m;\n\tFastMod(unsigned long long\
     \ b) : b(b), m((unsigned long long)((__uint128_t(1) << 64) / b)) {}\n\tunsigned\
     \ long long reduce(unsigned long long a) {\n\t\tunsigned long long q = (unsigned\
@@ -157,11 +157,11 @@ data:
     }"
   dependsOn:
   - library/contest/template-minimal.hpp
-  - library/misc/range-vector.hpp
+  - library/data-structures/range-vector.hpp
   isVerificationFile: true
   path: verify/codeforces/codeforces-1542E2.test.cpp
   requiredBy: []
-  timestamp: '2021-08-16 13:31:52-04:00'
+  timestamp: '2021-08-16 13:59:27-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/codeforces/codeforces-1542E2.test.cpp
