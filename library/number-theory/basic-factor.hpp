@@ -16,11 +16,11 @@ template <class T> std::vector<std::pair<T, int>> factor(T x) {
 }
 
 template <class T> T phi(T x) {
-	for (auto &a : factor(x)) x -= x / a.first;
+	for (auto& a : factor(x)) x -= x / a.first;
 	return x;
 }
 
-template <class T> void tour(std::vector<std::pair<T, int>> &v, std::vector<T> &res, int ind, T cur) {
+template <class T> void tour(std::vector<std::pair<T, int>>& v, std::vector<T>& res, int ind, T cur) {
 	if (ind == (int)v.size()) res.push_back(cur);
 	else {
 		T mul = 1;

@@ -18,20 +18,20 @@ struct OfflineDynamicConnectivity {
 	}
 
 	void process(int ind) {
-		for (auto &t : seg[ind]) {
+		for (auto& t : seg[ind]) {
 			dsu.unite(t.first, t.second);
 		}
 		if (ind >= sz) {
 			// Process the queries at time ti
 			// Do stuff with D
 			int ti = ind - sz; 
-			for (auto &qq : queries[ti]) {
+			for (auto& qq : queries[ti]) {
 				ans.push_back(dsu.same_set(qq.first, qq.second));
 			}
 		} else {
 			process(2 * ind); process(2 * ind + 1);
 		}
-		for (auto &t : seg[ind]) {
+		for (auto& t : seg[ind]) {
 			dsu.rollback();
 		}
 	}

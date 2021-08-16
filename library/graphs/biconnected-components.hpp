@@ -75,7 +75,7 @@ struct BCC {
 		for (int i = 0; i < n; i++) 
 			add_component(i);
 		tree.resize(num_comps);
-		for (auto &b : bridge) {
+		for (auto& b : bridge) {
 			int u = id[b.first];
 			int v = id[b.second];
 			tree[u].push_back(v);

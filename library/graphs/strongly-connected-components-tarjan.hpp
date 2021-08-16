@@ -39,7 +39,7 @@ struct SCC {
 		for (int i = 0; i < n; i++) 
 			if (!disc[i])
 				dfs(i);
-		for (auto &x : id) 
+		for (auto& x : id) 
 			x = num_comps - 1 - x;
 		comps.resize(num_comps);
 		for (int i = 0; i < n; i++)

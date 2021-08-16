@@ -10,7 +10,7 @@ template <class T> struct Simplex {
 
 	std::vector<std::vector<T>> D;
 
-	Simplex(const std::vector<std::vector<T>> &A, const std::vector<T> &b, const std::vector<T> &c) : 
+	Simplex(const std::vector<std::vector<T>>& A, const std::vector<T>& b, const std::vector<T>& c) : 
 	m(b.size()), n(c.size()), N(n + 1), B(m), D(m + 2, std::vector<T>(n + 2)) {
 		for (int i = 0; i < m; ++i) {
 			for (int j = 0; j < n; ++j) {
@@ -86,7 +86,7 @@ template <class T> struct Simplex {
 		}
 	}
 
-	T solve(std::vector<T> &x) {
+	T solve(std::vector<T>& x) {
 		int r = 0;
 		for (int i = 1; i < m; ++i) {
 			if (D[i][n + 1] < D[r][n + 1]) {

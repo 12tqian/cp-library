@@ -66,7 +66,7 @@ struct TwoSat {
 	
 	void must(int x) { either(x, x); }
 	
-	void at_most_one(const std::vector<int> &v) {
+	void at_most_one(const std::vector<int>& v) {
 		if ((int)v.size() <= 1) {
 			return;
 		}

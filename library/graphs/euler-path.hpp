@@ -43,7 +43,7 @@ template <bool directed> struct Euler {
 		int lst = -1;
 		while ((int)s.size()) {
 			int x = s.back().first;
-			auto &it = its[x];
+			auto& it = its[x];
 			auto en = adj[x].end();
 			while (it != en && used[it->second]) {
 				++it;

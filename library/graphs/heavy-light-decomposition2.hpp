@@ -8,7 +8,7 @@ template <class T> struct HeavyLight {
 	std::vector<int> parent, heavy, depth, root, tree_pos;
 	LazySeg<T> tree;
 
-	template <class G> int dfs(const G &graph, int v) {
+	template <class G> int dfs(const G& graph, int v) {
 		int size = 1, max_subtree = 0;
 		for (int u : graph[v]) if (u != parent[v]) {
 			parent[u] = v;
@@ -30,7 +30,7 @@ template <class T> struct HeavyLight {
 	}
 
 	template <class G>
-	void init(const G &graph, int r = 0) {
+	void init(const G& graph, int r = 0) {
 		int n = (int)graph.size();
 		heavy.assign(n, -1);
 		parent.assign(n, 0);
@@ -49,7 +49,7 @@ template <class T> struct HeavyLight {
 			}
 	}
 
-	void modify_path(int u, int v, const T &value) {
+	void modify_path(int u, int v, const T& value) {
 		process_path(u, v, [this, &value](int l, int r) { tree.upd(l, r, value); });
 	}
 	

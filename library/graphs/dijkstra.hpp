@@ -28,7 +28,7 @@ template <class C, bool directed> struct Dijkstra {
 			auto x = pq.top();
 			pq.pop();
 			if (dist[x.second] < x.first) continue;
-			for (auto &y: adj[x.second]) {
+			for (auto& y: adj[x.second]) {
 				ad(y.first, x.first + y.second);
 			}
 		}

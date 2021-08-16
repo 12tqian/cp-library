@@ -15,15 +15,15 @@ struct BigInt {
 	BigInt() : sign(1) {}
 	BigInt(long long v) { *this = v; }
 
-	BigInt &operator=(long long v) {
+	BigInt& operator=(long long v) {
 		sign = v < 0 ? -1 : 1; v *= sign;
 		z.clear(); for (; v > 0; v = v / base) z.push_back((int) (v % base));
 		return *this;
 	}
 
-	BigInt(const std::string &s) { read(s); }
+	BigInt(const std::string& s) { read(s); }
 
-	BigInt &operator+=(const BigInt &other) {
+	BigInt& operator+=(const BigInt& other) {
 		if (sign == other.sign) {
 			for (int i = 0, carry = 0; i < other.z.size() || carry; ++i) {
 				if (i == z.size())
@@ -39,9 +39,9 @@ struct BigInt {
 		return *this;
 	}
 
-	friend BigInt operator+(BigInt a, const BigInt &b) { return a += b; }
+	friend BigInt operator+(BigInt a, const BigInt& b) { return a += b; }
 
-	BigInt &operator-=(const BigInt &other) {
+	BigInt& operator-=(const BigInt& other) {
 		if (sign == other.sign) {
 			if (sign == 1 && *this >= other || sign == -1 && *this <= other) {
 				for (int i = 0, carry = 0; i < other.z.size() || carry; ++i) {
@@ -61,9 +61,9 @@ struct BigInt {
 		return *this;
 	}
 
-	friend BigInt operator-(BigInt a, const BigInt &b) { return a -= b; }
+	friend BigInt operator-(BigInt a, const BigInt& b) { return a -= b; }
 
-	BigInt &operator*=(int v) {
+	BigInt& operator*=(int v) {
 		if (v < 0) sign = -sign, v = -v;
 		for (int i = 0, carry = 0; i < z.size() || carry; ++i) {
 			if (i == z.size())
@@ -78,7 +78,7 @@ struct BigInt {
 
 	BigInt operator*(int v) const { return BigInt(*this) *= v; }
 
-	friend std::pair<BigInt, BigInt> divmod(const BigInt &a1, const BigInt &b1) {
+	friend std::pair<BigInt, BigInt> divmod(const BigInt& a1, const BigInt& b1) {
 		int norm = base / (b1.z.back() + 1);
 		BigInt a = a1.abs() * norm;
 		BigInt b = b1.abs() * norm;
@@ -104,7 +104,7 @@ struct BigInt {
 		return {q, r / norm};
 	}
 
-	friend BigInt sqrt(const BigInt &a1) {
+	friend BigInt sqrt(const BigInt& a1) {
 		BigInt a = a1;
 		while (a.z.empty() || a.z.size() % 2 == 1)
 			a.z.push_back(0);
@@ -147,11 +147,11 @@ struct BigInt {
 		return res / norm;
 	}
 
-	BigInt operator/(const BigInt &v) const { return divmod(*this, v).first; }
+	BigInt operator/(const BigInt& v) const { return divmod(*this, v).first; }
 
-	BigInt operator%(const BigInt &v) const { return divmod(*this, v).second; }
+	BigInt operator%(const BigInt& v) const { return divmod(*this, v).second; }
 
-	BigInt &operator/=(int v) {
+	BigInt& operator/=(int v) {
 		if (v < 0) sign = -sign, v = -v;
 		for (int i = (int) z.size() - 1, rem = 0; i >= 0; --i) {
 			long long cur = z[i] + rem * (long long) base;
@@ -172,10 +172,10 @@ struct BigInt {
 		return m * sign;
 	}
 
-	BigInt &operator*=(const BigInt &v) { return *this = *this * v; }
-	BigInt &operator/=(const BigInt &v) { return *this = *this / v; }
+	BigInt& operator*=(const BigInt& v) { return *this = *this * v; }
+	BigInt& operator/=(const BigInt& v) { return *this = *this / v; }
 
-	bool operator<(const BigInt &v) const {
+	bool operator<(const BigInt& v) const {
 		if (sign != v.sign)
 			return sign < v.sign;
 		if (z.size() != v.z.size())
@@ -186,11 +186,11 @@ struct BigInt {
 		return false;
 	}
 
-	bool operator>(const BigInt &v) const { return v < *this; }
-	bool operator<=(const BigInt &v) const { return !(v < *this); }
-	bool operator>=(const BigInt &v) const { return !(*this < v); }
-	bool operator==(const BigInt &v) const { return !(*this < v) && !(v < *this); }
-	bool operator!=(const BigInt &v) const { return *this < v || v < *this; }
+	bool operator>(const BigInt& v) const { return v < *this; }
+	bool operator<=(const BigInt& v) const { return !(v < *this); }
+	bool operator>=(const BigInt& v) const { return !(*this < v); }
+	bool operator==(const BigInt& v) const { return !(*this < v) && !(v < *this); }
+	bool operator!=(const BigInt& v) const { return *this < v || v < *this; }
 
 	void trim() {
 		while (!z.empty() && z.back() == 0) z.pop_back();
@@ -213,15 +213,15 @@ struct BigInt {
 		return res * sign;
 	}
 
-	friend BigInt gcd(const BigInt &a, const BigInt &b) {
+	friend BigInt gcd(const BigInt& a, const BigInt& b) {
 		return b.is_zero() ? a : gcd(b, a % b);
 	}
 
-	friend BigInt lcm(const BigInt &a, const BigInt &b) {
+	friend BigInt lcm(const BigInt& a, const BigInt& b) {
 		return a / gcd(a, b) * b;
 	}
 
-	void read(const std::string &s) {
+	void read(const std::string& s) {
 		sign = 1;
 		z.clear();
 		int pos = 0;
@@ -239,13 +239,13 @@ struct BigInt {
 		trim();
 	}
 
-	friend std::istream &operator>>(std::istream &stream, BigInt &v) {
+	friend std::istream& operator>>(std::istream& stream, BigInt& v) {
 		std::string s; stream >> s;
 		v.read(s);
 		return stream;
 	}
 
-	friend std::ostream &operator<<(std::ostream &stream, const BigInt &v) {
+	friend std::ostream& operator<<(std::ostream& stream, const BigInt& v) {
 		if (v.sign == -1)
 			stream << '-';
 		stream << (v.z.empty() ? 0 : v.z.back());
@@ -254,7 +254,7 @@ struct BigInt {
 		return stream;
 	}
 
-	static std::vector<int> convert_base(const std::vector<int> &a, int old_digits, int new_digits) {
+	static std::vector<int> convert_base(const std::vector<int>& a, int old_digits, int new_digits) {
 		std::vector<long long> p(std::max(old_digits, new_digits) + 1);
 		p[0] = 1;
 		for (int i = 1; i < p.size(); i++)
@@ -277,7 +277,7 @@ struct BigInt {
 		return res;
 	}
 
-	static std::vector<long long> karatsubaMultiply(const std::vector<long long> &a, const std::vector<long long> &b) {
+	static std::vector<long long> karatsubaMultiply(const std::vector<long long>& a, const std::vector<long long>& b) {
 		int n = a.size();
 		std::vector<long long> res(n + n);
 		if (n <= 32) {
@@ -316,7 +316,7 @@ struct BigInt {
 		return res;
 	}
 
-	BigInt operator*(const BigInt &v) const {
+	BigInt operator*(const BigInt& v) const {
 		std::vector<int> a6 = convert_base(this->z, base_digits, 6);
 		std::vector<int> b6 = convert_base(v.z, base_digits, 6);
 		std::vector<long long> a(a6.begin(), a6.end());
