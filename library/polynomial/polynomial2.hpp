@@ -7,7 +7,7 @@ namespace Polynomial {
 using T = long long;
 using Poly = std::vector<T>;
 
-T eval(const Poly &p, const T &x) {
+T eval(const Poly& p, const T& x) {
 	T res = 0;
 	for (int i = (int)p.size() - 1; i >= 0; --i) {
 		res = x * res + p[i];
@@ -15,7 +15,7 @@ T eval(const Poly &p, const T &x) {
 	return res;
 }
 
-Poly& operator+=(Poly &l, const Poly &r) {
+Poly& operator+=(Poly& l, const Poly& r) {
 	l.resize(std::max((int)l.size(), (int)r.size()));
 	for (int i = 0; i < (int)r.size(); ++i) {
 		l[i] += r[i];
@@ -23,7 +23,7 @@ Poly& operator+=(Poly &l, const Poly &r) {
 	return l;
 }
 
-Poly& operator-=(Poly &l, const Poly &r) {
+Poly& operator-=(Poly& l, const Poly& r) {
 	l.resize(std::max((int)l.size(), (int)r.size()));
 	for (int i = 0; i < (int)r.size(); ++i) {
 		l[i] -= r[i];
@@ -31,21 +31,21 @@ Poly& operator-=(Poly &l, const Poly &r) {
 	return l;
 }
 
-Poly& operator*=(Poly &l, const T& r) {
+Poly& operator*=(Poly& l, const T& r) {
 	for (int i = 0; i < (int)l.size(); ++i) {
 		l[i] *= r;
 	}
 	return l;
 }
 
-Poly& operator/=(Poly &l, const T& r) {
+Poly& operator/=(Poly& l, const T& r) {
 	for (int i = 0; i < (int)l.size(); ++i) {
 		l[i] /= r;
 	}
 	return l;
 }
 
-Poly operator*(const Poly &l, const Poly &r) {
+Poly operator*(const Poly& l, const Poly& r) {
 	if (!std::min((int)l.size(), (int)r.size())) {
 		return {};
 	}
@@ -59,15 +59,15 @@ Poly operator*(const Poly &l, const Poly &r) {
 	return res;
 }
 
-Poly operator+(Poly l, const Poly &r) { return l += r; }
-Poly operator-(Poly l, const Poly &r) { return l -= r; }
+Poly operator+(Poly l, const Poly& r) { return l += r; }
+Poly operator-(Poly l, const Poly& r) { return l -= r; }
 Poly operator-(Poly l) { for (auto &t : l) t *= -1; return l; }
-Poly operator*(Poly l, const T &r) { return l *= r; }
-Poly operator*(const T& r, const Poly &l) { return l * r; }
-Poly operator/(Poly l, const T &r) { return l /= r;	}
-Poly& operator*=(Poly &l, const Poly &r) { return l = l * r; }
+Poly operator*(Poly l, const T& r) { return l *= r; }
+Poly operator*(const T& r, const Poly& l) { return l * r; }
+Poly operator/(Poly l, const T& r) { return l /= r;	}
+Poly& operator*=(Poly& l, const Poly& r) { return l = l * r; }
 
-Poly derivative(const Poly &p) {
+Poly derivative(const Poly& p) {
 	Poly res;
 	for (int i = 1; i < (int)p.size(); ++i) {
 		res.push_back(T(i) * p[i]);
@@ -75,7 +75,7 @@ Poly derivative(const Poly &p) {
 	return res;
 }
 
-Poly integral(const Poly &p) {
+Poly integral(const Poly& p) {
 	static Poly invs{0, 1};
 	for (int i = invs.size(); i <= (int)p.size(); ++i ){
 		invs.push_back(1 / T(i));

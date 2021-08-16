@@ -4,7 +4,7 @@
 
 namespace FFT {
 
-template <class T> void fft(std::vector<T> &A, bool inv = 0) {
+template <class T> void fft(std::vector<T>& A, bool inv = 0) {
 	int n = (int)A.size();
 	assert((T::mod - 1) % n == 0);
 	std::vector<T> B(n);
@@ -22,7 +22,7 @@ template <class T> void fft(std::vector<T> &A, bool inv = 0) {
 	if (inv) {
 		std::reverse(1 + A.begin(), A.end());
 		T z = T(1) / T(n);
-		for (auto &t : A) 
+		for (auto& t : A) 
 			t *= z;
 	}
 }
@@ -50,7 +50,7 @@ template <class T> std::vector<T> multiply(std::vector<T> A, std::vector<T> B) {
 }
 
 template <class M, class T> std::vector<M> multiply_mod(std::vector<T> x, std::vector<T> y) {
-	auto convert = [](const std::vector<T> &v) {
+	auto convert = [](const std::vector<T>& v) {
 		std::vector<M> w((int)v.size());
 		for (int i =  0; i < (int)v.size(); i++)
 			w[i] = (int) v[i];
@@ -59,7 +59,7 @@ template <class M, class T> std::vector<M> multiply_mod(std::vector<T> x, std::v
 	return multiply(convert(x), convert(y));
 }
 
-template <class T> std::vector<T> general_multiply(const std::vector<T> &A, const std::vector<T> &B) { 
+template <class T> std::vector<T> general_multiply(const std::vector<T>& A, const std::vector<T>& B) { 
 	// arbitrary modulus
 	using m0 = Mint<(119 << 23) + 1, 62>; 
 	using m1 = Mint<(5 << 25) + 1, 62>;

@@ -1,7 +1,5 @@
 #pragma once
 
-using namespace std;
-
 inline namespace Helpers {
 	//////////// is_iterable
 	// https://stackoverflow.com/questions/13830158/check-if-a-variable-type-is-iterable
@@ -35,7 +33,7 @@ inline namespace Helpers {
 
 inline namespace Input {
 	template <class T> constexpr bool needs_input_v = !is_readable_v<T> && is_iterable_v<T>;
-	template <class T, class ...U> void re(T& t, U& ...u);
+	template <class T, class... U> void re(T& t, U&... u);
 	template <class T, class U> void re(pair<T, U>& p); // pairs
 
 	// re: read
@@ -45,21 +43,21 @@ inline namespace Input {
 	template <class T, class U> void re(pair<T, U>& p) { re(p.first, p.second); }
 	template <class T> typename enable_if<needs_input_v<T>, void>::type re(T& i) {
 		for (auto& x : i) re(x); }
-	template <class T, class ...U> void re(T& t, U& ...u) { re(t); re(u...); } // read multiple
+	template <class T, class... U> void re(T& t, U&... u) { re(t); re(u...); } // read multiple
 
 	// rv: resize and read vectors
 	void rv(std::size_t) {}
-	template <class T, class ...U> void rv(std::size_t N, vector<T>& t, U& ...u);
-	template <class...U> void rv(std::size_t, std::size_t N2, U& ...u);
-	template <class T, class ...U> void rv(std::size_t N, vector<T>& t, U& ...u) {
+	template <class T, class... U> void rv(std::size_t N, vector<T>& t, U&... u);
+	template <class...U> void rv(std::size_t, std::size_t N2, U&... u);
+	template <class T, class... U> void rv(std::size_t N, vector<T>& t, U&... u) {
 		t.resize(N); re(t);
 		rv(N, u...); }
-	template <class...U> void rv(std::size_t, std::size_t N2, U& ...u) {
+	template <class...U> void rv(std::size_t, std::size_t N2, U&... u) {
 		rv(N2, u...); }
 
 	// dumb shortcuts to read in ints
 	void decrement() {} // subtract one from each
-	template <class T, class ...U> void decrement(T &t, U &...u) { --t; decrement(u...); }
+	template <class T, class... U> void decrement(T& t, U&... u) { --t; decrement(u...); }
 	#define ints(...) int __VA_ARGS__; re(__VA_ARGS__);
 	#define int1(...) ints(__VA_ARGS__); decrement(__VA_ARGS__);
 }
@@ -114,15 +112,15 @@ inline namespace ToString {
 
 inline namespace Output {
 	template <class T> void pr_sep(ostream& os, string, const T& t) { os << ts(t); }
-	template <class T, class... U> void pr_sep(ostream& os, string sep, const T& t, const U& ...u) {
+	template <class T, class... U> void pr_sep(ostream& os, string sep, const T& t, const U&... u) {
 		pr_sep(os, sep, t); os << sep; pr_sep(os, sep, u...); }
 	// print w/ no spaces
-	template <class ...T> void pr(const T& ...t) { pr_sep(cout, "", t...); } 
+	template <class... T> void pr(const T&... t) { pr_sep(cout, "", t...); } 
 	// print w/ spaces, end with newline
 	void ps() { cout << "\n"; }
-	template <class ...T> void ps(const T& ...t) { pr_sep(cout, " ", t...); ps(); } 
+	template <class... T> void ps(const T&... t) { pr_sep(cout, " ", t...); ps(); } 
 	// debug to cerr
-	template <class ...T> void dbg_out(const T& ...t) {
+	template <class... T> void dbg_out(const T&... t) {
 		pr_sep(cerr, " | ", t...); cerr << endl; }
 	void loc_info(int line, string names) {
 		cerr << "Line(" << line << ") -> [" << names << "]: "; }

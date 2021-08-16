@@ -24,7 +24,7 @@ struct SuffixArray {
 				sum_l[i] += sum_s[i - 1];
 			sum_s[i] += sum_l[i];
 		}
-		auto induce = [&](const vector<int> &lms) {
+		auto induce = [&](const vector<int>& lms) {
 			fill(res.begin(), res.end(), -1);
 			vector<int> buf = sum_s;
 			for (int d : lms) 

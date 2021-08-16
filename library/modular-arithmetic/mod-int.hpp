@@ -1,6 +1,6 @@
 #pragma once
 
-const int MOD = 1e9 + 7;
+const int MOD = 1e9 + 7; // 998244353
 
 typedef std::decay<decltype(MOD)>::type mod_t; 
 struct mi {

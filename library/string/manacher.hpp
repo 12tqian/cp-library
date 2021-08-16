@@ -2,7 +2,7 @@
 
 std::vector<int> manacher(std::string s) {
 	std::string t = "@";
-	for (auto &c : s) 
+	for (auto& c : s) 
 		t += c, t += '#';
 	t.back() = '&';
 	std::vector<int> res((int)t.size() - 1);

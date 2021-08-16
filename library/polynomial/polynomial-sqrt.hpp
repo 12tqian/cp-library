@@ -3,8 +3,6 @@
 #include "polynomial.hpp"
 #include "../modular-arithmetic/mod-sqrt.hpp"
 
-#include <bits/stdc++.h>
-
 template <class D> Poly<D> sqrt(const Poly<D>& p, int n = -1) {
 	if (n == -1) n = (int)p.size();
 	if (p.empty()) return Poly<D>(n);
