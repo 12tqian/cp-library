@@ -78,7 +78,6 @@ template <typename T, typename... Args> void debug(string s, T x, Args... args) 
 
 constexpr int pct(int x) { return __builtin_popcount(x); }
 constexpr int bits(int x) { return 31 - __builtin_clz(x); } // floor(log2(x))
-
 #include "../misc/easy-io.hpp"
 #include "../modular-arithmetic/mod-int.hpp"
 
