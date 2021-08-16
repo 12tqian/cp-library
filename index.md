@@ -234,6 +234,9 @@ data:
       path: library/number-theory/fast-factor-sieve.hpp
       title: library/number-theory/fast-factor-sieve.hpp
     - icon: ':heavy_check_mark:'
+      path: library/number-theory/linear-sieve.hpp
+      title: library/number-theory/linear-sieve.hpp
+    - icon: ':heavy_check_mark:'
       path: library/number-theory/sieve.hpp
       title: library/number-theory/sieve.hpp
   - name: library/numerical
@@ -404,6 +407,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/spoj/spoj-QTREE2.test.cpp
       title: verify/spoj/spoj-QTREE2.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/spoj/spoj-TDKPRIME.test.cpp
+      title: verify/spoj/spoj-TDKPRIME.test.cpp
   - name: verify/unit-test
     pages:
     - icon: ':heavy_check_mark:'
