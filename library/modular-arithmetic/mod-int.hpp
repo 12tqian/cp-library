@@ -8,7 +8,7 @@ struct mi {
 	explicit operator mod_t() const { return val; }
 	explicit operator bool() const { return val != 0; }
 	mi() { val = 0; }
-	mi(const long long &v) {
+	mi(const long long& v) {
 		val = (-MOD <= v && v < MOD) ? v : v % MOD;
 		if (val < 0) val += MOD; }
 	friend std::istream& operator>>(std::istream& in, mi& a) { 
