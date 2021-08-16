@@ -24,7 +24,7 @@ data:
     \ <iostream>\n#include <iomanip>\n#include <list>\n#include <map>\n#include <numeric>\n\
     #include <queue>\n#include <random>\n#include <set>\n#include <stack>\n#include\
     \ <string>\n#include <unordered_map>\n#include <vector>\n\nusing namespace std;\n\
-    \ntemplate <class T> struct SegmentTree {\n\tSegmentTree<T> *left, *right;\n\t\
+    \ntemplate <class T> struct SegmentTree {\n\tSegmentTree<T>* left, * right;\n\t\
     T sum, lazy;\n\n\tSegmentTree(int l, int r) {\n\t\tlazy = 0;\n\t\tif (l == r)\
     \ {\n\t\t\tsum = 0;\n\t\t} else {\n\t\t\tint m = (l + r) >> 1;\n\t\t\tleft = new\
     \ SegmentTree<T>(l, m);\n\t\t\tright = new SegmentTree<T>(m + 1, r);\n\t\t\tpull();\n\
@@ -63,7 +63,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/yosupo-point_add_range_sum-implicit-lazy-segment-tree.test.cpp
   requiredBy: []
-  timestamp: '2021-07-28 19:45:54-04:00'
+  timestamp: '2021-08-16 13:21:48-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/yosupo-point_add_range_sum-implicit-lazy-segment-tree.test.cpp

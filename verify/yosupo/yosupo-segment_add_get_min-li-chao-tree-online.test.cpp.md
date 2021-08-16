@@ -29,7 +29,7 @@ data:
     \ _m; }\n\tLine() : Line(0, std::numeric_limits<long long>::min()) { }\n\n\tlong\
     \ long get(long long x) { return k * x + m; }\n\n\tbool majorize(Line X, long\
     \ long L, long long R) { \n\t\treturn get(L) >= X.get(L) && get(R) >= X.get(R);\
-    \ \n\t}\n};\n\nstruct Node {\n\tNode *c[2]; Line S;\n\n\tNode() { c[0] = c[1]\
+    \ \n\t}\n};\n\nstruct Node {\n\tNode* c[2]; Line S;\n\n\tNode() { c[0] = c[1]\
     \ = NULL; S = Line(); }\n\t~Node() { for (int i = 0; i < 2; i++) delete c[i];\
     \ }\n\n\tvoid mc(int i) { if (!c[i]) c[i] = new Node(); }\n\tlong long mid(long\
     \ long x) { return x & 1 ? (x - 1) / 2 : x / 2; }\n\n\tlong long query(long long\
@@ -73,7 +73,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/yosupo-segment_add_get_min-li-chao-tree-online.test.cpp
   requiredBy: []
-  timestamp: '2021-07-28 19:45:54-04:00'
+  timestamp: '2021-08-16 13:21:48-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/yosupo-segment_add_get_min-li-chao-tree-online.test.cpp

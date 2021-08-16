@@ -30,7 +30,7 @@ data:
     \n\ntemplate <class T> struct SparseTable {\n\tstd::vector<T> v;\n\tstd::vector<std::vector<int>>\
     \ jump;\n\n\tint level(int x) { return 31 - __builtin_clz(x); }\n\n\tint comb(int\
     \ a, int b) {\n\t\treturn v[a] == v[b] ? std::min(a, b) : (v[a] < v[b] ? a : b);\n\
-    \t}\n\n\tvoid init(const std::vector<T> &_v) {\n\t\tv = _v;\n\t\tjump = {std::vector<int>((int)v.size())};\n\
+    \t}\n\n\tvoid init(const std::vector<T>& _v) {\n\t\tv = _v;\n\t\tjump = {std::vector<int>((int)v.size())};\n\
     \t\tiota(jump[0].begin(), jump[0].end(), 0);\n\t\tfor (int j = 1; (1 << j) <=\
     \ (int)v.size(); j++) {\n\t\t\tjump.push_back(std::vector<int>((int)v.size() -\
     \ (1 << j) + 1));\n\t\t\tfor (int i = 0; i < (int)jump[j].size(); i++) {\n\t\t\
@@ -165,7 +165,7 @@ data:
   isVerificationFile: true
   path: verify/codeforces/codeforces-1074F.test.cpp
   requiredBy: []
-  timestamp: '2021-08-13 01:09:08-04:00'
+  timestamp: '2021-08-16 13:21:48-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/codeforces/codeforces-1074F.test.cpp

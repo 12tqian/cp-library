@@ -13,9 +13,9 @@ data:
     links: []
   bundledCode: "\nconst long long INF = 1e18;\n\nstruct Line {\n\tmutable long long\
     \ a, b, lst;\n\n\tlong long eval(long long x) {\n\t\treturn a * x + b;\n\t}\n\n\
-    \tbool operator<(const Line &y) const {\n\t\treturn a < y.a;\n\t}\n\n\tlong long\
+    \tbool operator<(const Line& y) const {\n\t\treturn a < y.a;\n\t}\n\n\tlong long\
     \ floor_div(long long a, long long b) {\n\t\treturn a / b - ((a ^ b) < 0 && a\
-    \ % b);\n\t}\n\n\tlong long bet(const Line &y) {\n\t\tassert(a <= y.a);\n\t\t\
+    \ % b);\n\t}\n\n\tlong long bet(const Line& y) {\n\t\tassert(a <= y.a);\n\t\t\
     return a == y.a ? (b >= y.b ? INF : -INF) : floor_div(b - y.b, y.a - a);\n\t}\n\
     };\n\nstruct ConvexHullDeque : std::deque<Line> {\n\tvoid add_back(Line L) {\n\
     \t\twhile (true) {\n\t\t\tauto a = back();\n\t\t\tpop_back();\n\t\t\ta.lst = a.bet(L);\n\
@@ -35,9 +35,9 @@ data:
     \t\t\t}\n\t\t\treturn -back().eval(x);\n\t\t}\n\t}\n};\n"
   code: "#pragma once\n\nconst long long INF = 1e18;\n\nstruct Line {\n\tmutable long\
     \ long a, b, lst;\n\n\tlong long eval(long long x) {\n\t\treturn a * x + b;\n\t\
-    }\n\n\tbool operator<(const Line &y) const {\n\t\treturn a < y.a;\n\t}\n\n\tlong\
+    }\n\n\tbool operator<(const Line& y) const {\n\t\treturn a < y.a;\n\t}\n\n\tlong\
     \ long floor_div(long long a, long long b) {\n\t\treturn a / b - ((a ^ b) < 0\
-    \ && a % b);\n\t}\n\n\tlong long bet(const Line &y) {\n\t\tassert(a <= y.a);\n\
+    \ && a % b);\n\t}\n\n\tlong long bet(const Line& y) {\n\t\tassert(a <= y.a);\n\
     \t\treturn a == y.a ? (b >= y.b ? INF : -INF) : floor_div(b - y.b, y.a - a);\n\
     \t}\n};\n\nstruct ConvexHullDeque : std::deque<Line> {\n\tvoid add_back(Line L)\
     \ {\n\t\twhile (true) {\n\t\t\tauto a = back();\n\t\t\tpop_back();\n\t\t\ta.lst\
@@ -59,7 +59,7 @@ data:
   isVerificationFile: false
   path: library/dynamic-programming/monotonic-convex-hull.hpp
   requiredBy: []
-  timestamp: '2021-08-13 00:44:06-04:00'
+  timestamp: '2021-08-16 13:21:48-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/codeforces/codeforces-319C.test.cpp

@@ -26,9 +26,9 @@ data:
     \ <string>\n#include <unordered_map>\n#include <vector>\n\nusing namespace std;\n\
     \nconst long long INF = 1e18;\n\nstruct Line {\n\tmutable long long a, b, lst;\n\
     \n\tlong long eval(long long x) {\n\t\treturn a * x + b;\n\t}\n\n\tbool operator<(const\
-    \ Line &y) const {\n\t\treturn a < y.a;\n\t}\n\n\tlong long floor_div(long long\
+    \ Line& y) const {\n\t\treturn a < y.a;\n\t}\n\n\tlong long floor_div(long long\
     \ a, long long b) {\n\t\treturn a / b - ((a ^ b) < 0 && a % b);\n\t}\n\n\tlong\
-    \ long bet(const Line &y) {\n\t\tassert(a <= y.a);\n\t\treturn a == y.a ? (b >=\
+    \ long bet(const Line& y) {\n\t\tassert(a <= y.a);\n\t\treturn a == y.a ? (b >=\
     \ y.b ? INF : -INF) : floor_div(b - y.b, y.a - a);\n\t}\n};\n\nstruct ConvexHullDeque\
     \ : std::deque<Line> {\n\tvoid add_back(Line L) {\n\t\twhile (true) {\n\t\t\t\
     auto a = back();\n\t\t\tpop_back();\n\t\t\ta.lst = a.bet(L);\n\t\t\tif (size()\
@@ -71,7 +71,7 @@ data:
   isVerificationFile: true
   path: verify/codeforces/codeforces-319C.test.cpp
   requiredBy: []
-  timestamp: '2021-08-13 00:44:06-04:00'
+  timestamp: '2021-08-16 13:21:48-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/codeforces/codeforces-319C.test.cpp

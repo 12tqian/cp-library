@@ -29,7 +29,7 @@ data:
   bundledCode: "\ntemplate <class T> struct SparseTable {\n\tstd::vector<T> v;\n\t\
     std::vector<std::vector<int>> jump;\n\n\tint level(int x) { return 31 - __builtin_clz(x);\
     \ }\n\n\tint comb(int a, int b) {\n\t\treturn v[a] == v[b] ? std::min(a, b) :\
-    \ (v[a] < v[b] ? a : b);\n\t}\n\n\tvoid init(const std::vector<T> &_v) {\n\t\t\
+    \ (v[a] < v[b] ? a : b);\n\t}\n\n\tvoid init(const std::vector<T>& _v) {\n\t\t\
     v = _v;\n\t\tjump = {std::vector<int>((int)v.size())};\n\t\tiota(jump[0].begin(),\
     \ jump[0].end(), 0);\n\t\tfor (int j = 1; (1 << j) <= (int)v.size(); j++) {\n\t\
     \t\tjump.push_back(std::vector<int>((int)v.size() - (1 << j) + 1));\n\t\t\tfor\
@@ -41,8 +41,8 @@ data:
   code: "#pragma once\n\ntemplate <class T> struct SparseTable {\n\tstd::vector<T>\
     \ v;\n\tstd::vector<std::vector<int>> jump;\n\n\tint level(int x) { return 31\
     \ - __builtin_clz(x); }\n\n\tint comb(int a, int b) {\n\t\treturn v[a] == v[b]\
-    \ ? std::min(a, b) : (v[a] < v[b] ? a : b);\n\t}\n\n\tvoid init(const std::vector<T>\
-    \ &_v) {\n\t\tv = _v;\n\t\tjump = {std::vector<int>((int)v.size())};\n\t\tiota(jump[0].begin(),\
+    \ ? std::min(a, b) : (v[a] < v[b] ? a : b);\n\t}\n\n\tvoid init(const std::vector<T>&\
+    \ _v) {\n\t\tv = _v;\n\t\tjump = {std::vector<int>((int)v.size())};\n\t\tiota(jump[0].begin(),\
     \ jump[0].end(), 0);\n\t\tfor (int j = 1; (1 << j) <= (int)v.size(); j++) {\n\t\
     \t\tjump.push_back(std::vector<int>((int)v.size() - (1 << j) + 1));\n\t\t\tfor\
     \ (int i = 0; i < (int)jump[j].size(); i++) {\n\t\t\t\tjump[j][i] = comb(jump[j\
@@ -56,7 +56,7 @@ data:
   requiredBy:
   - library/string/suffix-array-lcp.hpp
   - library/graphs/lca-rmq.hpp
-  timestamp: '2021-08-13 00:05:32-04:00'
+  timestamp: '2021-08-16 13:21:48-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/yosupo-suffixarray-lcp.test.cpp

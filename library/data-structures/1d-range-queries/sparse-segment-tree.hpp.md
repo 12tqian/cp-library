@@ -14,7 +14,7 @@ data:
   bundledCode: "\n// bump allocator\n\nstatic char buf[450 << 20];\nvoid* operator\
     \ new(size_t s) {\n\tstatic size_t i = sizeof buf;\n\tassert(s < i);\n\treturn\
     \ (void*)&buf[i -= s];\n}\nvoid operator delete(void*) {}\n\nconst int SZ = 1\
-    \ << 30;\n\ntemplate <class T> struct Node {\n\tT val = 0; \n\tNode<T> *c[2];\n\
+    \ << 30;\n\ntemplate <class T> struct Node {\n\tT val = 0; \n\tNode<T>* c[2];\n\
     \tNode() { c[0] = c[1] = NULL; }\n\n\tvoid upd(int ind, T v, int L = 0, int R\
     \ = SZ - 1) { // add v\n\t\tif (L == ind && R == ind) { val += v; return; }\n\t\
     \tint M = (L + R) / 2;\n\t\tif (ind <= M) {\n\t\t\tif (!c[0]) c[0] = new Node();\n\
@@ -25,7 +25,7 @@ data:
     \ R < lo) return 0;\n\t\tif (lo <= L && R <= hi) return val;\n\t\tint M = (L +\
     \ R) / 2; \n\t\tT res = 0;\n\t\tif (c[0]) res += c[0]->query(lo, hi, L, M);\n\t\
     \tif (c[1]) res += c[1]->query(lo, hi, M + 1, R);\n\t\treturn res;\n\t}\n\n\t\
-    void update_2d(int ind, Node *c0, Node *c1, int L = 0, int R = SZ - 1) { // for\
+    void update_2d(int ind, Node* c0, Node* c1, int L = 0, int R = SZ - 1) { // for\
     \ 2D segtree\n\t\tif (L != R)\t {\n\t\t\tint M = (L + R) / 2;\n\t\t\tif (ind <=\
     \ M) {\n\t\t\t\tif (!c[0]) c[0] = new Node();\n\t\t\t\tc[0]->update_2d(ind, (c0\
     \ ? c0->c[0] : NULL), (c1 ? c1->c[0] : NULL), L, M);\n\t\t\t} else {\n\t\t\t\t\
@@ -35,7 +35,7 @@ data:
   code: "#pragma once\n\n// bump allocator\n\nstatic char buf[450 << 20];\nvoid* operator\
     \ new(size_t s) {\n\tstatic size_t i = sizeof buf;\n\tassert(s < i);\n\treturn\
     \ (void*)&buf[i -= s];\n}\nvoid operator delete(void*) {}\n\nconst int SZ = 1\
-    \ << 30;\n\ntemplate <class T> struct Node {\n\tT val = 0; \n\tNode<T> *c[2];\n\
+    \ << 30;\n\ntemplate <class T> struct Node {\n\tT val = 0; \n\tNode<T>* c[2];\n\
     \tNode() { c[0] = c[1] = NULL; }\n\n\tvoid upd(int ind, T v, int L = 0, int R\
     \ = SZ - 1) { // add v\n\t\tif (L == ind && R == ind) { val += v; return; }\n\t\
     \tint M = (L + R) / 2;\n\t\tif (ind <= M) {\n\t\t\tif (!c[0]) c[0] = new Node();\n\
@@ -46,7 +46,7 @@ data:
     \ R < lo) return 0;\n\t\tif (lo <= L && R <= hi) return val;\n\t\tint M = (L +\
     \ R) / 2; \n\t\tT res = 0;\n\t\tif (c[0]) res += c[0]->query(lo, hi, L, M);\n\t\
     \tif (c[1]) res += c[1]->query(lo, hi, M + 1, R);\n\t\treturn res;\n\t}\n\n\t\
-    void update_2d(int ind, Node *c0, Node *c1, int L = 0, int R = SZ - 1) { // for\
+    void update_2d(int ind, Node* c0, Node* c1, int L = 0, int R = SZ - 1) { // for\
     \ 2D segtree\n\t\tif (L != R)\t {\n\t\t\tint M = (L + R) / 2;\n\t\t\tif (ind <=\
     \ M) {\n\t\t\t\tif (!c[0]) c[0] = new Node();\n\t\t\t\tc[0]->update_2d(ind, (c0\
     \ ? c0->c[0] : NULL), (c1 ? c1->c[0] : NULL), L, M);\n\t\t\t} else {\n\t\t\t\t\
@@ -57,7 +57,7 @@ data:
   isVerificationFile: false
   path: library/data-structures/1d-range-queries/sparse-segment-tree.hpp
   requiredBy: []
-  timestamp: '2021-07-24 21:39:13-04:00'
+  timestamp: '2021-08-16 13:21:48-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/yosupo-point_add_range_sum-sparse-segment-tree.test.cpp

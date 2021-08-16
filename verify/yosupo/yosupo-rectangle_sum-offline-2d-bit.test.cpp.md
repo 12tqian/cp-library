@@ -117,12 +117,12 @@ data:
     \ init(int sz_) {\n\t\tsz = sz_;\n\t\tsz++;\n\t\tcnt.assign(sz, 0);\n\t\tst.assign(sz,\
     \ 0);\n\t\tassert(!mode); mode = 1;\n\t\tstd::vector<int> lst(sz, 0);\n\t\tcnt.assign(sz,\
     \ 0);\n\t\tsort(todo.begin(), todo.end(), [](const std::pair<int, int>& a, const\
-    \ std::pair<int, int>& b) { \n\t\t\treturn a.second < b.second; });\n\t\tfor (auto\
-    \ &t : todo) \n\t\t\tfor (int x = t.first; x < sz; x += x & -x)\n\t\t\t\tif (lst[x]\
+    \ std::pair<int, int>& b) { \n\t\t\treturn a.second < b.second; });\n\t\tfor (auto&\
+    \ t : todo) \n\t\t\tfor (int x = t.first; x < sz; x += x & -x)\n\t\t\t\tif (lst[x]\
     \ != t.second)\n\t\t\t\t\tlst[x] = t.second, cnt[x]++;\n\t\tint sum = 0; \n\t\t\
     for (int i = 0; i < sz; i++)\n\t\t\tlst[i] = 0, st[i] = (sum += cnt[i]);\n\t\t\
     val.resize(sum); bit.resize(sum);\n\t\treverse(todo.begin(), todo.end());\n\t\t\
-    for (auto &t : todo) \n\t\t\tfor (int x = t.first; x < sz; x += x & -x)\n\t\t\t\
+    for (auto& t : todo) \n\t\t\tfor (int x = t.first; x < sz; x += x & -x)\n\t\t\t\
     \tif (lst[x] != t.second)\n\t\t\t\t\tlst[x] = t.second, val[--st[x]] = t.second;\n\
     \t}\n\n\tint rank(int y, int l, int r) {\n\t\treturn std::upper_bound(val.begin()\
     \ + l, val.begin() + r, y) - val.begin() - l;\n\t}\n\n\tvoid inner_update(int\
@@ -180,7 +180,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/yosupo-rectangle_sum-offline-2d-bit.test.cpp
   requiredBy: []
-  timestamp: '2021-07-28 19:45:54-04:00'
+  timestamp: '2021-08-16 13:21:48-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/yosupo-rectangle_sum-offline-2d-bit.test.cpp

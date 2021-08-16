@@ -168,7 +168,7 @@ data:
     friend mi operator-(mi a, const mi &b) { return a -= b; }\n\tfriend mi operator*(mi\
     \ a, const mi &b) { return a *= b; }\n\tfriend mi operator/(mi a, const mi &b)\
     \ { return a /= b; }\n};\n\ntypedef pair<mi, mi> pmi;\ntypedef vector<mi> vmi;\n\
-    typedef vector<pmi> vpmi;\n\nstd::string binary(unsigned long long n ) { //long\
+    typedef vector<pmi> vpmi;\n\nstd::string binary(unsigned long long n) { //long\
     \ long to binary string\n\tstd::string result;\n\tdo result.push_back('0' + (n\
     \ & 1));\n\twhile (n >>= 1);\n\treverse(result.begin(), result.end());\n\treturn\
     \ result;\n}\n\nstd::vector<int> gosper_generate(int n) {\n\tstd::vector<int>\
@@ -196,7 +196,7 @@ data:
   isVerificationFile: true
   path: verify/unit-test/unit-test-gosper-hack.test.cpp
   requiredBy: []
-  timestamp: '2021-07-29 01:54:19-04:00'
+  timestamp: '2021-08-16 13:21:48-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/unit-test/unit-test-gosper-hack.test.cpp

@@ -19,7 +19,7 @@ data:
     links: []
   bundledCode: "\ntemplate <class T> struct FenwickTree {\n\tstd::vector<T> fwt;\n\
     \tint n;\n\n\tvoid init(int n_) {\n\t\tn = n_;\n\t\tfwt.assign(n, 0);\n\t}\n\n\
-    \tvoid init(std::vector<T> &a) {\n\t\tn = (int)a.size();\n\t\tfwt.assign(n, 0);\n\
+    \tvoid init(std::vector<T>& a) {\n\t\tn = (int)a.size();\n\t\tfwt.assign(n, 0);\n\
     \t\tfor (int i = 0; i < (int)a.size(); i++) {\n\t\t\tadd(i, a[i]);\n\t\t}\n\t\
     }\n\n\tT sum(int r) {\n\t\tT ret = 0;\n\t\tfor (; r >= 0; r = (r & (r + 1)) -\
     \ 1) \n\t\t\tret += fwt[r];\n\t\treturn ret;\n\t}\n\n\tT query(int l, int r) {\n\
@@ -27,7 +27,7 @@ data:
     for (; idx < n; idx = idx | (idx + 1)) \n\t\t\tfwt[idx] += delta;\n\t}\n};\n"
   code: "#pragma once\n\ntemplate <class T> struct FenwickTree {\n\tstd::vector<T>\
     \ fwt;\n\tint n;\n\n\tvoid init(int n_) {\n\t\tn = n_;\n\t\tfwt.assign(n, 0);\n\
-    \t}\n\n\tvoid init(std::vector<T> &a) {\n\t\tn = (int)a.size();\n\t\tfwt.assign(n,\
+    \t}\n\n\tvoid init(std::vector<T>& a) {\n\t\tn = (int)a.size();\n\t\tfwt.assign(n,\
     \ 0);\n\t\tfor (int i = 0; i < (int)a.size(); i++) {\n\t\t\tadd(i, a[i]);\n\t\t\
     }\n\t}\n\n\tT sum(int r) {\n\t\tT ret = 0;\n\t\tfor (; r >= 0; r = (r & (r + 1))\
     \ - 1) \n\t\t\tret += fwt[r];\n\t\treturn ret;\n\t}\n\n\tT query(int l, int r)\
@@ -38,7 +38,7 @@ data:
   path: library/data-structures/1d-range-queries/fenwick-tree.hpp
   requiredBy:
   - library/number-theory/counting-primes.hpp
-  timestamp: '2021-07-24 21:09:23-04:00'
+  timestamp: '2021-08-16 13:21:48-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/yosupo-point_add_range_sum-fenwick-tree.test.cpp

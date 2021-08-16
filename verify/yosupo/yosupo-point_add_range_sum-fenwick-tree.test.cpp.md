@@ -25,9 +25,9 @@ data:
     #include <queue>\n#include <random>\n#include <set>\n#include <stack>\n#include\
     \ <string>\n#include <unordered_map>\n#include <vector>\n\nusing namespace std;\n\
     \ntemplate <class T> struct FenwickTree {\n\tstd::vector<T> fwt;\n\tint n;\n\n\
-    \tvoid init(int n_) {\n\t\tn = n_;\n\t\tfwt.assign(n, 0);\n\t}\n\n\tvoid init(std::vector<T>\
-    \ &a) {\n\t\tn = (int)a.size();\n\t\tfwt.assign(n, 0);\n\t\tfor (int i = 0; i\
-    \ < (int)a.size(); i++) {\n\t\t\tadd(i, a[i]);\n\t\t}\n\t}\n\n\tT sum(int r) {\n\
+    \tvoid init(int n_) {\n\t\tn = n_;\n\t\tfwt.assign(n, 0);\n\t}\n\n\tvoid init(std::vector<T>&\
+    \ a) {\n\t\tn = (int)a.size();\n\t\tfwt.assign(n, 0);\n\t\tfor (int i = 0; i <\
+    \ (int)a.size(); i++) {\n\t\t\tadd(i, a[i]);\n\t\t}\n\t}\n\n\tT sum(int r) {\n\
     \t\tT ret = 0;\n\t\tfor (; r >= 0; r = (r & (r + 1)) - 1) \n\t\t\tret += fwt[r];\n\
     \t\treturn ret;\n\t}\n\n\tT query(int l, int r) {\n\t\treturn sum(r) - sum(l -\
     \ 1);\n\t}\n\t\n\tvoid add(int idx, T delta) {\n\t\tfor (; idx < n; idx = idx\
@@ -53,7 +53,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/yosupo-point_add_range_sum-fenwick-tree.test.cpp
   requiredBy: []
-  timestamp: '2021-07-28 19:45:54-04:00'
+  timestamp: '2021-08-16 13:21:48-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/yosupo-point_add_range_sum-fenwick-tree.test.cpp

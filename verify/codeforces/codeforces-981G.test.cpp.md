@@ -86,7 +86,7 @@ data:
     \t\tauto it1 = le.lower_bound(use1);\n\t\tauto it2 = ri.lower_bound(use2);\n\t\
     \tif (it2 != ri.end()) {\n\t\t\tT lo = it2->second, hi = it2->first;\n\t\t\tif\
     \ (lo <= x.first && x.second <= hi) {\n\t\t\t\tret.emplace_back(lo, hi);\n\t\t\
-    \t\tT mn = x.first, mx = x.second;\n\t\t\t\tfor (auto &b : ret) {\n\t\t\t\t\t\
+    \t\tT mn = x.first, mx = x.second;\n\t\t\t\tfor (auto& b : ret) {\n\t\t\t\t\t\
     le.erase(b); ri.erase({b.second, b.first});\n\t\t\t\t\tmn = std::min(mn, b.first);\
     \ mx = std::max(mx, b.second);\n\t\t\t\t}\n\t\t\t\tle.emplace(mn, mx); ri.emplace(mx,\
     \ mn);\n\t\t\t\treturn ret;\n\t\t\t}\n\t\t}\n\t\tif (it1 != le.end()) {\n\t\t\t\
@@ -95,8 +95,8 @@ data:
     \t\t}\n\t\t}\n\t\tif (it2 != ri.begin()) {\n\t\t\tit2 = prev(it2);\n\t\t\twhile\
     \ (true) {\n\t\t\t\tauto val = *it2;\n\t\t\t\tif (val.first >= x.first) bad.emplace(val.second,\
     \ val.first);\n\t\t\t\telse break;\n\t\t\t\tif (it2 == ri.begin()) break;\n\t\t\
-    \t\tit2 = prev(it2);\n\t\t\t}\n\t\t}\n\t\tfor (auto &b : bad) ret.emplace_back(b);\n\
-    \t\tT mn = x.first, mx = x.second;\n\t\tfor (auto &b : ret) {\n\t\t\tle.erase(b);\
+    \t\tit2 = prev(it2);\n\t\t\t}\n\t\t}\n\t\tfor (auto& b : bad) ret.emplace_back(b);\n\
+    \t\tT mn = x.first, mx = x.second;\n\t\tfor (auto& b : ret) {\n\t\t\tle.erase(b);\
     \ ri.erase({b.second, b.first});\n\t\t\tmn = std::min(mn, b.first); mx = std::max(mx,\
     \ b.second);\n\t\t}\n\t\tle.emplace(mn, mx); ri.emplace(mx, mn);\n\t\treturn ret;\n\
     \t}\n};\n\nusing mi = Mint<998244353, 5>;\n\nint main() {\n\tios::sync_with_stdio(false);\n\
@@ -138,7 +138,7 @@ data:
   isVerificationFile: true
   path: verify/codeforces/codeforces-981G.test.cpp
   requiredBy: []
-  timestamp: '2021-08-15 17:58:43-04:00'
+  timestamp: '2021-08-16 13:21:48-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/codeforces/codeforces-981G.test.cpp

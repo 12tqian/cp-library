@@ -11,8 +11,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "\n/**\n * 1-indexed \n * log(n)^2 query, update\n * O(n^2) space\n\
-    \ */\n\nconstexpr int bits(int x) { return x == 0 ? 0 : 31 - __builtin_clz(x);\
+  bundledCode: "\nconstexpr int bits(int x) { return x == 0 ? 0 : 31 - __builtin_clz(x);\
     \ } \n\ntemplate <class T, int ...Ns> struct BIT {\n\tT val = 0; void upd(T v)\
     \ { val += v; }\n\tT query() { return val; }\n};\n\ntemplate <class T, int N,\
     \ int... Ns> struct BIT<T, N, Ns...> {\n\tBIT<T, Ns...> bit[N + 1];\n\n\ttemplate\
@@ -25,8 +24,7 @@ data:
     \ des) { \n\t\tassert(des > 0);\n\t\tint ind = 0;\n\t\tfor (int i = 1 << bits(N);\
     \ i; i /= 2)\n\t\t\tif (ind + i <= N && bit[ind + i].val < des)\n\t\t\t\tdes -=\
     \ bit[ind += i].val;\n\t\tassert(ind < N); return ind + 1;\n\t}\n}; \n\n"
-  code: "#pragma once\n\n/**\n * 1-indexed \n * log(n)^2 query, update\n * O(n^2)\
-    \ space\n */\n\nconstexpr int bits(int x) { return x == 0 ? 0 : 31 - __builtin_clz(x);\
+  code: "#pragma once\n\nconstexpr int bits(int x) { return x == 0 ? 0 : 31 - __builtin_clz(x);\
     \ } \n\ntemplate <class T, int ...Ns> struct BIT {\n\tT val = 0; void upd(T v)\
     \ { val += v; }\n\tT query() { return val; }\n};\n\ntemplate <class T, int N,\
     \ int... Ns> struct BIT<T, N, Ns...> {\n\tBIT<T, Ns...> bit[N + 1];\n\n\ttemplate\
@@ -43,7 +41,7 @@ data:
   isVerificationFile: false
   path: library/data-structures/2d-range-queries/general-fenwick-tree.hpp
   requiredBy: []
-  timestamp: '2021-07-24 21:49:44-04:00'
+  timestamp: '2021-08-16 13:21:48-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/codeforces/codeforces-869E-general-fwt.test.cpp

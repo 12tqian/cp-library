@@ -27,9 +27,9 @@ data:
     \n// Set to minimums, negate for maximums\n\ntemplate <class T> struct LiChaoTree\
     \ {\n\tstruct Line {\n\t\tT slope, intercept;\n\t\tLine(T slope, T intercept)\
     \ : slope(slope), intercept(intercept) {}\n\t\tinline T get(T x) const { return\
-    \ slope * x + intercept; }\n\t\tinline bool over(const Line &other, const T &x)\
+    \ slope * x + intercept; }\n\t\tinline bool over(const Line& other, const T& x)\
     \ {\n\t\t\treturn get(x) < other.get(x);\n\t\t}\n\t};\n\n\tstd::vector<T> xset;\n\
-    \tstd::vector<Line> seg;\n\tint sz;\n\n\tLiChaoTree(const std::vector<T> &x) :\
+    \tstd::vector<Line> seg;\n\tint sz;\n\n\tLiChaoTree(const std::vector<T>& x) :\
     \ xset(x) {\n\t\tsort(xset.begin(), xset.end());\n\t\txset.erase(unique(xset.begin(),\
     \ xset.end()), xset.end());\n\t\tsz = 1;\n\t\twhile (sz < (int) xset.size()) sz\
     \ <<= 1;\n\t\twhile ((int) xset.size() < sz) xset.push_back(xset.back());\n\t\t\
@@ -89,7 +89,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/yosupo-segment_add_get_min-li-chao-tree-offline.test.cpp
   requiredBy: []
-  timestamp: '2021-07-28 19:45:54-04:00'
+  timestamp: '2021-08-16 13:21:48-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/yosupo-segment_add_get_min-li-chao-tree-offline.test.cpp
