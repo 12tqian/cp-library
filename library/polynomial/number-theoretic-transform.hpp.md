@@ -13,7 +13,7 @@ data:
     title: library/polynomial/polynomial-sqrt.hpp
   - icon: ':heavy_check_mark:'
     path: library/polynomial/polynomial.hpp
-    title: library/polynomial/polynomial.hpp
+    title: Formal Power Series
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-division_of_polynomials.test.cpp

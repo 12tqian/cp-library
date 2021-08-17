@@ -281,7 +281,7 @@ data:
       title: library/polynomial/polynomial-sqrt.hpp
     - icon: ':heavy_check_mark:'
       path: library/polynomial/polynomial.hpp
-      title: library/polynomial/polynomial.hpp
+      title: Formal Power Series
     - icon: ':heavy_check_mark:'
       path: library/polynomial/polynomial2.hpp
       title: library/polynomial/polynomial2.hpp
