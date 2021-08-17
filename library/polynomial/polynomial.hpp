@@ -26,7 +26,7 @@ template <class D> struct Poly : std::vector<D> {
 		for (int i = 0; i < n; i++) res[i] = freq(i) + r.freq(i);
 		return res;
 	}
-	
+
 	Poly operator-(const Poly& r) const {
 		int n = std::max(this->size(), r.size());
 		std::vector<D> res(n);
@@ -59,6 +59,18 @@ template <class D> struct Poly : std::vector<D> {
 	}
 
 	Poly operator/(const D &r) const{ return *this * (1 / r); }
+
+
+	Poly& operator+=(const D& r) { 
+		if (this->empty()) this->resize(1);
+		(*this)[0] += r;
+		return *this;
+	}
+
+	Poly& operator-=(const D& r) {
+		(*this)[0] -= r;
+		return *this;
+	}
 	
 	Poly operator/(const Poly& r) const {
 		if (this->size() < r.size()) return {};
@@ -99,6 +111,9 @@ template <class D> struct Poly : std::vector<D> {
 		return res;
 	}
 	
+	Poly operator+(const D& r) { return Poly(*this) += r; }
+	Poly operator-(const D& r) { return Poly(*this) -= r; }
+	Poly operator-() const { return (*this) * -1; } 
 	Poly& operator+=(const Poly& r) { return *this = *this + r; }
 	Poly& operator-=(const Poly& r) { return *this = *this - r; }
 	Poly& operator*=(const Poly& r) { return *this = *this * r; }
@@ -109,6 +124,9 @@ template <class D> struct Poly : std::vector<D> {
 	Poly& operator<<=(const size_t& n) { return *this = *this << n; }
 	Poly& operator>>=(const size_t& n) { return *this = *this >> n; }
 	friend Poly operator*(D const& l, Poly r) { return r *= l; }
+	friend Poly operator/(D const& l, Poly r) { return l * r.inv(); }
+	friend Poly operator+(D const& l, Poly r) { return r += l; }
+	friend Poly operator-(D const& l, Poly r) { return -r + l; }
 
 	Poly pre(int le) const { return Poly(this->begin(), this->begin() + std::min((int)this->size(), le)); }
 	
