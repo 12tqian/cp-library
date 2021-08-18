@@ -1,23 +1,23 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/modular-arithmetic/mod-int2.hpp
     title: library/modular-arithmetic/mod-int2.hpp
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/polynomial/polynomial2.hpp
     title: library/polynomial/polynomial2.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-convolution_mod_1000000007-fast-fourier-transform.test.cpp
     title: verify/yosupo/yosupo-convolution_mod_1000000007-fast-fourier-transform.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
     title: verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "\n\n// 5 is a root of both mods\ntemplate <int MOD, int RT> struct\
@@ -64,7 +64,7 @@ data:
     \ A;\n}\n\ntemplate <class M, class T> std::vector<M> multiply_mod(std::vector<T>\
     \ x, std::vector<T> y) {\n\tauto convert = [](const std::vector<T>& v) {\n\t\t\
     std::vector<M> w((int)v.size());\n\t\tfor (int i =  0; i < (int)v.size(); i++)\n\
-    \t\t\tw[i] = (int) v[i];\n\t\treturn w;\n\t};\n\treturn multiply(convert(x), convert(y));\n\
+    \t\t\tw[i] = (int)v[i];\n\t\treturn w;\n\t};\n\treturn multiply(convert(x), convert(y));\n\
     }\n\ntemplate <class T> std::vector<T> general_multiply(const std::vector<T>&\
     \ A, const std::vector<T>& B) { \n\t// arbitrary modulus\n\tusing m0 = Mint<(119\
     \ << 23) + 1, 62>; \n\tusing m1 = Mint<(5 << 25) + 1, 62>;\n\tusing m2 = Mint<(7\
@@ -92,8 +92,8 @@ data:
     \tfft(A, 1);\n\tA.resize(s);\n\treturn A;\n}\n\ntemplate <class M, class T> std::vector<M>\
     \ multiply_mod(std::vector<T> x, std::vector<T> y) {\n\tauto convert = [](const\
     \ std::vector<T>& v) {\n\t\tstd::vector<M> w((int)v.size());\n\t\tfor (int i =\
-    \  0; i < (int)v.size(); i++)\n\t\t\tw[i] = (int) v[i];\n\t\treturn w;\n\t};\n\
-    \treturn multiply(convert(x), convert(y));\n}\n\ntemplate <class T> std::vector<T>\
+    \  0; i < (int)v.size(); i++)\n\t\t\tw[i] = (int)v[i];\n\t\treturn w;\n\t};\n\t\
+    return multiply(convert(x), convert(y));\n}\n\ntemplate <class T> std::vector<T>\
     \ general_multiply(const std::vector<T>& A, const std::vector<T>& B) { \n\t//\
     \ arbitrary modulus\n\tusing m0 = Mint<(119 << 23) + 1, 62>; \n\tusing m1 = Mint<(5\
     \ << 25) + 1, 62>;\n\tusing m2 = Mint<(7 << 26) + 1, 62>;\n\tauto c0 = multiply_mod<m0>(A,\
@@ -109,8 +109,8 @@ data:
   path: library/polynomial/fast-fourier-transform.hpp
   requiredBy:
   - library/polynomial/polynomial2.hpp
-  timestamp: '2021-08-16 13:46:51-04:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2021-08-18 19:17:11-04:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/yosupo/yosupo-convolution_mod_1000000007-fast-fourier-transform.test.cpp
   - verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp

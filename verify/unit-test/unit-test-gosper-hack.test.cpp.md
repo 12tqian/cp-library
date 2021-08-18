@@ -1,22 +1,22 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/contest/template-full.hpp
     title: library/contest/template-full.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
   - icon: ':heavy_check_mark:'
     path: library/dynamic-programming/gosper-hack.hpp
     title: library/dynamic-programming/gosper-hack.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/misc/easy-io.hpp
     title: library/misc/easy-io.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/misc/pragma-short.hpp
     title: library/misc/pragma-short.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/modular-arithmetic/mod-int.hpp
     title: library/modular-arithmetic/mod-int.hpp
   _extendedRequiredBy: []
@@ -152,43 +152,42 @@ data:
     \t\t// throws exception when do smth illegal\n\t\t// ex. try to read letter into\
     \ int\n\t\tif (!s.empty()) set_in(s + \".in\"), set_out(s + \".out\"); // for\
     \ old USACO\n\t}\n}\n\nconst int MOD = 1e9 + 7; // 998244353\n\ntypedef std::decay<decltype(MOD)>::type\
-    \ mod_t; \nstruct mi {\n\tmod_t val;\n\texplicit operator mod_t() const { return\
-    \ val; }\n\texplicit operator bool() const { return val != 0; }\n\tmi() { val\
-    \ = 0; }\n\tmi(const long long& v) {\n\t\tval = (-MOD <= v && v < MOD) ? v : v\
-    \ % MOD;\n\t\tif (val < 0) val += MOD; }\n\tfriend std::istream& operator>>(std::istream&\
-    \ in, mi& a) { \n\t\tlong long x; std::cin >> x; a = mi(x); return in; }\n\tfriend\
-    \ std::ostream& operator<<(std::ostream& os, const mi& a) { return os << a.val;\
-    \ }\n\tfriend bool operator==(const mi& a, const mi& b) { return a.val == b.val;\
-    \ }\n\tfriend bool operator!=(const mi& a, const mi& b) { return !(a == b); }\
-    \    \n\tfriend bool operator<(const mi& a, const mi& b) { return a.val < b.val;\
-    \ }\n\tfriend bool operator>(const mi& a, const mi& b) { return a.val > b.val;\
-    \ }\n\tfriend bool operator<=(const mi& a, const mi& b) { return a.val <= b.val;\
-    \ }\n\tfriend bool operator>=(const mi& a, const mi& b) { return a.val >= b.val;\
-    \ }\n\tmi operator-() const { return mi(-val); }\n\tmi& operator+=(const mi& m)\
-    \ {\n\t\tif ((val += m.val) >= MOD) val -= MOD;\n\t\treturn *this; }\n\tmi& operator-=(const\
-    \ mi& m) {\n\t\tif ((val -= m.val) < 0) val += MOD;\n\t\treturn *this; }\n\tmi&\
-    \ operator*=(const mi& m) { val = (long long)val * m.val % MOD;\n\t\treturn *this;\
-    \ }\n\tfriend mi pow(mi a, long long p) {\n\t\tmi ans = 1; assert(p >= 0);\n\t\
-    \tfor (; p; p /= 2, a *= a) if (p & 1) ans *= a;\n\t\treturn ans; }\n\tfriend\
-    \ mi inv(const mi& a) { assert(a != 0); return pow(a, MOD - 2); }\n\tmi& operator/=(const\
-    \ mi& m) { return (*this) *= inv(m); }\n\tfriend mi operator+(mi a, const mi&\
-    \ b) { return a += b; }\n\tfriend mi operator-(mi a, const mi& b) { return a -=\
-    \ b; }\n\tfriend mi operator*(mi a, const mi& b) { return a *= b; }\n\tfriend\
-    \ mi operator/(mi a, const mi& b) { return a /= b; }\n};\n\nconst ld PI = acos((ld)\
-    \ -1);\n\ntypedef pair<mi, mi> pmi;\ntypedef vector<mi> vmi;\ntypedef vector<pmi>\
-    \ vpmi;\n\nstd::string binary(unsigned long long n) { //long long to binary string\n\
-    \tstd::string result;\n\tdo result.push_back('0' + (n & 1));\n\twhile (n >>= 1);\n\
-    \treverse(result.begin(), result.end());\n\treturn result;\n}\n\nstd::vector<int>\
-    \ gosper_generate(int n) {\n\tstd::vector<int> res{0};\n\tfor (int sz = 1; sz\
-    \ <= n; sz++) {\n\t\tlong long c = (1 << sz) - 1;\n\t\twhile (c < (1 << n)) {\n\
-    \t\t\tres.pb(c);\n\t\t\tlong long a = c & -c;\n\t\t\tlong long b = c + a;\n\t\t\
-    \tc = (c ^ b) / 4 / a | b;\n\t\t}\n\t}\n\treturn res;\n}\n\nvoid test_n(int n)\
-    \ {\n\tvi res = gosper_generate(n);\n\tf0r(i, sz(res) - 1) {\n\t\tassert(__builtin_popcount(res[i])\
-    \ <= __builtin_popcount(res[i + 1]));\n\t}\n\tsort(all(res));\n\tf0r(i, (1 <<\
-    \ n)) {\n\t\tassert(res[i] == i);\n\t}\n\tassert(res.size() == (1 << n));\n}\n\
-    \nvoid test() {\n\tconst int L = 17;\n\tf1r(i, 1, L) {\n\t\ttest_n(i);\n\t}\n\
-    }\n\nint main() {\n\tsetIO(\"\");\n\ttest();\n\tint a, b;\n\tre(a, b);\n\tps(a\
-    \ + b);\n\treturn 0;\n}\n"
+    \ mod_t; \nstruct mi {\n\tmod_t v;\n\texplicit operator mod_t() const { return\
+    \ v; }\n\texplicit operator bool() const { return v != 0; }\n\tmi() { v = 0; }\n\
+    \tmi(const long long& v) {\n\t\tv = (-MOD <= v && v < MOD) ? v : v % MOD;\n\t\t\
+    if (v < 0) v += MOD; }\n\tfriend std::istream& operator>>(std::istream& in, mi&\
+    \ a) { \n\t\tlong long x; std::cin >> x; a = mi(x); return in; }\n\tfriend std::ostream&\
+    \ operator<<(std::ostream& os, const mi& a) { return os << a.v; }\n\tfriend bool\
+    \ operator==(const mi& a, const mi& b) { return a.v == b.v; }\n\tfriend bool operator!=(const\
+    \ mi& a, const mi& b) { return !(a == b); }    \n\tfriend bool operator<(const\
+    \ mi& a, const mi& b) { return a.v < b.v; }\n\tfriend bool operator>(const mi&\
+    \ a, const mi& b) { return a.v > b.v; }\n\tfriend bool operator<=(const mi& a,\
+    \ const mi& b) { return a.v <= b.v; }\n\tfriend bool operator>=(const mi& a, const\
+    \ mi& b) { return a.v >= b.v; }\n\tmi operator-() const { return mi(-v); }\n\t\
+    mi& operator+=(const mi& m) {\n\t\tif ((v += m.v) >= MOD) v -= MOD;\n\t\treturn\
+    \ *this; }\n\tmi& operator-=(const mi& m) {\n\t\tif ((v -= m.v) < 0) v += MOD;\n\
+    \t\treturn *this; }\n\tmi& operator*=(const mi& m) { v = (long long)v * m.v %\
+    \ MOD;\n\t\treturn *this; }\n\tfriend mi pow(mi a, long long p) {\n\t\tmi ans\
+    \ = 1; assert(p >= 0);\n\t\tfor (; p; p /= 2, a *= a) if (p & 1) ans *= a;\n\t\
+    \treturn ans; }\n\tfriend mi inv(const mi& a) { assert(a != 0); return pow(a,\
+    \ MOD - 2); }\n\tmi& operator/=(const mi& m) { return (*this) *= inv(m); }\n\t\
+    friend mi operator+(mi a, const mi& b) { return a += b; }\n\tfriend mi operator-(mi\
+    \ a, const mi& b) { return a -= b; }\n\tfriend mi operator*(mi a, const mi& b)\
+    \ { return a *= b; }\n\tfriend mi operator/(mi a, const mi& b) { return a /= b;\
+    \ }\n};\n\nconst ld PI = acos((ld) -1);\n\ntypedef pair<mi, mi> pmi;\ntypedef\
+    \ vector<mi> vmi;\ntypedef vector<pmi> vpmi;\n\nstd::string binary(unsigned long\
+    \ long n) { //long long to binary string\n\tstd::string result;\n\tdo result.push_back('0'\
+    \ + (n & 1));\n\twhile (n >>= 1);\n\treverse(result.begin(), result.end());\n\t\
+    return result;\n}\n\nstd::vector<int> gosper_generate(int n) {\n\tstd::vector<int>\
+    \ res{0};\n\tfor (int sz = 1; sz <= n; sz++) {\n\t\tlong long c = (1 << sz) -\
+    \ 1;\n\t\twhile (c < (1 << n)) {\n\t\t\tres.pb(c);\n\t\t\tlong long a = c & -c;\n\
+    \t\t\tlong long b = c + a;\n\t\t\tc = (c ^ b) / 4 / a | b;\n\t\t}\n\t}\n\treturn\
+    \ res;\n}\n\nvoid test_n(int n) {\n\tvi res = gosper_generate(n);\n\tf0r(i, sz(res)\
+    \ - 1) {\n\t\tassert(__builtin_popcount(res[i]) <= __builtin_popcount(res[i +\
+    \ 1]));\n\t}\n\tsort(all(res));\n\tf0r(i, (1 << n)) {\n\t\tassert(res[i] == i);\n\
+    \t}\n\tassert(res.size() == (1 << n));\n}\n\nvoid test() {\n\tconst int L = 17;\n\
+    \tf1r(i, 1, L) {\n\t\ttest_n(i);\n\t}\n}\n\nint main() {\n\tsetIO(\"\");\n\ttest();\n\
+    \tint a, b;\n\tre(a, b);\n\tps(a + b);\n\treturn 0;\n}\n"
   code: "#define IGNORE \"self tested\"\n\n#include \"../../library/contest/template-full.hpp\"\
     \n#include \"../../library/dynamic-programming/gosper-hack.hpp\"\n\nvoid test_n(int\
     \ n) {\n\tvi res = gosper_generate(n);\n\tf0r(i, sz(res) - 1) {\n\t\tassert(__builtin_popcount(res[i])\
@@ -207,7 +206,7 @@ data:
   isVerificationFile: true
   path: verify/unit-test/unit-test-gosper-hack.test.cpp
   requiredBy: []
-  timestamp: '2021-08-16 14:17:33-04:00'
+  timestamp: '2021-08-18 19:19:26-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/unit-test/unit-test-gosper-hack.test.cpp

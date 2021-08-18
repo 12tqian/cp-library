@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/modular-arithmetic/mod-int2.hpp
     title: library/modular-arithmetic/mod-int2.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/polynomial/fast-fourier-transform.hpp
     title: library/polynomial/fast-fourier-transform.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
     title: verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "\n\n\n// 5 is a root of both mods\ntemplate <int MOD, int RT> struct\
@@ -61,7 +61,7 @@ data:
     \ A;\n}\n\ntemplate <class M, class T> std::vector<M> multiply_mod(std::vector<T>\
     \ x, std::vector<T> y) {\n\tauto convert = [](const std::vector<T>& v) {\n\t\t\
     std::vector<M> w((int)v.size());\n\t\tfor (int i =  0; i < (int)v.size(); i++)\n\
-    \t\t\tw[i] = (int) v[i];\n\t\treturn w;\n\t};\n\treturn multiply(convert(x), convert(y));\n\
+    \t\t\tw[i] = (int)v[i];\n\t\treturn w;\n\t};\n\treturn multiply(convert(x), convert(y));\n\
     }\n\ntemplate <class T> std::vector<T> general_multiply(const std::vector<T>&\
     \ A, const std::vector<T>& B) { \n\t// arbitrary modulus\n\tusing m0 = Mint<(119\
     \ << 23) + 1, 62>; \n\tusing m1 = Mint<(5 << 25) + 1, 62>;\n\tusing m2 = Mint<(7\
@@ -130,8 +130,8 @@ data:
   isVerificationFile: false
   path: library/polynomial/polynomial2.hpp
   requiredBy: []
-  timestamp: '2021-08-16 13:46:51-04:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2021-08-18 19:17:11-04:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
 documentation_of: library/polynomial/polynomial2.hpp

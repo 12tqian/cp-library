@@ -5,34 +5,34 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/contest/template-full.cpp
     title: library/contest/template-full.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/contest/template-full.hpp
     title: library/contest/template-full.hpp
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/unit-test/unit-test-big-integer.test.cpp
     title: verify/unit-test/unit-test-big-integer.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/unit-test/unit-test-fraction.test.cpp
     title: verify/unit-test/unit-test-fraction.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/unit-test/unit-test-gosper-hack.test.cpp
     title: verify/unit-test/unit-test-gosper-hack.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/unit-test/unit-test-hashing.test.cpp
     title: verify/unit-test/unit-test-hashing.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/unit-test/unit-test-template-full.test.cpp
     title: verify/unit-test/unit-test-template-full.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
     title: verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-rectangle_sum-offline-2d-bit.test.cpp
     title: verify/yosupo/yosupo-rectangle_sum-offline-2d-bit.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links:
     - https://nafe.es/posts/2020-02-29-is-printable/
@@ -209,7 +209,7 @@ data:
   - library/contest/template-full.hpp
   - library/contest/template-full.cpp
   timestamp: '2021-08-16 13:46:51-04:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
   - verify/yosupo/yosupo-rectangle_sum-offline-2d-bit.test.cpp

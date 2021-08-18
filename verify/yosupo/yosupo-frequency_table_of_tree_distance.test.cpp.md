@@ -1,44 +1,44 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/contest/template-full.hpp
     title: library/contest/template-full.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/data-structures/1d-range-queries/sparse-table.hpp
     title: Sparse Table
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/graphs/centroid-decomposition.hpp
     title: library/graphs/centroid-decomposition.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/graphs/lca-rmq.hpp
     title: LCA RMQ
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/misc/easy-io.hpp
     title: library/misc/easy-io.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/misc/pragma-short.hpp
     title: library/misc/pragma-short.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/modular-arithmetic/mod-int.hpp
     title: library/modular-arithmetic/mod-int.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/modular-arithmetic/mod-int2.hpp
     title: library/modular-arithmetic/mod-int2.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/polynomial/fast-fourier-transform.hpp
     title: library/polynomial/fast-fourier-transform.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/polynomial/polynomial2.hpp
     title: library/polynomial/polynomial2.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/frequency_table_of_tree_distance
@@ -168,66 +168,65 @@ data:
     \t\t// throws exception when do smth illegal\n\t\t// ex. try to read letter into\
     \ int\n\t\tif (!s.empty()) set_in(s + \".in\"), set_out(s + \".out\"); // for\
     \ old USACO\n\t}\n}\n\nconst int MOD = 1e9 + 7; // 998244353\n\ntypedef std::decay<decltype(MOD)>::type\
-    \ mod_t; \nstruct mi {\n\tmod_t val;\n\texplicit operator mod_t() const { return\
-    \ val; }\n\texplicit operator bool() const { return val != 0; }\n\tmi() { val\
-    \ = 0; }\n\tmi(const long long& v) {\n\t\tval = (-MOD <= v && v < MOD) ? v : v\
-    \ % MOD;\n\t\tif (val < 0) val += MOD; }\n\tfriend std::istream& operator>>(std::istream&\
-    \ in, mi& a) { \n\t\tlong long x; std::cin >> x; a = mi(x); return in; }\n\tfriend\
-    \ std::ostream& operator<<(std::ostream& os, const mi& a) { return os << a.val;\
-    \ }\n\tfriend bool operator==(const mi& a, const mi& b) { return a.val == b.val;\
-    \ }\n\tfriend bool operator!=(const mi& a, const mi& b) { return !(a == b); }\
-    \    \n\tfriend bool operator<(const mi& a, const mi& b) { return a.val < b.val;\
-    \ }\n\tfriend bool operator>(const mi& a, const mi& b) { return a.val > b.val;\
-    \ }\n\tfriend bool operator<=(const mi& a, const mi& b) { return a.val <= b.val;\
-    \ }\n\tfriend bool operator>=(const mi& a, const mi& b) { return a.val >= b.val;\
-    \ }\n\tmi operator-() const { return mi(-val); }\n\tmi& operator+=(const mi& m)\
-    \ {\n\t\tif ((val += m.val) >= MOD) val -= MOD;\n\t\treturn *this; }\n\tmi& operator-=(const\
-    \ mi& m) {\n\t\tif ((val -= m.val) < 0) val += MOD;\n\t\treturn *this; }\n\tmi&\
-    \ operator*=(const mi& m) { val = (long long)val * m.val % MOD;\n\t\treturn *this;\
-    \ }\n\tfriend mi pow(mi a, long long p) {\n\t\tmi ans = 1; assert(p >= 0);\n\t\
-    \tfor (; p; p /= 2, a *= a) if (p & 1) ans *= a;\n\t\treturn ans; }\n\tfriend\
-    \ mi inv(const mi& a) { assert(a != 0); return pow(a, MOD - 2); }\n\tmi& operator/=(const\
-    \ mi& m) { return (*this) *= inv(m); }\n\tfriend mi operator+(mi a, const mi&\
-    \ b) { return a += b; }\n\tfriend mi operator-(mi a, const mi& b) { return a -=\
-    \ b; }\n\tfriend mi operator*(mi a, const mi& b) { return a *= b; }\n\tfriend\
-    \ mi operator/(mi a, const mi& b) { return a /= b; }\n};\n\nconst ld PI = acos((ld)\
-    \ -1);\n\ntypedef pair<mi, mi> pmi;\ntypedef vector<mi> vmi;\ntypedef vector<pmi>\
-    \ vpmi;\n\nstruct CentroidDecomposition {\n\tint n;\n\tstd::vector<std::vector<int>>\
-    \ g, cg; // cg is directed tree for centroids\n\tstd::vector<bool> vis;\n\tstd::vector<int>\
-    \ size;\n\tstd::vector<int> parent;\n\tint root;\n\n\tvoid init(int n_) {\n\t\t\
-    n = n_;\n\t\tg.assign(n, std::vector<int>());\n\t\tcg.assign(n, std::vector<int>());\n\
-    \t\tvis.assign(n, false);\n\t\tparent.assign(n, 0);\n\t\tsize.assign(n, 0);\n\t\
-    }\n\n\tvoid ae(int u, int v) {\n\t\tg[u].push_back(v);\n\t\tg[v].push_back(u);\n\
-    \t}\n\n\tvoid dfs_size(int src, int par = -1) {\n\t\tsize[src] = 1;\n\t\tfor (int\
-    \ nxt : g[src]) {\n\t\t\tif (nxt == par || vis[nxt]) \n\t\t\t\tcontinue;\n\t\t\
-    \tdfs_size(nxt, src);\n\t\t\tsize[src] += size[nxt];\n\t\t}\n\t}\n\n\tint get_centroid(int\
-    \ src) {\n\t\tdfs_size(src);\n\t\tint num = size[src];\n\t\tint par = -1;\n\t\t\
-    do {    \t\n\t\t\tint go = -1;\n\t\t\tfor (int nxt : g[src]) {\n\t\t\t\tif (nxt\
-    \ == par || vis[nxt])\n\t\t\t\t\tcontinue;\n\t\t\t\tif (2 * size[nxt] > num) \n\
-    \t\t\t\t\tgo = nxt;\n\t\t\t}\n\t\t\tpar = src;\n\t\t\tsrc = go;\n\t\t} while (src\
-    \ != -1);\n\t\treturn par;\n\t}\n\n\tint build_dfs(int src, int par = -1) {\n\t\
-    \tint c = get_centroid(src);\n\t\tvis[c] = true;\n\t\tparent[c] = par;\n\t\tif\
-    \ (par != -1) {\n\t\t\tcg[par].push_back(c);\n\t\t}\n\t\tfor (int nxt : g[c])\
-    \ {\n\t\t\tif (vis[nxt]) \n\t\t\t\tcontinue;\n\t\t\tbuild_dfs(nxt, c);\n\t\t}\n\
-    \t\treturn c;\n\t}\n\n\tvoid build() {\n\t\troot = build_dfs(0);\n\t}\n};  \n\n\
-    \ntemplate <class T> struct SparseTable {\n\tstd::vector<T> v;\n\tstd::vector<std::vector<int>>\
-    \ jump;\n\n\tint level(int x) { return 31 - __builtin_clz(x); }\n\n\tint comb(int\
-    \ a, int b) {\n\t\treturn v[a] == v[b] ? std::min(a, b) : (v[a] < v[b] ? a : b);\n\
-    \t}\n\n\tvoid init(const std::vector<T>& _v) {\n\t\tv = _v;\n\t\tjump = {std::vector<int>((int)v.size())};\n\
-    \t\tiota(jump[0].begin(), jump[0].end(), 0);\n\t\tfor (int j = 1; (1 << j) <=\
-    \ (int)v.size(); j++) {\n\t\t\tjump.push_back(std::vector<int>((int)v.size() -\
-    \ (1 << j) + 1));\n\t\t\tfor (int i = 0; i < (int)jump[j].size(); i++) {\n\t\t\
-    \t\tjump[j][i] = comb(jump[j - 1][i], jump[j - 1][i + (1 << (j - 1))]);\n\t\t\t\
-    }\n\t\t}\n\t}\n\n\tint index(int l, int r) {\n\t\tassert(l <= r);\n\t\tint d =\
-    \ level(r - l + 1);\n\t\treturn comb(jump[d][l], jump[d][r - (1 << d) + 1]);\n\
-    \t}\n\n\tT query(int l, int r) {\n\t\treturn v[index(l, r)];\n\t}\n};\n\nstruct\
-    \ LCARMQ {\n\tint n; \n\tstd::vector<std::vector<int>> adj;\n\tstd::vector<int>\
-    \ dep, in, par, rev, out, pos;\n\tstd::vector<std::pair<int, int>> tmp;\n\tSparseTable<std::pair<int,\
-    \ int>> S;\n\tstd::vector<std::vector<int>> sparse;\n\tint ti = 0;\n\n\tvoid init(int\
-    \ _n) {\n\t\tn = _n;\n\t\tadj.resize(n);\n\t\tdep = in = out = par = rev = pos\
-    \ = std::vector<int>(n);\n\t\tsparse = {std::vector<int>(n)};\n\t\tfor (int j\
-    \ = 1; (1 << j) <= n; j++) {\n\t\t\tsparse.push_back(std::vector<int>(n - (1 <<\
-    \ j) + 1));\n\t\t}\n\t}\n\n\tvoid ae(int u, int v) {\n\t\tadj[u].push_back(v);\n\
+    \ mod_t; \nstruct mi {\n\tmod_t v;\n\texplicit operator mod_t() const { return\
+    \ v; }\n\texplicit operator bool() const { return v != 0; }\n\tmi() { v = 0; }\n\
+    \tmi(const long long& v) {\n\t\tv = (-MOD <= v && v < MOD) ? v : v % MOD;\n\t\t\
+    if (v < 0) v += MOD; }\n\tfriend std::istream& operator>>(std::istream& in, mi&\
+    \ a) { \n\t\tlong long x; std::cin >> x; a = mi(x); return in; }\n\tfriend std::ostream&\
+    \ operator<<(std::ostream& os, const mi& a) { return os << a.v; }\n\tfriend bool\
+    \ operator==(const mi& a, const mi& b) { return a.v == b.v; }\n\tfriend bool operator!=(const\
+    \ mi& a, const mi& b) { return !(a == b); }    \n\tfriend bool operator<(const\
+    \ mi& a, const mi& b) { return a.v < b.v; }\n\tfriend bool operator>(const mi&\
+    \ a, const mi& b) { return a.v > b.v; }\n\tfriend bool operator<=(const mi& a,\
+    \ const mi& b) { return a.v <= b.v; }\n\tfriend bool operator>=(const mi& a, const\
+    \ mi& b) { return a.v >= b.v; }\n\tmi operator-() const { return mi(-v); }\n\t\
+    mi& operator+=(const mi& m) {\n\t\tif ((v += m.v) >= MOD) v -= MOD;\n\t\treturn\
+    \ *this; }\n\tmi& operator-=(const mi& m) {\n\t\tif ((v -= m.v) < 0) v += MOD;\n\
+    \t\treturn *this; }\n\tmi& operator*=(const mi& m) { v = (long long)v * m.v %\
+    \ MOD;\n\t\treturn *this; }\n\tfriend mi pow(mi a, long long p) {\n\t\tmi ans\
+    \ = 1; assert(p >= 0);\n\t\tfor (; p; p /= 2, a *= a) if (p & 1) ans *= a;\n\t\
+    \treturn ans; }\n\tfriend mi inv(const mi& a) { assert(a != 0); return pow(a,\
+    \ MOD - 2); }\n\tmi& operator/=(const mi& m) { return (*this) *= inv(m); }\n\t\
+    friend mi operator+(mi a, const mi& b) { return a += b; }\n\tfriend mi operator-(mi\
+    \ a, const mi& b) { return a -= b; }\n\tfriend mi operator*(mi a, const mi& b)\
+    \ { return a *= b; }\n\tfriend mi operator/(mi a, const mi& b) { return a /= b;\
+    \ }\n};\n\nconst ld PI = acos((ld) -1);\n\ntypedef pair<mi, mi> pmi;\ntypedef\
+    \ vector<mi> vmi;\ntypedef vector<pmi> vpmi;\n\nstruct CentroidDecomposition {\n\
+    \tint n;\n\tstd::vector<std::vector<int>> g, cg; // cg is directed tree for centroids\n\
+    \tstd::vector<bool> vis;\n\tstd::vector<int> size;\n\tstd::vector<int> parent;\n\
+    \tint root;\n\n\tvoid init(int n_) {\n\t\tn = n_;\n\t\tg.assign(n, std::vector<int>());\n\
+    \t\tcg.assign(n, std::vector<int>());\n\t\tvis.assign(n, false);\n\t\tparent.assign(n,\
+    \ 0);\n\t\tsize.assign(n, 0);\n\t}\n\n\tvoid ae(int u, int v) {\n\t\tg[u].push_back(v);\n\
+    \t\tg[v].push_back(u);\n\t}\n\n\tvoid dfs_size(int src, int par = -1) {\n\t\t\
+    size[src] = 1;\n\t\tfor (int nxt : g[src]) {\n\t\t\tif (nxt == par || vis[nxt])\
+    \ \n\t\t\t\tcontinue;\n\t\t\tdfs_size(nxt, src);\n\t\t\tsize[src] += size[nxt];\n\
+    \t\t}\n\t}\n\n\tint get_centroid(int src) {\n\t\tdfs_size(src);\n\t\tint num =\
+    \ size[src];\n\t\tint par = -1;\n\t\tdo {    \t\n\t\t\tint go = -1;\n\t\t\tfor\
+    \ (int nxt : g[src]) {\n\t\t\t\tif (nxt == par || vis[nxt])\n\t\t\t\t\tcontinue;\n\
+    \t\t\t\tif (2 * size[nxt] > num) \n\t\t\t\t\tgo = nxt;\n\t\t\t}\n\t\t\tpar = src;\n\
+    \t\t\tsrc = go;\n\t\t} while (src != -1);\n\t\treturn par;\n\t}\n\n\tint build_dfs(int\
+    \ src, int par = -1) {\n\t\tint c = get_centroid(src);\n\t\tvis[c] = true;\n\t\
+    \tparent[c] = par;\n\t\tif (par != -1) {\n\t\t\tcg[par].push_back(c);\n\t\t}\n\
+    \t\tfor (int nxt : g[c]) {\n\t\t\tif (vis[nxt]) \n\t\t\t\tcontinue;\n\t\t\tbuild_dfs(nxt,\
+    \ c);\n\t\t}\n\t\treturn c;\n\t}\n\n\tvoid build() {\n\t\troot = build_dfs(0);\n\
+    \t}\n};  \n\n\ntemplate <class T> struct SparseTable {\n\tstd::vector<T> v;\n\t\
+    std::vector<std::vector<int>> jump;\n\n\tint level(int x) { return 31 - __builtin_clz(x);\
+    \ }\n\n\tint comb(int a, int b) {\n\t\treturn v[a] == v[b] ? std::min(a, b) :\
+    \ (v[a] < v[b] ? a : b);\n\t}\n\n\tvoid init(const std::vector<T>& _v) {\n\t\t\
+    v = _v;\n\t\tjump = {std::vector<int>((int)v.size())};\n\t\tiota(jump[0].begin(),\
+    \ jump[0].end(), 0);\n\t\tfor (int j = 1; (1 << j) <= (int)v.size(); j++) {\n\t\
+    \t\tjump.push_back(std::vector<int>((int)v.size() - (1 << j) + 1));\n\t\t\tfor\
+    \ (int i = 0; i < (int)jump[j].size(); i++) {\n\t\t\t\tjump[j][i] = comb(jump[j\
+    \ - 1][i], jump[j - 1][i + (1 << (j - 1))]);\n\t\t\t}\n\t\t}\n\t}\n\n\tint index(int\
+    \ l, int r) {\n\t\tassert(l <= r);\n\t\tint d = level(r - l + 1);\n\t\treturn\
+    \ comb(jump[d][l], jump[d][r - (1 << d) + 1]);\n\t}\n\n\tT query(int l, int r)\
+    \ {\n\t\treturn v[index(l, r)];\n\t}\n};\n\nstruct LCARMQ {\n\tint n; \n\tstd::vector<std::vector<int>>\
+    \ adj;\n\tstd::vector<int> dep, in, par, rev, out, pos;\n\tstd::vector<std::pair<int,\
+    \ int>> tmp;\n\tSparseTable<std::pair<int, int>> S;\n\tstd::vector<std::vector<int>>\
+    \ sparse;\n\tint ti = 0;\n\n\tvoid init(int _n) {\n\t\tn = _n;\n\t\tadj.resize(n);\n\
+    \t\tdep = in = out = par = rev = pos = std::vector<int>(n);\n\t\tsparse = {std::vector<int>(n)};\n\
+    \t\tfor (int j = 1; (1 << j) <= n; j++) {\n\t\t\tsparse.push_back(std::vector<int>(n\
+    \ - (1 << j) + 1));\n\t\t}\n\t}\n\n\tvoid ae(int u, int v) {\n\t\tadj[u].push_back(v);\n\
     \t\tadj[v].push_back(u);\n\t}\n\n\tvoid dfs(int src) {\n\t\tin[src] = ti++;\n\t\
     \tsparse[0][in[src]] = src;\n\t\tpos[src] = (int)tmp.size();\n\t\ttmp.emplace_back(dep[src],\
     \ src);\n\t\tfor (auto &nxt : adj[src]) {\n\t\t\tif (nxt == par[src]) continue;\n\
@@ -298,7 +297,7 @@ data:
     \ A;\n}\n\ntemplate <class M, class T> std::vector<M> multiply_mod(std::vector<T>\
     \ x, std::vector<T> y) {\n\tauto convert = [](const std::vector<T>& v) {\n\t\t\
     std::vector<M> w((int)v.size());\n\t\tfor (int i =  0; i < (int)v.size(); i++)\n\
-    \t\t\tw[i] = (int) v[i];\n\t\treturn w;\n\t};\n\treturn multiply(convert(x), convert(y));\n\
+    \t\t\tw[i] = (int)v[i];\n\t\treturn w;\n\t};\n\treturn multiply(convert(x), convert(y));\n\
     }\n\ntemplate <class T> std::vector<T> general_multiply(const std::vector<T>&\
     \ A, const std::vector<T>& B) { \n\t// arbitrary modulus\n\tusing m0 = Mint<(119\
     \ << 23) + 1, 62>; \n\tusing m1 = Mint<(5 << 25) + 1, 62>;\n\tusing m2 = Mint<(7\
@@ -379,8 +378,8 @@ data:
   isVerificationFile: true
   path: verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
   requiredBy: []
-  timestamp: '2021-08-16 14:17:33-04:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2021-08-18 19:19:26-04:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
 layout: document

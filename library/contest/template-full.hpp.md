@@ -1,16 +1,16 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/misc/easy-io.hpp
     title: library/misc/easy-io.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/misc/pragma-short.hpp
     title: library/misc/pragma-short.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/modular-arithmetic/mod-int.hpp
     title: library/modular-arithmetic/mod-int.hpp
   _extendedRequiredBy:
@@ -18,27 +18,27 @@ data:
     path: library/contest/template-full.cpp
     title: library/contest/template-full.cpp
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/unit-test/unit-test-big-integer.test.cpp
     title: verify/unit-test/unit-test-big-integer.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/unit-test/unit-test-fraction.test.cpp
     title: verify/unit-test/unit-test-fraction.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/unit-test/unit-test-gosper-hack.test.cpp
     title: verify/unit-test/unit-test-gosper-hack.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/unit-test/unit-test-hashing.test.cpp
     title: verify/unit-test/unit-test-hashing.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/unit-test/unit-test-template-full.test.cpp
     title: verify/unit-test/unit-test-template-full.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
     title: verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "\n\n#pragma GCC optimize (\"O3\")\n#pragma GCC target (\"sse4\")\n\
@@ -164,31 +164,30 @@ data:
     \t\t// throws exception when do smth illegal\n\t\t// ex. try to read letter into\
     \ int\n\t\tif (!s.empty()) set_in(s + \".in\"), set_out(s + \".out\"); // for\
     \ old USACO\n\t}\n}\n\nconst int MOD = 1e9 + 7; // 998244353\n\ntypedef std::decay<decltype(MOD)>::type\
-    \ mod_t; \nstruct mi {\n\tmod_t val;\n\texplicit operator mod_t() const { return\
-    \ val; }\n\texplicit operator bool() const { return val != 0; }\n\tmi() { val\
-    \ = 0; }\n\tmi(const long long& v) {\n\t\tval = (-MOD <= v && v < MOD) ? v : v\
-    \ % MOD;\n\t\tif (val < 0) val += MOD; }\n\tfriend std::istream& operator>>(std::istream&\
-    \ in, mi& a) { \n\t\tlong long x; std::cin >> x; a = mi(x); return in; }\n\tfriend\
-    \ std::ostream& operator<<(std::ostream& os, const mi& a) { return os << a.val;\
-    \ }\n\tfriend bool operator==(const mi& a, const mi& b) { return a.val == b.val;\
-    \ }\n\tfriend bool operator!=(const mi& a, const mi& b) { return !(a == b); }\
-    \    \n\tfriend bool operator<(const mi& a, const mi& b) { return a.val < b.val;\
-    \ }\n\tfriend bool operator>(const mi& a, const mi& b) { return a.val > b.val;\
-    \ }\n\tfriend bool operator<=(const mi& a, const mi& b) { return a.val <= b.val;\
-    \ }\n\tfriend bool operator>=(const mi& a, const mi& b) { return a.val >= b.val;\
-    \ }\n\tmi operator-() const { return mi(-val); }\n\tmi& operator+=(const mi& m)\
-    \ {\n\t\tif ((val += m.val) >= MOD) val -= MOD;\n\t\treturn *this; }\n\tmi& operator-=(const\
-    \ mi& m) {\n\t\tif ((val -= m.val) < 0) val += MOD;\n\t\treturn *this; }\n\tmi&\
-    \ operator*=(const mi& m) { val = (long long)val * m.val % MOD;\n\t\treturn *this;\
-    \ }\n\tfriend mi pow(mi a, long long p) {\n\t\tmi ans = 1; assert(p >= 0);\n\t\
-    \tfor (; p; p /= 2, a *= a) if (p & 1) ans *= a;\n\t\treturn ans; }\n\tfriend\
-    \ mi inv(const mi& a) { assert(a != 0); return pow(a, MOD - 2); }\n\tmi& operator/=(const\
-    \ mi& m) { return (*this) *= inv(m); }\n\tfriend mi operator+(mi a, const mi&\
-    \ b) { return a += b; }\n\tfriend mi operator-(mi a, const mi& b) { return a -=\
-    \ b; }\n\tfriend mi operator*(mi a, const mi& b) { return a *= b; }\n\tfriend\
-    \ mi operator/(mi a, const mi& b) { return a /= b; }\n};\n\nconst ld PI = acos((ld)\
-    \ -1);\n\ntypedef pair<mi, mi> pmi;\ntypedef vector<mi> vmi;\ntypedef vector<pmi>\
-    \ vpmi;\n"
+    \ mod_t; \nstruct mi {\n\tmod_t v;\n\texplicit operator mod_t() const { return\
+    \ v; }\n\texplicit operator bool() const { return v != 0; }\n\tmi() { v = 0; }\n\
+    \tmi(const long long& v) {\n\t\tv = (-MOD <= v && v < MOD) ? v : v % MOD;\n\t\t\
+    if (v < 0) v += MOD; }\n\tfriend std::istream& operator>>(std::istream& in, mi&\
+    \ a) { \n\t\tlong long x; std::cin >> x; a = mi(x); return in; }\n\tfriend std::ostream&\
+    \ operator<<(std::ostream& os, const mi& a) { return os << a.v; }\n\tfriend bool\
+    \ operator==(const mi& a, const mi& b) { return a.v == b.v; }\n\tfriend bool operator!=(const\
+    \ mi& a, const mi& b) { return !(a == b); }    \n\tfriend bool operator<(const\
+    \ mi& a, const mi& b) { return a.v < b.v; }\n\tfriend bool operator>(const mi&\
+    \ a, const mi& b) { return a.v > b.v; }\n\tfriend bool operator<=(const mi& a,\
+    \ const mi& b) { return a.v <= b.v; }\n\tfriend bool operator>=(const mi& a, const\
+    \ mi& b) { return a.v >= b.v; }\n\tmi operator-() const { return mi(-v); }\n\t\
+    mi& operator+=(const mi& m) {\n\t\tif ((v += m.v) >= MOD) v -= MOD;\n\t\treturn\
+    \ *this; }\n\tmi& operator-=(const mi& m) {\n\t\tif ((v -= m.v) < 0) v += MOD;\n\
+    \t\treturn *this; }\n\tmi& operator*=(const mi& m) { v = (long long)v * m.v %\
+    \ MOD;\n\t\treturn *this; }\n\tfriend mi pow(mi a, long long p) {\n\t\tmi ans\
+    \ = 1; assert(p >= 0);\n\t\tfor (; p; p /= 2, a *= a) if (p & 1) ans *= a;\n\t\
+    \treturn ans; }\n\tfriend mi inv(const mi& a) { assert(a != 0); return pow(a,\
+    \ MOD - 2); }\n\tmi& operator/=(const mi& m) { return (*this) *= inv(m); }\n\t\
+    friend mi operator+(mi a, const mi& b) { return a += b; }\n\tfriend mi operator-(mi\
+    \ a, const mi& b) { return a -= b; }\n\tfriend mi operator*(mi a, const mi& b)\
+    \ { return a *= b; }\n\tfriend mi operator/(mi a, const mi& b) { return a /= b;\
+    \ }\n};\n\nconst ld PI = acos((ld) -1);\n\ntypedef pair<mi, mi> pmi;\ntypedef\
+    \ vector<mi> vmi;\ntypedef vector<pmi> vpmi;\n"
   code: '#pragma once
 
 
@@ -367,8 +366,8 @@ data:
   path: library/contest/template-full.hpp
   requiredBy:
   - library/contest/template-full.cpp
-  timestamp: '2021-08-16 14:17:33-04:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2021-08-18 19:19:26-04:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
   - verify/unit-test/unit-test-template-full.test.cpp

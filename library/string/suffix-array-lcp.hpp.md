@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/data-structures/1d-range-queries/sparse-table.hpp
     title: Sparse Table
   _extendedRequiredBy: []

@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/modular-arithmetic/mod-int2.hpp
     title: library/modular-arithmetic/mod-int2.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/polynomial/fast-fourier-transform.hpp
     title: library/polynomial/fast-fourier-transform.hpp
   _extendedRequiredBy: []
@@ -71,7 +71,7 @@ data:
     \ A;\n}\n\ntemplate <class M, class T> std::vector<M> multiply_mod(std::vector<T>\
     \ x, std::vector<T> y) {\n\tauto convert = [](const std::vector<T>& v) {\n\t\t\
     std::vector<M> w((int)v.size());\n\t\tfor (int i =  0; i < (int)v.size(); i++)\n\
-    \t\t\tw[i] = (int) v[i];\n\t\treturn w;\n\t};\n\treturn multiply(convert(x), convert(y));\n\
+    \t\t\tw[i] = (int)v[i];\n\t\treturn w;\n\t};\n\treturn multiply(convert(x), convert(y));\n\
     }\n\ntemplate <class T> std::vector<T> general_multiply(const std::vector<T>&\
     \ A, const std::vector<T>& B) { \n\t// arbitrary modulus\n\tusing m0 = Mint<(119\
     \ << 23) + 1, 62>; \n\tusing m1 = Mint<(5 << 25) + 1, 62>;\n\tusing m2 = Mint<(7\
@@ -102,7 +102,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/yosupo-convolution_mod_1000000007-fast-fourier-transform.test.cpp
   requiredBy: []
-  timestamp: '2021-08-16 13:46:51-04:00'
+  timestamp: '2021-08-18 19:17:11-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/yosupo-convolution_mod_1000000007-fast-fourier-transform.test.cpp

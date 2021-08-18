@@ -1,29 +1,29 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/contest/template-full.hpp
     title: library/contest/template-full.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/misc/easy-io.hpp
     title: library/misc/easy-io.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/misc/pragma-short.hpp
     title: library/misc/pragma-short.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/modular-arithmetic/mod-int.hpp
     title: library/modular-arithmetic/mod-int.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/string/hashing.hpp
     title: library/string/hashing.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/aplusb
@@ -152,36 +152,36 @@ data:
     \t\t// throws exception when do smth illegal\n\t\t// ex. try to read letter into\
     \ int\n\t\tif (!s.empty()) set_in(s + \".in\"), set_out(s + \".out\"); // for\
     \ old USACO\n\t}\n}\n\nconst int MOD = 1e9 + 7; // 998244353\n\ntypedef std::decay<decltype(MOD)>::type\
-    \ mod_t; \nstruct mi {\n\tmod_t val;\n\texplicit operator mod_t() const { return\
-    \ val; }\n\texplicit operator bool() const { return val != 0; }\n\tmi() { val\
-    \ = 0; }\n\tmi(const long long& v) {\n\t\tval = (-MOD <= v && v < MOD) ? v : v\
-    \ % MOD;\n\t\tif (val < 0) val += MOD; }\n\tfriend std::istream& operator>>(std::istream&\
-    \ in, mi& a) { \n\t\tlong long x; std::cin >> x; a = mi(x); return in; }\n\tfriend\
-    \ std::ostream& operator<<(std::ostream& os, const mi& a) { return os << a.val;\
-    \ }\n\tfriend bool operator==(const mi& a, const mi& b) { return a.val == b.val;\
-    \ }\n\tfriend bool operator!=(const mi& a, const mi& b) { return !(a == b); }\
-    \    \n\tfriend bool operator<(const mi& a, const mi& b) { return a.val < b.val;\
-    \ }\n\tfriend bool operator>(const mi& a, const mi& b) { return a.val > b.val;\
-    \ }\n\tfriend bool operator<=(const mi& a, const mi& b) { return a.val <= b.val;\
-    \ }\n\tfriend bool operator>=(const mi& a, const mi& b) { return a.val >= b.val;\
-    \ }\n\tmi operator-() const { return mi(-val); }\n\tmi& operator+=(const mi& m)\
-    \ {\n\t\tif ((val += m.val) >= MOD) val -= MOD;\n\t\treturn *this; }\n\tmi& operator-=(const\
-    \ mi& m) {\n\t\tif ((val -= m.val) < 0) val += MOD;\n\t\treturn *this; }\n\tmi&\
-    \ operator*=(const mi& m) { val = (long long)val * m.val % MOD;\n\t\treturn *this;\
-    \ }\n\tfriend mi pow(mi a, long long p) {\n\t\tmi ans = 1; assert(p >= 0);\n\t\
-    \tfor (; p; p /= 2, a *= a) if (p & 1) ans *= a;\n\t\treturn ans; }\n\tfriend\
-    \ mi inv(const mi& a) { assert(a != 0); return pow(a, MOD - 2); }\n\tmi& operator/=(const\
-    \ mi& m) { return (*this) *= inv(m); }\n\tfriend mi operator+(mi a, const mi&\
-    \ b) { return a += b; }\n\tfriend mi operator-(mi a, const mi& b) { return a -=\
-    \ b; }\n\tfriend mi operator*(mi a, const mi& b) { return a *= b; }\n\tfriend\
-    \ mi operator/(mi a, const mi& b) { return a /= b; }\n};\n\nconst ld PI = acos((ld)\
-    \ -1);\n\ntypedef pair<mi, mi> pmi;\ntypedef vector<mi> vmi;\ntypedef vector<pmi>\
-    \ vpmi;\n\nnamespace Hashing {\n\nconst int MOD = 1e9 + 7;\n\nstd::mt19937 rng((uint32_t)\
-    \ std::chrono::steady_clock::now().time_since_epoch().count());\nstd::uniform_int_distribution<int>\
-    \ BDIST(0.1 * MOD, 0.9 * MOD);\nconst std::array<int, 2> base = {BDIST(rng), BDIST(rng)};\n\
-    std::vector<std::array<int, 2>> pows = {{1, 1}};\n\nstd::array<int, 2> operator+(std::array<int,\
-    \ 2> l, std::array<int, 2> r) {\n\tfor (int i = 0; i < 2; i++)\n\t\tif ((l[i]\
-    \ += r[i]) >= MOD)\n\t\t\tl[i] -= MOD;\n\treturn l;\n}\n\nstd::array<int, 2> operator-(std::array<int,\
+    \ mod_t; \nstruct mi {\n\tmod_t v;\n\texplicit operator mod_t() const { return\
+    \ v; }\n\texplicit operator bool() const { return v != 0; }\n\tmi() { v = 0; }\n\
+    \tmi(const long long& v) {\n\t\tv = (-MOD <= v && v < MOD) ? v : v % MOD;\n\t\t\
+    if (v < 0) v += MOD; }\n\tfriend std::istream& operator>>(std::istream& in, mi&\
+    \ a) { \n\t\tlong long x; std::cin >> x; a = mi(x); return in; }\n\tfriend std::ostream&\
+    \ operator<<(std::ostream& os, const mi& a) { return os << a.v; }\n\tfriend bool\
+    \ operator==(const mi& a, const mi& b) { return a.v == b.v; }\n\tfriend bool operator!=(const\
+    \ mi& a, const mi& b) { return !(a == b); }    \n\tfriend bool operator<(const\
+    \ mi& a, const mi& b) { return a.v < b.v; }\n\tfriend bool operator>(const mi&\
+    \ a, const mi& b) { return a.v > b.v; }\n\tfriend bool operator<=(const mi& a,\
+    \ const mi& b) { return a.v <= b.v; }\n\tfriend bool operator>=(const mi& a, const\
+    \ mi& b) { return a.v >= b.v; }\n\tmi operator-() const { return mi(-v); }\n\t\
+    mi& operator+=(const mi& m) {\n\t\tif ((v += m.v) >= MOD) v -= MOD;\n\t\treturn\
+    \ *this; }\n\tmi& operator-=(const mi& m) {\n\t\tif ((v -= m.v) < 0) v += MOD;\n\
+    \t\treturn *this; }\n\tmi& operator*=(const mi& m) { v = (long long)v * m.v %\
+    \ MOD;\n\t\treturn *this; }\n\tfriend mi pow(mi a, long long p) {\n\t\tmi ans\
+    \ = 1; assert(p >= 0);\n\t\tfor (; p; p /= 2, a *= a) if (p & 1) ans *= a;\n\t\
+    \treturn ans; }\n\tfriend mi inv(const mi& a) { assert(a != 0); return pow(a,\
+    \ MOD - 2); }\n\tmi& operator/=(const mi& m) { return (*this) *= inv(m); }\n\t\
+    friend mi operator+(mi a, const mi& b) { return a += b; }\n\tfriend mi operator-(mi\
+    \ a, const mi& b) { return a -= b; }\n\tfriend mi operator*(mi a, const mi& b)\
+    \ { return a *= b; }\n\tfriend mi operator/(mi a, const mi& b) { return a /= b;\
+    \ }\n};\n\nconst ld PI = acos((ld) -1);\n\ntypedef pair<mi, mi> pmi;\ntypedef\
+    \ vector<mi> vmi;\ntypedef vector<pmi> vpmi;\n\nnamespace Hashing {\n\nconst int\
+    \ MOD = 1e9 + 7;\n\nstd::mt19937 rng((uint32_t) std::chrono::steady_clock::now().time_since_epoch().count());\n\
+    std::uniform_int_distribution<int> BDIST(0.1 * MOD, 0.9 * MOD);\nconst std::array<int,\
+    \ 2> base = {BDIST(rng), BDIST(rng)};\nstd::vector<std::array<int, 2>> pows =\
+    \ {{1, 1}};\n\nstd::array<int, 2> operator+(std::array<int, 2> l, std::array<int,\
+    \ 2> r) {\n\tfor (int i = 0; i < 2; i++)\n\t\tif ((l[i] += r[i]) >= MOD)\n\t\t\
+    \tl[i] -= MOD;\n\treturn l;\n}\n\nstd::array<int, 2> operator-(std::array<int,\
     \ 2> l, std::array<int, 2> r) {\n\tfor (int i = 0; i < 2; i++)\n\t\tif ((l[i]\
     \ -= r[i]) < 0)\n\t\t\tl[i] += MOD;\n\treturn l;\n}\n\nstd::array<int, 2> operator*(std::array<int,\
     \ 2> l, std::array<int, 2> r) {\n\tfor (int i = 0; i < 2; i++)\n\t\tl[i] = (long\
@@ -223,8 +223,8 @@ data:
   isVerificationFile: true
   path: verify/unit-test/unit-test-hashing.test.cpp
   requiredBy: []
-  timestamp: '2021-08-16 14:17:33-04:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2021-08-18 19:19:26-04:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/unit-test/unit-test-hashing.test.cpp
 layout: document
