@@ -179,7 +179,7 @@ template <class D> struct Poly : std::vector<D> {
 		return (f.diff() * f.inv(n - 1)).pre(n - 1).inte();
 	}
 
-	Poly pow_mod(const Poly& mod, int n = -1) {
+	Poly pow_mod(const Poly& mod, long long n = -1) {
 		if (n == -1) n = this->size();
 		Poly x = *this, r = {{1}};
 		while (n) {
