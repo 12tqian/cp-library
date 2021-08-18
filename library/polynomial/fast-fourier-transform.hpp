@@ -53,7 +53,7 @@ template <class M, class T> std::vector<M> multiply_mod(std::vector<T> x, std::v
 	auto convert = [](const std::vector<T>& v) {
 		std::vector<M> w((int)v.size());
 		for (int i =  0; i < (int)v.size(); i++)
-			w[i] = (int) v[i];
+			w[i] = (int)v[i];
 		return w;
 	};
 	return multiply(convert(x), convert(y));
