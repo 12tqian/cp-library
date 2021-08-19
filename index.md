@@ -6,10 +6,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/contest/template-full.cpp
       title: library/contest/template-full.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/contest/template-full.hpp
       title: library/contest/template-full.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/contest/template-minimal.hpp
       title: library/contest/template-minimal.hpp
     - icon: ':heavy_check_mark:'
@@ -187,7 +187,7 @@ data:
       title: Push Relabel
   - name: library/misc
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/misc/easy-io.hpp
       title: library/misc/easy-io.hpp
     - icon: ':heavy_check_mark:'
@@ -199,12 +199,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/misc/fast-io.hpp
       title: library/misc/fast-io.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/misc/pragma-short.hpp
       title: library/misc/pragma-short.hpp
   - name: library/modular-arithmetic
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/modular-arithmetic/mod-int.hpp
       title: library/modular-arithmetic/mod-int.hpp
     - icon: ':heavy_check_mark:'
@@ -292,7 +292,7 @@ data:
       title: library/set-function/walsh-hadamard-transform.hpp
   - name: library/string
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/string/hashing.hpp
       title: library/string/hashing.hpp
     - icon: ':heavy_check_mark:'
@@ -424,7 +424,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/unit-test/unit-test-gosper-hack.test.cpp
       title: verify/unit-test/unit-test-gosper-hack.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/unit-test/unit-test-hashing.test.cpp
       title: verify/unit-test/unit-test-hashing.test.cpp
     - icon: ':heavy_check_mark:'

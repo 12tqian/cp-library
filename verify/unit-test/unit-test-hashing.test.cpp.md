@@ -1,29 +1,29 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/contest/template-full.hpp
     title: library/contest/template-full.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/misc/easy-io.hpp
     title: library/misc/easy-io.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/misc/pragma-short.hpp
     title: library/misc/pragma-short.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/modular-arithmetic/mod-int.hpp
     title: library/modular-arithmetic/mod-int.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/string/hashing.hpp
     title: library/string/hashing.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/aplusb
@@ -199,9 +199,9 @@ data:
     \tH.add(s);\n\tf0r(i, N) {\n\t\tf1r(j, i + 1, N) {\n\t\t\tmi x = 0;\n\t\t\tmi\
     \ y = 0;\n\t\t\tf1r(k, i, j + 1) {\n\t\t\t\tx += s[k] * pow(mi(base[0]), j - k);\n\
     \t\t\t\ty += s[k] * pow(mi(base[1]), j - k);\n\t\t\t}\n\t\t\tarray<int, 2> tmp\
-    \ = {x.val, y.val};\n\t\t\tassert(tmp == H.hash(i, j));\n\t\t}\n\t}\n}\n\nint\
-    \ main() {\n\tsetIO(\"\");\n\ttest();\n\tint a, b;\n\tre(a, b);\n\tps(a + b);\n\
-    \treturn 0;\n}\n"
+    \ = {x.v, y.v};\n\t\t\tassert(tmp == H.hash(i, j));\n\t\t}\n\t}\n}\n\nint main()\
+    \ {\n\tsetIO(\"\");\n\ttest();\n\tint a, b;\n\tre(a, b);\n\tps(a + b);\n\treturn\
+    \ 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/aplusb\"\n\n#include \"\
     ../../library/contest/template-full.hpp\"\n#include \"../../library/string/hashing.hpp\"\
     \n\nstring random_string(int n) {\n\tstring s;\n\tf0r(i, n) {\n\t\ts += (char)((rng()\
@@ -209,10 +209,9 @@ data:
     \tHashRange H;\n\tconst int N = 200;\n\tstring s = random_string(N);\n\tH.add(s);\n\
     \tf0r(i, N) {\n\t\tf1r(j, i + 1, N) {\n\t\t\tmi x = 0;\n\t\t\tmi y = 0;\n\t\t\t\
     f1r(k, i, j + 1) {\n\t\t\t\tx += s[k] * pow(mi(base[0]), j - k);\n\t\t\t\ty +=\
-    \ s[k] * pow(mi(base[1]), j - k);\n\t\t\t}\n\t\t\tarray<int, 2> tmp = {x.val,\
-    \ y.val};\n\t\t\tassert(tmp == H.hash(i, j));\n\t\t}\n\t}\n}\n\nint main() {\n\
-    \tsetIO(\"\");\n\ttest();\n\tint a, b;\n\tre(a, b);\n\tps(a + b);\n\treturn 0;\n\
-    }"
+    \ s[k] * pow(mi(base[1]), j - k);\n\t\t\t}\n\t\t\tarray<int, 2> tmp = {x.v, y.v};\n\
+    \t\t\tassert(tmp == H.hash(i, j));\n\t\t}\n\t}\n}\n\nint main() {\n\tsetIO(\"\"\
+    );\n\ttest();\n\tint a, b;\n\tre(a, b);\n\tps(a + b);\n\treturn 0;\n}"
   dependsOn:
   - library/contest/template-full.hpp
   - library/misc/pragma-short.hpp
@@ -223,8 +222,8 @@ data:
   isVerificationFile: true
   path: verify/unit-test/unit-test-hashing.test.cpp
   requiredBy: []
-  timestamp: '2021-08-18 20:05:50-04:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2021-08-18 20:24:58-04:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/unit-test/unit-test-hashing.test.cpp
 layout: document

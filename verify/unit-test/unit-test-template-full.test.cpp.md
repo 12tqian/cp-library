@@ -4,19 +4,19 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/contest/template-full.cpp
     title: library/contest/template-full.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/contest/template-full.hpp
     title: library/contest/template-full.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/misc/easy-io.hpp
     title: library/misc/easy-io.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/misc/pragma-short.hpp
     title: library/misc/pragma-short.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/modular-arithmetic/mod-int.hpp
     title: library/modular-arithmetic/mod-int.hpp
   _extendedRequiredBy: []

@@ -1,16 +1,16 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/misc/easy-io.hpp
     title: library/misc/easy-io.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/misc/pragma-short.hpp
     title: library/misc/pragma-short.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/modular-arithmetic/mod-int.hpp
     title: library/modular-arithmetic/mod-int.hpp
   _extendedRequiredBy:
@@ -27,7 +27,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/unit-test/unit-test-gosper-hack.test.cpp
     title: verify/unit-test/unit-test-gosper-hack.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/unit-test/unit-test-hashing.test.cpp
     title: verify/unit-test/unit-test-hashing.test.cpp
   - icon: ':heavy_check_mark:'
@@ -36,9 +36,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
     title: verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "\n\n#pragma GCC optimize (\"O3\")\n#pragma GCC target (\"sse4\")\n\
@@ -367,7 +367,7 @@ data:
   requiredBy:
   - library/contest/template-full.cpp
   timestamp: '2021-08-18 20:05:50-04:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
   - verify/unit-test/unit-test-template-full.test.cpp

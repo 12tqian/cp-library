@@ -5,7 +5,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/contest/template-full.cpp
     title: library/contest/template-full.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/contest/template-full.hpp
     title: library/contest/template-full.hpp
   _extendedVerifiedWith:
@@ -18,7 +18,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/unit-test/unit-test-gosper-hack.test.cpp
     title: verify/unit-test/unit-test-gosper-hack.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/unit-test/unit-test-hashing.test.cpp
     title: verify/unit-test/unit-test-hashing.test.cpp
   - icon: ':heavy_check_mark:'
@@ -27,9 +27,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
     title: verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: '
@@ -52,7 +52,7 @@ data:
   - library/contest/template-full.hpp
   - library/contest/template-full.cpp
   timestamp: '2021-08-16 13:59:27-04:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
   - verify/unit-test/unit-test-template-full.test.cpp
