@@ -35,6 +35,7 @@
 "verify/unit-test/unit-test-fast-io.test.cpp": "2021-08-01 15:42:25 -0400",
 "verify/unit-test/unit-test-fraction.test.cpp": "2021-08-18 20:05:50 -0400",
 "verify/unit-test/unit-test-gosper-hack.test.cpp": "2021-08-18 20:05:50 -0400",
+"verify/unit-test/unit-test-hashing.test.cpp": "2021-08-18 20:24:58 -0400",
 "verify/unit-test/unit-test-template-full.test.cpp": "2021-08-18 20:05:50 -0400",
 "verify/unit-test/unit-test-template-short.test.cpp": "2021-08-16 13:46:51 -0400",
 "verify/yosupo/yosupo-assignment.test.cpp": "2021-08-13 01:34:54 -0400",
