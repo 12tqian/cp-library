@@ -83,5 +83,6 @@
 "verify/yosupo/yosupo-two_edge_connected_components.test.cpp": "2021-08-16 13:31:52 -0400",
 "verify/yosupo/yosupo-unionfind.test.cpp": "2021-07-28 19:45:54 -0400",
 "verify/yosupo/yosupo-vertex_add_path_sum-new-hld.test.cpp": "2021-08-13 00:54:49 -0400",
-"verify/yosupo/yosupo-vertex_add_path_sum.test.cpp": "2021-08-16 13:31:52 -0400"
+"verify/yosupo/yosupo-vertex_add_path_sum.test.cpp": "2021-08-16 13:31:52 -0400",
+"verify/yosupo/yosupo-zalgorithm.test.cpp": "2021-08-19 11:01:30 -0400"
 }
