@@ -62,7 +62,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/data-structures/1d-range-queries/sparse-segment-tree.hpp
       title: library/data-structures/1d-range-queries/sparse-segment-tree.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/data-structures/1d-range-queries/sparse-table.hpp
       title: Sparse Table
   - name: library/data-structures/2d-range-queries
@@ -117,7 +117,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/graphs/biconnected-components.hpp
       title: library/graphs/biconnected-components.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/graphs/centroid-decomposition.hpp
       title: library/graphs/centroid-decomposition.hpp
     - icon: ':heavy_check_mark:'
@@ -150,7 +150,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/graphs/lca-jump.hpp
       title: LCA Jump
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/graphs/lca-rmq.hpp
       title: LCA RMQ
     - icon: ':heavy_check_mark:'
@@ -207,7 +207,7 @@ data:
     - icon: ':question:'
       path: library/modular-arithmetic/mod-int.hpp
       title: library/modular-arithmetic/mod-int.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/modular-arithmetic/mod-int2.hpp
       title: library/modular-arithmetic/mod-int2.hpp
     - icon: ':heavy_check_mark:'
@@ -241,10 +241,10 @@ data:
       title: library/number-theory/sieve.hpp
   - name: library/numerical
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/numerical/big-integer.hpp
       title: Big Integer
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/numerical/fraction.hpp
       title: library/numerical/fraction.hpp
     - icon: ':heavy_check_mark:'
@@ -264,7 +264,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/polynomial/berlekamp-massey.hpp
       title: library/polynomial/berlekamp-massey.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/polynomial/fast-fourier-transform.hpp
       title: library/polynomial/fast-fourier-transform.hpp
     - icon: ':heavy_check_mark:'
@@ -282,7 +282,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/polynomial/polynomial.hpp
       title: Formal Power Series
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/polynomial/polynomial2.hpp
       title: library/polynomial/polynomial2.hpp
   - name: library/set-function
@@ -347,7 +347,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/codeforces/codeforces-1542E2.test.cpp
       title: verify/codeforces/codeforces-1542E2.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/codeforces/codeforces-1551F.test.cpp
       title: verify/codeforces/codeforces-1551F.test.cpp
     - icon: ':heavy_check_mark:'
@@ -412,13 +412,13 @@ data:
       title: verify/spoj/spoj-TDKPRIME.test.cpp
   - name: verify/unit-test
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/unit-test/unit-test-big-integer.test.cpp
       title: verify/unit-test/unit-test-big-integer.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/unit-test/unit-test-fast-io.test.cpp
       title: verify/unit-test/unit-test-fast-io.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/unit-test/unit-test-fraction.test.cpp
       title: verify/unit-test/unit-test-fraction.test.cpp
     - icon: ':heavy_check_mark:'
@@ -471,7 +471,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-find_linear_recurrence.test.cpp
       title: verify/yosupo/yosupo-find_linear_recurrence.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
       title: verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
     - icon: ':heavy_check_mark:'

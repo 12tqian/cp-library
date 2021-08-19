@@ -9,9 +9,9 @@ data:
     title: library/modular-arithmetic/mod-int.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://codeforces.com/contest/1551/problem/F
@@ -27,27 +27,27 @@ data:
     \nconst int MOD = 1e9 + 7; // 998244353\n\ntypedef std::decay<decltype(MOD)>::type\
     \ mod_t; \nstruct mi {\n\tmod_t v;\n\texplicit operator mod_t() const { return\
     \ v; }\n\texplicit operator bool() const { return v != 0; }\n\tmi() { v = 0; }\n\
-    \tmi(const long long& v) {\n\t\tv = (-MOD <= v && v < MOD) ? v : v % MOD;\n\t\t\
-    if (v < 0) v += MOD; }\n\tfriend std::istream& operator>>(std::istream& in, mi&\
-    \ a) { \n\t\tlong long x; std::cin >> x; a = mi(x); return in; }\n\tfriend std::ostream&\
-    \ operator<<(std::ostream& os, const mi& a) { return os << a.v; }\n\tfriend bool\
-    \ operator==(const mi& a, const mi& b) { return a.v == b.v; }\n\tfriend bool operator!=(const\
-    \ mi& a, const mi& b) { return !(a == b); }    \n\tfriend bool operator<(const\
-    \ mi& a, const mi& b) { return a.v < b.v; }\n\tfriend bool operator>(const mi&\
-    \ a, const mi& b) { return a.v > b.v; }\n\tfriend bool operator<=(const mi& a,\
-    \ const mi& b) { return a.v <= b.v; }\n\tfriend bool operator>=(const mi& a, const\
-    \ mi& b) { return a.v >= b.v; }\n\tmi operator-() const { return mi(-v); }\n\t\
-    mi& operator+=(const mi& m) {\n\t\tif ((v += m.v) >= MOD) v -= MOD;\n\t\treturn\
-    \ *this; }\n\tmi& operator-=(const mi& m) {\n\t\tif ((v -= m.v) < 0) v += MOD;\n\
-    \t\treturn *this; }\n\tmi& operator*=(const mi& m) { v = (long long)v * m.v %\
-    \ MOD;\n\t\treturn *this; }\n\tfriend mi pow(mi a, long long p) {\n\t\tmi ans\
-    \ = 1; assert(p >= 0);\n\t\tfor (; p; p /= 2, a *= a) if (p & 1) ans *= a;\n\t\
-    \treturn ans; }\n\tfriend mi inv(const mi& a) { assert(a != 0); return pow(a,\
-    \ MOD - 2); }\n\tmi& operator/=(const mi& m) { return (*this) *= inv(m); }\n\t\
-    friend mi operator+(mi a, const mi& b) { return a += b; }\n\tfriend mi operator-(mi\
-    \ a, const mi& b) { return a -= b; }\n\tfriend mi operator*(mi a, const mi& b)\
-    \ { return a *= b; }\n\tfriend mi operator/(mi a, const mi& b) { return a /= b;\
-    \ }\n};\n\nint main() {\n\tios::sync_with_stdio(false);\n\tcin.tie(nullptr);\n\
+    \tmi(const long long& _v) {\n\t\tv = (-MOD <= _v && _v < MOD) ? _v : _v % MOD;\n\
+    \t\tif (v < 0) v += MOD; }\n\tfriend std::istream& operator>>(std::istream& in,\
+    \ mi& a) { \n\t\tlong long x; std::cin >> x; a = mi(x); return in; }\n\tfriend\
+    \ std::ostream& operator<<(std::ostream& os, const mi& a) { return os << a.v;\
+    \ }\n\tfriend bool operator==(const mi& a, const mi& b) { return a.v == b.v; }\n\
+    \tfriend bool operator!=(const mi& a, const mi& b) { return !(a == b); }    \n\
+    \tfriend bool operator<(const mi& a, const mi& b) { return a.v < b.v; }\n\tfriend\
+    \ bool operator>(const mi& a, const mi& b) { return a.v > b.v; }\n\tfriend bool\
+    \ operator<=(const mi& a, const mi& b) { return a.v <= b.v; }\n\tfriend bool operator>=(const\
+    \ mi& a, const mi& b) { return a.v >= b.v; }\n\tmi operator-() const { return\
+    \ mi(-v); }\n\tmi& operator+=(const mi& m) {\n\t\tif ((v += m.v) >= MOD) v -=\
+    \ MOD;\n\t\treturn *this; }\n\tmi& operator-=(const mi& m) {\n\t\tif ((v -= m.v)\
+    \ < 0) v += MOD;\n\t\treturn *this; }\n\tmi& operator*=(const mi& m) { v = (long\
+    \ long)v * m.v % MOD;\n\t\treturn *this; }\n\tfriend mi pow(mi a, long long p)\
+    \ {\n\t\tmi ans = 1; assert(p >= 0);\n\t\tfor (; p; p /= 2, a *= a) if (p & 1)\
+    \ ans *= a;\n\t\treturn ans; }\n\tfriend mi inv(const mi& a) { assert(a != 0);\
+    \ return pow(a, MOD - 2); }\n\tmi& operator/=(const mi& m) { return (*this) *=\
+    \ inv(m); }\n\tfriend mi operator+(mi a, const mi& b) { return a += b; }\n\tfriend\
+    \ mi operator-(mi a, const mi& b) { return a -= b; }\n\tfriend mi operator*(mi\
+    \ a, const mi& b) { return a *= b; }\n\tfriend mi operator/(mi a, const mi& b)\
+    \ { return a /= b; }\n};\n\nint main() {\n\tios::sync_with_stdio(false);\n\tcin.tie(nullptr);\n\
     \tint tt;\n\tcin >> tt;\n\tfor (int tc = 1; tc <= tt; ++tc) {\n\t\tint n, k;\n\
     \t\tcin >> n >> k;\n\t\tvector<mi> fact(n + 1);\n\t\tvector<mi> ifact(n + 1);\n\
     \t\tfact[0] = 1;\n\t\tfor (int i = 1; i <= n; ++i) {\n\t\t\tfact[i] = fact[i -\
@@ -103,8 +103,8 @@ data:
   isVerificationFile: true
   path: verify/codeforces/codeforces-1551F.test.cpp
   requiredBy: []
-  timestamp: '2021-08-18 19:19:26-04:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2021-08-18 20:05:50-04:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/codeforces/codeforces-1551F.test.cpp
 layout: document

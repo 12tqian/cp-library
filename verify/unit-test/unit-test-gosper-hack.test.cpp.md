@@ -154,29 +154,29 @@ data:
     \ old USACO\n\t}\n}\n\nconst int MOD = 1e9 + 7; // 998244353\n\ntypedef std::decay<decltype(MOD)>::type\
     \ mod_t; \nstruct mi {\n\tmod_t v;\n\texplicit operator mod_t() const { return\
     \ v; }\n\texplicit operator bool() const { return v != 0; }\n\tmi() { v = 0; }\n\
-    \tmi(const long long& v) {\n\t\tv = (-MOD <= v && v < MOD) ? v : v % MOD;\n\t\t\
-    if (v < 0) v += MOD; }\n\tfriend std::istream& operator>>(std::istream& in, mi&\
-    \ a) { \n\t\tlong long x; std::cin >> x; a = mi(x); return in; }\n\tfriend std::ostream&\
-    \ operator<<(std::ostream& os, const mi& a) { return os << a.v; }\n\tfriend bool\
-    \ operator==(const mi& a, const mi& b) { return a.v == b.v; }\n\tfriend bool operator!=(const\
-    \ mi& a, const mi& b) { return !(a == b); }    \n\tfriend bool operator<(const\
-    \ mi& a, const mi& b) { return a.v < b.v; }\n\tfriend bool operator>(const mi&\
-    \ a, const mi& b) { return a.v > b.v; }\n\tfriend bool operator<=(const mi& a,\
-    \ const mi& b) { return a.v <= b.v; }\n\tfriend bool operator>=(const mi& a, const\
-    \ mi& b) { return a.v >= b.v; }\n\tmi operator-() const { return mi(-v); }\n\t\
-    mi& operator+=(const mi& m) {\n\t\tif ((v += m.v) >= MOD) v -= MOD;\n\t\treturn\
-    \ *this; }\n\tmi& operator-=(const mi& m) {\n\t\tif ((v -= m.v) < 0) v += MOD;\n\
-    \t\treturn *this; }\n\tmi& operator*=(const mi& m) { v = (long long)v * m.v %\
-    \ MOD;\n\t\treturn *this; }\n\tfriend mi pow(mi a, long long p) {\n\t\tmi ans\
-    \ = 1; assert(p >= 0);\n\t\tfor (; p; p /= 2, a *= a) if (p & 1) ans *= a;\n\t\
-    \treturn ans; }\n\tfriend mi inv(const mi& a) { assert(a != 0); return pow(a,\
-    \ MOD - 2); }\n\tmi& operator/=(const mi& m) { return (*this) *= inv(m); }\n\t\
-    friend mi operator+(mi a, const mi& b) { return a += b; }\n\tfriend mi operator-(mi\
-    \ a, const mi& b) { return a -= b; }\n\tfriend mi operator*(mi a, const mi& b)\
-    \ { return a *= b; }\n\tfriend mi operator/(mi a, const mi& b) { return a /= b;\
-    \ }\n};\n\nconst ld PI = acos((ld) -1);\n\ntypedef pair<mi, mi> pmi;\ntypedef\
-    \ vector<mi> vmi;\ntypedef vector<pmi> vpmi;\n\nstd::string binary(unsigned long\
-    \ long n) { //long long to binary string\n\tstd::string result;\n\tdo result.push_back('0'\
+    \tmi(const long long& _v) {\n\t\tv = (-MOD <= _v && _v < MOD) ? _v : _v % MOD;\n\
+    \t\tif (v < 0) v += MOD; }\n\tfriend std::istream& operator>>(std::istream& in,\
+    \ mi& a) { \n\t\tlong long x; std::cin >> x; a = mi(x); return in; }\n\tfriend\
+    \ std::ostream& operator<<(std::ostream& os, const mi& a) { return os << a.v;\
+    \ }\n\tfriend bool operator==(const mi& a, const mi& b) { return a.v == b.v; }\n\
+    \tfriend bool operator!=(const mi& a, const mi& b) { return !(a == b); }    \n\
+    \tfriend bool operator<(const mi& a, const mi& b) { return a.v < b.v; }\n\tfriend\
+    \ bool operator>(const mi& a, const mi& b) { return a.v > b.v; }\n\tfriend bool\
+    \ operator<=(const mi& a, const mi& b) { return a.v <= b.v; }\n\tfriend bool operator>=(const\
+    \ mi& a, const mi& b) { return a.v >= b.v; }\n\tmi operator-() const { return\
+    \ mi(-v); }\n\tmi& operator+=(const mi& m) {\n\t\tif ((v += m.v) >= MOD) v -=\
+    \ MOD;\n\t\treturn *this; }\n\tmi& operator-=(const mi& m) {\n\t\tif ((v -= m.v)\
+    \ < 0) v += MOD;\n\t\treturn *this; }\n\tmi& operator*=(const mi& m) { v = (long\
+    \ long)v * m.v % MOD;\n\t\treturn *this; }\n\tfriend mi pow(mi a, long long p)\
+    \ {\n\t\tmi ans = 1; assert(p >= 0);\n\t\tfor (; p; p /= 2, a *= a) if (p & 1)\
+    \ ans *= a;\n\t\treturn ans; }\n\tfriend mi inv(const mi& a) { assert(a != 0);\
+    \ return pow(a, MOD - 2); }\n\tmi& operator/=(const mi& m) { return (*this) *=\
+    \ inv(m); }\n\tfriend mi operator+(mi a, const mi& b) { return a += b; }\n\tfriend\
+    \ mi operator-(mi a, const mi& b) { return a -= b; }\n\tfriend mi operator*(mi\
+    \ a, const mi& b) { return a *= b; }\n\tfriend mi operator/(mi a, const mi& b)\
+    \ { return a /= b; }\n};\n\nconst ld PI = acos((ld) -1);\n\ntypedef pair<mi, mi>\
+    \ pmi;\ntypedef vector<mi> vmi;\ntypedef vector<pmi> vpmi;\n\nstd::string binary(unsigned\
+    \ long long n) { //long long to binary string\n\tstd::string result;\n\tdo result.push_back('0'\
     \ + (n & 1));\n\twhile (n >>= 1);\n\treverse(result.begin(), result.end());\n\t\
     return result;\n}\n\nstd::vector<int> gosper_generate(int n) {\n\tstd::vector<int>\
     \ res{0};\n\tfor (int sz = 1; sz <= n; sz++) {\n\t\tlong long c = (1 << sz) -\
@@ -206,7 +206,7 @@ data:
   isVerificationFile: true
   path: verify/unit-test/unit-test-gosper-hack.test.cpp
   requiredBy: []
-  timestamp: '2021-08-18 19:19:26-04:00'
+  timestamp: '2021-08-18 20:05:50-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/unit-test/unit-test-gosper-hack.test.cpp

@@ -10,7 +10,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/data-structures/1d-range-queries/interval-union.hpp
     title: library/data-structures/1d-range-queries/interval-union.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/modular-arithmetic/mod-int2.hpp
     title: library/modular-arithmetic/mod-int2.hpp
   _extendedRequiredBy: []
