@@ -3,6 +3,7 @@
 #include "../../library/contest/template-minimal.hpp"
 #include "../../library/data-structures/1d-range-queries/general-full-segment-tree.hpp"
 #include "../../library/modular-arithmetic/mod-int2.hpp"
+#include "../../library/math/affine.hpp"
 
 using mi = Mint<998244353, 5>;
 
@@ -11,13 +12,13 @@ int main() {
 	cin.tie(nullptr);
 	int n, q;
 	cin >> n >> q;
-	const array<mi, 2> ID = {1, 0};
-	auto comb = [&](array<mi, 2> x, array<mi, 2> y) {
-		return array<mi, 2>{x[0] * y[0], x[1] * y[0] + y[1]};
+	const Affine<mi> ID = {1, 0};
+	auto comb = [&](Affine<mi> x, Affine<mi> y) {
+		return x * y;
 	};
-	vector<array<mi, 2>> v(n);
+	vector<Affine<mi>> v(n);
 	for (int i = 0; i < n; ++i) {
-		cin >> v[i][0] >> v[i][1];
+		cin >> v[i].a >> v[i].b;
 	}
 	auto seg = get_lazy_segment_tree(
 		v, ID, ID, comb, comb, comb
@@ -34,8 +35,7 @@ int main() {
 			cin >> l >> r >> x;
 			--r;
 			auto res = seg.sum(l, r);
-			mi ans = res[0] * x + res[1];
-			cout << ans << '\n';
+			cout << res(x) << '\n';
 		}
 	}
 	return 0;
