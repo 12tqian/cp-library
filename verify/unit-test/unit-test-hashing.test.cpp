@@ -25,7 +25,7 @@ void test() {
 				x += s[k] * pow(mi(base[0]), j - k);
 				y += s[k] * pow(mi(base[1]), j - k);
 			}
-			array<int, 2> tmp = {x.val, y.val};
+			array<int, 2> tmp = {x.v, y.v};
 			assert(tmp == H.hash(i, j));
 		}
 	}
