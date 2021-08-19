@@ -185,6 +185,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/graphs/flows/push-relabel.hpp
       title: Push Relabel
+  - name: library/math
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: library/math/affine.hpp
+      title: library/math/affine.hpp
   - name: library/misc
     pages:
     - icon: ':heavy_check_mark:'

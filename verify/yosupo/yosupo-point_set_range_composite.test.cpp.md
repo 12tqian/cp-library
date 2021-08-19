@@ -8,6 +8,9 @@ data:
     path: library/data-structures/1d-range-queries/general-full-segment-tree.hpp
     title: library/data-structures/1d-range-queries/general-full-segment-tree.hpp
   - icon: ':heavy_check_mark:'
+    path: library/math/affine.hpp
+    title: library/math/affine.hpp
+  - icon: ':heavy_check_mark:'
     path: library/modular-arithmetic/mod-int2.hpp
     title: library/modular-arithmetic/mod-int2.hpp
   _extendedRequiredBy: []
@@ -96,38 +99,63 @@ data:
     \ *this -= 1; }\n\tfriend Mint operator+(Mint a, const Mint& b) { return a +=\
     \ b; }\n\tfriend Mint operator-(Mint a, const Mint& b) { return a -= b; }\n\t\
     friend Mint operator*(Mint a, const Mint& b) { return a *= b; }\n\tfriend Mint\
-    \ operator/(Mint a, const Mint& b) { return a /= b; }\n};\n\nusing mi = Mint<998244353,\
-    \ 5>;\n\nint main() {\n\tios::sync_with_stdio(false);\n\tcin.tie(nullptr);\n\t\
-    int n, q;\n\tcin >> n >> q;\n\tconst array<mi, 2> ID = {1, 0};\n\tauto comb =\
-    \ [&](array<mi, 2> x, array<mi, 2> y) {\n\t\treturn array<mi, 2>{x[0] * y[0],\
-    \ x[1] * y[0] + y[1]};\n\t};\n\tvector<array<mi, 2>> v(n);\n\tfor (int i = 0;\
-    \ i < n; ++i) {\n\t\tcin >> v[i][0] >> v[i][1];\n\t}\n\tauto seg = get_lazy_segment_tree(\n\
-    \t\tv, ID, ID, comb, comb, comb\n\t);\n\twhile (q--) {\n\t\tint t;\n\t\tcin >>\
-    \ t;\n\t\tif (t == 0) {\n\t\t\tint p, c, d;\n\t\t\tcin >> p >> c >> d;\n\t\t\t\
-    seg.set(p, {c, d});\n\t\t} else {\n\t\t\tint l, r, x;\n\t\t\tcin >> l >> r >>\
-    \ x;\n\t\t\t--r;\n\t\t\tauto res = seg.sum(l, r);\n\t\t\tmi ans = res[0] * x +\
-    \ res[1];\n\t\t\tcout << ans << '\\n';\n\t\t}\n\t}\n\treturn 0;\n}\n"
+    \ operator/(Mint a, const Mint& b) { return a /= b; }\n};\n\ntemplate <class T>\
+    \ struct Affine {\n\tT a, b;\n\t\n\tconstexpr Affine() : a(1), b(0) {}\n\tconstexpr\
+    \ Affine(T _a, T _b) : a(_a), b(_b) {}\n\tconstexpr Affine(T _b) : a(0), b(_b)\
+    \ {}\n\n\tT operator()(T x) { return a * x + b; }\n\t\n\tAffine operator-() {\
+    \ return Affine(-a, -b); }\n\t\n\tfriend Affine operator*(const Affine& l, const\
+    \ Affine& r) {\n\t\treturn Affine(l.a * r.a, l.b * r.a + r.b); }\n\tfriend Affine\
+    \ operator-(const Affine& l, const Affine& r) { return Affine(l.a - r.a, l.b -\
+    \ r.b); }\n\tfriend Affine operator+(const Affine& l, const Affine& r) { return\
+    \ Affine(l.a + r.a, l.b + r.b); }\n\t\n\tfriend Affine operator+(const Affine&\
+    \ l, const T& r) { return Affine(l.a, l.b + r); }\n\tfriend Affine operator-(const\
+    \ Affine& l, const T& r) { return Affine(l.a, l.b - r); }\n\tfriend Affine operator*(const\
+    \ Affine& l, const T& r) { return Affine(l.a * r, l.b * r); }\n\tfriend Affine\
+    \ operator/(const Affine& l, const T& r) { return Affine(l.a / r, l.b / r); }\n\
+    \n\tfriend Affine operator+(const T& l, Affine& r) { return r + l; }\n\tfriend\
+    \ Affine operator-(const T& l, Affine& r) { return -r + l; }\n\tfriend Affine\
+    \ operator*(const T& l, Affine& r) { return r * l; }\n\t\n\tfriend Affine& operator+=(Affine&\
+    \ l, const Affine& r) { return l = l + r; }\n\tfriend Affine& operator-=(Affine&\
+    \ l, const Affine& r) { return l = l - r; }\n\tfriend Affine& operator*=(Affine&\
+    \ l, const Affine& r) { return l = l * r; }\n\n\tfriend Affine& operator+=(Affine&\
+    \ l, const T& r) { return l = l + r; }\n\tfriend Affine& operator-=(Affine& l,\
+    \ const T& r) { return l = l - r; }\n\tfriend Affine& operator*=(Affine& l, const\
+    \ T& r) { return l = l * r; }\n\n\tbool operator==(const Affine& r) const { return\
+    \ a == r.a && b == r.b; }\n\tbool operator!=(const Affine& r) const { return a\
+    \ != r.a || b != r.b; }\n\n\tfriend ostream& operator<<(ostream& os, const Affine&\
+    \ r) {\n\t\tos << \"( \" << r.a << \", \" << r.b << \" )\"; return os; }\n};\n\
+    \nusing mi = Mint<998244353, 5>;\n\nint main() {\n\tios::sync_with_stdio(false);\n\
+    \tcin.tie(nullptr);\n\tint n, q;\n\tcin >> n >> q;\n\tconst Affine<mi> ID = {1,\
+    \ 0};\n\tauto comb = [&](Affine<mi> x, Affine<mi> y) {\n\t\treturn x * y;\n\t\
+    };\n\tvector<Affine<mi>> v(n);\n\tfor (int i = 0; i < n; ++i) {\n\t\tcin >> v[i].a\
+    \ >> v[i].b;\n\t}\n\tauto seg = get_lazy_segment_tree(\n\t\tv, ID, ID, comb, comb,\
+    \ comb\n\t);\n\twhile (q--) {\n\t\tint t;\n\t\tcin >> t;\n\t\tif (t == 0) {\n\t\
+    \t\tint p, c, d;\n\t\t\tcin >> p >> c >> d;\n\t\t\tseg.set(p, {c, d});\n\t\t}\
+    \ else {\n\t\t\tint l, r, x;\n\t\t\tcin >> l >> r >> x;\n\t\t\t--r;\n\t\t\tauto\
+    \ res = seg.sum(l, r);\n\t\t\tcout << res(x) << '\\n';\n\t\t}\n\t}\n\treturn 0;\n\
+    }\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/point_set_range_composite\"\
     \n\n#include \"../../library/contest/template-minimal.hpp\"\n#include \"../../library/data-structures/1d-range-queries/general-full-segment-tree.hpp\"\
-    \n#include \"../../library/modular-arithmetic/mod-int2.hpp\"\n\nusing mi = Mint<998244353,\
-    \ 5>;\n\nint main() {\n\tios::sync_with_stdio(false);\n\tcin.tie(nullptr);\n\t\
-    int n, q;\n\tcin >> n >> q;\n\tconst array<mi, 2> ID = {1, 0};\n\tauto comb =\
-    \ [&](array<mi, 2> x, array<mi, 2> y) {\n\t\treturn array<mi, 2>{x[0] * y[0],\
-    \ x[1] * y[0] + y[1]};\n\t};\n\tvector<array<mi, 2>> v(n);\n\tfor (int i = 0;\
-    \ i < n; ++i) {\n\t\tcin >> v[i][0] >> v[i][1];\n\t}\n\tauto seg = get_lazy_segment_tree(\n\
-    \t\tv, ID, ID, comb, comb, comb\n\t);\n\twhile (q--) {\n\t\tint t;\n\t\tcin >>\
-    \ t;\n\t\tif (t == 0) {\n\t\t\tint p, c, d;\n\t\t\tcin >> p >> c >> d;\n\t\t\t\
-    seg.set(p, {c, d});\n\t\t} else {\n\t\t\tint l, r, x;\n\t\t\tcin >> l >> r >>\
-    \ x;\n\t\t\t--r;\n\t\t\tauto res = seg.sum(l, r);\n\t\t\tmi ans = res[0] * x +\
-    \ res[1];\n\t\t\tcout << ans << '\\n';\n\t\t}\n\t}\n\treturn 0;\n}"
+    \n#include \"../../library/modular-arithmetic/mod-int2.hpp\"\n#include \"../../library/math/affine.hpp\"\
+    \n\nusing mi = Mint<998244353, 5>;\n\nint main() {\n\tios::sync_with_stdio(false);\n\
+    \tcin.tie(nullptr);\n\tint n, q;\n\tcin >> n >> q;\n\tconst Affine<mi> ID = {1,\
+    \ 0};\n\tauto comb = [&](Affine<mi> x, Affine<mi> y) {\n\t\treturn x * y;\n\t\
+    };\n\tvector<Affine<mi>> v(n);\n\tfor (int i = 0; i < n; ++i) {\n\t\tcin >> v[i].a\
+    \ >> v[i].b;\n\t}\n\tauto seg = get_lazy_segment_tree(\n\t\tv, ID, ID, comb, comb,\
+    \ comb\n\t);\n\twhile (q--) {\n\t\tint t;\n\t\tcin >> t;\n\t\tif (t == 0) {\n\t\
+    \t\tint p, c, d;\n\t\t\tcin >> p >> c >> d;\n\t\t\tseg.set(p, {c, d});\n\t\t}\
+    \ else {\n\t\t\tint l, r, x;\n\t\t\tcin >> l >> r >> x;\n\t\t\t--r;\n\t\t\tauto\
+    \ res = seg.sum(l, r);\n\t\t\tcout << res(x) << '\\n';\n\t\t}\n\t}\n\treturn 0;\n\
+    }"
   dependsOn:
   - library/contest/template-minimal.hpp
   - library/data-structures/1d-range-queries/general-full-segment-tree.hpp
   - library/modular-arithmetic/mod-int2.hpp
+  - library/math/affine.hpp
   isVerificationFile: true
   path: verify/yosupo/yosupo-point_set_range_composite.test.cpp
   requiredBy: []
-  timestamp: '2021-08-15 17:58:43-04:00'
+  timestamp: '2021-08-18 22:34:30-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/yosupo-point_set_range_composite.test.cpp
