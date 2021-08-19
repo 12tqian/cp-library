@@ -306,6 +306,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/string/suffix-array-lcp.hpp
       title: Suffix Array with Longest Common Prefix
+    - icon: ':heavy_check_mark:'
+      path: library/string/z-algorithm.hpp
+      title: library/string/z-algorithm.hpp
   verificationCategories:
   - name: verify/aizu
     pages:
@@ -578,6 +581,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-vertex_add_path_sum.test.cpp
       title: verify/yosupo/yosupo-vertex_add_path_sum.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/yosupo/yosupo-zalgorithm.test.cpp
+      title: verify/yosupo/yosupo-zalgorithm.test.cpp
 layout: toppage
 ---
 [![Badge](https://cp-logo.vercel.app/codeforces/12tqian)](https://codeforces.com/profile/12tqian)
