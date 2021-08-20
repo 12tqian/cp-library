@@ -50,7 +50,7 @@ data:
     \ const Flow amount) { b[v] -= amount; }\n\nprivate:\n\t// Variables used in calculation\n\
     \tconst Cost unreachable = std::numeric_limits<Cost>::max();\n\tCost farthest;\n\
     \tstd::vector<Cost> potential;\n\tstd::vector<Cost> dist;\n\tstd::vector<Edge*>\
-    \ parent; // out-forrest.\n\tstd::priority_queue<std::pair<Cost, int>, std::vector<std::pair<Cost,\
+    \ parent; // out-forest.\n\tstd::priority_queue<std::pair<Cost, int>, std::vector<std::pair<Cost,\
     \ int>>,\n\t\tstd::greater<>>\n\t\t\tpq; // should be empty outside of dual()\n\
     \tstd::vector<V_id> excess_vs, deficit_vs;\n\n\tEdge& rev(const Edge& e) { return\
     \ g[e.dst][e.rev]; }\n\n\tvoid push(Edge& e, const Flow amount) {\n\t\te.flow\
@@ -58,16 +58,16 @@ data:
     \ V_id src, const V_id dst, const Edge& e) {\n\t\treturn e.cost + potential[src]\
     \ - potential[dst];\n\t}\n\n\tbool dual(const Flow delta) {\n\t\tdist.assign(n,\
     \ unreachable);\n\t\tparent.assign(n, nullptr);\n\t\texcess_vs.erase(std::remove_if(std::begin(excess_vs),\
-    \ std::end(excess_vs),\n\t\t\t\t\t\t\t\t\t   [&](const V_id v) { return b[v] <\
-    \ delta; }),\n\t\t\t\t\t\tstd::end(excess_vs));\n\t\tdeficit_vs.erase(std::remove_if(std::begin(deficit_vs),\n\
-    \t\t\t\t\t\t\t\t\t\tstd::end(deficit_vs),\n\t\t\t\t\t\t\t\t\t\t[&](const V_id\
-    \ v) { return b[v] > -delta; }),\n\t\t\t\t\t\t std::end(deficit_vs));\n\t\tfor\
-    \ (const auto v : excess_vs) pq.emplace(dist[v] = 0, v);\n\t\tfarthest = 0;\n\t\
-    \tstd::size_t deficit_count = 0;\n\t\twhile (!pq.empty()) {\n\t\t\tCost d;\n\t\
-    \t\tstd::size_t u;\n\t\t\tstd::tie(d, u) = pq.top();\n\t\t\t// const auto [d,\
-    \ u] = pq.top();\n\t\t\tpq.pop();\n\t\t\tif (dist[u] < d) continue;\n\t\t\tfarthest\
-    \ = d;\n\t\t\tif (b[u] <= -delta) ++deficit_count;\n\t\t\tif (deficit_count >=\
-    \ deficit_vs.size()) break;\n\t\t\tfor (auto& e : g[u]) {\n\t\t\t\tif (e.residual_cap()\
+    \ \n\t\t\t\t\t\t\t\t\t\tstd::end(excess_vs),\n\t\t\t\t\t\t\t\t\t\t[&](const V_id\
+    \ v) { return b[v] < delta; }),\n\t\t\t\t\t\t\t\t\t\tstd::end(excess_vs));\n\t\
+    \tdeficit_vs.erase(std::remove_if(std::begin(deficit_vs),\n\t\t\t\t\t\t\t\t\t\t\
+    std::end(deficit_vs),\n\t\t\t\t\t\t\t\t\t\t[&](const V_id v) { return b[v] > -delta;\
+    \ }),\n\t\t\t\t\t\t \t\t\t\tstd::end(deficit_vs));\n\t\tfor (const auto v : excess_vs)\
+    \ pq.emplace(dist[v] = 0, v);\n\t\tfarthest = 0;\n\t\tstd::size_t deficit_count\
+    \ = 0;\n\t\twhile (!pq.empty()) {\n\t\t\tCost d;\n\t\t\tstd::size_t u;\n\t\t\t\
+    std::tie(d, u) = pq.top();\n\t\t\tpq.pop();\n\t\t\tif (dist[u] < d) continue;\n\
+    \t\t\tfarthest = d;\n\t\t\tif (b[u] <= -delta) ++deficit_count;\n\t\t\tif (deficit_count\
+    \ >= deficit_vs.size()) break;\n\t\t\tfor (auto& e : g[u]) {\n\t\t\t\tif (e.residual_cap()\
     \ < delta) continue;\n\t\t\t\tconst auto v = e.dst;\n\t\t\t\tconst auto new_dist\
     \ = d + residual_cost(u, v, e);\n\t\t\t\tif (new_dist >= dist[v]) continue;\n\t\
     \t\t\tpq.emplace(dist[v] = new_dist, v);\n\t\t\t\tparent[v] = &e;\n\t\t\t}\n\t\
@@ -147,7 +147,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/yosupo-min_cost_b_flow.test.cpp
   requiredBy: []
-  timestamp: '2021-08-20 13:00:13-04:00'
+  timestamp: '2021-08-20 13:03:37-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/yosupo-min_cost_b_flow.test.cpp
