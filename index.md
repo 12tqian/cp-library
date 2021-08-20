@@ -180,6 +180,9 @@ data:
       path: library/graphs/flows/hungarian.hpp
       title: Hungarian Algorithm
     - icon: ':heavy_check_mark:'
+      path: library/graphs/flows/min-cost-flow.hpp
+      title: library/graphs/flows/min-cost-flow.hpp
+    - icon: ':heavy_check_mark:'
       path: library/graphs/flows/min-cost-max-flow.hpp
       title: Minimum Cost Maximum Flow
     - icon: ':heavy_check_mark:'
@@ -330,6 +333,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/aizu/aizu-GRL_6_A.test.cpp
       title: verify/aizu/aizu-GRL_6_A.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/aizu/aizu-GRL_6_B.test.cpp
+      title: verify/aizu/aizu-GRL_6_B.test.cpp
   - name: verify/atcoder
     pages:
     - icon: ':heavy_check_mark:'
