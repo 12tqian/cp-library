@@ -179,7 +179,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/graphs/flows/hungarian.hpp
       title: Hungarian Algorithm
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/graphs/flows/min-cost-b-flow.hpp
       title: library/graphs/flows/min-cost-b-flow.hpp
     - icon: ':heavy_check_mark:'
@@ -509,7 +509,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-log_of_formal_power_series.test.cpp
       title: verify/yosupo/yosupo-log_of_formal_power_series.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-min_cost_b_flow.test.cpp
       title: verify/yosupo/yosupo-min_cost_b_flow.test.cpp
     - icon: ':heavy_check_mark:'
