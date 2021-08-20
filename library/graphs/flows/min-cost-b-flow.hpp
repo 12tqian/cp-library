@@ -38,6 +38,7 @@ public:
 		friend class MinCostFlow;
 
 		const MinCostFlow* instance;
+
 		V_id v;
 		E_id e;
 
@@ -212,7 +213,6 @@ private:
 public:
 	std::pair<Status, Cost> solve() {
 		potential.resize(n);
-
 		Flow inf_flow = 1;
 		for (const auto t : b)
 			inf_flow = std::max({inf_flow, t, -t});
@@ -220,18 +220,15 @@ public:
 			inf_flow = std::max({inf_flow, e.residual_cap(), -e.residual_cap()});
 		Flow delta = 1;
 		while (delta < inf_flow) delta *= SCALING_FACTOR;
-
 		for (; delta; delta /= SCALING_FACTOR) {
 			saturate_negative(delta);
 			while (dual(delta)) primal(delta);
 		}
-
 		Cost value = 0;
 		for (const auto& es : g) for (const auto& e : es) {
 			value += e.flow * e.cost;
 		}
 		value /= 2;
-
 		if (excess_vs.empty() && deficit_vs.empty()) {
 			return { Status::OPTIMAL, value / objective };
 		} else {
@@ -247,6 +244,7 @@ public:
 			if (e.residual_cap() > 0) potential[e.dst] = std::min(potential[e.dst], potential[e.src] + e.cost);
 		return potential;
 	}
+
 	template <class T> T get_result_value() {
 		T value = 0;
 		for (const auto& es : g) for (const auto& e : es) {
@@ -255,6 +253,7 @@ public:
 		value /= (T)2;
 		return value;
 	}
+	
 	std::vector<size_t> get_cut() {
 		std::vector<size_t> res;
 		if (excess_vs.empty()) return res;
