@@ -25,8 +25,8 @@ data:
     \t\t\t const E_id _rev)\n\t\t\t: src(_src), dst(_dst), flow(0), cap(_cap), cost(_cost),\
     \ rev(_rev) {}\n\n\t\t[[nodiscard]] Flow residual_cap() const { return cap - flow;\
     \ }\n\t};\n\npublic:\n\tclass EdgePtr {\n\t\tfriend class MinCostFlow;\n\n\t\t\
-    const MinCostFlow* instance;\n\t\tV_id v;\n\t\tE_id e;\n\n\t\tEdgePtr(const MinCostFlow*\
-    \ const _instance, const V_id _v, const E_id _e)\n\t\t\t: instance(_instance),\
+    const MinCostFlow* instance;\n\n\t\tV_id v;\n\t\tE_id e;\n\n\t\tEdgePtr(const\
+    \ MinCostFlow* const _instance, const V_id _v, const E_id _e)\n\t\t\t: instance(_instance),\
     \ v(_v), e(_e) {}\n\n\t\t[[nodiscard]] const Edge& edge() const { return instance->g[v][e];\
     \ }\n\n\t\t[[nodiscard]] const Edge& rev() const {\n\t\t\tconst Edge& _e = edge();\n\
     \t\t\treturn instance->g[_e.dst][_e.rev];\n\t\t}\n\n\tpublic:\n\t\tEdgePtr() =\
@@ -88,44 +88,43 @@ data:
     \tpush(e, rcap);\n\t\t\t\tb[e.src] -= rcap;\n\t\t\t\tb[e.dst] += rcap;\n\t\t\t\
     }\n\t\t}\n\t\tfor (V_id v = 0; v < n; ++v) if (b[v] != 0) {\n\t\t\t(b[v] > 0 ?\
     \ excess_vs : deficit_vs).emplace_back(v);\n\t\t}\n\t}\n\npublic:\n\tstd::pair<Status,\
-    \ Cost> solve() {\n\t\tpotential.resize(n);\n\n\t\tFlow inf_flow = 1;\n\t\tfor\
-    \ (const auto t : b)\n\t\t\tinf_flow = std::max({inf_flow, t, -t});\n\t\tfor (const\
-    \ auto& es : g) for (const auto& e : es)\n\t\t\tinf_flow = std::max({inf_flow,\
-    \ e.residual_cap(), -e.residual_cap()});\n\t\tFlow delta = 1;\n\t\twhile (delta\
-    \ < inf_flow) delta *= SCALING_FACTOR;\n\n\t\tfor (; delta; delta /= SCALING_FACTOR)\
-    \ {\n\t\t\tsaturate_negative(delta);\n\t\t\twhile (dual(delta)) primal(delta);\n\
-    \t\t}\n\n\t\tCost value = 0;\n\t\tfor (const auto& es : g) for (const auto& e\
-    \ : es) {\n\t\t\tvalue += e.flow * e.cost;\n\t\t}\n\t\tvalue /= 2;\n\n\t\tif (excess_vs.empty()\
-    \ && deficit_vs.empty()) {\n\t\t\treturn { Status::OPTIMAL, value / objective\
-    \ };\n\t\t} else {\n\t\t\treturn { Status::INFEASIBLE, value / objective };\n\t\
-    \t}\n\t}\n\n\tstd::vector<Cost> get_potential() {\n\t\t// Not strictly necessary,\
-    \ but re-calculate potential to bound the potential values,\n\t\t// plus make\
-    \ them somewhat canonical so that it is robust for the algorithm chaneges.\n\t\
-    \tstd::fill(std::begin(potential), std::end(potential), 0);\n\t\tfor (size_t i\
-    \ = 0; i < n; ++i) for (const auto& es : g) for (const auto& e : es)\n\t\t\tif\
-    \ (e.residual_cap() > 0) potential[e.dst] = std::min(potential[e.dst], potential[e.src]\
-    \ + e.cost);\n\t\treturn potential;\n\t}\n\ttemplate <class T> T get_result_value()\
-    \ {\n\t\tT value = 0;\n\t\tfor (const auto& es : g) for (const auto& e : es) {\n\
-    \t\t\tvalue += (T)(e.flow) * (T)(e.cost);\n\t\t}\n\t\tvalue /= (T)2;\n\t\treturn\
-    \ value;\n\t}\n\tstd::vector<size_t> get_cut() {\n\t\tstd::vector<size_t> res;\n\
-    \t\tif (excess_vs.empty()) return res;\n\t\tfor (size_t v = 0; v < n; ++v) {\n\
-    \t\t\tif (deficit_vs.empty() || (dist[v] < unreachable))\n\t\t\t\tres.emplace_back(v);\n\
-    \t\t}\n\t\treturn res;\n\t}\n};\n\ntemplate <class T> std::string i2s(T value)\
-    \ {\n    if (value < 0) return \"-\" + i2s(-value);\n    if (value == 0) return\
-    \ \"0\";\n    std::string s;\n    while (value) {\n        s += '0' + (value %\
-    \ 10);\n        value /= 10;\n    }\n    std::reverse(s.begin(), s.end());\n \
-    \   return s;\n}\n\nint main() {\n\tusing MCF = MinCostFlow<long long, long long>;\n\
-    \tusing namespace std;\n\tint n, m;\n\tcin >> n >> m;\n\tMCF mcf;\n\tconst auto\
-    \ vs = mcf.add_vertices(n);\n\tfor (const auto& v : vs) {\n\t\tint x;\n\t\tcin\
-    \ >> x;\n\t\tmcf.add_supply(vs[v], x);\n\t}\n\tvector<MCF::EdgePtr> edges;\n\t\
-    while (m--) {\n\t\tint s, t, l, u, c;\n\t\tcin >> s >> t >> l >> u >> c;\n\t\t\
-    edges.emplace_back(mcf.add_edge(s, t, l, u, c));\n\t}\n\tconst auto status = mcf.solve().first;\n\
-    \tif (status == Status::INFEASIBLE) {\n\t\tputs(\"infeasible\");\n\t} else {\n\
-    \t\tconst auto potential = mcf.get_potential();\n\t\tconst auto result_value =\
-    \ mcf.get_result_value<__int128_t>();\n\t\tputs(i2s(result_value).c_str());\n\t\
-    \tfor (const auto& v : vs) {\n\t\t\tputs(i2s(potential[v]).c_str());\n\t\t}\n\t\
-    \tfor (const auto& e : edges) {\n\t\t\tputs(i2s(e.flow()).c_str());\n\t\t}\n\t\
-    }\n}\n"
+    \ Cost> solve() {\n\t\tpotential.resize(n);\n\t\tFlow inf_flow = 1;\n\t\tfor (const\
+    \ auto t : b)\n\t\t\tinf_flow = std::max({inf_flow, t, -t});\n\t\tfor (const auto&\
+    \ es : g) for (const auto& e : es)\n\t\t\tinf_flow = std::max({inf_flow, e.residual_cap(),\
+    \ -e.residual_cap()});\n\t\tFlow delta = 1;\n\t\twhile (delta < inf_flow) delta\
+    \ *= SCALING_FACTOR;\n\t\tfor (; delta; delta /= SCALING_FACTOR) {\n\t\t\tsaturate_negative(delta);\n\
+    \t\t\twhile (dual(delta)) primal(delta);\n\t\t}\n\t\tCost value = 0;\n\t\tfor\
+    \ (const auto& es : g) for (const auto& e : es) {\n\t\t\tvalue += e.flow * e.cost;\n\
+    \t\t}\n\t\tvalue /= 2;\n\t\tif (excess_vs.empty() && deficit_vs.empty()) {\n\t\
+    \t\treturn { Status::OPTIMAL, value / objective };\n\t\t} else {\n\t\t\treturn\
+    \ { Status::INFEASIBLE, value / objective };\n\t\t}\n\t}\n\n\tstd::vector<Cost>\
+    \ get_potential() {\n\t\t// Not strictly necessary, but re-calculate potential\
+    \ to bound the potential values,\n\t\t// plus make them somewhat canonical so\
+    \ that it is robust for the algorithm chaneges.\n\t\tstd::fill(std::begin(potential),\
+    \ std::end(potential), 0);\n\t\tfor (size_t i = 0; i < n; ++i) for (const auto&\
+    \ es : g) for (const auto& e : es)\n\t\t\tif (e.residual_cap() > 0) potential[e.dst]\
+    \ = std::min(potential[e.dst], potential[e.src] + e.cost);\n\t\treturn potential;\n\
+    \t}\n\n\ttemplate <class T> T get_result_value() {\n\t\tT value = 0;\n\t\tfor\
+    \ (const auto& es : g) for (const auto& e : es) {\n\t\t\tvalue += (T)(e.flow)\
+    \ * (T)(e.cost);\n\t\t}\n\t\tvalue /= (T)2;\n\t\treturn value;\n\t}\n\t\n\tstd::vector<size_t>\
+    \ get_cut() {\n\t\tstd::vector<size_t> res;\n\t\tif (excess_vs.empty()) return\
+    \ res;\n\t\tfor (size_t v = 0; v < n; ++v) {\n\t\t\tif (deficit_vs.empty() ||\
+    \ (dist[v] < unreachable))\n\t\t\t\tres.emplace_back(v);\n\t\t}\n\t\treturn res;\n\
+    \t}\n};\n\ntemplate <class T> std::string i2s(T value) {\n    if (value < 0) return\
+    \ \"-\" + i2s(-value);\n    if (value == 0) return \"0\";\n    std::string s;\n\
+    \    while (value) {\n        s += '0' + (value % 10);\n        value /= 10;\n\
+    \    }\n    std::reverse(s.begin(), s.end());\n    return s;\n}\n\nint main()\
+    \ {\n\tusing MCF = MinCostFlow<long long, long long>;\n\tusing namespace std;\n\
+    \tint n, m;\n\tcin >> n >> m;\n\tMCF mcf;\n\tconst auto vs = mcf.add_vertices(n);\n\
+    \tfor (const auto& v : vs) {\n\t\tint x;\n\t\tcin >> x;\n\t\tmcf.add_supply(vs[v],\
+    \ x);\n\t}\n\tvector<MCF::EdgePtr> edges;\n\twhile (m--) {\n\t\tint s, t, l, u,\
+    \ c;\n\t\tcin >> s >> t >> l >> u >> c;\n\t\tedges.emplace_back(mcf.add_edge(s,\
+    \ t, l, u, c));\n\t}\n\tconst auto status = mcf.solve().first;\n\tif (status ==\
+    \ Status::INFEASIBLE) {\n\t\tputs(\"infeasible\");\n\t} else {\n\t\tconst auto\
+    \ potential = mcf.get_potential();\n\t\tconst auto result_value = mcf.get_result_value<__int128_t>();\n\
+    \t\tputs(i2s(result_value).c_str());\n\t\tfor (const auto& v : vs) {\n\t\t\tputs(i2s(potential[v]).c_str());\n\
+    \t\t}\n\t\tfor (const auto& e : edges) {\n\t\t\tputs(i2s(e.flow()).c_str());\n\
+    \t\t}\n\t}\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/min_cost_b_flow\"\n\n#include\
     \ <bits/stdc++.h>\n#include \"../../library/graphs/flows/min-cost-b-flow.hpp\"\
     \n\ntemplate <class T> std::string i2s(T value) {\n    if (value < 0) return \"\
@@ -148,7 +147,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/yosupo-min_cost_b_flow.test.cpp
   requiredBy: []
-  timestamp: '2021-08-20 12:52:40-04:00'
+  timestamp: '2021-08-20 13:00:13-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/yosupo-min_cost_b_flow.test.cpp
