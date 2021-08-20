@@ -113,7 +113,7 @@ private:
 	Cost farthest;
 	std::vector<Cost> potential;
 	std::vector<Cost> dist;
-	std::vector<Edge*> parent; // out-forrest.
+	std::vector<Edge*> parent; // out-forest.
 	std::priority_queue<std::pair<Cost, int>, std::vector<std::pair<Cost, int>>,
 		std::greater<>>
 			pq; // should be empty outside of dual()
@@ -133,13 +133,14 @@ private:
 	bool dual(const Flow delta) {
 		dist.assign(n, unreachable);
 		parent.assign(n, nullptr);
-		excess_vs.erase(std::remove_if(std::begin(excess_vs), std::end(excess_vs),
-									   [&](const V_id v) { return b[v] < delta; }),
-						std::end(excess_vs));
+		excess_vs.erase(std::remove_if(std::begin(excess_vs), 
+										std::end(excess_vs),
+										[&](const V_id v) { return b[v] < delta; }),
+										std::end(excess_vs));
 		deficit_vs.erase(std::remove_if(std::begin(deficit_vs),
 										std::end(deficit_vs),
 										[&](const V_id v) { return b[v] > -delta; }),
-						 std::end(deficit_vs));
+						 				std::end(deficit_vs));
 		for (const auto v : excess_vs) pq.emplace(dist[v] = 0, v);
 		farthest = 0;
 		std::size_t deficit_count = 0;
@@ -147,7 +148,6 @@ private:
 			Cost d;
 			std::size_t u;
 			std::tie(d, u) = pq.top();
-			// const auto [d, u] = pq.top();
 			pq.pop();
 			if (dist[u] < d) continue;
 			farthest = d;
