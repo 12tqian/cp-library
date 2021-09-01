@@ -64,12 +64,6 @@ template <class T> using VV = V<V<T>>;
 template <class T> using VVV = V<V<V<T>>>;
 template <class T> using VVVV = V<V<V<V<T>>>>;
 
-#ifdef LOCAL
-#define dbg(...) debug(#__VA_ARGS__, __VA_ARGS__);
-#else
-#define dbg(...) 17;
-#endif
-
 template <typename T, typename S> ostream& operator << (ostream& os, const pair<T, S>& p) { return os << "(" << p.first << ", " << p.second << ")"; }
 template <typename C, typename T = decay<decltype(*begin(declval<C>()))>, typename enable_if<!is_same<C, string>::value>::type* = nullptr>
 ostream& operator << (ostream& os, const C& c) { bool f = true; os << "{"; for (const auto& x : c) { if (!f) os << ", "; f = false; os << x; } return os << "}"; }
