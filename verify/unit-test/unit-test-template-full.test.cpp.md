@@ -57,20 +57,19 @@ data:
     \ 0; }\ntemplate <class T> bool ckmax(T& a, const T& b) { return a < b ? a = b,\
     \ 1 : 0; }\n\ntemplate <class T> using V = vector<T>;\ntemplate <class T> using\
     \ VV = V<V<T>>;\ntemplate <class T> using VVV = V<V<V<T>>>;\ntemplate <class T>\
-    \ using VVVV = V<V<V<V<T>>>>;\n\n#ifdef LOCAL\n#define dbg(...) debug(#__VA_ARGS__,\
-    \ __VA_ARGS__);\n#else\n#define dbg(...) 17;\n#endif\n\ntemplate <typename T,\
-    \ typename S> ostream& operator << (ostream& os, const pair<T, S>& p) { return\
-    \ os << \"(\" << p.first << \", \" << p.second << \")\"; }\ntemplate <typename\
-    \ C, typename T = decay<decltype(*begin(declval<C>()))>, typename enable_if<!is_same<C,\
-    \ string>::value>::type* = nullptr>\nostream& operator << (ostream& os, const\
-    \ C& c) { bool f = true; os << \"{\"; for (const auto& x : c) { if (!f) os <<\
-    \ \", \"; f = false; os << x; } return os << \"}\"; }\ntemplate <typename T> void\
-    \ debug(string s, T x) { cerr << s << \" = \" << x << \"\\n\"; }\ntemplate <typename\
-    \ T, typename... Args> void debug(string s, T x, Args... args) { cerr << s.substr(0,\
-    \ s.find(',')) << \" = \" << x << \" | \"; debug(s.substr(s.find(',') + 2), args...);\
-    \ }\n\nconstexpr int pct(int x) { return __builtin_popcount(x); }\nconstexpr int\
-    \ bits(int x) { return 31 - __builtin_clz(x); } // floor(log2(x))\n\ninline namespace\
-    \ Helpers {\n\t//////////// is_iterable\n\t// https://stackoverflow.com/questions/13830158/check-if-a-variable-type-is-iterable\n\
+    \ using VVVV = V<V<V<V<T>>>>;\n\ntemplate <typename T, typename S> ostream& operator\
+    \ << (ostream& os, const pair<T, S>& p) { return os << \"(\" << p.first << \"\
+    , \" << p.second << \")\"; }\ntemplate <typename C, typename T = decay<decltype(*begin(declval<C>()))>,\
+    \ typename enable_if<!is_same<C, string>::value>::type* = nullptr>\nostream& operator\
+    \ << (ostream& os, const C& c) { bool f = true; os << \"{\"; for (const auto&\
+    \ x : c) { if (!f) os << \", \"; f = false; os << x; } return os << \"}\"; }\n\
+    template <typename T> void debug(string s, T x) { cerr << s << \" = \" << x <<\
+    \ \"\\n\"; }\ntemplate <typename T, typename... Args> void debug(string s, T x,\
+    \ Args... args) { cerr << s.substr(0, s.find(',')) << \" = \" << x << \" | \"\
+    ; debug(s.substr(s.find(',') + 2), args...); }\n\nconstexpr int pct(int x) { return\
+    \ __builtin_popcount(x); }\nconstexpr int bits(int x) { return 31 - __builtin_clz(x);\
+    \ } // floor(log2(x))\n\ninline namespace Helpers {\n\t//////////// is_iterable\n\
+    \t// https://stackoverflow.com/questions/13830158/check-if-a-variable-type-is-iterable\n\
     \t// this gets used only when we can call begin() and end() on that type\n\ttemplate\
     \ <class T, class = void> struct is_iterable : false_type {};\n\ttemplate <class\
     \ T> struct is_iterable<T, void_t<decltype(begin(declval<T>())),\n\t\t\t\t\t\t\
@@ -191,7 +190,7 @@ data:
   isVerificationFile: true
   path: verify/unit-test/unit-test-template-full.test.cpp
   requiredBy: []
-  timestamp: '2021-08-18 20:05:50-04:00'
+  timestamp: '2021-09-01 10:16:09-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/unit-test/unit-test-template-full.test.cpp
