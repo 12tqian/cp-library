@@ -75,7 +75,7 @@ constexpr int bits(int x) { return 31 - __builtin_clz(x); } // floor(log2(x))
 #include "../misc/easy-io.hpp"
 #include "../modular-arithmetic/mod-int.hpp"
 
-const ld PI = acos((ld) -1);
+const ld PI = acos((ld)-1);
 
 typedef pair<mi, mi> pmi;
 typedef vector<mi> vmi;
