@@ -18,7 +18,7 @@ data:
     \ ae(int x, int y) {\n\t\tadj[x].push_back(y);\n\t\tadj[y].push_back(x);\n\t}\n\
     \n\tvoid gen(int root = 0) {\n\t\tpar[0][root] = root;\n\t\tdfs(root);\n\t}\n\n\
     \tvoid dfs(int src = 0) {\n\t\tfor (int i = 1; i < (int)par.size(); i++) {\n\t\
-    \t\tpar[i][src] = par[i - 1][par[i - 1][src]];\n\t\t}\n\t\tfor (int nxt: adj[src])\
+    \t\tpar[i][src] = par[i - 1][par[i - 1][src]];\n\t\t}\n\t\tfor (int nxt : adj[src])\
     \ {\n\t\t\tif (nxt == par[0][src]) continue;\n\t\t\tdepth[nxt] = depth[par[0][nxt]\
     \ = src] + 1;\n\t\t\tdfs(nxt);\n\t\t}\n\t}\n\n\tint jump(int x, int d) {\n\t\t\
     for (int i = 0; i < (int)par.size(); i++) {\n\t\t\tif ((d >> i) & 1) {\n\t\t\t\
@@ -34,8 +34,8 @@ data:
     \t}\n\n\tvoid ae(int x, int y) {\n\t\tadj[x].push_back(y);\n\t\tadj[y].push_back(x);\n\
     \t}\n\n\tvoid gen(int root = 0) {\n\t\tpar[0][root] = root;\n\t\tdfs(root);\n\t\
     }\n\n\tvoid dfs(int src = 0) {\n\t\tfor (int i = 1; i < (int)par.size(); i++)\
-    \ {\n\t\t\tpar[i][src] = par[i - 1][par[i - 1][src]];\n\t\t}\n\t\tfor (int nxt:\
-    \ adj[src]) {\n\t\t\tif (nxt == par[0][src]) continue;\n\t\t\tdepth[nxt] = depth[par[0][nxt]\
+    \ {\n\t\t\tpar[i][src] = par[i - 1][par[i - 1][src]];\n\t\t}\n\t\tfor (int nxt\
+    \ : adj[src]) {\n\t\t\tif (nxt == par[0][src]) continue;\n\t\t\tdepth[nxt] = depth[par[0][nxt]\
     \ = src] + 1;\n\t\t\tdfs(nxt);\n\t\t}\n\t}\n\n\tint jump(int x, int d) {\n\t\t\
     for (int i = 0; i < (int)par.size(); i++) {\n\t\t\tif ((d >> i) & 1) {\n\t\t\t\
     \tx = par[i][x];\n\t\t\t}\n\t\t}\n\t\treturn x;\n\t}\n\t\n\tint lca(int x, int\
@@ -47,7 +47,7 @@ data:
   isVerificationFile: false
   path: library/graphs/lca-jump.hpp
   requiredBy: []
-  timestamp: '2021-08-13 01:03:57-04:00'
+  timestamp: '2021-09-12 01:53:36-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/yosupo-lca-lca-jump.test.cpp
