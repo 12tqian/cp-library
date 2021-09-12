@@ -143,8 +143,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/yosupo-sort_points_by_argument.test.cpp
-  - verify/kattis/kattis-convexhull.test.cpp
   - verify/kattis/kattis-pointinpolygon.test.cpp
+  - verify/kattis/kattis-convexhull.test.cpp
 documentation_of: library/geometry/point.hpp
 layout: document
 redirect_from:

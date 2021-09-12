@@ -185,7 +185,7 @@ data:
     \ inv(m); }\n\tfriend mi operator+(mi a, const mi& b) { return a += b; }\n\tfriend\
     \ mi operator-(mi a, const mi& b) { return a -= b; }\n\tfriend mi operator*(mi\
     \ a, const mi& b) { return a *= b; }\n\tfriend mi operator/(mi a, const mi& b)\
-    \ { return a /= b; }\n};\n\nconst ld PI = acos((ld) -1);\n\ntypedef pair<mi, mi>\
+    \ { return a /= b; }\n};\n\nconst ld PI = acos((ld)-1);\n\ntypedef pair<mi, mi>\
     \ pmi;\ntypedef vector<mi> vmi;\ntypedef vector<pmi> vpmi;\n"
   code: '#pragma once
 
@@ -335,7 +335,7 @@ data:
     #include "../modular-arithmetic/mod-int.hpp"
 
 
-    const ld PI = acos((ld) -1);
+    const ld PI = acos((ld)-1);
 
 
     typedef pair<mi, mi> pmi;
@@ -354,14 +354,14 @@ data:
   path: library/contest/template-full.hpp
   requiredBy:
   - library/contest/template-full.cpp
-  timestamp: '2021-09-01 10:16:09-04:00'
+  timestamp: '2021-09-11 21:23:15-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
   - verify/unit-test/unit-test-template-full.test.cpp
-  - verify/unit-test/unit-test-hashing.test.cpp
   - verify/unit-test/unit-test-fraction.test.cpp
   - verify/unit-test/unit-test-big-integer.test.cpp
+  - verify/unit-test/unit-test-hashing.test.cpp
   - verify/unit-test/unit-test-gosper-hack.test.cpp
 documentation_of: library/contest/template-full.hpp
 layout: document

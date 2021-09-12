@@ -274,19 +274,19 @@ data:
   path: library/polynomial/polynomial.hpp
   requiredBy:
   - library/polynomial/polynomial-sqrt.hpp
-  - library/polynomial/berlekamp-massey.hpp
   - library/polynomial/multipoint-evaluation.hpp
+  - library/polynomial/berlekamp-massey.hpp
   timestamp: '2021-08-18 19:16:01-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/yosupo/yosupo-sqrt_of_formal_power_series.test.cpp
+  - verify/yosupo/yosupo-division_of_polynomials.test.cpp
+  - verify/yosupo/yosupo-inv_of_formal_power_series.test.cpp
+  - verify/yosupo/yosupo-multipoint_evaluation.test.cpp
   - verify/yosupo/yosupo-log_of_formal_power_series.test.cpp
   - verify/yosupo/yosupo-find_linear_recurrence.test.cpp
-  - verify/yosupo/yosupo-division_of_polynomials.test.cpp
-  - verify/yosupo/yosupo-multipoint_evaluation.test.cpp
   - verify/yosupo/yosupo-pow_of_formal_power_series.test.cpp
+  - verify/yosupo/yosupo-sqrt_of_formal_power_series.test.cpp
   - verify/yosupo/yosupo-exp_of_formal_power_series.test.cpp
-  - verify/yosupo/yosupo-inv_of_formal_power_series.test.cpp
 documentation_of: library/polynomial/polynomial.hpp
 layout: document
 title: Formal Power Series

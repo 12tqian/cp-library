@@ -173,7 +173,7 @@ data:
     \ inv(m); }\n\tfriend mi operator+(mi a, const mi& b) { return a += b; }\n\tfriend\
     \ mi operator-(mi a, const mi& b) { return a -= b; }\n\tfriend mi operator*(mi\
     \ a, const mi& b) { return a *= b; }\n\tfriend mi operator/(mi a, const mi& b)\
-    \ { return a /= b; }\n};\n\nconst ld PI = acos((ld) -1);\n\ntypedef pair<mi, mi>\
+    \ { return a /= b; }\n};\n\nconst ld PI = acos((ld)-1);\n\ntypedef pair<mi, mi>\
     \ pmi;\ntypedef vector<mi> vmi;\ntypedef vector<pmi> vpmi;\n\nint main() {\n\t\
     setIO(\"\");\n\treturn 0;\n}\n"
   code: '#define IGNORE "just testing compilation"
@@ -190,7 +190,7 @@ data:
   isVerificationFile: true
   path: verify/unit-test/unit-test-template-full.test.cpp
   requiredBy: []
-  timestamp: '2021-09-01 10:16:09-04:00'
+  timestamp: '2021-09-11 21:23:15-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/unit-test/unit-test-template-full.test.cpp

@@ -173,7 +173,7 @@ data:
     \ inv(m); }\n\tfriend mi operator+(mi a, const mi& b) { return a += b; }\n\tfriend\
     \ mi operator-(mi a, const mi& b) { return a -= b; }\n\tfriend mi operator*(mi\
     \ a, const mi& b) { return a *= b; }\n\tfriend mi operator/(mi a, const mi& b)\
-    \ { return a /= b; }\n};\n\nconst ld PI = acos((ld) -1);\n\ntypedef pair<mi, mi>\
+    \ { return a /= b; }\n};\n\nconst ld PI = acos((ld)-1);\n\ntypedef pair<mi, mi>\
     \ pmi;\ntypedef vector<mi> vmi;\ntypedef vector<pmi> vpmi;\n\nstruct Frac {\n\t\
     long long n, d;\n\tFrac(long long _n, long long _d) {\n\t\tn = _n, d = _d;\n\t\
     \tlong long g = std::__gcd(n, d); n /= g, d /= g;\n\t\tif (d < 0) n *= -1, d *=\
@@ -235,7 +235,7 @@ data:
   isVerificationFile: true
   path: verify/unit-test/unit-test-fraction.test.cpp
   requiredBy: []
-  timestamp: '2021-09-01 10:16:09-04:00'
+  timestamp: '2021-09-11 21:23:15-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/unit-test/unit-test-fraction.test.cpp

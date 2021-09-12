@@ -189,7 +189,7 @@ data:
     \ inv(m); }\n\tfriend mi operator+(mi a, const mi& b) { return a += b; }\n\tfriend\
     \ mi operator-(mi a, const mi& b) { return a -= b; }\n\tfriend mi operator*(mi\
     \ a, const mi& b) { return a *= b; }\n\tfriend mi operator/(mi a, const mi& b)\
-    \ { return a /= b; }\n};\n\nconst ld PI = acos((ld) -1);\n\ntypedef pair<mi, mi>\
+    \ { return a /= b; }\n};\n\nconst ld PI = acos((ld)-1);\n\ntypedef pair<mi, mi>\
     \ pmi;\ntypedef vector<mi> vmi;\ntypedef vector<pmi> vpmi;\n\nstruct CentroidDecomposition\
     \ {\n\tint n;\n\tstd::vector<std::vector<int>> g, cg; // cg is directed tree for\
     \ centroids\n\tstd::vector<bool> vis;\n\tstd::vector<int> size;\n\tstd::vector<int>\
@@ -378,7 +378,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
   requiredBy: []
-  timestamp: '2021-09-01 10:16:09-04:00'
+  timestamp: '2021-09-11 21:23:15-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp

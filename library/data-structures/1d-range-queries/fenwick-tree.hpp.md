@@ -41,8 +41,8 @@ data:
   timestamp: '2021-08-16 13:21:48-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/yosupo/yosupo-point_add_range_sum-fenwick-tree.test.cpp
   - verify/yosupo/yosupo-counting_primes.test.cpp
+  - verify/yosupo/yosupo-point_add_range_sum-fenwick-tree.test.cpp
 documentation_of: library/data-structures/1d-range-queries/fenwick-tree.hpp
 layout: document
 redirect_from:

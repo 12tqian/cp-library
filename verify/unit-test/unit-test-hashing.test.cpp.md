@@ -173,7 +173,7 @@ data:
     \ inv(m); }\n\tfriend mi operator+(mi a, const mi& b) { return a += b; }\n\tfriend\
     \ mi operator-(mi a, const mi& b) { return a -= b; }\n\tfriend mi operator*(mi\
     \ a, const mi& b) { return a *= b; }\n\tfriend mi operator/(mi a, const mi& b)\
-    \ { return a /= b; }\n};\n\nconst ld PI = acos((ld) -1);\n\ntypedef pair<mi, mi>\
+    \ { return a /= b; }\n};\n\nconst ld PI = acos((ld)-1);\n\ntypedef pair<mi, mi>\
     \ pmi;\ntypedef vector<mi> vmi;\ntypedef vector<pmi> vpmi;\n\nnamespace Hashing\
     \ {\n\nconst int MOD = 1e9 + 7;\n\nstd::mt19937 rng((uint32_t) std::chrono::steady_clock::now().time_since_epoch().count());\n\
     std::uniform_int_distribution<int> BDIST(0.1 * MOD, 0.9 * MOD);\nconst std::array<int,\
@@ -221,7 +221,7 @@ data:
   isVerificationFile: true
   path: verify/unit-test/unit-test-hashing.test.cpp
   requiredBy: []
-  timestamp: '2021-09-01 10:16:09-04:00'
+  timestamp: '2021-09-11 21:23:15-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/unit-test/unit-test-hashing.test.cpp
