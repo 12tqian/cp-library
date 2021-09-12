@@ -29,7 +29,7 @@ struct LCAJump {
 		for (int i = 1; i < (int)par.size(); i++) {
 			par[i][src] = par[i - 1][par[i - 1][src]];
 		}
-		for (int nxt: adj[src]) {
+		for (int nxt : adj[src]) {
 			if (nxt == par[0][src]) continue;
 			depth[nxt] = depth[par[0][nxt] = src] + 1;
 			dfs(nxt);
