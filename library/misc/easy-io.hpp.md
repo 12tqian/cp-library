@@ -211,13 +211,13 @@ data:
   timestamp: '2021-08-16 13:46:51-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/yosupo/yosupo-rectangle_sum-offline-2d-bit.test.cpp
   - verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
-  - verify/unit-test/unit-test-template-full.test.cpp
-  - verify/unit-test/unit-test-fraction.test.cpp
+  - verify/yosupo/yosupo-rectangle_sum-offline-2d-bit.test.cpp
   - verify/unit-test/unit-test-big-integer.test.cpp
   - verify/unit-test/unit-test-hashing.test.cpp
+  - verify/unit-test/unit-test-fraction.test.cpp
   - verify/unit-test/unit-test-gosper-hack.test.cpp
+  - verify/unit-test/unit-test-template-full.test.cpp
 documentation_of: library/misc/easy-io.hpp
 layout: document
 redirect_from:

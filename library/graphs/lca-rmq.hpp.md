@@ -106,9 +106,9 @@ data:
   timestamp: '2021-08-16 13:21:48-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - verify/codeforces/codeforces-1074F.test.cpp
   - verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
   - verify/yosupo/yosupo-lca-lca-rmq.test.cpp
-  - verify/codeforces/codeforces-1074F.test.cpp
 documentation_of: library/graphs/lca-rmq.hpp
 layout: document
 title: LCA RMQ
