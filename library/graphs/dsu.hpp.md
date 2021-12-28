@@ -48,11 +48,11 @@ data:
   timestamp: '2021-07-24 19:40:07-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/codeforces/codeforces-1553G.test.cpp
   - verify/codeforces/codeforces-1463E.test.cpp
   - verify/codeforces/codeforces-1494F.test.cpp
-  - verify/yosupo/yosupo-unionfind.test.cpp
+  - verify/codeforces/codeforces-1553G.test.cpp
   - verify/aizu/aizu-GRL_2_A.test.cpp
+  - verify/yosupo/yosupo-unionfind.test.cpp
 documentation_of: library/graphs/dsu.hpp
 layout: document
 redirect_from:

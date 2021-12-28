@@ -76,6 +76,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/data-structures/2d-range-queries/quadtree.hpp
       title: Quadtree
+    - icon: ':heavy_check_mark:'
+      path: library/data-structures/2d-range-queries/wavelet-matrix.hpp
+      title: library/data-structures/2d-range-queries/wavelet-matrix.hpp
   - name: library/data-structures/balanced-binary-search-trees
     pages:
     - icon: ':warning:'
@@ -542,6 +545,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-point_add_range_sum-sparse-segment-tree.test.cpp
       title: verify/yosupo/yosupo-point_add_range_sum-sparse-segment-tree.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/yosupo/yosupo-point_add_rectangle_sum-wavelet-matrix.test.cpp
+      title: verify/yosupo/yosupo-point_add_rectangle_sum-wavelet-matrix.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-point_set_range_composite.test.cpp
       title: verify/yosupo/yosupo-point_set_range_composite.test.cpp

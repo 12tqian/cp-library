@@ -134,10 +134,10 @@ data:
   timestamp: '2021-08-16 13:46:51-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/spoj/spoj-QTREE2.test.cpp
   - verify/codeforces/codeforces-1494F.test.cpp
   - verify/codeforces/codeforces-1299D.test.cpp
   - verify/unit-test/unit-test-template-short.test.cpp
+  - verify/spoj/spoj-QTREE2.test.cpp
 documentation_of: library/contest/template-short.hpp
 layout: document
 redirect_from:

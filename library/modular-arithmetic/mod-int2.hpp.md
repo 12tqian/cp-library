@@ -131,30 +131,30 @@ data:
   isVerificationFile: false
   path: library/modular-arithmetic/mod-int2.hpp
   requiredBy:
-  - library/polynomial/polynomial2.hpp
   - library/polynomial/fast-fourier-transform.hpp
+  - library/polynomial/polynomial2.hpp
   timestamp: '2021-08-15 17:58:43-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - verify/codeforces/codeforces-869E-general-fwt.test.cpp
   - verify/codeforces/codeforces-869E-quadtree.test.cpp
   - verify/codeforces/codeforces-981G.test.cpp
-  - verify/codeforces/codeforces-869E-general-fwt.test.cpp
-  - verify/yosupo/yosupo-sqrt_of_formal_power_series.test.cpp
-  - verify/yosupo/yosupo-convolution_mod_1000000007-karatsuba.test.cpp
-  - verify/yosupo/yosupo-inverse_matrix.test.cpp
-  - verify/yosupo/yosupo-log_of_formal_power_series.test.cpp
-  - verify/yosupo/yosupo-find_linear_recurrence.test.cpp
-  - verify/yosupo/yosupo-bitwise_xor_convolution.test.cpp
-  - verify/yosupo/yosupo-point_set_range_composite.test.cpp
-  - verify/yosupo/yosupo-inv_of_formal_power_series.test.cpp
-  - verify/yosupo/yosupo-exp_of_formal_power_series.test.cpp
-  - verify/yosupo/yosupo-division_of_polynomials.test.cpp
-  - verify/yosupo/yosupo-range_affine_range_sum.test.cpp
-  - verify/yosupo/yosupo-pow_of_formal_power_series.test.cpp
-  - verify/yosupo/yosupo-multipoint_evaluation.test.cpp
   - verify/yosupo/yosupo-system_of_linear_equations.test.cpp
   - verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
+  - verify/yosupo/yosupo-sqrt_of_formal_power_series.test.cpp
+  - verify/yosupo/yosupo-exp_of_formal_power_series.test.cpp
+  - verify/yosupo/yosupo-range_affine_range_sum.test.cpp
+  - verify/yosupo/yosupo-pow_of_formal_power_series.test.cpp
+  - verify/yosupo/yosupo-log_of_formal_power_series.test.cpp
+  - verify/yosupo/yosupo-convolution_mod_1000000007-karatsuba.test.cpp
+  - verify/yosupo/yosupo-inverse_matrix.test.cpp
+  - verify/yosupo/yosupo-division_of_polynomials.test.cpp
+  - verify/yosupo/yosupo-multipoint_evaluation.test.cpp
+  - verify/yosupo/yosupo-find_linear_recurrence.test.cpp
+  - verify/yosupo/yosupo-inv_of_formal_power_series.test.cpp
   - verify/yosupo/yosupo-convolution_mod_1000000007-fast-fourier-transform.test.cpp
+  - verify/yosupo/yosupo-bitwise_xor_convolution.test.cpp
+  - verify/yosupo/yosupo-point_set_range_composite.test.cpp
 documentation_of: library/modular-arithmetic/mod-int2.hpp
 layout: document
 redirect_from:

@@ -49,17 +49,17 @@ data:
   isVerificationFile: false
   path: library/misc/pragma-short.hpp
   requiredBy:
-  - library/contest/template-full.cpp
   - library/contest/template-full.hpp
+  - library/contest/template-full.cpp
   timestamp: '2021-08-16 13:59:27-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
-  - verify/unit-test/unit-test-big-integer.test.cpp
-  - verify/unit-test/unit-test-hashing.test.cpp
-  - verify/unit-test/unit-test-fraction.test.cpp
   - verify/unit-test/unit-test-gosper-hack.test.cpp
   - verify/unit-test/unit-test-template-full.test.cpp
+  - verify/unit-test/unit-test-hashing.test.cpp
+  - verify/unit-test/unit-test-big-integer.test.cpp
+  - verify/unit-test/unit-test-fraction.test.cpp
+  - verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
 documentation_of: library/misc/pragma-short.hpp
 layout: document
 redirect_from:

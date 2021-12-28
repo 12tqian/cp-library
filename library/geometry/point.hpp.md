@@ -137,8 +137,8 @@ data:
   isVerificationFile: false
   path: library/geometry/point.hpp
   requiredBy:
-  - library/geometry/geometry-2d.hpp
   - library/geometry/convex-hull.hpp
+  - library/geometry/geometry-2d.hpp
   timestamp: '2021-08-16 13:21:48-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
