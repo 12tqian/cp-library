@@ -67,6 +67,7 @@
 "verify/yosupo/yosupo-point_add_range_sum-point-update-segment-tree.test.cpp": "2021-07-28 19:45:54 -0400",
 "verify/yosupo/yosupo-point_add_range_sum-range-set-segment-tree.test.cpp": "2021-07-29 01:25:37 -0400",
 "verify/yosupo/yosupo-point_add_range_sum-sparse-segment-tree.test.cpp": "2021-08-16 13:21:48 -0400",
+"verify/yosupo/yosupo-point_add_rectangle_sum-wavelet-matrix.test.cpp": "2021-12-27 21:29:57 -0500",
 "verify/yosupo/yosupo-point_set_range_composite.test.cpp": "2021-08-18 22:34:30 -0400",
 "verify/yosupo/yosupo-pow_of_formal_power_series.test.cpp": "2021-08-18 19:16:01 -0400",
 "verify/yosupo/yosupo-range_affine_range_sum.test.cpp": "2021-08-15 17:58:43 -0400",
