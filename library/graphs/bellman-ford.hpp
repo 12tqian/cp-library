@@ -37,7 +37,7 @@ template <class T> struct BellmanFord {
 					dist[e.first.second] = std::min(dist[e.first.second], dist[e.first.first] + e.second);
 		for (auto& e : edges) 
 			if (dist[e.first.first] < INF && dist[e.first.second] > dist[e.first.first] + e.second)
-			gen_bad(e.first.second);
+				gen_bad(e.first.second);
 	}
 	
 	std::vector<int> negative_cycle(int src = 0) {
