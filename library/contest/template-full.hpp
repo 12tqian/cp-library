@@ -48,6 +48,8 @@ typedef vector<pd> vpd;
 
 #define f1r(i, a, b) for (int i = (a); i < (b); ++i)
 #define f0r(i, a) f1r(i, 0, a)
+#define r1f(i, a, b) for (int i = (a); i --> (b))
+#define r0f(i, a) r1f(i, 0, a)
 #define FOR(i, a, b) for (int i = (a); i < (b); ++i)
 #define F0R(i, a) FOR(i, 0, a)
 #define ROF(i, a, b) for (int i = (b) - 1; i >= (a); --i)
