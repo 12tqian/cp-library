@@ -51,8 +51,8 @@ data:
   - verify/codeforces/codeforces-1463E.test.cpp
   - verify/codeforces/codeforces-1494F.test.cpp
   - verify/codeforces/codeforces-1553G.test.cpp
-  - verify/aizu/aizu-GRL_2_A.test.cpp
   - verify/yosupo/yosupo-unionfind.test.cpp
+  - verify/aizu/aizu-GRL_2_A.test.cpp
 documentation_of: library/graphs/dsu.hpp
 layout: document
 redirect_from:

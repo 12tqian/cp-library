@@ -55,10 +55,10 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/unit-test/unit-test-gosper-hack.test.cpp
-  - verify/unit-test/unit-test-template-full.test.cpp
-  - verify/unit-test/unit-test-hashing.test.cpp
   - verify/unit-test/unit-test-big-integer.test.cpp
+  - verify/unit-test/unit-test-hashing.test.cpp
   - verify/unit-test/unit-test-fraction.test.cpp
+  - verify/unit-test/unit-test-template-full.test.cpp
   - verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
 documentation_of: library/misc/pragma-short.hpp
 layout: document

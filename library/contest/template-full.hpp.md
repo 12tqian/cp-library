@@ -61,10 +61,11 @@ data:
     #define resz resize\n#define ins insert\n#define ft front()\n#define bk back()\n\
     #define pf push_front\n#define pb push_back\n#define eb emplace_back\n#define\
     \ lb lower_bound\n#define ub upper_bound\n\n#define f1r(i, a, b) for (int i =\
-    \ (a); i < (b); ++i)\n#define f0r(i, a) f1r(i, 0, a)\n#define FOR(i, a, b) for\
-    \ (int i = (a); i < (b); ++i)\n#define F0R(i, a) FOR(i, 0, a)\n#define ROF(i,\
-    \ a, b) for (int i = (b) - 1; i >= (a); --i)\n#define R0F(i, a) ROF(i, 0, a)\n\
-    #define each(a, x) for (auto& a : x)\n\nmt19937 rng((uint32_t)chrono::steady_clock::now().time_since_epoch().count());\n\
+    \ (a); i < (b); ++i)\n#define f0r(i, a) f1r(i, 0, a)\n#define r1f(i, a, b) for\
+    \ (int i = (b); i --> (a))\n#define r0f(i, a) r1f(i, 0, a)\n#define FOR(i, a,\
+    \ b) for (int i = (a); i < (b); ++i)\n#define F0R(i, a) FOR(i, 0, a)\n#define\
+    \ ROF(i, a, b) for (int i = (b) - 1; i >= (a); --i)\n#define R0F(i, a) ROF(i,\
+    \ 0, a)\n#define each(a, x) for (auto& a : x)\n\nmt19937 rng((uint32_t)chrono::steady_clock::now().time_since_epoch().count());\n\
     \ntemplate <class T> bool ckmin(T& a, const T& b) { return b < a ? a = b, 1 :\
     \ 0; }\ntemplate <class T> bool ckmax(T& a, const T& b) { return a < b ? a = b,\
     \ 1 : 0; }\n\ntemplate <class T> using V = vector<T>;\ntemplate <class T> using\
@@ -278,6 +279,10 @@ data:
 
     #define f0r(i, a) f1r(i, 0, a)
 
+    #define r1f(i, a, b) for (int i = (b); i --> (a))
+
+    #define r0f(i, a) r1f(i, 0, a)
+
     #define FOR(i, a, b) for (int i = (a); i < (b); ++i)
 
     #define F0R(i, a) FOR(i, 0, a)
@@ -354,14 +359,14 @@ data:
   path: library/contest/template-full.hpp
   requiredBy:
   - library/contest/template-full.cpp
-  timestamp: '2021-09-11 21:23:15-04:00'
+  timestamp: '2022-07-07 14:18:51-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/unit-test/unit-test-gosper-hack.test.cpp
-  - verify/unit-test/unit-test-template-full.test.cpp
-  - verify/unit-test/unit-test-hashing.test.cpp
   - verify/unit-test/unit-test-big-integer.test.cpp
+  - verify/unit-test/unit-test-hashing.test.cpp
   - verify/unit-test/unit-test-fraction.test.cpp
+  - verify/unit-test/unit-test-template-full.test.cpp
   - verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
 documentation_of: library/contest/template-full.hpp
 layout: document

@@ -162,8 +162,8 @@ data:
   timestamp: '2021-08-13 11:09:58-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/kattis/kattis-equationsolver-matrix.test.cpp
   - verify/yosupo/yosupo-system_of_linear_equations.test.cpp
+  - verify/kattis/kattis-equationsolver-matrix.test.cpp
 documentation_of: library/numerical/matrix.hpp
 layout: document
 redirect_from:
