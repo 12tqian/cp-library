@@ -59,8 +59,8 @@ data:
   timestamp: '2021-08-13 01:34:54-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/yosupo/yosupo-assignment.test.cpp
   - verify/aizu/aizu-1163.test.cpp
+  - verify/yosupo/yosupo-assignment.test.cpp
 documentation_of: library/graphs/flows/hungarian.hpp
 layout: document
 title: Hungarian Algorithm

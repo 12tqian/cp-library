@@ -109,8 +109,8 @@ data:
   timestamp: '2021-07-31 14:30:12-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/yosupo/yosupo-inverse_matrix.test.cpp
   - verify/kattis/kattis-equationsolver.test.cpp
+  - verify/yosupo/yosupo-inverse_matrix.test.cpp
 documentation_of: library/numerical/matrix2.hpp
 layout: document
 redirect_from:

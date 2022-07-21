@@ -107,8 +107,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/codeforces/codeforces-1074F.test.cpp
-  - verify/yosupo/yosupo-lca-lca-rmq.test.cpp
   - verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
+  - verify/yosupo/yosupo-lca-lca-rmq.test.cpp
 documentation_of: library/graphs/lca-rmq.hpp
 layout: document
 title: LCA RMQ

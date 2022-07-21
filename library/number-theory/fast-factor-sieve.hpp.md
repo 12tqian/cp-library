@@ -41,8 +41,8 @@ data:
   timestamp: '2021-07-24 19:40:07-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/codeforces/codeforces-1553G.test.cpp
   - verify/atcoder/atcoder-abc210_f.test.cpp
+  - verify/codeforces/codeforces-1553G.test.cpp
 documentation_of: library/number-theory/fast-factor-sieve.hpp
 layout: document
 redirect_from:

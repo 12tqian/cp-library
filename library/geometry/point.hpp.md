@@ -137,14 +137,14 @@ data:
   isVerificationFile: false
   path: library/geometry/point.hpp
   requiredBy:
-  - library/geometry/geometry-2d.hpp
   - library/geometry/convex-hull.hpp
+  - library/geometry/geometry-2d.hpp
   timestamp: '2021-08-16 13:21:48-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/yosupo/yosupo-sort_points_by_argument.test.cpp
-  - verify/kattis/kattis-pointinpolygon.test.cpp
   - verify/kattis/kattis-convexhull.test.cpp
+  - verify/kattis/kattis-pointinpolygon.test.cpp
+  - verify/yosupo/yosupo-sort_points_by_argument.test.cpp
 documentation_of: library/geometry/point.hpp
 layout: document
 redirect_from:
