@@ -138,7 +138,7 @@ inline namespace Output {
 inline namespace FileIO {
 	void set_in(string s)  { freopen(s.c_str(), "r", stdin); }
 	void set_out(string s) { freopen(s.c_str(), "w", stdout); }
-	void setIO(string s = "") {
+	void set_io(string s = "") {
 		cin.tie(0)->sync_with_stdio(0); // unsync C / C++ I/O streams
 		// cin.exceptions(cin.failbit);
 		// throws exception when do smth illegal

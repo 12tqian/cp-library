@@ -4,7 +4,7 @@
 #include "../../library/numerical/big-integer.hpp"
 
 void test() {
-	setIO("");
+	set_io("");
 	const int D = 1000;
 	const int T = 100;
 	auto convert = [&](BigInt x) {

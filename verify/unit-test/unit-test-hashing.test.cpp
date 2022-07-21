@@ -32,7 +32,7 @@ void test() {
 }
 
 int main() {
-	setIO("");
+	set_io("");
 	test();
 	int a, b;
 	re(a, b);

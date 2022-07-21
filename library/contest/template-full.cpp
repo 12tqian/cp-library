@@ -1,6 +1,6 @@
 #include "template-full.hpp"
 
 int main() {
-	setIO("");
+	set_io("");
 	return 0;
 }

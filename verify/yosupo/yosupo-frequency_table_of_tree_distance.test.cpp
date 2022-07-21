@@ -9,7 +9,7 @@
 int main() {
 	using namespace FFT;
 	using namespace Polynomial;
-	setIO("");
+	set_io("");
 	int n;
 	re(n);
 	CentroidDecomposition cd;
