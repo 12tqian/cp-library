@@ -6,9 +6,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-lca-lca-jump.test.cpp
     title: verify/yosupo/yosupo-lca-lca-jump.test.cpp
-  _isVerificationFailed: false
+  - icon: ':x:'
+    path: verify/yukicoder/yukicoder-yuki_1326.test.cpp
+    title: verify/yukicoder/yukicoder-yuki_1326.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "\r\nstruct LCAJump {\r\n\tint n;\r\n\tstd::vector<std::vector<int>>\
@@ -50,8 +53,9 @@ data:
   path: library/graphs/lca-jump.hpp
   requiredBy: []
   timestamp: '2022-07-21 16:12:33-04:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
+  - verify/yukicoder/yukicoder-yuki_1326.test.cpp
   - verify/yosupo/yosupo-lca-lca-jump.test.cpp
 documentation_of: library/graphs/lca-jump.hpp
 layout: document

@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/graphs/lca-jump.hpp
     title: LCA Jump
   _extendedRequiredBy: []

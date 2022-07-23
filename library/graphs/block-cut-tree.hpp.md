@@ -1,17 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/graphs/biconnected-components.hpp
     title: library/graphs/biconnected-components.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/graphs/low-link.hpp
     title: library/graphs/low-link.hpp
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: verify/yukicoder/yukicoder-yuki_1326.test.cpp
+    title: verify/yukicoder/yukicoder-yuki_1326.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "\n\n\ntemplate <typename G>\nstruct LowLink {\n\tint N;\n\tconst G&\
@@ -49,12 +52,12 @@ data:
     aux.resize(ar.size() + bcc.bc.size());\n\t\tstd::vector<int> last(g.size(), -1);\n\
     \t\tfor (int i = 0; i < (int)bcc.bc.size(); i++) {\n\t\t\tstd::vector<int> st;\n\
     \t\t\tfor (auto& [u, v] : bcc.bc[i]) st.push_back(u), st.push_back(v);\n\t\t\t\
-    for (auto& u : st) {\n\t\t\t\tif (idar[u] == -1)\n\t\t\t\t\tidcc[u] = i + ar.size();\n\
-    \t\t\t\telse if (last[u] != i) {\n\t\t\t\t\tadd(i + ar.size(), idar[u]);\n\t\t\
-    \t\t\tlast[u] = i;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\n\tstd::vector<int>& operator[](int\
-    \ i) { return aux[i]; }\n\n\tint size() const { return aux.size(); }\n\n\tint\
-    \ id(int i) { return idar[i] == -1 ? idcc[i] : idar[i]; }\n\n\tbool is_arti(int\
-    \ i) { return idar[i] != -1; }\n\n\tint arti() const { return bcc.articulation.size();\
+    for (auto& u : st) {\n\t\t\t\tif (idar[u] == -1)\n\t\t\t\t\tidcc[u] = i + (int)ar.size();\n\
+    \t\t\t\telse if (last[u] != i) {\n\t\t\t\t\tadd(i + (int)ar.size(), idar[u]);\n\
+    \t\t\t\t\tlast[u] = i;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\n\tstd::vector<int>&\
+    \ operator[](int i) { return aux[i]; }\n\n\tint size() const { return (int)aux.size();\
+    \ }\n\n\tint id(int i) { return idar[i] == -1 ? idcc[i] : idar[i]; }\n\n\tbool\
+    \ is_arti(int i) { return idar[i] != -1; }\n\n\tint arti() const { return bcc.articulation.size();\
     \ }\n\nprivate:\n\tvoid add(int i, int j) {\n\t\tif (i == -1 or j == -1) return;\n\
     \t\taux[i].push_back(j);\n\t\taux[j].push_back(i);\n\t};\n};\n"
   code: "#pragma once\n\n#include \"biconnected-components.hpp\"\n\ntemplate <typename\
@@ -66,12 +69,12 @@ data:
     \ bcc.bc.size());\n\t\tstd::vector<int> last(g.size(), -1);\n\t\tfor (int i =\
     \ 0; i < (int)bcc.bc.size(); i++) {\n\t\t\tstd::vector<int> st;\n\t\t\tfor (auto&\
     \ [u, v] : bcc.bc[i]) st.push_back(u), st.push_back(v);\n\t\t\tfor (auto& u :\
-    \ st) {\n\t\t\t\tif (idar[u] == -1)\n\t\t\t\t\tidcc[u] = i + ar.size();\n\t\t\t\
-    \telse if (last[u] != i) {\n\t\t\t\t\tadd(i + ar.size(), idar[u]);\n\t\t\t\t\t\
-    last[u] = i;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\n\tstd::vector<int>& operator[](int\
-    \ i) { return aux[i]; }\n\n\tint size() const { return aux.size(); }\n\n\tint\
-    \ id(int i) { return idar[i] == -1 ? idcc[i] : idar[i]; }\n\n\tbool is_arti(int\
-    \ i) { return idar[i] != -1; }\n\n\tint arti() const { return bcc.articulation.size();\
+    \ st) {\n\t\t\t\tif (idar[u] == -1)\n\t\t\t\t\tidcc[u] = i + (int)ar.size();\n\
+    \t\t\t\telse if (last[u] != i) {\n\t\t\t\t\tadd(i + (int)ar.size(), idar[u]);\n\
+    \t\t\t\t\tlast[u] = i;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\n\tstd::vector<int>&\
+    \ operator[](int i) { return aux[i]; }\n\n\tint size() const { return (int)aux.size();\
+    \ }\n\n\tint id(int i) { return idar[i] == -1 ? idcc[i] : idar[i]; }\n\n\tbool\
+    \ is_arti(int i) { return idar[i] != -1; }\n\n\tint arti() const { return bcc.articulation.size();\
     \ }\n\nprivate:\n\tvoid add(int i, int j) {\n\t\tif (i == -1 or j == -1) return;\n\
     \t\taux[i].push_back(j);\n\t\taux[j].push_back(i);\n\t};\n};"
   dependsOn:
@@ -80,9 +83,10 @@ data:
   isVerificationFile: false
   path: library/graphs/block-cut-tree.hpp
   requiredBy: []
-  timestamp: '2022-07-23 18:03:31-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  timestamp: '2022-07-23 18:16:07-04:00'
+  verificationStatus: LIBRARY_ALL_WA
+  verifiedWith:
+  - verify/yukicoder/yukicoder-yuki_1326.test.cpp
 documentation_of: library/graphs/block-cut-tree.hpp
 layout: document
 redirect_from:
