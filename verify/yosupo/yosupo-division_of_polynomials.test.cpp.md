@@ -189,14 +189,14 @@ data:
     \n\t\t\tk >>= 1;\r\n\t\t}\r\n\t\treturn r;\r\n\t}\r\n\r\n\tPoly pow(long long\
     \ k, int n = -1) {\r\n\t\tif (n == -1) n = this->size();\r\n\t\tint sz = (int)this->size();\r\
     \n\t\tfor (int i = 0; i < sz; ++i) {\r\n\t\t\tif (freq(i) != 0) {\r\n\t\t\t\t\
-    if (i * k > n) return Poly(n);\r\n\t\t\t\tD rev = 1 / (*this)[i];\r\n\t\t\t\t\
-    Poly ret = (((*this * rev) >> i).log(n) * k).exp(n) * _pow((*this)[i], k);\r\n\
-    \t\t\t\tret = (ret << (i * k)).pre(n);\r\n\t\t\t\tret.resize(n);\r\n\t\t\t\treturn\
-    \ ret;\r\n\t\t\t}\r\n\t\t}\r\n\t\treturn Poly(n);\r\n\t}\r\n\r\n\tfriend std::ostream&\
-    \ operator<<(std::ostream& os, const Poly& p) {\r\n\t\tif (p.empty()) return os\
-    \ << \"0\";\r\n\t\tfor (auto i = 0; i < (int)p.size(); i++) {\r\n\t\t\tif (p[i])\
-    \ {\r\n\t\t\t\tos << p[i] << \"x^\" << i;\r\n\t\t\t\tif (i != (int)p.size() -\
-    \ 1) os << \"+\";\r\n\t\t\t}\r\n\t\t}\r\n\t\treturn os;\r\n\t}\r\n};\n\r\nusing\
+    if (i && k > n || i * k > n) return Poly(n);\r\n\t\t\t\tD rev = 1 / (*this)[i];\r\
+    \n\t\t\t\tPoly ret = (((*this * rev) >> i).log(n) * k).exp(n) * _pow((*this)[i],\
+    \ k);\r\n\t\t\t\tret = (ret << (i * k)).pre(n);\r\n\t\t\t\tret.resize(n);\r\n\t\
+    \t\t\treturn ret;\r\n\t\t\t}\r\n\t\t}\r\n\t\treturn Poly(n);\r\n\t}\r\n\r\n\t\
+    friend std::ostream& operator<<(std::ostream& os, const Poly& p) {\r\n\t\tif (p.empty())\
+    \ return os << \"0\";\r\n\t\tfor (auto i = 0; i < (int)p.size(); i++) {\r\n\t\t\
+    \tif (p[i]) {\r\n\t\t\t\tos << p[i] << \"x^\" << i;\r\n\t\t\t\tif (i != (int)p.size()\
+    \ - 1) os << \"+\";\r\n\t\t\t}\r\n\t\t}\r\n\t\treturn os;\r\n\t}\r\n};\n\r\nusing\
     \ mi = Mint<998244353, 5>;\r\n\r\nint main() {\r\n\tusing namespace std;\r\n\t\
     int n, m;\r\n\tcin >> n >> m;\r\n\tPoly<mi> f(n), g(m);\r\n\tfor (int i = 0; i\
     \ < n; ++i) {\r\n\t\tcin >> f[i];\r\n\t}\r\n\tfor (int i = 0; i < m; ++i) {\r\n\
@@ -222,7 +222,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/yosupo-division_of_polynomials.test.cpp
   requiredBy: []
-  timestamp: '2022-07-21 16:12:33-04:00'
+  timestamp: '2022-07-23 01:15:33-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/yosupo-division_of_polynomials.test.cpp

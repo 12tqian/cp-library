@@ -79,12 +79,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/data-structures/2d-range-queries/wavelet-matrix.hpp
       title: library/data-structures/2d-range-queries/wavelet-matrix.hpp
-  - name: library/data-structures/balanced-binary-search-trees
-    pages:
-    - icon: ':warning:'
-      path: library/data-structures/balanced-binary-search-trees/splay-base.hpp
-      title: "\u9045\u5EF6\u4F1D\u642C\u53CD\u8EE2\u53EF\u80FD\u5E73\u8861\u4E8C\u5206\
-        \u6728(\u57FA\u5E95\u30AF\u30E9\u30B9)"
   - name: library/data-structures
     pages:
     - icon: ':heavy_check_mark:'

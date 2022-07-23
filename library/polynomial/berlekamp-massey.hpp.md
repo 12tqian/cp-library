@@ -156,14 +156,14 @@ data:
     \n\t\t\tk >>= 1;\r\n\t\t}\r\n\t\treturn r;\r\n\t}\r\n\r\n\tPoly pow(long long\
     \ k, int n = -1) {\r\n\t\tif (n == -1) n = this->size();\r\n\t\tint sz = (int)this->size();\r\
     \n\t\tfor (int i = 0; i < sz; ++i) {\r\n\t\t\tif (freq(i) != 0) {\r\n\t\t\t\t\
-    if (i * k > n) return Poly(n);\r\n\t\t\t\tD rev = 1 / (*this)[i];\r\n\t\t\t\t\
-    Poly ret = (((*this * rev) >> i).log(n) * k).exp(n) * _pow((*this)[i], k);\r\n\
-    \t\t\t\tret = (ret << (i * k)).pre(n);\r\n\t\t\t\tret.resize(n);\r\n\t\t\t\treturn\
-    \ ret;\r\n\t\t\t}\r\n\t\t}\r\n\t\treturn Poly(n);\r\n\t}\r\n\r\n\tfriend std::ostream&\
-    \ operator<<(std::ostream& os, const Poly& p) {\r\n\t\tif (p.empty()) return os\
-    \ << \"0\";\r\n\t\tfor (auto i = 0; i < (int)p.size(); i++) {\r\n\t\t\tif (p[i])\
-    \ {\r\n\t\t\t\tos << p[i] << \"x^\" << i;\r\n\t\t\t\tif (i != (int)p.size() -\
-    \ 1) os << \"+\";\r\n\t\t\t}\r\n\t\t}\r\n\t\treturn os;\r\n\t}\r\n};\n\r\ntemplate\
+    if (i && k > n || i * k > n) return Poly(n);\r\n\t\t\t\tD rev = 1 / (*this)[i];\r\
+    \n\t\t\t\tPoly ret = (((*this * rev) >> i).log(n) * k).exp(n) * _pow((*this)[i],\
+    \ k);\r\n\t\t\t\tret = (ret << (i * k)).pre(n);\r\n\t\t\t\tret.resize(n);\r\n\t\
+    \t\t\treturn ret;\r\n\t\t\t}\r\n\t\t}\r\n\t\treturn Poly(n);\r\n\t}\r\n\r\n\t\
+    friend std::ostream& operator<<(std::ostream& os, const Poly& p) {\r\n\t\tif (p.empty())\
+    \ return os << \"0\";\r\n\t\tfor (auto i = 0; i < (int)p.size(); i++) {\r\n\t\t\
+    \tif (p[i]) {\r\n\t\t\t\tos << p[i] << \"x^\" << i;\r\n\t\t\t\tif (i != (int)p.size()\
+    \ - 1) os << \"+\";\r\n\t\t\t}\r\n\t\t}\r\n\t\treturn os;\r\n\t}\r\n};\n\r\ntemplate\
     \ <typename D> Poly<D> berlekamp_massey(const Poly<D>& s) {\r\n\tconst int N =\
     \ (int)s.size();\r\n\tPoly<D> b, c;\r\n\tb.reserve(N + 1);\r\n\tc.reserve(N +\
     \ 1);\r\n\tb.push_back(1);\r\n\tc.push_back(1);\r\n\tD y = D(1);\r\n\tfor (int\
@@ -193,7 +193,7 @@ data:
   isVerificationFile: false
   path: library/polynomial/berlekamp-massey.hpp
   requiredBy: []
-  timestamp: '2022-07-21 16:12:33-04:00'
+  timestamp: '2022-07-23 01:15:33-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/yosupo-find_linear_recurrence.test.cpp
