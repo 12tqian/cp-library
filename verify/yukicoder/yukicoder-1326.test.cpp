@@ -1,7 +1,6 @@
 #define PROBLEM "https://yukicoder.me/problems/no/1326"
 
 #include <bits/stdc++.h>
-
 #include "../../library/graphs/block-cut-tree.hpp"
 #include "../../library/graphs/lca-jump.hpp"
 
