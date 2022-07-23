@@ -142,7 +142,7 @@ inline namespace FileIO {
 		cin.tie(0)->sync_with_stdio(0); // unsync C / C++ I/O streams
 		// cin.exceptions(cin.failbit);
 		// throws exception when do smth illegal
-		// ex. try to read letter into int 
+		// ex. try to read letter into int
 		if (!s.empty()) set_in(s + ".in"), set_out(s + ".out"); // for old USACO
 	}
 }
