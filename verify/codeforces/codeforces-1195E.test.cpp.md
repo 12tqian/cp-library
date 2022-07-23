@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
   - icon: ':heavy_check_mark:'
@@ -21,53 +21,57 @@ data:
     links:
     - https://codeforces.com/problemset/problem/1195/E
   bundledCode: "#define PROBLEM \"https://codeforces.com/problemset/problem/1195/E\"\
-    \n\n\n#include <algorithm>\n#include <array>\n#include <bitset>\n#include <cassert>\n\
-    #include <chrono>\n#include <cmath>\n#include <complex>\n#include <cstdio>\n#include\
-    \ <cstdlib>\n#include <cstring>\n#include <ctime>\n#include <deque>\n#include\
-    \ <iostream>\n#include <iomanip>\n#include <list>\n#include <map>\n#include <numeric>\n\
-    #include <queue>\n#include <random>\n#include <set>\n#include <stack>\n#include\
-    \ <string>\n#include <unordered_map>\n#include <vector>\n\nusing namespace std;\n\
-    \ntemplate <class T> struct MinDeque {\n\tint lo = 0, hi = -1;\n\n\tstd::deque<std::pair<T,\
-    \ int>> d;\n\tvoid push_back(T x) { // add to back\n\t\twhile ((int)d.size() &&\
-    \ d.back().first >= x) d.pop_back();\n\t\td.push_back({x, ++hi});\n\t}\n\n\tvoid\
-    \ pop_front() { // delete from front\n\t\tif (d.front().second == lo++) d.pop_front();\n\
-    \t}\n\n\tT get() {\n\t\treturn (int)d.size() ? d.front().first : std::numeric_limits<T>::max();\n\
-    \t}\n};\n\ntemplate <class T> struct MaxDeque {\n\tstd::deque<std::pair<T, int>>\
-    \ mx;\n\tstd::deque<int> tmp;\n\n\tint l = 0,r = -1;\n\n\tint pop_front() {\n\t\
-    \tif (mx.front().second == l++) mx.pop_front();\n\t\tint t = tmp.front();\n\t\t\
-    tmp.pop_front();\n\t\treturn t;\n\t}\n\n\tT get() {\n\t\tif ((int)mx.size() ==\
-    \ 0) return std::numeric_limits<T>::min();\n\t\treturn mx.front().first;\n\t}\n\
-    \n\tvoid push_back(T x) {\n\t\twhile ((int)mx.size() && mx.back().first <= x)\
-    \ mx.pop_back();\n\t\tmx.push_back({x, ++r});\n\t\ttmp.push_back(x);\n\t}\n};\n\
-    \nint main(){\n\tios_base::sync_with_stdio(false);\n\tcin.tie(nullptr);\n\tint\
-    \ n, m, a, b;\n\tcin >> n >> m >> a >> b;\n\tlong long g, x, y, z;\n\tcin >> g\
-    \ >> x >> y >> z;\n\tvector<vector<int>> grid(n + 1, vector<int>(m + 1));\n\t\
-    vector<vector<int>> row_min(n + 1, vector<int>(m + 1));\n\tfor (int i = 0; i <\
-    \ n; ++i) {\n\t\tfor (int j = 0; j < m; ++j) {\n\t\t\tgrid[i][j] = g;\n\t\t\t\
-    g = (g * x + y) % z;\n\t\t}\n\t}\n\tlong long ans = 0;\n\tfor (int i = 0; i <\
-    \ n; ++i) {\n\t\tMinDeque<int> d;\n\t\tfor (int j = 0; j < b; ++j) {\n\t\t\td.push_back(grid[i][j]);\n\
-    \t\t}\n\t\tfor (int j = 0; j <= m - b; ++j) {\n\t\t\trow_min[i][j] = d.get();\n\
-    \t\t\td.pop_front();\n\t\t\td.push_back(grid[i][j + b]);\n\t\t}\n\t}\n\tfor (int\
-    \ j = 0; j <= m - b; ++j) {\n\t\tMinDeque<int> d;\n\t\tfor (int i = 0; i < a;\
-    \ ++i) {\n\t\t\td.push_back(row_min[i][j]);\n\t\t}\n\t\tfor (int i = 0; i <= n\
-    \ - a; ++i) {\n\t\t\tans += d.get();\n\t\t\td.pop_front();\n\t\t\td.push_back(row_min[i\
-    \ + a][j]);\n\t\t}\n\t}\n\tcout << ans << '\\n';\n\treturn 0;\n}\n"
-  code: "#define PROBLEM \"https://codeforces.com/problemset/problem/1195/E\"\n\n\
-    #include \"../../library/contest/template-minimal.hpp\"\n#include \"../../library/dynamic-programming/min-deque.hpp\"\
-    \n#include \"../../library/dynamic-programming/max-deque.hpp\"\n\nint main(){\n\
-    \tios_base::sync_with_stdio(false);\n\tcin.tie(nullptr);\n\tint n, m, a, b;\n\t\
-    cin >> n >> m >> a >> b;\n\tlong long g, x, y, z;\n\tcin >> g >> x >> y >> z;\n\
-    \tvector<vector<int>> grid(n + 1, vector<int>(m + 1));\n\tvector<vector<int>>\
-    \ row_min(n + 1, vector<int>(m + 1));\n\tfor (int i = 0; i < n; ++i) {\n\t\tfor\
-    \ (int j = 0; j < m; ++j) {\n\t\t\tgrid[i][j] = g;\n\t\t\tg = (g * x + y) % z;\n\
-    \t\t}\n\t}\n\tlong long ans = 0;\n\tfor (int i = 0; i < n; ++i) {\n\t\tMinDeque<int>\
-    \ d;\n\t\tfor (int j = 0; j < b; ++j) {\n\t\t\td.push_back(grid[i][j]);\n\t\t\
-    }\n\t\tfor (int j = 0; j <= m - b; ++j) {\n\t\t\trow_min[i][j] = d.get();\n\t\t\
-    \td.pop_front();\n\t\t\td.push_back(grid[i][j + b]);\n\t\t}\n\t}\n\tfor (int j\
-    \ = 0; j <= m - b; ++j) {\n\t\tMinDeque<int> d;\n\t\tfor (int i = 0; i < a; ++i)\
-    \ {\n\t\t\td.push_back(row_min[i][j]);\n\t\t}\n\t\tfor (int i = 0; i <= n - a;\
-    \ ++i) {\n\t\t\tans += d.get();\n\t\t\td.pop_front();\n\t\t\td.push_back(row_min[i\
-    \ + a][j]);\n\t\t}\n\t}\n\tcout << ans << '\\n';\n\treturn 0;\n}"
+    \r\n\r\n\r\n#include <algorithm>\r\n#include <array>\r\n#include <bitset>\r\n\
+    #include <cassert>\r\n#include <chrono>\r\n#include <cmath>\r\n#include <complex>\r\
+    \n#include <cstdio>\r\n#include <cstdlib>\r\n#include <cstring>\r\n#include <ctime>\r\
+    \n#include <deque>\r\n#include <iostream>\r\n#include <iomanip>\r\n#include <list>\r\
+    \n#include <map>\r\n#include <numeric>\r\n#include <queue>\r\n#include <random>\r\
+    \n#include <set>\r\n#include <stack>\r\n#include <string>\r\n#include <unordered_map>\r\
+    \n#include <vector>\r\n\r\nusing namespace std;\n\r\ntemplate <class T> struct\
+    \ MinDeque {\r\n\tint lo = 0, hi = -1;\r\n\r\n\tstd::deque<std::pair<T, int>>\
+    \ d;\r\n\tvoid push_back(T x) { // add to back\r\n\t\twhile ((int)d.size() &&\
+    \ d.back().first >= x) d.pop_back();\r\n\t\td.push_back({x, ++hi});\r\n\t}\r\n\
+    \r\n\tvoid pop_front() { // delete from front\r\n\t\tif (d.front().second == lo++)\
+    \ d.pop_front();\r\n\t}\r\n\r\n\tT get() {\r\n\t\treturn (int)d.size() ? d.front().first\
+    \ : std::numeric_limits<T>::max();\r\n\t}\r\n};\r\n\r\ntemplate <class T> struct\
+    \ MaxDeque {\r\n\tstd::deque<std::pair<T, int>> mx;\r\n\tstd::deque<int> tmp;\r\
+    \n\r\n\tint l = 0,r = -1;\r\n\r\n\tint pop_front() {\r\n\t\tif (mx.front().second\
+    \ == l++) mx.pop_front();\r\n\t\tint t = tmp.front();\r\n\t\ttmp.pop_front();\r\
+    \n\t\treturn t;\r\n\t}\r\n\r\n\tT get() {\r\n\t\tif ((int)mx.size() == 0) return\
+    \ std::numeric_limits<T>::min();\r\n\t\treturn mx.front().first;\r\n\t}\r\n\r\n\
+    \tvoid push_back(T x) {\r\n\t\twhile ((int)mx.size() && mx.back().first <= x)\
+    \ mx.pop_back();\r\n\t\tmx.push_back({x, ++r});\r\n\t\ttmp.push_back(x);\r\n\t\
+    }\r\n};\r\n\r\nint main(){\r\n\tios_base::sync_with_stdio(false);\r\n\tcin.tie(nullptr);\r\
+    \n\tint n, m, a, b;\r\n\tcin >> n >> m >> a >> b;\r\n\tlong long g, x, y, z;\r\
+    \n\tcin >> g >> x >> y >> z;\r\n\tvector<vector<int>> grid(n + 1, vector<int>(m\
+    \ + 1));\r\n\tvector<vector<int>> row_min(n + 1, vector<int>(m + 1));\r\n\tfor\
+    \ (int i = 0; i < n; ++i) {\r\n\t\tfor (int j = 0; j < m; ++j) {\r\n\t\t\tgrid[i][j]\
+    \ = g;\r\n\t\t\tg = (g * x + y) % z;\r\n\t\t}\r\n\t}\r\n\tlong long ans = 0;\r\
+    \n\tfor (int i = 0; i < n; ++i) {\r\n\t\tMinDeque<int> d;\r\n\t\tfor (int j =\
+    \ 0; j < b; ++j) {\r\n\t\t\td.push_back(grid[i][j]);\r\n\t\t}\r\n\t\tfor (int\
+    \ j = 0; j <= m - b; ++j) {\r\n\t\t\trow_min[i][j] = d.get();\r\n\t\t\td.pop_front();\r\
+    \n\t\t\td.push_back(grid[i][j + b]);\r\n\t\t}\r\n\t}\r\n\tfor (int j = 0; j <=\
+    \ m - b; ++j) {\r\n\t\tMinDeque<int> d;\r\n\t\tfor (int i = 0; i < a; ++i) {\r\
+    \n\t\t\td.push_back(row_min[i][j]);\r\n\t\t}\r\n\t\tfor (int i = 0; i <= n - a;\
+    \ ++i) {\r\n\t\t\tans += d.get();\r\n\t\t\td.pop_front();\r\n\t\t\td.push_back(row_min[i\
+    \ + a][j]);\r\n\t\t}\r\n\t}\r\n\tcout << ans << '\\n';\r\n\treturn 0;\r\n}\n"
+  code: "#define PROBLEM \"https://codeforces.com/problemset/problem/1195/E\"\r\n\r\
+    \n#include \"../../library/contest/template-minimal.hpp\"\r\n#include \"../../library/dynamic-programming/min-deque.hpp\"\
+    \r\n#include \"../../library/dynamic-programming/max-deque.hpp\"\r\n\r\nint main(){\r\
+    \n\tios_base::sync_with_stdio(false);\r\n\tcin.tie(nullptr);\r\n\tint n, m, a,\
+    \ b;\r\n\tcin >> n >> m >> a >> b;\r\n\tlong long g, x, y, z;\r\n\tcin >> g >>\
+    \ x >> y >> z;\r\n\tvector<vector<int>> grid(n + 1, vector<int>(m + 1));\r\n\t\
+    vector<vector<int>> row_min(n + 1, vector<int>(m + 1));\r\n\tfor (int i = 0; i\
+    \ < n; ++i) {\r\n\t\tfor (int j = 0; j < m; ++j) {\r\n\t\t\tgrid[i][j] = g;\r\n\
+    \t\t\tg = (g * x + y) % z;\r\n\t\t}\r\n\t}\r\n\tlong long ans = 0;\r\n\tfor (int\
+    \ i = 0; i < n; ++i) {\r\n\t\tMinDeque<int> d;\r\n\t\tfor (int j = 0; j < b; ++j)\
+    \ {\r\n\t\t\td.push_back(grid[i][j]);\r\n\t\t}\r\n\t\tfor (int j = 0; j <= m -\
+    \ b; ++j) {\r\n\t\t\trow_min[i][j] = d.get();\r\n\t\t\td.pop_front();\r\n\t\t\t\
+    d.push_back(grid[i][j + b]);\r\n\t\t}\r\n\t}\r\n\tfor (int j = 0; j <= m - b;\
+    \ ++j) {\r\n\t\tMinDeque<int> d;\r\n\t\tfor (int i = 0; i < a; ++i) {\r\n\t\t\t\
+    d.push_back(row_min[i][j]);\r\n\t\t}\r\n\t\tfor (int i = 0; i <= n - a; ++i) {\r\
+    \n\t\t\tans += d.get();\r\n\t\t\td.pop_front();\r\n\t\t\td.push_back(row_min[i\
+    \ + a][j]);\r\n\t\t}\r\n\t}\r\n\tcout << ans << '\\n';\r\n\treturn 0;\r\n}"
   dependsOn:
   - library/contest/template-minimal.hpp
   - library/dynamic-programming/min-deque.hpp
@@ -75,7 +79,7 @@ data:
   isVerificationFile: true
   path: verify/codeforces/codeforces-1195E.test.cpp
   requiredBy: []
-  timestamp: '2021-07-28 19:45:54-04:00'
+  timestamp: '2022-07-21 16:12:33-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/codeforces/codeforces-1195E.test.cpp

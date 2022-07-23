@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
   - icon: ':heavy_check_mark:'
@@ -18,63 +18,69 @@ data:
     links:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_B
   bundledCode: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_B\"\
-    \n\n\n#include <algorithm>\n#include <array>\n#include <bitset>\n#include <cassert>\n\
-    #include <chrono>\n#include <cmath>\n#include <complex>\n#include <cstdio>\n#include\
-    \ <cstdlib>\n#include <cstring>\n#include <ctime>\n#include <deque>\n#include\
-    \ <iostream>\n#include <iomanip>\n#include <list>\n#include <map>\n#include <numeric>\n\
-    #include <queue>\n#include <random>\n#include <set>\n#include <stack>\n#include\
-    \ <string>\n#include <unordered_map>\n#include <vector>\n\nusing namespace std;\n\
-    \ntemplate <class T> struct BellmanFord {\n\tconst T INF = std::numeric_limits<T>::max();\n\
-    \tint n; \n\tstd::vector<std::vector<int>> adj;\n\tstd::vector<std::pair<std::pair<int,\
-    \ int>, T>> edges;\n\tstd::vector<T> dist;\n\n\tvoid init(int n_) {\n\t\tn = n_;\n\
-    \t\tadj.assign(n, std::vector<int>());\n\t\tedges.clear();\n\t\tdist.assign(n,\
-    \ 0);\n\t}\n\n\tvoid ae(int u, int v, T w) {\n\t\tadj[u].push_back(v);\n\t\tedges.push_back({{u,\
-    \ v}, w});\n\t}   \n\n\tvoid gen_bad(int x) {\n\t\tif (dist[x] == -INF)\n\t\t\t\
-    return;\n\t\tdist[x] = -INF;\n\t\tfor (auto& nxt : adj[x])\n\t\t\tgen_bad(nxt);\n\
-    \t}\n\n\tvoid gen(int src) {\n\t\tfor (int i = 0; i < n; i++) \n\t\t\tdist[i]\
-    \ = INF;\n\t\tdist[src] = 0;\n\t\tfor (int i = 0; i < n; i++)\n\t\t\tfor (auto&\
-    \ e : edges) \n\t\t\t\tif (dist[e.first.first] < INF)\n\t\t\t\t\tdist[e.first.second]\
-    \ = std::min(dist[e.first.second], dist[e.first.first] + e.second);\n\t\tfor (auto&\
-    \ e : edges) \n\t\t\tif (dist[e.first.first] < INF && dist[e.first.second] > dist[e.first.first]\
-    \ + e.second)\n\t\t\t\tgen_bad(e.first.second);\n\t}\n\t\n\tstd::vector<int> negative_cycle(int\
-    \ src = 0) {\n\t\tfor (int i = 0; i < n; i++)\n\t\t\tdist[src] = INF;\n\t\tdist[src]\
-    \ = 0;\n\t\tstd::vector<int> pre(n);\n\t\tfor (auto& e : edges) \n\t\t\tif (e.first.first\
-    \ == e.first.second && e.second < 0) \n\t\t\t\treturn {e.first.first};\n\t\tfor\
-    \ (int i = 0; i < n; i++) \n\t\t\tfor (auto& e : edges) \n\t\t\t\tif (dist[e.first.first]\
-    \ < INF)\n\t\t\t\t\tif (dist[e.first.second] > dist[e.first.first] + e.second)\
-    \ {\n\t\t\t\t\t\tdist[e.first.second] = dist[e.first.first] + e.second;\n\t\t\t\
-    \t\t\tpre[e.first.second] = e.first.first;\n\t\t\t\t\t}\n\t\tfor (auto& e : edges)\
-    \ \n\t\t\tif (dist[e.first.first] < INF)\n\t\t\t\tif (dist[e.first.second] > dist[e.first.first]\
-    \ + e.second) {\n\t\t\t\t\tint x = e.first.second;\n\t\t\t\t\tfor (int i = 0;\
-    \ i < n; i++)\n\t\t\t\t\t\tx = pre[x];\n\t\t\t\t\tstd::vector<int> cycle;\n\t\t\
-    \t\t\tfor (int v = x; v != x || cycle.empty(); v = pre[v])\n\t\t\t\t\t\tcycle.push_back(v);\n\
-    \t\t\t\t\treverse(cycle.begin(), cycle.end());\n\t\t\t\t\treturn cycle;\n\t\t\t\
-    \t}\n\t\treturn {};\n\t}\n};\n\n// kattis\nint main() {\n\tusing namespace std;\n\
-    \tint n, m, r;\n\tcin >> n >> m >> r;\n\tBellmanFord<long long> B;\n\tB.init(n);\n\
-    \tfor (int i = 0; i < m; i++) {\n\t\tint u, v, w; \n\t\tcin >> u >> v >> w;\n\t\
-    \tB.ae(u, v, w);\n\t}\n\tB.gen(r);\n\tfor (int i = 0; i < n; ++i) {\n\t\tif (B.dist[i]\
-    \ == -B.INF) {\n\t\t\tcout << \"NEGATIVE CYCLE\" << '\\n';\n\t\t\treturn 0;\n\t\
-    \t}\n\t}\n\tfor (int i = 0; i < n; ++i) {\n\t\tlong long dist = B.dist[i];\n\t\
-    \tif (dist == B.INF) \n\t\t\tcout << \"INF\\n\";\n\t\telse if (dist == -B.INF)\n\
-    \t\t\tassert(false);\n\t\telse \n\t\t\tcout << dist << '\\n';\n\t}\n\treturn 0;\n\
-    }\n"
+    \r\n\r\n\r\n#include <algorithm>\r\n#include <array>\r\n#include <bitset>\r\n\
+    #include <cassert>\r\n#include <chrono>\r\n#include <cmath>\r\n#include <complex>\r\
+    \n#include <cstdio>\r\n#include <cstdlib>\r\n#include <cstring>\r\n#include <ctime>\r\
+    \n#include <deque>\r\n#include <iostream>\r\n#include <iomanip>\r\n#include <list>\r\
+    \n#include <map>\r\n#include <numeric>\r\n#include <queue>\r\n#include <random>\r\
+    \n#include <set>\r\n#include <stack>\r\n#include <string>\r\n#include <unordered_map>\r\
+    \n#include <vector>\r\n\r\nusing namespace std;\n\r\ntemplate <class T> struct\
+    \ BellmanFord {\r\n\tconst T INF = std::numeric_limits<T>::max();\r\n\tint n;\
+    \ \r\n\tstd::vector<std::vector<int>> adj;\r\n\tstd::vector<std::pair<std::pair<int,\
+    \ int>, T>> edges;\r\n\tstd::vector<T> dist;\r\n\r\n\tvoid init(int n_) {\r\n\t\
+    \tn = n_;\r\n\t\tadj.assign(n, std::vector<int>());\r\n\t\tedges.clear();\r\n\t\
+    \tdist.assign(n, 0);\r\n\t}\r\n\r\n\tvoid ae(int u, int v, T w) {\r\n\t\tadj[u].push_back(v);\r\
+    \n\t\tedges.push_back({{u, v}, w});\r\n\t}   \r\n\r\n\tvoid gen_bad(int x) {\r\
+    \n\t\tif (dist[x] == -INF)\r\n\t\t\treturn;\r\n\t\tdist[x] = -INF;\r\n\t\tfor\
+    \ (auto& nxt : adj[x])\r\n\t\t\tgen_bad(nxt);\r\n\t}\r\n\r\n\tvoid gen(int src)\
+    \ {\r\n\t\tfor (int i = 0; i < n; i++) \r\n\t\t\tdist[i] = INF;\r\n\t\tdist[src]\
+    \ = 0;\r\n\t\tfor (int i = 0; i < n; i++)\r\n\t\t\tfor (auto& e : edges) \r\n\t\
+    \t\t\tif (dist[e.first.first] < INF)\r\n\t\t\t\t\tdist[e.first.second] = std::min(dist[e.first.second],\
+    \ dist[e.first.first] + e.second);\r\n\t\tfor (auto& e : edges) \r\n\t\t\tif (dist[e.first.first]\
+    \ < INF && dist[e.first.second] > dist[e.first.first] + e.second)\r\n\t\t\t\t\
+    gen_bad(e.first.second);\r\n\t}\r\n\t\r\n\tstd::vector<int> negative_cycle(int\
+    \ src = 0) {\r\n\t\tfor (int i = 0; i < n; i++)\r\n\t\t\tdist[src] = INF;\r\n\t\
+    \tdist[src] = 0;\r\n\t\tstd::vector<int> pre(n);\r\n\t\tfor (auto& e : edges)\
+    \ \r\n\t\t\tif (e.first.first == e.first.second && e.second < 0) \r\n\t\t\t\t\
+    return {e.first.first};\r\n\t\tfor (int i = 0; i < n; i++) \r\n\t\t\tfor (auto&\
+    \ e : edges) \r\n\t\t\t\tif (dist[e.first.first] < INF)\r\n\t\t\t\t\tif (dist[e.first.second]\
+    \ > dist[e.first.first] + e.second) {\r\n\t\t\t\t\t\tdist[e.first.second] = dist[e.first.first]\
+    \ + e.second;\r\n\t\t\t\t\t\tpre[e.first.second] = e.first.first;\r\n\t\t\t\t\t\
+    }\r\n\t\tfor (auto& e : edges) \r\n\t\t\tif (dist[e.first.first] < INF)\r\n\t\t\
+    \t\tif (dist[e.first.second] > dist[e.first.first] + e.second) {\r\n\t\t\t\t\t\
+    int x = e.first.second;\r\n\t\t\t\t\tfor (int i = 0; i < n; i++)\r\n\t\t\t\t\t\
+    \tx = pre[x];\r\n\t\t\t\t\tstd::vector<int> cycle;\r\n\t\t\t\t\tfor (int v = x;\
+    \ v != x || cycle.empty(); v = pre[v])\r\n\t\t\t\t\t\tcycle.push_back(v);\r\n\t\
+    \t\t\t\treverse(cycle.begin(), cycle.end());\r\n\t\t\t\t\treturn cycle;\r\n\t\t\
+    \t\t}\r\n\t\treturn {};\r\n\t}\r\n};\n\r\n// kattis\r\nint main() {\r\n\tusing\
+    \ namespace std;\r\n\tint n, m, r;\r\n\tcin >> n >> m >> r;\r\n\tBellmanFord<long\
+    \ long> B;\r\n\tB.init(n);\r\n\tfor (int i = 0; i < m; i++) {\r\n\t\tint u, v,\
+    \ w; \r\n\t\tcin >> u >> v >> w;\r\n\t\tB.ae(u, v, w);\r\n\t}\r\n\tB.gen(r);\r\
+    \n\tfor (int i = 0; i < n; ++i) {\r\n\t\tif (B.dist[i] == -B.INF) {\r\n\t\t\t\
+    cout << \"NEGATIVE CYCLE\" << '\\n';\r\n\t\t\treturn 0;\r\n\t\t}\r\n\t}\r\n\t\
+    for (int i = 0; i < n; ++i) {\r\n\t\tlong long dist = B.dist[i];\r\n\t\tif (dist\
+    \ == B.INF) \r\n\t\t\tcout << \"INF\\n\";\r\n\t\telse if (dist == -B.INF)\r\n\t\
+    \t\tassert(false);\r\n\t\telse \r\n\t\t\tcout << dist << '\\n';\r\n\t}\r\n\treturn\
+    \ 0;\r\n}\n"
   code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_B\"\
-    \n\n#include \"../../library/contest/template-minimal.hpp\"\n#include \"../../library/graphs/bellman-ford.hpp\"\
-    \n\n// kattis\nint main() {\n\tusing namespace std;\n\tint n, m, r;\n\tcin >>\
-    \ n >> m >> r;\n\tBellmanFord<long long> B;\n\tB.init(n);\n\tfor (int i = 0; i\
-    \ < m; i++) {\n\t\tint u, v, w; \n\t\tcin >> u >> v >> w;\n\t\tB.ae(u, v, w);\n\
-    \t}\n\tB.gen(r);\n\tfor (int i = 0; i < n; ++i) {\n\t\tif (B.dist[i] == -B.INF)\
-    \ {\n\t\t\tcout << \"NEGATIVE CYCLE\" << '\\n';\n\t\t\treturn 0;\n\t\t}\n\t}\n\
-    \tfor (int i = 0; i < n; ++i) {\n\t\tlong long dist = B.dist[i];\n\t\tif (dist\
-    \ == B.INF) \n\t\t\tcout << \"INF\\n\";\n\t\telse if (dist == -B.INF)\n\t\t\t\
-    assert(false);\n\t\telse \n\t\t\tcout << dist << '\\n';\n\t}\n\treturn 0;\n}"
+    \r\n\r\n#include \"../../library/contest/template-minimal.hpp\"\r\n#include \"\
+    ../../library/graphs/bellman-ford.hpp\"\r\n\r\n// kattis\r\nint main() {\r\n\t\
+    using namespace std;\r\n\tint n, m, r;\r\n\tcin >> n >> m >> r;\r\n\tBellmanFord<long\
+    \ long> B;\r\n\tB.init(n);\r\n\tfor (int i = 0; i < m; i++) {\r\n\t\tint u, v,\
+    \ w; \r\n\t\tcin >> u >> v >> w;\r\n\t\tB.ae(u, v, w);\r\n\t}\r\n\tB.gen(r);\r\
+    \n\tfor (int i = 0; i < n; ++i) {\r\n\t\tif (B.dist[i] == -B.INF) {\r\n\t\t\t\
+    cout << \"NEGATIVE CYCLE\" << '\\n';\r\n\t\t\treturn 0;\r\n\t\t}\r\n\t}\r\n\t\
+    for (int i = 0; i < n; ++i) {\r\n\t\tlong long dist = B.dist[i];\r\n\t\tif (dist\
+    \ == B.INF) \r\n\t\t\tcout << \"INF\\n\";\r\n\t\telse if (dist == -B.INF)\r\n\t\
+    \t\tassert(false);\r\n\t\telse \r\n\t\t\tcout << dist << '\\n';\r\n\t}\r\n\treturn\
+    \ 0;\r\n}"
   dependsOn:
   - library/contest/template-minimal.hpp
   - library/graphs/bellman-ford.hpp
   isVerificationFile: true
   path: verify/aizu/aizu-GRL_1_B.test.cpp
   requiredBy: []
-  timestamp: '2022-01-01 22:55:25-05:00'
+  timestamp: '2022-07-21 16:12:33-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aizu/aizu-GRL_1_B.test.cpp

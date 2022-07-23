@@ -11,49 +11,50 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "\ntemplate <class T, int N, int M> struct QuadTree {\n\tT sm[16 *\
-    \ N * M];\n\n\tQuadTree() { memset(sm, 0, sizeof(sm)); }\n\n\tvoid upd(int x,\
-    \ int y, T inc, int n = 1, int x1 = 0, int y1 = 0, int x2 = N - 1, int y2 = M\
-    \ - 1) {\n\t\tif (x1 == x2 && y1 == y2) \n\t\t\tsm[n] += inc;\n\t\telse {\n\t\t\
-    \tint xm = (x1 + x2) >> 1;\n\t\t\tint ym = (y1 + y2) >> 1;\n\t\t\tif (x <= xm\
-    \ && y <= ym) \n\t\t\t\tupd(x, y, inc, 4 * n, x1, y1, xm, ym);\n\t\t\telse if\
-    \ (x <= xm && y > ym) \n\t\t\t\tupd(x, y, inc, 4 * n + 1, x1, ym + 1, xm, y2);\n\
-    \t\t\telse if (x > xm && y > ym) \n\t\t\t\tupd(x, y, inc, 4 * n + 2, xm + 1, ym\
-    \ + 1, x2, y2);\n\t\t\telse \n\t\t\t\tupd(x, y, inc, 4 * n + 3, xm + 1, y1, x2,\
-    \ ym);\n\t\t\tsm[n] = sm[4 * n] + sm[4 * n + 1] + sm[4 * n + 2] + sm[4 * n + 3];\n\
-    \t\t}\n\t}\n\n\tT query(int qx1, int qy1, int qx2, int qy2, int n = 1, int x1\
-    \ = 0, int y1 = 0, int x2 = N - 1, int y2 = M - 1) {\n\t\tif (qx2 < x1 || qy1\
-    \ > y2 || qx1 > x2 || qy2 < y1) \n\t\t\treturn 0;\n\t\telse if (qx1 <= x1 && x2\
-    \ <= qx2 && qy1 <= y1 && y2 <= qy2) \n\t\t\treturn sm[n];\n\t\tint xm = (x1 +\
-    \ x2) >> 1;\n\t\tint ym = (y1 + y2) >> 1;\n\t\treturn query(qx1, qy1, qx2, qy2,\
-    \ 4 * n, x1, y1, xm, ym) \n\t\t\t\t+ query(qx1, qy1, qx2, qy2, 4 * n + 1, x1,\
-    \ ym + 1, xm, y2) \n\t\t\t\t+ query(qx1, qy1, qx2, qy2, 4 * n + 2, xm + 1, ym\
-    \ + 1, x2, y2) \n\t\t\t\t+ query(qx1, qy1, qx2, qy2, 4 * n + 3, xm + 1, y1, x2,\
-    \ ym);\n\t}\n};\n"
-  code: "#pragma once\n\ntemplate <class T, int N, int M> struct QuadTree {\n\tT sm[16\
-    \ * N * M];\n\n\tQuadTree() { memset(sm, 0, sizeof(sm)); }\n\n\tvoid upd(int x,\
-    \ int y, T inc, int n = 1, int x1 = 0, int y1 = 0, int x2 = N - 1, int y2 = M\
-    \ - 1) {\n\t\tif (x1 == x2 && y1 == y2) \n\t\t\tsm[n] += inc;\n\t\telse {\n\t\t\
-    \tint xm = (x1 + x2) >> 1;\n\t\t\tint ym = (y1 + y2) >> 1;\n\t\t\tif (x <= xm\
-    \ && y <= ym) \n\t\t\t\tupd(x, y, inc, 4 * n, x1, y1, xm, ym);\n\t\t\telse if\
-    \ (x <= xm && y > ym) \n\t\t\t\tupd(x, y, inc, 4 * n + 1, x1, ym + 1, xm, y2);\n\
-    \t\t\telse if (x > xm && y > ym) \n\t\t\t\tupd(x, y, inc, 4 * n + 2, xm + 1, ym\
-    \ + 1, x2, y2);\n\t\t\telse \n\t\t\t\tupd(x, y, inc, 4 * n + 3, xm + 1, y1, x2,\
-    \ ym);\n\t\t\tsm[n] = sm[4 * n] + sm[4 * n + 1] + sm[4 * n + 2] + sm[4 * n + 3];\n\
-    \t\t}\n\t}\n\n\tT query(int qx1, int qy1, int qx2, int qy2, int n = 1, int x1\
-    \ = 0, int y1 = 0, int x2 = N - 1, int y2 = M - 1) {\n\t\tif (qx2 < x1 || qy1\
-    \ > y2 || qx1 > x2 || qy2 < y1) \n\t\t\treturn 0;\n\t\telse if (qx1 <= x1 && x2\
-    \ <= qx2 && qy1 <= y1 && y2 <= qy2) \n\t\t\treturn sm[n];\n\t\tint xm = (x1 +\
-    \ x2) >> 1;\n\t\tint ym = (y1 + y2) >> 1;\n\t\treturn query(qx1, qy1, qx2, qy2,\
-    \ 4 * n, x1, y1, xm, ym) \n\t\t\t\t+ query(qx1, qy1, qx2, qy2, 4 * n + 1, x1,\
-    \ ym + 1, xm, y2) \n\t\t\t\t+ query(qx1, qy1, qx2, qy2, 4 * n + 2, xm + 1, ym\
-    \ + 1, x2, y2) \n\t\t\t\t+ query(qx1, qy1, qx2, qy2, 4 * n + 3, xm + 1, y1, x2,\
-    \ ym);\n\t}\n};"
+  bundledCode: "\r\ntemplate <class T, int N, int M> struct QuadTree {\r\n\tT sm[16\
+    \ * N * M];\r\n\r\n\tQuadTree() { memset(sm, 0, sizeof(sm)); }\r\n\r\n\tvoid upd(int\
+    \ x, int y, T inc, int n = 1, int x1 = 0, int y1 = 0, int x2 = N - 1, int y2 =\
+    \ M - 1) {\r\n\t\tif (x1 == x2 && y1 == y2) \r\n\t\t\tsm[n] += inc;\r\n\t\telse\
+    \ {\r\n\t\t\tint xm = (x1 + x2) >> 1;\r\n\t\t\tint ym = (y1 + y2) >> 1;\r\n\t\t\
+    \tif (x <= xm && y <= ym) \r\n\t\t\t\tupd(x, y, inc, 4 * n, x1, y1, xm, ym);\r\
+    \n\t\t\telse if (x <= xm && y > ym) \r\n\t\t\t\tupd(x, y, inc, 4 * n + 1, x1,\
+    \ ym + 1, xm, y2);\r\n\t\t\telse if (x > xm && y > ym) \r\n\t\t\t\tupd(x, y, inc,\
+    \ 4 * n + 2, xm + 1, ym + 1, x2, y2);\r\n\t\t\telse \r\n\t\t\t\tupd(x, y, inc,\
+    \ 4 * n + 3, xm + 1, y1, x2, ym);\r\n\t\t\tsm[n] = sm[4 * n] + sm[4 * n + 1] +\
+    \ sm[4 * n + 2] + sm[4 * n + 3];\r\n\t\t}\r\n\t}\r\n\r\n\tT query(int qx1, int\
+    \ qy1, int qx2, int qy2, int n = 1, int x1 = 0, int y1 = 0, int x2 = N - 1, int\
+    \ y2 = M - 1) {\r\n\t\tif (qx2 < x1 || qy1 > y2 || qx1 > x2 || qy2 < y1) \r\n\t\
+    \t\treturn 0;\r\n\t\telse if (qx1 <= x1 && x2 <= qx2 && qy1 <= y1 && y2 <= qy2)\
+    \ \r\n\t\t\treturn sm[n];\r\n\t\tint xm = (x1 + x2) >> 1;\r\n\t\tint ym = (y1\
+    \ + y2) >> 1;\r\n\t\treturn query(qx1, qy1, qx2, qy2, 4 * n, x1, y1, xm, ym) \r\
+    \n\t\t\t\t+ query(qx1, qy1, qx2, qy2, 4 * n + 1, x1, ym + 1, xm, y2) \r\n\t\t\t\
+    \t+ query(qx1, qy1, qx2, qy2, 4 * n + 2, xm + 1, ym + 1, x2, y2) \r\n\t\t\t\t\
+    + query(qx1, qy1, qx2, qy2, 4 * n + 3, xm + 1, y1, x2, ym);\r\n\t}\r\n};\n"
+  code: "#pragma once\r\n\r\ntemplate <class T, int N, int M> struct QuadTree {\r\n\
+    \tT sm[16 * N * M];\r\n\r\n\tQuadTree() { memset(sm, 0, sizeof(sm)); }\r\n\r\n\
+    \tvoid upd(int x, int y, T inc, int n = 1, int x1 = 0, int y1 = 0, int x2 = N\
+    \ - 1, int y2 = M - 1) {\r\n\t\tif (x1 == x2 && y1 == y2) \r\n\t\t\tsm[n] += inc;\r\
+    \n\t\telse {\r\n\t\t\tint xm = (x1 + x2) >> 1;\r\n\t\t\tint ym = (y1 + y2) >>\
+    \ 1;\r\n\t\t\tif (x <= xm && y <= ym) \r\n\t\t\t\tupd(x, y, inc, 4 * n, x1, y1,\
+    \ xm, ym);\r\n\t\t\telse if (x <= xm && y > ym) \r\n\t\t\t\tupd(x, y, inc, 4 *\
+    \ n + 1, x1, ym + 1, xm, y2);\r\n\t\t\telse if (x > xm && y > ym) \r\n\t\t\t\t\
+    upd(x, y, inc, 4 * n + 2, xm + 1, ym + 1, x2, y2);\r\n\t\t\telse \r\n\t\t\t\t\
+    upd(x, y, inc, 4 * n + 3, xm + 1, y1, x2, ym);\r\n\t\t\tsm[n] = sm[4 * n] + sm[4\
+    \ * n + 1] + sm[4 * n + 2] + sm[4 * n + 3];\r\n\t\t}\r\n\t}\r\n\r\n\tT query(int\
+    \ qx1, int qy1, int qx2, int qy2, int n = 1, int x1 = 0, int y1 = 0, int x2 =\
+    \ N - 1, int y2 = M - 1) {\r\n\t\tif (qx2 < x1 || qy1 > y2 || qx1 > x2 || qy2\
+    \ < y1) \r\n\t\t\treturn 0;\r\n\t\telse if (qx1 <= x1 && x2 <= qx2 && qy1 <= y1\
+    \ && y2 <= qy2) \r\n\t\t\treturn sm[n];\r\n\t\tint xm = (x1 + x2) >> 1;\r\n\t\t\
+    int ym = (y1 + y2) >> 1;\r\n\t\treturn query(qx1, qy1, qx2, qy2, 4 * n, x1, y1,\
+    \ xm, ym) \r\n\t\t\t\t+ query(qx1, qy1, qx2, qy2, 4 * n + 1, x1, ym + 1, xm, y2)\
+    \ \r\n\t\t\t\t+ query(qx1, qy1, qx2, qy2, 4 * n + 2, xm + 1, ym + 1, x2, y2) \r\
+    \n\t\t\t\t+ query(qx1, qy1, qx2, qy2, 4 * n + 3, xm + 1, y1, x2, ym);\r\n\t}\r\
+    \n};"
   dependsOn: []
   isVerificationFile: false
   path: library/data-structures/2d-range-queries/quadtree.hpp
   requiredBy: []
-  timestamp: '2021-08-13 00:33:33-04:00'
+  timestamp: '2022-07-21 16:12:33-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/codeforces/codeforces-869E-quadtree.test.cpp

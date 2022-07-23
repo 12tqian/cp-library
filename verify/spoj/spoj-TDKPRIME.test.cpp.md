@@ -14,27 +14,29 @@ data:
     PROBLEM: https://www.spoj.com/problems/TDKPRIME/
     links:
     - https://www.spoj.com/problems/TDKPRIME/
-  bundledCode: "#define PROBLEM \"https://www.spoj.com/problems/TDKPRIME/\"\n\n#include\
-    \ <bits/stdc++.h>\n\nusing namespace std;\n\n\ntemplate <int N> struct LinearSieve\
-    \ {\n\tstd::bitset<N> pri;\n\tstd::vector<int> pr;\n\t\n\tLinearSieve() {\n\t\t\
-    pri.set();\n\t\tpri[0] = pri[1] = 0;\n\t\tfor (int i = 2; i < N; ++i) {\n\t\t\t\
-    if (pri[i]) \n\t\t\t\tpr.push_back(i);\n\t\t\tfor (int j = 0; j < (int)pr.size()\
-    \ && i * pr[j] < N; ++j) {\n\t\t\t\tpri[i * pr[j]] = 0;\n\t\t\t\tif (i % pr[j]\
-    \ == 0) \n\t\t\t\t\tbreak;\n\t\t\t}\n\t\t}\n\t}\n};\n\nconst int N = 1e8;\n\n\
-    LinearSieve<N> sieve;\n\nint main() {\n\tios::sync_with_stdio(false);\n\tcin.tie(nullptr);\n\
-    \tint q;\n\tcin >> q;\n\twhile (q--) {\n\t\tint n;\n\t\tcin >> n;\n\t\tcout <<\
-    \ sieve.pr[n - 1] << '\\n';\n\t}\n\treturn 0;\n}\n"
-  code: "#define PROBLEM \"https://www.spoj.com/problems/TDKPRIME/\"\n\n#include <bits/stdc++.h>\n\
-    \nusing namespace std;\n\n#include \"../../library/number-theory/linear-sieve.hpp\"\
-    \n\nconst int N = 1e8;\n\nLinearSieve<N> sieve;\n\nint main() {\n\tios::sync_with_stdio(false);\n\
-    \tcin.tie(nullptr);\n\tint q;\n\tcin >> q;\n\twhile (q--) {\n\t\tint n;\n\t\t\
-    cin >> n;\n\t\tcout << sieve.pr[n - 1] << '\\n';\n\t}\n\treturn 0;\n}\n"
+  bundledCode: "#define PROBLEM \"https://www.spoj.com/problems/TDKPRIME/\"\r\n\r\n\
+    #include <bits/stdc++.h>\r\n\r\nusing namespace std;\r\n\r\n\r\ntemplate <int\
+    \ N> struct LinearSieve {\r\n\tstd::bitset<N> pri;\r\n\tstd::vector<int> pr;\r\
+    \n\t\r\n\tLinearSieve() {\r\n\t\tpri.set();\r\n\t\tpri[0] = pri[1] = 0;\r\n\t\t\
+    for (int i = 2; i < N; ++i) {\r\n\t\t\tif (pri[i]) \r\n\t\t\t\tpr.push_back(i);\r\
+    \n\t\t\tfor (int j = 0; j < (int)pr.size() && i * pr[j] < N; ++j) {\r\n\t\t\t\t\
+    pri[i * pr[j]] = 0;\r\n\t\t\t\tif (i % pr[j] == 0) \r\n\t\t\t\t\tbreak;\r\n\t\t\
+    \t}\r\n\t\t}\r\n\t}\r\n};\n\r\nconst int N = 1e8;\r\n\r\nLinearSieve<N> sieve;\r\
+    \n\r\nint main() {\r\n\tios::sync_with_stdio(false);\r\n\tcin.tie(nullptr);\r\n\
+    \tint q;\r\n\tcin >> q;\r\n\twhile (q--) {\r\n\t\tint n;\r\n\t\tcin >> n;\r\n\t\
+    \tcout << sieve.pr[n - 1] << '\\n';\r\n\t}\r\n\treturn 0;\r\n}\r\n"
+  code: "#define PROBLEM \"https://www.spoj.com/problems/TDKPRIME/\"\r\n\r\n#include\
+    \ <bits/stdc++.h>\r\n\r\nusing namespace std;\r\n\r\n#include \"../../library/number-theory/linear-sieve.hpp\"\
+    \r\n\r\nconst int N = 1e8;\r\n\r\nLinearSieve<N> sieve;\r\n\r\nint main() {\r\n\
+    \tios::sync_with_stdio(false);\r\n\tcin.tie(nullptr);\r\n\tint q;\r\n\tcin >>\
+    \ q;\r\n\twhile (q--) {\r\n\t\tint n;\r\n\t\tcin >> n;\r\n\t\tcout << sieve.pr[n\
+    \ - 1] << '\\n';\r\n\t}\r\n\treturn 0;\r\n}\r\n"
   dependsOn:
   - library/number-theory/linear-sieve.hpp
   isVerificationFile: true
   path: verify/spoj/spoj-TDKPRIME.test.cpp
   requiredBy: []
-  timestamp: '2021-08-16 14:40:22-04:00'
+  timestamp: '2022-07-21 16:12:33-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/spoj/spoj-TDKPRIME.test.cpp

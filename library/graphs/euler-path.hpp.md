@@ -11,53 +11,57 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "\ntemplate <bool directed> struct Euler {\n\tint n;\n\tstd::vector<std::vector<std::pair<int,\
-    \ int>>> adj;\n\tstd::vector<std::vector<std::pair<int, int>>::iterator> its;\n\
-    \tstd::vector<bool> used;\n\n\tvoid init(int _n) {\n\t\tn = _n;\n\t\tadj.resize(n);\n\
-    \t}\n\n\tvoid ae(int u, int v) {\n\t\tint m = (int)used.size();\n\t\tused.push_back(false);\n\
-    \t\tadj[u].emplace_back(v, m);\n\t\tif (!directed) {\n\t\t\tadj[v].emplace_back(u,\
-    \ m);\n\t\t}\n\t}\n\n\tstd::vector<std::pair<int, int>> euler_path() {\n\t\tint\
-    \ cnt = 0;\n\t\tfor (int i = 0; i < n; i++) \n\t\t\tcnt += (int)adj[i].size()\
-    \ % 2;\n\t\tif (cnt == 2) {\n\t\t\tfor (int i = 0; i < n; i++) \n\t\t\t\tif ((int)adj[i].size()\
-    \ % 2) \n\t\t\t\t\treturn get_path(i);\n\t\t} else if (cnt == 0) {\n\t\t\treturn\
-    \ get_path(0);\n\t\t}\n\t\treturn {};\n\t}\n\t\n\tstd::vector<std::pair<int, int>>\
-    \ get_path(int src = 0) {\n\t\tits.resize(n);\n\t\tstd::vector<std::pair<int,\
-    \ int>> ans, s{{src, -1}};\n\t\tfor (int i = 0; i < n; i++) {\n\t\t\tits[i] =\
-    \ adj[i].begin();\n\t\t}\n\t\tint lst = -1;\n\t\twhile ((int)s.size()) {\n\t\t\
-    \tint x = s.back().first;\n\t\t\tauto& it = its[x];\n\t\t\tauto en = adj[x].end();\n\
-    \t\t\twhile (it != en && used[it->second]) {\n\t\t\t\t++it;\n\t\t\t}\n\t\t\tif\
-    \ (it == en) {\n\t\t\t\tif (lst != -1 && lst != x) {\n\t\t\t\t\treturn {};\n\t\
-    \t\t\t}\n\t\t\t\tans.push_back(s.back());\n\t\t\t\ts.pop_back();\n\t\t\t\tif ((int)s.size())\
-    \ {\n\t\t\t\t\tlst = s.back().first;\n\t\t\t\t}\n\t\t\t} else {\n\t\t\t\ts.push_back(*it);\n\
-    \t\t\t\tused[it->second] = 1;\n\t\t\t}\n\t\t}\n\t\tif ((int)ans.size() != (int)used.size()\
-    \ + 1) {\n\t\t\treturn {};\n\t\t}\n\t\treverse(ans.begin(), ans.end());\n\t\t\
-    return ans;\n\t}\n};\n"
-  code: "#pragma once\n\ntemplate <bool directed> struct Euler {\n\tint n;\n\tstd::vector<std::vector<std::pair<int,\
-    \ int>>> adj;\n\tstd::vector<std::vector<std::pair<int, int>>::iterator> its;\n\
-    \tstd::vector<bool> used;\n\n\tvoid init(int _n) {\n\t\tn = _n;\n\t\tadj.resize(n);\n\
-    \t}\n\n\tvoid ae(int u, int v) {\n\t\tint m = (int)used.size();\n\t\tused.push_back(false);\n\
-    \t\tadj[u].emplace_back(v, m);\n\t\tif (!directed) {\n\t\t\tadj[v].emplace_back(u,\
-    \ m);\n\t\t}\n\t}\n\n\tstd::vector<std::pair<int, int>> euler_path() {\n\t\tint\
-    \ cnt = 0;\n\t\tfor (int i = 0; i < n; i++) \n\t\t\tcnt += (int)adj[i].size()\
-    \ % 2;\n\t\tif (cnt == 2) {\n\t\t\tfor (int i = 0; i < n; i++) \n\t\t\t\tif ((int)adj[i].size()\
-    \ % 2) \n\t\t\t\t\treturn get_path(i);\n\t\t} else if (cnt == 0) {\n\t\t\treturn\
-    \ get_path(0);\n\t\t}\n\t\treturn {};\n\t}\n\t\n\tstd::vector<std::pair<int, int>>\
-    \ get_path(int src = 0) {\n\t\tits.resize(n);\n\t\tstd::vector<std::pair<int,\
-    \ int>> ans, s{{src, -1}};\n\t\tfor (int i = 0; i < n; i++) {\n\t\t\tits[i] =\
-    \ adj[i].begin();\n\t\t}\n\t\tint lst = -1;\n\t\twhile ((int)s.size()) {\n\t\t\
-    \tint x = s.back().first;\n\t\t\tauto& it = its[x];\n\t\t\tauto en = adj[x].end();\n\
-    \t\t\twhile (it != en && used[it->second]) {\n\t\t\t\t++it;\n\t\t\t}\n\t\t\tif\
-    \ (it == en) {\n\t\t\t\tif (lst != -1 && lst != x) {\n\t\t\t\t\treturn {};\n\t\
-    \t\t\t}\n\t\t\t\tans.push_back(s.back());\n\t\t\t\ts.pop_back();\n\t\t\t\tif ((int)s.size())\
-    \ {\n\t\t\t\t\tlst = s.back().first;\n\t\t\t\t}\n\t\t\t} else {\n\t\t\t\ts.push_back(*it);\n\
-    \t\t\t\tused[it->second] = 1;\n\t\t\t}\n\t\t}\n\t\tif ((int)ans.size() != (int)used.size()\
-    \ + 1) {\n\t\t\treturn {};\n\t\t}\n\t\treverse(ans.begin(), ans.end());\n\t\t\
-    return ans;\n\t}\n};\n"
+  bundledCode: "\r\ntemplate <bool directed> struct Euler {\r\n\tint n;\r\n\tstd::vector<std::vector<std::pair<int,\
+    \ int>>> adj;\r\n\tstd::vector<std::vector<std::pair<int, int>>::iterator> its;\r\
+    \n\tstd::vector<bool> used;\r\n\r\n\tvoid init(int _n) {\r\n\t\tn = _n;\r\n\t\t\
+    adj.resize(n);\r\n\t}\r\n\r\n\tvoid ae(int u, int v) {\r\n\t\tint m = (int)used.size();\r\
+    \n\t\tused.push_back(false);\r\n\t\tadj[u].emplace_back(v, m);\r\n\t\tif (!directed)\
+    \ {\r\n\t\t\tadj[v].emplace_back(u, m);\r\n\t\t}\r\n\t}\r\n\r\n\tstd::vector<std::pair<int,\
+    \ int>> euler_path() {\r\n\t\tint cnt = 0;\r\n\t\tfor (int i = 0; i < n; i++)\
+    \ \r\n\t\t\tcnt += (int)adj[i].size() % 2;\r\n\t\tif (cnt == 2) {\r\n\t\t\tfor\
+    \ (int i = 0; i < n; i++) \r\n\t\t\t\tif ((int)adj[i].size() % 2) \r\n\t\t\t\t\
+    \treturn get_path(i);\r\n\t\t} else if (cnt == 0) {\r\n\t\t\treturn get_path(0);\r\
+    \n\t\t}\r\n\t\treturn {};\r\n\t}\r\n\t\r\n\tstd::vector<std::pair<int, int>> get_path(int\
+    \ src = 0) {\r\n\t\tits.resize(n);\r\n\t\tstd::vector<std::pair<int, int>> ans,\
+    \ s{{src, -1}};\r\n\t\tfor (int i = 0; i < n; i++) {\r\n\t\t\tits[i] = adj[i].begin();\r\
+    \n\t\t}\r\n\t\tint lst = -1;\r\n\t\twhile ((int)s.size()) {\r\n\t\t\tint x = s.back().first;\r\
+    \n\t\t\tauto& it = its[x];\r\n\t\t\tauto en = adj[x].end();\r\n\t\t\twhile (it\
+    \ != en && used[it->second]) {\r\n\t\t\t\t++it;\r\n\t\t\t}\r\n\t\t\tif (it ==\
+    \ en) {\r\n\t\t\t\tif (lst != -1 && lst != x) {\r\n\t\t\t\t\treturn {};\r\n\t\t\
+    \t\t}\r\n\t\t\t\tans.push_back(s.back());\r\n\t\t\t\ts.pop_back();\r\n\t\t\t\t\
+    if ((int)s.size()) {\r\n\t\t\t\t\tlst = s.back().first;\r\n\t\t\t\t}\r\n\t\t\t\
+    } else {\r\n\t\t\t\ts.push_back(*it);\r\n\t\t\t\tused[it->second] = 1;\r\n\t\t\
+    \t}\r\n\t\t}\r\n\t\tif ((int)ans.size() != (int)used.size() + 1) {\r\n\t\t\treturn\
+    \ {};\r\n\t\t}\r\n\t\treverse(ans.begin(), ans.end());\r\n\t\treturn ans;\r\n\t\
+    }\r\n};\r\n"
+  code: "#pragma once\r\n\r\ntemplate <bool directed> struct Euler {\r\n\tint n;\r\
+    \n\tstd::vector<std::vector<std::pair<int, int>>> adj;\r\n\tstd::vector<std::vector<std::pair<int,\
+    \ int>>::iterator> its;\r\n\tstd::vector<bool> used;\r\n\r\n\tvoid init(int _n)\
+    \ {\r\n\t\tn = _n;\r\n\t\tadj.resize(n);\r\n\t}\r\n\r\n\tvoid ae(int u, int v)\
+    \ {\r\n\t\tint m = (int)used.size();\r\n\t\tused.push_back(false);\r\n\t\tadj[u].emplace_back(v,\
+    \ m);\r\n\t\tif (!directed) {\r\n\t\t\tadj[v].emplace_back(u, m);\r\n\t\t}\r\n\
+    \t}\r\n\r\n\tstd::vector<std::pair<int, int>> euler_path() {\r\n\t\tint cnt =\
+    \ 0;\r\n\t\tfor (int i = 0; i < n; i++) \r\n\t\t\tcnt += (int)adj[i].size() %\
+    \ 2;\r\n\t\tif (cnt == 2) {\r\n\t\t\tfor (int i = 0; i < n; i++) \r\n\t\t\t\t\
+    if ((int)adj[i].size() % 2) \r\n\t\t\t\t\treturn get_path(i);\r\n\t\t} else if\
+    \ (cnt == 0) {\r\n\t\t\treturn get_path(0);\r\n\t\t}\r\n\t\treturn {};\r\n\t}\r\
+    \n\t\r\n\tstd::vector<std::pair<int, int>> get_path(int src = 0) {\r\n\t\tits.resize(n);\r\
+    \n\t\tstd::vector<std::pair<int, int>> ans, s{{src, -1}};\r\n\t\tfor (int i =\
+    \ 0; i < n; i++) {\r\n\t\t\tits[i] = adj[i].begin();\r\n\t\t}\r\n\t\tint lst =\
+    \ -1;\r\n\t\twhile ((int)s.size()) {\r\n\t\t\tint x = s.back().first;\r\n\t\t\t\
+    auto& it = its[x];\r\n\t\t\tauto en = adj[x].end();\r\n\t\t\twhile (it != en &&\
+    \ used[it->second]) {\r\n\t\t\t\t++it;\r\n\t\t\t}\r\n\t\t\tif (it == en) {\r\n\
+    \t\t\t\tif (lst != -1 && lst != x) {\r\n\t\t\t\t\treturn {};\r\n\t\t\t\t}\r\n\t\
+    \t\t\tans.push_back(s.back());\r\n\t\t\t\ts.pop_back();\r\n\t\t\t\tif ((int)s.size())\
+    \ {\r\n\t\t\t\t\tlst = s.back().first;\r\n\t\t\t\t}\r\n\t\t\t} else {\r\n\t\t\t\
+    \ts.push_back(*it);\r\n\t\t\t\tused[it->second] = 1;\r\n\t\t\t}\r\n\t\t}\r\n\t\
+    \tif ((int)ans.size() != (int)used.size() + 1) {\r\n\t\t\treturn {};\r\n\t\t}\r\
+    \n\t\treverse(ans.begin(), ans.end());\r\n\t\treturn ans;\r\n\t}\r\n};\r\n"
   dependsOn: []
   isVerificationFile: false
   path: library/graphs/euler-path.hpp
   requiredBy: []
-  timestamp: '2021-08-16 13:31:52-04:00'
+  timestamp: '2022-07-21 16:12:33-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/codeforces/codeforces-1494F.test.cpp

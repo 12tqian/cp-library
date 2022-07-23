@@ -11,27 +11,29 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "\nstd::vector<int> topo_sort(std::vector<std::vector<int>> adj) {\n\
-    \tint n = (int)adj.size();\n\tstd::vector<int> in(n);\n\tstd::vector<int> res;\n\
-    \tstd::list<int> todo;\n\tfor (int i = 0; i < n; i++) {\n\t\tfor (int j : adj[i])\
-    \ {\n\t\t\t++in[j];\n\t\t}\n\t}\n\tfor (int i = 0; i < n; i++) {\n\t\tif (!in[i])\
-    \ {\n\t\t\ttodo.push_back(i);\n\t\t}\n\t}\n\twhile (!todo.empty()) {\n\t\tint\
-    \ x = todo.front();\n\t\ttodo.pop_front();\n\t\tres.push_back(x);\n\t\tfor (int\
-    \ nxt : adj[x]) {\n\t\t\tif (!(--in[nxt])) {\n\t\t\t\ttodo.push_back(nxt);\n\t\
-    \t\t}\n\t\t}\n\t}\n\treturn res;\n}\n"
-  code: "#pragma once\n\nstd::vector<int> topo_sort(std::vector<std::vector<int>>\
-    \ adj) {\n\tint n = (int)adj.size();\n\tstd::vector<int> in(n);\n\tstd::vector<int>\
-    \ res;\n\tstd::list<int> todo;\n\tfor (int i = 0; i < n; i++) {\n\t\tfor (int\
-    \ j : adj[i]) {\n\t\t\t++in[j];\n\t\t}\n\t}\n\tfor (int i = 0; i < n; i++) {\n\
-    \t\tif (!in[i]) {\n\t\t\ttodo.push_back(i);\n\t\t}\n\t}\n\twhile (!todo.empty())\
-    \ {\n\t\tint x = todo.front();\n\t\ttodo.pop_front();\n\t\tres.push_back(x);\n\
-    \t\tfor (int nxt : adj[x]) {\n\t\t\tif (!(--in[nxt])) {\n\t\t\t\ttodo.push_back(nxt);\n\
-    \t\t\t}\n\t\t}\n\t}\n\treturn res;\n}"
+  bundledCode: "\r\nstd::vector<int> topo_sort(std::vector<std::vector<int>> adj)\
+    \ {\r\n\tint n = (int)adj.size();\r\n\tstd::vector<int> in(n);\r\n\tstd::vector<int>\
+    \ res;\r\n\tstd::list<int> todo;\r\n\tfor (int i = 0; i < n; i++) {\r\n\t\tfor\
+    \ (int j : adj[i]) {\r\n\t\t\t++in[j];\r\n\t\t}\r\n\t}\r\n\tfor (int i = 0; i\
+    \ < n; i++) {\r\n\t\tif (!in[i]) {\r\n\t\t\ttodo.push_back(i);\r\n\t\t}\r\n\t\
+    }\r\n\twhile (!todo.empty()) {\r\n\t\tint x = todo.front();\r\n\t\ttodo.pop_front();\r\
+    \n\t\tres.push_back(x);\r\n\t\tfor (int nxt : adj[x]) {\r\n\t\t\tif (!(--in[nxt]))\
+    \ {\r\n\t\t\t\ttodo.push_back(nxt);\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n\treturn res;\r\
+    \n}\n"
+  code: "#pragma once\r\n\r\nstd::vector<int> topo_sort(std::vector<std::vector<int>>\
+    \ adj) {\r\n\tint n = (int)adj.size();\r\n\tstd::vector<int> in(n);\r\n\tstd::vector<int>\
+    \ res;\r\n\tstd::list<int> todo;\r\n\tfor (int i = 0; i < n; i++) {\r\n\t\tfor\
+    \ (int j : adj[i]) {\r\n\t\t\t++in[j];\r\n\t\t}\r\n\t}\r\n\tfor (int i = 0; i\
+    \ < n; i++) {\r\n\t\tif (!in[i]) {\r\n\t\t\ttodo.push_back(i);\r\n\t\t}\r\n\t\
+    }\r\n\twhile (!todo.empty()) {\r\n\t\tint x = todo.front();\r\n\t\ttodo.pop_front();\r\
+    \n\t\tres.push_back(x);\r\n\t\tfor (int nxt : adj[x]) {\r\n\t\t\tif (!(--in[nxt]))\
+    \ {\r\n\t\t\t\ttodo.push_back(nxt);\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n\treturn res;\r\
+    \n}"
   dependsOn: []
   isVerificationFile: false
   path: library/graphs/topological-sort.hpp
   requiredBy: []
-  timestamp: '2021-08-13 01:11:50-04:00'
+  timestamp: '2022-07-21 16:12:33-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/codeforces/codeforces-1463E.test.cpp

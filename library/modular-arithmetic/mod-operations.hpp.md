@@ -11,36 +11,38 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "\nnamespace ModOperations {\n\nconst int MOD = 1e9 + 7;\n\nint mpow(long\
-    \ long b, long long e) {\n\tlong long r = 1;\n\twhile (e) {\n\t\tif (e & 1) {\n\
-    \t\t\tr *= b; \n\t\t\tr %= MOD;\n\t\t}\n\t\tb *= b; \n\t\tb %= MOD;\n\t\te >>=\
-    \ 1;\n\t}\n\treturn r;\n}\n\nint minv(int a) { assert(a); return mpow(a, MOD -\
-    \ 2); }\nint add(int a, int b) { a += b; if (a >= MOD) a -= MOD; return a; }\n\
-    int sub(int a, int b) { a -= b; if (a < 0) a += MOD; return a; }\nint mul(int\
-    \ a, int b) { return 1LL * a * b % MOD; }\nint divi(int a, int b) { return mul(a,\
-    \ minv(b)); }\nint neg(int a) { return a == 0 ? 0 : MOD - a; }\nint mod(long long\
-    \ v) { \n\tv = int((-MOD < v && v < MOD) ? v : v % MOD); if (v < 0) v += MOD;\
-    \ return v; }\n\t\nint madd(int& a, int b) { return a = add(a, b); }\nint msub(int&\
-    \ a, int b) { return a = sub(a, b); }\nint mmul(int& a, int b) { return a = mul(a,\
-    \ b); }\nint mdivi(int& a, int b) { return a = divi(a, b); }\n\n} // ModOperations\n"
-  code: "#pragma once\n\nnamespace ModOperations {\n\nconst int MOD = 1e9 + 7;\n\n\
-    int mpow(long long b, long long e) {\n\tlong long r = 1;\n\twhile (e) {\n\t\t\
-    if (e & 1) {\n\t\t\tr *= b; \n\t\t\tr %= MOD;\n\t\t}\n\t\tb *= b; \n\t\tb %= MOD;\n\
-    \t\te >>= 1;\n\t}\n\treturn r;\n}\n\nint minv(int a) { assert(a); return mpow(a,\
-    \ MOD - 2); }\nint add(int a, int b) { a += b; if (a >= MOD) a -= MOD; return\
-    \ a; }\nint sub(int a, int b) { a -= b; if (a < 0) a += MOD; return a; }\nint\
-    \ mul(int a, int b) { return 1LL * a * b % MOD; }\nint divi(int a, int b) { return\
-    \ mul(a, minv(b)); }\nint neg(int a) { return a == 0 ? 0 : MOD - a; }\nint mod(long\
-    \ long v) { \n\tv = int((-MOD < v && v < MOD) ? v : v % MOD); if (v < 0) v +=\
-    \ MOD; return v; }\n\t\nint madd(int& a, int b) { return a = add(a, b); }\nint\
-    \ msub(int& a, int b) { return a = sub(a, b); }\nint mmul(int& a, int b) { return\
-    \ a = mul(a, b); }\nint mdivi(int& a, int b) { return a = divi(a, b); }\n\n} //\
-    \ ModOperations"
+  bundledCode: "\r\nnamespace ModOperations {\r\n\r\nconst int MOD = 1e9 + 7;\r\n\r\
+    \nint mpow(long long b, long long e) {\r\n\tlong long r = 1;\r\n\twhile (e) {\r\
+    \n\t\tif (e & 1) {\r\n\t\t\tr *= b; \r\n\t\t\tr %= MOD;\r\n\t\t}\r\n\t\tb *= b;\
+    \ \r\n\t\tb %= MOD;\r\n\t\te >>= 1;\r\n\t}\r\n\treturn r;\r\n}\r\n\r\nint minv(int\
+    \ a) { assert(a); return mpow(a, MOD - 2); }\r\nint add(int a, int b) { a += b;\
+    \ if (a >= MOD) a -= MOD; return a; }\r\nint sub(int a, int b) { a -= b; if (a\
+    \ < 0) a += MOD; return a; }\r\nint mul(int a, int b) { return 1LL * a * b % MOD;\
+    \ }\r\nint divi(int a, int b) { return mul(a, minv(b)); }\r\nint neg(int a) {\
+    \ return a == 0 ? 0 : MOD - a; }\r\nint mod(long long v) { \r\n\tv = int((-MOD\
+    \ < v && v < MOD) ? v : v % MOD); if (v < 0) v += MOD; return v; }\r\n\t\r\nint\
+    \ madd(int& a, int b) { return a = add(a, b); }\r\nint msub(int& a, int b) { return\
+    \ a = sub(a, b); }\r\nint mmul(int& a, int b) { return a = mul(a, b); }\r\nint\
+    \ mdivi(int& a, int b) { return a = divi(a, b); }\r\n\r\n} // ModOperations\n"
+  code: "#pragma once\r\n\r\nnamespace ModOperations {\r\n\r\nconst int MOD = 1e9\
+    \ + 7;\r\n\r\nint mpow(long long b, long long e) {\r\n\tlong long r = 1;\r\n\t\
+    while (e) {\r\n\t\tif (e & 1) {\r\n\t\t\tr *= b; \r\n\t\t\tr %= MOD;\r\n\t\t}\r\
+    \n\t\tb *= b; \r\n\t\tb %= MOD;\r\n\t\te >>= 1;\r\n\t}\r\n\treturn r;\r\n}\r\n\
+    \r\nint minv(int a) { assert(a); return mpow(a, MOD - 2); }\r\nint add(int a,\
+    \ int b) { a += b; if (a >= MOD) a -= MOD; return a; }\r\nint sub(int a, int b)\
+    \ { a -= b; if (a < 0) a += MOD; return a; }\r\nint mul(int a, int b) { return\
+    \ 1LL * a * b % MOD; }\r\nint divi(int a, int b) { return mul(a, minv(b)); }\r\
+    \nint neg(int a) { return a == 0 ? 0 : MOD - a; }\r\nint mod(long long v) { \r\
+    \n\tv = int((-MOD < v && v < MOD) ? v : v % MOD); if (v < 0) v += MOD; return\
+    \ v; }\r\n\t\r\nint madd(int& a, int b) { return a = add(a, b); }\r\nint msub(int&\
+    \ a, int b) { return a = sub(a, b); }\r\nint mmul(int& a, int b) { return a =\
+    \ mul(a, b); }\r\nint mdivi(int& a, int b) { return a = divi(a, b); }\r\n\r\n\
+    } // ModOperations"
   dependsOn: []
   isVerificationFile: false
   path: library/modular-arithmetic/mod-operations.hpp
   requiredBy: []
-  timestamp: '2021-08-16 13:31:52-04:00'
+  timestamp: '2022-07-21 16:12:33-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/codeforces/codeforces-1299D.test.cpp

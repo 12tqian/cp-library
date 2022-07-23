@@ -14,32 +14,36 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "\nstruct DSURollBack {\n\tstd::vector<int> e;\n\t\n\tvoid init(int\
-    \ n) {\n\t\te = std::vector<int>(n, -1);\n\t}\n\n\tint get(int x) {\n\t\treturn\
-    \ e[x] < 0 ? x : get(e[x]);\n\t}\n\n\tbool same_set(int a, int b) {\n\t\treturn\
-    \ get(a) == get(b);\n\t}\n\n\tint size(int x) {\n\t\treturn -e[get(x)];\n\t}\n\
-    \n\tstd::vector<std::array<int, 4>> mod;\n\t\n\tbool unite(int x, int y) {\n\t\
-    \tx = get(x), y = get(y);\n\t\tif (x == y) {\n\t\t\tmod.push_back({-1, -1, -1,\
-    \ -1});\n\t\t\treturn 0;\n\t\t}\n\t\tif (e[x] > e[y]) std::swap(x, y);\n\t\tmod.push_back({x,\
-    \ y, e[x], e[y]});\n\t\te[x] += e[y], e[y] = x;\n\t\treturn true;\n\t}\n\n\tvoid\
-    \ rollback() {\n\t\tauto a = mod.back();\n\t\tmod.pop_back();\n\t\tif (a[0] !=\
-    \ -1) {\n\t\t\te[a[0]] = a[2];\n\t\t\te[a[1]] = a[3];\n\t\t}\n\t}\n};\n"
-  code: "#pragma once\n\nstruct DSURollBack {\n\tstd::vector<int> e;\n\t\n\tvoid init(int\
-    \ n) {\n\t\te = std::vector<int>(n, -1);\n\t}\n\n\tint get(int x) {\n\t\treturn\
-    \ e[x] < 0 ? x : get(e[x]);\n\t}\n\n\tbool same_set(int a, int b) {\n\t\treturn\
-    \ get(a) == get(b);\n\t}\n\n\tint size(int x) {\n\t\treturn -e[get(x)];\n\t}\n\
-    \n\tstd::vector<std::array<int, 4>> mod;\n\t\n\tbool unite(int x, int y) {\n\t\
-    \tx = get(x), y = get(y);\n\t\tif (x == y) {\n\t\t\tmod.push_back({-1, -1, -1,\
-    \ -1});\n\t\t\treturn 0;\n\t\t}\n\t\tif (e[x] > e[y]) std::swap(x, y);\n\t\tmod.push_back({x,\
-    \ y, e[x], e[y]});\n\t\te[x] += e[y], e[y] = x;\n\t\treturn true;\n\t}\n\n\tvoid\
-    \ rollback() {\n\t\tauto a = mod.back();\n\t\tmod.pop_back();\n\t\tif (a[0] !=\
-    \ -1) {\n\t\t\te[a[0]] = a[2];\n\t\t\te[a[1]] = a[3];\n\t\t}\n\t}\n};\n"
+  bundledCode: "\r\nstruct DSURollBack {\r\n\tstd::vector<int> e;\r\n\t\r\n\tvoid\
+    \ init(int n) {\r\n\t\te = std::vector<int>(n, -1);\r\n\t}\r\n\r\n\tint get(int\
+    \ x) {\r\n\t\treturn e[x] < 0 ? x : get(e[x]);\r\n\t}\r\n\r\n\tbool same_set(int\
+    \ a, int b) {\r\n\t\treturn get(a) == get(b);\r\n\t}\r\n\r\n\tint size(int x)\
+    \ {\r\n\t\treturn -e[get(x)];\r\n\t}\r\n\r\n\tstd::vector<std::array<int, 4>>\
+    \ mod;\r\n\t\r\n\tbool unite(int x, int y) {\r\n\t\tx = get(x), y = get(y);\r\n\
+    \t\tif (x == y) {\r\n\t\t\tmod.push_back({-1, -1, -1, -1});\r\n\t\t\treturn 0;\r\
+    \n\t\t}\r\n\t\tif (e[x] > e[y]) std::swap(x, y);\r\n\t\tmod.push_back({x, y, e[x],\
+    \ e[y]});\r\n\t\te[x] += e[y], e[y] = x;\r\n\t\treturn true;\r\n\t}\r\n\r\n\t\
+    void rollback() {\r\n\t\tauto a = mod.back();\r\n\t\tmod.pop_back();\r\n\t\tif\
+    \ (a[0] != -1) {\r\n\t\t\te[a[0]] = a[2];\r\n\t\t\te[a[1]] = a[3];\r\n\t\t}\r\n\
+    \t}\r\n};\r\n"
+  code: "#pragma once\r\n\r\nstruct DSURollBack {\r\n\tstd::vector<int> e;\r\n\t\r\
+    \n\tvoid init(int n) {\r\n\t\te = std::vector<int>(n, -1);\r\n\t}\r\n\r\n\tint\
+    \ get(int x) {\r\n\t\treturn e[x] < 0 ? x : get(e[x]);\r\n\t}\r\n\r\n\tbool same_set(int\
+    \ a, int b) {\r\n\t\treturn get(a) == get(b);\r\n\t}\r\n\r\n\tint size(int x)\
+    \ {\r\n\t\treturn -e[get(x)];\r\n\t}\r\n\r\n\tstd::vector<std::array<int, 4>>\
+    \ mod;\r\n\t\r\n\tbool unite(int x, int y) {\r\n\t\tx = get(x), y = get(y);\r\n\
+    \t\tif (x == y) {\r\n\t\t\tmod.push_back({-1, -1, -1, -1});\r\n\t\t\treturn 0;\r\
+    \n\t\t}\r\n\t\tif (e[x] > e[y]) std::swap(x, y);\r\n\t\tmod.push_back({x, y, e[x],\
+    \ e[y]});\r\n\t\te[x] += e[y], e[y] = x;\r\n\t\treturn true;\r\n\t}\r\n\r\n\t\
+    void rollback() {\r\n\t\tauto a = mod.back();\r\n\t\tmod.pop_back();\r\n\t\tif\
+    \ (a[0] != -1) {\r\n\t\t\te[a[0]] = a[2];\r\n\t\t\te[a[1]] = a[3];\r\n\t\t}\r\n\
+    \t}\r\n};\r\n"
   dependsOn: []
   isVerificationFile: false
   path: library/graphs/dsu-rollback.hpp
   requiredBy:
   - library/graphs/offline-dynamic-connectivity.hpp
-  timestamp: '2021-07-24 19:40:07-04:00'
+  timestamp: '2022-07-21 16:12:33-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/spoj/spoj-DYNACON2.test.cpp

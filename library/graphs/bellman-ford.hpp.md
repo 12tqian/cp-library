@@ -11,64 +11,68 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "\ntemplate <class T> struct BellmanFord {\n\tconst T INF = std::numeric_limits<T>::max();\n\
-    \tint n; \n\tstd::vector<std::vector<int>> adj;\n\tstd::vector<std::pair<std::pair<int,\
-    \ int>, T>> edges;\n\tstd::vector<T> dist;\n\n\tvoid init(int n_) {\n\t\tn = n_;\n\
-    \t\tadj.assign(n, std::vector<int>());\n\t\tedges.clear();\n\t\tdist.assign(n,\
-    \ 0);\n\t}\n\n\tvoid ae(int u, int v, T w) {\n\t\tadj[u].push_back(v);\n\t\tedges.push_back({{u,\
-    \ v}, w});\n\t}   \n\n\tvoid gen_bad(int x) {\n\t\tif (dist[x] == -INF)\n\t\t\t\
-    return;\n\t\tdist[x] = -INF;\n\t\tfor (auto& nxt : adj[x])\n\t\t\tgen_bad(nxt);\n\
-    \t}\n\n\tvoid gen(int src) {\n\t\tfor (int i = 0; i < n; i++) \n\t\t\tdist[i]\
-    \ = INF;\n\t\tdist[src] = 0;\n\t\tfor (int i = 0; i < n; i++)\n\t\t\tfor (auto&\
-    \ e : edges) \n\t\t\t\tif (dist[e.first.first] < INF)\n\t\t\t\t\tdist[e.first.second]\
-    \ = std::min(dist[e.first.second], dist[e.first.first] + e.second);\n\t\tfor (auto&\
-    \ e : edges) \n\t\t\tif (dist[e.first.first] < INF && dist[e.first.second] > dist[e.first.first]\
-    \ + e.second)\n\t\t\t\tgen_bad(e.first.second);\n\t}\n\t\n\tstd::vector<int> negative_cycle(int\
-    \ src = 0) {\n\t\tfor (int i = 0; i < n; i++)\n\t\t\tdist[src] = INF;\n\t\tdist[src]\
-    \ = 0;\n\t\tstd::vector<int> pre(n);\n\t\tfor (auto& e : edges) \n\t\t\tif (e.first.first\
-    \ == e.first.second && e.second < 0) \n\t\t\t\treturn {e.first.first};\n\t\tfor\
-    \ (int i = 0; i < n; i++) \n\t\t\tfor (auto& e : edges) \n\t\t\t\tif (dist[e.first.first]\
-    \ < INF)\n\t\t\t\t\tif (dist[e.first.second] > dist[e.first.first] + e.second)\
-    \ {\n\t\t\t\t\t\tdist[e.first.second] = dist[e.first.first] + e.second;\n\t\t\t\
-    \t\t\tpre[e.first.second] = e.first.first;\n\t\t\t\t\t}\n\t\tfor (auto& e : edges)\
-    \ \n\t\t\tif (dist[e.first.first] < INF)\n\t\t\t\tif (dist[e.first.second] > dist[e.first.first]\
-    \ + e.second) {\n\t\t\t\t\tint x = e.first.second;\n\t\t\t\t\tfor (int i = 0;\
-    \ i < n; i++)\n\t\t\t\t\t\tx = pre[x];\n\t\t\t\t\tstd::vector<int> cycle;\n\t\t\
-    \t\t\tfor (int v = x; v != x || cycle.empty(); v = pre[v])\n\t\t\t\t\t\tcycle.push_back(v);\n\
-    \t\t\t\t\treverse(cycle.begin(), cycle.end());\n\t\t\t\t\treturn cycle;\n\t\t\t\
-    \t}\n\t\treturn {};\n\t}\n};\n"
-  code: "#pragma once\n\ntemplate <class T> struct BellmanFord {\n\tconst T INF =\
-    \ std::numeric_limits<T>::max();\n\tint n; \n\tstd::vector<std::vector<int>> adj;\n\
-    \tstd::vector<std::pair<std::pair<int, int>, T>> edges;\n\tstd::vector<T> dist;\n\
-    \n\tvoid init(int n_) {\n\t\tn = n_;\n\t\tadj.assign(n, std::vector<int>());\n\
-    \t\tedges.clear();\n\t\tdist.assign(n, 0);\n\t}\n\n\tvoid ae(int u, int v, T w)\
-    \ {\n\t\tadj[u].push_back(v);\n\t\tedges.push_back({{u, v}, w});\n\t}   \n\n\t\
-    void gen_bad(int x) {\n\t\tif (dist[x] == -INF)\n\t\t\treturn;\n\t\tdist[x] =\
-    \ -INF;\n\t\tfor (auto& nxt : adj[x])\n\t\t\tgen_bad(nxt);\n\t}\n\n\tvoid gen(int\
-    \ src) {\n\t\tfor (int i = 0; i < n; i++) \n\t\t\tdist[i] = INF;\n\t\tdist[src]\
-    \ = 0;\n\t\tfor (int i = 0; i < n; i++)\n\t\t\tfor (auto& e : edges) \n\t\t\t\t\
-    if (dist[e.first.first] < INF)\n\t\t\t\t\tdist[e.first.second] = std::min(dist[e.first.second],\
-    \ dist[e.first.first] + e.second);\n\t\tfor (auto& e : edges) \n\t\t\tif (dist[e.first.first]\
-    \ < INF && dist[e.first.second] > dist[e.first.first] + e.second)\n\t\t\t\tgen_bad(e.first.second);\n\
-    \t}\n\t\n\tstd::vector<int> negative_cycle(int src = 0) {\n\t\tfor (int i = 0;\
-    \ i < n; i++)\n\t\t\tdist[src] = INF;\n\t\tdist[src] = 0;\n\t\tstd::vector<int>\
-    \ pre(n);\n\t\tfor (auto& e : edges) \n\t\t\tif (e.first.first == e.first.second\
-    \ && e.second < 0) \n\t\t\t\treturn {e.first.first};\n\t\tfor (int i = 0; i <\
-    \ n; i++) \n\t\t\tfor (auto& e : edges) \n\t\t\t\tif (dist[e.first.first] < INF)\n\
-    \t\t\t\t\tif (dist[e.first.second] > dist[e.first.first] + e.second) {\n\t\t\t\
-    \t\t\tdist[e.first.second] = dist[e.first.first] + e.second;\n\t\t\t\t\t\tpre[e.first.second]\
-    \ = e.first.first;\n\t\t\t\t\t}\n\t\tfor (auto& e : edges) \n\t\t\tif (dist[e.first.first]\
-    \ < INF)\n\t\t\t\tif (dist[e.first.second] > dist[e.first.first] + e.second) {\n\
-    \t\t\t\t\tint x = e.first.second;\n\t\t\t\t\tfor (int i = 0; i < n; i++)\n\t\t\
-    \t\t\t\tx = pre[x];\n\t\t\t\t\tstd::vector<int> cycle;\n\t\t\t\t\tfor (int v =\
-    \ x; v != x || cycle.empty(); v = pre[v])\n\t\t\t\t\t\tcycle.push_back(v);\n\t\
-    \t\t\t\treverse(cycle.begin(), cycle.end());\n\t\t\t\t\treturn cycle;\n\t\t\t\t\
-    }\n\t\treturn {};\n\t}\n};"
+  bundledCode: "\r\ntemplate <class T> struct BellmanFord {\r\n\tconst T INF = std::numeric_limits<T>::max();\r\
+    \n\tint n; \r\n\tstd::vector<std::vector<int>> adj;\r\n\tstd::vector<std::pair<std::pair<int,\
+    \ int>, T>> edges;\r\n\tstd::vector<T> dist;\r\n\r\n\tvoid init(int n_) {\r\n\t\
+    \tn = n_;\r\n\t\tadj.assign(n, std::vector<int>());\r\n\t\tedges.clear();\r\n\t\
+    \tdist.assign(n, 0);\r\n\t}\r\n\r\n\tvoid ae(int u, int v, T w) {\r\n\t\tadj[u].push_back(v);\r\
+    \n\t\tedges.push_back({{u, v}, w});\r\n\t}   \r\n\r\n\tvoid gen_bad(int x) {\r\
+    \n\t\tif (dist[x] == -INF)\r\n\t\t\treturn;\r\n\t\tdist[x] = -INF;\r\n\t\tfor\
+    \ (auto& nxt : adj[x])\r\n\t\t\tgen_bad(nxt);\r\n\t}\r\n\r\n\tvoid gen(int src)\
+    \ {\r\n\t\tfor (int i = 0; i < n; i++) \r\n\t\t\tdist[i] = INF;\r\n\t\tdist[src]\
+    \ = 0;\r\n\t\tfor (int i = 0; i < n; i++)\r\n\t\t\tfor (auto& e : edges) \r\n\t\
+    \t\t\tif (dist[e.first.first] < INF)\r\n\t\t\t\t\tdist[e.first.second] = std::min(dist[e.first.second],\
+    \ dist[e.first.first] + e.second);\r\n\t\tfor (auto& e : edges) \r\n\t\t\tif (dist[e.first.first]\
+    \ < INF && dist[e.first.second] > dist[e.first.first] + e.second)\r\n\t\t\t\t\
+    gen_bad(e.first.second);\r\n\t}\r\n\t\r\n\tstd::vector<int> negative_cycle(int\
+    \ src = 0) {\r\n\t\tfor (int i = 0; i < n; i++)\r\n\t\t\tdist[src] = INF;\r\n\t\
+    \tdist[src] = 0;\r\n\t\tstd::vector<int> pre(n);\r\n\t\tfor (auto& e : edges)\
+    \ \r\n\t\t\tif (e.first.first == e.first.second && e.second < 0) \r\n\t\t\t\t\
+    return {e.first.first};\r\n\t\tfor (int i = 0; i < n; i++) \r\n\t\t\tfor (auto&\
+    \ e : edges) \r\n\t\t\t\tif (dist[e.first.first] < INF)\r\n\t\t\t\t\tif (dist[e.first.second]\
+    \ > dist[e.first.first] + e.second) {\r\n\t\t\t\t\t\tdist[e.first.second] = dist[e.first.first]\
+    \ + e.second;\r\n\t\t\t\t\t\tpre[e.first.second] = e.first.first;\r\n\t\t\t\t\t\
+    }\r\n\t\tfor (auto& e : edges) \r\n\t\t\tif (dist[e.first.first] < INF)\r\n\t\t\
+    \t\tif (dist[e.first.second] > dist[e.first.first] + e.second) {\r\n\t\t\t\t\t\
+    int x = e.first.second;\r\n\t\t\t\t\tfor (int i = 0; i < n; i++)\r\n\t\t\t\t\t\
+    \tx = pre[x];\r\n\t\t\t\t\tstd::vector<int> cycle;\r\n\t\t\t\t\tfor (int v = x;\
+    \ v != x || cycle.empty(); v = pre[v])\r\n\t\t\t\t\t\tcycle.push_back(v);\r\n\t\
+    \t\t\t\treverse(cycle.begin(), cycle.end());\r\n\t\t\t\t\treturn cycle;\r\n\t\t\
+    \t\t}\r\n\t\treturn {};\r\n\t}\r\n};\n"
+  code: "#pragma once\r\n\r\ntemplate <class T> struct BellmanFord {\r\n\tconst T\
+    \ INF = std::numeric_limits<T>::max();\r\n\tint n; \r\n\tstd::vector<std::vector<int>>\
+    \ adj;\r\n\tstd::vector<std::pair<std::pair<int, int>, T>> edges;\r\n\tstd::vector<T>\
+    \ dist;\r\n\r\n\tvoid init(int n_) {\r\n\t\tn = n_;\r\n\t\tadj.assign(n, std::vector<int>());\r\
+    \n\t\tedges.clear();\r\n\t\tdist.assign(n, 0);\r\n\t}\r\n\r\n\tvoid ae(int u,\
+    \ int v, T w) {\r\n\t\tadj[u].push_back(v);\r\n\t\tedges.push_back({{u, v}, w});\r\
+    \n\t}   \r\n\r\n\tvoid gen_bad(int x) {\r\n\t\tif (dist[x] == -INF)\r\n\t\t\t\
+    return;\r\n\t\tdist[x] = -INF;\r\n\t\tfor (auto& nxt : adj[x])\r\n\t\t\tgen_bad(nxt);\r\
+    \n\t}\r\n\r\n\tvoid gen(int src) {\r\n\t\tfor (int i = 0; i < n; i++) \r\n\t\t\
+    \tdist[i] = INF;\r\n\t\tdist[src] = 0;\r\n\t\tfor (int i = 0; i < n; i++)\r\n\t\
+    \t\tfor (auto& e : edges) \r\n\t\t\t\tif (dist[e.first.first] < INF)\r\n\t\t\t\
+    \t\tdist[e.first.second] = std::min(dist[e.first.second], dist[e.first.first]\
+    \ + e.second);\r\n\t\tfor (auto& e : edges) \r\n\t\t\tif (dist[e.first.first]\
+    \ < INF && dist[e.first.second] > dist[e.first.first] + e.second)\r\n\t\t\t\t\
+    gen_bad(e.first.second);\r\n\t}\r\n\t\r\n\tstd::vector<int> negative_cycle(int\
+    \ src = 0) {\r\n\t\tfor (int i = 0; i < n; i++)\r\n\t\t\tdist[src] = INF;\r\n\t\
+    \tdist[src] = 0;\r\n\t\tstd::vector<int> pre(n);\r\n\t\tfor (auto& e : edges)\
+    \ \r\n\t\t\tif (e.first.first == e.first.second && e.second < 0) \r\n\t\t\t\t\
+    return {e.first.first};\r\n\t\tfor (int i = 0; i < n; i++) \r\n\t\t\tfor (auto&\
+    \ e : edges) \r\n\t\t\t\tif (dist[e.first.first] < INF)\r\n\t\t\t\t\tif (dist[e.first.second]\
+    \ > dist[e.first.first] + e.second) {\r\n\t\t\t\t\t\tdist[e.first.second] = dist[e.first.first]\
+    \ + e.second;\r\n\t\t\t\t\t\tpre[e.first.second] = e.first.first;\r\n\t\t\t\t\t\
+    }\r\n\t\tfor (auto& e : edges) \r\n\t\t\tif (dist[e.first.first] < INF)\r\n\t\t\
+    \t\tif (dist[e.first.second] > dist[e.first.first] + e.second) {\r\n\t\t\t\t\t\
+    int x = e.first.second;\r\n\t\t\t\t\tfor (int i = 0; i < n; i++)\r\n\t\t\t\t\t\
+    \tx = pre[x];\r\n\t\t\t\t\tstd::vector<int> cycle;\r\n\t\t\t\t\tfor (int v = x;\
+    \ v != x || cycle.empty(); v = pre[v])\r\n\t\t\t\t\t\tcycle.push_back(v);\r\n\t\
+    \t\t\t\treverse(cycle.begin(), cycle.end());\r\n\t\t\t\t\treturn cycle;\r\n\t\t\
+    \t\t}\r\n\t\treturn {};\r\n\t}\r\n};"
   dependsOn: []
   isVerificationFile: false
   path: library/graphs/bellman-ford.hpp
   requiredBy: []
-  timestamp: '2022-01-01 22:55:25-05:00'
+  timestamp: '2022-07-21 16:12:33-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/aizu/aizu-GRL_1_B.test.cpp

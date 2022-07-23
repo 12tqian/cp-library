@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
   - icon: ':heavy_check_mark:'
@@ -18,35 +18,37 @@ data:
     links:
     - https://judge.yosupo.jp/problem/enumerate_palindromes
   bundledCode: "#define PROBLEM \"https://judge.yosupo.jp/problem/enumerate_palindromes\"\
-    \n\n\n#include <algorithm>\n#include <array>\n#include <bitset>\n#include <cassert>\n\
-    #include <chrono>\n#include <cmath>\n#include <complex>\n#include <cstdio>\n#include\
-    \ <cstdlib>\n#include <cstring>\n#include <ctime>\n#include <deque>\n#include\
-    \ <iostream>\n#include <iomanip>\n#include <list>\n#include <map>\n#include <numeric>\n\
-    #include <queue>\n#include <random>\n#include <set>\n#include <stack>\n#include\
-    \ <string>\n#include <unordered_map>\n#include <vector>\n\nusing namespace std;\n\
-    \nstd::vector<int> manacher(std::string s) {\n\tstd::string t = \"@\";\n\tfor\
-    \ (auto& c : s) \n\t\tt += c, t += '#';\n\tt.back() = '&';\n\tstd::vector<int>\
-    \ res((int)t.size() - 1);\n\tint lo = 0, hi = 0;\n\tfor (int i = 1; i < (int)t.size()\
-    \ - 1; i++) {\n\t\tif (i != 1)\n\t\t\tres[i] = std::min(hi - i, res[hi - i + lo]);\n\
-    \t\twhile (t[i - res[i] - 1] == t[i + res[i] + 1])\n\t\t\tres[i]++;\n\t\tif (i\
-    \ + res[i] > hi)\n\t\t\tlo = i - res[i], hi = i + res[i];\n\t}\n\tres.erase(res.begin());\n\
-    \tfor (int i = 0; i < (int)res.size(); i++)\n\t\tif ((i & 1) == (res[i] & 1))\n\
-    \t\t\tres[i]++;\n\treturn res;\n}\n\nint main() {\n\tstd::ios_base::sync_with_stdio(0);\n\
-    \tstd::string s; std::cin >> s;\n\tstd::vector<int> ans = manacher(s);\n\tfor\
-    \ (int &x : ans)\n\t\tstd::cout << x << \" \";\n\tstd::cout << '\\n';\n\treturn\
-    \ 0;\n}   \n"
+    \r\n\r\n\r\n#include <algorithm>\r\n#include <array>\r\n#include <bitset>\r\n\
+    #include <cassert>\r\n#include <chrono>\r\n#include <cmath>\r\n#include <complex>\r\
+    \n#include <cstdio>\r\n#include <cstdlib>\r\n#include <cstring>\r\n#include <ctime>\r\
+    \n#include <deque>\r\n#include <iostream>\r\n#include <iomanip>\r\n#include <list>\r\
+    \n#include <map>\r\n#include <numeric>\r\n#include <queue>\r\n#include <random>\r\
+    \n#include <set>\r\n#include <stack>\r\n#include <string>\r\n#include <unordered_map>\r\
+    \n#include <vector>\r\n\r\nusing namespace std;\n\r\nstd::vector<int> manacher(std::string\
+    \ s) {\r\n\tstd::string t = \"@\";\r\n\tfor (auto& c : s) \r\n\t\tt += c, t +=\
+    \ '#';\r\n\tt.back() = '&';\r\n\tstd::vector<int> res((int)t.size() - 1);\r\n\t\
+    int lo = 0, hi = 0;\r\n\tfor (int i = 1; i < (int)t.size() - 1; i++) {\r\n\t\t\
+    if (i != 1)\r\n\t\t\tres[i] = std::min(hi - i, res[hi - i + lo]);\r\n\t\twhile\
+    \ (t[i - res[i] - 1] == t[i + res[i] + 1])\r\n\t\t\tres[i]++;\r\n\t\tif (i + res[i]\
+    \ > hi)\r\n\t\t\tlo = i - res[i], hi = i + res[i];\r\n\t}\r\n\tres.erase(res.begin());\r\
+    \n\tfor (int i = 0; i < (int)res.size(); i++)\r\n\t\tif ((i & 1) == (res[i] &\
+    \ 1))\r\n\t\t\tres[i]++;\r\n\treturn res;\r\n}\n\r\nint main() {\r\n\tstd::ios_base::sync_with_stdio(0);\r\
+    \n\tstd::string s; std::cin >> s;\r\n\tstd::vector<int> ans = manacher(s);\r\n\
+    \tfor (int &x : ans)\r\n\t\tstd::cout << x << \" \";\r\n\tstd::cout << '\\n';\r\
+    \n\treturn 0;\r\n}   \n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/enumerate_palindromes\"\
-    \n\n#include \"../../library/contest/template-minimal.hpp\"\n#include \"../../library/string/manacher.hpp\"\
-    \n\nint main() {\n\tstd::ios_base::sync_with_stdio(0);\n\tstd::string s; std::cin\
-    \ >> s;\n\tstd::vector<int> ans = manacher(s);\n\tfor (int &x : ans)\n\t\tstd::cout\
-    \ << x << \" \";\n\tstd::cout << '\\n';\n\treturn 0;\n}   "
+    \r\n\r\n#include \"../../library/contest/template-minimal.hpp\"\r\n#include \"\
+    ../../library/string/manacher.hpp\"\r\n\r\nint main() {\r\n\tstd::ios_base::sync_with_stdio(0);\r\
+    \n\tstd::string s; std::cin >> s;\r\n\tstd::vector<int> ans = manacher(s);\r\n\
+    \tfor (int &x : ans)\r\n\t\tstd::cout << x << \" \";\r\n\tstd::cout << '\\n';\r\
+    \n\treturn 0;\r\n}   "
   dependsOn:
   - library/contest/template-minimal.hpp
   - library/string/manacher.hpp
   isVerificationFile: true
   path: verify/yosupo/yosupo-enumerate_palindromes.test.cpp
   requiredBy: []
-  timestamp: '2021-08-16 13:46:51-04:00'
+  timestamp: '2022-07-21 16:12:33-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/yosupo-enumerate_palindromes.test.cpp

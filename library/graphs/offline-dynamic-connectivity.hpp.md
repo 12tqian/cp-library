@@ -14,55 +14,58 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "\n\nstruct DSURollBack {\n\tstd::vector<int> e;\n\t\n\tvoid init(int\
-    \ n) {\n\t\te = std::vector<int>(n, -1);\n\t}\n\n\tint get(int x) {\n\t\treturn\
-    \ e[x] < 0 ? x : get(e[x]);\n\t}\n\n\tbool same_set(int a, int b) {\n\t\treturn\
-    \ get(a) == get(b);\n\t}\n\n\tint size(int x) {\n\t\treturn -e[get(x)];\n\t}\n\
-    \n\tstd::vector<std::array<int, 4>> mod;\n\t\n\tbool unite(int x, int y) {\n\t\
-    \tx = get(x), y = get(y);\n\t\tif (x == y) {\n\t\t\tmod.push_back({-1, -1, -1,\
-    \ -1});\n\t\t\treturn 0;\n\t\t}\n\t\tif (e[x] > e[y]) std::swap(x, y);\n\t\tmod.push_back({x,\
-    \ y, e[x], e[y]});\n\t\te[x] += e[y], e[y] = x;\n\t\treturn true;\n\t}\n\n\tvoid\
-    \ rollback() {\n\t\tauto a = mod.back();\n\t\tmod.pop_back();\n\t\tif (a[0] !=\
-    \ -1) {\n\t\t\te[a[0]] = a[2];\n\t\t\te[a[1]] = a[3];\n\t\t}\n\t}\n};\n\nstruct\
-    \ OfflineDynamicConnectivity {\n\tDSURollBack dsu;\n\tint sz;\n\tstd::vector<std::vector<std::pair<int,\
-    \ int>>> seg;\n\tstd::vector<std::vector<std::pair<int, int>>> queries;\n\tstd::vector<int>\
-    \ ans;\n\n\tvoid upd(int l, int r, std::pair<int, int> p) {\n\t\t// add edge p\
-    \ from time [l, r]\n\t\tfor (l += sz, r += sz + 1; l < r; l /= 2, r /= 2) {\n\t\
-    \t\tif (l & 1) seg[l++].push_back(p);\n\t\t\tif (r & 1) seg[--r].push_back(p);\n\
-    \t\t}\n\t}\n\n\tvoid process(int ind) {\n\t\tfor (auto& t : seg[ind]) {\n\t\t\t\
-    dsu.unite(t.first, t.second);\n\t\t}\n\t\tif (ind >= sz) {\n\t\t\t// Process the\
-    \ queries at time ti\n\t\t\t// Do stuff with D\n\t\t\tint ti = ind - sz; \n\t\t\
-    \tfor (auto& qq : queries[ti]) {\n\t\t\t\tans.push_back(dsu.same_set(qq.first,\
-    \ qq.second));\n\t\t\t}\n\t\t} else {\n\t\t\tprocess(2 * ind); process(2 * ind\
-    \ + 1);\n\t\t}\n\t\tfor (auto& t : seg[ind]) {\n\t\t\tdsu.rollback();\n\t\t}\n\
-    \t}\n\n\tvoid init(int n, int max_time) {\n\t\tsz = 1;\n\t\twhile (sz < max_time)\
-    \ sz *= 2;\n\t\tseg.assign(2 * sz, {});\n\t\tqueries.assign(sz, {});\n\t\tdsu.init(n);\n\
-    \t}\n\n\tvoid add_query(int ti, int u, int v) {\n\t\tqueries[ti].emplace_back(u,\
-    \ v);\n\t}\n\t\n\tstd::vector<int> solve() {\n\t\tprocess(1);\n\t\treturn ans;\n\
-    \t}\n};\n"
-  code: "#pragma once\n\n#include \"dsu-rollback.hpp\"\n\nstruct OfflineDynamicConnectivity\
-    \ {\n\tDSURollBack dsu;\n\tint sz;\n\tstd::vector<std::vector<std::pair<int, int>>>\
-    \ seg;\n\tstd::vector<std::vector<std::pair<int, int>>> queries;\n\tstd::vector<int>\
-    \ ans;\n\n\tvoid upd(int l, int r, std::pair<int, int> p) {\n\t\t// add edge p\
-    \ from time [l, r]\n\t\tfor (l += sz, r += sz + 1; l < r; l /= 2, r /= 2) {\n\t\
-    \t\tif (l & 1) seg[l++].push_back(p);\n\t\t\tif (r & 1) seg[--r].push_back(p);\n\
-    \t\t}\n\t}\n\n\tvoid process(int ind) {\n\t\tfor (auto& t : seg[ind]) {\n\t\t\t\
-    dsu.unite(t.first, t.second);\n\t\t}\n\t\tif (ind >= sz) {\n\t\t\t// Process the\
-    \ queries at time ti\n\t\t\t// Do stuff with D\n\t\t\tint ti = ind - sz; \n\t\t\
-    \tfor (auto& qq : queries[ti]) {\n\t\t\t\tans.push_back(dsu.same_set(qq.first,\
-    \ qq.second));\n\t\t\t}\n\t\t} else {\n\t\t\tprocess(2 * ind); process(2 * ind\
-    \ + 1);\n\t\t}\n\t\tfor (auto& t : seg[ind]) {\n\t\t\tdsu.rollback();\n\t\t}\n\
-    \t}\n\n\tvoid init(int n, int max_time) {\n\t\tsz = 1;\n\t\twhile (sz < max_time)\
-    \ sz *= 2;\n\t\tseg.assign(2 * sz, {});\n\t\tqueries.assign(sz, {});\n\t\tdsu.init(n);\n\
-    \t}\n\n\tvoid add_query(int ti, int u, int v) {\n\t\tqueries[ti].emplace_back(u,\
-    \ v);\n\t}\n\t\n\tstd::vector<int> solve() {\n\t\tprocess(1);\n\t\treturn ans;\n\
-    \t}\n};"
+  bundledCode: "\r\n\r\nstruct DSURollBack {\r\n\tstd::vector<int> e;\r\n\t\r\n\t\
+    void init(int n) {\r\n\t\te = std::vector<int>(n, -1);\r\n\t}\r\n\r\n\tint get(int\
+    \ x) {\r\n\t\treturn e[x] < 0 ? x : get(e[x]);\r\n\t}\r\n\r\n\tbool same_set(int\
+    \ a, int b) {\r\n\t\treturn get(a) == get(b);\r\n\t}\r\n\r\n\tint size(int x)\
+    \ {\r\n\t\treturn -e[get(x)];\r\n\t}\r\n\r\n\tstd::vector<std::array<int, 4>>\
+    \ mod;\r\n\t\r\n\tbool unite(int x, int y) {\r\n\t\tx = get(x), y = get(y);\r\n\
+    \t\tif (x == y) {\r\n\t\t\tmod.push_back({-1, -1, -1, -1});\r\n\t\t\treturn 0;\r\
+    \n\t\t}\r\n\t\tif (e[x] > e[y]) std::swap(x, y);\r\n\t\tmod.push_back({x, y, e[x],\
+    \ e[y]});\r\n\t\te[x] += e[y], e[y] = x;\r\n\t\treturn true;\r\n\t}\r\n\r\n\t\
+    void rollback() {\r\n\t\tauto a = mod.back();\r\n\t\tmod.pop_back();\r\n\t\tif\
+    \ (a[0] != -1) {\r\n\t\t\te[a[0]] = a[2];\r\n\t\t\te[a[1]] = a[3];\r\n\t\t}\r\n\
+    \t}\r\n};\r\n\r\nstruct OfflineDynamicConnectivity {\r\n\tDSURollBack dsu;\r\n\
+    \tint sz;\r\n\tstd::vector<std::vector<std::pair<int, int>>> seg;\r\n\tstd::vector<std::vector<std::pair<int,\
+    \ int>>> queries;\r\n\tstd::vector<int> ans;\r\n\r\n\tvoid upd(int l, int r, std::pair<int,\
+    \ int> p) {\r\n\t\t// add edge p from time [l, r]\r\n\t\tfor (l += sz, r += sz\
+    \ + 1; l < r; l /= 2, r /= 2) {\r\n\t\t\tif (l & 1) seg[l++].push_back(p);\r\n\
+    \t\t\tif (r & 1) seg[--r].push_back(p);\r\n\t\t}\r\n\t}\r\n\r\n\tvoid process(int\
+    \ ind) {\r\n\t\tfor (auto& t : seg[ind]) {\r\n\t\t\tdsu.unite(t.first, t.second);\r\
+    \n\t\t}\r\n\t\tif (ind >= sz) {\r\n\t\t\t// Process the queries at time ti\r\n\
+    \t\t\t// Do stuff with D\r\n\t\t\tint ti = ind - sz; \r\n\t\t\tfor (auto& qq :\
+    \ queries[ti]) {\r\n\t\t\t\tans.push_back(dsu.same_set(qq.first, qq.second));\r\
+    \n\t\t\t}\r\n\t\t} else {\r\n\t\t\tprocess(2 * ind); process(2 * ind + 1);\r\n\
+    \t\t}\r\n\t\tfor (auto& t : seg[ind]) {\r\n\t\t\tdsu.rollback();\r\n\t\t}\r\n\t\
+    }\r\n\r\n\tvoid init(int n, int max_time) {\r\n\t\tsz = 1;\r\n\t\twhile (sz <\
+    \ max_time) sz *= 2;\r\n\t\tseg.assign(2 * sz, {});\r\n\t\tqueries.assign(sz,\
+    \ {});\r\n\t\tdsu.init(n);\r\n\t}\r\n\r\n\tvoid add_query(int ti, int u, int v)\
+    \ {\r\n\t\tqueries[ti].emplace_back(u, v);\r\n\t}\r\n\t\r\n\tstd::vector<int>\
+    \ solve() {\r\n\t\tprocess(1);\r\n\t\treturn ans;\r\n\t}\r\n};\n"
+  code: "#pragma once\r\n\r\n#include \"dsu-rollback.hpp\"\r\n\r\nstruct OfflineDynamicConnectivity\
+    \ {\r\n\tDSURollBack dsu;\r\n\tint sz;\r\n\tstd::vector<std::vector<std::pair<int,\
+    \ int>>> seg;\r\n\tstd::vector<std::vector<std::pair<int, int>>> queries;\r\n\t\
+    std::vector<int> ans;\r\n\r\n\tvoid upd(int l, int r, std::pair<int, int> p) {\r\
+    \n\t\t// add edge p from time [l, r]\r\n\t\tfor (l += sz, r += sz + 1; l < r;\
+    \ l /= 2, r /= 2) {\r\n\t\t\tif (l & 1) seg[l++].push_back(p);\r\n\t\t\tif (r\
+    \ & 1) seg[--r].push_back(p);\r\n\t\t}\r\n\t}\r\n\r\n\tvoid process(int ind) {\r\
+    \n\t\tfor (auto& t : seg[ind]) {\r\n\t\t\tdsu.unite(t.first, t.second);\r\n\t\t\
+    }\r\n\t\tif (ind >= sz) {\r\n\t\t\t// Process the queries at time ti\r\n\t\t\t\
+    // Do stuff with D\r\n\t\t\tint ti = ind - sz; \r\n\t\t\tfor (auto& qq : queries[ti])\
+    \ {\r\n\t\t\t\tans.push_back(dsu.same_set(qq.first, qq.second));\r\n\t\t\t}\r\n\
+    \t\t} else {\r\n\t\t\tprocess(2 * ind); process(2 * ind + 1);\r\n\t\t}\r\n\t\t\
+    for (auto& t : seg[ind]) {\r\n\t\t\tdsu.rollback();\r\n\t\t}\r\n\t}\r\n\r\n\t\
+    void init(int n, int max_time) {\r\n\t\tsz = 1;\r\n\t\twhile (sz < max_time) sz\
+    \ *= 2;\r\n\t\tseg.assign(2 * sz, {});\r\n\t\tqueries.assign(sz, {});\r\n\t\t\
+    dsu.init(n);\r\n\t}\r\n\r\n\tvoid add_query(int ti, int u, int v) {\r\n\t\tqueries[ti].emplace_back(u,\
+    \ v);\r\n\t}\r\n\t\r\n\tstd::vector<int> solve() {\r\n\t\tprocess(1);\r\n\t\t\
+    return ans;\r\n\t}\r\n};"
   dependsOn:
   - library/graphs/dsu-rollback.hpp
   isVerificationFile: false
   path: library/graphs/offline-dynamic-connectivity.hpp
   requiredBy: []
-  timestamp: '2021-08-16 13:31:52-04:00'
+  timestamp: '2022-07-21 16:12:33-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/spoj/spoj-DYNACON2.test.cpp

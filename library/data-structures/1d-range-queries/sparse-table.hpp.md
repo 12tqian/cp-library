@@ -2,62 +2,64 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/graphs/lca-rmq.hpp
     title: LCA RMQ
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/string/suffix-array-lcp.hpp
     title: Suffix Array with Longest Common Prefix
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/codeforces/codeforces-1074F.test.cpp
     title: verify/codeforces/codeforces-1074F.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
     title: verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/yosupo-lca-lca-rmq.test.cpp
     title: verify/yosupo/yosupo-lca-lca-rmq.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/yosupo-suffixarray-lcp.test.cpp
     title: verify/yosupo/yosupo-suffixarray-lcp.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
-  bundledCode: "\ntemplate <class T> struct SparseTable {\n\tstd::vector<T> v;\n\t\
-    std::vector<std::vector<int>> jump;\n\n\tint level(int x) { return 31 - __builtin_clz(x);\
-    \ }\n\n\tint comb(int a, int b) {\n\t\treturn v[a] == v[b] ? std::min(a, b) :\
-    \ (v[a] < v[b] ? a : b);\n\t}\n\n\tvoid init(const std::vector<T>& _v) {\n\t\t\
-    v = _v;\n\t\tjump = {std::vector<int>((int)v.size())};\n\t\tiota(jump[0].begin(),\
-    \ jump[0].end(), 0);\n\t\tfor (int j = 1; (1 << j) <= (int)v.size(); j++) {\n\t\
-    \t\tjump.push_back(std::vector<int>((int)v.size() - (1 << j) + 1));\n\t\t\tfor\
-    \ (int i = 0; i < (int)jump[j].size(); i++) {\n\t\t\t\tjump[j][i] = comb(jump[j\
-    \ - 1][i], jump[j - 1][i + (1 << (j - 1))]);\n\t\t\t}\n\t\t}\n\t}\n\n\tint index(int\
-    \ l, int r) {\n\t\tassert(l <= r);\n\t\tint d = level(r - l + 1);\n\t\treturn\
-    \ comb(jump[d][l], jump[d][r - (1 << d) + 1]);\n\t}\n\n\tT query(int l, int r)\
-    \ {\n\t\treturn v[index(l, r)];\n\t}\n};\n"
-  code: "#pragma once\n\ntemplate <class T> struct SparseTable {\n\tstd::vector<T>\
-    \ v;\n\tstd::vector<std::vector<int>> jump;\n\n\tint level(int x) { return 31\
-    \ - __builtin_clz(x); }\n\n\tint comb(int a, int b) {\n\t\treturn v[a] == v[b]\
-    \ ? std::min(a, b) : (v[a] < v[b] ? a : b);\n\t}\n\n\tvoid init(const std::vector<T>&\
-    \ _v) {\n\t\tv = _v;\n\t\tjump = {std::vector<int>((int)v.size())};\n\t\tiota(jump[0].begin(),\
-    \ jump[0].end(), 0);\n\t\tfor (int j = 1; (1 << j) <= (int)v.size(); j++) {\n\t\
-    \t\tjump.push_back(std::vector<int>((int)v.size() - (1 << j) + 1));\n\t\t\tfor\
-    \ (int i = 0; i < (int)jump[j].size(); i++) {\n\t\t\t\tjump[j][i] = comb(jump[j\
-    \ - 1][i], jump[j - 1][i + (1 << (j - 1))]);\n\t\t\t}\n\t\t}\n\t}\n\n\tint index(int\
-    \ l, int r) {\n\t\tassert(l <= r);\n\t\tint d = level(r - l + 1);\n\t\treturn\
-    \ comb(jump[d][l], jump[d][r - (1 << d) + 1]);\n\t}\n\n\tT query(int l, int r)\
-    \ {\n\t\treturn v[index(l, r)];\n\t}\n};"
+  bundledCode: "\r\ntemplate <class T> struct SparseTable {\r\n\tstd::vector<T> v;\r\
+    \n\tstd::vector<std::vector<int>> jump;\r\n\r\n\tint level(int x) { return 31\
+    \ - __builtin_clz(x); }\r\n\r\n\tint comb(int a, int b) {\r\n\t\treturn v[a] ==\
+    \ v[b] ? std::min(a, b) : (v[a] < v[b] ? a : b);\r\n\t}\r\n\r\n\tvoid init(const\
+    \ std::vector<T>& _v) {\r\n\t\tv = _v;\r\n\t\tjump = {std::vector<int>((int)v.size())};\r\
+    \n\t\tiota(jump[0].begin(), jump[0].end(), 0);\r\n\t\tfor (int j = 1; (1 << j)\
+    \ <= (int)v.size(); j++) {\r\n\t\t\tjump.push_back(std::vector<int>((int)v.size()\
+    \ - (1 << j) + 1));\r\n\t\t\tfor (int i = 0; i < (int)jump[j].size(); i++) {\r\
+    \n\t\t\t\tjump[j][i] = comb(jump[j - 1][i], jump[j - 1][i + (1 << (j - 1))]);\r\
+    \n\t\t\t}\r\n\t\t}\r\n\t}\r\n\r\n\tint index(int l, int r) {\r\n\t\tassert(l <=\
+    \ r);\r\n\t\tint d = level(r - l + 1);\r\n\t\treturn comb(jump[d][l], jump[d][r\
+    \ - (1 << d) + 1]);\r\n\t}\r\n\r\n\tT query(int l, int r) {\r\n\t\treturn v[index(l,\
+    \ r)];\r\n\t}\r\n};\n"
+  code: "#pragma once\r\n\r\ntemplate <class T> struct SparseTable {\r\n\tstd::vector<T>\
+    \ v;\r\n\tstd::vector<std::vector<int>> jump;\r\n\r\n\tint level(int x) { return\
+    \ 31 - __builtin_clz(x); }\r\n\r\n\tint comb(int a, int b) {\r\n\t\treturn v[a]\
+    \ == v[b] ? std::min(a, b) : (v[a] < v[b] ? a : b);\r\n\t}\r\n\r\n\tvoid init(const\
+    \ std::vector<T>& _v) {\r\n\t\tv = _v;\r\n\t\tjump = {std::vector<int>((int)v.size())};\r\
+    \n\t\tiota(jump[0].begin(), jump[0].end(), 0);\r\n\t\tfor (int j = 1; (1 << j)\
+    \ <= (int)v.size(); j++) {\r\n\t\t\tjump.push_back(std::vector<int>((int)v.size()\
+    \ - (1 << j) + 1));\r\n\t\t\tfor (int i = 0; i < (int)jump[j].size(); i++) {\r\
+    \n\t\t\t\tjump[j][i] = comb(jump[j - 1][i], jump[j - 1][i + (1 << (j - 1))]);\r\
+    \n\t\t\t}\r\n\t\t}\r\n\t}\r\n\r\n\tint index(int l, int r) {\r\n\t\tassert(l <=\
+    \ r);\r\n\t\tint d = level(r - l + 1);\r\n\t\treturn comb(jump[d][l], jump[d][r\
+    \ - (1 << d) + 1]);\r\n\t}\r\n\r\n\tT query(int l, int r) {\r\n\t\treturn v[index(l,\
+    \ r)];\r\n\t}\r\n};"
   dependsOn: []
   isVerificationFile: false
   path: library/data-structures/1d-range-queries/sparse-table.hpp
   requiredBy:
   - library/string/suffix-array-lcp.hpp
   - library/graphs/lca-rmq.hpp
-  timestamp: '2021-08-16 13:21:48-04:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2022-07-21 16:12:33-04:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/codeforces/codeforces-1074F.test.cpp
   - verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp

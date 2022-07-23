@@ -11,23 +11,23 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "\ntemplate <int N> struct LinearSieve {\n\tstd::bitset<N> pri;\n\t\
-    std::vector<int> pr;\n\t\n\tLinearSieve() {\n\t\tpri.set();\n\t\tpri[0] = pri[1]\
-    \ = 0;\n\t\tfor (int i = 2; i < N; ++i) {\n\t\t\tif (pri[i]) \n\t\t\t\tpr.push_back(i);\n\
-    \t\t\tfor (int j = 0; j < (int)pr.size() && i * pr[j] < N; ++j) {\n\t\t\t\tpri[i\
-    \ * pr[j]] = 0;\n\t\t\t\tif (i % pr[j] == 0) \n\t\t\t\t\tbreak;\n\t\t\t}\n\t\t\
-    }\n\t}\n};\n"
-  code: "#pragma once\n\ntemplate <int N> struct LinearSieve {\n\tstd::bitset<N> pri;\n\
-    \tstd::vector<int> pr;\n\t\n\tLinearSieve() {\n\t\tpri.set();\n\t\tpri[0] = pri[1]\
-    \ = 0;\n\t\tfor (int i = 2; i < N; ++i) {\n\t\t\tif (pri[i]) \n\t\t\t\tpr.push_back(i);\n\
-    \t\t\tfor (int j = 0; j < (int)pr.size() && i * pr[j] < N; ++j) {\n\t\t\t\tpri[i\
-    \ * pr[j]] = 0;\n\t\t\t\tif (i % pr[j] == 0) \n\t\t\t\t\tbreak;\n\t\t\t}\n\t\t\
-    }\n\t}\n};"
+  bundledCode: "\r\ntemplate <int N> struct LinearSieve {\r\n\tstd::bitset<N> pri;\r\
+    \n\tstd::vector<int> pr;\r\n\t\r\n\tLinearSieve() {\r\n\t\tpri.set();\r\n\t\t\
+    pri[0] = pri[1] = 0;\r\n\t\tfor (int i = 2; i < N; ++i) {\r\n\t\t\tif (pri[i])\
+    \ \r\n\t\t\t\tpr.push_back(i);\r\n\t\t\tfor (int j = 0; j < (int)pr.size() &&\
+    \ i * pr[j] < N; ++j) {\r\n\t\t\t\tpri[i * pr[j]] = 0;\r\n\t\t\t\tif (i % pr[j]\
+    \ == 0) \r\n\t\t\t\t\tbreak;\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n};\n"
+  code: "#pragma once\r\n\r\ntemplate <int N> struct LinearSieve {\r\n\tstd::bitset<N>\
+    \ pri;\r\n\tstd::vector<int> pr;\r\n\t\r\n\tLinearSieve() {\r\n\t\tpri.set();\r\
+    \n\t\tpri[0] = pri[1] = 0;\r\n\t\tfor (int i = 2; i < N; ++i) {\r\n\t\t\tif (pri[i])\
+    \ \r\n\t\t\t\tpr.push_back(i);\r\n\t\t\tfor (int j = 0; j < (int)pr.size() &&\
+    \ i * pr[j] < N; ++j) {\r\n\t\t\t\tpri[i * pr[j]] = 0;\r\n\t\t\t\tif (i % pr[j]\
+    \ == 0) \r\n\t\t\t\t\tbreak;\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n};"
   dependsOn: []
   isVerificationFile: false
   path: library/number-theory/linear-sieve.hpp
   requiredBy: []
-  timestamp: '2021-08-16 14:40:22-04:00'
+  timestamp: '2022-07-21 16:12:33-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/spoj/spoj-TDKPRIME.test.cpp

@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/data-structures/1d-range-queries/fenwick-tree.hpp
     title: library/data-structures/1d-range-queries/fenwick-tree.hpp
   _extendedRequiredBy: []
@@ -14,86 +14,90 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "\n\ntemplate <class T> struct FenwickTree {\n\tstd::vector<T> fwt;\n\
-    \tint n;\n\n\tvoid init(int n_) {\n\t\tn = n_;\n\t\tfwt.assign(n, 0);\n\t}\n\n\
-    \tvoid init(std::vector<T>& a) {\n\t\tn = (int)a.size();\n\t\tfwt.assign(n, 0);\n\
-    \t\tfor (int i = 0; i < (int)a.size(); i++) {\n\t\t\tadd(i, a[i]);\n\t\t}\n\t\
-    }\n\n\tT sum(int r) {\n\t\tT ret = 0;\n\t\tfor (; r >= 0; r = (r & (r + 1)) -\
-    \ 1) \n\t\t\tret += fwt[r];\n\t\treturn ret;\n\t}\n\n\tT query(int l, int r) {\n\
-    \t\treturn sum(r) - sum(l - 1);\n\t}\n\t\n\tvoid add(int idx, T delta) {\n\t\t\
-    for (; idx < n; idx = idx | (idx + 1)) \n\t\t\tfwt[idx] += delta;\n\t}\n};\n\n\
-    const int RL = 1010101;\nconst int CL = 10101;\n\nstd::bitset<RL + 1> isp;\nstd::vector<int>\
-    \ ps, cs;\n\nvoid init(int c) {\n\tps.clear(); cs.clear();\n\tisp[0] = isp[1]\
-    \ = 1;\n\tfor (int p = 2; p * p <= RL; p++) \n\t\tif (!isp[p]) \n\t\t\tfor (int\
-    \ q = p * p; q <= RL; q += p) \n\t\t\t\tisp[q] = 1;\n\tfor (int i = 2; i <= RL;\
-    \ i++) {\n\t\tif (!isp[i]) {\n\t\t\tps.push_back(i);\n\t\t\tif (i <= c) cs.push_back(i);\n\
-    \t\t}\n\t}\n}\n\nlong long phi(long long x, long long a, long long cnt) {\n\t\
-    long long res = 0;\n\tstd::vector<int> mu(a + 1, 1), minp(a + 1, a);\n\tfor (int\
-    \ i = 1; i <= a; i++) {\n\t\tif (!isp[i]) {\n\t\t\tfor (long long j = i; j <=\
-    \ a; j += i) {\n\t\t\t\tmu[j] *= -1;\n\t\t\t\tminp[j] = std::min(minp[j], i);\n\
-    \t\t\t}\n\t\t\tfor (long long j = i * i, k = j; k <= a; k += j) \n\t\t\t\tmu[k]\
-    \ = 0;\n\t\t}\n\t\tres += mu[i] * (x / i);\n\t}\n\tstd::vector<long long> sum(cnt);\n\
-    \tfor (long long lo = 1; lo < x / a; lo += a) {\n\t\tlong long hi = std::min(lo\
-    \ + a, x / a);\n\t\tFenwickTree<long long> F;\n\t\tF.init(a + 2);\n\t\tstd::bitset<CL>\
-    \ is_one;\n\t\tfor (int b = 0; b < cnt; b++) {\n\t\t\tint p = cs[b];\n\t\t\tint\
-    \ mi = std::max(x / p / hi, a / p);\n\t\t\tint ma = std::min(x / p / lo, a);\n\
-    \t\t\tif (p < ma) \n\t\t\t\tfor (int m = ma; m > mi; m--) \n\t\t\t\t\tif (mu[m]\
-    \ != 0 && minp[m] > p) \n\t\t\t\t\t\tres -= mu[m] * (sum[b] + x / p / m - lo +\
-    \ 1 - F.sum(x / p / m - lo));            \n\t\t\tsum[b] += a - F.sum(a - 1);\n\
-    \t\t\tfor (int q = (p - lo % p) % p; q < a; q += p) {\n\t\t\t\tif (!is_one[q])\
-    \ {\n\t\t\t\t\tF.add(q, 1);\n\t\t\t\t\tis_one[q] = 1;\n\t\t\t\t}\n\t\t\t}\n\t\t\
-    }\n\t}\n\treturn res;\n}\n\nlong long count_primes(long long x) {\n\tint r = sqrt(x);\n\
-    \tint c = cbrt(x);\n\tinit(c);\n\tif (x <= RL) \n\t\treturn upper_bound(ps.begin(),\
-    \ ps.end(), x) - ps.begin();\n\tlong long a = upper_bound(ps.begin(), ps.end(),\
-    \ c) - ps.begin();\n\tlong long b = upper_bound(ps.begin(), ps.end(), r) - ps.begin();\n\
-    \tlong long res = phi(x, c, a) + (b + a - 2) * (b - a + 1) / 2;\n\tint idx = b\
-    \ - 1;\n\tfor (int s = r; s <= x && idx >= a; s += c) {\n\t\tstd::vector<long\
-    \ long> cur(c + 1);\n\t\tstd::bitset<CL> val;\n\t\tcur[0] = b;\n\t\tfor (int i\
-    \ = 0; i < CL; i++) val[i] = 1;\n\t\tfor (int p : cs) \n\t\t\tfor (int q = (p\
-    \ - s % p) % p; q <= c; q += p) \n\t\t\t\tval[q] = 0;\n\t\tfor (int i = 1; i <=\
-    \ c; i++) cur[i] = cur[i - 1] + val[i];\n\t\t\tb = cur[c];\n\t\twhile (s <= x\
-    \ / ps[idx] && x / ps[idx] < s + c && idx >= a) {\n\t\t\tres -= cur[x / ps[idx]\
-    \ - s];\n\t\t\tidx--;\n\t\t}\n\t}\n\treturn res;\n}\n"
-  code: "#pragma once\n\n#include \"../data-structures/1d-range-queries/fenwick-tree.hpp\"\
-    \n\nconst int RL = 1010101;\nconst int CL = 10101;\n\nstd::bitset<RL + 1> isp;\n\
-    std::vector<int> ps, cs;\n\nvoid init(int c) {\n\tps.clear(); cs.clear();\n\t\
-    isp[0] = isp[1] = 1;\n\tfor (int p = 2; p * p <= RL; p++) \n\t\tif (!isp[p]) \n\
-    \t\t\tfor (int q = p * p; q <= RL; q += p) \n\t\t\t\tisp[q] = 1;\n\tfor (int i\
-    \ = 2; i <= RL; i++) {\n\t\tif (!isp[i]) {\n\t\t\tps.push_back(i);\n\t\t\tif (i\
-    \ <= c) cs.push_back(i);\n\t\t}\n\t}\n}\n\nlong long phi(long long x, long long\
-    \ a, long long cnt) {\n\tlong long res = 0;\n\tstd::vector<int> mu(a + 1, 1),\
-    \ minp(a + 1, a);\n\tfor (int i = 1; i <= a; i++) {\n\t\tif (!isp[i]) {\n\t\t\t\
-    for (long long j = i; j <= a; j += i) {\n\t\t\t\tmu[j] *= -1;\n\t\t\t\tminp[j]\
-    \ = std::min(minp[j], i);\n\t\t\t}\n\t\t\tfor (long long j = i * i, k = j; k <=\
-    \ a; k += j) \n\t\t\t\tmu[k] = 0;\n\t\t}\n\t\tres += mu[i] * (x / i);\n\t}\n\t\
-    std::vector<long long> sum(cnt);\n\tfor (long long lo = 1; lo < x / a; lo += a)\
-    \ {\n\t\tlong long hi = std::min(lo + a, x / a);\n\t\tFenwickTree<long long> F;\n\
-    \t\tF.init(a + 2);\n\t\tstd::bitset<CL> is_one;\n\t\tfor (int b = 0; b < cnt;\
-    \ b++) {\n\t\t\tint p = cs[b];\n\t\t\tint mi = std::max(x / p / hi, a / p);\n\t\
-    \t\tint ma = std::min(x / p / lo, a);\n\t\t\tif (p < ma) \n\t\t\t\tfor (int m\
-    \ = ma; m > mi; m--) \n\t\t\t\t\tif (mu[m] != 0 && minp[m] > p) \n\t\t\t\t\t\t\
-    res -= mu[m] * (sum[b] + x / p / m - lo + 1 - F.sum(x / p / m - lo));        \
-    \    \n\t\t\tsum[b] += a - F.sum(a - 1);\n\t\t\tfor (int q = (p - lo % p) % p;\
-    \ q < a; q += p) {\n\t\t\t\tif (!is_one[q]) {\n\t\t\t\t\tF.add(q, 1);\n\t\t\t\t\
-    \tis_one[q] = 1;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\treturn res;\n}\n\nlong long\
-    \ count_primes(long long x) {\n\tint r = sqrt(x);\n\tint c = cbrt(x);\n\tinit(c);\n\
-    \tif (x <= RL) \n\t\treturn upper_bound(ps.begin(), ps.end(), x) - ps.begin();\n\
-    \tlong long a = upper_bound(ps.begin(), ps.end(), c) - ps.begin();\n\tlong long\
-    \ b = upper_bound(ps.begin(), ps.end(), r) - ps.begin();\n\tlong long res = phi(x,\
-    \ c, a) + (b + a - 2) * (b - a + 1) / 2;\n\tint idx = b - 1;\n\tfor (int s = r;\
-    \ s <= x && idx >= a; s += c) {\n\t\tstd::vector<long long> cur(c + 1);\n\t\t\
-    std::bitset<CL> val;\n\t\tcur[0] = b;\n\t\tfor (int i = 0; i < CL; i++) val[i]\
-    \ = 1;\n\t\tfor (int p : cs) \n\t\t\tfor (int q = (p - s % p) % p; q <= c; q +=\
-    \ p) \n\t\t\t\tval[q] = 0;\n\t\tfor (int i = 1; i <= c; i++) cur[i] = cur[i -\
-    \ 1] + val[i];\n\t\t\tb = cur[c];\n\t\twhile (s <= x / ps[idx] && x / ps[idx]\
-    \ < s + c && idx >= a) {\n\t\t\tres -= cur[x / ps[idx] - s];\n\t\t\tidx--;\n\t\
-    \t}\n\t}\n\treturn res;\n}"
+  bundledCode: "\r\n\r\ntemplate <class T> struct FenwickTree {\r\n\tstd::vector<T>\
+    \ fwt;\r\n\tint n;\r\n\r\n\tvoid init(int n_) {\r\n\t\tn = n_;\r\n\t\tfwt.assign(n,\
+    \ 0);\r\n\t}\r\n\r\n\tvoid init(std::vector<T>& a) {\r\n\t\tn = (int)a.size();\r\
+    \n\t\tfwt.assign(n, 0);\r\n\t\tfor (int i = 0; i < (int)a.size(); i++) {\r\n\t\
+    \t\tadd(i, a[i]);\r\n\t\t}\r\n\t}\r\n\r\n\tT sum(int r) {\r\n\t\tT ret = 0;\r\n\
+    \t\tfor (; r >= 0; r = (r & (r + 1)) - 1) \r\n\t\t\tret += fwt[r];\r\n\t\treturn\
+    \ ret;\r\n\t}\r\n\r\n\tT query(int l, int r) {\r\n\t\treturn sum(r) - sum(l -\
+    \ 1);\r\n\t}\r\n\t\r\n\tvoid add(int idx, T delta) {\r\n\t\tfor (; idx < n; idx\
+    \ = idx | (idx + 1)) \r\n\t\t\tfwt[idx] += delta;\r\n\t}\r\n};\n\r\nconst int\
+    \ RL = 1010101;\r\nconst int CL = 10101;\r\n\r\nstd::bitset<RL + 1> isp;\r\nstd::vector<int>\
+    \ ps, cs;\r\n\r\nvoid init(int c) {\r\n\tps.clear(); cs.clear();\r\n\tisp[0] =\
+    \ isp[1] = 1;\r\n\tfor (int p = 2; p * p <= RL; p++) \r\n\t\tif (!isp[p]) \r\n\
+    \t\t\tfor (int q = p * p; q <= RL; q += p) \r\n\t\t\t\tisp[q] = 1;\r\n\tfor (int\
+    \ i = 2; i <= RL; i++) {\r\n\t\tif (!isp[i]) {\r\n\t\t\tps.push_back(i);\r\n\t\
+    \t\tif (i <= c) cs.push_back(i);\r\n\t\t}\r\n\t}\r\n}\r\n\r\nlong long phi(long\
+    \ long x, long long a, long long cnt) {\r\n\tlong long res = 0;\r\n\tstd::vector<int>\
+    \ mu(a + 1, 1), minp(a + 1, a);\r\n\tfor (int i = 1; i <= a; i++) {\r\n\t\tif\
+    \ (!isp[i]) {\r\n\t\t\tfor (long long j = i; j <= a; j += i) {\r\n\t\t\t\tmu[j]\
+    \ *= -1;\r\n\t\t\t\tminp[j] = std::min(minp[j], i);\r\n\t\t\t}\r\n\t\t\tfor (long\
+    \ long j = i * i, k = j; k <= a; k += j) \r\n\t\t\t\tmu[k] = 0;\r\n\t\t}\r\n\t\
+    \tres += mu[i] * (x / i);\r\n\t}\r\n\tstd::vector<long long> sum(cnt);\r\n\tfor\
+    \ (long long lo = 1; lo < x / a; lo += a) {\r\n\t\tlong long hi = std::min(lo\
+    \ + a, x / a);\r\n\t\tFenwickTree<long long> F;\r\n\t\tF.init(a + 2);\r\n\t\t\
+    std::bitset<CL> is_one;\r\n\t\tfor (int b = 0; b < cnt; b++) {\r\n\t\t\tint p\
+    \ = cs[b];\r\n\t\t\tint mi = std::max(x / p / hi, a / p);\r\n\t\t\tint ma = std::min(x\
+    \ / p / lo, a);\r\n\t\t\tif (p < ma) \r\n\t\t\t\tfor (int m = ma; m > mi; m--)\
+    \ \r\n\t\t\t\t\tif (mu[m] != 0 && minp[m] > p) \r\n\t\t\t\t\t\tres -= mu[m] *\
+    \ (sum[b] + x / p / m - lo + 1 - F.sum(x / p / m - lo));            \r\n\t\t\t\
+    sum[b] += a - F.sum(a - 1);\r\n\t\t\tfor (int q = (p - lo % p) % p; q < a; q +=\
+    \ p) {\r\n\t\t\t\tif (!is_one[q]) {\r\n\t\t\t\t\tF.add(q, 1);\r\n\t\t\t\t\tis_one[q]\
+    \ = 1;\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n\treturn res;\r\n}\r\n\r\nlong\
+    \ long count_primes(long long x) {\r\n\tint r = sqrt(x);\r\n\tint c = cbrt(x);\r\
+    \n\tinit(c);\r\n\tif (x <= RL) \r\n\t\treturn upper_bound(ps.begin(), ps.end(),\
+    \ x) - ps.begin();\r\n\tlong long a = upper_bound(ps.begin(), ps.end(), c) - ps.begin();\r\
+    \n\tlong long b = upper_bound(ps.begin(), ps.end(), r) - ps.begin();\r\n\tlong\
+    \ long res = phi(x, c, a) + (b + a - 2) * (b - a + 1) / 2;\r\n\tint idx = b -\
+    \ 1;\r\n\tfor (int s = r; s <= x && idx >= a; s += c) {\r\n\t\tstd::vector<long\
+    \ long> cur(c + 1);\r\n\t\tstd::bitset<CL> val;\r\n\t\tcur[0] = b;\r\n\t\tfor\
+    \ (int i = 0; i < CL; i++) val[i] = 1;\r\n\t\tfor (int p : cs) \r\n\t\t\tfor (int\
+    \ q = (p - s % p) % p; q <= c; q += p) \r\n\t\t\t\tval[q] = 0;\r\n\t\tfor (int\
+    \ i = 1; i <= c; i++) cur[i] = cur[i - 1] + val[i];\r\n\t\t\tb = cur[c];\r\n\t\
+    \twhile (s <= x / ps[idx] && x / ps[idx] < s + c && idx >= a) {\r\n\t\t\tres -=\
+    \ cur[x / ps[idx] - s];\r\n\t\t\tidx--;\r\n\t\t}\r\n\t}\r\n\treturn res;\r\n}\n"
+  code: "#pragma once\r\n\r\n#include \"../data-structures/1d-range-queries/fenwick-tree.hpp\"\
+    \r\n\r\nconst int RL = 1010101;\r\nconst int CL = 10101;\r\n\r\nstd::bitset<RL\
+    \ + 1> isp;\r\nstd::vector<int> ps, cs;\r\n\r\nvoid init(int c) {\r\n\tps.clear();\
+    \ cs.clear();\r\n\tisp[0] = isp[1] = 1;\r\n\tfor (int p = 2; p * p <= RL; p++)\
+    \ \r\n\t\tif (!isp[p]) \r\n\t\t\tfor (int q = p * p; q <= RL; q += p) \r\n\t\t\
+    \t\tisp[q] = 1;\r\n\tfor (int i = 2; i <= RL; i++) {\r\n\t\tif (!isp[i]) {\r\n\
+    \t\t\tps.push_back(i);\r\n\t\t\tif (i <= c) cs.push_back(i);\r\n\t\t}\r\n\t}\r\
+    \n}\r\n\r\nlong long phi(long long x, long long a, long long cnt) {\r\n\tlong\
+    \ long res = 0;\r\n\tstd::vector<int> mu(a + 1, 1), minp(a + 1, a);\r\n\tfor (int\
+    \ i = 1; i <= a; i++) {\r\n\t\tif (!isp[i]) {\r\n\t\t\tfor (long long j = i; j\
+    \ <= a; j += i) {\r\n\t\t\t\tmu[j] *= -1;\r\n\t\t\t\tminp[j] = std::min(minp[j],\
+    \ i);\r\n\t\t\t}\r\n\t\t\tfor (long long j = i * i, k = j; k <= a; k += j) \r\n\
+    \t\t\t\tmu[k] = 0;\r\n\t\t}\r\n\t\tres += mu[i] * (x / i);\r\n\t}\r\n\tstd::vector<long\
+    \ long> sum(cnt);\r\n\tfor (long long lo = 1; lo < x / a; lo += a) {\r\n\t\tlong\
+    \ long hi = std::min(lo + a, x / a);\r\n\t\tFenwickTree<long long> F;\r\n\t\t\
+    F.init(a + 2);\r\n\t\tstd::bitset<CL> is_one;\r\n\t\tfor (int b = 0; b < cnt;\
+    \ b++) {\r\n\t\t\tint p = cs[b];\r\n\t\t\tint mi = std::max(x / p / hi, a / p);\r\
+    \n\t\t\tint ma = std::min(x / p / lo, a);\r\n\t\t\tif (p < ma) \r\n\t\t\t\tfor\
+    \ (int m = ma; m > mi; m--) \r\n\t\t\t\t\tif (mu[m] != 0 && minp[m] > p) \r\n\t\
+    \t\t\t\t\tres -= mu[m] * (sum[b] + x / p / m - lo + 1 - F.sum(x / p / m - lo));\
+    \            \r\n\t\t\tsum[b] += a - F.sum(a - 1);\r\n\t\t\tfor (int q = (p -\
+    \ lo % p) % p; q < a; q += p) {\r\n\t\t\t\tif (!is_one[q]) {\r\n\t\t\t\t\tF.add(q,\
+    \ 1);\r\n\t\t\t\t\tis_one[q] = 1;\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n\t\
+    return res;\r\n}\r\n\r\nlong long count_primes(long long x) {\r\n\tint r = sqrt(x);\r\
+    \n\tint c = cbrt(x);\r\n\tinit(c);\r\n\tif (x <= RL) \r\n\t\treturn upper_bound(ps.begin(),\
+    \ ps.end(), x) - ps.begin();\r\n\tlong long a = upper_bound(ps.begin(), ps.end(),\
+    \ c) - ps.begin();\r\n\tlong long b = upper_bound(ps.begin(), ps.end(), r) - ps.begin();\r\
+    \n\tlong long res = phi(x, c, a) + (b + a - 2) * (b - a + 1) / 2;\r\n\tint idx\
+    \ = b - 1;\r\n\tfor (int s = r; s <= x && idx >= a; s += c) {\r\n\t\tstd::vector<long\
+    \ long> cur(c + 1);\r\n\t\tstd::bitset<CL> val;\r\n\t\tcur[0] = b;\r\n\t\tfor\
+    \ (int i = 0; i < CL; i++) val[i] = 1;\r\n\t\tfor (int p : cs) \r\n\t\t\tfor (int\
+    \ q = (p - s % p) % p; q <= c; q += p) \r\n\t\t\t\tval[q] = 0;\r\n\t\tfor (int\
+    \ i = 1; i <= c; i++) cur[i] = cur[i - 1] + val[i];\r\n\t\t\tb = cur[c];\r\n\t\
+    \twhile (s <= x / ps[idx] && x / ps[idx] < s + c && idx >= a) {\r\n\t\t\tres -=\
+    \ cur[x / ps[idx] - s];\r\n\t\t\tidx--;\r\n\t\t}\r\n\t}\r\n\treturn res;\r\n}"
   dependsOn:
   - library/data-structures/1d-range-queries/fenwick-tree.hpp
   isVerificationFile: false
   path: library/number-theory/counting-primes.hpp
   requiredBy: []
-  timestamp: '2021-08-16 13:21:48-04:00'
+  timestamp: '2022-07-21 16:12:33-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/yosupo-counting_primes.test.cpp

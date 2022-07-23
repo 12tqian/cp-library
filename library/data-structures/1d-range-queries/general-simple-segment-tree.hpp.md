@@ -3,72 +3,76 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/yosupo-point_add_range_general-simple-segment-tree.test.cpp
     title: verify/yosupo/yosupo-point_add_range_general-simple-segment-tree.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
-  bundledCode: "\ntemplate <class D, class Op> struct SegmentTree {\n\tD e;\n\tOp\
-    \ op;\n\tint n, sz, lg;  \n\tstd::vector<D> d;\n\n\tvoid init(const std::vector<D>&\
-    \ v) {\n\t\tn = int(v.size());\n\t\tlg = 1;\n\t\twhile ((1 << lg) < n) lg++;\n\
-    \t\tsz = 1 << lg;\n\t\td = std::vector<D>(2 * sz, e);\n\t\tfor (int i = 0; i <\
-    \ n; i++) d[sz + i] = v[i];\n\t\tfor (int i = sz - 1; i >= 0; i--) {\n\t\t\tupdate(i);\n\
-    \t\t}\n\t}\n\n\tSegmentTree(const std::vector<D>& v, D _e, Op _op) : e(_e), op(_op)\
-    \ { init(v); }\n\n\tvoid update(int k) { d[k] = op(d[2 * k], d[2 * k + 1]); }\n\
-    \n\tvoid set(int p, D x) {\n\t\tassert(0 <= p && p < n);\n\t\tp += sz;\n\t\td[p]\
-    \ = x;\n\t\tfor (int i = 1; i <= lg; i++) update(p >> i);\n\t}\n\n\tvoid add(int\
-    \ p, D x) {\n\t\tassert(0 <= p && p < n);\n\t\tp += sz;\n\t\td[p] = op(d[p], x);\n\
-    \t\tfor (int i = 1; i <= lg; i++) update(p >> i);\n\t}\n\n\tD single(int p) const\
-    \ {\n\t\tassert(0 <= p && p < n);\n\t\treturn d[p + sz];\n\t}\n\n\tD all_sum()\
-    \ const { return d[1]; }\n\t\n\tD sum(int a, int b) const {\n\t\t++b;\n\t\tassert(a\
-    \ <= b);\n\t\tD sml = e, smr = e;\n\t\ta += sz;\n\t\tb += sz;\n\t\twhile (a <\
-    \ b) {\n\t\t\tif (a & 1) sml = op(sml, d[a++]);\n\t\t\tif (b & 1) smr = op(d[--b],\
-    \ smr);\n\t\t\ta >>= 1;\n\t\t\tb >>= 1;\n\t\t}\n\t\treturn op(sml, smr);\n\t}\n\
-    \n\t// min i s.t. f(d[a] + d[a+1] + ... d[i]) == true (or return n + 1)\n\ttemplate\
-    \ <class Comp> int search_left(int a, Comp f) {\n\t\ta += sz;\n\t\tD sm = e;\n\
-    \t\tif (f(e)) return a;\n\t\twhile (true) {\n\t\t\tif (f(op(sm, d[a]))) {\n\t\t\
-    \t\twhile (a < sz) {\n\t\t\t\t\ta *= 2;\n\t\t\t\t\tif (!f(op(sm, d[a]))) {\n\t\
-    \t\t\t\t\tsm = op(sm, d[a]);\n\t\t\t\t\t\ta++;\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\
-    \ta = a + 1 - sz;\n\t\t\t\treturn a;\n\t\t\t}\n\t\t\tif (a & 1) {\n\t\t\t\tsm\
-    \ = op(sm, d[a]);\n\t\t\t\ta++;\n\t\t\t\tif ((a & -a) == a) break;\n\t\t\t}\n\t\
-    \t\ta >>= 1;\n\t\t}\n\t\treturn n + 1;\n\t}\n};\n\ntemplate <class D, class Op>\n\
-    SegmentTree<D, Op> get_segment_tree(std::vector<D> v, D e, Op op) {\n\treturn\
-    \ SegmentTree<D, Op>(v, e, op);\n}\n"
-  code: "#pragma once\n\ntemplate <class D, class Op> struct SegmentTree {\n\tD e;\n\
-    \tOp op;\n\tint n, sz, lg;  \n\tstd::vector<D> d;\n\n\tvoid init(const std::vector<D>&\
-    \ v) {\n\t\tn = int(v.size());\n\t\tlg = 1;\n\t\twhile ((1 << lg) < n) lg++;\n\
-    \t\tsz = 1 << lg;\n\t\td = std::vector<D>(2 * sz, e);\n\t\tfor (int i = 0; i <\
-    \ n; i++) d[sz + i] = v[i];\n\t\tfor (int i = sz - 1; i >= 0; i--) {\n\t\t\tupdate(i);\n\
-    \t\t}\n\t}\n\n\tSegmentTree(const std::vector<D>& v, D _e, Op _op) : e(_e), op(_op)\
-    \ { init(v); }\n\n\tvoid update(int k) { d[k] = op(d[2 * k], d[2 * k + 1]); }\n\
-    \n\tvoid set(int p, D x) {\n\t\tassert(0 <= p && p < n);\n\t\tp += sz;\n\t\td[p]\
-    \ = x;\n\t\tfor (int i = 1; i <= lg; i++) update(p >> i);\n\t}\n\n\tvoid add(int\
-    \ p, D x) {\n\t\tassert(0 <= p && p < n);\n\t\tp += sz;\n\t\td[p] = op(d[p], x);\n\
-    \t\tfor (int i = 1; i <= lg; i++) update(p >> i);\n\t}\n\n\tD single(int p) const\
-    \ {\n\t\tassert(0 <= p && p < n);\n\t\treturn d[p + sz];\n\t}\n\n\tD all_sum()\
-    \ const { return d[1]; }\n\t\n\tD sum(int a, int b) const {\n\t\t++b;\n\t\tassert(a\
-    \ <= b);\n\t\tD sml = e, smr = e;\n\t\ta += sz;\n\t\tb += sz;\n\t\twhile (a <\
-    \ b) {\n\t\t\tif (a & 1) sml = op(sml, d[a++]);\n\t\t\tif (b & 1) smr = op(d[--b],\
-    \ smr);\n\t\t\ta >>= 1;\n\t\t\tb >>= 1;\n\t\t}\n\t\treturn op(sml, smr);\n\t}\n\
-    \n\t// min i s.t. f(d[a] + d[a+1] + ... d[i]) == true (or return n + 1)\n\ttemplate\
-    \ <class Comp> int search_left(int a, Comp f) {\n\t\ta += sz;\n\t\tD sm = e;\n\
-    \t\tif (f(e)) return a;\n\t\twhile (true) {\n\t\t\tif (f(op(sm, d[a]))) {\n\t\t\
-    \t\twhile (a < sz) {\n\t\t\t\t\ta *= 2;\n\t\t\t\t\tif (!f(op(sm, d[a]))) {\n\t\
-    \t\t\t\t\tsm = op(sm, d[a]);\n\t\t\t\t\t\ta++;\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\
-    \ta = a + 1 - sz;\n\t\t\t\treturn a;\n\t\t\t}\n\t\t\tif (a & 1) {\n\t\t\t\tsm\
-    \ = op(sm, d[a]);\n\t\t\t\ta++;\n\t\t\t\tif ((a & -a) == a) break;\n\t\t\t}\n\t\
-    \t\ta >>= 1;\n\t\t}\n\t\treturn n + 1;\n\t}\n};\n\ntemplate <class D, class Op>\n\
-    SegmentTree<D, Op> get_segment_tree(std::vector<D> v, D e, Op op) {\n\treturn\
-    \ SegmentTree<D, Op>(v, e, op);\n}\n"
+  bundledCode: "\r\ntemplate <class D, class Op> struct SegmentTree {\r\n\tD e;\r\n\
+    \tOp op;\r\n\tint n, sz, lg;  \r\n\tstd::vector<D> d;\r\n\r\n\tvoid init(const\
+    \ std::vector<D>& v) {\r\n\t\tn = int(v.size());\r\n\t\tlg = 1;\r\n\t\twhile ((1\
+    \ << lg) < n) lg++;\r\n\t\tsz = 1 << lg;\r\n\t\td = std::vector<D>(2 * sz, e);\r\
+    \n\t\tfor (int i = 0; i < n; i++) d[sz + i] = v[i];\r\n\t\tfor (int i = sz - 1;\
+    \ i >= 0; i--) {\r\n\t\t\tupdate(i);\r\n\t\t}\r\n\t}\r\n\r\n\tSegmentTree(const\
+    \ std::vector<D>& v, D _e, Op _op) : e(_e), op(_op) { init(v); }\r\n\r\n\tvoid\
+    \ update(int k) { d[k] = op(d[2 * k], d[2 * k + 1]); }\r\n\r\n\tvoid set(int p,\
+    \ D x) {\r\n\t\tassert(0 <= p && p < n);\r\n\t\tp += sz;\r\n\t\td[p] = x;\r\n\t\
+    \tfor (int i = 1; i <= lg; i++) update(p >> i);\r\n\t}\r\n\r\n\tvoid add(int p,\
+    \ D x) {\r\n\t\tassert(0 <= p && p < n);\r\n\t\tp += sz;\r\n\t\td[p] = op(d[p],\
+    \ x);\r\n\t\tfor (int i = 1; i <= lg; i++) update(p >> i);\r\n\t}\r\n\r\n\tD single(int\
+    \ p) const {\r\n\t\tassert(0 <= p && p < n);\r\n\t\treturn d[p + sz];\r\n\t}\r\
+    \n\r\n\tD all_sum() const { return d[1]; }\r\n\t\r\n\tD sum(int a, int b) const\
+    \ {\r\n\t\t++b;\r\n\t\tassert(a <= b);\r\n\t\tD sml = e, smr = e;\r\n\t\ta +=\
+    \ sz;\r\n\t\tb += sz;\r\n\t\twhile (a < b) {\r\n\t\t\tif (a & 1) sml = op(sml,\
+    \ d[a++]);\r\n\t\t\tif (b & 1) smr = op(d[--b], smr);\r\n\t\t\ta >>= 1;\r\n\t\t\
+    \tb >>= 1;\r\n\t\t}\r\n\t\treturn op(sml, smr);\r\n\t}\r\n\r\n\t// min i s.t.\
+    \ f(d[a] + d[a+1] + ... d[i]) == true (or return n + 1)\r\n\ttemplate <class Comp>\
+    \ int search_left(int a, Comp f) {\r\n\t\ta += sz;\r\n\t\tD sm = e;\r\n\t\tif\
+    \ (f(e)) return a;\r\n\t\twhile (true) {\r\n\t\t\tif (f(op(sm, d[a]))) {\r\n\t\
+    \t\t\twhile (a < sz) {\r\n\t\t\t\t\ta *= 2;\r\n\t\t\t\t\tif (!f(op(sm, d[a])))\
+    \ {\r\n\t\t\t\t\t\tsm = op(sm, d[a]);\r\n\t\t\t\t\t\ta++;\r\n\t\t\t\t\t}\r\n\t\
+    \t\t\t}\r\n\t\t\t\ta = a + 1 - sz;\r\n\t\t\t\treturn a;\r\n\t\t\t}\r\n\t\t\tif\
+    \ (a & 1) {\r\n\t\t\t\tsm = op(sm, d[a]);\r\n\t\t\t\ta++;\r\n\t\t\t\tif ((a &\
+    \ -a) == a) break;\r\n\t\t\t}\r\n\t\t\ta >>= 1;\r\n\t\t}\r\n\t\treturn n + 1;\r\
+    \n\t}\r\n};\r\n\r\ntemplate <class D, class Op>\r\nSegmentTree<D, Op> get_segment_tree(std::vector<D>\
+    \ v, D e, Op op) {\r\n\treturn SegmentTree<D, Op>(v, e, op);\r\n}\r\n"
+  code: "#pragma once\r\n\r\ntemplate <class D, class Op> struct SegmentTree {\r\n\
+    \tD e;\r\n\tOp op;\r\n\tint n, sz, lg;  \r\n\tstd::vector<D> d;\r\n\r\n\tvoid\
+    \ init(const std::vector<D>& v) {\r\n\t\tn = int(v.size());\r\n\t\tlg = 1;\r\n\
+    \t\twhile ((1 << lg) < n) lg++;\r\n\t\tsz = 1 << lg;\r\n\t\td = std::vector<D>(2\
+    \ * sz, e);\r\n\t\tfor (int i = 0; i < n; i++) d[sz + i] = v[i];\r\n\t\tfor (int\
+    \ i = sz - 1; i >= 0; i--) {\r\n\t\t\tupdate(i);\r\n\t\t}\r\n\t}\r\n\r\n\tSegmentTree(const\
+    \ std::vector<D>& v, D _e, Op _op) : e(_e), op(_op) { init(v); }\r\n\r\n\tvoid\
+    \ update(int k) { d[k] = op(d[2 * k], d[2 * k + 1]); }\r\n\r\n\tvoid set(int p,\
+    \ D x) {\r\n\t\tassert(0 <= p && p < n);\r\n\t\tp += sz;\r\n\t\td[p] = x;\r\n\t\
+    \tfor (int i = 1; i <= lg; i++) update(p >> i);\r\n\t}\r\n\r\n\tvoid add(int p,\
+    \ D x) {\r\n\t\tassert(0 <= p && p < n);\r\n\t\tp += sz;\r\n\t\td[p] = op(d[p],\
+    \ x);\r\n\t\tfor (int i = 1; i <= lg; i++) update(p >> i);\r\n\t}\r\n\r\n\tD single(int\
+    \ p) const {\r\n\t\tassert(0 <= p && p < n);\r\n\t\treturn d[p + sz];\r\n\t}\r\
+    \n\r\n\tD all_sum() const { return d[1]; }\r\n\t\r\n\tD sum(int a, int b) const\
+    \ {\r\n\t\t++b;\r\n\t\tassert(a <= b);\r\n\t\tD sml = e, smr = e;\r\n\t\ta +=\
+    \ sz;\r\n\t\tb += sz;\r\n\t\twhile (a < b) {\r\n\t\t\tif (a & 1) sml = op(sml,\
+    \ d[a++]);\r\n\t\t\tif (b & 1) smr = op(d[--b], smr);\r\n\t\t\ta >>= 1;\r\n\t\t\
+    \tb >>= 1;\r\n\t\t}\r\n\t\treturn op(sml, smr);\r\n\t}\r\n\r\n\t// min i s.t.\
+    \ f(d[a] + d[a+1] + ... d[i]) == true (or return n + 1)\r\n\ttemplate <class Comp>\
+    \ int search_left(int a, Comp f) {\r\n\t\ta += sz;\r\n\t\tD sm = e;\r\n\t\tif\
+    \ (f(e)) return a;\r\n\t\twhile (true) {\r\n\t\t\tif (f(op(sm, d[a]))) {\r\n\t\
+    \t\t\twhile (a < sz) {\r\n\t\t\t\t\ta *= 2;\r\n\t\t\t\t\tif (!f(op(sm, d[a])))\
+    \ {\r\n\t\t\t\t\t\tsm = op(sm, d[a]);\r\n\t\t\t\t\t\ta++;\r\n\t\t\t\t\t}\r\n\t\
+    \t\t\t}\r\n\t\t\t\ta = a + 1 - sz;\r\n\t\t\t\treturn a;\r\n\t\t\t}\r\n\t\t\tif\
+    \ (a & 1) {\r\n\t\t\t\tsm = op(sm, d[a]);\r\n\t\t\t\ta++;\r\n\t\t\t\tif ((a &\
+    \ -a) == a) break;\r\n\t\t\t}\r\n\t\t\ta >>= 1;\r\n\t\t}\r\n\t\treturn n + 1;\r\
+    \n\t}\r\n};\r\n\r\ntemplate <class D, class Op>\r\nSegmentTree<D, Op> get_segment_tree(std::vector<D>\
+    \ v, D e, Op op) {\r\n\treturn SegmentTree<D, Op>(v, e, op);\r\n}\r\n"
   dependsOn: []
   isVerificationFile: false
   path: library/data-structures/1d-range-queries/general-simple-segment-tree.hpp
   requiredBy: []
-  timestamp: '2021-08-05 19:19:10-04:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2022-07-21 16:12:33-04:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - verify/yosupo/yosupo-point_add_range_general-simple-segment-tree.test.cpp
 documentation_of: library/data-structures/1d-range-queries/general-simple-segment-tree.hpp

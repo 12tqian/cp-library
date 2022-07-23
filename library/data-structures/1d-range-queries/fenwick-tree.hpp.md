@@ -9,37 +9,39 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-counting_primes.test.cpp
     title: verify/yosupo/yosupo-counting_primes.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/yosupo-point_add_range_sum-fenwick-tree.test.cpp
     title: verify/yosupo/yosupo-point_add_range_sum-fenwick-tree.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
-  bundledCode: "\ntemplate <class T> struct FenwickTree {\n\tstd::vector<T> fwt;\n\
-    \tint n;\n\n\tvoid init(int n_) {\n\t\tn = n_;\n\t\tfwt.assign(n, 0);\n\t}\n\n\
-    \tvoid init(std::vector<T>& a) {\n\t\tn = (int)a.size();\n\t\tfwt.assign(n, 0);\n\
-    \t\tfor (int i = 0; i < (int)a.size(); i++) {\n\t\t\tadd(i, a[i]);\n\t\t}\n\t\
-    }\n\n\tT sum(int r) {\n\t\tT ret = 0;\n\t\tfor (; r >= 0; r = (r & (r + 1)) -\
-    \ 1) \n\t\t\tret += fwt[r];\n\t\treturn ret;\n\t}\n\n\tT query(int l, int r) {\n\
-    \t\treturn sum(r) - sum(l - 1);\n\t}\n\t\n\tvoid add(int idx, T delta) {\n\t\t\
-    for (; idx < n; idx = idx | (idx + 1)) \n\t\t\tfwt[idx] += delta;\n\t}\n};\n"
-  code: "#pragma once\n\ntemplate <class T> struct FenwickTree {\n\tstd::vector<T>\
-    \ fwt;\n\tint n;\n\n\tvoid init(int n_) {\n\t\tn = n_;\n\t\tfwt.assign(n, 0);\n\
-    \t}\n\n\tvoid init(std::vector<T>& a) {\n\t\tn = (int)a.size();\n\t\tfwt.assign(n,\
-    \ 0);\n\t\tfor (int i = 0; i < (int)a.size(); i++) {\n\t\t\tadd(i, a[i]);\n\t\t\
-    }\n\t}\n\n\tT sum(int r) {\n\t\tT ret = 0;\n\t\tfor (; r >= 0; r = (r & (r + 1))\
-    \ - 1) \n\t\t\tret += fwt[r];\n\t\treturn ret;\n\t}\n\n\tT query(int l, int r)\
-    \ {\n\t\treturn sum(r) - sum(l - 1);\n\t}\n\t\n\tvoid add(int idx, T delta) {\n\
-    \t\tfor (; idx < n; idx = idx | (idx + 1)) \n\t\t\tfwt[idx] += delta;\n\t}\n};"
+  bundledCode: "\r\ntemplate <class T> struct FenwickTree {\r\n\tstd::vector<T> fwt;\r\
+    \n\tint n;\r\n\r\n\tvoid init(int n_) {\r\n\t\tn = n_;\r\n\t\tfwt.assign(n, 0);\r\
+    \n\t}\r\n\r\n\tvoid init(std::vector<T>& a) {\r\n\t\tn = (int)a.size();\r\n\t\t\
+    fwt.assign(n, 0);\r\n\t\tfor (int i = 0; i < (int)a.size(); i++) {\r\n\t\t\tadd(i,\
+    \ a[i]);\r\n\t\t}\r\n\t}\r\n\r\n\tT sum(int r) {\r\n\t\tT ret = 0;\r\n\t\tfor\
+    \ (; r >= 0; r = (r & (r + 1)) - 1) \r\n\t\t\tret += fwt[r];\r\n\t\treturn ret;\r\
+    \n\t}\r\n\r\n\tT query(int l, int r) {\r\n\t\treturn sum(r) - sum(l - 1);\r\n\t\
+    }\r\n\t\r\n\tvoid add(int idx, T delta) {\r\n\t\tfor (; idx < n; idx = idx | (idx\
+    \ + 1)) \r\n\t\t\tfwt[idx] += delta;\r\n\t}\r\n};\n"
+  code: "#pragma once\r\n\r\ntemplate <class T> struct FenwickTree {\r\n\tstd::vector<T>\
+    \ fwt;\r\n\tint n;\r\n\r\n\tvoid init(int n_) {\r\n\t\tn = n_;\r\n\t\tfwt.assign(n,\
+    \ 0);\r\n\t}\r\n\r\n\tvoid init(std::vector<T>& a) {\r\n\t\tn = (int)a.size();\r\
+    \n\t\tfwt.assign(n, 0);\r\n\t\tfor (int i = 0; i < (int)a.size(); i++) {\r\n\t\
+    \t\tadd(i, a[i]);\r\n\t\t}\r\n\t}\r\n\r\n\tT sum(int r) {\r\n\t\tT ret = 0;\r\n\
+    \t\tfor (; r >= 0; r = (r & (r + 1)) - 1) \r\n\t\t\tret += fwt[r];\r\n\t\treturn\
+    \ ret;\r\n\t}\r\n\r\n\tT query(int l, int r) {\r\n\t\treturn sum(r) - sum(l -\
+    \ 1);\r\n\t}\r\n\t\r\n\tvoid add(int idx, T delta) {\r\n\t\tfor (; idx < n; idx\
+    \ = idx | (idx + 1)) \r\n\t\t\tfwt[idx] += delta;\r\n\t}\r\n};"
   dependsOn: []
   isVerificationFile: false
   path: library/data-structures/1d-range-queries/fenwick-tree.hpp
   requiredBy:
   - library/number-theory/counting-primes.hpp
-  timestamp: '2021-08-16 13:21:48-04:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2022-07-21 16:12:33-04:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/yosupo/yosupo-point_add_range_sum-fenwick-tree.test.cpp
   - verify/yosupo/yosupo-counting_primes.test.cpp

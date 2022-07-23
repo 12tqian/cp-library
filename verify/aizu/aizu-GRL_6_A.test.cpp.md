@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
   - icon: ':heavy_check_mark:'
@@ -18,53 +18,56 @@ data:
     links:
     - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_6_A
   bundledCode: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_6_A\"\
-    \n\n\n#include <algorithm>\n#include <array>\n#include <bitset>\n#include <cassert>\n\
-    #include <chrono>\n#include <cmath>\n#include <complex>\n#include <cstdio>\n#include\
-    \ <cstdlib>\n#include <cstring>\n#include <ctime>\n#include <deque>\n#include\
-    \ <iostream>\n#include <iomanip>\n#include <list>\n#include <map>\n#include <numeric>\n\
-    #include <queue>\n#include <random>\n#include <set>\n#include <stack>\n#include\
-    \ <string>\n#include <unordered_map>\n#include <vector>\n\nusing namespace std;\n\
-    \ntemplate <class F> struct Dinic {\n\tstruct Edge { int to; F flow, cap; };\n\
-    \tint n;\n\tstd::vector<Edge> edges;\n\tstd::vector<std::vector<int>> adj;\n\t\
-    std::vector<int> level;\n\tstd::vector<std::vector<int>::iterator> cur;\n\n\t\
-    void init(int n_) {\n\t\tn = n_;\n\t\tadj.assign(n, std::vector<int>());\n\t\t\
-    cur.assign(n, std::vector<int>::iterator());\n\t\tedges.clear();\n\t\tlevel.clear();\n\
-    \t}\n\n\tvoid ae(int u, int v, F cap, F rcap = 0) {\n\t\tassert(std::min(cap,\
-    \ rcap) >= 0);\n\t\tadj[u].push_back((int)edges.size());\n\t\tedges.push_back({v,\
-    \ 0, cap});\n\t\tadj[v].push_back((int)edges.size());\n\t\tedges.push_back({u,\
-    \ 0, rcap});\n\t}\n\n\tbool bfs(int s, int t) {\n\t\tlevel = std::vector<int>(n,\
-    \ -1);\n\t\tfor (int i = 0; i < n; i++)\n\t\t\tcur[i] = adj[i].begin();\n\t\t\
-    std::queue<int> q({s});\n\t\tlevel[s] = 0;\n\t\twhile (!q.empty()) {\n\t\t\tint\
-    \ u = q.front();\n\t\t\tq.pop();\n\t\t\tfor (auto& eid : adj[u]) {\n\t\t\t\tconst\
-    \ Edge& e = edges[eid];\n\t\t\t\tint v = e.to;\n\t\t\t\tif (level[v] < 0 && e.flow\
-    \ < e.cap) \n\t\t\t\t\tq.push(v), level[v] = level[u] + 1;\n\t\t\t}\n\t\t}\n\t\
-    \treturn level[t] >= 0;\n\t}\n\n\tF dfs(int v, int t, F flow) {\n\t\tif (v ==\
-    \ t)\n\t\t\treturn flow;\n\t\tfor (; cur[v] != adj[v].end(); cur[v]++) {\n\t\t\
-    \tEdge& e = edges[*cur[v]];\n\t\t\tif (level[e.to] != level[v] + 1 || e.flow ==\
-    \ e.cap)\n\t\t\t\tcontinue;\n\t\t\tF df = dfs(e.to, t, std::min(flow, e.cap -\
-    \ e.flow));\n\t\t\tif (df) {\n\t\t\t\te.flow += df;\n\t\t\t\tedges[*cur[v] ^ 1].flow\
-    \ -= df;\n\t\t\t\treturn df;\n\t\t\t}\n\t\t}\n\t\treturn 0;\n\t}\n\t\n\tF max_flow(int\
-    \ s, int t) {\n\t\tF tot = 0;\n\t\twhile (bfs(s, t)) \n\t\t\twhile (F df = dfs(s,\
-    \ t, std::numeric_limits<F>::max())) \n\t\t\t\ttot += df;\n\t\treturn tot;\n\t\
-    }\n};\n\nint main() {\n\tusing namespace std;\n\tios_base::sync_with_stdio(false);\n\
-    \tcin.tie(nullptr);\n\tint n, m;\n\tcin >> n >> m;\n\tDinic<long long> P;\n\t\
-    P.init(n);\n\tfor (int i = 0; i < m; i++) {\n\t\tint u, v, w; \n\t\tcin >> u >>\
-    \ v >> w;\n\t\tP.ae(u, v, w);\n\t}\n\tcout << P.max_flow(0, n - 1) << '\\n';\n\
-    \treturn 0;\n}\n"
+    \r\n\r\n\r\n#include <algorithm>\r\n#include <array>\r\n#include <bitset>\r\n\
+    #include <cassert>\r\n#include <chrono>\r\n#include <cmath>\r\n#include <complex>\r\
+    \n#include <cstdio>\r\n#include <cstdlib>\r\n#include <cstring>\r\n#include <ctime>\r\
+    \n#include <deque>\r\n#include <iostream>\r\n#include <iomanip>\r\n#include <list>\r\
+    \n#include <map>\r\n#include <numeric>\r\n#include <queue>\r\n#include <random>\r\
+    \n#include <set>\r\n#include <stack>\r\n#include <string>\r\n#include <unordered_map>\r\
+    \n#include <vector>\r\n\r\nusing namespace std;\n\r\ntemplate <class F> struct\
+    \ Dinic {\r\n\tstruct Edge { int to; F flow, cap; };\r\n\tint n;\r\n\tstd::vector<Edge>\
+    \ edges;\r\n\tstd::vector<std::vector<int>> adj;\r\n\tstd::vector<int> level;\r\
+    \n\tstd::vector<std::vector<int>::iterator> cur;\r\n\r\n\tvoid init(int n_) {\r\
+    \n\t\tn = n_;\r\n\t\tadj.assign(n, std::vector<int>());\r\n\t\tcur.assign(n, std::vector<int>::iterator());\r\
+    \n\t\tedges.clear();\r\n\t\tlevel.clear();\r\n\t}\r\n\r\n\tvoid ae(int u, int\
+    \ v, F cap, F rcap = 0) {\r\n\t\tassert(std::min(cap, rcap) >= 0);\r\n\t\tadj[u].push_back((int)edges.size());\r\
+    \n\t\tedges.push_back({v, 0, cap});\r\n\t\tadj[v].push_back((int)edges.size());\r\
+    \n\t\tedges.push_back({u, 0, rcap});\r\n\t}\r\n\r\n\tbool bfs(int s, int t) {\r\
+    \n\t\tlevel = std::vector<int>(n, -1);\r\n\t\tfor (int i = 0; i < n; i++)\r\n\t\
+    \t\tcur[i] = adj[i].begin();\r\n\t\tstd::queue<int> q({s});\r\n\t\tlevel[s] =\
+    \ 0;\r\n\t\twhile (!q.empty()) {\r\n\t\t\tint u = q.front();\r\n\t\t\tq.pop();\r\
+    \n\t\t\tfor (auto& eid : adj[u]) {\r\n\t\t\t\tconst Edge& e = edges[eid];\r\n\t\
+    \t\t\tint v = e.to;\r\n\t\t\t\tif (level[v] < 0 && e.flow < e.cap) \r\n\t\t\t\t\
+    \tq.push(v), level[v] = level[u] + 1;\r\n\t\t\t}\r\n\t\t}\r\n\t\treturn level[t]\
+    \ >= 0;\r\n\t}\r\n\r\n\tF dfs(int v, int t, F flow) {\r\n\t\tif (v == t)\r\n\t\
+    \t\treturn flow;\r\n\t\tfor (; cur[v] != adj[v].end(); cur[v]++) {\r\n\t\t\tEdge&\
+    \ e = edges[*cur[v]];\r\n\t\t\tif (level[e.to] != level[v] + 1 || e.flow == e.cap)\r\
+    \n\t\t\t\tcontinue;\r\n\t\t\tF df = dfs(e.to, t, std::min(flow, e.cap - e.flow));\r\
+    \n\t\t\tif (df) {\r\n\t\t\t\te.flow += df;\r\n\t\t\t\tedges[*cur[v] ^ 1].flow\
+    \ -= df;\r\n\t\t\t\treturn df;\r\n\t\t\t}\r\n\t\t}\r\n\t\treturn 0;\r\n\t}\r\n\
+    \t\r\n\tF max_flow(int s, int t) {\r\n\t\tF tot = 0;\r\n\t\twhile (bfs(s, t))\
+    \ \r\n\t\t\twhile (F df = dfs(s, t, std::numeric_limits<F>::max())) \r\n\t\t\t\
+    \ttot += df;\r\n\t\treturn tot;\r\n\t}\r\n};\n\r\nint main() {\r\n\tusing namespace\
+    \ std;\r\n\tios_base::sync_with_stdio(false);\r\n\tcin.tie(nullptr);\r\n\tint\
+    \ n, m;\r\n\tcin >> n >> m;\r\n\tDinic<long long> P;\r\n\tP.init(n);\r\n\tfor\
+    \ (int i = 0; i < m; i++) {\r\n\t\tint u, v, w; \r\n\t\tcin >> u >> v >> w;\r\n\
+    \t\tP.ae(u, v, w);\r\n\t}\r\n\tcout << P.max_flow(0, n - 1) << '\\n';\r\n\treturn\
+    \ 0;\r\n}\r\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_6_A\"\
-    \n\n#include \"../../library/contest/template-minimal.hpp\"\n#include \"../../library/graphs/flows/dinic.hpp\"\
-    \n\nint main() {\n\tusing namespace std;\n\tios_base::sync_with_stdio(false);\n\
-    \tcin.tie(nullptr);\n\tint n, m;\n\tcin >> n >> m;\n\tDinic<long long> P;\n\t\
-    P.init(n);\n\tfor (int i = 0; i < m; i++) {\n\t\tint u, v, w; \n\t\tcin >> u >>\
-    \ v >> w;\n\t\tP.ae(u, v, w);\n\t}\n\tcout << P.max_flow(0, n - 1) << '\\n';\n\
-    \treturn 0;\n}\n"
+    \r\n\r\n#include \"../../library/contest/template-minimal.hpp\"\r\n#include \"\
+    ../../library/graphs/flows/dinic.hpp\"\r\n\r\nint main() {\r\n\tusing namespace\
+    \ std;\r\n\tios_base::sync_with_stdio(false);\r\n\tcin.tie(nullptr);\r\n\tint\
+    \ n, m;\r\n\tcin >> n >> m;\r\n\tDinic<long long> P;\r\n\tP.init(n);\r\n\tfor\
+    \ (int i = 0; i < m; i++) {\r\n\t\tint u, v, w; \r\n\t\tcin >> u >> v >> w;\r\n\
+    \t\tP.ae(u, v, w);\r\n\t}\r\n\tcout << P.max_flow(0, n - 1) << '\\n';\r\n\treturn\
+    \ 0;\r\n}\r\n"
   dependsOn:
   - library/contest/template-minimal.hpp
   - library/graphs/flows/dinic.hpp
   isVerificationFile: true
   path: verify/aizu/aizu-GRL_6_A.test.cpp
   requiredBy: []
-  timestamp: '2021-07-28 19:45:54-04:00'
+  timestamp: '2022-07-21 16:12:33-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aizu/aizu-GRL_6_A.test.cpp

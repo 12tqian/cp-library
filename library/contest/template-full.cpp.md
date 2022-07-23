@@ -1,19 +1,19 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/contest/template-full.hpp
     title: library/contest/template-full.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/misc/easy-io.hpp
     title: library/misc/easy-io.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/misc/pragma-short.hpp
     title: library/misc/pragma-short.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/modular-arithmetic/mod-int.hpp
     title: library/modular-arithmetic/mod-int.hpp
   _extendedRequiredBy: []
@@ -26,156 +26,164 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "\n\n#pragma GCC optimize (\"O3\")\n#pragma GCC target (\"sse4\")\n\
-    \n#include <algorithm>\n#include <array>\n#include <bitset>\n#include <cassert>\n\
-    #include <chrono>\n#include <cmath>\n#include <complex>\n#include <cstdio>\n#include\
-    \ <cstdlib>\n#include <cstring>\n#include <ctime>\n#include <deque>\n#include\
-    \ <iostream>\n#include <iomanip>\n#include <list>\n#include <map>\n#include <numeric>\n\
-    #include <queue>\n#include <random>\n#include <set>\n#include <stack>\n#include\
-    \ <string>\n#include <unordered_map>\n#include <vector>\n\nusing namespace std;\n\
-    \n#include <ext/pb_ds/tree_policy.hpp>\n#include <ext/pb_ds/assoc_container.hpp>\n\
-    \nusing namespace __gnu_pbds;\n\ntemplate <class T> using Tree = tree<T, null_type,\
-    \ less<T>, rb_tree_tag, tree_order_statistics_node_update>;\n\ntypedef long long\
-    \ ll;\ntypedef long double ld;\ntypedef double db;\ntypedef string str;\n\ntypedef\
-    \ pair<int, int> pi;\ntypedef pair<ll, ll> pl;\ntypedef pair<db, db> pd;\n\ntypedef\
-    \ vector<int> vi;\ntypedef vector<bool> vb;\ntypedef vector<ll> vl;\ntypedef vector<db>\
-    \ vd;\ntypedef vector<str> vs;\ntypedef vector<pi> vpi;\ntypedef vector<pl> vpl;\n\
-    typedef vector<pd> vpd;\n\n#define mp make_pair\n#define f first\n#define s second\n\
-    #define sz(x) (int)(x).size()\n#define all(x) begin(x), end(x)\n#define rall(x)\
-    \ (x).rbegin(), (x).rend()\n#define sor(x) sort(all(x))\n#define rsz resize\n\
-    #define resz resize\n#define ins insert\n#define ft front()\n#define bk back()\n\
-    #define pf push_front\n#define pb push_back\n#define eb emplace_back\n#define\
-    \ lb lower_bound\n#define ub upper_bound\n\n#define f1r(i, a, b) for (int i =\
-    \ (a); i < (b); ++i)\n#define f0r(i, a) f1r(i, 0, a)\n#define r1f(i, a, b) for\
-    \ (int i = (b); i --> (a); )\n#define r0f(i, a) r1f(i, 0, a)\n#define FOR(i, a,\
-    \ b) for (int i = (a); i < (b); ++i)\n#define F0R(i, a) FOR(i, 0, a)\n#define\
-    \ ROF(i, a, b) for (int i = (b) - 1; i >= (a); --i)\n#define R0F(i, a) ROF(i,\
-    \ 0, a)\n#define each(a, x) for (auto& a : x)\n\nmt19937 rng((uint32_t)chrono::steady_clock::now().time_since_epoch().count());\n\
-    \ntemplate <class T> bool ckmin(T& a, const T& b) { return b < a ? a = b, 1 :\
-    \ 0; }\ntemplate <class T> bool ckmax(T& a, const T& b) { return a < b ? a = b,\
-    \ 1 : 0; }\n\ntemplate <class T> using V = vector<T>;\ntemplate <class T> using\
-    \ VV = V<V<T>>;\ntemplate <class T> using VVV = V<V<V<T>>>;\ntemplate <class T>\
-    \ using VVVV = V<V<V<V<T>>>>;\n\ntemplate <typename T, typename S> ostream& operator\
-    \ << (ostream& os, const pair<T, S>& p) { return os << \"(\" << p.first << \"\
-    , \" << p.second << \")\"; }\ntemplate <typename C, typename T = decay<decltype(*begin(declval<C>()))>,\
-    \ typename enable_if<!is_same<C, string>::value>::type* = nullptr>\nostream& operator\
-    \ << (ostream& os, const C& c) { bool f = true; os << \"{\"; for (const auto&\
-    \ x : c) { if (!f) os << \", \"; f = false; os << x; } return os << \"}\"; }\n\
-    template <typename T> void debug(string s, T x) { cerr << s << \" = \" << x <<\
-    \ \"\\n\"; }\ntemplate <typename T, typename... Args> void debug(string s, T x,\
-    \ Args... args) { cerr << s.substr(0, s.find(',')) << \" = \" << x << \" | \"\
-    ; debug(s.substr(s.find(',') + 2), args...); }\n\nconstexpr int pct(int x) { return\
-    \ __builtin_popcount(x); }\nconstexpr int bits(int x) { return 31 - __builtin_clz(x);\
-    \ } // floor(log2(x))\n\ninline namespace Helpers {\n\t//////////// is_iterable\n\
-    \t// https://stackoverflow.com/questions/13830158/check-if-a-variable-type-is-iterable\n\
-    \t// this gets used only when we can call begin() and end() on that type\n\ttemplate\
-    \ <class T, class = void> struct is_iterable : false_type {};\n\ttemplate <class\
-    \ T> struct is_iterable<T, void_t<decltype(begin(declval<T>())),\n\t\t\t\t\t\t\
-    \t\t\t  decltype(end(declval<T>()))\n\t\t\t\t\t\t\t\t\t >\n\t\t\t\t\t\t   > :\
-    \ true_type {};\n\ttemplate <class T> constexpr bool is_iterable_v = is_iterable<T>::value;\n\
-    \n\t//////////// is_readable\n\ttemplate <class T, class = void> struct is_readable\
-    \ : false_type {};\n\ttemplate <class T> struct is_readable<T,\n\t\t\ttypename\
-    \ std::enable_if_t<\n\t\t\t\tis_same_v<decltype(cin >> declval<T&>()), istream&>\n\
-    \t\t\t>\n\t\t> : true_type {};\n\ttemplate <class T> constexpr bool is_readable_v\
-    \ = is_readable<T>::value;\n\n\t//////////// is_printable\n\t// // https://nafe.es/posts/2020-02-29-is-printable/\n\
-    \ttemplate <class T, class = void> struct is_printable : false_type {};\n\ttemplate\
-    \ <class T> struct is_printable<T,\n\t\t\ttypename std::enable_if_t<\n\t\t\t\t\
-    is_same_v<decltype(cout << declval<T>()), ostream&>\n\t\t\t>\n\t\t> : true_type\
-    \ {};\n\ttemplate <class T> constexpr bool is_printable_v = is_printable<T>::value;\n\
-    }\n\ninline namespace Input {\n\ttemplate <class T> constexpr bool needs_input_v\
-    \ = !is_readable_v<T> && is_iterable_v<T>;\n\ttemplate <class T, class... U> void\
-    \ re(T& t, U&... u);\n\ttemplate <class T, class U> void re(pair<T, U>& p); //\
-    \ pairs\n\n\t// re: read\n\ttemplate <class T> typename enable_if<is_readable_v<T>,\
-    \ void>::type re(T& x) { cin >> x; } // default\n\ttemplate <class T> void re(complex<T>&\
-    \ c) { T a, b; re(a, b); c = {a, b}; } // complex\n\ttemplate <class T> typename\
-    \ enable_if<needs_input_v<T>, void>::type re(T& i); // ex. vectors, arrays\n\t\
-    template <class T, class U> void re(pair<T, U>& p) { re(p.first, p.second); }\n\
-    \ttemplate <class T> typename enable_if<needs_input_v<T>, void>::type re(T& i)\
-    \ {\n\t\tfor (auto& x : i) re(x); }\n\ttemplate <class T, class... U> void re(T&\
-    \ t, U&... u) { re(t); re(u...); } // read multiple\n\n\t// rv: resize and read\
-    \ vectors\n\tvoid rv(std::size_t) {}\n\ttemplate <class T, class... U> void rv(std::size_t\
-    \ N, vector<T>& t, U&... u);\n\ttemplate <class...U> void rv(std::size_t, std::size_t\
-    \ N2, U&... u);\n\ttemplate <class T, class... U> void rv(std::size_t N, vector<T>&\
-    \ t, U&... u) {\n\t\tt.resize(N); re(t);\n\t\trv(N, u...); }\n\ttemplate <class...U>\
-    \ void rv(std::size_t, std::size_t N2, U&... u) {\n\t\trv(N2, u...); }\n\n\t//\
-    \ dumb shortcuts to read in ints\n\tvoid decrement() {} // subtract one from each\n\
-    \ttemplate <class T, class... U> void decrement(T& t, U&... u) { --t; decrement(u...);\
-    \ }\n\t#define ints(...) int __VA_ARGS__; re(__VA_ARGS__);\n\t#define int1(...)\
-    \ ints(__VA_ARGS__); decrement(__VA_ARGS__);\n}\n\ninline namespace ToString {\n\
-    \ttemplate <class T> constexpr bool needs_output_v = !is_printable_v<T> && is_iterable_v<T>;\n\
-    \n\t// ts: string representation to print\n\ttemplate <class T> typename enable_if<is_printable_v<T>,\
-    \ string>::type ts(T v) {\n\t\tstringstream ss; ss << fixed << setprecision(15)\
-    \ << v;\n\t\treturn ss.str(); } // default\n\ttemplate <class T> string bit_vec(T\
-    \ t) { // bit vector to string\n\t\tstring res = \"{\"; for (int i = 0; i < (int)t.size();\
-    \ ++i) res += ts(t[i]);\n\t\tres += \"}\"; return res; }\n\tstring ts(vector<bool>\
-    \ v) { return bit_vec(v); }\n\ttemplate <std::size_t SZ> string ts(bitset<SZ>\
-    \ b) { return bit_vec(b); } // bit vector\n\ttemplate <class T, class U> string\
-    \ ts(pair<T, U> p); // pairs\n\ttemplate <class T> typename enable_if<needs_output_v<T>,\
-    \ string>::type ts(T v); // vectors, arrays\n\ttemplate <class T, class U> string\
-    \ ts(pair<T, U> p) { return \"(\" + ts(p.first) + \", \" + ts(p.second) + \")\"\
-    ; }\n\ttemplate <class T> typename enable_if<is_iterable_v<T>, string>::type ts_sep(T\
-    \ v, string sep) {\n\t\t// convert container to string w/ separator sep\n\t\t\
-    bool fst = 1; string res = \"\";\n\t\tfor (const auto& x : v) {\n\t\t\tif (!fst)\
-    \ res += sep;\n\t\t\tfst = 0; res += ts(x);\n\t\t}\n\t\treturn res;\n\t}\n\ttemplate\
-    \ <class T> typename enable_if<needs_output_v<T>, string>::type ts(T v) {\n\t\t\
-    return \"{\" + ts_sep(v, \", \") + \"}\"; }\n\n\t// for nested DS\n\ttemplate\
-    \ <int, class T> typename enable_if<!needs_output_v<T>, vector<string>>::type\
-    \ \n\t  ts_lev(const T& v) { return {ts(v)}; }\n\ttemplate <int lev, class T>\
-    \ typename enable_if<needs_output_v<T>, vector<string>>::type \n\t  ts_lev(const\
-    \ T& v) {\n\t\tif (lev == 0 || !(int)v.size()) return {ts(v)};\n\t\tvector<string>\
-    \ res;\n\t\tfor (const auto& t : v) {\n\t\t\tif ((int)res.size()) res.back() +=\
-    \ \",\";\n\t\t\tvector<string> tmp = ts_lev<lev - 1>(t);\n\t\t\tres.insert(res.end(),\
-    \ tmp.begin(), tmp.end());\n\t\t}\n\t\tfor (int i = 0; i < (int)res.size(); ++i)\
-    \ {\n\t\t\tstring bef = \" \"; if (i == 0) bef = \"{\";\n\t\t\tres[i] = bef +\
-    \ res[i];\n\t\t}\n\t\tres.back() += \"}\";\n\t\treturn res;\n\t}\n}\n\ninline\
-    \ namespace Output {\n\ttemplate <class T> void pr_sep(ostream& os, string, const\
-    \ T& t) { os << ts(t); }\n\ttemplate <class T, class... U> void pr_sep(ostream&\
-    \ os, string sep, const T& t, const U&... u) {\n\t\tpr_sep(os, sep, t); os <<\
-    \ sep; pr_sep(os, sep, u...); }\n\t// print w/ no spaces\n\ttemplate <class...\
-    \ T> void pr(const T&... t) { pr_sep(cout, \"\", t...); } \n\t// print w/ spaces,\
-    \ end with newline\n\tvoid ps() { cout << \"\\n\"; }\n\ttemplate <class... T>\
-    \ void ps(const T&... t) { pr_sep(cout, \" \", t...); ps(); } \n\t// debug to\
-    \ cerr\n\ttemplate <class... T> void dbg_out(const T&... t) {\n\t\tpr_sep(cerr,\
-    \ \" | \", t...); cerr << endl; }\n\tvoid loc_info(int line, string names) {\n\
-    \t\tcerr << \"Line(\" << line << \") -> [\" << names << \"]: \"; }\n\ttemplate\
-    \ <int lev, class T> void dbgl_out(const T& t) {\n\t\tcerr << \"\\n\\n\" << ts_sep(ts_lev<lev>(t),\
-    \ \"\\n\") << \"\\n\" << endl; }\n\t#ifdef LOCAL\n\t\t#define dbg(...) loc_info(__LINE__,\
-    \ #__VA_ARGS__), dbg_out(__VA_ARGS__)\n\t\t#define dbgl(lev, x) loc_info(__LINE__,\
-    \ #x), dbgl_out<lev>(x)\n\t#else // don't actually submit with this\n\t\t#define\
-    \ dbg(...) 0\n\t\t#define dbgl(lev, x) 0\n\t#endif\n}\n\ninline namespace FileIO\
-    \ {\n\tvoid set_in(string s)  { freopen(s.c_str(), \"r\", stdin); }\n\tvoid set_out(string\
-    \ s) { freopen(s.c_str(), \"w\", stdout); }\n\tvoid setIO(string s = \"\") {\n\
-    \t\tcin.tie(0)->sync_with_stdio(0); // unsync C / C++ I/O streams\n\t\t// cin.exceptions(cin.failbit);\n\
-    \t\t// throws exception when do smth illegal\n\t\t// ex. try to read letter into\
-    \ int\n\t\tif (!s.empty()) set_in(s + \".in\"), set_out(s + \".out\"); // for\
-    \ old USACO\n\t}\n}\n\nconst int MOD = 1e9 + 7; // 998244353\n\ntypedef std::decay<decltype(MOD)>::type\
-    \ mod_t; \nstruct mi {\n\tmod_t v;\n\texplicit operator mod_t() const { return\
-    \ v; }\n\texplicit operator bool() const { return v != 0; }\n\tmi() { v = 0; }\n\
-    \tmi(const long long& _v) {\n\t\tv = (-MOD <= _v && _v < MOD) ? _v : _v % MOD;\n\
-    \t\tif (v < 0) v += MOD; }\n\tfriend std::istream& operator>>(std::istream& in,\
-    \ mi& a) { \n\t\tlong long x; std::cin >> x; a = mi(x); return in; }\n\tfriend\
-    \ std::ostream& operator<<(std::ostream& os, const mi& a) { return os << a.v;\
-    \ }\n\tfriend bool operator==(const mi& a, const mi& b) { return a.v == b.v; }\n\
-    \tfriend bool operator!=(const mi& a, const mi& b) { return !(a == b); }    \n\
-    \tfriend bool operator<(const mi& a, const mi& b) { return a.v < b.v; }\n\tfriend\
-    \ bool operator>(const mi& a, const mi& b) { return a.v > b.v; }\n\tfriend bool\
-    \ operator<=(const mi& a, const mi& b) { return a.v <= b.v; }\n\tfriend bool operator>=(const\
-    \ mi& a, const mi& b) { return a.v >= b.v; }\n\tmi operator-() const { return\
-    \ mi(-v); }\n\tmi& operator+=(const mi& m) {\n\t\tif ((v += m.v) >= MOD) v -=\
-    \ MOD;\n\t\treturn *this; }\n\tmi& operator-=(const mi& m) {\n\t\tif ((v -= m.v)\
-    \ < 0) v += MOD;\n\t\treturn *this; }\n\tmi& operator*=(const mi& m) { v = (long\
-    \ long)v * m.v % MOD;\n\t\treturn *this; }\n\tfriend mi pow(mi a, long long p)\
-    \ {\n\t\tmi ans = 1; assert(p >= 0);\n\t\tfor (; p; p /= 2, a *= a) if (p & 1)\
-    \ ans *= a;\n\t\treturn ans; }\n\tfriend mi inv(const mi& a) { assert(a != 0);\
-    \ return pow(a, MOD - 2); }\n\tmi& operator/=(const mi& m) { return (*this) *=\
-    \ inv(m); }\n\tfriend mi operator+(mi a, const mi& b) { return a += b; }\n\tfriend\
-    \ mi operator-(mi a, const mi& b) { return a -= b; }\n\tfriend mi operator*(mi\
-    \ a, const mi& b) { return a *= b; }\n\tfriend mi operator/(mi a, const mi& b)\
-    \ { return a /= b; }\n};\n\nconst ld PI = acos((ld)-1);\n\ntypedef pair<mi, mi>\
-    \ pmi;\ntypedef vector<mi> vmi;\ntypedef vector<pmi> vpmi;\n\nint main() {\n\t\
-    setIO(\"\");\n\treturn 0;\n}\n"
-  code: "#include \"template-full.hpp\"\n\nint main() {\n\tsetIO(\"\");\n\treturn\
-    \ 0;\n}\n"
+  bundledCode: "\r\n\r\n#pragma GCC optimize (\"O3\")\r\n#pragma GCC target (\"sse4\"\
+    )\n\r\n#include <algorithm>\r\n#include <array>\r\n#include <bitset>\r\n#include\
+    \ <cassert>\r\n#include <chrono>\r\n#include <cmath>\r\n#include <complex>\r\n\
+    #include <cstdio>\r\n#include <cstdlib>\r\n#include <cstring>\r\n#include <ctime>\r\
+    \n#include <deque>\r\n#include <iostream>\r\n#include <iomanip>\r\n#include <list>\r\
+    \n#include <map>\r\n#include <numeric>\r\n#include <queue>\r\n#include <random>\r\
+    \n#include <set>\r\n#include <stack>\r\n#include <string>\r\n#include <unordered_map>\r\
+    \n#include <vector>\r\n\r\nusing namespace std;\n\r\n#include <ext/pb_ds/tree_policy.hpp>\r\
+    \n#include <ext/pb_ds/assoc_container.hpp>\r\n\r\nusing namespace __gnu_pbds;\r\
+    \n\r\ntemplate <class T> using Tree = tree<T, null_type, less<T>, rb_tree_tag,\
+    \ tree_order_statistics_node_update>;\r\n\r\ntypedef long long ll;\r\ntypedef\
+    \ long double ld;\r\ntypedef double db;\r\ntypedef string str;\r\n\r\ntypedef\
+    \ pair<int, int> pi;\r\ntypedef pair<ll, ll> pl;\r\ntypedef pair<db, db> pd;\r\
+    \n\r\ntypedef vector<int> vi;\r\ntypedef vector<bool> vb;\r\ntypedef vector<ll>\
+    \ vl;\r\ntypedef vector<db> vd;\r\ntypedef vector<str> vs;\r\ntypedef vector<pi>\
+    \ vpi;\r\ntypedef vector<pl> vpl;\r\ntypedef vector<pd> vpd;\r\n\r\n#define mp\
+    \ make_pair\r\n#define f first\r\n#define s second\r\n#define sz(x) (int)(x).size()\r\
+    \n#define all(x) begin(x), end(x)\r\n#define rall(x) (x).rbegin(), (x).rend()\r\
+    \n#define sor(x) sort(all(x))\r\n#define rsz resize\r\n#define resz resize\r\n\
+    #define ins insert\r\n#define ft front()\r\n#define bk back()\r\n#define pf push_front\r\
+    \n#define pb push_back\r\n#define eb emplace_back\r\n#define lb lower_bound\r\n\
+    #define ub upper_bound\r\n\r\n#define f1r(i, a, b) for (int i = (a); i < (b);\
+    \ ++i)\r\n#define f0r(i, a) f1r(i, 0, a)\r\n#define r1f(i, a, b) for (int i =\
+    \ (b); i --> (a); )\r\n#define r0f(i, a) r1f(i, 0, a)\r\n#define FOR(i, a, b)\
+    \ for (int i = (a); i < (b); ++i)\r\n#define F0R(i, a) FOR(i, 0, a)\r\n#define\
+    \ ROF(i, a, b) for (int i = (b) - 1; i >= (a); --i)\r\n#define R0F(i, a) ROF(i,\
+    \ 0, a)\r\n#define each(a, x) for (auto& a : x)\r\n\r\nmt19937 rng((uint32_t)chrono::steady_clock::now().time_since_epoch().count());\r\
+    \n\r\ntemplate <class T> bool ckmin(T& a, const T& b) { return b < a ? a = b,\
+    \ 1 : 0; }\r\ntemplate <class T> bool ckmax(T& a, const T& b) { return a < b ?\
+    \ a = b, 1 : 0; }\r\n\r\ntemplate <class T> using V = vector<T>;\r\ntemplate <class\
+    \ T> using VV = V<V<T>>;\r\ntemplate <class T> using VVV = V<V<V<T>>>;\r\ntemplate\
+    \ <class T> using VVVV = V<V<V<V<T>>>>;\r\n\r\ntemplate <typename T, typename\
+    \ S> ostream& operator << (ostream& os, const pair<T, S>& p) { return os << \"\
+    (\" << p.first << \", \" << p.second << \")\"; }\r\ntemplate <typename C, typename\
+    \ T = decay<decltype(*begin(declval<C>()))>, typename enable_if<!is_same<C, string>::value>::type*\
+    \ = nullptr>\r\nostream& operator << (ostream& os, const C& c) { bool f = true;\
+    \ os << \"{\"; for (const auto& x : c) { if (!f) os << \", \"; f = false; os <<\
+    \ x; } return os << \"}\"; }\r\ntemplate <typename T> void debug(string s, T x)\
+    \ { cerr << s << \" = \" << x << \"\\n\"; }\r\ntemplate <typename T, typename...\
+    \ Args> void debug(string s, T x, Args... args) { cerr << s.substr(0, s.find(','))\
+    \ << \" = \" << x << \" | \"; debug(s.substr(s.find(',') + 2), args...); }\r\n\
+    \r\nconstexpr int pct(int x) { return __builtin_popcount(x); }\r\nconstexpr int\
+    \ bits(int x) { return 31 - __builtin_clz(x); } // floor(log2(x))\r\n\r\ninline\
+    \ namespace Helpers {\r\n\t//////////// is_iterable\r\n\t// https://stackoverflow.com/questions/13830158/check-if-a-variable-type-is-iterable\r\
+    \n\t// this gets used only when we can call begin() and end() on that type\r\n\
+    \ttemplate <class T, class = void> struct is_iterable : false_type {};\r\n\ttemplate\
+    \ <class T> struct is_iterable<T, void_t<decltype(begin(declval<T>())),\r\n\t\t\
+    \t\t\t\t\t\t\t  decltype(end(declval<T>()))\r\n\t\t\t\t\t\t\t\t\t >\r\n\t\t\t\t\
+    \t\t   > : true_type {};\r\n\ttemplate <class T> constexpr bool is_iterable_v\
+    \ = is_iterable<T>::value;\r\n\r\n\t//////////// is_readable\r\n\ttemplate <class\
+    \ T, class = void> struct is_readable : false_type {};\r\n\ttemplate <class T>\
+    \ struct is_readable<T,\r\n\t\t\ttypename std::enable_if_t<\r\n\t\t\t\tis_same_v<decltype(cin\
+    \ >> declval<T&>()), istream&>\r\n\t\t\t>\r\n\t\t> : true_type {};\r\n\ttemplate\
+    \ <class T> constexpr bool is_readable_v = is_readable<T>::value;\r\n\r\n\t////////////\
+    \ is_printable\r\n\t// // https://nafe.es/posts/2020-02-29-is-printable/\r\n\t\
+    template <class T, class = void> struct is_printable : false_type {};\r\n\ttemplate\
+    \ <class T> struct is_printable<T,\r\n\t\t\ttypename std::enable_if_t<\r\n\t\t\
+    \t\tis_same_v<decltype(cout << declval<T>()), ostream&>\r\n\t\t\t>\r\n\t\t> :\
+    \ true_type {};\r\n\ttemplate <class T> constexpr bool is_printable_v = is_printable<T>::value;\r\
+    \n}\r\n\r\ninline namespace Input {\r\n\ttemplate <class T> constexpr bool needs_input_v\
+    \ = !is_readable_v<T> && is_iterable_v<T>;\r\n\ttemplate <class T, class... U>\
+    \ void re(T& t, U&... u);\r\n\ttemplate <class T, class U> void re(pair<T, U>&\
+    \ p); // pairs\r\n\r\n\t// re: read\r\n\ttemplate <class T> typename enable_if<is_readable_v<T>,\
+    \ void>::type re(T& x) { cin >> x; } // default\r\n\ttemplate <class T> void re(complex<T>&\
+    \ c) { T a, b; re(a, b); c = {a, b}; } // complex\r\n\ttemplate <class T> typename\
+    \ enable_if<needs_input_v<T>, void>::type re(T& i); // ex. vectors, arrays\r\n\
+    \ttemplate <class T, class U> void re(pair<T, U>& p) { re(p.first, p.second);\
+    \ }\r\n\ttemplate <class T> typename enable_if<needs_input_v<T>, void>::type re(T&\
+    \ i) {\r\n\t\tfor (auto& x : i) re(x); }\r\n\ttemplate <class T, class... U> void\
+    \ re(T& t, U&... u) { re(t); re(u...); } // read multiple\r\n\r\n\t// rv: resize\
+    \ and read vectors\r\n\tvoid rv(std::size_t) {}\r\n\ttemplate <class T, class...\
+    \ U> void rv(std::size_t N, vector<T>& t, U&... u);\r\n\ttemplate <class...U>\
+    \ void rv(std::size_t, std::size_t N2, U&... u);\r\n\ttemplate <class T, class...\
+    \ U> void rv(std::size_t N, vector<T>& t, U&... u) {\r\n\t\tt.resize(N); re(t);\r\
+    \n\t\trv(N, u...); }\r\n\ttemplate <class...U> void rv(std::size_t, std::size_t\
+    \ N2, U&... u) {\r\n\t\trv(N2, u...); }\r\n\r\n\t// dumb shortcuts to read in\
+    \ ints\r\n\tvoid decrement() {} // subtract one from each\r\n\ttemplate <class\
+    \ T, class... U> void decrement(T& t, U&... u) { --t; decrement(u...); }\r\n\t\
+    #define ints(...) int __VA_ARGS__; re(__VA_ARGS__);\r\n\t#define int1(...) ints(__VA_ARGS__);\
+    \ decrement(__VA_ARGS__);\r\n}\r\n  \r\ninline namespace ToString {\r\n\ttemplate\
+    \ <class T> constexpr bool needs_output_v = !is_printable_v<T> && is_iterable_v<T>;\r\
+    \n\r\n\t// ts: string representation to print\r\n\ttemplate <class T> typename\
+    \ enable_if<is_printable_v<T>, string>::type ts(T v) {\r\n\t\tstringstream ss;\
+    \ ss << fixed << setprecision(15) << v;\r\n\t\treturn ss.str(); } // default\r\
+    \n\ttemplate <class T> string bit_vec(T t) { // bit vector to string\r\n\t\tstring\
+    \ res = \"{\"; for (int i = 0; i < (int)t.size(); ++i) res += ts(t[i]);\r\n\t\t\
+    res += \"}\"; return res; }\r\n\tstring ts(vector<bool> v) { return bit_vec(v);\
+    \ }\r\n\ttemplate <std::size_t SZ> string ts(bitset<SZ> b) { return bit_vec(b);\
+    \ } // bit vector\r\n\ttemplate <class T, class U> string ts(pair<T, U> p); //\
+    \ pairs\r\n\ttemplate <class T> typename enable_if<needs_output_v<T>, string>::type\
+    \ ts(T v); // vectors, arrays\r\n\ttemplate <class T, class U> string ts(pair<T,\
+    \ U> p) { return \"(\" + ts(p.first) + \", \" + ts(p.second) + \")\"; }\r\n\t\
+    template <class T> typename enable_if<is_iterable_v<T>, string>::type ts_sep(T\
+    \ v, string sep) { \r\n\t\t// convert container to string w/ separator sep\r\n\
+    \t\tbool fst = 1; string res = \"\";\r\n\t\tfor (const auto& x : v) { \r\n\t\t\
+    \tif (!fst) res += sep;\r\n\t\t\tfst = 0; res += ts(x);\r\n\t\t}\r\n\t\treturn\
+    \ res;\r\n\t}\r\n\ttemplate <class T> typename enable_if<needs_output_v<T>, string>::type\
+    \ ts(T v) {\r\n\t\treturn \"{\" + ts_sep(v, \", \") + \"}\"; } \r\n\r\n\t// for\
+    \ nested DS\r\n\ttemplate <int, class T> typename enable_if<!needs_output_v<T>,\
+    \ vector<string>>::type \r\n\t  ts_lev(const T& v) { return {ts(v)}; }\r\n\ttemplate\
+    \ <int lev, class T> typename enable_if<needs_output_v<T>, vector<string>>::type\
+    \ \r\n\t  ts_lev(const T& v) {\r\n\t\tif (lev == 0 || !(int)v.size()) return {ts(v)};\r\
+    \n\t\tvector<string> res;\r\n\t\tfor (const auto& t : v) {\r\n\t\t\tif ((int)res.size())\
+    \ res.back() += \",\";\r\n\t\t\tvector<string> tmp = ts_lev<lev - 1>(t);\r\n\t\
+    \t\tres.insert(res.end(), tmp.begin(), tmp.end()); \r\n\t\t}\r\n\t\tfor (int i\
+    \ = 0; i < (int)res.size(); ++i) {\r\n\t\t\tstring bef = \" \"; if (i == 0) bef\
+    \ = \"{\";\r\n\t\t\tres[i] = bef + res[i];\r\n\t\t}\r\n\t\tres.back() += \"}\"\
+    ;\r\n\t\treturn res;\r\n\t}\r\n}\r\n\r\ninline namespace Output {\r\n\ttemplate\
+    \ <class T> void pr_sep(ostream& os, string, const T& t) { os << ts(t); }\r\n\t\
+    template <class T, class... U> void pr_sep(ostream& os, string sep, const T& t,\
+    \ const U&... u) {\r\n\t\tpr_sep(os, sep, t); os << sep; pr_sep(os, sep, u...);\
+    \ }\r\n\t// print w/ no spaces\r\n\ttemplate <class... T> void pr(const T&...\
+    \ t) { pr_sep(cout, \"\", t...); } \r\n\t// print w/ spaces, end with newline\r\
+    \n\tvoid ps() { cout << \"\\n\"; }\r\n\ttemplate <class... T> void ps(const T&...\
+    \ t) { pr_sep(cout, \" \", t...); ps(); } \r\n\t// debug to cerr\r\n\ttemplate\
+    \ <class... T> void dbg_out(const T&... t) {\r\n\t\tpr_sep(cerr, \" | \", t...);\
+    \ cerr << endl; }\r\n\tvoid loc_info(int line, string names) {\r\n\t\tcerr <<\
+    \ \"Line(\" << line << \") -> [\" << names << \"]: \"; }\r\n\ttemplate <int lev,\
+    \ class T> void dbgl_out(const T& t) {\r\n\t\tcerr << \"\\n\\n\" << ts_sep(ts_lev<lev>(t),\
+    \ \"\\n\") << \"\\n\" << endl; }\r\n\t#ifdef LOCAL\r\n\t\t#define dbg(...) loc_info(__LINE__,\
+    \ #__VA_ARGS__), dbg_out(__VA_ARGS__)\r\n\t\t#define dbgl(lev, x) loc_info(__LINE__,\
+    \ #x), dbgl_out<lev>(x)\r\n\t#else // don't actually submit with this\r\n\t\t\
+    #define dbg(...) 0\r\n\t\t#define dbgl(lev, x) 0\r\n\t#endif\r\n}\r\n\r\ninline\
+    \ namespace FileIO {\r\n\tvoid set_in(string s)  { freopen(s.c_str(), \"r\", stdin);\
+    \ }\r\n\tvoid set_out(string s) { freopen(s.c_str(), \"w\", stdout); }\r\n\tvoid\
+    \ set_io(string s = \"\") {\r\n\t\tcin.tie(0)->sync_with_stdio(0); // unsync C\
+    \ / C++ I/O streams\r\n\t\t// cin.exceptions(cin.failbit);\r\n\t\t// throws exception\
+    \ when do smth illegal\r\n\t\t// ex. try to read letter into int\r\n\t\tif (!s.empty())\
+    \ set_in(s + \".in\"), set_out(s + \".out\"); // for old USACO\r\n\t}\r\n}\r\n\
+    \r\nconst int MOD = 1e9 + 7; // 998244353\r\n\r\ntypedef std::decay<decltype(MOD)>::type\
+    \ mod_t; \r\nstruct mi {\r\n\tmod_t v;\r\n\texplicit operator mod_t() const {\
+    \ return v; }\r\n\texplicit operator bool() const { return v != 0; }\r\n\tmi()\
+    \ { v = 0; }\r\n\tmi(const long long& _v) {\r\n\t\tv = (-MOD <= _v && _v < MOD)\
+    \ ? _v : _v % MOD;\r\n\t\tif (v < 0) v += MOD; }\r\n\tfriend std::istream& operator>>(std::istream&\
+    \ in, mi& a) { \r\n\t\tlong long x; std::cin >> x; a = mi(x); return in; }\r\n\
+    \tfriend std::ostream& operator<<(std::ostream& os, const mi& a) { return os <<\
+    \ a.v; }\r\n\tfriend bool operator==(const mi& a, const mi& b) { return a.v ==\
+    \ b.v; }\r\n\tfriend bool operator!=(const mi& a, const mi& b) { return !(a ==\
+    \ b); }    \r\n\tfriend bool operator<(const mi& a, const mi& b) { return a.v\
+    \ < b.v; }\r\n\tfriend bool operator>(const mi& a, const mi& b) { return a.v >\
+    \ b.v; }\r\n\tfriend bool operator<=(const mi& a, const mi& b) { return a.v <=\
+    \ b.v; }\r\n\tfriend bool operator>=(const mi& a, const mi& b) { return a.v >=\
+    \ b.v; }\r\n\tmi operator-() const { return mi(-v); }\r\n\tmi& operator+=(const\
+    \ mi& m) {\r\n\t\tif ((v += m.v) >= MOD) v -= MOD;\r\n\t\treturn *this; }\r\n\t\
+    mi& operator-=(const mi& m) {\r\n\t\tif ((v -= m.v) < 0) v += MOD;\r\n\t\treturn\
+    \ *this; }\r\n\tmi& operator*=(const mi& m) { v = (long long)v * m.v % MOD;\r\n\
+    \t\treturn *this; }\r\n\tfriend mi pow(mi a, long long p) {\r\n\t\tmi ans = 1;\
+    \ assert(p >= 0);\r\n\t\tfor (; p; p /= 2, a *= a) if (p & 1) ans *= a;\r\n\t\t\
+    return ans; }\r\n\tfriend mi inv(const mi& a) { assert(a != 0); return pow(a,\
+    \ MOD - 2); }\r\n\tmi& operator/=(const mi& m) { return (*this) *= inv(m); }\r\
+    \n\tfriend mi operator+(mi a, const mi& b) { return a += b; }\r\n\tfriend mi operator-(mi\
+    \ a, const mi& b) { return a -= b; }\r\n\tfriend mi operator*(mi a, const mi&\
+    \ b) { return a *= b; }\r\n\tfriend mi operator/(mi a, const mi& b) { return a\
+    \ /= b; }\r\n};\n\r\nconst ld PI = acos((ld)-1);\r\n\r\ntypedef pair<mi, mi> pmi;\r\
+    \ntypedef vector<mi> vmi;\r\ntypedef vector<pmi> vpmi;\r\n\r\nint main() {\r\n\
+    \tset_io(\"\");\r\n\treturn 0;\r\n}\r\n"
+  code: "#include \"template-full.hpp\"\r\n\r\nint main() {\r\n\tset_io(\"\");\r\n\
+    \treturn 0;\r\n}\r\n"
   dependsOn:
   - library/contest/template-full.hpp
   - library/misc/pragma-short.hpp
@@ -185,7 +193,7 @@ data:
   isVerificationFile: false
   path: library/contest/template-full.cpp
   requiredBy: []
-  timestamp: '2022-07-21 16:05:29-04:00'
+  timestamp: '2022-07-22 23:22:14-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/unit-test/unit-test-template-full.test.cpp
