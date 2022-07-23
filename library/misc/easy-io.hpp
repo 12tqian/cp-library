@@ -80,7 +80,7 @@ inline namespace ToString {
 	template <class T> typename enable_if<is_iterable_v<T>, string>::type ts_sep(T v, string sep) {
 		// convert container to string w/ separator sep
 		bool fst = 1; string res = "";
-		for (const auto& x : v) {
+		for (const auto& x : v) { 
 			if (!fst) res += sep;
 			fst = 0; res += ts(x);
 		}
