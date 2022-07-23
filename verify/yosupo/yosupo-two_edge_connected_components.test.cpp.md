@@ -5,8 +5,8 @@ data:
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
   - icon: ':heavy_check_mark:'
-    path: library/graphs/biconnected-components.hpp
-    title: library/graphs/biconnected-components.hpp
+    path: library/graphs/two-edge-connected-components.hpp
+    title: library/graphs/two-edge-connected-components.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -24,8 +24,8 @@ data:
     \n#include <deque>\r\n#include <iostream>\r\n#include <iomanip>\r\n#include <list>\r\
     \n#include <map>\r\n#include <numeric>\r\n#include <queue>\r\n#include <random>\r\
     \n#include <set>\r\n#include <stack>\r\n#include <string>\r\n#include <unordered_map>\r\
-    \n#include <vector>\r\n\r\nusing namespace std;\n\r\nstruct BCC {\r\n\tint n,\
-    \ time, num_comps; \r\n\tstd::vector<int> ord, low, id; \r\n\t// order encountered,\
+    \n#include <vector>\r\n\r\nusing namespace std;\n\r\nstruct TwoEdgeCC {\r\n\t\
+    int n, time, num_comps; \r\n\tstd::vector<int> ord, low, id; \r\n\t// order encountered,\
     \ earliest time in subtree, component id\r\n\tstd::vector<std::vector<int>> adj,\
     \ comps, tree;\r\n\t// adj, comps storage, bridge block tree\r\n\tstd::vector<std::pair<int,\
     \ int>> bridge;\r\n\t// bridges\r\n\t\r\n\tvoid init(int n_) {\r\n\t\tnum_comps\
@@ -52,27 +52,28 @@ data:
     \ {\r\n\t\t\tint u = id[b.first];\r\n\t\t\tint v = id[b.second];\r\n\t\t\ttree[u].push_back(v);\r\
     \n\t\t\ttree[v].push_back(u);            \r\n\t\t}\r\n\t\treturn num_comps;\r\n\
     \t}\r\n};\n\r\nint main() {\r\n\tusing namespace std;\r\n\tios_base::sync_with_stdio(0);\r\
-    \n\tint n, m; \r\n\tcin >> n >> m;\r\n\tBCC B; B.init(n);\r\n\tfor (int i = 0;\
-    \ i < m ;i++) {\r\n\t\tint u, v; cin >> u >> v;\r\n\t\tB.ae(u, v);\r\n\t}\r\n\t\
-    B.build();\r\n\tcout << B.num_comps << '\\n';\r\n\tfor (int i = 0; i < B.num_comps;\
-    \ i++) {\r\n\t\tcout << (int)B.comps[i].size() << \" \";\r\n\t\tfor (int v : B.comps[i])\
-    \ \r\n\t\t\tcout << v << \" \";\r\n\t\tcout << '\\n';\r\n\t}\r\n}\n"
+    \n\tint n, m; \r\n\tcin >> n >> m;\r\n\tTwoEdgeCC B; B.init(n);\r\n\tfor (int\
+    \ i = 0; i < m ;i++) {\r\n\t\tint u, v; cin >> u >> v;\r\n\t\tB.ae(u, v);\r\n\t\
+    }\r\n\tB.build();\r\n\tcout << B.num_comps << '\\n';\r\n\tfor (int i = 0; i <\
+    \ B.num_comps; i++) {\r\n\t\tcout << (int)B.comps[i].size() << \" \";\r\n\t\t\
+    for (int v : B.comps[i]) \r\n\t\t\tcout << v << \" \";\r\n\t\tcout << '\\n';\r\
+    \n\t}\r\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/two_edge_connected_components\"\
     \r\n\r\n#include \"../../library/contest/template-minimal.hpp\"\r\n#include \"\
-    ../../library/graphs/biconnected-components.hpp\"\r\n\r\nint main() {\r\n\tusing\
-    \ namespace std;\r\n\tios_base::sync_with_stdio(0);\r\n\tint n, m; \r\n\tcin >>\
-    \ n >> m;\r\n\tBCC B; B.init(n);\r\n\tfor (int i = 0; i < m ;i++) {\r\n\t\tint\
-    \ u, v; cin >> u >> v;\r\n\t\tB.ae(u, v);\r\n\t}\r\n\tB.build();\r\n\tcout <<\
-    \ B.num_comps << '\\n';\r\n\tfor (int i = 0; i < B.num_comps; i++) {\r\n\t\tcout\
-    \ << (int)B.comps[i].size() << \" \";\r\n\t\tfor (int v : B.comps[i]) \r\n\t\t\
-    \tcout << v << \" \";\r\n\t\tcout << '\\n';\r\n\t}\r\n}"
+    ../../library/graphs/two-edge-connected-components.hpp\"\r\n\r\nint main() {\r\
+    \n\tusing namespace std;\r\n\tios_base::sync_with_stdio(0);\r\n\tint n, m; \r\n\
+    \tcin >> n >> m;\r\n\tTwoEdgeCC B; B.init(n);\r\n\tfor (int i = 0; i < m ;i++)\
+    \ {\r\n\t\tint u, v; cin >> u >> v;\r\n\t\tB.ae(u, v);\r\n\t}\r\n\tB.build();\r\
+    \n\tcout << B.num_comps << '\\n';\r\n\tfor (int i = 0; i < B.num_comps; i++) {\r\
+    \n\t\tcout << (int)B.comps[i].size() << \" \";\r\n\t\tfor (int v : B.comps[i])\
+    \ \r\n\t\t\tcout << v << \" \";\r\n\t\tcout << '\\n';\r\n\t}\r\n}"
   dependsOn:
   - library/contest/template-minimal.hpp
-  - library/graphs/biconnected-components.hpp
+  - library/graphs/two-edge-connected-components.hpp
   isVerificationFile: true
   path: verify/yosupo/yosupo-two_edge_connected_components.test.cpp
   requiredBy: []
-  timestamp: '2022-07-21 16:12:33-04:00'
+  timestamp: '2022-07-23 17:38:00-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/yosupo-two_edge_connected_components.test.cpp

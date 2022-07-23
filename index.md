@@ -118,9 +118,6 @@ data:
       path: library/graphs/bellman-ford.hpp
       title: Bellman Ford
     - icon: ':heavy_check_mark:'
-      path: library/graphs/biconnected-components.hpp
-      title: library/graphs/biconnected-components.hpp
-    - icon: ':heavy_check_mark:'
       path: library/graphs/centroid-decomposition.hpp
       title: library/graphs/centroid-decomposition.hpp
     - icon: ':heavy_check_mark:'
@@ -171,6 +168,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/graphs/topological-sort.hpp
       title: Topological Sort
+    - icon: ':heavy_check_mark:'
+      path: library/graphs/two-edge-connected-components.hpp
+      title: library/graphs/two-edge-connected-components.hpp
     - icon: ':heavy_check_mark:'
       path: library/graphs/two-sat.hpp
       title: library/graphs/two-sat.hpp
