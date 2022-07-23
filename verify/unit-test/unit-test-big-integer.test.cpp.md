@@ -1,29 +1,29 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/contest/template-full.hpp
     title: library/contest/template-full.hpp
   - icon: ':question:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/misc/easy-io.hpp
     title: library/misc/easy-io.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/misc/pragma-short.hpp
     title: library/misc/pragma-short.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/modular-arithmetic/mod-int.hpp
     title: library/modular-arithmetic/mod-int.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/numerical/big-integer.hpp
     title: Big Integer
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/aplusb
@@ -324,28 +324,28 @@ data:
     \ 6, base_digits);\r\n\t\tres.trim();\r\n\t\treturn res;\r\n\t}\r\n};\r\n\r\n\
     BigInt random_big_int(int n) {\r\n\tstd::string s;\r\n\tfor (int i = 0; i < n;\
     \ i++) {\r\n\t\ts += rand() % 10 + '0';\r\n\t}\r\n\treturn BigInt(s);\r\n}\n\r\
-    \nvoid test() {\r\n\tset_io(\"\");\r\n\tconst int D = 1000;\r\n\tconst int T =\
-    \ 100;\r\n\tauto convert = [&](BigInt x) {\r\n\t\tmi res = 0;\r\n\t\tmi run =\
-    \ 1;\r\n\t\tf0r(i, sz(x.z)) {\r\n\t\t\tres += x.z[i] * run;\r\n\t\t\trun *= base;\r\
-    \n\t\t}\r\n\t\tif (x.sign == -1) {\r\n\t\t\tres *= -1;\r\n\t\t}\r\n\t\treturn\
-    \ res;\r\n\t};\r\n\tf0r(t, T) {\r\n\t\tBigInt a = random_big_int(D) * ((rng()\
-    \ % 2) * 2 - 1) ;\r\n\t\tBigInt b = random_big_int(D) * ((rng() % 2) * 2 - 1);\r\
-    \n\t\tmi c = convert(a);\r\n\t\tmi d = convert(b);\r\n\t\tassert(convert(a + b)\
-    \ == c + d);\r\n\t\tassert(convert(a * b) == c * d);\r\n\t\tassert(convert(a -\
-    \ b) == c - d);\r\n\t}\r\n}\r\n\r\nint main() {\r\n\tsetIO(\"\");\r\n\ttest();\r\
-    \n\tint a, b;\r\n\tre(a, b);\r\n\tps(a + b);\r\n\treturn 0;\r\n}\n"
+    \nvoid test() {\r\n\tconst int D = 1000;\r\n\tconst int T = 100;\r\n\tauto convert\
+    \ = [&](BigInt x) {\r\n\t\tmi res = 0;\r\n\t\tmi run = 1;\r\n\t\tf0r(i, sz(x.z))\
+    \ {\r\n\t\t\tres += x.z[i] * run;\r\n\t\t\trun *= base;\r\n\t\t}\r\n\t\tif (x.sign\
+    \ == -1) {\r\n\t\t\tres *= -1;\r\n\t\t}\r\n\t\treturn res;\r\n\t};\r\n\tf0r(t,\
+    \ T) {\r\n\t\tBigInt a = random_big_int(D) * ((rng() % 2) * 2 - 1) ;\r\n\t\tBigInt\
+    \ b = random_big_int(D) * ((rng() % 2) * 2 - 1);\r\n\t\tmi c = convert(a);\r\n\
+    \t\tmi d = convert(b);\r\n\t\tassert(convert(a + b) == c + d);\r\n\t\tassert(convert(a\
+    \ * b) == c * d);\r\n\t\tassert(convert(a - b) == c - d);\r\n\t}\r\n}\r\n\r\n\
+    int main() {\r\n\tset_io(\"\");\r\n\ttest();\r\n\tint a, b;\r\n\tre(a, b);\r\n\
+    \tps(a + b);\r\n\treturn 0;\r\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/aplusb\"\r\n\r\n#include\
     \ \"../../library/contest/template-full.hpp\"\r\n#include \"../../library/numerical/big-integer.hpp\"\
-    \r\n\r\nvoid test() {\r\n\tset_io(\"\");\r\n\tconst int D = 1000;\r\n\tconst int\
-    \ T = 100;\r\n\tauto convert = [&](BigInt x) {\r\n\t\tmi res = 0;\r\n\t\tmi run\
-    \ = 1;\r\n\t\tf0r(i, sz(x.z)) {\r\n\t\t\tres += x.z[i] * run;\r\n\t\t\trun *=\
-    \ base;\r\n\t\t}\r\n\t\tif (x.sign == -1) {\r\n\t\t\tres *= -1;\r\n\t\t}\r\n\t\
-    \treturn res;\r\n\t};\r\n\tf0r(t, T) {\r\n\t\tBigInt a = random_big_int(D) * ((rng()\
-    \ % 2) * 2 - 1) ;\r\n\t\tBigInt b = random_big_int(D) * ((rng() % 2) * 2 - 1);\r\
-    \n\t\tmi c = convert(a);\r\n\t\tmi d = convert(b);\r\n\t\tassert(convert(a + b)\
-    \ == c + d);\r\n\t\tassert(convert(a * b) == c * d);\r\n\t\tassert(convert(a -\
-    \ b) == c - d);\r\n\t}\r\n}\r\n\r\nint main() {\r\n\tsetIO(\"\");\r\n\ttest();\r\
-    \n\tint a, b;\r\n\tre(a, b);\r\n\tps(a + b);\r\n\treturn 0;\r\n}"
+    \r\n\r\nvoid test() {\r\n\tconst int D = 1000;\r\n\tconst int T = 100;\r\n\tauto\
+    \ convert = [&](BigInt x) {\r\n\t\tmi res = 0;\r\n\t\tmi run = 1;\r\n\t\tf0r(i,\
+    \ sz(x.z)) {\r\n\t\t\tres += x.z[i] * run;\r\n\t\t\trun *= base;\r\n\t\t}\r\n\t\
+    \tif (x.sign == -1) {\r\n\t\t\tres *= -1;\r\n\t\t}\r\n\t\treturn res;\r\n\t};\r\
+    \n\tf0r(t, T) {\r\n\t\tBigInt a = random_big_int(D) * ((rng() % 2) * 2 - 1) ;\r\
+    \n\t\tBigInt b = random_big_int(D) * ((rng() % 2) * 2 - 1);\r\n\t\tmi c = convert(a);\r\
+    \n\t\tmi d = convert(b);\r\n\t\tassert(convert(a + b) == c + d);\r\n\t\tassert(convert(a\
+    \ * b) == c * d);\r\n\t\tassert(convert(a - b) == c - d);\r\n\t}\r\n}\r\n\r\n\
+    int main() {\r\n\tset_io(\"\");\r\n\ttest();\r\n\tint a, b;\r\n\tre(a, b);\r\n\
+    \tps(a + b);\r\n\treturn 0;\r\n}"
   dependsOn:
   - library/contest/template-full.hpp
   - library/misc/pragma-short.hpp
@@ -356,8 +356,8 @@ data:
   isVerificationFile: true
   path: verify/unit-test/unit-test-big-integer.test.cpp
   requiredBy: []
-  timestamp: '2022-07-22 23:22:14-04:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2022-07-23 00:59:43-04:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/unit-test/unit-test-big-integer.test.cpp
 layout: document

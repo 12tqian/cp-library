@@ -6,7 +6,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/contest/template-full.cpp
       title: library/contest/template-full.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/contest/template-full.hpp
       title: library/contest/template-full.hpp
     - icon: ':question:'
@@ -207,7 +207,7 @@ data:
       title: library/math/affine.hpp
   - name: library/misc
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/misc/easy-io.hpp
       title: library/misc/easy-io.hpp
     - icon: ':heavy_check_mark:'
@@ -219,12 +219,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/misc/fast-io.hpp
       title: library/misc/fast-io.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/misc/pragma-short.hpp
       title: library/misc/pragma-short.hpp
   - name: library/modular-arithmetic
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/modular-arithmetic/mod-int.hpp
       title: library/modular-arithmetic/mod-int.hpp
     - icon: ':question:'
@@ -261,7 +261,7 @@ data:
       title: library/number-theory/sieve.hpp
   - name: library/numerical
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/numerical/big-integer.hpp
       title: Big Integer
     - icon: ':heavy_check_mark:'
@@ -438,7 +438,7 @@ data:
       title: verify/spoj/spoj-TDKPRIME.test.cpp
   - name: verify/unit-test
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/unit-test/unit-test-big-integer.test.cpp
       title: verify/unit-test/unit-test-big-integer.test.cpp
     - icon: ':heavy_check_mark:'

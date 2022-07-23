@@ -206,20 +206,20 @@ data:
     \ operator-(Mint a, const Mint& b) { return a -= b; }\r\n\tfriend Mint operator*(Mint\
     \ a, const Mint& b) { return a *= b; }\r\n\tfriend Mint operator/(Mint a, const\
     \ Mint& b) { return a /= b; }\r\n};\r\n\r\nusing mi = Mint<998244353, 5>;\r\n\r\
-    \nint main() {\r\n\tios::sync_with_stdio(false);\r\n\tcin.tie(0);\r\n\tint n,\
-    \ m;\r\n\tcin >> n >> m;\r\n\tvector<mi> a(n);\r\n\tfor (int i = 0; i < n; ++i)\
-    \ {\r\n\t\tcin >> a[i];\r\n\t}\r\n\tPoly<mi> p(a); \r\n\tPoly<mi> ans = p.pow(m,\
-    \ n);\r\n\tans.resize(n);\r\n\tfor (int i = 0; i < n; ++i) {\r\n\t\tcout << ans[i]\
-    \ << ' ';\r\n\t}\r\n\tcout << '\\n';\r\n\treturn 0;\t\r\n}\n"
+    \nint main() {\r\n\tios::sync_with_stdio(false);\r\n\tcin.tie(0);\r\n\tint n;\
+    \ \r\n\tlong long m;\r\n\tcin >> n >> m;\r\n\tvector<mi> a(n);\r\n\tfor (int i\
+    \ = 0; i < n; ++i) {\r\n\t\tcin >> a[i];\r\n\t}\r\n\tPoly<mi> p(a); \r\n\tPoly<mi>\
+    \ ans = p.pow(m, n);\r\n\tans.resize(n);\r\n\tfor (int i = 0; i < n; ++i) {\r\n\
+    \t\tcout << ans[i] << ' ';\r\n\t}\r\n\tcout << '\\n';\r\n\treturn 0;\t\r\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/pow_of_formal_power_series\"\
     \r\n\r\n#include \"../../library/contest/template-minimal.hpp\"\r\n#include \"\
     ../../library/polynomial/polynomial.hpp\"\r\n#include \"../../library/modular-arithmetic/mod-int2.hpp\"\
     \r\n\r\nusing mi = Mint<998244353, 5>;\r\n\r\nint main() {\r\n\tios::sync_with_stdio(false);\r\
-    \n\tcin.tie(0);\r\n\tint n, m;\r\n\tcin >> n >> m;\r\n\tvector<mi> a(n);\r\n\t\
-    for (int i = 0; i < n; ++i) {\r\n\t\tcin >> a[i];\r\n\t}\r\n\tPoly<mi> p(a); \r\
-    \n\tPoly<mi> ans = p.pow(m, n);\r\n\tans.resize(n);\r\n\tfor (int i = 0; i < n;\
-    \ ++i) {\r\n\t\tcout << ans[i] << ' ';\r\n\t}\r\n\tcout << '\\n';\r\n\treturn\
-    \ 0;\t\r\n}"
+    \n\tcin.tie(0);\r\n\tint n; \r\n\tlong long m;\r\n\tcin >> n >> m;\r\n\tvector<mi>\
+    \ a(n);\r\n\tfor (int i = 0; i < n; ++i) {\r\n\t\tcin >> a[i];\r\n\t}\r\n\tPoly<mi>\
+    \ p(a); \r\n\tPoly<mi> ans = p.pow(m, n);\r\n\tans.resize(n);\r\n\tfor (int i\
+    \ = 0; i < n; ++i) {\r\n\t\tcout << ans[i] << ' ';\r\n\t}\r\n\tcout << '\\n';\r\
+    \n\treturn 0;\t\r\n}"
   dependsOn:
   - library/contest/template-minimal.hpp
   - library/polynomial/polynomial.hpp
@@ -228,7 +228,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/yosupo-pow_of_formal_power_series.test.cpp
   requiredBy: []
-  timestamp: '2022-07-21 16:12:33-04:00'
+  timestamp: '2022-07-23 01:03:07-04:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/yosupo/yosupo-pow_of_formal_power_series.test.cpp
