@@ -617,8 +617,8 @@ data:
   - name: verify/yukicoder
     pages:
     - icon: ':heavy_check_mark:'
-      path: verify/yukicoder/yukicoder-yuki_1326.test.cpp
-      title: verify/yukicoder/yukicoder-yuki_1326.test.cpp
+      path: verify/yukicoder/yukicoder-1326.test.cpp
+      title: verify/yukicoder/yukicoder-1326.test.cpp
 layout: toppage
 ---
 [![Badge](https://cp-logo.vercel.app/codeforces/12tqian)](https://codeforces.com/profile/12tqian)

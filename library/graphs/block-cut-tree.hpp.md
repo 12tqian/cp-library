@@ -10,8 +10,8 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: verify/yukicoder/yukicoder-yuki_1326.test.cpp
-    title: verify/yukicoder/yukicoder-yuki_1326.test.cpp
+    path: verify/yukicoder/yukicoder-1326.test.cpp
+    title: verify/yukicoder/yukicoder-1326.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -86,7 +86,7 @@ data:
   timestamp: '2022-07-23 18:16:07-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/yukicoder/yukicoder-yuki_1326.test.cpp
+  - verify/yukicoder/yukicoder-1326.test.cpp
 documentation_of: library/graphs/block-cut-tree.hpp
 layout: document
 redirect_from:

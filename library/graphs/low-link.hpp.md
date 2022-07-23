@@ -13,8 +13,8 @@ data:
     path: verify/yosupo/yosupo-biconnected_components.test.cpp
     title: verify/yosupo/yosupo-biconnected_components.test.cpp
   - icon: ':heavy_check_mark:'
-    path: verify/yukicoder/yukicoder-yuki_1326.test.cpp
-    title: verify/yukicoder/yukicoder-yuki_1326.test.cpp
+    path: verify/yukicoder/yukicoder-1326.test.cpp
+    title: verify/yukicoder/yukicoder-1326.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -57,7 +57,7 @@ data:
   timestamp: '2022-07-23 18:03:31-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/yukicoder/yukicoder-yuki_1326.test.cpp
+  - verify/yukicoder/yukicoder-1326.test.cpp
   - verify/yosupo/yosupo-biconnected_components.test.cpp
 documentation_of: library/graphs/low-link.hpp
 layout: document

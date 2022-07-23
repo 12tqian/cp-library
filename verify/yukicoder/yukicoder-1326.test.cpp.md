@@ -114,15 +114,15 @@ data:
   - library/graphs/low-link.hpp
   - library/graphs/lca-jump.hpp
   isVerificationFile: true
-  path: verify/yukicoder/yukicoder-yuki_1326.test.cpp
+  path: verify/yukicoder/yukicoder-1326.test.cpp
   requiredBy: []
-  timestamp: '2022-07-23 18:16:07-04:00'
+  timestamp: '2022-07-23 18:26:25-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: verify/yukicoder/yukicoder-yuki_1326.test.cpp
+documentation_of: verify/yukicoder/yukicoder-1326.test.cpp
 layout: document
 redirect_from:
-- /verify/verify/yukicoder/yukicoder-yuki_1326.test.cpp
-- /verify/verify/yukicoder/yukicoder-yuki_1326.test.cpp.html
-title: verify/yukicoder/yukicoder-yuki_1326.test.cpp
+- /verify/verify/yukicoder/yukicoder-1326.test.cpp
+- /verify/verify/yukicoder/yukicoder-1326.test.cpp.html
+title: verify/yukicoder/yukicoder-1326.test.cpp
 ---
