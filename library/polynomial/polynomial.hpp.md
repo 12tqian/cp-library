@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/polynomial/number-theoretic-transform.hpp
     title: library/polynomial/number-theoretic-transform.hpp
   _extendedRequiredBy:
@@ -33,15 +33,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-multipoint_evaluation.test.cpp
     title: verify/yosupo/yosupo-multipoint_evaluation.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-pow_of_formal_power_series.test.cpp
     title: verify/yosupo/yosupo-pow_of_formal_power_series.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-sqrt_of_formal_power_series.test.cpp
     title: verify/yosupo/yosupo-sqrt_of_formal_power_series.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "\r\n\r\nnamespace NTT {\r\n\r\nint bsf(unsigned int x) { return __builtin_ctz(x);\
@@ -180,13 +180,15 @@ data:
     \ r;\r\n\t}\r\n\r\n\tD _pow(D x, long long k) { \r\n\t\tD r = 1;\r\n\t\twhile\
     \ (k) {\r\n\t\t\tif (k & 1) {\r\n\t\t\t\tr *= x;\r\n\t\t\t}\r\n\t\t\tx *= x;\r\
     \n\t\t\tk >>= 1;\r\n\t\t}\r\n\t\treturn r;\r\n\t}\r\n\r\n\tPoly pow(long long\
-    \ k, int n = -1) {\r\n\t\tif (n == -1) n = this->size();\r\n\t\tint sz = (int)this->size();\r\
-    \n\t\tfor (int i = 0; i < sz; ++i) {\r\n\t\t\tif (freq(i) != 0) {\r\n\t\t\t\t\
-    if (i && k > n || i * k > n) return Poly(n);\r\n\t\t\t\tD rev = 1 / (*this)[i];\r\
-    \n\t\t\t\tPoly ret = (((*this * rev) >> i).log(n) * k).exp(n) * _pow((*this)[i],\
-    \ k);\r\n\t\t\t\tret = (ret << (i * k)).pre(n);\r\n\t\t\t\tret.resize(n);\r\n\t\
-    \t\t\treturn ret;\r\n\t\t\t}\r\n\t\t}\r\n\t\treturn Poly(n);\r\n\t}\r\n\r\n\t\
-    friend std::ostream& operator<<(std::ostream& os, const Poly& p) {\r\n\t\tif (p.empty())\
+    \ k, int n = -1) {\r\n\t\tif (n == -1) n = this->size();\r\n\t\tif (k == 0) {\r\
+    \n\t\t\tPoly ret(n);\r\n\t\t\tif (n == 0) return ret;\r\n\t\t\tret[0] = 1;\r\n\
+    \t\t\treturn ret;\r\n\t\t}\r\n\t\tint sz = (int)this->size();\r\n\t\tfor (int\
+    \ i = 0; i < sz; ++i) {\r\n\t\t\tif (freq(i) != 0) {\r\n\t\t\t\tif ((i && k >\
+    \ n) || i * k > n) return Poly(n);\r\n\t\t\t\tD rev = 1 / (*this)[i];\r\n\t\t\t\
+    \tPoly ret = (((*this * rev) >> i).log(n) * k).exp(n) * _pow((*this)[i], k);\r\
+    \n\t\t\t\tret = (ret << (i * k)).pre(n);\r\n\t\t\t\tret.resize(n);\r\n\t\t\t\t\
+    return ret;\r\n\t\t\t}\r\n\t\t}\r\n\t\treturn Poly(n);\r\n\t}\r\n\r\n\tfriend\
+    \ std::ostream& operator<<(std::ostream& os, const Poly& p) {\r\n\t\tif (p.empty())\
     \ return os << \"0\";\r\n\t\tfor (auto i = 0; i < (int)p.size(); i++) {\r\n\t\t\
     \tif (p[i]) {\r\n\t\t\t\tos << p[i] << \"x^\" << i;\r\n\t\t\t\tif (i != (int)p.size()\
     \ - 1) os << \"+\";\r\n\t\t\t}\r\n\t\t}\r\n\t\treturn os;\r\n\t}\r\n};\n"
@@ -271,13 +273,15 @@ data:
     \ r;\r\n\t}\r\n\r\n\tD _pow(D x, long long k) { \r\n\t\tD r = 1;\r\n\t\twhile\
     \ (k) {\r\n\t\t\tif (k & 1) {\r\n\t\t\t\tr *= x;\r\n\t\t\t}\r\n\t\t\tx *= x;\r\
     \n\t\t\tk >>= 1;\r\n\t\t}\r\n\t\treturn r;\r\n\t}\r\n\r\n\tPoly pow(long long\
-    \ k, int n = -1) {\r\n\t\tif (n == -1) n = this->size();\r\n\t\tint sz = (int)this->size();\r\
-    \n\t\tfor (int i = 0; i < sz; ++i) {\r\n\t\t\tif (freq(i) != 0) {\r\n\t\t\t\t\
-    if (i && k > n || i * k > n) return Poly(n);\r\n\t\t\t\tD rev = 1 / (*this)[i];\r\
-    \n\t\t\t\tPoly ret = (((*this * rev) >> i).log(n) * k).exp(n) * _pow((*this)[i],\
-    \ k);\r\n\t\t\t\tret = (ret << (i * k)).pre(n);\r\n\t\t\t\tret.resize(n);\r\n\t\
-    \t\t\treturn ret;\r\n\t\t\t}\r\n\t\t}\r\n\t\treturn Poly(n);\r\n\t}\r\n\r\n\t\
-    friend std::ostream& operator<<(std::ostream& os, const Poly& p) {\r\n\t\tif (p.empty())\
+    \ k, int n = -1) {\r\n\t\tif (n == -1) n = this->size();\r\n\t\tif (k == 0) {\r\
+    \n\t\t\tPoly ret(n);\r\n\t\t\tif (n == 0) return ret;\r\n\t\t\tret[0] = 1;\r\n\
+    \t\t\treturn ret;\r\n\t\t}\r\n\t\tint sz = (int)this->size();\r\n\t\tfor (int\
+    \ i = 0; i < sz; ++i) {\r\n\t\t\tif (freq(i) != 0) {\r\n\t\t\t\tif ((i && k >\
+    \ n) || i * k > n) return Poly(n);\r\n\t\t\t\tD rev = 1 / (*this)[i];\r\n\t\t\t\
+    \tPoly ret = (((*this * rev) >> i).log(n) * k).exp(n) * _pow((*this)[i], k);\r\
+    \n\t\t\t\tret = (ret << (i * k)).pre(n);\r\n\t\t\t\tret.resize(n);\r\n\t\t\t\t\
+    return ret;\r\n\t\t\t}\r\n\t\t}\r\n\t\treturn Poly(n);\r\n\t}\r\n\r\n\tfriend\
+    \ std::ostream& operator<<(std::ostream& os, const Poly& p) {\r\n\t\tif (p.empty())\
     \ return os << \"0\";\r\n\t\tfor (auto i = 0; i < (int)p.size(); i++) {\r\n\t\t\
     \tif (p[i]) {\r\n\t\t\t\tos << p[i] << \"x^\" << i;\r\n\t\t\t\tif (i != (int)p.size()\
     \ - 1) os << \"+\";\r\n\t\t\t}\r\n\t\t}\r\n\t\treturn os;\r\n\t}\r\n};"
@@ -289,8 +293,8 @@ data:
   - library/polynomial/berlekamp-massey.hpp
   - library/polynomial/multipoint-evaluation.hpp
   - library/polynomial/polynomial-sqrt.hpp
-  timestamp: '2022-07-23 01:15:33-04:00'
-  verificationStatus: LIBRARY_SOME_WA
+  timestamp: '2022-07-23 01:30:39-04:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/yosupo-log_of_formal_power_series.test.cpp
   - verify/yosupo/yosupo-division_of_polynomials.test.cpp
