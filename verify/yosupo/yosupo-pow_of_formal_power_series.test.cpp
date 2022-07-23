@@ -9,7 +9,8 @@ using mi = Mint<998244353, 5>;
 int main() {
 	ios::sync_with_stdio(false);
 	cin.tie(0);
-	int n; long long m;
+	int n; 
+	long long m;
 	cin >> n >> m;
 	vector<mi> a(n);
 	for (int i = 0; i < n; ++i) {
