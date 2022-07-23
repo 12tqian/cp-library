@@ -77,7 +77,7 @@ inline namespace ToString {
 	template <class T, class U> string ts(pair<T, U> p); // pairs
 	template <class T> typename enable_if<needs_output_v<T>, string>::type ts(T v); // vectors, arrays
 	template <class T, class U> string ts(pair<T, U> p) { return "(" + ts(p.first) + ", " + ts(p.second) + ")"; }
-	template <class T> typename enable_if<is_iterable_v<T>, string>::type ts_sep(T v, string sep) {
+	template <class T> typename enable_if<is_iterable_v<T>, string>::type ts_sep(T v, string sep) { 
 		// convert container to string w/ separator sep
 		bool fst = 1; string res = "";
 		for (const auto& x : v) { 
