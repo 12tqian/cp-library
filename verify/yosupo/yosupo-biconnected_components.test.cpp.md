@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/graphs/biconnected-components.hpp
     title: library/graphs/biconnected-components.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/graphs/low-link.hpp
     title: library/graphs/low-link.hpp
   _extendedRequiredBy: []

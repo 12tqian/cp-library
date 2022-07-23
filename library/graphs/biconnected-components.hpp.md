@@ -1,23 +1,23 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/graphs/low-link.hpp
     title: library/graphs/low-link.hpp
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/graphs/block-cut-tree.hpp
     title: library/graphs/block-cut-tree.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-biconnected_components.test.cpp
     title: verify/yosupo/yosupo-biconnected_components.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yukicoder/yukicoder-yuki_1326.test.cpp
     title: verify/yukicoder/yukicoder-yuki_1326.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "\n\ntemplate <typename G>\nstruct LowLink {\n\tint N;\n\tconst G&\
@@ -69,7 +69,7 @@ data:
   requiredBy:
   - library/graphs/block-cut-tree.hpp
   timestamp: '2022-07-23 18:03:31-04:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yukicoder/yukicoder-yuki_1326.test.cpp
   - verify/yosupo/yosupo-biconnected_components.test.cpp

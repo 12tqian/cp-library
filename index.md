@@ -117,10 +117,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/graphs/bellman-ford.hpp
       title: Bellman Ford
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/graphs/biconnected-components.hpp
       title: library/graphs/biconnected-components.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/graphs/block-cut-tree.hpp
       title: library/graphs/block-cut-tree.hpp
     - icon: ':heavy_check_mark:'
@@ -153,7 +153,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/graphs/lca-jump-distance.hpp
       title: library/graphs/lca-jump-distance.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/graphs/lca-jump.hpp
       title: LCA Jump
     - icon: ':heavy_check_mark:'
@@ -162,7 +162,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/graphs/link-cut-tree.hpp
       title: library/graphs/link-cut-tree.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/graphs/low-link.hpp
       title: library/graphs/low-link.hpp
     - icon: ':heavy_check_mark:'
@@ -616,7 +616,7 @@ data:
       title: verify/yosupo/yosupo-zalgorithm.test.cpp
   - name: verify/yukicoder
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yukicoder/yukicoder-yuki_1326.test.cpp
       title: verify/yukicoder/yukicoder-yuki_1326.test.cpp
 layout: toppage
