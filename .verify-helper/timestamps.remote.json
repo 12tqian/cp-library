@@ -40,6 +40,7 @@
 "verify/unit-test/unit-test-template-full.test.cpp": "2022-07-22 23:22:14 -0400",
 "verify/unit-test/unit-test-template-short.test.cpp": "2022-07-21 16:12:33 -0400",
 "verify/yosupo/yosupo-assignment.test.cpp": "2022-07-21 16:12:33 -0400",
+"verify/yosupo/yosupo-biconnected_components.test.cpp": "2022-07-23 18:03:31 -0400",
 "verify/yosupo/yosupo-bipartitematching.test.cpp": "2022-07-21 16:12:33 -0400",
 "verify/yosupo/yosupo-bitwise_xor_convolution.test.cpp": "2022-07-21 16:12:33 -0400",
 "verify/yosupo/yosupo-convolution_mod_1000000007-fast-fourier-transform.test.cpp": "2022-07-21 16:12:33 -0400",
