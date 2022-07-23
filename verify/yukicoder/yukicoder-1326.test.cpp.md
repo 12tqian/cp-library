@@ -24,8 +24,8 @@ data:
     links:
     - https://yukicoder.me/problems/no/1326
   bundledCode: "#define PROBLEM \"https://yukicoder.me/problems/no/1326\"\n\n#include\
-    \ <bits/stdc++.h>\n\n\n\n\ntemplate <typename G>\nstruct LowLink {\n\tint N;\n\
-    \tconst G& g;\n\tstd::vector<int> ord, low, articulation;\n\tstd::vector<std::pair<int,\
+    \ <bits/stdc++.h>\n\n\n\ntemplate <typename G>\nstruct LowLink {\n\tint N;\n\t\
+    const G& g;\n\tstd::vector<int> ord, low, articulation;\n\tstd::vector<std::pair<int,\
     \ int>> bridge;\n\n\tLowLink(const G& _g) : g(_g) {\n\t\tN = (int)g.size();\n\t\
     \tord.resize(N, -1);\n\t\tlow.resize(N, -1);\n\t\tint k = 0;\n\t\tfor (int i =\
     \ 0; i < N; i++)\n\t\t\tif (ord[i] == -1) k = dfs(i, k, -1);\n\t}\n\n\tint dfs(int\
@@ -96,7 +96,7 @@ data:
     \ * 2;\n\t\tans -= bct.is_arti(u);\n\t\tans -= bct.is_arti(v);\n\t\tans /= 2;\n\
     \t\tcout << ans << '\\n';\n\t}\n\treturn 0;\n}\n"
   code: "#define PROBLEM \"https://yukicoder.me/problems/no/1326\"\n\n#include <bits/stdc++.h>\n\
-    \n#include \"../../library/graphs/block-cut-tree.hpp\"\n#include \"../../library/graphs/lca-jump.hpp\"\
+    #include \"../../library/graphs/block-cut-tree.hpp\"\n#include \"../../library/graphs/lca-jump.hpp\"\
     \n\nint main() {\n\tusing namespace std;\n\tint n, m;\n\tcin >> n >> m;\n\tvector<vector<int>>\
     \ g(n);\n\twhile (m--) {\n\t\tint u, v;\n\t\tcin >> u >> v;\n\t\t--u, --v;\n\t\
     \tg[u].push_back(v);\n\t\tg[v].push_back(u);\n\t}\n\tBlockCutTree bct(g);\n\t\
@@ -116,7 +116,7 @@ data:
   isVerificationFile: true
   path: verify/yukicoder/yukicoder-1326.test.cpp
   requiredBy: []
-  timestamp: '2022-07-23 18:26:25-04:00'
+  timestamp: '2022-07-23 18:28:05-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yukicoder/yukicoder-1326.test.cpp
