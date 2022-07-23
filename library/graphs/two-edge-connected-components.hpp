@@ -1,6 +1,6 @@
 #pragma once
 
-struct BCC {
+struct TwoEdgeCC {
 	int n, time, num_comps; 
 	std::vector<int> ord, low, id; 
 	// order encountered, earliest time in subtree, component id
