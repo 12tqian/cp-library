@@ -4,7 +4,6 @@
 #include "../../library/numerical/big-integer.hpp"
 
 void test() {
-	set_io("");
 	const int D = 1000;
 	const int T = 100;
 	auto convert = [&](BigInt x) {
@@ -31,7 +30,7 @@ void test() {
 }
 
 int main() {
-	setIO("");
+	set_io("");
 	test();
 	int a, b;
 	re(a, b);
