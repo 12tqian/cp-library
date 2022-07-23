@@ -87,7 +87,7 @@ inline namespace ToString {
 		return res;
 	}
 	template <class T> typename enable_if<needs_output_v<T>, string>::type ts(T v) {
-		return "{" + ts_sep(v, ", ") + "}"; }
+		return "{" + ts_sep(v, ", ") + "}"; } 
 
 	// for nested DS
 	template <int, class T> typename enable_if<!needs_output_v<T>, vector<string>>::type 
