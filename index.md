@@ -20,49 +20,49 @@ data:
       title: library/contest/template-short.hpp
   - name: library/data-structures/1d-range-queries
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/data-structures/1d-range-queries/affine-segment-tree.hpp
       title: library/data-structures/1d-range-queries/affine-segment-tree.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/data-structures/1d-range-queries/associative-range-query.hpp
       title: library/data-structures/1d-range-queries/associative-range-query.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/data-structures/1d-range-queries/fenwick-tree.hpp
       title: library/data-structures/1d-range-queries/fenwick-tree.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/data-structures/1d-range-queries/general-full-segment-tree.hpp
       title: library/data-structures/1d-range-queries/general-full-segment-tree.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/data-structures/1d-range-queries/general-simple-segment-tree.hpp
       title: library/data-structures/1d-range-queries/general-simple-segment-tree.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/data-structures/1d-range-queries/implicit-lazy-segment-tree.hpp
       title: library/data-structures/1d-range-queries/implicit-lazy-segment-tree.hpp
     - icon: ':heavy_check_mark:'
       path: library/data-structures/1d-range-queries/interval-union.hpp
       title: library/data-structures/1d-range-queries/interval-union.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/data-structures/1d-range-queries/lazy-segment-tree.hpp
       title: library/data-structures/1d-range-queries/lazy-segment-tree.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/data-structures/1d-range-queries/li-chao-tree-offline.hpp
       title: library/data-structures/1d-range-queries/li-chao-tree-offline.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/data-structures/1d-range-queries/li-chao-tree-online.hpp
       title: library/data-structures/1d-range-queries/li-chao-tree-online.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/data-structures/1d-range-queries/point-update-segment-tree.hpp
       title: library/data-structures/1d-range-queries/point-update-segment-tree.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/data-structures/1d-range-queries/range-set-segment-tree.hpp
       title: library/data-structures/1d-range-queries/range-set-segment-tree.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/data-structures/1d-range-queries/segment-tree-beats.hpp
       title: Segment Tree Beats
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/data-structures/1d-range-queries/sparse-segment-tree.hpp
       title: library/data-structures/1d-range-queries/sparse-segment-tree.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/data-structures/1d-range-queries/sparse-table.hpp
       title: Sparse Table
   - name: library/data-structures/2d-range-queries
@@ -70,13 +70,13 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/data-structures/2d-range-queries/general-fenwick-tree.hpp
       title: General Fenwick Tree
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/data-structures/2d-range-queries/offline-2d-binary-indexed-tree.hpp
       title: Offline 2D BIT
     - icon: ':heavy_check_mark:'
       path: library/data-structures/2d-range-queries/quadtree.hpp
       title: Quadtree
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/data-structures/2d-range-queries/wavelet-matrix.hpp
       title: library/data-structures/2d-range-queries/wavelet-matrix.hpp
   - name: library/data-structures/balanced-binary-search-trees
@@ -95,7 +95,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/dynamic-programming/gosper-hack.hpp
       title: library/dynamic-programming/gosper-hack.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/dynamic-programming/line-container.hpp
       title: Line Container
     - icon: ':heavy_check_mark:'
@@ -112,10 +112,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/geometry/convex-hull.hpp
       title: library/geometry/convex-hull.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/geometry/geometry-2d.hpp
       title: library/geometry/geometry-2d.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/geometry/point.hpp
       title: library/geometry/point.hpp
   - name: library/graphs
@@ -123,10 +123,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/graphs/bellman-ford.hpp
       title: Bellman Ford
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/graphs/biconnected-components.hpp
       title: library/graphs/biconnected-components.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/graphs/centroid-decomposition.hpp
       title: library/graphs/centroid-decomposition.hpp
     - icon: ':heavy_check_mark:'
@@ -135,7 +135,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/graphs/dsu-rollback.hpp
       title: library/graphs/dsu-rollback.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/graphs/dsu.hpp
       title: library/graphs/dsu.hpp
     - icon: ':heavy_check_mark:'
@@ -144,10 +144,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/graphs/euler-path.hpp
       title: Euler Path
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/graphs/heavy-light-decomposition.hpp
       title: library/graphs/heavy-light-decomposition.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/graphs/heavy-light-decomposition2.hpp
       title: Old Heavy Light Decomposition
     - icon: ':heavy_check_mark:'
@@ -156,10 +156,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/graphs/lca-jump-distance.hpp
       title: library/graphs/lca-jump-distance.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/graphs/lca-jump.hpp
       title: LCA Jump
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/graphs/lca-rmq.hpp
       title: LCA RMQ
     - icon: ':heavy_check_mark:'
@@ -168,10 +168,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/graphs/offline-dynamic-connectivity.hpp
       title: library/graphs/offline-dynamic-connectivity.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/graphs/strongly-connected-components-kosaraju.hpp
       title: library/graphs/strongly-connected-components-kosaraju.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/graphs/strongly-connected-components-tarjan.hpp
       title: library/graphs/strongly-connected-components-tarjan.hpp
     - icon: ':heavy_check_mark:'
@@ -188,7 +188,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/graphs/flows/hungarian.hpp
       title: Hungarian Algorithm
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/graphs/flows/min-cost-b-flow.hpp
       title: library/graphs/flows/min-cost-b-flow.hpp
     - icon: ':heavy_check_mark:'
@@ -202,7 +202,7 @@ data:
       title: Push Relabel
   - name: library/math
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/math/affine.hpp
       title: library/math/affine.hpp
   - name: library/misc
@@ -233,7 +233,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/modular-arithmetic/mod-operations.hpp
       title: library/modular-arithmetic/mod-operations.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/modular-arithmetic/mod-sqrt.hpp
       title: library/modular-arithmetic/mod-sqrt.hpp
   - name: library/number-theory
@@ -247,7 +247,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/number-theory/counting-primes.hpp
       title: library/number-theory/counting-primes.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/number-theory/factor-big.hpp
       title: library/number-theory/factor-big.hpp
     - icon: ':heavy_check_mark:'
@@ -267,10 +267,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/numerical/fraction.hpp
       title: library/numerical/fraction.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/numerical/matrix.hpp
       title: library/numerical/matrix.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/numerical/matrix2.hpp
       title: library/numerical/matrix2.hpp
     - icon: ':heavy_check_mark:'
@@ -281,28 +281,28 @@ data:
       title: XOR Basis
   - name: library/polynomial
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/polynomial/berlekamp-massey.hpp
       title: library/polynomial/berlekamp-massey.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/polynomial/fast-fourier-transform.hpp
       title: library/polynomial/fast-fourier-transform.hpp
     - icon: ':heavy_check_mark:'
       path: library/polynomial/karatsuba.hpp
       title: library/polynomial/karatsuba.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/polynomial/multipoint-evaluation.hpp
       title: library/polynomial/multipoint-evaluation.hpp
     - icon: ':question:'
       path: library/polynomial/number-theoretic-transform.hpp
       title: library/polynomial/number-theoretic-transform.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/polynomial/polynomial-sqrt.hpp
       title: library/polynomial/polynomial-sqrt.hpp
     - icon: ':question:'
       path: library/polynomial/polynomial.hpp
       title: Formal Power Series
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/polynomial/polynomial2.hpp
       title: library/polynomial/polynomial2.hpp
   - name: library/set-function
@@ -318,10 +318,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/string/manacher.hpp
       title: library/string/manacher.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/string/suffix-array-lcp.hpp
       title: Suffix Array with Longest Common Prefix
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/string/z-algorithm.hpp
       title: library/string/z-algorithm.hpp
   verificationCategories:
@@ -491,121 +491,121 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-exp_of_formal_power_series.test.cpp
       title: verify/yosupo/yosupo-exp_of_formal_power_series.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-factorize.test.cpp
       title: verify/yosupo/yosupo-factorize.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-find_linear_recurrence.test.cpp
       title: verify/yosupo/yosupo-find_linear_recurrence.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
       title: verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-inv_of_formal_power_series.test.cpp
       title: verify/yosupo/yosupo-inv_of_formal_power_series.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-inverse_matrix.test.cpp
       title: verify/yosupo/yosupo-inverse_matrix.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-lca-lca-jump.test.cpp
       title: verify/yosupo/yosupo-lca-lca-jump.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-lca-lca-rmq.test.cpp
       title: verify/yosupo/yosupo-lca-lca-rmq.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-line_add_get_min.test.cpp
       title: verify/yosupo/yosupo-line_add_get_min.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-log_of_formal_power_series.test.cpp
       title: verify/yosupo/yosupo-log_of_formal_power_series.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-min_cost_b_flow.test.cpp
       title: verify/yosupo/yosupo-min_cost_b_flow.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-multipoint_evaluation.test.cpp
       title: verify/yosupo/yosupo-multipoint_evaluation.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-point_add_range_general-simple-segment-tree.test.cpp
       title: verify/yosupo/yosupo-point_add_range_general-simple-segment-tree.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-point_add_range_sum-fenwick-tree.test.cpp
       title: verify/yosupo/yosupo-point_add_range_sum-fenwick-tree.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-point_add_range_sum-implicit-lazy-segment-tree.test.cpp
       title: verify/yosupo/yosupo-point_add_range_sum-implicit-lazy-segment-tree.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-point_add_range_sum-lazy-segment-tree.test.cpp
       title: verify/yosupo/yosupo-point_add_range_sum-lazy-segment-tree.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-point_add_range_sum-point-update-segment-tree.test.cpp
       title: verify/yosupo/yosupo-point_add_range_sum-point-update-segment-tree.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-point_add_range_sum-range-set-segment-tree.test.cpp
       title: verify/yosupo/yosupo-point_add_range_sum-range-set-segment-tree.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-point_add_range_sum-sparse-segment-tree.test.cpp
       title: verify/yosupo/yosupo-point_add_range_sum-sparse-segment-tree.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-point_add_rectangle_sum-wavelet-matrix.test.cpp
       title: verify/yosupo/yosupo-point_add_rectangle_sum-wavelet-matrix.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-point_set_range_composite.test.cpp
       title: verify/yosupo/yosupo-point_set_range_composite.test.cpp
     - icon: ':x:'
       path: verify/yosupo/yosupo-pow_of_formal_power_series.test.cpp
       title: verify/yosupo/yosupo-pow_of_formal_power_series.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-range_affine_range_sum.test.cpp
       title: verify/yosupo/yosupo-range_affine_range_sum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-range_chmin_chmax_add_range_sum.test.cpp
       title: verify/yosupo/yosupo-range_chmin_chmax_add_range_sum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-rectangle_sum-offline-2d-bit.test.cpp
       title: verify/yosupo/yosupo-rectangle_sum-offline-2d-bit.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-scc-kosaraju.test.cpp
       title: verify/yosupo/yosupo-scc-kosaraju.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-scc-tarjan.test.cpp
       title: verify/yosupo/yosupo-scc-tarjan.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-segment_add_get_min-li-chao-tree-offline.test.cpp
       title: verify/yosupo/yosupo-segment_add_get_min-li-chao-tree-offline.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-segment_add_get_min-li-chao-tree-online.test.cpp
       title: verify/yosupo/yosupo-segment_add_get_min-li-chao-tree-online.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-sort_points_by_argument.test.cpp
       title: verify/yosupo/yosupo-sort_points_by_argument.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-sqrt_mod.test.cpp
       title: verify/yosupo/yosupo-sqrt_mod.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-sqrt_of_formal_power_series.test.cpp
       title: verify/yosupo/yosupo-sqrt_of_formal_power_series.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-static_range_sum.test.cpp
       title: verify/yosupo/yosupo-static_range_sum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-suffixarray-lcp.test.cpp
       title: verify/yosupo/yosupo-suffixarray-lcp.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-system_of_linear_equations.test.cpp
       title: verify/yosupo/yosupo-system_of_linear_equations.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-two_edge_connected_components.test.cpp
       title: verify/yosupo/yosupo-two_edge_connected_components.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-unionfind.test.cpp
       title: verify/yosupo/yosupo-unionfind.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-vertex_add_path_sum-new-hld.test.cpp
       title: verify/yosupo/yosupo-vertex_add_path_sum-new-hld.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-vertex_add_path_sum.test.cpp
       title: verify/yosupo/yosupo-vertex_add_path_sum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-zalgorithm.test.cpp
       title: verify/yosupo/yosupo-zalgorithm.test.cpp
 layout: toppage

@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-vertex_add_path_sum-new-hld.test.cpp
     title: verify/yosupo/yosupo-vertex_add_path_sum-new-hld.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "\r\ntemplate <class G> \r\nstruct HeavyLightDecomposition {\r\nprivate:\r\
@@ -102,7 +102,7 @@ data:
   path: library/graphs/heavy-light-decomposition.hpp
   requiredBy: []
   timestamp: '2022-07-21 16:12:33-04:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/yosupo-vertex_add_path_sum-new-hld.test.cpp
 documentation_of: library/graphs/heavy-light-decomposition.hpp

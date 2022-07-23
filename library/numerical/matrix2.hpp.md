@@ -6,12 +6,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/kattis/kattis-equationsolver.test.cpp
     title: verify/kattis/kattis-equationsolver.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-inverse_matrix.test.cpp
     title: verify/yosupo/yosupo-inverse_matrix.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "\r\nnamespace MatrixOperations {\r\n\r\ntemplate <class T> using Matrix\
@@ -115,7 +115,7 @@ data:
   path: library/numerical/matrix2.hpp
   requiredBy: []
   timestamp: '2022-07-21 16:12:33-04:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/kattis/kattis-equationsolver.test.cpp
   - verify/yosupo/yosupo-inverse_matrix.test.cpp

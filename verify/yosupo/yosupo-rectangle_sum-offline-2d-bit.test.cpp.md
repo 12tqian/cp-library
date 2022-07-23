@@ -4,7 +4,7 @@ data:
   - icon: ':question:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/data-structures/2d-range-queries/offline-2d-binary-indexed-tree.hpp
     title: Offline 2D BIT
   - icon: ':question:'
@@ -12,9 +12,9 @@ data:
     title: library/misc/easy-io.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/rectangle_sum
@@ -190,7 +190,7 @@ data:
   path: verify/yosupo/yosupo-rectangle_sum-offline-2d-bit.test.cpp
   requiredBy: []
   timestamp: '2022-07-22 23:22:14-04:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/yosupo-rectangle_sum-offline-2d-bit.test.cpp
 layout: document

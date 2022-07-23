@@ -18,12 +18,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/codeforces/codeforces-1553G.test.cpp
     title: verify/codeforces/codeforces-1553G.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-unionfind.test.cpp
     title: verify/yosupo/yosupo-unionfind.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "\r\nstruct DSU {\r\n\tstd::vector<int> e;\r\n\r\n\tvoid init(int n)\
@@ -48,7 +48,7 @@ data:
   requiredBy:
   - library/graphs/kruskal.hpp
   timestamp: '2022-07-21 16:12:33-04:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/aizu/aizu-GRL_2_A.test.cpp
   - verify/codeforces/codeforces-1463E.test.cpp

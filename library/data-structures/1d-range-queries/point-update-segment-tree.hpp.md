@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-point_add_range_sum-point-update-segment-tree.test.cpp
     title: verify/yosupo/yosupo-point_add_range_sum-point-update-segment-tree.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "\r\ntemplate <class T> struct SegmentTree {\r\n\tconst T ID = 0;\r\
@@ -38,7 +38,7 @@ data:
   path: library/data-structures/1d-range-queries/point-update-segment-tree.hpp
   requiredBy: []
   timestamp: '2022-07-21 16:12:33-04:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/yosupo-point_add_range_sum-point-update-segment-tree.test.cpp
 documentation_of: library/data-structures/1d-range-queries/point-update-segment-tree.hpp

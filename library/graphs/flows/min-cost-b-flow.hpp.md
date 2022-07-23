@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-min_cost_b_flow.test.cpp
     title: verify/yosupo/yosupo-min_cost_b_flow.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "\r\nenum Objective {\r\n\tMINIMIZE = 1,\r\n\tMAXIMIZE = -1,\r\n};\r\
@@ -220,7 +220,7 @@ data:
   path: library/graphs/flows/min-cost-b-flow.hpp
   requiredBy: []
   timestamp: '2022-07-21 16:12:33-04:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/yosupo-min_cost_b_flow.test.cpp
 documentation_of: library/graphs/flows/min-cost-b-flow.hpp

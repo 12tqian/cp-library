@@ -4,7 +4,7 @@ data:
   - icon: ':question:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/numerical/matrix2.hpp
     title: library/numerical/matrix2.hpp
   _extendedRequiredBy: []

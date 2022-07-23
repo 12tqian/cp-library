@@ -2,28 +2,28 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/graphs/lca-rmq.hpp
     title: LCA RMQ
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/string/suffix-array-lcp.hpp
     title: Suffix Array with Longest Common Prefix
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/codeforces/codeforces-1074F.test.cpp
     title: verify/codeforces/codeforces-1074F.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
     title: verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-lca-lca-rmq.test.cpp
     title: verify/yosupo/yosupo-lca-lca-rmq.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-suffixarray-lcp.test.cpp
     title: verify/yosupo/yosupo-suffixarray-lcp.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "\r\ntemplate <class T> struct SparseTable {\r\n\tstd::vector<T> v;\r\
@@ -59,7 +59,7 @@ data:
   - library/string/suffix-array-lcp.hpp
   - library/graphs/lca-rmq.hpp
   timestamp: '2022-07-21 16:12:33-04:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/codeforces/codeforces-1074F.test.cpp
   - verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp

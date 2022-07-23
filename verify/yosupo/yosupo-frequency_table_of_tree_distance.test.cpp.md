@@ -7,13 +7,13 @@ data:
   - icon: ':question:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/data-structures/1d-range-queries/sparse-table.hpp
     title: Sparse Table
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/graphs/centroid-decomposition.hpp
     title: library/graphs/centroid-decomposition.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/graphs/lca-rmq.hpp
     title: LCA RMQ
   - icon: ':question:'
@@ -28,17 +28,17 @@ data:
   - icon: ':question:'
     path: library/modular-arithmetic/mod-int2.hpp
     title: library/modular-arithmetic/mod-int2.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/polynomial/fast-fourier-transform.hpp
     title: library/polynomial/fast-fourier-transform.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/polynomial/polynomial2.hpp
     title: library/polynomial/polynomial2.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/frequency_table_of_tree_distance
@@ -403,7 +403,7 @@ data:
   path: verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
   requiredBy: []
   timestamp: '2022-07-22 23:22:14-04:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
 layout: document

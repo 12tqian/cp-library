@@ -6,12 +6,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/kattis/kattis-equationsolver-matrix.test.cpp
     title: verify/kattis/kattis-equationsolver-matrix.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-system_of_linear_equations.test.cpp
     title: verify/yosupo/yosupo-system_of_linear_equations.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "\r\ntemplate <class D> struct Matrix : std::vector<std::vector<D>>\
@@ -171,7 +171,7 @@ data:
   path: library/numerical/matrix.hpp
   requiredBy: []
   timestamp: '2022-07-21 16:12:33-04:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/kattis/kattis-equationsolver-matrix.test.cpp
   - verify/yosupo/yosupo-system_of_linear_equations.test.cpp

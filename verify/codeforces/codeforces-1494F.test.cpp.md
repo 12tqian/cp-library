@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/contest/template-short.hpp
     title: library/contest/template-short.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/graphs/dsu.hpp
     title: library/graphs/dsu.hpp
   - icon: ':heavy_check_mark:'
