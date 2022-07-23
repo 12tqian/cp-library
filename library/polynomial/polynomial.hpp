@@ -207,7 +207,7 @@ template <class D> struct Poly : std::vector<D> {
 		int sz = (int)this->size();
 		for (int i = 0; i < sz; ++i) {
 			if (freq(i) != 0) {
-				if (i * k > n) return Poly(n);
+				if (i && k > n || i * k > n) return Poly(n);
 				D rev = 1 / (*this)[i];
 				Poly ret = (((*this * rev) >> i).log(n) * k).exp(n) * _pow((*this)[i], k);
 				ret = (ret << (i * k)).pre(n);
