@@ -83,7 +83,7 @@ inline namespace ToString {
 		for (const auto& x : v) { 
 			if (!fst) res += sep;
 			fst = 0; res += ts(x);
-		}
+		} 
 		return res;
 	}
 	template <class T> typename enable_if<needs_output_v<T>, string>::type ts(T v) {
