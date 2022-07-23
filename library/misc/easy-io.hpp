@@ -61,7 +61,7 @@ inline namespace Input {
 	#define ints(...) int __VA_ARGS__; re(__VA_ARGS__);
 	#define int1(...) ints(__VA_ARGS__); decrement(__VA_ARGS__);
 }
- 
+  
 inline namespace ToString {
 	template <class T> constexpr bool needs_output_v = !is_printable_v<T> && is_iterable_v<T>;
 
