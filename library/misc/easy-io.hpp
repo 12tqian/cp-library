@@ -99,7 +99,7 @@ inline namespace ToString {
 		for (const auto& t : v) {
 			if ((int)res.size()) res.back() += ",";
 			vector<string> tmp = ts_lev<lev - 1>(t);
-			res.insert(res.end(), tmp.begin(), tmp.end());
+			res.insert(res.end(), tmp.begin(), tmp.end()); 
 		}
 		for (int i = 0; i < (int)res.size(); ++i) {
 			string bef = " "; if (i == 0) bef = "{";
