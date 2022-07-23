@@ -204,10 +204,16 @@ template <class D> struct Poly : std::vector<D> {
 
 	Poly pow(long long k, int n = -1) {
 		if (n == -1) n = this->size();
+		if (k == 0) {
+			Poly ret(n);
+			if (n == 0) return ret;
+			ret[0] = 1;
+			return ret;
+		}
 		int sz = (int)this->size();
 		for (int i = 0; i < sz; ++i) {
 			if (freq(i) != 0) {
-				if (i && k > n || i * k > n) return Poly(n);
+				if ((i && k > n) || i * k > n) return Poly(n);
 				D rev = 1 / (*this)[i];
 				Poly ret = (((*this * rev) >> i).log(n) * k).exp(n) * _pow((*this)[i], k);
 				ret = (ret << (i * k)).pre(n);
