@@ -153,62 +153,62 @@ data:
     \ #__VA_ARGS__), dbg_out(__VA_ARGS__)\r\n\t\t#define dbgl(lev, x) loc_info(__LINE__,\
     \ #x), dbgl_out<lev>(x)\r\n\t#else // don't actually submit with this\r\n\t\t\
     #define dbg(...) 0\r\n\t\t#define dbgl(lev, x) 0\r\n\t#endif\r\n}\r\n\r\ninline\
-    \ namespace FileIO {\r\n\tvoid set_in(string s)  { freopen(s.c_str(), \"r\", stdin);\
-    \ }\r\n\tvoid set_out(string s) { freopen(s.c_str(), \"w\", stdout); }\r\n\tvoid\
-    \ set_io(string s = \"\") {\r\n\t\tcin.tie(0)->sync_with_stdio(0); // unsync C\
-    \ / C++ I/O streams\r\n\t\t// cin.exceptions(cin.failbit);\r\n\t\t// throws exception\
-    \ when do smth illegal\r\n\t\t// ex. try to read letter into int\r\n\t\tif (!s.empty())\
-    \ set_in(s + \".in\"), set_out(s + \".out\"); // for old USACO\r\n\t}\r\n}\r\n\
-    \r\nconst int MOD = 1e9 + 7; // 998244353\r\n\r\ntypedef std::decay<decltype(MOD)>::type\
-    \ mod_t; \r\nstruct mi {\r\n\tmod_t v;\r\n\texplicit operator mod_t() const {\
-    \ return v; }\r\n\texplicit operator bool() const { return v != 0; }\r\n\tmi()\
-    \ { v = 0; }\r\n\tmi(const long long& _v) {\r\n\t\tv = (-MOD <= _v && _v < MOD)\
-    \ ? _v : _v % MOD;\r\n\t\tif (v < 0) v += MOD; }\r\n\tfriend std::istream& operator>>(std::istream&\
-    \ in, mi& a) { \r\n\t\tlong long x; std::cin >> x; a = mi(x); return in; }\r\n\
-    \tfriend std::ostream& operator<<(std::ostream& os, const mi& a) { return os <<\
-    \ a.v; }\r\n\tfriend bool operator==(const mi& a, const mi& b) { return a.v ==\
-    \ b.v; }\r\n\tfriend bool operator!=(const mi& a, const mi& b) { return !(a ==\
-    \ b); }    \r\n\tfriend bool operator<(const mi& a, const mi& b) { return a.v\
-    \ < b.v; }\r\n\tfriend bool operator>(const mi& a, const mi& b) { return a.v >\
-    \ b.v; }\r\n\tfriend bool operator<=(const mi& a, const mi& b) { return a.v <=\
-    \ b.v; }\r\n\tfriend bool operator>=(const mi& a, const mi& b) { return a.v >=\
-    \ b.v; }\r\n\tmi operator-() const { return mi(-v); }\r\n\tmi& operator+=(const\
-    \ mi& m) {\r\n\t\tif ((v += m.v) >= MOD) v -= MOD;\r\n\t\treturn *this; }\r\n\t\
-    mi& operator-=(const mi& m) {\r\n\t\tif ((v -= m.v) < 0) v += MOD;\r\n\t\treturn\
-    \ *this; }\r\n\tmi& operator*=(const mi& m) { v = (long long)v * m.v % MOD;\r\n\
-    \t\treturn *this; }\r\n\tfriend mi pow(mi a, long long p) {\r\n\t\tmi ans = 1;\
-    \ assert(p >= 0);\r\n\t\tfor (; p; p /= 2, a *= a) if (p & 1) ans *= a;\r\n\t\t\
-    return ans; }\r\n\tfriend mi inv(const mi& a) { assert(a != 0); return pow(a,\
-    \ MOD - 2); }\r\n\tmi& operator/=(const mi& m) { return (*this) *= inv(m); }\r\
-    \n\tfriend mi operator+(mi a, const mi& b) { return a += b; }\r\n\tfriend mi operator-(mi\
-    \ a, const mi& b) { return a -= b; }\r\n\tfriend mi operator*(mi a, const mi&\
-    \ b) { return a *= b; }\r\n\tfriend mi operator/(mi a, const mi& b) { return a\
-    \ /= b; }\r\n};\n\r\nconst ld PI = acos((ld)-1);\r\n\r\ntypedef pair<mi, mi> pmi;\r\
-    \ntypedef vector<mi> vmi;\r\ntypedef vector<pmi> vpmi;\r\n\r\nstruct Frac {\r\n\
-    \tlong long n, d;\r\n\tFrac(long long _n, long long _d) {\r\n\t\tn = _n, d = _d;\r\
-    \n\t\tlong long g = std::__gcd(n, d); n /= g, d /= g;\r\n\t\tif (d < 0) n *= -1,\
-    \ d *= -1;\r\n\t}\r\n\tlong double eval() { return (long double)n / d; }\r\n\t\
-    Frac(long long _n) : Frac(_n, 1) {}\r\n\tFrac() : Frac(0) {}\r\n\tfriend Frac\
-    \ abs(Frac F) { return Frac(abs(F.n), F.d); }\r\n\tfriend bool operator<(const\
-    \ Frac& l, const Frac& r) { return l.n * r.d < r.n * l.d; }\r\n\tfriend bool operator<=(const\
-    \ Frac& l, const Frac& r) { return l.n * r.d <= r.n * l.d; }\r\n\tfriend bool\
-    \ operator>(const Frac& l, const Frac& r) { return l.n * r.d > r.n * l.d; }\r\n\
-    \tfriend bool operator>=(const Frac& l, const Frac& r) { return l.n * r.d >= r.n\
-    \ * l.d; }\r\n\tfriend bool operator==(const Frac& l, const Frac& r) { return\
-    \ l.n == r.n && l.d == r.d; }\r\n\tfriend bool operator!=(const Frac& l, const\
-    \ Frac& r) { return !(l == r); }\r\n\tFrac operator-() const { return Frac(-n,\
-    \ d); }\r\n\tfriend Frac operator+(const Frac& l, const Frac& r) { return Frac(l.n\
-    \ * r.d + r.n * l.d, l.d * r.d); }\r\n\tfriend Frac operator-(const Frac& l, const\
-    \ Frac& r) { return Frac(l.n * r.d - r.n * l.d, l.d * r.d); }\r\n\tfriend Frac\
-    \ operator*(const Frac& l, const Frac& r) { return Frac(l.n * r.n, l.d * r.d);\
-    \ }\r\n\tfriend Frac operator*(const Frac& l, long long r) { return l * Frac(r,\
-    \ 1); }\r\n\tfriend Frac operator*(long long r, const Frac& l) { return l * r;\
-    \ }\r\n\tfriend Frac operator/(const Frac& l, const Frac& r) { return l * Frac(r.d,\
-    \ r.n); }\r\n\tfriend Frac operator/(const Frac& l, const long long& r) { return\
-    \ l / Frac(r, 1); }\r\n\tfriend Frac operator/(const long long& l, const Frac&\
-    \ r) { return Frac(l, 1) / r; }\r\n\tfriend Frac& operator+=(Frac& l, const Frac&\
-    \ r) { return l = l + r; }\r\n\tfriend Frac& operator-=(Frac& l, const Frac& r)\
-    \ { return l = l - r; }\r\n\ttemplate <class T> friend Frac& operator*=(Frac&\
+    \ namespace FileIO {\r\n\tvoid set_in(string s)  { (void)!freopen(s.c_str(), \"\
+    r\", stdin); }\r\n\tvoid set_out(string s) { (void)!freopen(s.c_str(), \"w\",\
+    \ stdout); }\r\n\tvoid set_io(string s = \"\") {\r\n\t\tcin.tie(0)->sync_with_stdio(0);\
+    \ // unsync C / C++ I/O streams\r\n\t\t// cin.exceptions(cin.failbit);\r\n\t\t\
+    // throws exception when do smth illegal\r\n\t\t// ex. try to read letter into\
+    \ int\r\n\t\tif (!s.empty()) set_in(s + \".in\"), set_out(s + \".out\"); // for\
+    \ old USACO\r\n\t}\r\n}\r\n\r\nconst int MOD = 1e9 + 7; // 998244353\r\n\r\ntypedef\
+    \ std::decay<decltype(MOD)>::type mod_t; \r\nstruct mi {\r\n\tmod_t v;\r\n\texplicit\
+    \ operator mod_t() const { return v; }\r\n\texplicit operator bool() const { return\
+    \ v != 0; }\r\n\tmi() { v = 0; }\r\n\tmi(const long long& _v) {\r\n\t\tv = (-MOD\
+    \ <= _v && _v < MOD) ? _v : _v % MOD;\r\n\t\tif (v < 0) v += MOD; }\r\n\tfriend\
+    \ std::istream& operator>>(std::istream& in, mi& a) { \r\n\t\tlong long x; std::cin\
+    \ >> x; a = mi(x); return in; }\r\n\tfriend std::ostream& operator<<(std::ostream&\
+    \ os, const mi& a) { return os << a.v; }\r\n\tfriend bool operator==(const mi&\
+    \ a, const mi& b) { return a.v == b.v; }\r\n\tfriend bool operator!=(const mi&\
+    \ a, const mi& b) { return !(a == b); }    \r\n\tfriend bool operator<(const mi&\
+    \ a, const mi& b) { return a.v < b.v; }\r\n\tfriend bool operator>(const mi& a,\
+    \ const mi& b) { return a.v > b.v; }\r\n\tfriend bool operator<=(const mi& a,\
+    \ const mi& b) { return a.v <= b.v; }\r\n\tfriend bool operator>=(const mi& a,\
+    \ const mi& b) { return a.v >= b.v; }\r\n\tmi operator-() const { return mi(-v);\
+    \ }\r\n\tmi& operator+=(const mi& m) {\r\n\t\tif ((v += m.v) >= MOD) v -= MOD;\r\
+    \n\t\treturn *this; }\r\n\tmi& operator-=(const mi& m) {\r\n\t\tif ((v -= m.v)\
+    \ < 0) v += MOD;\r\n\t\treturn *this; }\r\n\tmi& operator*=(const mi& m) { v =\
+    \ (long long)v * m.v % MOD;\r\n\t\treturn *this; }\r\n\tfriend mi pow(mi a, long\
+    \ long p) {\r\n\t\tmi ans = 1; assert(p >= 0);\r\n\t\tfor (; p; p /= 2, a *= a)\
+    \ if (p & 1) ans *= a;\r\n\t\treturn ans; }\r\n\tfriend mi inv(const mi& a) {\
+    \ assert(a != 0); return pow(a, MOD - 2); }\r\n\tmi& operator/=(const mi& m) {\
+    \ return (*this) *= inv(m); }\r\n\tfriend mi operator+(mi a, const mi& b) { return\
+    \ a += b; }\r\n\tfriend mi operator-(mi a, const mi& b) { return a -= b; }\r\n\
+    \tfriend mi operator*(mi a, const mi& b) { return a *= b; }\r\n\tfriend mi operator/(mi\
+    \ a, const mi& b) { return a /= b; }\r\n};\n\r\nconst ld PI = acos((ld)-1);\r\n\
+    \r\ntypedef pair<mi, mi> pmi;\r\ntypedef vector<mi> vmi;\r\ntypedef vector<pmi>\
+    \ vpmi;\r\n\r\nstruct Frac {\r\n\tlong long n, d;\r\n\tFrac(long long _n, long\
+    \ long _d) {\r\n\t\tn = _n, d = _d;\r\n\t\tlong long g = std::__gcd(n, d); n /=\
+    \ g, d /= g;\r\n\t\tif (d < 0) n *= -1, d *= -1;\r\n\t}\r\n\tlong double eval()\
+    \ { return (long double)n / d; }\r\n\tFrac(long long _n) : Frac(_n, 1) {}\r\n\t\
+    Frac() : Frac(0) {}\r\n\tfriend Frac abs(Frac F) { return Frac(abs(F.n), F.d);\
+    \ }\r\n\tfriend bool operator<(const Frac& l, const Frac& r) { return l.n * r.d\
+    \ < r.n * l.d; }\r\n\tfriend bool operator<=(const Frac& l, const Frac& r) { return\
+    \ l.n * r.d <= r.n * l.d; }\r\n\tfriend bool operator>(const Frac& l, const Frac&\
+    \ r) { return l.n * r.d > r.n * l.d; }\r\n\tfriend bool operator>=(const Frac&\
+    \ l, const Frac& r) { return l.n * r.d >= r.n * l.d; }\r\n\tfriend bool operator==(const\
+    \ Frac& l, const Frac& r) { return l.n == r.n && l.d == r.d; }\r\n\tfriend bool\
+    \ operator!=(const Frac& l, const Frac& r) { return !(l == r); }\r\n\tFrac operator-()\
+    \ const { return Frac(-n, d); }\r\n\tfriend Frac operator+(const Frac& l, const\
+    \ Frac& r) { return Frac(l.n * r.d + r.n * l.d, l.d * r.d); }\r\n\tfriend Frac\
+    \ operator-(const Frac& l, const Frac& r) { return Frac(l.n * r.d - r.n * l.d,\
+    \ l.d * r.d); }\r\n\tfriend Frac operator*(const Frac& l, const Frac& r) { return\
+    \ Frac(l.n * r.n, l.d * r.d); }\r\n\tfriend Frac operator*(const Frac& l, long\
+    \ long r) { return l * Frac(r, 1); }\r\n\tfriend Frac operator*(long long r, const\
+    \ Frac& l) { return l * r; }\r\n\tfriend Frac operator/(const Frac& l, const Frac&\
+    \ r) { return l * Frac(r.d, r.n); }\r\n\tfriend Frac operator/(const Frac& l,\
+    \ const long long& r) { return l / Frac(r, 1); }\r\n\tfriend Frac operator/(const\
+    \ long long& l, const Frac& r) { return Frac(l, 1) / r; }\r\n\tfriend Frac& operator+=(Frac&\
+    \ l, const Frac& r) { return l = l + r; }\r\n\tfriend Frac& operator-=(Frac& l,\
+    \ const Frac& r) { return l = l - r; }\r\n\ttemplate <class T> friend Frac& operator*=(Frac&\
     \ l, const T& r) { return l = l * r; }\r\n\ttemplate <class T> friend Frac& operator/=(Frac&\
     \ l, const T& r) { return l = l / r; }\r\n\tfriend std::ostream& operator<<(std::ostream&\
     \ os, const Frac& a) { return os << a.n << \"/\" << a.d; }\r\n};\n\r\nconst int\
@@ -248,7 +248,7 @@ data:
   isVerificationFile: true
   path: verify/unit-test/unit-test-fraction.test.cpp
   requiredBy: []
-  timestamp: '2022-07-22 23:22:14-04:00'
+  timestamp: '2022-07-24 00:24:04-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/unit-test/unit-test-fraction.test.cpp

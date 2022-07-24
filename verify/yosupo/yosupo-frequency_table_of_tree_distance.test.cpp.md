@@ -168,64 +168,64 @@ data:
     \ #__VA_ARGS__), dbg_out(__VA_ARGS__)\r\n\t\t#define dbgl(lev, x) loc_info(__LINE__,\
     \ #x), dbgl_out<lev>(x)\r\n\t#else // don't actually submit with this\r\n\t\t\
     #define dbg(...) 0\r\n\t\t#define dbgl(lev, x) 0\r\n\t#endif\r\n}\r\n\r\ninline\
-    \ namespace FileIO {\r\n\tvoid set_in(string s)  { freopen(s.c_str(), \"r\", stdin);\
-    \ }\r\n\tvoid set_out(string s) { freopen(s.c_str(), \"w\", stdout); }\r\n\tvoid\
-    \ set_io(string s = \"\") {\r\n\t\tcin.tie(0)->sync_with_stdio(0); // unsync C\
-    \ / C++ I/O streams\r\n\t\t// cin.exceptions(cin.failbit);\r\n\t\t// throws exception\
-    \ when do smth illegal\r\n\t\t// ex. try to read letter into int\r\n\t\tif (!s.empty())\
-    \ set_in(s + \".in\"), set_out(s + \".out\"); // for old USACO\r\n\t}\r\n}\r\n\
-    \r\nconst int MOD = 1e9 + 7; // 998244353\r\n\r\ntypedef std::decay<decltype(MOD)>::type\
-    \ mod_t; \r\nstruct mi {\r\n\tmod_t v;\r\n\texplicit operator mod_t() const {\
-    \ return v; }\r\n\texplicit operator bool() const { return v != 0; }\r\n\tmi()\
-    \ { v = 0; }\r\n\tmi(const long long& _v) {\r\n\t\tv = (-MOD <= _v && _v < MOD)\
-    \ ? _v : _v % MOD;\r\n\t\tif (v < 0) v += MOD; }\r\n\tfriend std::istream& operator>>(std::istream&\
-    \ in, mi& a) { \r\n\t\tlong long x; std::cin >> x; a = mi(x); return in; }\r\n\
-    \tfriend std::ostream& operator<<(std::ostream& os, const mi& a) { return os <<\
-    \ a.v; }\r\n\tfriend bool operator==(const mi& a, const mi& b) { return a.v ==\
-    \ b.v; }\r\n\tfriend bool operator!=(const mi& a, const mi& b) { return !(a ==\
-    \ b); }    \r\n\tfriend bool operator<(const mi& a, const mi& b) { return a.v\
-    \ < b.v; }\r\n\tfriend bool operator>(const mi& a, const mi& b) { return a.v >\
-    \ b.v; }\r\n\tfriend bool operator<=(const mi& a, const mi& b) { return a.v <=\
-    \ b.v; }\r\n\tfriend bool operator>=(const mi& a, const mi& b) { return a.v >=\
-    \ b.v; }\r\n\tmi operator-() const { return mi(-v); }\r\n\tmi& operator+=(const\
-    \ mi& m) {\r\n\t\tif ((v += m.v) >= MOD) v -= MOD;\r\n\t\treturn *this; }\r\n\t\
-    mi& operator-=(const mi& m) {\r\n\t\tif ((v -= m.v) < 0) v += MOD;\r\n\t\treturn\
-    \ *this; }\r\n\tmi& operator*=(const mi& m) { v = (long long)v * m.v % MOD;\r\n\
-    \t\treturn *this; }\r\n\tfriend mi pow(mi a, long long p) {\r\n\t\tmi ans = 1;\
-    \ assert(p >= 0);\r\n\t\tfor (; p; p /= 2, a *= a) if (p & 1) ans *= a;\r\n\t\t\
-    return ans; }\r\n\tfriend mi inv(const mi& a) { assert(a != 0); return pow(a,\
-    \ MOD - 2); }\r\n\tmi& operator/=(const mi& m) { return (*this) *= inv(m); }\r\
-    \n\tfriend mi operator+(mi a, const mi& b) { return a += b; }\r\n\tfriend mi operator-(mi\
-    \ a, const mi& b) { return a -= b; }\r\n\tfriend mi operator*(mi a, const mi&\
-    \ b) { return a *= b; }\r\n\tfriend mi operator/(mi a, const mi& b) { return a\
-    \ /= b; }\r\n};\n\r\nconst ld PI = acos((ld)-1);\r\n\r\ntypedef pair<mi, mi> pmi;\r\
-    \ntypedef vector<mi> vmi;\r\ntypedef vector<pmi> vpmi;\r\n\r\nstruct CentroidDecomposition\
-    \ {\r\n\tint n;\r\n\tstd::vector<std::vector<int>> g, cg; // cg is directed tree\
-    \ for centroids\r\n\tstd::vector<bool> vis;\r\n\tstd::vector<int> size;\r\n\t\
-    std::vector<int> parent;\r\n\tint root;\r\n\r\n\tvoid init(int n_) {\r\n\t\tn\
-    \ = n_;\r\n\t\tg.assign(n, std::vector<int>());\r\n\t\tcg.assign(n, std::vector<int>());\r\
-    \n\t\tvis.assign(n, false);\r\n\t\tparent.assign(n, 0);\r\n\t\tsize.assign(n,\
-    \ 0);\r\n\t}\r\n\r\n\tvoid ae(int u, int v) {\r\n\t\tg[u].push_back(v);\r\n\t\t\
-    g[v].push_back(u);\r\n\t}\r\n\r\n\tvoid dfs_size(int src, int par = -1) {\r\n\t\
-    \tsize[src] = 1;\r\n\t\tfor (int nxt : g[src]) {\r\n\t\t\tif (nxt == par || vis[nxt])\
-    \ \r\n\t\t\t\tcontinue;\r\n\t\t\tdfs_size(nxt, src);\r\n\t\t\tsize[src] += size[nxt];\r\
-    \n\t\t}\r\n\t}\r\n\r\n\tint get_centroid(int src) {\r\n\t\tdfs_size(src);\r\n\t\
-    \tint num = size[src];\r\n\t\tint par = -1;\r\n\t\tdo {    \t\r\n\t\t\tint go\
-    \ = -1;\r\n\t\t\tfor (int nxt : g[src]) {\r\n\t\t\t\tif (nxt == par || vis[nxt])\r\
-    \n\t\t\t\t\tcontinue;\r\n\t\t\t\tif (2 * size[nxt] > num) \r\n\t\t\t\t\tgo = nxt;\r\
-    \n\t\t\t}\r\n\t\t\tpar = src;\r\n\t\t\tsrc = go;\r\n\t\t} while (src != -1);\r\
-    \n\t\treturn par;\r\n\t}\r\n\r\n\tint build_dfs(int src, int par = -1) {\r\n\t\
-    \tint c = get_centroid(src);\r\n\t\tvis[c] = true;\r\n\t\tparent[c] = par;\r\n\
-    \t\tif (par != -1) {\r\n\t\t\tcg[par].push_back(c);\r\n\t\t}\r\n\t\tfor (int nxt\
-    \ : g[c]) {\r\n\t\t\tif (vis[nxt]) \r\n\t\t\t\tcontinue;\r\n\t\t\tbuild_dfs(nxt,\
-    \ c);\r\n\t\t}\r\n\t\treturn c;\r\n\t}\r\n\r\n\tvoid build() {\r\n\t\troot = build_dfs(0);\r\
-    \n\t}\r\n};  \r\n\r\n\r\ntemplate <class T> struct SparseTable {\r\n\tstd::vector<T>\
-    \ v;\r\n\tstd::vector<std::vector<int>> jump;\r\n\r\n\tint level(int x) { return\
-    \ 31 - __builtin_clz(x); }\r\n\r\n\tint comb(int a, int b) {\r\n\t\treturn v[a]\
-    \ == v[b] ? std::min(a, b) : (v[a] < v[b] ? a : b);\r\n\t}\r\n\r\n\tvoid init(const\
-    \ std::vector<T>& _v) {\r\n\t\tv = _v;\r\n\t\tjump = {std::vector<int>((int)v.size())};\r\
-    \n\t\tiota(jump[0].begin(), jump[0].end(), 0);\r\n\t\tfor (int j = 1; (1 << j)\
-    \ <= (int)v.size(); j++) {\r\n\t\t\tjump.push_back(std::vector<int>((int)v.size()\
+    \ namespace FileIO {\r\n\tvoid set_in(string s)  { (void)!freopen(s.c_str(), \"\
+    r\", stdin); }\r\n\tvoid set_out(string s) { (void)!freopen(s.c_str(), \"w\",\
+    \ stdout); }\r\n\tvoid set_io(string s = \"\") {\r\n\t\tcin.tie(0)->sync_with_stdio(0);\
+    \ // unsync C / C++ I/O streams\r\n\t\t// cin.exceptions(cin.failbit);\r\n\t\t\
+    // throws exception when do smth illegal\r\n\t\t// ex. try to read letter into\
+    \ int\r\n\t\tif (!s.empty()) set_in(s + \".in\"), set_out(s + \".out\"); // for\
+    \ old USACO\r\n\t}\r\n}\r\n\r\nconst int MOD = 1e9 + 7; // 998244353\r\n\r\ntypedef\
+    \ std::decay<decltype(MOD)>::type mod_t; \r\nstruct mi {\r\n\tmod_t v;\r\n\texplicit\
+    \ operator mod_t() const { return v; }\r\n\texplicit operator bool() const { return\
+    \ v != 0; }\r\n\tmi() { v = 0; }\r\n\tmi(const long long& _v) {\r\n\t\tv = (-MOD\
+    \ <= _v && _v < MOD) ? _v : _v % MOD;\r\n\t\tif (v < 0) v += MOD; }\r\n\tfriend\
+    \ std::istream& operator>>(std::istream& in, mi& a) { \r\n\t\tlong long x; std::cin\
+    \ >> x; a = mi(x); return in; }\r\n\tfriend std::ostream& operator<<(std::ostream&\
+    \ os, const mi& a) { return os << a.v; }\r\n\tfriend bool operator==(const mi&\
+    \ a, const mi& b) { return a.v == b.v; }\r\n\tfriend bool operator!=(const mi&\
+    \ a, const mi& b) { return !(a == b); }    \r\n\tfriend bool operator<(const mi&\
+    \ a, const mi& b) { return a.v < b.v; }\r\n\tfriend bool operator>(const mi& a,\
+    \ const mi& b) { return a.v > b.v; }\r\n\tfriend bool operator<=(const mi& a,\
+    \ const mi& b) { return a.v <= b.v; }\r\n\tfriend bool operator>=(const mi& a,\
+    \ const mi& b) { return a.v >= b.v; }\r\n\tmi operator-() const { return mi(-v);\
+    \ }\r\n\tmi& operator+=(const mi& m) {\r\n\t\tif ((v += m.v) >= MOD) v -= MOD;\r\
+    \n\t\treturn *this; }\r\n\tmi& operator-=(const mi& m) {\r\n\t\tif ((v -= m.v)\
+    \ < 0) v += MOD;\r\n\t\treturn *this; }\r\n\tmi& operator*=(const mi& m) { v =\
+    \ (long long)v * m.v % MOD;\r\n\t\treturn *this; }\r\n\tfriend mi pow(mi a, long\
+    \ long p) {\r\n\t\tmi ans = 1; assert(p >= 0);\r\n\t\tfor (; p; p /= 2, a *= a)\
+    \ if (p & 1) ans *= a;\r\n\t\treturn ans; }\r\n\tfriend mi inv(const mi& a) {\
+    \ assert(a != 0); return pow(a, MOD - 2); }\r\n\tmi& operator/=(const mi& m) {\
+    \ return (*this) *= inv(m); }\r\n\tfriend mi operator+(mi a, const mi& b) { return\
+    \ a += b; }\r\n\tfriend mi operator-(mi a, const mi& b) { return a -= b; }\r\n\
+    \tfriend mi operator*(mi a, const mi& b) { return a *= b; }\r\n\tfriend mi operator/(mi\
+    \ a, const mi& b) { return a /= b; }\r\n};\n\r\nconst ld PI = acos((ld)-1);\r\n\
+    \r\ntypedef pair<mi, mi> pmi;\r\ntypedef vector<mi> vmi;\r\ntypedef vector<pmi>\
+    \ vpmi;\r\n\r\nstruct CentroidDecomposition {\r\n\tint n;\r\n\tstd::vector<std::vector<int>>\
+    \ g, cg; // cg is directed tree for centroids\r\n\tstd::vector<bool> vis;\r\n\t\
+    std::vector<int> size;\r\n\tstd::vector<int> parent;\r\n\tint root;\r\n\r\n\t\
+    void init(int n_) {\r\n\t\tn = n_;\r\n\t\tg.assign(n, std::vector<int>());\r\n\
+    \t\tcg.assign(n, std::vector<int>());\r\n\t\tvis.assign(n, false);\r\n\t\tparent.assign(n,\
+    \ 0);\r\n\t\tsize.assign(n, 0);\r\n\t}\r\n\r\n\tvoid ae(int u, int v) {\r\n\t\t\
+    g[u].push_back(v);\r\n\t\tg[v].push_back(u);\r\n\t}\r\n\r\n\tvoid dfs_size(int\
+    \ src, int par = -1) {\r\n\t\tsize[src] = 1;\r\n\t\tfor (int nxt : g[src]) {\r\
+    \n\t\t\tif (nxt == par || vis[nxt]) \r\n\t\t\t\tcontinue;\r\n\t\t\tdfs_size(nxt,\
+    \ src);\r\n\t\t\tsize[src] += size[nxt];\r\n\t\t}\r\n\t}\r\n\r\n\tint get_centroid(int\
+    \ src) {\r\n\t\tdfs_size(src);\r\n\t\tint num = size[src];\r\n\t\tint par = -1;\r\
+    \n\t\tdo {    \t\r\n\t\t\tint go = -1;\r\n\t\t\tfor (int nxt : g[src]) {\r\n\t\
+    \t\t\tif (nxt == par || vis[nxt])\r\n\t\t\t\t\tcontinue;\r\n\t\t\t\tif (2 * size[nxt]\
+    \ > num) \r\n\t\t\t\t\tgo = nxt;\r\n\t\t\t}\r\n\t\t\tpar = src;\r\n\t\t\tsrc =\
+    \ go;\r\n\t\t} while (src != -1);\r\n\t\treturn par;\r\n\t}\r\n\r\n\tint build_dfs(int\
+    \ src, int par = -1) {\r\n\t\tint c = get_centroid(src);\r\n\t\tvis[c] = true;\r\
+    \n\t\tparent[c] = par;\r\n\t\tif (par != -1) {\r\n\t\t\tcg[par].push_back(c);\r\
+    \n\t\t}\r\n\t\tfor (int nxt : g[c]) {\r\n\t\t\tif (vis[nxt]) \r\n\t\t\t\tcontinue;\r\
+    \n\t\t\tbuild_dfs(nxt, c);\r\n\t\t}\r\n\t\treturn c;\r\n\t}\r\n\r\n\tvoid build()\
+    \ {\r\n\t\troot = build_dfs(0);\r\n\t}\r\n};  \r\n\r\n\r\ntemplate <class T> struct\
+    \ SparseTable {\r\n\tstd::vector<T> v;\r\n\tstd::vector<std::vector<int>> jump;\r\
+    \n\r\n\tint level(int x) { return 31 - __builtin_clz(x); }\r\n\r\n\tint comb(int\
+    \ a, int b) {\r\n\t\treturn v[a] == v[b] ? std::min(a, b) : (v[a] < v[b] ? a :\
+    \ b);\r\n\t}\r\n\r\n\tvoid init(const std::vector<T>& _v) {\r\n\t\tv = _v;\r\n\
+    \t\tjump = {std::vector<int>((int)v.size())};\r\n\t\tiota(jump[0].begin(), jump[0].end(),\
+    \ 0);\r\n\t\tfor (int j = 1; (1 << j) <= (int)v.size(); j++) {\r\n\t\t\tjump.push_back(std::vector<int>((int)v.size()\
     \ - (1 << j) + 1));\r\n\t\t\tfor (int i = 0; i < (int)jump[j].size(); i++) {\r\
     \n\t\t\t\tjump[j][i] = comb(jump[j - 1][i], jump[j - 1][i + (1 << (j - 1))]);\r\
     \n\t\t\t}\r\n\t\t}\r\n\t}\r\n\r\n\tint index(int l, int r) {\r\n\t\tassert(l <=\
@@ -402,7 +402,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
   requiredBy: []
-  timestamp: '2022-07-22 23:22:14-04:00'
+  timestamp: '2022-07-24 00:24:04-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp

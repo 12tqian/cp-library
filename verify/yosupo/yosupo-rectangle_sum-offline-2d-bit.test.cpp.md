@@ -108,51 +108,51 @@ data:
     \ #__VA_ARGS__), dbg_out(__VA_ARGS__)\r\n\t\t#define dbgl(lev, x) loc_info(__LINE__,\
     \ #x), dbgl_out<lev>(x)\r\n\t#else // don't actually submit with this\r\n\t\t\
     #define dbg(...) 0\r\n\t\t#define dbgl(lev, x) 0\r\n\t#endif\r\n}\r\n\r\ninline\
-    \ namespace FileIO {\r\n\tvoid set_in(string s)  { freopen(s.c_str(), \"r\", stdin);\
-    \ }\r\n\tvoid set_out(string s) { freopen(s.c_str(), \"w\", stdout); }\r\n\tvoid\
-    \ set_io(string s = \"\") {\r\n\t\tcin.tie(0)->sync_with_stdio(0); // unsync C\
-    \ / C++ I/O streams\r\n\t\t// cin.exceptions(cin.failbit);\r\n\t\t// throws exception\
-    \ when do smth illegal\r\n\t\t// ex. try to read letter into int\r\n\t\tif (!s.empty())\
-    \ set_in(s + \".in\"), set_out(s + \".out\"); // for old USACO\r\n\t}\r\n}\r\n\
-    \r\n/**\r\n * x \\in [0, sz)\r\n * y \\in [0, sz)\r\n * First do all the updates,\
-    \ then call init\r\n * Afterwards, do the updates again, and now you can mix in\
-    \ the queries too\r\n */\r\n\r\ntemplate <class T> struct Offline2DBIT { \r\n\t\
-    bool mode = false; // mode = 1 -> initialized\r\n\tint sz;\r\n\tstd::vector<std::pair<int,\
-    \ int>> todo;\r\n\tstd::vector<int> cnt, st, val;\r\n\tstd::vector<T> bit;\r\n\
-    \r\n\tvoid init(int sz_) {\r\n\t\tsz = sz_;\r\n\t\tsz++;\r\n\t\tcnt.assign(sz,\
-    \ 0);\r\n\t\tst.assign(sz, 0);\r\n\t\tassert(!mode); mode = 1;\r\n\t\tstd::vector<int>\
-    \ lst(sz, 0);\r\n\t\tcnt.assign(sz, 0);\r\n\t\tsort(todo.begin(), todo.end(),\
-    \ [](const std::pair<int, int>& a, const std::pair<int, int>& b) { \r\n\t\t\t\
-    return a.second < b.second; });\r\n\t\tfor (auto& t : todo) \r\n\t\t\tfor (int\
-    \ x = t.first; x < sz; x += x & -x)\r\n\t\t\t\tif (lst[x] != t.second)\r\n\t\t\
-    \t\t\tlst[x] = t.second, cnt[x]++;\r\n\t\tint sum = 0; \r\n\t\tfor (int i = 0;\
-    \ i < sz; i++)\r\n\t\t\tlst[i] = 0, st[i] = (sum += cnt[i]);\r\n\t\tval.resize(sum);\
-    \ bit.resize(sum);\r\n\t\treverse(todo.begin(), todo.end());\r\n\t\tfor (auto&\
-    \ t : todo) \r\n\t\t\tfor (int x = t.first; x < sz; x += x & -x)\r\n\t\t\t\tif\
-    \ (lst[x] != t.second)\r\n\t\t\t\t\tlst[x] = t.second, val[--st[x]] = t.second;\r\
-    \n\t}\r\n\r\n\tint rank(int y, int l, int r) {\r\n\t\treturn std::upper_bound(val.begin()\
-    \ + l, val.begin() + r, y) - val.begin() - l;\r\n\t}\r\n\r\n\tvoid inner_update(int\
-    \ x, int y, T t) {\r\n\t\tfor (y = rank(y, st[x], st[x] + cnt[x]); y <= cnt[x];\
-    \ y += y & -y)\r\n\t\t\tbit[st[x] + y - 1] += t;\r\n\t}\r\n\r\n\tvoid update(int\
-    \ x, int y, T t) {\r\n\t\tx++, y++;\r\n\t\tif (!mode) todo.push_back({x, y});\r\
-    \n\t\telse \r\n\t\t\tfor (; x < sz; x += x & -x)\r\n\t\t\t\tinner_update(x, y,\
-    \ t);\r\n\t}\r\n\r\n\tT inner_query(int x, int y) {\r\n\t\tT res = 0;\r\n\t\t\
-    for (y = rank(y, st[x], st[x] + cnt[x]); y; y -= y & -y)\r\n\t\t\tres += bit[st[x]\
-    \ + y - 1];\r\n\t\treturn res;\r\n\t}\r\n\r\n\tT query(int x, int y) {\r\n\t\t\
-    x++, y++;\r\n\t\tassert(mode);\r\n\t\tT res = 0;\r\n\t\tfor (; x; x -= x & -x)\
-    \ \r\n\t\t\tres += inner_query(x, y);\r\n\t\treturn res;\r\n\t}\r\n\t\r\n\tT query(int\
-    \ xl, int xr, int yl, int yr) {\r\n\t\treturn query(xr, yr) - query(xl - 1, yr)\
-    \ - query(xr, yl - 1) + query(xl - 1, yl - 1);\r\n\t}\r\n};\r\n\r\nint main()\
-    \ {\r\n\tios::sync_with_stdio(false);\r\n\tcin.tie(nullptr);\r\n\tint n, q;\r\n\
-    \tcin >> n >> q;\r\n\tvector<int> xs, ys;\r\n\tvector<array<int, 3>> pts(n);\r\
-    \n\tfor (int i = 0; i < n; ++i) {\r\n\t\tfor (int j = 0; j < 3; ++j) {\r\n\t\t\
-    \tcin >> pts[i][j];\r\n\t\t}\r\n\t\txs.push_back(pts[i][0]);\r\n\t\tys.push_back(pts[i][1]);\r\
-    \n\t}\r\n\tvector<array<int, 4>> qs(q);\r\n\tfor (int i = 0; i < q; ++i) {\r\n\
-    \t\tcin >> qs[i][0] >> qs[i][2] >> qs[i][1] >> qs[i][3];\r\n\t\t--qs[i][1];\r\n\
-    \t\t--qs[i][3];\r\n\t\txs.push_back(qs[i][0]);\r\n\t\txs.push_back(qs[i][1]);\r\
-    \n\t\tys.push_back(qs[i][2]);\r\n\t\tys.push_back(qs[i][3]);\r\n\t}\r\n\tauto\
-    \ duplicates = [&](vector<int>& v) {\r\n\t\tsort(v.begin(), v.end());\r\n\t\t\
-    v.resize(unique(v.begin(), v.end()) - v.begin());\r\n\t};\r\n\tduplicates(xs);\r\
+    \ namespace FileIO {\r\n\tvoid set_in(string s)  { (void)!freopen(s.c_str(), \"\
+    r\", stdin); }\r\n\tvoid set_out(string s) { (void)!freopen(s.c_str(), \"w\",\
+    \ stdout); }\r\n\tvoid set_io(string s = \"\") {\r\n\t\tcin.tie(0)->sync_with_stdio(0);\
+    \ // unsync C / C++ I/O streams\r\n\t\t// cin.exceptions(cin.failbit);\r\n\t\t\
+    // throws exception when do smth illegal\r\n\t\t// ex. try to read letter into\
+    \ int\r\n\t\tif (!s.empty()) set_in(s + \".in\"), set_out(s + \".out\"); // for\
+    \ old USACO\r\n\t}\r\n}\r\n\r\n/**\r\n * x \\in [0, sz)\r\n * y \\in [0, sz)\r\
+    \n * First do all the updates, then call init\r\n * Afterwards, do the updates\
+    \ again, and now you can mix in the queries too\r\n */\r\n\r\ntemplate <class\
+    \ T> struct Offline2DBIT { \r\n\tbool mode = false; // mode = 1 -> initialized\r\
+    \n\tint sz;\r\n\tstd::vector<std::pair<int, int>> todo;\r\n\tstd::vector<int>\
+    \ cnt, st, val;\r\n\tstd::vector<T> bit;\r\n\r\n\tvoid init(int sz_) {\r\n\t\t\
+    sz = sz_;\r\n\t\tsz++;\r\n\t\tcnt.assign(sz, 0);\r\n\t\tst.assign(sz, 0);\r\n\t\
+    \tassert(!mode); mode = 1;\r\n\t\tstd::vector<int> lst(sz, 0);\r\n\t\tcnt.assign(sz,\
+    \ 0);\r\n\t\tsort(todo.begin(), todo.end(), [](const std::pair<int, int>& a, const\
+    \ std::pair<int, int>& b) { \r\n\t\t\treturn a.second < b.second; });\r\n\t\t\
+    for (auto& t : todo) \r\n\t\t\tfor (int x = t.first; x < sz; x += x & -x)\r\n\t\
+    \t\t\tif (lst[x] != t.second)\r\n\t\t\t\t\tlst[x] = t.second, cnt[x]++;\r\n\t\t\
+    int sum = 0; \r\n\t\tfor (int i = 0; i < sz; i++)\r\n\t\t\tlst[i] = 0, st[i] =\
+    \ (sum += cnt[i]);\r\n\t\tval.resize(sum); bit.resize(sum);\r\n\t\treverse(todo.begin(),\
+    \ todo.end());\r\n\t\tfor (auto& t : todo) \r\n\t\t\tfor (int x = t.first; x <\
+    \ sz; x += x & -x)\r\n\t\t\t\tif (lst[x] != t.second)\r\n\t\t\t\t\tlst[x] = t.second,\
+    \ val[--st[x]] = t.second;\r\n\t}\r\n\r\n\tint rank(int y, int l, int r) {\r\n\
+    \t\treturn std::upper_bound(val.begin() + l, val.begin() + r, y) - val.begin()\
+    \ - l;\r\n\t}\r\n\r\n\tvoid inner_update(int x, int y, T t) {\r\n\t\tfor (y =\
+    \ rank(y, st[x], st[x] + cnt[x]); y <= cnt[x]; y += y & -y)\r\n\t\t\tbit[st[x]\
+    \ + y - 1] += t;\r\n\t}\r\n\r\n\tvoid update(int x, int y, T t) {\r\n\t\tx++,\
+    \ y++;\r\n\t\tif (!mode) todo.push_back({x, y});\r\n\t\telse \r\n\t\t\tfor (;\
+    \ x < sz; x += x & -x)\r\n\t\t\t\tinner_update(x, y, t);\r\n\t}\r\n\r\n\tT inner_query(int\
+    \ x, int y) {\r\n\t\tT res = 0;\r\n\t\tfor (y = rank(y, st[x], st[x] + cnt[x]);\
+    \ y; y -= y & -y)\r\n\t\t\tres += bit[st[x] + y - 1];\r\n\t\treturn res;\r\n\t\
+    }\r\n\r\n\tT query(int x, int y) {\r\n\t\tx++, y++;\r\n\t\tassert(mode);\r\n\t\
+    \tT res = 0;\r\n\t\tfor (; x; x -= x & -x) \r\n\t\t\tres += inner_query(x, y);\r\
+    \n\t\treturn res;\r\n\t}\r\n\t\r\n\tT query(int xl, int xr, int yl, int yr) {\r\
+    \n\t\treturn query(xr, yr) - query(xl - 1, yr) - query(xr, yl - 1) + query(xl\
+    \ - 1, yl - 1);\r\n\t}\r\n};\r\n\r\nint main() {\r\n\tios::sync_with_stdio(false);\r\
+    \n\tcin.tie(nullptr);\r\n\tint n, q;\r\n\tcin >> n >> q;\r\n\tvector<int> xs,\
+    \ ys;\r\n\tvector<array<int, 3>> pts(n);\r\n\tfor (int i = 0; i < n; ++i) {\r\n\
+    \t\tfor (int j = 0; j < 3; ++j) {\r\n\t\t\tcin >> pts[i][j];\r\n\t\t}\r\n\t\t\
+    xs.push_back(pts[i][0]);\r\n\t\tys.push_back(pts[i][1]);\r\n\t}\r\n\tvector<array<int,\
+    \ 4>> qs(q);\r\n\tfor (int i = 0; i < q; ++i) {\r\n\t\tcin >> qs[i][0] >> qs[i][2]\
+    \ >> qs[i][1] >> qs[i][3];\r\n\t\t--qs[i][1];\r\n\t\t--qs[i][3];\r\n\t\txs.push_back(qs[i][0]);\r\
+    \n\t\txs.push_back(qs[i][1]);\r\n\t\tys.push_back(qs[i][2]);\r\n\t\tys.push_back(qs[i][3]);\r\
+    \n\t}\r\n\tauto duplicates = [&](vector<int>& v) {\r\n\t\tsort(v.begin(), v.end());\r\
+    \n\t\tv.resize(unique(v.begin(), v.end()) - v.begin());\r\n\t};\r\n\tduplicates(xs);\r\
     \n\tduplicates(ys);\r\n\tauto get = [&](vector<int> &v, int x) {\r\n\t\treturn\
     \ lower_bound(v.begin(), v.end(), x) - v.begin();\r\n\t};\t\r\n\tOffline2DBIT<long\
     \ long> O;\r\n\tfor (int i = 0; i < n; ++i) {\r\n\t\tO.update(get(xs, pts[i][0]),\
@@ -189,7 +189,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/yosupo-rectangle_sum-offline-2d-bit.test.cpp
   requiredBy: []
-  timestamp: '2022-07-22 23:22:14-04:00'
+  timestamp: '2022-07-24 00:24:04-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/yosupo-rectangle_sum-offline-2d-bit.test.cpp

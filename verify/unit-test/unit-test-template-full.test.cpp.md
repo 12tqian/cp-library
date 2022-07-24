@@ -153,39 +153,39 @@ data:
     \ #__VA_ARGS__), dbg_out(__VA_ARGS__)\r\n\t\t#define dbgl(lev, x) loc_info(__LINE__,\
     \ #x), dbgl_out<lev>(x)\r\n\t#else // don't actually submit with this\r\n\t\t\
     #define dbg(...) 0\r\n\t\t#define dbgl(lev, x) 0\r\n\t#endif\r\n}\r\n\r\ninline\
-    \ namespace FileIO {\r\n\tvoid set_in(string s)  { freopen(s.c_str(), \"r\", stdin);\
-    \ }\r\n\tvoid set_out(string s) { freopen(s.c_str(), \"w\", stdout); }\r\n\tvoid\
-    \ set_io(string s = \"\") {\r\n\t\tcin.tie(0)->sync_with_stdio(0); // unsync C\
-    \ / C++ I/O streams\r\n\t\t// cin.exceptions(cin.failbit);\r\n\t\t// throws exception\
-    \ when do smth illegal\r\n\t\t// ex. try to read letter into int\r\n\t\tif (!s.empty())\
-    \ set_in(s + \".in\"), set_out(s + \".out\"); // for old USACO\r\n\t}\r\n}\r\n\
-    \r\nconst int MOD = 1e9 + 7; // 998244353\r\n\r\ntypedef std::decay<decltype(MOD)>::type\
-    \ mod_t; \r\nstruct mi {\r\n\tmod_t v;\r\n\texplicit operator mod_t() const {\
-    \ return v; }\r\n\texplicit operator bool() const { return v != 0; }\r\n\tmi()\
-    \ { v = 0; }\r\n\tmi(const long long& _v) {\r\n\t\tv = (-MOD <= _v && _v < MOD)\
-    \ ? _v : _v % MOD;\r\n\t\tif (v < 0) v += MOD; }\r\n\tfriend std::istream& operator>>(std::istream&\
-    \ in, mi& a) { \r\n\t\tlong long x; std::cin >> x; a = mi(x); return in; }\r\n\
-    \tfriend std::ostream& operator<<(std::ostream& os, const mi& a) { return os <<\
-    \ a.v; }\r\n\tfriend bool operator==(const mi& a, const mi& b) { return a.v ==\
-    \ b.v; }\r\n\tfriend bool operator!=(const mi& a, const mi& b) { return !(a ==\
-    \ b); }    \r\n\tfriend bool operator<(const mi& a, const mi& b) { return a.v\
-    \ < b.v; }\r\n\tfriend bool operator>(const mi& a, const mi& b) { return a.v >\
-    \ b.v; }\r\n\tfriend bool operator<=(const mi& a, const mi& b) { return a.v <=\
-    \ b.v; }\r\n\tfriend bool operator>=(const mi& a, const mi& b) { return a.v >=\
-    \ b.v; }\r\n\tmi operator-() const { return mi(-v); }\r\n\tmi& operator+=(const\
-    \ mi& m) {\r\n\t\tif ((v += m.v) >= MOD) v -= MOD;\r\n\t\treturn *this; }\r\n\t\
-    mi& operator-=(const mi& m) {\r\n\t\tif ((v -= m.v) < 0) v += MOD;\r\n\t\treturn\
-    \ *this; }\r\n\tmi& operator*=(const mi& m) { v = (long long)v * m.v % MOD;\r\n\
-    \t\treturn *this; }\r\n\tfriend mi pow(mi a, long long p) {\r\n\t\tmi ans = 1;\
-    \ assert(p >= 0);\r\n\t\tfor (; p; p /= 2, a *= a) if (p & 1) ans *= a;\r\n\t\t\
-    return ans; }\r\n\tfriend mi inv(const mi& a) { assert(a != 0); return pow(a,\
-    \ MOD - 2); }\r\n\tmi& operator/=(const mi& m) { return (*this) *= inv(m); }\r\
-    \n\tfriend mi operator+(mi a, const mi& b) { return a += b; }\r\n\tfriend mi operator-(mi\
-    \ a, const mi& b) { return a -= b; }\r\n\tfriend mi operator*(mi a, const mi&\
-    \ b) { return a *= b; }\r\n\tfriend mi operator/(mi a, const mi& b) { return a\
-    \ /= b; }\r\n};\n\r\nconst ld PI = acos((ld)-1);\r\n\r\ntypedef pair<mi, mi> pmi;\r\
-    \ntypedef vector<mi> vmi;\r\ntypedef vector<pmi> vpmi;\r\n\r\nint main() {\r\n\
-    \tset_io(\"\");\r\n\treturn 0;\r\n}\r\n"
+    \ namespace FileIO {\r\n\tvoid set_in(string s)  { (void)!freopen(s.c_str(), \"\
+    r\", stdin); }\r\n\tvoid set_out(string s) { (void)!freopen(s.c_str(), \"w\",\
+    \ stdout); }\r\n\tvoid set_io(string s = \"\") {\r\n\t\tcin.tie(0)->sync_with_stdio(0);\
+    \ // unsync C / C++ I/O streams\r\n\t\t// cin.exceptions(cin.failbit);\r\n\t\t\
+    // throws exception when do smth illegal\r\n\t\t// ex. try to read letter into\
+    \ int\r\n\t\tif (!s.empty()) set_in(s + \".in\"), set_out(s + \".out\"); // for\
+    \ old USACO\r\n\t}\r\n}\r\n\r\nconst int MOD = 1e9 + 7; // 998244353\r\n\r\ntypedef\
+    \ std::decay<decltype(MOD)>::type mod_t; \r\nstruct mi {\r\n\tmod_t v;\r\n\texplicit\
+    \ operator mod_t() const { return v; }\r\n\texplicit operator bool() const { return\
+    \ v != 0; }\r\n\tmi() { v = 0; }\r\n\tmi(const long long& _v) {\r\n\t\tv = (-MOD\
+    \ <= _v && _v < MOD) ? _v : _v % MOD;\r\n\t\tif (v < 0) v += MOD; }\r\n\tfriend\
+    \ std::istream& operator>>(std::istream& in, mi& a) { \r\n\t\tlong long x; std::cin\
+    \ >> x; a = mi(x); return in; }\r\n\tfriend std::ostream& operator<<(std::ostream&\
+    \ os, const mi& a) { return os << a.v; }\r\n\tfriend bool operator==(const mi&\
+    \ a, const mi& b) { return a.v == b.v; }\r\n\tfriend bool operator!=(const mi&\
+    \ a, const mi& b) { return !(a == b); }    \r\n\tfriend bool operator<(const mi&\
+    \ a, const mi& b) { return a.v < b.v; }\r\n\tfriend bool operator>(const mi& a,\
+    \ const mi& b) { return a.v > b.v; }\r\n\tfriend bool operator<=(const mi& a,\
+    \ const mi& b) { return a.v <= b.v; }\r\n\tfriend bool operator>=(const mi& a,\
+    \ const mi& b) { return a.v >= b.v; }\r\n\tmi operator-() const { return mi(-v);\
+    \ }\r\n\tmi& operator+=(const mi& m) {\r\n\t\tif ((v += m.v) >= MOD) v -= MOD;\r\
+    \n\t\treturn *this; }\r\n\tmi& operator-=(const mi& m) {\r\n\t\tif ((v -= m.v)\
+    \ < 0) v += MOD;\r\n\t\treturn *this; }\r\n\tmi& operator*=(const mi& m) { v =\
+    \ (long long)v * m.v % MOD;\r\n\t\treturn *this; }\r\n\tfriend mi pow(mi a, long\
+    \ long p) {\r\n\t\tmi ans = 1; assert(p >= 0);\r\n\t\tfor (; p; p /= 2, a *= a)\
+    \ if (p & 1) ans *= a;\r\n\t\treturn ans; }\r\n\tfriend mi inv(const mi& a) {\
+    \ assert(a != 0); return pow(a, MOD - 2); }\r\n\tmi& operator/=(const mi& m) {\
+    \ return (*this) *= inv(m); }\r\n\tfriend mi operator+(mi a, const mi& b) { return\
+    \ a += b; }\r\n\tfriend mi operator-(mi a, const mi& b) { return a -= b; }\r\n\
+    \tfriend mi operator*(mi a, const mi& b) { return a *= b; }\r\n\tfriend mi operator/(mi\
+    \ a, const mi& b) { return a /= b; }\r\n};\n\r\nconst ld PI = acos((ld)-1);\r\n\
+    \r\ntypedef pair<mi, mi> pmi;\r\ntypedef vector<mi> vmi;\r\ntypedef vector<pmi>\
+    \ vpmi;\r\n\r\nint main() {\r\n\tset_io(\"\");\r\n\treturn 0;\r\n}\r\n"
   code: "#define IGNORE \"just testing compilation\"\r\n\r\n#include \"../../library/contest/template-full.cpp\""
   dependsOn:
   - library/contest/template-full.cpp
@@ -197,7 +197,7 @@ data:
   isVerificationFile: true
   path: verify/unit-test/unit-test-template-full.test.cpp
   requiredBy: []
-  timestamp: '2022-07-22 23:22:14-04:00'
+  timestamp: '2022-07-24 00:24:04-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/unit-test/unit-test-template-full.test.cpp
