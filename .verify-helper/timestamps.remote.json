@@ -53,6 +53,7 @@
 "verify/yosupo/yosupo-factorize.test.cpp": "2022-07-21 16:12:33 -0400",
 "verify/yosupo/yosupo-find_linear_recurrence.test.cpp": "2022-07-23 01:30:39 -0400",
 "verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp": "2022-07-22 23:22:14 -0400",
+"verify/yosupo/yosupo-general_matching.test.cpp": "2022-07-23 23:14:31 -0400",
 "verify/yosupo/yosupo-inv_of_formal_power_series.test.cpp": "2022-07-23 01:30:39 -0400",
 "verify/yosupo/yosupo-inverse_matrix.test.cpp": "2022-07-21 16:12:33 -0400",
 "verify/yosupo/yosupo-lca-lca-jump.test.cpp": "2022-07-21 16:12:33 -0400",
