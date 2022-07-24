@@ -124,6 +124,9 @@ data:
       path: library/graphs/block-cut-tree.hpp
       title: library/graphs/block-cut-tree.hpp
     - icon: ':heavy_check_mark:'
+      path: library/graphs/blossom-matching.hpp
+      title: library/graphs/blossom-matching.hpp
+    - icon: ':heavy_check_mark:'
       path: library/graphs/centroid-decomposition.hpp
       title: library/graphs/centroid-decomposition.hpp
     - icon: ':heavy_check_mark:'
@@ -506,6 +509,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
       title: verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/yosupo/yosupo-general_matching.test.cpp
+      title: verify/yosupo/yosupo-general_matching.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-inv_of_formal_power_series.test.cpp
       title: verify/yosupo/yosupo-inv_of_formal_power_series.test.cpp
