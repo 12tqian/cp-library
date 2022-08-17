@@ -117,8 +117,8 @@ data:
   timestamp: '2022-07-21 16:12:33-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
   - verify/yosupo/yosupo-convolution_mod_1000000007-fast-fourier-transform.test.cpp
+  - verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
 documentation_of: library/polynomial/fast-fourier-transform.hpp
 layout: document
 redirect_from:

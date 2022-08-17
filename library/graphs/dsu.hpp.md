@@ -50,10 +50,10 @@ data:
   timestamp: '2022-07-21 16:12:33-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/aizu/aizu-GRL_2_A.test.cpp
   - verify/codeforces/codeforces-1463E.test.cpp
   - verify/codeforces/codeforces-1553G.test.cpp
   - verify/codeforces/codeforces-1494F.test.cpp
+  - verify/aizu/aizu-GRL_2_A.test.cpp
   - verify/yosupo/yosupo-unionfind.test.cpp
 documentation_of: library/graphs/dsu.hpp
 layout: document

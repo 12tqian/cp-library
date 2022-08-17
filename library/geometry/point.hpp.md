@@ -146,9 +146,9 @@ data:
   timestamp: '2022-07-21 16:12:33-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - verify/yosupo/yosupo-sort_points_by_argument.test.cpp
   - verify/kattis/kattis-convexhull.test.cpp
   - verify/kattis/kattis-pointinpolygon.test.cpp
-  - verify/yosupo/yosupo-sort_points_by_argument.test.cpp
 documentation_of: library/geometry/point.hpp
 layout: document
 redirect_from:

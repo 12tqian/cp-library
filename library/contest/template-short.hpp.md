@@ -51,9 +51,9 @@ data:
   timestamp: '2022-07-21 16:12:33-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/unit-test/unit-test-template-short.test.cpp
   - verify/codeforces/codeforces-1494F.test.cpp
   - verify/codeforces/codeforces-1299D.test.cpp
+  - verify/unit-test/unit-test-template-short.test.cpp
   - verify/spoj/spoj-QTREE2.test.cpp
 documentation_of: library/contest/template-short.hpp
 layout: document

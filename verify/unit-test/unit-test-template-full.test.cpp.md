@@ -14,9 +14,6 @@ data:
     path: library/misc/easy-io.hpp
     title: library/misc/easy-io.hpp
   - icon: ':heavy_check_mark:'
-    path: library/misc/pragma-short.hpp
-    title: library/misc/pragma-short.hpp
-  - icon: ':heavy_check_mark:'
     path: library/modular-arithmetic/mod-int.hpp
     title: library/modular-arithmetic/mod-int.hpp
   _extendedRequiredBy: []
@@ -29,37 +26,36 @@ data:
     IGNORE: ''
     IGNORE_IF_GCC: ''
     links: []
-  bundledCode: "#define IGNORE \"just testing compilation\"\r\n\r\n\r\n\r\n#pragma\
-    \ GCC optimize (\"O3\")\r\n#pragma GCC target (\"sse4\")\n\r\n#include <algorithm>\r\
-    \n#include <array>\r\n#include <bitset>\r\n#include <cassert>\r\n#include <chrono>\r\
-    \n#include <cmath>\r\n#include <complex>\r\n#include <cstdio>\r\n#include <cstdlib>\r\
-    \n#include <cstring>\r\n#include <ctime>\r\n#include <deque>\r\n#include <iostream>\r\
-    \n#include <iomanip>\r\n#include <list>\r\n#include <map>\r\n#include <numeric>\r\
-    \n#include <queue>\r\n#include <random>\r\n#include <set>\r\n#include <stack>\r\
-    \n#include <string>\r\n#include <unordered_map>\r\n#include <vector>\r\n\r\nusing\
-    \ namespace std;\n\r\n#include <ext/pb_ds/tree_policy.hpp>\r\n#include <ext/pb_ds/assoc_container.hpp>\r\
-    \n\r\nusing namespace __gnu_pbds;\r\n\r\ntemplate <class T> using Tree = tree<T,\
-    \ null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;\r\n\r\n\
-    typedef long long ll;\r\ntypedef long double ld;\r\ntypedef double db;\r\ntypedef\
-    \ string str;\r\n\r\ntypedef pair<int, int> pi;\r\ntypedef pair<ll, ll> pl;\r\n\
-    typedef pair<db, db> pd;\r\n\r\ntypedef vector<int> vi;\r\ntypedef vector<bool>\
-    \ vb;\r\ntypedef vector<ll> vl;\r\ntypedef vector<db> vd;\r\ntypedef vector<str>\
-    \ vs;\r\ntypedef vector<pi> vpi;\r\ntypedef vector<pl> vpl;\r\ntypedef vector<pd>\
-    \ vpd;\r\n\r\n#define mp make_pair\r\n#define f first\r\n#define s second\r\n\
-    #define sz(x) (int)(x).size()\r\n#define all(x) begin(x), end(x)\r\n#define rall(x)\
-    \ (x).rbegin(), (x).rend()\r\n#define sor(x) sort(all(x))\r\n#define rsz resize\r\
-    \n#define resz resize\r\n#define ins insert\r\n#define ft front()\r\n#define bk\
-    \ back()\r\n#define pf push_front\r\n#define pb push_back\r\n#define eb emplace_back\r\
-    \n#define lb lower_bound\r\n#define ub upper_bound\r\n\r\n#define f1r(i, a, b)\
-    \ for (int i = (a); i < (b); ++i)\r\n#define f0r(i, a) f1r(i, 0, a)\r\n#define\
-    \ r1f(i, a, b) for (int i = (b); i --> (a); )\r\n#define r0f(i, a) r1f(i, 0, a)\r\
-    \n#define FOR(i, a, b) for (int i = (a); i < (b); ++i)\r\n#define F0R(i, a) FOR(i,\
-    \ 0, a)\r\n#define ROF(i, a, b) for (int i = (b) - 1; i >= (a); --i)\r\n#define\
-    \ R0F(i, a) ROF(i, 0, a)\r\n#define each(a, x) for (auto& a : x)\r\n\r\nmt19937\
-    \ rng((uint32_t)chrono::steady_clock::now().time_since_epoch().count());\r\n\r\
-    \ntemplate <class T> bool ckmin(T& a, const T& b) { return b < a ? a = b, 1 :\
-    \ 0; }\r\ntemplate <class T> bool ckmax(T& a, const T& b) { return a < b ? a =\
-    \ b, 1 : 0; }\r\n\r\ntemplate <class T> using V = vector<T>;\r\ntemplate <class\
+  bundledCode: "#define IGNORE \"just testing compilation\"\r\n\r\n\r\n\r\n#include\
+    \ <algorithm>\r\n#include <array>\r\n#include <bitset>\r\n#include <cassert>\r\
+    \n#include <chrono>\r\n#include <cmath>\r\n#include <complex>\r\n#include <cstdio>\r\
+    \n#include <cstdlib>\r\n#include <cstring>\r\n#include <ctime>\r\n#include <deque>\r\
+    \n#include <iostream>\r\n#include <iomanip>\r\n#include <list>\r\n#include <map>\r\
+    \n#include <numeric>\r\n#include <queue>\r\n#include <random>\r\n#include <set>\r\
+    \n#include <stack>\r\n#include <string>\r\n#include <unordered_map>\r\n#include\
+    \ <vector>\r\n\r\nusing namespace std;\n\r\n#include <ext/pb_ds/tree_policy.hpp>\r\
+    \n#include <ext/pb_ds/assoc_container.hpp>\r\n\r\nusing namespace __gnu_pbds;\r\
+    \n\r\ntemplate <class T> using Tree = tree<T, null_type, less<T>, rb_tree_tag,\
+    \ tree_order_statistics_node_update>;\r\n\r\ntypedef long long ll;\r\ntypedef\
+    \ long double ld;\r\ntypedef double db;\r\ntypedef string str;\r\n\r\ntypedef\
+    \ pair<int, int> pi;\r\ntypedef pair<ll, ll> pl;\r\ntypedef pair<db, db> pd;\r\
+    \n\r\ntypedef vector<int> vi;\r\ntypedef vector<bool> vb;\r\ntypedef vector<ll>\
+    \ vl;\r\ntypedef vector<db> vd;\r\ntypedef vector<str> vs;\r\ntypedef vector<pi>\
+    \ vpi;\r\ntypedef vector<pl> vpl;\r\ntypedef vector<pd> vpd;\r\n\r\n#define mp\
+    \ make_pair\r\n#define f first\r\n#define s second\r\n#define sz(x) (int)(x).size()\r\
+    \n#define all(x) begin(x), end(x)\r\n#define rall(x) (x).rbegin(), (x).rend()\r\
+    \n#define sor(x) sort(all(x))\r\n#define rsz resize\r\n#define resz resize\r\n\
+    #define ins insert\r\n#define ft front()\r\n#define bk back()\r\n#define pf push_front\r\
+    \n#define pb push_back\r\n#define eb emplace_back\r\n#define lb lower_bound\r\n\
+    #define ub upper_bound\r\n\r\n#define f1r(i, a, b) for (int i = (a); i < (b);\
+    \ ++i)\r\n#define f0r(i, a) f1r(i, 0, a)\r\n#define r1f(i, a, b) for (int i =\
+    \ (b); i --> (a); )\r\n#define r0f(i, a) r1f(i, 0, a)\r\n#define FOR(i, a, b)\
+    \ for (int i = (a); i < (b); ++i)\r\n#define F0R(i, a) FOR(i, 0, a)\r\n#define\
+    \ ROF(i, a, b) for (int i = (b) - 1; i >= (a); --i)\r\n#define R0F(i, a) ROF(i,\
+    \ 0, a)\r\n#define each(a, x) for (auto& a : x)\r\n\r\nmt19937 rng((uint32_t)chrono::steady_clock::now().time_since_epoch().count());\r\
+    \n\r\ntemplate <class T> bool ckmin(T& a, const T& b) { return b < a ? a = b,\
+    \ 1 : 0; }\r\ntemplate <class T> bool ckmax(T& a, const T& b) { return a < b ?\
+    \ a = b, 1 : 0; }\r\n\r\ntemplate <class T> using V = vector<T>;\r\ntemplate <class\
     \ T> using VV = V<V<T>>;\r\ntemplate <class T> using VVV = V<V<V<T>>>;\r\ntemplate\
     \ <class T> using VVVV = V<V<V<V<T>>>>;\r\n\r\ntemplate <typename T, typename\
     \ S> ostream& operator << (ostream& os, const pair<T, S>& p) { return os << \"\
@@ -190,14 +186,13 @@ data:
   dependsOn:
   - library/contest/template-full.cpp
   - library/contest/template-full.hpp
-  - library/misc/pragma-short.hpp
   - library/contest/template-minimal.hpp
   - library/misc/easy-io.hpp
   - library/modular-arithmetic/mod-int.hpp
   isVerificationFile: true
   path: verify/unit-test/unit-test-template-full.test.cpp
   requiredBy: []
-  timestamp: '2022-07-24 00:24:04-04:00'
+  timestamp: '2022-08-17 00:00:35-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/unit-test/unit-test-template-full.test.cpp

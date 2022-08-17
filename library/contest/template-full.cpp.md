@@ -11,9 +11,6 @@ data:
     path: library/misc/easy-io.hpp
     title: library/misc/easy-io.hpp
   - icon: ':heavy_check_mark:'
-    path: library/misc/pragma-short.hpp
-    title: library/misc/pragma-short.hpp
-  - icon: ':heavy_check_mark:'
     path: library/modular-arithmetic/mod-int.hpp
     title: library/modular-arithmetic/mod-int.hpp
   _extendedRequiredBy: []
@@ -26,10 +23,9 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "\r\n\r\n#pragma GCC optimize (\"O3\")\r\n#pragma GCC target (\"sse4\"\
-    )\n\r\n#include <algorithm>\r\n#include <array>\r\n#include <bitset>\r\n#include\
-    \ <cassert>\r\n#include <chrono>\r\n#include <cmath>\r\n#include <complex>\r\n\
-    #include <cstdio>\r\n#include <cstdlib>\r\n#include <cstring>\r\n#include <ctime>\r\
+  bundledCode: "\r\n\r\n#include <algorithm>\r\n#include <array>\r\n#include <bitset>\r\
+    \n#include <cassert>\r\n#include <chrono>\r\n#include <cmath>\r\n#include <complex>\r\
+    \n#include <cstdio>\r\n#include <cstdlib>\r\n#include <cstring>\r\n#include <ctime>\r\
     \n#include <deque>\r\n#include <iostream>\r\n#include <iomanip>\r\n#include <list>\r\
     \n#include <map>\r\n#include <numeric>\r\n#include <queue>\r\n#include <random>\r\
     \n#include <set>\r\n#include <stack>\r\n#include <string>\r\n#include <unordered_map>\r\
@@ -186,14 +182,13 @@ data:
     \treturn 0;\r\n}\r\n"
   dependsOn:
   - library/contest/template-full.hpp
-  - library/misc/pragma-short.hpp
   - library/contest/template-minimal.hpp
   - library/misc/easy-io.hpp
   - library/modular-arithmetic/mod-int.hpp
   isVerificationFile: false
   path: library/contest/template-full.cpp
   requiredBy: []
-  timestamp: '2022-07-24 00:24:04-04:00'
+  timestamp: '2022-08-17 00:00:35-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/unit-test/unit-test-template-full.test.cpp

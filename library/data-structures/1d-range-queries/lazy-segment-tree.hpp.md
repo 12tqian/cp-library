@@ -61,8 +61,8 @@ data:
   timestamp: '2022-07-21 16:12:33-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/yosupo/yosupo-point_add_range_sum-lazy-segment-tree.test.cpp
   - verify/yosupo/yosupo-vertex_add_path_sum.test.cpp
+  - verify/yosupo/yosupo-point_add_range_sum-lazy-segment-tree.test.cpp
 documentation_of: library/data-structures/1d-range-queries/lazy-segment-tree.hpp
 layout: document
 redirect_from:

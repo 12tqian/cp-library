@@ -225,7 +225,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/misc/fast-io.hpp
       title: library/misc/fast-io.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
       path: library/misc/pragma-short.hpp
       title: library/misc/pragma-short.hpp
   - name: library/modular-arithmetic

@@ -94,12 +94,12 @@ data:
   timestamp: '2022-07-21 16:12:33-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/unit-test/unit-test-fraction.test.cpp
-  - verify/unit-test/unit-test-gosper-hack.test.cpp
+  - verify/codeforces/codeforces-1551F.test.cpp
   - verify/unit-test/unit-test-big-integer.test.cpp
   - verify/unit-test/unit-test-hashing.test.cpp
+  - verify/unit-test/unit-test-gosper-hack.test.cpp
+  - verify/unit-test/unit-test-fraction.test.cpp
   - verify/unit-test/unit-test-template-full.test.cpp
-  - verify/codeforces/codeforces-1551F.test.cpp
   - verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
 documentation_of: library/modular-arithmetic/mod-int.hpp
 layout: document

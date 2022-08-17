@@ -115,8 +115,8 @@ data:
   timestamp: '2022-07-21 16:12:33-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/yosupo/yosupo-point_set_range_composite.test.cpp
   - verify/yosupo/yosupo-vertex_add_path_sum-new-hld.test.cpp
+  - verify/yosupo/yosupo-point_set_range_composite.test.cpp
 documentation_of: library/data-structures/1d-range-queries/general-full-segment-tree.hpp
 layout: document
 redirect_from:
