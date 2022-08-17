@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../misc/pragma-short.hpp"
 #include "template-minimal.hpp"
 
 #include <ext/pb_ds/tree_policy.hpp>
