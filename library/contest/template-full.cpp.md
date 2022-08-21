@@ -54,18 +54,19 @@ data:
     \ a = b, 1 : 0; }\r\n\r\ntemplate <class T> using V = vector<T>;\r\ntemplate <class\
     \ T> using VV = V<V<T>>;\r\ntemplate <class T> using VVV = V<V<V<T>>>;\r\ntemplate\
     \ <class T> using VVVV = V<V<V<V<T>>>>;\r\n\r\ntemplate <typename T, typename\
-    \ S> ostream& operator << (ostream& os, const pair<T, S>& p) { return os << \"\
-    (\" << p.first << \", \" << p.second << \")\"; }\r\ntemplate <typename C, typename\
-    \ T = decay<decltype(*begin(declval<C>()))>, typename enable_if<!is_same<C, string>::value>::type*\
-    \ = nullptr>\r\nostream& operator << (ostream& os, const C& c) { bool f = true;\
-    \ os << \"{\"; for (const auto& x : c) { if (!f) os << \", \"; f = false; os <<\
-    \ x; } return os << \"}\"; }\r\ntemplate <typename T> void debug(string s, T x)\
-    \ { cerr << s << \" = \" << x << \"\\n\"; }\r\ntemplate <typename T, typename...\
-    \ Args> void debug(string s, T x, Args... args) { cerr << s.substr(0, s.find(','))\
-    \ << \" = \" << x << \" | \"; debug(s.substr(s.find(',') + 2), args...); }\r\n\
-    \r\nconstexpr int pct(int x) { return __builtin_popcount(x); }\r\nconstexpr int\
-    \ bits(int x) { return 31 - __builtin_clz(x); } // floor(log2(x))\r\n\r\ninline\
-    \ namespace Helpers {\r\n\t//////////// is_iterable\r\n\t// https://stackoverflow.com/questions/13830158/check-if-a-variable-type-is-iterable\r\
+    \ S> ostream& operator<<(ostream& os, const pair<T, S>& p) { \r\n  return os <<\
+    \ \"(\" << p.first << \", \" << p.second << \")\"; \r\n}\r\ntemplate <typename\
+    \ C, typename T = decay<decltype(*begin(declval<C>()))>, typename enable_if<!is_same<C,\
+    \ string>::value>::type* = nullptr>\r\nostream& operator << (ostream& os, const\
+    \ C& c) { \r\n  bool f = true; \r\n  os << \"{\"; \r\n  for (const auto& x : c)\
+    \ { \r\n    if (!f) \r\n      os << \", \"; \r\n    f = false; os << x; \r\n \
+    \ } \r\n  return os << \"}\"; \r\n}\r\ntemplate <typename T> void debug(string\
+    \ s, T x) { cerr << s << \" = \" << x << \"\\n\"; }\r\ntemplate <typename T, typename...\
+    \ Args> void debug(string s, T x, Args... args) { \r\n  cerr << s.substr(0, s.find(','))\
+    \ << \" = \" << x << \" | \"; \r\n  debug(s.substr(s.find(',') + 2), args...);\
+    \ \r\n}\r\n\r\nconstexpr int pct(int x) { return __builtin_popcount(x); }\r\n\
+    constexpr int bits(int x) { return 31 - __builtin_clz(x); } // floor(log2(x))\r\
+    \n\r\ninline namespace Helpers {\r\n\t//////////// is_iterable\r\n\t// https://stackoverflow.com/questions/13830158/check-if-a-variable-type-is-iterable\r\
     \n\t// this gets used only when we can call begin() and end() on that type\r\n\
     \ttemplate <class T, class = void> struct is_iterable : false_type {};\r\n\ttemplate\
     \ <class T> struct is_iterable<T, void_t<decltype(begin(declval<T>())),\r\n\t\t\
@@ -188,7 +189,7 @@ data:
   isVerificationFile: false
   path: library/contest/template-full.cpp
   requiredBy: []
-  timestamp: '2022-08-17 00:00:35-04:00'
+  timestamp: '2022-08-21 11:26:50-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/unit-test/unit-test-template-full.test.cpp
