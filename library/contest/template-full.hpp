@@ -65,11 +65,25 @@ template <class T> using VV = V<V<T>>;
 template <class T> using VVV = V<V<V<T>>>;
 template <class T> using VVVV = V<V<V<V<T>>>>;
 
-template <typename T, typename S> ostream& operator << (ostream& os, const pair<T, S>& p) { return os << "(" << p.first << ", " << p.second << ")"; }
+template <typename T, typename S> ostream& operator<<(ostream& os, const pair<T, S>& p) { 
+  return os << "(" << p.first << ", " << p.second << ")"; 
+}
 template <typename C, typename T = decay<decltype(*begin(declval<C>()))>, typename enable_if<!is_same<C, string>::value>::type* = nullptr>
-ostream& operator << (ostream& os, const C& c) { bool f = true; os << "{"; for (const auto& x : c) { if (!f) os << ", "; f = false; os << x; } return os << "}"; }
+ostream& operator << (ostream& os, const C& c) { 
+  bool f = true; 
+  os << "{"; 
+  for (const auto& x : c) { 
+    if (!f) 
+      os << ", "; 
+    f = false; os << x; 
+  } 
+  return os << "}"; 
+}
 template <typename T> void debug(string s, T x) { cerr << s << " = " << x << "\n"; }
-template <typename T, typename... Args> void debug(string s, T x, Args... args) { cerr << s.substr(0, s.find(',')) << " = " << x << " | "; debug(s.substr(s.find(',') + 2), args...); }
+template <typename T, typename... Args> void debug(string s, T x, Args... args) { 
+  cerr << s.substr(0, s.find(',')) << " = " << x << " | "; 
+  debug(s.substr(s.find(',') + 2), args...); 
+}
 
 constexpr int pct(int x) { return __builtin_popcount(x); }
 constexpr int bits(int x) { return 31 - __builtin_clz(x); } // floor(log2(x))
