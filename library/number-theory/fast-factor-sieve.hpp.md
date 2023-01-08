@@ -6,12 +6,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/atcoder/atcoder-abc210_f.test.cpp
     title: verify/atcoder/atcoder-abc210_f.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/codeforces/codeforces-1553G.test.cpp
     title: verify/codeforces/codeforces-1553G.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "\r\ntemplate <int SZ> struct Sieve {\r\n\tint spf[SZ];\r\n\t\r\n\t\
@@ -41,7 +41,7 @@ data:
   path: library/number-theory/fast-factor-sieve.hpp
   requiredBy: []
   timestamp: '2022-07-21 16:12:33-04:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/codeforces/codeforces-1553G.test.cpp
   - verify/atcoder/atcoder-abc210_f.test.cpp

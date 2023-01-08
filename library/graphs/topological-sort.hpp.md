@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/codeforces/codeforces-1463E.test.cpp
     title: verify/codeforces/codeforces-1463E.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "\r\nstd::vector<int> topo_sort(std::vector<std::vector<int>> adj)\
@@ -34,7 +34,7 @@ data:
   path: library/graphs/topological-sort.hpp
   requiredBy: []
   timestamp: '2022-07-21 16:12:33-04:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - verify/codeforces/codeforces-1463E.test.cpp
 documentation_of: library/graphs/topological-sort.hpp

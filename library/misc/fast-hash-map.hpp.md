@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/codeforces/codeforces-1553G.test.cpp
     title: verify/codeforces/codeforces-1553G.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#include <bits/extc++.h>\r\n\r\nstruct splitmix64_hash {\r\n\tstatic\
@@ -34,7 +34,7 @@ data:
   path: library/misc/fast-hash-map.hpp
   requiredBy: []
   timestamp: '2022-07-21 16:12:33-04:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - verify/codeforces/codeforces-1553G.test.cpp
 documentation_of: library/misc/fast-hash-map.hpp

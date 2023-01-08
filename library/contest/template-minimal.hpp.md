@@ -21,7 +21,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/aizu/aizu-GRL_1_B.test.cpp
     title: verify/aizu/aizu-GRL_1_B.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/aizu/aizu-GRL_2_A.test.cpp
     title: verify/aizu/aizu-GRL_2_A.test.cpp
   - icon: ':heavy_check_mark:'
@@ -39,7 +39,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/codeforces/codeforces-1195E.test.cpp
     title: verify/codeforces/codeforces-1195E.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/codeforces/codeforces-1463E.test.cpp
     title: verify/codeforces/codeforces-1463E.test.cpp
   - icon: ':heavy_check_mark:'
@@ -48,7 +48,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/codeforces/codeforces-1551F.test.cpp
     title: verify/codeforces/codeforces-1551F.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/codeforces/codeforces-1553G.test.cpp
     title: verify/codeforces/codeforces-1553G.test.cpp
   - icon: ':heavy_check_mark:'
@@ -123,7 +123,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-convolution_mod_1000000007-karatsuba.test.cpp
     title: verify/yosupo/yosupo-convolution_mod_1000000007-karatsuba.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/yosupo-counting_primes.test.cpp
     title: verify/yosupo/yosupo-counting_primes.test.cpp
   - icon: ':heavy_check_mark:'
@@ -168,13 +168,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-point_add_range_general-simple-segment-tree.test.cpp
     title: verify/yosupo/yosupo-point_add_range_general-simple-segment-tree.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/yosupo-point_add_range_sum-fenwick-tree.test.cpp
     title: verify/yosupo/yosupo-point_add_range_sum-fenwick-tree.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-point_add_range_sum-implicit-lazy-segment-tree.test.cpp
     title: verify/yosupo/yosupo-point_add_range_sum-implicit-lazy-segment-tree.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/yosupo-point_add_range_sum-lazy-segment-tree.test.cpp
     title: verify/yosupo/yosupo-point_add_range_sum-lazy-segment-tree.test.cpp
   - icon: ':heavy_check_mark:'
@@ -234,18 +234,18 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-two_edge_connected_components.test.cpp
     title: verify/yosupo/yosupo-two_edge_connected_components.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/yosupo-unionfind.test.cpp
     title: verify/yosupo/yosupo-unionfind.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-vertex_add_path_sum-new-hld.test.cpp
     title: verify/yosupo/yosupo-vertex_add_path_sum-new-hld.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/yosupo-vertex_add_path_sum.test.cpp
     title: verify/yosupo/yosupo-vertex_add_path_sum.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "\r\n#include <algorithm>\r\n#include <array>\r\n#include <bitset>\r\
@@ -266,89 +266,89 @@ data:
   isVerificationFile: false
   path: library/contest/template-minimal.hpp
   requiredBy:
-  - library/contest/template-full.cpp
-  - library/contest/template-full.hpp
   - library/graphs/enumerate-triangles.cpp
+  - library/contest/template-full.hpp
+  - library/contest/template-full.cpp
   timestamp: '2022-07-21 16:12:33-04:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
-  - verify/codeforces/codeforces-869E-quadtree.test.cpp
-  - verify/codeforces/codeforces-1463E.test.cpp
-  - verify/codeforces/codeforces-1553G.test.cpp
-  - verify/codeforces/codeforces-869E-general-fwt.test.cpp
-  - verify/codeforces/codeforces-319C.test.cpp
-  - verify/codeforces/codeforces-1542E2.test.cpp
-  - verify/codeforces/codeforces-1195E.test.cpp
-  - verify/codeforces/codeforces-1551F.test.cpp
-  - verify/codeforces/codeforces-981G.test.cpp
-  - verify/codeforces/codeforces-1074F.test.cpp
-  - verify/dmoj/dmoj-ds5.test.cpp
-  - verify/aizu/aizu-GRL_2_A.test.cpp
-  - verify/aizu/aizu-GRL_6_A-2.test.cpp
-  - verify/aizu/aizu-GRL_1_A.test.cpp
-  - verify/aizu/aizu-1163.test.cpp
-  - verify/aizu/aizu-GRL_6_A.test.cpp
-  - verify/aizu/aizu-GRL_1_B.test.cpp
-  - verify/unit-test/unit-test-big-integer.test.cpp
-  - verify/unit-test/unit-test-hashing.test.cpp
-  - verify/unit-test/unit-test-gosper-hack.test.cpp
-  - verify/unit-test/unit-test-fraction.test.cpp
-  - verify/unit-test/unit-test-template-full.test.cpp
-  - verify/yosupo/yosupo-lca-lca-rmq.test.cpp
-  - verify/yosupo/yosupo-point_add_range_sum-implicit-lazy-segment-tree.test.cpp
-  - verify/yosupo/yosupo-scc-tarjan.test.cpp
-  - verify/yosupo/yosupo-rectangle_sum-offline-2d-bit.test.cpp
-  - verify/yosupo/yosupo-inv_of_formal_power_series.test.cpp
-  - verify/yosupo/yosupo-sort_points_by_argument.test.cpp
-  - verify/yosupo/yosupo-log_of_formal_power_series.test.cpp
-  - verify/yosupo/yosupo-range_affine_range_sum.test.cpp
-  - verify/yosupo/yosupo-pow_of_formal_power_series.test.cpp
-  - verify/yosupo/yosupo-scc-kosaraju.test.cpp
-  - verify/yosupo/yosupo-point_add_range_sum-sparse-segment-tree.test.cpp
-  - verify/yosupo/yosupo-sqrt_mod.test.cpp
-  - verify/yosupo/yosupo-point_add_rectangle_sum-wavelet-matrix.test.cpp
-  - verify/yosupo/yosupo-convolution_mod_1000000007-fast-fourier-transform.test.cpp
-  - verify/yosupo/yosupo-enumerate_palindromes.test.cpp
-  - verify/yosupo/yosupo-point_add_range_sum-fenwick-tree.test.cpp
-  - verify/yosupo/yosupo-find_linear_recurrence.test.cpp
-  - verify/yosupo/yosupo-segment_add_get_min-li-chao-tree-offline.test.cpp
-  - verify/yosupo/yosupo-vertex_add_path_sum.test.cpp
-  - verify/yosupo/yosupo-two_edge_connected_components.test.cpp
-  - verify/yosupo/yosupo-lca-lca-jump.test.cpp
-  - verify/yosupo/yosupo-exp_of_formal_power_series.test.cpp
-  - verify/yosupo/yosupo-sqrt_of_formal_power_series.test.cpp
-  - verify/yosupo/yosupo-counting_primes.test.cpp
-  - verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
-  - verify/yosupo/yosupo-suffixarray-lcp.test.cpp
-  - verify/yosupo/yosupo-bipartitematching.test.cpp
-  - verify/yosupo/yosupo-static_range_sum.test.cpp
-  - verify/yosupo/yosupo-segment_add_get_min-li-chao-tree-online.test.cpp
-  - verify/yosupo/yosupo-point_add_range_sum-range-set-segment-tree.test.cpp
-  - verify/yosupo/yosupo-vertex_add_path_sum-new-hld.test.cpp
-  - verify/yosupo/yosupo-point_add_range_sum-point-update-segment-tree.test.cpp
-  - verify/yosupo/yosupo-inverse_matrix.test.cpp
-  - verify/yosupo/yosupo-factorize.test.cpp
-  - verify/yosupo/yosupo-line_add_get_min.test.cpp
-  - verify/yosupo/yosupo-range_chmin_chmax_add_range_sum.test.cpp
-  - verify/yosupo/yosupo-unionfind.test.cpp
-  - verify/yosupo/yosupo-assignment.test.cpp
-  - verify/yosupo/yosupo-convolution_mod_1000000007-karatsuba.test.cpp
-  - verify/yosupo/yosupo-point_set_range_composite.test.cpp
-  - verify/yosupo/yosupo-enumerate_triangles.test.cpp
-  - verify/yosupo/yosupo-point_add_range_general-simple-segment-tree.test.cpp
-  - verify/yosupo/yosupo-multipoint_evaluation.test.cpp
-  - verify/yosupo/yosupo-point_add_range_sum-lazy-segment-tree.test.cpp
-  - verify/atcoder/atcoder-abc210_f.test.cpp
   - verify/spoj/spoj-FACT0.test.cpp
   - verify/spoj/spoj-MMFSUNDARAM.test.cpp
   - verify/spoj/spoj-DYNACON2.test.cpp
-  - verify/kattis/kattis-equationsolver.test.cpp
-  - verify/kattis/kattis-mincostmaxflow.test.cpp
-  - verify/kattis/kattis-generalchineseremainder.test.cpp
-  - verify/kattis/kattis-convexhull.test.cpp
+  - verify/dmoj/dmoj-ds5.test.cpp
+  - verify/codeforces/codeforces-1463E.test.cpp
+  - verify/codeforces/codeforces-1553G.test.cpp
+  - verify/codeforces/codeforces-1074F.test.cpp
+  - verify/codeforces/codeforces-1551F.test.cpp
+  - verify/codeforces/codeforces-981G.test.cpp
+  - verify/codeforces/codeforces-319C.test.cpp
+  - verify/codeforces/codeforces-869E-general-fwt.test.cpp
+  - verify/codeforces/codeforces-869E-quadtree.test.cpp
+  - verify/codeforces/codeforces-1542E2.test.cpp
+  - verify/codeforces/codeforces-1195E.test.cpp
+  - verify/aizu/aizu-GRL_6_A.test.cpp
+  - verify/aizu/aizu-GRL_1_A.test.cpp
+  - verify/aizu/aizu-GRL_6_A-2.test.cpp
+  - verify/aizu/aizu-GRL_2_A.test.cpp
+  - verify/aizu/aizu-1163.test.cpp
+  - verify/aizu/aizu-GRL_1_B.test.cpp
   - verify/kattis/kattis-pointinpolygon.test.cpp
+  - verify/kattis/kattis-generalchineseremainder.test.cpp
+  - verify/kattis/kattis-mincostmaxflow.test.cpp
+  - verify/kattis/kattis-convexhull.test.cpp
   - verify/kattis/kattis-cheeseifyouplease.test.cpp
+  - verify/kattis/kattis-equationsolver.test.cpp
   - verify/kattis/kattis-equationsolver-matrix.test.cpp
+  - verify/yosupo/yosupo-point_set_range_composite.test.cpp
+  - verify/yosupo/yosupo-inv_of_formal_power_series.test.cpp
+  - verify/yosupo/yosupo-range_affine_range_sum.test.cpp
+  - verify/yosupo/yosupo-line_add_get_min.test.cpp
+  - verify/yosupo/yosupo-point_add_range_sum-point-update-segment-tree.test.cpp
+  - verify/yosupo/yosupo-sqrt_of_formal_power_series.test.cpp
+  - verify/yosupo/yosupo-vertex_add_path_sum.test.cpp
+  - verify/yosupo/yosupo-factorize.test.cpp
+  - verify/yosupo/yosupo-find_linear_recurrence.test.cpp
+  - verify/yosupo/yosupo-static_range_sum.test.cpp
+  - verify/yosupo/yosupo-point_add_range_sum-fenwick-tree.test.cpp
+  - verify/yosupo/yosupo-segment_add_get_min-li-chao-tree-offline.test.cpp
+  - verify/yosupo/yosupo-convolution_mod_1000000007-karatsuba.test.cpp
+  - verify/yosupo/yosupo-enumerate_triangles.test.cpp
+  - verify/yosupo/yosupo-suffixarray-lcp.test.cpp
+  - verify/yosupo/yosupo-point_add_range_sum-sparse-segment-tree.test.cpp
+  - verify/yosupo/yosupo-inverse_matrix.test.cpp
+  - verify/yosupo/yosupo-pow_of_formal_power_series.test.cpp
+  - verify/yosupo/yosupo-point_add_rectangle_sum-wavelet-matrix.test.cpp
+  - verify/yosupo/yosupo-point_add_range_sum-implicit-lazy-segment-tree.test.cpp
+  - verify/yosupo/yosupo-bipartitematching.test.cpp
+  - verify/yosupo/yosupo-convolution_mod_1000000007-fast-fourier-transform.test.cpp
+  - verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
+  - verify/yosupo/yosupo-rectangle_sum-offline-2d-bit.test.cpp
+  - verify/yosupo/yosupo-vertex_add_path_sum-new-hld.test.cpp
+  - verify/yosupo/yosupo-sort_points_by_argument.test.cpp
+  - verify/yosupo/yosupo-enumerate_palindromes.test.cpp
+  - verify/yosupo/yosupo-point_add_range_general-simple-segment-tree.test.cpp
+  - verify/yosupo/yosupo-point_add_range_sum-range-set-segment-tree.test.cpp
+  - verify/yosupo/yosupo-two_edge_connected_components.test.cpp
+  - verify/yosupo/yosupo-counting_primes.test.cpp
+  - verify/yosupo/yosupo-assignment.test.cpp
+  - verify/yosupo/yosupo-segment_add_get_min-li-chao-tree-online.test.cpp
+  - verify/yosupo/yosupo-exp_of_formal_power_series.test.cpp
+  - verify/yosupo/yosupo-sqrt_mod.test.cpp
+  - verify/yosupo/yosupo-multipoint_evaluation.test.cpp
+  - verify/yosupo/yosupo-range_chmin_chmax_add_range_sum.test.cpp
+  - verify/yosupo/yosupo-lca-lca-rmq.test.cpp
+  - verify/yosupo/yosupo-scc-tarjan.test.cpp
+  - verify/yosupo/yosupo-scc-kosaraju.test.cpp
+  - verify/yosupo/yosupo-lca-lca-jump.test.cpp
+  - verify/yosupo/yosupo-point_add_range_sum-lazy-segment-tree.test.cpp
+  - verify/yosupo/yosupo-unionfind.test.cpp
+  - verify/yosupo/yosupo-log_of_formal_power_series.test.cpp
+  - verify/unit-test/unit-test-big-integer.test.cpp
+  - verify/unit-test/unit-test-fraction.test.cpp
+  - verify/unit-test/unit-test-gosper-hack.test.cpp
+  - verify/unit-test/unit-test-template-full.test.cpp
+  - verify/unit-test/unit-test-hashing.test.cpp
+  - verify/atcoder/atcoder-abc210_f.test.cpp
 documentation_of: library/contest/template-minimal.hpp
 layout: document
 redirect_from:

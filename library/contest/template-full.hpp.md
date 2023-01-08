@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
   - icon: ':heavy_check_mark:'
@@ -245,12 +245,12 @@ data:
   timestamp: '2022-08-21 11:26:50-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/unit-test/unit-test-big-integer.test.cpp
-  - verify/unit-test/unit-test-hashing.test.cpp
-  - verify/unit-test/unit-test-gosper-hack.test.cpp
-  - verify/unit-test/unit-test-fraction.test.cpp
-  - verify/unit-test/unit-test-template-full.test.cpp
   - verify/yosupo/yosupo-frequency_table_of_tree_distance.test.cpp
+  - verify/unit-test/unit-test-big-integer.test.cpp
+  - verify/unit-test/unit-test-fraction.test.cpp
+  - verify/unit-test/unit-test-gosper-hack.test.cpp
+  - verify/unit-test/unit-test-template-full.test.cpp
+  - verify/unit-test/unit-test-hashing.test.cpp
 documentation_of: library/contest/template-full.hpp
 layout: document
 redirect_from:

@@ -9,13 +9,13 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/contest/template-full.hpp
       title: library/contest/template-full.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/contest/template-minimal.hpp
       title: library/contest/template-minimal.hpp
     - icon: ':heavy_check_mark:'
       path: library/contest/template-short.cpp
       title: library/contest/template-short.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/contest/template-short.hpp
       title: library/contest/template-short.hpp
   - name: library/data-structures/1d-range-queries
@@ -26,7 +26,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/data-structures/1d-range-queries/associative-range-query.hpp
       title: library/data-structures/1d-range-queries/associative-range-query.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: library/data-structures/1d-range-queries/fenwick-tree.hpp
       title: library/data-structures/1d-range-queries/fenwick-tree.hpp
     - icon: ':heavy_check_mark:'
@@ -41,7 +41,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/data-structures/1d-range-queries/interval-union.hpp
       title: library/data-structures/1d-range-queries/interval-union.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: library/data-structures/1d-range-queries/lazy-segment-tree.hpp
       title: library/data-structures/1d-range-queries/lazy-segment-tree.hpp
     - icon: ':heavy_check_mark:'
@@ -135,22 +135,22 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/graphs/dsu-rollback.hpp
       title: library/graphs/dsu-rollback.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: library/graphs/dsu.hpp
       title: library/graphs/dsu.hpp
     - icon: ':heavy_check_mark:'
       path: library/graphs/enumerate-triangles.cpp
       title: library/graphs/enumerate-triangles.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: library/graphs/euler-path.hpp
       title: Euler Path
     - icon: ':heavy_check_mark:'
       path: library/graphs/heavy-light-decomposition.hpp
       title: library/graphs/heavy-light-decomposition.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: library/graphs/heavy-light-decomposition2.hpp
       title: Old Heavy Light Decomposition
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: library/graphs/kruskal.hpp
       title: library/graphs/kruskal.hpp
     - icon: ':heavy_check_mark:'
@@ -177,7 +177,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/graphs/strongly-connected-components-tarjan.hpp
       title: library/graphs/strongly-connected-components-tarjan.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: library/graphs/topological-sort.hpp
       title: Topological Sort
     - icon: ':heavy_check_mark:'
@@ -216,10 +216,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/misc/easy-io.hpp
       title: library/misc/easy-io.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: library/misc/fast-hash-map.hpp
       title: library/misc/fast-hash-map.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: library/misc/fast-input.hpp
       title: library/misc/fast-input.hpp
     - icon: ':heavy_check_mark:'
@@ -250,13 +250,13 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/number-theory/basic-number-theory.hpp
       title: library/number-theory/basic-number-theory.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: library/number-theory/counting-primes.hpp
       title: library/number-theory/counting-primes.hpp
     - icon: ':heavy_check_mark:'
       path: library/number-theory/factor-big.hpp
       title: library/number-theory/factor-big.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/number-theory/fast-factor-sieve.hpp
       title: library/number-theory/fast-factor-sieve.hpp
     - icon: ':heavy_check_mark:'
@@ -342,7 +342,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/aizu/aizu-GRL_1_B.test.cpp
       title: verify/aizu/aizu-GRL_1_B.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/aizu/aizu-GRL_2_A.test.cpp
       title: verify/aizu/aizu-GRL_2_A.test.cpp
     - icon: ':heavy_check_mark:'
@@ -370,10 +370,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/codeforces/codeforces-1299D.test.cpp
       title: verify/codeforces/codeforces-1299D.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/codeforces/codeforces-1463E.test.cpp
       title: verify/codeforces/codeforces-1463E.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/codeforces/codeforces-1494F.test.cpp
       title: verify/codeforces/codeforces-1494F.test.cpp
     - icon: ':heavy_check_mark:'
@@ -382,7 +382,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/codeforces/codeforces-1551F.test.cpp
       title: verify/codeforces/codeforces-1551F.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/codeforces/codeforces-1553G.test.cpp
       title: verify/codeforces/codeforces-1553G.test.cpp
     - icon: ':heavy_check_mark:'
@@ -485,7 +485,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-convolution_mod_1000000007-karatsuba.test.cpp
       title: verify/yosupo/yosupo-convolution_mod_1000000007-karatsuba.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/yosupo/yosupo-counting_primes.test.cpp
       title: verify/yosupo/yosupo-counting_primes.test.cpp
     - icon: ':heavy_check_mark:'
@@ -539,13 +539,13 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-point_add_range_general-simple-segment-tree.test.cpp
       title: verify/yosupo/yosupo-point_add_range_general-simple-segment-tree.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/yosupo/yosupo-point_add_range_sum-fenwick-tree.test.cpp
       title: verify/yosupo/yosupo-point_add_range_sum-fenwick-tree.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-point_add_range_sum-implicit-lazy-segment-tree.test.cpp
       title: verify/yosupo/yosupo-point_add_range_sum-implicit-lazy-segment-tree.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/yosupo/yosupo-point_add_range_sum-lazy-segment-tree.test.cpp
       title: verify/yosupo/yosupo-point_add_range_sum-lazy-segment-tree.test.cpp
     - icon: ':heavy_check_mark:'
@@ -608,13 +608,13 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-two_edge_connected_components.test.cpp
       title: verify/yosupo/yosupo-two_edge_connected_components.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/yosupo/yosupo-unionfind.test.cpp
       title: verify/yosupo/yosupo-unionfind.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/yosupo-vertex_add_path_sum-new-hld.test.cpp
       title: verify/yosupo/yosupo-vertex_add_path_sum-new-hld.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/yosupo/yosupo-vertex_add_path_sum.test.cpp
       title: verify/yosupo/yosupo-vertex_add_path_sum.test.cpp
     - icon: ':heavy_check_mark:'

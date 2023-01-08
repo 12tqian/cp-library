@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/contest/template-short.cpp
     title: library/contest/template-short.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/contest/template-short.hpp
     title: library/contest/template-short.hpp
   _extendedRequiredBy: []

@@ -52,8 +52,8 @@ data:
   isVerificationFile: false
   path: library/graphs/low-link.hpp
   requiredBy:
-  - library/graphs/block-cut-tree.hpp
   - library/graphs/biconnected-components.hpp
+  - library/graphs/block-cut-tree.hpp
   timestamp: '2022-07-23 18:03:31-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

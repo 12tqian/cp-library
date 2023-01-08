@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/codeforces/codeforces-1494F.test.cpp
     title: verify/codeforces/codeforces-1494F.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "\r\ntemplate <bool directed> struct Euler {\r\n\tint n;\r\n\tstd::vector<std::vector<std::pair<int,\
@@ -62,7 +62,7 @@ data:
   path: library/graphs/euler-path.hpp
   requiredBy: []
   timestamp: '2022-07-21 16:12:33-04:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - verify/codeforces/codeforces-1494F.test.cpp
 documentation_of: library/graphs/euler-path.hpp
