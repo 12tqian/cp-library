@@ -21,7 +21,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/aizu/aizu-GRL_1_B.test.cpp
     title: verify/aizu/aizu-GRL_1_B.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/aizu/aizu-GRL_2_A.test.cpp
     title: verify/aizu/aizu-GRL_2_A.test.cpp
   - icon: ':heavy_check_mark:'
@@ -123,7 +123,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-convolution_mod_1000000007-karatsuba.test.cpp
     title: verify/yosupo/yosupo-convolution_mod_1000000007-karatsuba.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-counting_primes.test.cpp
     title: verify/yosupo/yosupo-counting_primes.test.cpp
   - icon: ':heavy_check_mark:'
@@ -168,13 +168,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-point_add_range_general-simple-segment-tree.test.cpp
     title: verify/yosupo/yosupo-point_add_range_general-simple-segment-tree.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-point_add_range_sum-fenwick-tree.test.cpp
     title: verify/yosupo/yosupo-point_add_range_sum-fenwick-tree.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-point_add_range_sum-implicit-lazy-segment-tree.test.cpp
     title: verify/yosupo/yosupo-point_add_range_sum-implicit-lazy-segment-tree.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-point_add_range_sum-lazy-segment-tree.test.cpp
     title: verify/yosupo/yosupo-point_add_range_sum-lazy-segment-tree.test.cpp
   - icon: ':heavy_check_mark:'
@@ -234,13 +234,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-two_edge_connected_components.test.cpp
     title: verify/yosupo/yosupo-two_edge_connected_components.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-unionfind.test.cpp
     title: verify/yosupo/yosupo-unionfind.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-vertex_add_path_sum-new-hld.test.cpp
     title: verify/yosupo/yosupo-vertex_add_path_sum-new-hld.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-vertex_add_path_sum.test.cpp
     title: verify/yosupo/yosupo-vertex_add_path_sum.test.cpp
   _isVerificationFailed: true

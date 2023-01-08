@@ -4,14 +4,14 @@ data:
   - icon: ':question:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/data-structures/1d-range-queries/lazy-segment-tree.hpp
     title: library/data-structures/1d-range-queries/lazy-segment-tree.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/point_add_range_sum
@@ -25,12 +25,12 @@ data:
     \n#include <map>\r\n#include <numeric>\r\n#include <queue>\r\n#include <random>\r\
     \n#include <set>\r\n#include <stack>\r\n#include <string>\r\n#include <unordered_map>\r\
     \n#include <vector>\r\n\r\nusing namespace std;\n\r\ntemplate <class T>\r\nstruct\
-    \ LazySeg {\r\n  std::vector<T> sum, lazy;\r\n  int sz;\r\n\r\n  LazySeg(int sz)\
-    \ { init(sz); }\r\n\r\n  void init(int sz_) {\r\n    sz = 1;\r\n    while (sz\
-    \ < sz_) sz *= 2;\r\n    sum.assign(2 * sz, 0);\r\n    lazy.assign(2 * sz, 0);\r\
-    \n  }\r\n\r\n  void push(int ind, int L, int R) {\r\n    sum[ind] += (R - L +\
-    \ 1) * lazy[ind];\r\n    if (L != R) {\r\n      lazy[2 * ind] += lazy[ind];\r\n\
-    \      lazy[2 * ind + 1] += lazy[ind];\r\n    }\r\n    lazy[ind] = 0;\r\n  }\r\
+    \ LazySeg {\r\n  std::vector<T> sum, lazy;\r\n  int sz;\r\n\r\n  LazySeg() = default;\r\
+    \n  LazySeg(int sz) { init(sz); }\r\n\r\n  void init(int sz_) {\r\n    sz = 1;\r\
+    \n    while (sz < sz_) sz *= 2;\r\n    sum.assign(2 * sz, 0);\r\n    lazy.assign(2\
+    \ * sz, 0);\r\n  }\r\n\r\n  void push(int ind, int L, int R) {\r\n    sum[ind]\
+    \ += (R - L + 1) * lazy[ind];\r\n    if (L != R) {\r\n      lazy[2 * ind] += lazy[ind];\r\
+    \n      lazy[2 * ind + 1] += lazy[ind];\r\n    }\r\n    lazy[ind] = 0;\r\n  }\r\
     \n\r\n  void pull(int ind) { sum[ind] = sum[2 * ind] + sum[2 * ind + 1]; }\r\n\
     \r\n  void build() {\r\n    for (int i = sz - 1; i >= 1; i--) {\r\n      pull(i);\r\
     \n    }\r\n  }\r\n\r\n  void upd(int lo, int hi, T inc, int ind = 1, int L = 0,\
@@ -65,8 +65,8 @@ data:
   isVerificationFile: true
   path: verify/yosupo/yosupo-point_add_range_sum-lazy-segment-tree.test.cpp
   requiredBy: []
-  timestamp: '2023-01-08 14:07:45-05:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2023-01-08 14:16:34-05:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/yosupo-point_add_range_sum-lazy-segment-tree.test.cpp
 layout: document

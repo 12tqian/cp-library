@@ -4,17 +4,17 @@ data:
   - icon: ':question:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/data-structures/1d-range-queries/fenwick-tree.hpp
     title: library/data-structures/1d-range-queries/fenwick-tree.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/number-theory/counting-primes.hpp
     title: library/number-theory/counting-primes.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/counting_primes
@@ -28,25 +28,25 @@ data:
     \n#include <map>\r\n#include <numeric>\r\n#include <queue>\r\n#include <random>\r\
     \n#include <set>\r\n#include <stack>\r\n#include <string>\r\n#include <unordered_map>\r\
     \n#include <vector>\r\n\r\nusing namespace std;\n\r\n\r\ntemplate <class T>\r\n\
-    struct FenwickTree {\r\n  std::vector<T> fwt;\r\n  int n;\r\n\r\n  FenwickTree(int\
-    \ n) { init(n); }\r\n  FenwickTree(std::vector<T>& a) { init(a); }\r\n\r\n  void\
-    \ init(int n_) {\r\n    n = n_;\r\n    fwt.assign(n, 0);\r\n  }\r\n\r\n  void\
-    \ init(std::vector<T>& a) {\r\n    n = (int)a.size();\r\n    fwt.assign(n, 0);\r\
-    \n    for (int i = 0; i < (int)a.size(); i++) {\r\n      add(i, a[i]);\r\n   \
-    \ }\r\n  }\r\n\r\n  T sum(int r) {\r\n    T ret = 0;\r\n    for (; r >= 0; r =\
-    \ (r & (r + 1)) - 1) ret += fwt[r];\r\n    return ret;\r\n  }\r\n\r\n  T query(int\
-    \ l, int r) { return sum(r) - sum(l - 1); }\r\n\r\n  void add(int idx, T delta)\
-    \ {\r\n    for (; idx < n; idx = idx | (idx + 1)) fwt[idx] += delta;\r\n  }\r\n\
-    };\n\r\nconst int RL = 1010101;\r\nconst int CL = 10101;\r\n\r\nstd::bitset<RL\
-    \ + 1> isp;\r\nstd::vector<int> ps, cs;\r\n\r\nvoid init(int c) {\r\n\tps.clear();\
-    \ cs.clear();\r\n\tisp[0] = isp[1] = 1;\r\n\tfor (int p = 2; p * p <= RL; p++)\
-    \ \r\n\t\tif (!isp[p]) \r\n\t\t\tfor (int q = p * p; q <= RL; q += p) \r\n\t\t\
-    \t\tisp[q] = 1;\r\n\tfor (int i = 2; i <= RL; i++) {\r\n\t\tif (!isp[i]) {\r\n\
-    \t\t\tps.push_back(i);\r\n\t\t\tif (i <= c) cs.push_back(i);\r\n\t\t}\r\n\t}\r\
-    \n}\r\n\r\nlong long phi(long long x, long long a, long long cnt) {\r\n\tlong\
-    \ long res = 0;\r\n\tstd::vector<int> mu(a + 1, 1), minp(a + 1, a);\r\n\tfor (int\
-    \ i = 1; i <= a; i++) {\r\n\t\tif (!isp[i]) {\r\n\t\t\tfor (long long j = i; j\
-    \ <= a; j += i) {\r\n\t\t\t\tmu[j] *= -1;\r\n\t\t\t\tminp[j] = std::min(minp[j],\
+    struct FenwickTree {\r\n  std::vector<T> fwt;\r\n  int n;\r\n\r\n  FenwickTree()\
+    \ = default;\r\n  FenwickTree(int n) { init(n); }\r\n  FenwickTree(std::vector<T>&\
+    \ a) { init(a); }\r\n\r\n  void init(int n_) {\r\n    n = n_;\r\n    fwt.assign(n,\
+    \ 0);\r\n  }\r\n\r\n  void init(std::vector<T>& a) {\r\n    n = (int)a.size();\r\
+    \n    fwt.assign(n, 0);\r\n    for (int i = 0; i < (int)a.size(); i++) {\r\n \
+    \     add(i, a[i]);\r\n    }\r\n  }\r\n\r\n  T sum(int r) {\r\n    T ret = 0;\r\
+    \n    for (; r >= 0; r = (r & (r + 1)) - 1) ret += fwt[r];\r\n    return ret;\r\
+    \n  }\r\n\r\n  T query(int l, int r) { return sum(r) - sum(l - 1); }\r\n\r\n \
+    \ void add(int idx, T delta) {\r\n    for (; idx < n; idx = idx | (idx + 1)) fwt[idx]\
+    \ += delta;\r\n  }\r\n};\n\r\nconst int RL = 1010101;\r\nconst int CL = 10101;\r\
+    \n\r\nstd::bitset<RL + 1> isp;\r\nstd::vector<int> ps, cs;\r\n\r\nvoid init(int\
+    \ c) {\r\n\tps.clear(); cs.clear();\r\n\tisp[0] = isp[1] = 1;\r\n\tfor (int p\
+    \ = 2; p * p <= RL; p++) \r\n\t\tif (!isp[p]) \r\n\t\t\tfor (int q = p * p; q\
+    \ <= RL; q += p) \r\n\t\t\t\tisp[q] = 1;\r\n\tfor (int i = 2; i <= RL; i++) {\r\
+    \n\t\tif (!isp[i]) {\r\n\t\t\tps.push_back(i);\r\n\t\t\tif (i <= c) cs.push_back(i);\r\
+    \n\t\t}\r\n\t}\r\n}\r\n\r\nlong long phi(long long x, long long a, long long cnt)\
+    \ {\r\n\tlong long res = 0;\r\n\tstd::vector<int> mu(a + 1, 1), minp(a + 1, a);\r\
+    \n\tfor (int i = 1; i <= a; i++) {\r\n\t\tif (!isp[i]) {\r\n\t\t\tfor (long long\
+    \ j = i; j <= a; j += i) {\r\n\t\t\t\tmu[j] *= -1;\r\n\t\t\t\tminp[j] = std::min(minp[j],\
     \ i);\r\n\t\t\t}\r\n\t\t\tfor (long long j = i * i, k = j; k <= a; k += j) \r\n\
     \t\t\t\tmu[k] = 0;\r\n\t\t}\r\n\t\tres += mu[i] * (x / i);\r\n\t}\r\n\tstd::vector<long\
     \ long> sum(cnt);\r\n\tfor (long long lo = 1; lo < x / a; lo += a) {\r\n\t\tlong\
@@ -84,8 +84,8 @@ data:
   isVerificationFile: true
   path: verify/yosupo/yosupo-counting_primes.test.cpp
   requiredBy: []
-  timestamp: '2023-01-08 14:07:45-05:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2023-01-08 14:16:34-05:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/yosupo-counting_primes.test.cpp
 layout: document

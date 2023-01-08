@@ -4,7 +4,7 @@ data:
   - icon: ':question:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/graphs/dsu.hpp
     title: library/graphs/dsu.hpp
   - icon: ':x:'
@@ -44,18 +44,18 @@ data:
     \ 1);\r\n\t\t\telse {\r\n\t\t\t\tif (ret.back().first == spf[x]) \r\n\t\t\t\t\t\
     ret.back().second++;\r\n\t\t\t\telse \r\n\t\t\t\t\tret.emplace_back(spf[x], 1);\r\
     \n\t\t\t}\r\n\t\t\tx /= spf[x];\r\n\t\t}\r\n\t\treturn ret;\r\n\t}\r\n};\r\n\r\
-    \nstruct DSU {\r\n  std::vector<int> e;\r\n\r\n  DSU(int n) { init(n); }\r\n\r\
-    \n  void init(int n) { e = std::vector<int>(n, -1); }\r\n\r\n  int get(int x)\
-    \ { return e[x] < 0 ? x : e[x] = get(e[x]); }\r\n\r\n  bool same_set(int a, int\
-    \ b) { return get(a) == get(b); }\r\n\r\n  int size(int x) { return -e[get(x)];\
-    \ }\r\n\r\n  bool unite(int x, int y) {\r\n    x = get(x), y = get(y);\r\n   \
-    \ if (x == y) return false;\r\n    if (e[x] > e[y]) std::swap(x, y);\r\n    e[x]\
-    \ += e[y];\r\n    e[y] = x;\r\n    return true;\r\n  }\r\n};\r\n#include <bits/extc++.h>\r\
-    \n\r\nstruct splitmix64_hash {\r\n\tstatic uint64_t splitmix64(uint64_t x) {\r\
-    \n\t\tx += 0x9e3779b97f4a7c15;\r\n\t\tx = (x ^ (x >> 30)) * 0xbf58476d1ce4e5b9;\r\
-    \n\t\tx = (x ^ (x >> 27)) * 0x94d049bb133111eb;\r\n\t\treturn x ^ (x >> 31);\r\
-    \n\t}\r\n\r\n\tsize_t operator()(uint64_t x) const {\r\n\t\tstatic const uint64_t\
-    \ FIXED_RANDOM = std::chrono::steady_clock::now().time_since_epoch().count();\r\
+    \nstruct DSU {\r\n  std::vector<int> e;\r\n\r\n  DSU() = default;\r\n  DSU(int\
+    \ n) { init(n); }\r\n\r\n  void init(int n) { e = std::vector<int>(n, -1); }\r\
+    \n\r\n  int get(int x) { return e[x] < 0 ? x : e[x] = get(e[x]); }\r\n\r\n  bool\
+    \ same_set(int a, int b) { return get(a) == get(b); }\r\n\r\n  int size(int x)\
+    \ { return -e[get(x)]; }\r\n\r\n  bool unite(int x, int y) {\r\n    x = get(x),\
+    \ y = get(y);\r\n    if (x == y) return false;\r\n    if (e[x] > e[y]) std::swap(x,\
+    \ y);\r\n    e[x] += e[y];\r\n    e[y] = x;\r\n    return true;\r\n  }\r\n};\r\
+    \n#include <bits/extc++.h>\r\n\r\nstruct splitmix64_hash {\r\n\tstatic uint64_t\
+    \ splitmix64(uint64_t x) {\r\n\t\tx += 0x9e3779b97f4a7c15;\r\n\t\tx = (x ^ (x\
+    \ >> 30)) * 0xbf58476d1ce4e5b9;\r\n\t\tx = (x ^ (x >> 27)) * 0x94d049bb133111eb;\r\
+    \n\t\treturn x ^ (x >> 31);\r\n\t}\r\n\r\n\tsize_t operator()(uint64_t x) const\
+    \ {\r\n\t\tstatic const uint64_t FIXED_RANDOM = std::chrono::steady_clock::now().time_since_epoch().count();\r\
     \n\t\treturn splitmix64(x + FIXED_RANDOM);\r\n\t}\r\n};\r\n\r\ntemplate <typename\
     \ K, typename V, typename Hash = splitmix64_hash>\r\nusing hash_map = __gnu_pbds::gp_hash_table<K,\
     \ V, Hash>;\r\n\r\ntemplate <typename K, typename Hash = splitmix64_hash>\r\n\
@@ -164,7 +164,7 @@ data:
   isVerificationFile: true
   path: verify/codeforces/codeforces-1553G.test.cpp
   requiredBy: []
-  timestamp: '2023-01-08 14:07:45-05:00'
+  timestamp: '2023-01-08 14:16:34-05:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/codeforces/codeforces-1553G.test.cpp
