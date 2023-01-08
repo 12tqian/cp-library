@@ -5,6 +5,7 @@ struct LazySeg {
   std::vector<T> sum, lazy;
   int sz;
 
+  LazySeg() = default;
   LazySeg(int sz) { init(sz); }
 
   void init(int sz_) {

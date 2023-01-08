@@ -3,6 +3,7 @@
 struct DSU {
   std::vector<int> e;
 
+  DSU() = default;
   DSU(int n) { init(n); }
 
   void init(int n) { e = std::vector<int>(n, -1); }

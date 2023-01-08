@@ -5,6 +5,7 @@ struct FenwickTree {
   std::vector<T> fwt;
   int n;
 
+  FenwickTree() = default;
   FenwickTree(int n) { init(n); }
   FenwickTree(std::vector<T>& a) { init(a); }
 
