@@ -25,38 +25,39 @@ data:
     \n#include <map>\r\n#include <numeric>\r\n#include <queue>\r\n#include <random>\r\
     \n#include <set>\r\n#include <stack>\r\n#include <string>\r\n#include <unordered_map>\r\
     \n#include <vector>\r\n\r\nusing namespace std;\n\r\nconst long long INF = 1e18;\r\
-    \n\r\nstruct Line {\r\n\tmutable long long a, b, lst;\r\n\r\n\tlong long eval(long\
-    \ long x) {\r\n\t\treturn a * x + b;\r\n\t}\r\n\r\n\tbool operator<(const Line&\
-    \ y) const {\r\n\t\treturn a < y.a;\r\n\t}\r\n\r\n\tlong long floor_div(long long\
-    \ a, long long b) {\r\n\t\treturn a / b - ((a ^ b) < 0 && a % b);\r\n\t}\r\n\r\
-    \n\tlong long bet(const Line& y) {\r\n\t\tassert(a <= y.a);\r\n\t\treturn a ==\
-    \ y.a ? (b >= y.b ? INF : -INF) : floor_div(b - y.b, y.a - a);\r\n\t}\r\n};\r\n\
-    \r\nstruct ConvexHullDeque : std::deque<Line> {\r\n\tvoid add_back(Line L) {\r\
-    \n\t\twhile (true) {\r\n\t\t\tauto a = back();\r\n\t\t\tpop_back();\r\n\t\t\t\
-    a.lst = a.bet(L);\r\n\t\t\tif (size() && back().lst >= a.lst) {\r\n\t\t\t\tcontinue;\r\
-    \n\t\t\t}\r\n\t\t\tpush_back(a);\r\n\t\t\tbreak;\r\n\t\t}\r\n\t\tL.lst = INF;\r\
-    \n\t\tpush_back(L);\r\n\t}\r\n\r\n\tvoid add_front(Line L) {\r\n\t\twhile (true)\
-    \ {\r\n\t\t\tif (!size()) {\r\n\t\t\t\tL.lst = INF;\r\n\t\t\t\tbreak;\r\n\t\t\t\
-    }\r\n\t\t\tif ((L.lst = L.bet(front())) >= front().lst) {\r\n\t\t\t\tpop_front();\r\
-    \n\t\t\t} else {\r\n\t\t\t\tbreak;\r\n\t\t\t}\r\n\t\t}\r\n\t\tpush_front(L);\r\
-    \n\t}\r\n\r\n\tvoid add(long long a, long long b) {\r\n\t\t// comment this out\
-    \ for max\r\n\t\ta = -a; b = -b;\r\n\t\tif (!size() || a <= front().a) {\r\n\t\
-    \t\tadd_front({a, b, 0});\r\n\t\t} else {\r\n\t\t\tassert(a >= back().a);\r\n\t\
-    \t\tadd_back({a, b, 0});\r\n\t\t}\r\n\t}\r\n\r\n\tint ord = 1; // 1 = increasing,\
-    \ -1 = decreasing\r\n\r\n\tlong long query(long long x) {\r\n\t\t// flip negatives\
-    \ for max\r\n\t\tassert(ord);\r\n\t\tif (ord == 1) {\r\n\t\t\twhile (front().lst\
-    \ < x) {\r\n\t\t\t\tpop_front();\r\n\t\t\t}\r\n\t\t\treturn -front().eval(x);\r\
-    \n\t\t} else {\r\n\t\t\twhile (size() > 1 && prev(prev(end()))->lst >= x) {\r\n\
-    \t\t\t\tpop_back();\r\n\t\t\t}\r\n\t\t\treturn -back().eval(x);\r\n\t\t}\r\n\t\
-    }\r\n};\n\r\n// 189 div 1C\r\nint main() {\r\n\tstd::ios_base::sync_with_stdio(0);\r\
-    \n\tstd::cin.tie(0);\r\n\tint n; std::cin >> n;\r\n\tstd::vector<long long> a(n),\
-    \ b(n);\r\n\tfor (int i = 0; i < n; i++) std::cin >> a[i];\r\n\tfor (int i = 0;\
-    \ i < n; i++) std::cin >> b[i];\r\n\tstd::vector<long long> pre(n);\r\n\tfor (int\
-    \ i = 0; i < n; i++) {\r\n\t\tpre[i] = a[i] + (i ? pre[i - 1] : 0);\r\n\t}\r\n\
-    \tConvexHullDeque C;\r\n\tstd::vector<long long> dp(n);\r\n\tfor (int i = 0; i\
-    \ < n; i++) {\r\n\t\tif (i == 0) {\r\n\t\t\tdp[i] = 0;\r\n\t\t\tC.add(b[i], dp[i]);\r\
-    \n\t\t} else {\r\n\t\t\tdp[i] = C.query(a[i]);\r\n\t\t\tC.add(b[i], dp[i]);\r\n\
-    \t\t}\r\n\t}\r\n\tstd::cout << dp[n - 1] << '\\n';\r\n\treturn 0;\r\n}\r\n"
+    \n\r\nstruct Line {\r\n  mutable long long a, b, lst;\r\n\r\n  long long eval(long\
+    \ long x) { return a * x + b; }\r\n\r\n  bool operator<(const Line& y) const {\
+    \ return a < y.a; }\r\n\r\n  long long floor_div(long long a, long long b) {\r\
+    \n    return a / b - ((a ^ b) < 0 && a % b);\r\n  }\r\n\r\n  long long bet(const\
+    \ Line& y) {\r\n    assert(a <= y.a);\r\n    return a == y.a ? (b >= y.b ? INF\
+    \ : -INF) : floor_div(b - y.b, y.a - a);\r\n  }\r\n};\r\n\r\nstruct ConvexHullDeque\
+    \ : std::deque<Line> {\r\n  ConvexHullDeque() = default;\r\n\r\n  void add_back(Line\
+    \ L) {\r\n    while (true) {\r\n      auto a = back();\r\n      pop_back();\r\n\
+    \      a.lst = a.bet(L);\r\n      if (size() && back().lst >= a.lst) {\r\n   \
+    \     continue;\r\n      }\r\n      push_back(a);\r\n      break;\r\n    }\r\n\
+    \    L.lst = INF;\r\n    push_back(L);\r\n  }\r\n\r\n  void add_front(Line L)\
+    \ {\r\n    while (true) {\r\n      if (!size()) {\r\n        L.lst = INF;\r\n\
+    \        break;\r\n      }\r\n      if ((L.lst = L.bet(front())) >= front().lst)\
+    \ {\r\n        pop_front();\r\n      } else {\r\n        break;\r\n      }\r\n\
+    \    }\r\n    push_front(L);\r\n  }\r\n\r\n  void add(long long a, long long b)\
+    \ {\r\n    // comment this out for max\r\n    a = -a;\r\n    b = -b;\r\n    if\
+    \ (!size() || a <= front().a) {\r\n      add_front({a, b, 0});\r\n    } else {\r\
+    \n      assert(a >= back().a);\r\n      add_back({a, b, 0});\r\n    }\r\n  }\r\
+    \n\r\n  int ord = 1;  // 1 = increasing, -1 = decreasing\r\n\r\n  long long query(long\
+    \ long x) {\r\n    // flip negatives for max\r\n    assert(ord);\r\n    if (ord\
+    \ == 1) {\r\n      while (front().lst < x) {\r\n        pop_front();\r\n     \
+    \ }\r\n      return -front().eval(x);\r\n    } else {\r\n      while (size() >\
+    \ 1 && prev(prev(end()))->lst >= x) {\r\n        pop_back();\r\n      }\r\n  \
+    \    return -back().eval(x);\r\n    }\r\n  }\r\n};\n\r\n// 189 div 1C\r\nint main()\
+    \ {\r\n\tstd::ios_base::sync_with_stdio(0);\r\n\tstd::cin.tie(0);\r\n\tint n;\
+    \ std::cin >> n;\r\n\tstd::vector<long long> a(n), b(n);\r\n\tfor (int i = 0;\
+    \ i < n; i++) std::cin >> a[i];\r\n\tfor (int i = 0; i < n; i++) std::cin >> b[i];\r\
+    \n\tstd::vector<long long> pre(n);\r\n\tfor (int i = 0; i < n; i++) {\r\n\t\t\
+    pre[i] = a[i] + (i ? pre[i - 1] : 0);\r\n\t}\r\n\tConvexHullDeque C;\r\n\tstd::vector<long\
+    \ long> dp(n);\r\n\tfor (int i = 0; i < n; i++) {\r\n\t\tif (i == 0) {\r\n\t\t\
+    \tdp[i] = 0;\r\n\t\t\tC.add(b[i], dp[i]);\r\n\t\t} else {\r\n\t\t\tdp[i] = C.query(a[i]);\r\
+    \n\t\t\tC.add(b[i], dp[i]);\r\n\t\t}\r\n\t}\r\n\tstd::cout << dp[n - 1] << '\\\
+    n';\r\n\treturn 0;\r\n}\r\n"
   code: "#define PROBLEM \"https://codeforces.com/contest/319/problem/C\"\r\n\r\n\
     #include \"../../library/contest/template-minimal.hpp\"\r\n#include \"../../library/dynamic-programming/monotonic-convex-hull.hpp\"\
     \r\n\r\n// 189 div 1C\r\nint main() {\r\n\tstd::ios_base::sync_with_stdio(0);\r\
@@ -74,7 +75,7 @@ data:
   isVerificationFile: true
   path: verify/codeforces/codeforces-319C.test.cpp
   requiredBy: []
-  timestamp: '2022-07-21 16:12:33-04:00'
+  timestamp: '2023-01-08 16:36:58-05:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/codeforces/codeforces-319C.test.cpp
