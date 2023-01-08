@@ -9,21 +9,21 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/aizu/aizu-GRL_2_A.test.cpp
     title: verify/aizu/aizu-GRL_2_A.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/codeforces/codeforces-1463E.test.cpp
     title: verify/codeforces/codeforces-1463E.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/codeforces/codeforces-1494F.test.cpp
     title: verify/codeforces/codeforces-1494F.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/codeforces/codeforces-1553G.test.cpp
     title: verify/codeforces/codeforces-1553G.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-unionfind.test.cpp
     title: verify/yosupo/yosupo-unionfind.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "\r\nstruct DSU {\r\n  std::vector<int> e;\r\n\r\n  DSU() = default;\r\
@@ -48,7 +48,7 @@ data:
   requiredBy:
   - library/graphs/kruskal.hpp
   timestamp: '2023-01-08 14:16:34-05:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/codeforces/codeforces-1463E.test.cpp
   - verify/codeforces/codeforces-1553G.test.cpp

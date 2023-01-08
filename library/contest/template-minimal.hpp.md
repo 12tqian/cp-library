@@ -39,7 +39,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/codeforces/codeforces-1195E.test.cpp
     title: verify/codeforces/codeforces-1195E.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/codeforces/codeforces-1463E.test.cpp
     title: verify/codeforces/codeforces-1463E.test.cpp
   - icon: ':heavy_check_mark:'
@@ -48,7 +48,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/codeforces/codeforces-1551F.test.cpp
     title: verify/codeforces/codeforces-1551F.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/codeforces/codeforces-1553G.test.cpp
     title: verify/codeforces/codeforces-1553G.test.cpp
   - icon: ':heavy_check_mark:'
@@ -243,9 +243,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/yosupo-vertex_add_path_sum.test.cpp
     title: verify/yosupo/yosupo-vertex_add_path_sum.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "\r\n#include <algorithm>\r\n#include <array>\r\n#include <bitset>\r\
@@ -270,7 +270,7 @@ data:
   - library/contest/template-full.hpp
   - library/contest/template-full.cpp
   timestamp: '2022-07-21 16:12:33-04:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/spoj/spoj-FACT0.test.cpp
   - verify/spoj/spoj-MMFSUNDARAM.test.cpp

@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/contest/template-minimal.hpp
     title: library/contest/template-minimal.hpp
   - icon: ':heavy_check_mark:'
     path: library/graphs/two-sat.hpp
     title: library/graphs/two-sat.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/number-theory/fast-factor-sieve.hpp
     title: library/number-theory/fast-factor-sieve.hpp
   _extendedRequiredBy: []

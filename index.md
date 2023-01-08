@@ -9,13 +9,13 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/contest/template-full.hpp
       title: library/contest/template-full.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/contest/template-minimal.hpp
       title: library/contest/template-minimal.hpp
     - icon: ':heavy_check_mark:'
       path: library/contest/template-short.cpp
       title: library/contest/template-short.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/contest/template-short.hpp
       title: library/contest/template-short.hpp
   - name: library/data-structures/1d-range-queries
@@ -135,13 +135,13 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/graphs/dsu-rollback.hpp
       title: library/graphs/dsu-rollback.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/graphs/dsu.hpp
       title: library/graphs/dsu.hpp
     - icon: ':heavy_check_mark:'
       path: library/graphs/enumerate-triangles.cpp
       title: library/graphs/enumerate-triangles.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/graphs/euler-path.hpp
       title: Euler Path
     - icon: ':heavy_check_mark:'
@@ -177,7 +177,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/graphs/strongly-connected-components-tarjan.hpp
       title: library/graphs/strongly-connected-components-tarjan.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/graphs/topological-sort.hpp
       title: Topological Sort
     - icon: ':heavy_check_mark:'
@@ -216,10 +216,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/misc/easy-io.hpp
       title: library/misc/easy-io.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/misc/fast-hash-map.hpp
       title: library/misc/fast-hash-map.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/misc/fast-input.hpp
       title: library/misc/fast-input.hpp
     - icon: ':heavy_check_mark:'
@@ -256,7 +256,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/number-theory/factor-big.hpp
       title: library/number-theory/factor-big.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/number-theory/fast-factor-sieve.hpp
       title: library/number-theory/fast-factor-sieve.hpp
     - icon: ':heavy_check_mark:'
@@ -370,10 +370,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/codeforces/codeforces-1299D.test.cpp
       title: verify/codeforces/codeforces-1299D.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/codeforces/codeforces-1463E.test.cpp
       title: verify/codeforces/codeforces-1463E.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/codeforces/codeforces-1494F.test.cpp
       title: verify/codeforces/codeforces-1494F.test.cpp
     - icon: ':heavy_check_mark:'
@@ -382,7 +382,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/codeforces/codeforces-1551F.test.cpp
       title: verify/codeforces/codeforces-1551F.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/codeforces/codeforces-1553G.test.cpp
       title: verify/codeforces/codeforces-1553G.test.cpp
     - icon: ':heavy_check_mark:'

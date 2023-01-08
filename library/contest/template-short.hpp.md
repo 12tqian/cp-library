@@ -9,7 +9,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/codeforces/codeforces-1299D.test.cpp
     title: verify/codeforces/codeforces-1299D.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/codeforces/codeforces-1494F.test.cpp
     title: verify/codeforces/codeforces-1494F.test.cpp
   - icon: ':heavy_check_mark:'
@@ -18,9 +18,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/unit-test/unit-test-template-short.test.cpp
     title: verify/unit-test/unit-test-template-short.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "\r\n#include <bits/stdc++.h>\r\n\r\nusing namespace std;\r\n\r\n#define\
@@ -49,7 +49,7 @@ data:
   requiredBy:
   - library/contest/template-short.cpp
   timestamp: '2022-07-21 16:12:33-04:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/spoj/spoj-QTREE2.test.cpp
   - verify/codeforces/codeforces-1299D.test.cpp
