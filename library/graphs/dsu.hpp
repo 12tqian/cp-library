@@ -1,30 +1,24 @@
 #pragma once
 
 struct DSU {
-	std::vector<int> e;
+  std::vector<int> e;
 
-	void init(int n) {
-		e = std::vector<int>(n, -1);
-	}
+  DSU(int n) { init(n); }
 
-	int get(int x) {
-		return e[x] < 0 ? x : e[x] = get(e[x]);
-	}
+  void init(int n) { e = std::vector<int>(n, -1); }
 
-	bool same_set(int a, int b) {
-		return get(a) == get(b);
-	}
+  int get(int x) { return e[x] < 0 ? x : e[x] = get(e[x]); }
 
-	int size(int x) {
-		return -e[get(x)];
-	}
+  bool same_set(int a, int b) { return get(a) == get(b); }
 
-	bool unite(int x, int y) {
-		x = get(x), y = get(y);
-		if (x == y) return false;
-		if (e[x] > e[y]) std::swap(x, y);
-		e[x] += e[y]; e[y] = x;
-		return true;
-	}
+  int size(int x) { return -e[get(x)]; }
+
+  bool unite(int x, int y) {
+    x = get(x), y = get(y);
+    if (x == y) return false;
+    if (e[x] > e[y]) std::swap(x, y);
+    e[x] += e[y];
+    e[y] = x;
+    return true;
+  }
 };
-
